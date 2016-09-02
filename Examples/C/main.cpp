@@ -6,6 +6,7 @@ using namespace std;
 #pragma comment(lib,"Aspose.Cells.lib")  
 
 static StringPtr sourcePath = new String("Data\\");
+static StringPtr dataDir_LoadingAndSaving = sourcePath->StringAppend(new String("Loading-and-Saving\\"));
 
  #define EXPECT_TRUE(condition) \
 		if (condition) printf("--%s,line:%d->Ok--\n", __FUNCTION__, __LINE__); \
@@ -21,6 +22,49 @@ static StringPtr sourcePath = new String("Data\\");
 	for example,if allocate memory for workbook, we use "intrusive_ptr<Workbook> workbook = new Workbook()"
 	rather than  "Workbook *workbook = new Workbook()", if so, we no longer need use "delete".
 */
+
+// Loading and Saving
+void OpenFileUsingPath()
+{
+	// ExStart:OpenFileUsingPath
+	// Instantiate a Workbook object and open an Excel file using its file path
+	intrusive_ptr<Workbook>  workbook = new Workbook(dataDir_LoadingAndSaving->StringAppend(new String("Book1.xlsx")));
+	printf("\nWorkbook opened successfully using path!");
+	// ExEnd:OpenFileUsingPath
+}
+void OpenFileUsingStream()
+{
+	// ExStart:OpenFileUsingStream
+	// Create a Stream object
+	intrusive_ptr<FileStream>  fstream = new FileStream(dataDir_LoadingAndSaving->StringAppend(new String("Book1.xlsx")), FileMode_Open);
+
+	// Creating a Workbook object, open the file from a Stream object
+	intrusive_ptr<Workbook>  workbook = new Workbook(fstream);
+	printf("\nWorkbook opened successfully using stream!");
+	fstream->Close();
+	// ExEnd:OpenFileUsingStream
+}
+void OpenVisibleSheetOnly()
+{
+	// ExStart:OpenVisibleSheetOnly
+	// Instantiate LoadOptions specified by the LoadFormat
+	intrusive_ptr<LoadOptions>  loadOptions7 = new LoadOptions(LoadFormat_Xlsx);
+	// Set the LoadDataOption
+	intrusive_ptr<LoadDataOption>  dataOption = new LoadDataOption();
+	
+	dataOption->SetOnlyVisibleWorksheet(true);
+
+	// Only data and formatting should be loaded.
+	loadOptions7->SetLoadDataAndFormatting(true);
+
+	// Specify the LoadDataOption
+	loadOptions7->SetLoadDataOptions(dataOption);
+
+	// Create a Workbook object and opening the file from its path
+	intrusive_ptr<Workbook>  wb = new Workbook(dataDir_LoadingAndSaving->StringAppend(new String("Book1.xlsx")), loadOptions7);	
+	printf("\nVisible sheet loaded successfully!");	
+	// ExEnd:OpenVisibleSheetOnly
+}
 void OpenSaveTest()
 {
 	// ExStart:OpenSaveTest
@@ -330,7 +374,17 @@ int main(int argc, char** argv)
 	printf("Open main.cpp. \nIn main() method uncomment the example that you want to run.\n");
 	printf("=====================================================\n");
 	
-	CustomInProperties();
+	//// =====================================================
+	//// =====================================================
+	//// Loading and Saving
+	//// =====================================================
+	//// =====================================================
+
+	//OpenFileUsingPath();
+	//OpenFileUsingStream();
+	OpenVisibleSheetOnly();
+
+	//CustomInProperties();
 	//OpenSaveTest();
 	//Font_Style_Test1();
 	//Font_Style_Test2();
@@ -344,7 +398,7 @@ int main(int argc, char** argv)
 	//ListObjectTest();	
 	//Chart();
 	//BuiltInProperties();
-	
+		
 	// Stop before exiting
 	printf("\n\nProgram Finished. Press any key to exit....");
 	getchar();	
