@@ -7,6 +7,7 @@ using namespace std;
 
 static StringPtr sourcePath = new String("Data\\");
 static StringPtr dataDir_LoadingAndSaving = sourcePath->StringAppend(new String("Loading-and-Saving\\"));
+static StringPtr dataDir_Worksheets = sourcePath->StringAppend(new String("Worksheets\\"));
 
  #define EXPECT_TRUE(condition) \
 		if (condition) printf("--%s,line:%d->Ok--\n", __FUNCTION__, __LINE__); \
@@ -22,165 +23,6 @@ static StringPtr dataDir_LoadingAndSaving = sourcePath->StringAppend(new String(
 	for example,if allocate memory for workbook, we use "intrusive_ptr<Workbook> workbook = new Workbook()"
 	rather than  "Workbook *workbook = new Workbook()", if so, we no longer need use "delete".
 */
-
-#pragma region "Loading and Saving"
-void OpenFileUsingPath()
-{
-	// ExStart:OpenFileUsingPath
-	// Instantiate a Workbook object and open an Excel file using its file path
-	intrusive_ptr<Workbook>  workbook = new Workbook(dataDir_LoadingAndSaving->StringAppend(new String("Book1.xlsx")));
-	printf("\nWorkbook opened successfully using path!");
-	// ExEnd:OpenFileUsingPath
-}
-void OpenFileUsingStream()
-{
-	// ExStart:OpenFileUsingStream
-	// Create a Stream object
-	intrusive_ptr<FileStream>  fstream = new FileStream(dataDir_LoadingAndSaving->StringAppend(new String("Book1.xlsx")), FileMode_Open);
-
-	// Creating a Workbook object, open the file from a Stream object
-	intrusive_ptr<Workbook>  workbook = new Workbook(fstream);
-	printf("\nWorkbook opened successfully using stream!");
-	fstream->Close();
-	// ExEnd:OpenFileUsingStream
-}
-void OpenVisibleSheetOnly()
-{
-	// ExStart:OpenVisibleSheetOnly
-	// Instantiate LoadOptions specified by the LoadFormat
-	intrusive_ptr<LoadOptions>  loadOptions7 = new LoadOptions(LoadFormat_Xlsx);
-	// Set the LoadDataOption
-	intrusive_ptr<LoadDataOption>  dataOption = new LoadDataOption();
-	
-	dataOption->SetOnlyVisibleWorksheet(true);
-
-	// Only data and formatting should be loaded.
-	loadOptions7->SetLoadDataAndFormatting(true);
-
-	// Specify the LoadDataOption
-	loadOptions7->SetLoadDataOptions(dataOption);
-
-	// Create a Workbook object and opening the file from its path
-	intrusive_ptr<Workbook>  wb = new Workbook(dataDir_LoadingAndSaving->StringAppend(new String("Book1.xlsx")), loadOptions7);	
-	printf("\nVisible sheet loaded successfully!");	
-	// ExEnd:OpenVisibleSheetOnly
-}
-void SavingToStream()
-{
-	// ExStart:SavingToStream
-	// Instantiate a Workbook object and open an Excel file using its file path
-	intrusive_ptr<Workbook>  workbook = new Workbook(dataDir_LoadingAndSaving->StringAppend(new String("Book1.xlsx")));
-
-	intrusive_ptr<FileStream> stream = new FileStream(dataDir_LoadingAndSaving->StringAppend(new String("SavingToStream_out_.xlsx")), FileMode_CreateNew);
-	
-	workbook->Save(stream, new XlsSaveOptions(SaveFormat_Xlsx));
-	stream->Close();
-	printf("\nFile saved successfully to a stream!");
-	// ExEnd:SavingToStream
-}
-void SavingToSomeLocation()
-{
-	// ExStart:SavingToSomeLocation
-	// Instantiate a Workbook object and open an Excel file using its file path
-	intrusive_ptr<Workbook>  workbook = new Workbook(dataDir_LoadingAndSaving->StringAppend(new String("Book1.xlsx")));
-
-	// Save in Excel 97 � 2003 format
-	workbook->Save(dataDir_LoadingAndSaving->StringAppend(new String("SavingToSomeLocation.xls")));
-	// OR
-	workbook->Save(dataDir_LoadingAndSaving->StringAppend(new String("SavingToSomeLocation.xls")), new XlsSaveOptions(SaveFormat_Excel97To2003));
-
-	// Save in Excel2007 xlsx format
-	workbook->Save(dataDir_LoadingAndSaving->StringAppend(new String("SavingToSomeLocation.xlsx")), SaveFormat_Xlsx);
-
-	// Save in Excel2007 xlsb format
-	workbook->Save(dataDir_LoadingAndSaving->StringAppend(new String("SavingToSomeLocation.xlsb")), SaveFormat_Xlsb);
-
-	// Save in ODS format
-	workbook->Save(dataDir_LoadingAndSaving->StringAppend(new String("SavingToSomeLocation.ods")), SaveFormat_ODS);
-
-	// Save in Pdf format
-	workbook->Save(dataDir_LoadingAndSaving->StringAppend(new String("SavingToSomeLocation.pdf")), SaveFormat_Pdf);
-
-	// Save in Html format
-	workbook->Save(dataDir_LoadingAndSaving->StringAppend(new String("SavingToSomeLocation.html")), SaveFormat_Html);
-
-	// Save in SpreadsheetML format
-	workbook->Save(dataDir_LoadingAndSaving->StringAppend(new String("SavingToSomeLocation.xml")), SaveFormat_SpreadsheetML);
-	// ExEnd:SavingToSomeLocation
-}
-#pragma endregion
-
-#pragma region "Worksheets"
-void CopyWorksheetsWithinWorkbook()
-{
-	// ExStart:CopyWorksheetsWithinWorkbook
-	// Instantiate a Workbook object and open an Excel file
-	intrusive_ptr<Workbook>  workbook = new Workbook(dataDir_LoadingAndSaving->StringAppend(new String("Book1.xlsx")));
-
-	// Create a Worksheets object with reference to the sheets of the Workbook.
-	intrusive_ptr<WorksheetCollection> sheets = workbook->GetWorksheets();
-
-	// Copy data to a new sheet from an existing sheet within the Workbook.
-	sheets->AddCopy(new String("Sheet1"));
-
-	// Save the Excel file.
-	workbook->Save(dataDir_LoadingAndSaving->StringAppend(new String("CopyWorksheetsWithinWorkbook.xls")));
-	printf("\nWorksheet copied successfully with in a workbook!");
-	// ExEnd:CopyWorksheetsWithinWorkbook
-}
-void MoveWorksheetsWithinWorkbook()
-{
-	// ExStart:MoveWorksheetsWithinWorkbook
-	// Instantiate a Workbook object and open an Excel file
-	intrusive_ptr<Workbook>  workbook = new Workbook(dataDir_LoadingAndSaving->StringAppend(new String("Book1.xlsx")));
-
-	// Create a Worksheets object with reference to the sheets of the Workbook and get the first worksheet.
-	intrusive_ptr<Worksheet> worksheet = workbook->GetWorksheets()->GetIndexObject(0);
-
-	// Move the first sheet to the third position in the workbook.
-	worksheet->MoveTo(2);
-
-	// Save the Excel file.
-	workbook->Save(dataDir_LoadingAndSaving->StringAppend(new String("MoveWorksheetsWithinWorkbook.xls")));
-	printf("\nWorksheet moved successfully with in a workbook!");
-	// ExEnd:MoveWorksheetsWithinWorkbook
-}
-void AddingWorksheetsToNewExcelFile()
-{
-	// ExStart:AddingWorksheetsToNewExcelFile
-	// Instantiate a Workbook object
-	intrusive_ptr<Workbook>  workbook = new Workbook();
-
-	// Adding a new worksheet to the Workbook object
-	int i = workbook->GetWorksheets()->Add();
-
-	// Obtaining the reference of the newly added worksheet by passing its sheet index
-	intrusive_ptr<Worksheet> worksheet = workbook->GetWorksheets()->GetIndexObject(i);
-
-	// Setting the name of the newly added worksheet
-	worksheet->SetName(new String("My Worksheet"));
-
-	// Save the Excel file.
-	workbook->Save(dataDir_LoadingAndSaving->StringAppend(new String("AddingWorksheetsToNewExcelFile.xls")));
-	printf("\nWorksheet moved successfully with in a workbook!");
-	// ExEnd:AddingWorksheetsToNewExcelFile
-}
-
-void AccessingWorksheetsUsingIndex()
-{
-	// ExStart:AccessingWorksheetsUsingIndex
-	// Creating a file stream containing the Excel file to be opened
-	intrusive_ptr<FileStream> fstream = new FileStream(dataDir_LoadingAndSaving->StringAppend(new String("Book1.xlsx")), FileMode_Open);
-
-	// Instantiating a Workbook object and opening the Excel file through the file stream
-	intrusive_ptr<Workbook> workbook = new Workbook(fstream);
-
-	// Accessing a worksheet using its index and Get cell by name from worksheet cells collection
-	intrusive_ptr<Cell> cell = workbook->GetWorksheets()->GetIndexObject(0)->GetCells()->GetCellByName(new String("A1"));	
-	// ExEnd:AccessingWorksheetsUsingIndex
-}
-#pragma endregion
-
 #pragma region "General"
 void OpenSaveTest()
 {
@@ -255,7 +97,7 @@ void  Font_Style_Test3()
 	// ExEnd:Font_Style_Test3
 }
 
- void AutofilterTest()
+void AutofilterTest()
 {
 	// ExStart:AutofilterTest
 	// Instantiate a Workbook object and open an Excel file
@@ -264,8 +106,8 @@ void  Font_Style_Test3()
 	sheet->GetAutoFilter()->SetRange(0, 0, 1);
 	sheet->GetAutoFilter()->Filter(1, new String("Nom2"));
 	sheet->GetAutoFilter()->Refresh();
-	EXPECT_TRUE(workbook->GetWorksheets()->GetIndexObject(0)->GetCells()->GetRowHeight(3)==0);
-	EXPECT_TRUE(workbook->GetWorksheets()->GetIndexObject(0)->GetCells()->GetRowHeight(4)==0);
+	EXPECT_TRUE(workbook->GetWorksheets()->GetIndexObject(0)->GetCells()->GetRowHeight(3) == 0);
+	EXPECT_TRUE(workbook->GetWorksheets()->GetIndexObject(0)->GetCells()->GetRowHeight(4) == 0);
 	workbook->Save(sourcePath->StringAppend(new String("aa_filtre_out_.xls")));
 	// ExEnd:AutofilterTest
 }
@@ -277,7 +119,7 @@ void  ConditionalFormatTest1()
 	intrusive_ptr<Workbook> wb = new Workbook(sourcePath->StringAppend(new String("CELLSJAVA41671.xlsx")));
 	// Get cell by name from worksheet cells collection
 	intrusive_ptr<Cell> cell = wb->GetWorksheets()->GetIndexObject(0)->GetCells()->GetCellByName(new String("U78"));
-	intrusive_ptr<Style> style = cell->GetDisplayStyle();  
+	intrusive_ptr<Style> style = cell->GetDisplayStyle();
 	intrusive_ptr<Color> color = style->GetForegroundColor();
 	intrusive_ptr<Color> a = style->GetForegroundColor();
 	intrusive_ptr<Color> b = Color::FromArgb(192, 0, 0);
@@ -304,8 +146,8 @@ void  ConditionalFormatTest2()
 	intrusive_ptr<FormatCondition> fc = cfs->GetIndexObject(0)->GetIndexObject(0);
 	EXPECT_TRUE(fc->GetFormula1()->Equals(StringPtr(new String("2"))));
 	EXPECT_TRUE(fc->GetFormula2()->Equals(StringPtr(new String("5"))));
-	EXPECT_TRUE(fc->GetOperator()==OperatorType_Between);
-	EXPECT_TRUE(cfs->GetIndexObject(0)->GetCellArea(0)->EndRow==3);
+	EXPECT_TRUE(fc->GetOperator() == OperatorType_Between);
+	EXPECT_TRUE(cfs->GetIndexObject(0)->GetCellArea(0)->EndRow == 3);
 	// ExEnd:ConditionalFormatTest2
 }
 
@@ -333,10 +175,10 @@ void PageSetupTest()
 	intrusive_ptr<Worksheet> worksheet = workbook->GetWorksheets()->GetIndexObject(0);
 	intrusive_ptr<PageSetup> pagesetup = worksheet->GetPageSetup();
 	// Page
-	EXPECT_TRUE(pagesetup->GetOrientation()==PageOrientationType_Portrait);
-	EXPECT_TRUE(pagesetup->GetZoom()==105);
-	EXPECT_TRUE(pagesetup->GetPaperSize()==PaperSizeType_PaperA4);
-	EXPECT_TRUE(pagesetup->GetFirstPageNumber()==1);
+	EXPECT_TRUE(pagesetup->GetOrientation() == PageOrientationType_Portrait);
+	EXPECT_TRUE(pagesetup->GetZoom() == 105);
+	EXPECT_TRUE(pagesetup->GetPaperSize() == PaperSizeType_PaperA4);
+	EXPECT_TRUE(pagesetup->GetFirstPageNumber() == 1);
 	// Margins
 	EXPECT_TRUE(pagesetup->GetCenterHorizontally());
 	EXPECT_TRUE(pagesetup->GetCenterVertically());
@@ -353,9 +195,9 @@ void PageSetupTest()
 	EXPECT_TRUE(!pagesetup->GetBlackAndWhite());
 	EXPECT_TRUE(!pagesetup->GetDraft());
 	EXPECT_TRUE(pagesetup->GetPrintHeadings());
-	EXPECT_TRUE(pagesetup->GetPrintComments()==PrintCommentsType_PrintSheetEnd);
-	EXPECT_TRUE(pagesetup->GetPrintErrors()==PrintErrorsType_PrintErrorsNA);
-	EXPECT_TRUE(pagesetup->GetOrder()==PrintOrderType_OverThenDown);
+	EXPECT_TRUE(pagesetup->GetPrintComments() == PrintCommentsType_PrintSheetEnd);
+	EXPECT_TRUE(pagesetup->GetPrintErrors() == PrintErrorsType_PrintErrorsNA);
+	EXPECT_TRUE(pagesetup->GetOrder() == PrintOrderType_OverThenDown);
 	// ExEnd:PageSetupTest
 }
 
@@ -412,79 +254,403 @@ void ListObjectTest()
 	listObject = workbook->GetWorksheets()->GetIndexObject(0)->GetListObjects()->GetIndexObject(0);
 	listObject->ConvertToRange();
 	style = workbook->GetWorksheets()->GetIndexObject(0)->GetCells()->GetIndexObject(new String("A1"))->GetStyle();
-	EXPECT_TRUE((style->GetForegroundColor()->ToArgb() & 0xFFFFFF) == (Color::FromArgb(79, 129, 189)->ToArgb() & 0xFFFFFF ));
-	EXPECT_TRUE(workbook->GetWorksheets()->GetIndexObject(0)->GetListObjects()->GetCount()==0);
+	EXPECT_TRUE((style->GetForegroundColor()->ToArgb() & 0xFFFFFF) == (Color::FromArgb(79, 129, 189)->ToArgb() & 0xFFFFFF));
+	EXPECT_TRUE(workbook->GetWorksheets()->GetIndexObject(0)->GetListObjects()->GetCount() == 0);
 	// ExEnd:ListObjectTest
 }
- void Chart()
- {
-	 // ExStart:Chart
-	 // Instantiating a Workbook object
-	 intrusive_ptr<Workbook> workbook = new Workbook();
+void Chart()
+{
+	// ExStart:Chart
+	// Instantiating a Workbook object
+	intrusive_ptr<Workbook> workbook = new Workbook();
 
-	 // Adding a new worksheet to the Excel object
-	 int sheetIndex = workbook->GetWorksheets()->Add();
+	// Adding a new worksheet to the Excel object
+	int sheetIndex = workbook->GetWorksheets()->Add();
 
-	 // Obtaining the reference of the newly added worksheet by passing its sheet index
-	 intrusive_ptr<Worksheet> worksheet = workbook->GetWorksheets()->GetIndexObject(sheetIndex);
+	// Obtaining the reference of the newly added worksheet by passing its sheet index
+	intrusive_ptr<Worksheet> worksheet = workbook->GetWorksheets()->GetIndexObject(sheetIndex);
 
-	 // Adding a sample value to "A1" cell
-	 worksheet->GetCells()->GetCellByName(new String("A1"))->PutValue(50);
+	// Adding a sample value to "A1" cell
+	worksheet->GetCells()->GetCellByName(new String("A1"))->PutValue(50);
 
-	 // Adding a sample value to "A2" cell
-	 worksheet->GetCells()->GetCellByName(new String("A2"))->PutValue(50);
+	// Adding a sample value to "A2" cell
+	worksheet->GetCells()->GetCellByName(new String("A2"))->PutValue(50);
 
-	 // Adding a sample value to "A3" cell
-	 worksheet->GetCells()->GetCellByName(new String("A3"))->PutValue(50);
+	// Adding a sample value to "A3" cell
+	worksheet->GetCells()->GetCellByName(new String("A3"))->PutValue(50);
 
-	 // Adding a sample value to "B1" cell
-	 worksheet->GetCells()->GetCellByName(new String("B1"))->PutValue(50);
+	// Adding a sample value to "B1" cell
+	worksheet->GetCells()->GetCellByName(new String("B1"))->PutValue(50);
 
-	 // Adding a sample value to "B2" cell
-	 worksheet->GetCells()->GetCellByName(new String("B2"))->PutValue(50);
+	// Adding a sample value to "B2" cell
+	worksheet->GetCells()->GetCellByName(new String("B2"))->PutValue(50);
 
-	 // Adding a sample value to "B3" cell
-	 worksheet->GetCells()->GetCellByName(new String("B3"))->PutValue(50);
-	 //chart.NSeries.Add("A1:B3", true);
-	 // Saving the Excel file
-	 workbook->Save(sourcePath->StringAppend(new String("chart_out_.xls")));
-	 // ExEnd:Chart
- }
- void BuiltInProperties()
- {
-	 // ExStart:BuiltInProperties
-	 // Instantiate a Workbook object and open an Excel file
-	 intrusive_ptr<Workbook> workbook = new Workbook(sourcePath->StringAppend(new String("book1.xls")));
+	// Adding a sample value to "B3" cell
+	worksheet->GetCells()->GetCellByName(new String("B3"))->PutValue(50);
+	//chart.NSeries.Add("A1:B3", true);
+	// Saving the Excel file
+	workbook->Save(sourcePath->StringAppend(new String("chart_out_.xls")));
+	// ExEnd:Chart
+}
+void BuiltInProperties()
+{
+	// ExStart:BuiltInProperties
+	// Instantiate a Workbook object and open an Excel file
+	intrusive_ptr<Workbook> workbook = new Workbook(sourcePath->StringAppend(new String("book1.xls")));
 
-	 // Retrieve a list of all custom document properties of the Excel file
-	 intrusive_ptr<DocumentPropertyCollection> properties = workbook->GetWorksheets()->GetBuiltInDocumentProperties();
+	// Retrieve a list of all custom document properties of the Excel file
+	intrusive_ptr<DocumentPropertyCollection> properties = workbook->GetWorksheets()->GetBuiltInDocumentProperties();
 
-	 
-	 for (int i = 0; i < properties->GetCount(); i++)
-	 {
-		 // Accessing a custom document property by using the property index
-		 intrusive_ptr<DocumentProperty> customProperty1 = properties->GetIndexObject(i);
-		 cout << customProperty1;
-	 }
-	 // ExEnd:BuiltInProperties
- }
- void CustomInProperties()
- {
-	 // ExStart:CustomInProperties
-	 // Instantiate a Workbook object and open an Excel file
-	 intrusive_ptr<Workbook> workbook = new Workbook(sourcePath->StringAppend(new String("book1.xls")));
 
-	 // Retrieve a list of all custom document properties of the Excel file
-	 intrusive_ptr<DocumentPropertyCollection> properties = workbook->GetWorksheets()->GetCustomDocumentProperties();
+	for (int i = 0; i < properties->GetCount(); i++)
+	{
+		// Accessing a custom document property by using the property index
+		intrusive_ptr<DocumentProperty> customProperty1 = properties->GetIndexObject(i);
+		cout << customProperty1;
+	}
+	// ExEnd:BuiltInProperties
+}
+void CustomInProperties()
+{
+	// ExStart:CustomInProperties
+	// Instantiate a Workbook object and open an Excel file
+	intrusive_ptr<Workbook> workbook = new Workbook(sourcePath->StringAppend(new String("book1.xls")));
 
-	 for (int i = 0; i < properties->GetCount(); i++)
-	 {
-		 // Accessing a custom document property by using the property index
-		 intrusive_ptr<DocumentProperty> customProperty1 = properties->GetIndexObject(i);
-		 cout << customProperty1;
-	 }
-	 // ExEnd:CustomInProperties
- }
+	// Retrieve a list of all custom document properties of the Excel file
+	intrusive_ptr<DocumentPropertyCollection> properties = workbook->GetWorksheets()->GetCustomDocumentProperties();
+
+	for (int i = 0; i < properties->GetCount(); i++)
+	{
+		// Accessing a custom document property by using the property index
+		intrusive_ptr<DocumentProperty> customProperty1 = properties->GetIndexObject(i);
+		cout << customProperty1;
+	}
+	// ExEnd:CustomInProperties
+}
+#pragma endregion
+
+#pragma region "Loading and Saving"
+void OpenFileUsingPath()
+{
+	// ExStart:OpenFileUsingPath
+	// Instantiate a Workbook object and open an Excel file using its file path
+	intrusive_ptr<Workbook>  workbook = new Workbook(dataDir_LoadingAndSaving->StringAppend(new String("Book1.xlsx")));
+	printf("\nWorkbook opened successfully using path!");
+	// ExEnd:OpenFileUsingPath
+}
+void OpenFileUsingStream()
+{
+	// ExStart:OpenFileUsingStream
+	// Create a Stream object
+	intrusive_ptr<FileStream>  fstream = new FileStream(dataDir_LoadingAndSaving->StringAppend(new String("Book1.xlsx")), FileMode_Open);
+
+	// Creating a Workbook object, open the file from a Stream object
+	intrusive_ptr<Workbook>  workbook = new Workbook(fstream);
+	printf("\nWorkbook opened successfully using stream!");
+	fstream->Close();
+	// ExEnd:OpenFileUsingStream
+}
+void OpenVisibleSheetOnly()
+{
+	// ExStart:OpenVisibleSheetOnly
+	// Instantiate LoadOptions specified by the LoadFormat
+	intrusive_ptr<LoadOptions>  loadOptions7 = new LoadOptions(LoadFormat_Xlsx);
+	// Set the LoadDataOption
+	intrusive_ptr<LoadDataOption>  dataOption = new LoadDataOption();
+	
+	dataOption->SetOnlyVisibleWorksheet(true);
+
+	// Only data and formatting should be loaded.
+	loadOptions7->SetLoadDataAndFormatting(true);
+
+	// Specify the LoadDataOption
+	loadOptions7->SetLoadDataOptions(dataOption);
+
+	// Create a Workbook object and opening the file from its path
+	intrusive_ptr<Workbook>  wb = new Workbook(dataDir_LoadingAndSaving->StringAppend(new String("Book1.xlsx")), loadOptions7);	
+	printf("\nVisible sheet loaded successfully!");	
+	// ExEnd:OpenVisibleSheetOnly
+}
+void SavingToStream()
+{
+	// ExStart:SavingToStream
+	// Instantiate a Workbook object and open an Excel file using its file path
+	intrusive_ptr<Workbook>  workbook = new Workbook(dataDir_LoadingAndSaving->StringAppend(new String("Book1.xlsx")));
+
+	intrusive_ptr<FileStream> stream = new FileStream(dataDir_LoadingAndSaving->StringAppend(new String("SavingToStream_out_.xlsx")), FileMode_CreateNew);
+	
+	workbook->Save(stream, new XlsSaveOptions(SaveFormat_Xlsx));
+	stream->Close();
+	printf("\nFile saved successfully to a stream!");
+	// ExEnd:SavingToStream
+}
+void SavingToSomeLocation()
+{
+	// ExStart:SavingToSomeLocation
+	// Instantiate a Workbook object and open an Excel file using its file path
+	intrusive_ptr<Workbook>  workbook = new Workbook(dataDir_LoadingAndSaving->StringAppend(new String("Book1.xlsx")));
+
+	// Save in Excel 97 � 2003 format
+	workbook->Save(dataDir_LoadingAndSaving->StringAppend(new String("SavingToSomeLocation_out_.xls")));
+	// OR
+	workbook->Save(dataDir_LoadingAndSaving->StringAppend(new String("SavingToSomeLocation_out_.xls")), new XlsSaveOptions(SaveFormat_Excel97To2003));
+
+	// Save in Excel2007 xlsx format
+	workbook->Save(dataDir_LoadingAndSaving->StringAppend(new String("SavingToSomeLocation_out_.xlsx")), SaveFormat_Xlsx);
+
+	// Save in Excel2007 xlsb format
+	workbook->Save(dataDir_LoadingAndSaving->StringAppend(new String("SavingToSomeLocation_out_.xlsb")), SaveFormat_Xlsb);
+
+	// Save in ODS format
+	workbook->Save(dataDir_LoadingAndSaving->StringAppend(new String("SavingToSomeLocation_out_.ods")), SaveFormat_ODS);
+
+	// Save in Pdf format
+	workbook->Save(dataDir_LoadingAndSaving->StringAppend(new String("SavingToSomeLocation_out_.pdf")), SaveFormat_Pdf);
+
+	// Save in Html format
+	workbook->Save(dataDir_LoadingAndSaving->StringAppend(new String("SavingToSomeLocation_out_.html")), SaveFormat_Html);
+
+	// Save in SpreadsheetML format
+	workbook->Save(dataDir_LoadingAndSaving->StringAppend(new String("SavingToSomeLocation_out_.xml")), SaveFormat_SpreadsheetML);
+	// ExEnd:SavingToSomeLocation
+}
+#pragma endregion
+
+#pragma region "Worksheets"
+void CopyWorksheetsWithinWorkbook()
+{
+	// ExStart:CopyWorksheetsWithinWorkbook
+	// Instantiate a Workbook object and open an Excel file
+	intrusive_ptr<Workbook>  workbook = new Workbook(dataDir_Worksheets->StringAppend(new String("Book1.xlsx")));
+
+	// Create a Worksheets object with reference to the sheets of the Workbook.
+	intrusive_ptr<WorksheetCollection> sheets = workbook->GetWorksheets();
+
+	// Copy data to a new sheet from an existing sheet within the Workbook.
+	sheets->AddCopy(new String("Sheet1"));
+
+	// Save the Excel file.
+	workbook->Save(dataDir_Worksheets->StringAppend(new String("CopyWorksheetsWithinWorkbook_out_.xls")));
+	printf("\nWorksheet copied successfully with in a workbook!");
+	// ExEnd:CopyWorksheetsWithinWorkbook
+}
+void MoveWorksheetsWithinWorkbook()
+{
+	// ExStart:MoveWorksheetsWithinWorkbook
+	// Instantiate a Workbook object and open an Excel file
+	intrusive_ptr<Workbook>  workbook = new Workbook(dataDir_Worksheets->StringAppend(new String("Book1.xlsx")));
+
+	// Create a Worksheets object with reference to the sheets of the Workbook and get the first worksheet.
+	intrusive_ptr<Worksheet> worksheet = workbook->GetWorksheets()->GetIndexObject(0);
+
+	// Move the first sheet to the third position in the workbook.
+	worksheet->MoveTo(2);
+
+	// Save the Excel file.
+	workbook->Save(dataDir_Worksheets->StringAppend(new String("MoveWorksheetsWithinWorkbook_out_.xls")));
+	printf("\nWorksheet moved successfully with in a workbook!");
+	// ExEnd:MoveWorksheetsWithinWorkbook
+}
+void AddingWorksheetsToNewExcelFile()
+{
+	// ExStart:AddingWorksheetsToNewExcelFile
+	// Instantiate a Workbook object
+	intrusive_ptr<Workbook>  workbook = new Workbook();
+
+	// Adding a new worksheet to the Workbook object
+	int i = workbook->GetWorksheets()->Add();
+
+	// Obtaining the reference of the newly added worksheet by passing its sheet index
+	intrusive_ptr<Worksheet> worksheet = workbook->GetWorksheets()->GetIndexObject(i);
+
+	// Setting the name of the newly added worksheet
+	worksheet->SetName(new String("My Worksheet"));
+
+	// Save the Excel file.
+	workbook->Save(dataDir_Worksheets->StringAppend(new String("AddingWorksheetsToNewExcelFile_out_.xls")));
+	printf("\nWorksheet moved successfully with in a workbook!");
+	// ExEnd:AddingWorksheetsToNewExcelFile
+}
+
+void AccessingWorksheetsUsingIndex()
+{
+	// ExStart:AccessingWorksheetsUsingIndex
+	// Creating a file stream containing the Excel file to be opened
+	intrusive_ptr<FileStream> fstream = new FileStream(dataDir_Worksheets->StringAppend(new String("Book1.xlsx")), FileMode_Open);
+
+	// Instantiating a Workbook object and opening the Excel file through the file stream
+	intrusive_ptr<Workbook> workbook = new Workbook(fstream);
+
+	// Accessing a worksheet using its index and Get cell by name from worksheet cells collection
+	intrusive_ptr<Cell> cell = workbook->GetWorksheets()->GetIndexObject(0)->GetCells()->GetCellByName(new String("A1"));	
+	// Closing the file stream to free all resources
+	fstream->Close();
+	// ExEnd:AccessingWorksheetsUsingIndex
+}
+void RemoveWorksheetsUsingIndex()
+{
+	// ExStart:RemoveWorksheetsUsingIndex
+	// Creating a file stream containing the Excel file to be opened
+	intrusive_ptr<FileStream> fstream = new FileStream(dataDir_Worksheets->StringAppend(new String("Book1.xlsx")), FileMode_Open);
+
+	// Instantiating a Workbook object and opening the Excel file through the file stream
+	intrusive_ptr<Workbook> workbook = new Workbook(fstream);
+
+	// Removing a worksheet using its sheet index
+	workbook->GetWorksheets()->RemoveAt(0);
+
+	// Save the Excel file.
+	workbook->Save(dataDir_Worksheets->StringAppend(new String("RemoveWorksheetsUsingIndex_out_.xls")));
+	// Closing the file stream to free all resources
+	fstream->Close();
+	// ExEnd:RemoveWorksheetsUsingIndex
+}
+void AddPageBreaks()
+{
+	// ExStart:AddPageBreaks
+	// Instantiating a Workbook object
+	intrusive_ptr<Workbook> workbook  = new Workbook();
+
+	// Add a page break at cell Y30
+	workbook->GetWorksheets()->GetIndexObject(0)->GetHorizontalPageBreaks()->Add(new String("Y30"));
+	workbook->GetWorksheets()->GetIndexObject(0)->GetVerticalPageBreaks()->Add(new String("Y30"));
+
+	// Save the Excel file.
+	workbook->Save(dataDir_Worksheets->StringAppend(new String("AddPageBreaks_out_.xls")));
+	// ExEnd:AddPageBreaks
+}
+void ClearAllPageBreaks()
+{
+	// ExStart:ClearAllPageBreaks
+	// Instantiating a Workbook object
+	intrusive_ptr<Workbook> workbook = new Workbook();
+
+	// Clearing all page breaks
+	workbook->GetWorksheets()->GetIndexObject(0)->GetHorizontalPageBreaks()->Clear();
+	workbook->GetWorksheets()->GetIndexObject(0)->GetVerticalPageBreaks()->Clear();
+
+	// Save the Excel file.
+	workbook->Save(dataDir_Worksheets->StringAppend(new String("ClearAllPageBreaks_out_.xls")));
+	// ExEnd:ClearAllPageBreaks
+}
+void RemoveSpecificPageBreaks()
+{
+	// ExStart:RemoveSpecificPageBreaks
+	// Instantiate a Workbook object and open an Excel file
+	intrusive_ptr<Workbook>  workbook = new Workbook(dataDir_Worksheets->StringAppend(new String("PageBreaks.xls")));
+
+	// Removing a specific page break
+	workbook->GetWorksheets()->GetIndexObject(0)->GetHorizontalPageBreaks()->RemoveAt(0);
+	workbook->GetWorksheets()->GetIndexObject(0)->GetVerticalPageBreaks()->RemoveAt(0);
+
+	// Save the Excel file.
+	workbook->Save(dataDir_Worksheets->StringAppend(new String("RemoveSpecificPageBreaks_out_.xls")));
+	// ExEnd:RemoveSpecificPageBreaks
+}
+void EnableNormalView()
+{
+	// ExStart:EnableNormalView
+	// Creating a file stream containing the Excel file to be opened
+	intrusive_ptr<FileStream> fstream = new FileStream(dataDir_Worksheets->StringAppend(new String("Book1.xlsx")), FileMode_Open);
+
+	// Instantiating a Workbook object and opening the Excel file through the file stream
+	intrusive_ptr<Workbook> workbook = new Workbook(fstream);
+
+	// Accessing a worksheet using its index
+	intrusive_ptr<Worksheet> worksheet = workbook->GetWorksheets()->GetIndexObject(0);
+
+	// Displaying the worksheet in page break preview
+	worksheet->SetIsPageBreakPreview(true);
+
+	// Saving the modified Excel file
+	workbook->Save(dataDir_Worksheets->StringAppend(new String("EnableNormalView_out_.xls")));
+
+	// Closing the file stream to free all resources
+	fstream->Close();
+	// ExEnd:EnableNormalView
+}
+void SetZoomFactor()
+{
+	// ExStart:SetZoomFactor
+	// Creating a file stream containing the Excel file to be opened
+	intrusive_ptr<FileStream> fstream = new FileStream(dataDir_Worksheets->StringAppend(new String("Book1.xlsx")), FileMode_Open);
+
+	// Instantiating a Workbook object and opening the Excel file through the file stream
+	intrusive_ptr<Workbook> workbook = new Workbook(fstream);
+
+	// Accessing a worksheet using its index
+	intrusive_ptr<Worksheet> worksheet = workbook->GetWorksheets()->GetIndexObject(0);
+
+	// Setting the zoom factor of the worksheet to 75
+	worksheet->SetZoom(75);
+
+	// Saving the modified Excel file
+	workbook->Save(dataDir_Worksheets->StringAppend(new String("SetZoomFactor_out_.xls")));
+
+	// Closing the file stream to free all resources
+	fstream->Close();
+	// ExEnd:SetZoomFactor
+}
+void FreezePanes()
+{
+	// ExStart:FreezePanes
+	// Creating a file stream containing the Excel file to be opened
+	intrusive_ptr<FileStream> fstream = new FileStream(dataDir_Worksheets->StringAppend(new String("Book1.xlsx")), FileMode_Open);
+
+	// Instantiating a Workbook object and opening the Excel file through the file stream
+	intrusive_ptr<Workbook> workbook = new Workbook(fstream);
+
+	// Accessing a worksheet using its index
+	intrusive_ptr<Worksheet> worksheet = workbook->GetWorksheets()->GetIndexObject(0);
+
+	// Applying freeze panes settings
+	worksheet->FreezePanes(3, 2, 3, 2);
+
+	// Saving the modified Excel file
+	workbook->Save(dataDir_Worksheets->StringAppend(new String("FreezePanes_out_.xls")));
+
+	// Closing the file stream to free all resources
+	fstream->Close();
+	// ExEnd:FreezePanes
+}
+void SplitPanes()
+{
+	// ExStart:SplitPanes
+	// Instantiating a Workbook object and opening the Excel file through the path
+	intrusive_ptr<Workbook> workbook = new Workbook(dataDir_Worksheets->StringAppend(new String("Book1.xlsx")));
+
+	// Accessing a worksheet using its index
+	intrusive_ptr<Worksheet> worksheet = workbook->GetWorksheets()->GetIndexObject(0);
+
+    // Set the active cell
+    worksheet->SetActiveCell(new String("A20"));
+
+	// Split the worksheet window
+	worksheet->Split();
+
+	// Saving the modified Excel file
+	workbook->Save(dataDir_Worksheets->StringAppend(new String("FreezePanes_out_.xls")));
+	// ExEnd:SplitPanes
+}
+void RemovingPanes()
+{
+	// ExStart:RemovingPanes
+	// Instantiating a Workbook object and opening the Excel file through the path
+	intrusive_ptr<Workbook> workbook = new Workbook(dataDir_Worksheets->StringAppend(new String("Book1.xlsx")));
+
+	// Accessing a worksheet using its index
+	intrusive_ptr<Worksheet> worksheet = workbook->GetWorksheets()->GetIndexObject(0);
+
+	// Set the active cell
+	worksheet->SetActiveCell(new String("A20"));
+
+	// Split the worksheet window
+	worksheet->RemoveSplit();
+
+	// Saving the modified Excel file
+	workbook->Save(dataDir_Worksheets->StringAppend(new String("RemovingPanes_out_.xls")));
+	// ExEnd:RemovingPanes
+}
 #pragma endregion
 
 int main(int argc, char** argv)
@@ -493,6 +659,25 @@ int main(int argc, char** argv)
 	printf("Open main.cpp. \nIn main() method uncomment the example that you want to run.\n");
 	printf("=====================================================\n");
 	
+	//// =====================================================
+	//// =====================================================
+	//// General
+	//// =====================================================
+	//// =====================================================
+
+	//Font_Style_Test1();
+	//Font_Style_Test2();
+	//Font_Style_Test3();
+	//AutofilterTest();
+	//ConditionalFormatTest1();
+	//ConditionalFormatTest2();
+	//HyperlinkTest();
+	//PageSetupTest();
+	//PivotTableDataTest();
+	//ListObjectTest();	
+	//Chart();
+	//BuiltInProperties();
+
 	//// =====================================================
 	//// =====================================================
 	//// Loading and Saving
@@ -514,26 +699,16 @@ int main(int argc, char** argv)
 	//CopyWorksheetsWithinWorkbook();
 	//MoveWorksheetsWithinWorkbook();
 	//AddingWorksheetsToNewExcelFile();
-	AccessingWorksheetsUsingIndex();
-	
-	//// =====================================================
-	//// =====================================================
-	//// General
-	//// =====================================================
-	//// =====================================================
-
-	//Font_Style_Test1();
-	//Font_Style_Test2();
-	//Font_Style_Test3();
-	//AutofilterTest();
-	//ConditionalFormatTest1();
-	//ConditionalFormatTest2();
-	//HyperlinkTest();
-	//PageSetupTest();
-	//PivotTableDataTest();
-	//ListObjectTest();	
-	//Chart();
-	//BuiltInProperties();
+	//AccessingWorksheetsUsingIndex();	
+	//RemoveWorksheetsUsingIndex();
+	//AddPageBreaks();
+	//RemoveSpecificPageBreaks();
+	//ClearAllPageBreaks();
+	//EnableNormalView();
+	//SetZoomFactor();	
+	//FreezePanes();
+	//SplitPanes();
+	//RemovingPanes();
 		
 	// Stop before exiting
 	printf("\n\nProgram Finished. Press any key to exit....");
