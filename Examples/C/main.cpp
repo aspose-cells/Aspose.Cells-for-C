@@ -8,6 +8,7 @@ using namespace std;
 static StringPtr sourcePath = new String("Data\\");
 static StringPtr dataDir_LoadingAndSaving = sourcePath->StringAppend(new String("Loading-and-Saving\\"));
 static StringPtr dataDir_Worksheets = sourcePath->StringAppend(new String("Worksheets\\"));
+static StringPtr dataDir_RowsAndColumns = sourcePath->StringAppend(new String("Rows-and-Columns\\"));
 
  #define EXPECT_TRUE(condition) \
 		if (condition) printf("--%s,line:%d->Ok--\n", __FUNCTION__, __LINE__); \
@@ -416,6 +417,324 @@ void SavingToSomeLocation()
 }
 #pragma endregion
 
+#pragma region "Rows and Columns"
+
+void SetRowHeight()
+{
+
+	// ExStart:SetRowHeight
+	// Creating a file stream containing the Excel file to be opened
+	intrusive_ptr<FileStream> fstream = new FileStream(dataDir_RowsAndColumns->StringAppend(new String("Book1.xlsx")), FileMode_Open);
+
+	// Instantiating a Workbook object and opening the Excel file through the file stream
+	intrusive_ptr<Workbook> workbook = new Workbook(fstream);
+
+	// Accessing the first worksheet in the Excel file
+	intrusive_ptr<Worksheet> worksheet = workbook->GetWorksheets()->GetIndexObject(0);
+
+	// Setting the height of the second row to 13
+	worksheet->GetCells()->SetRowHeight(1, 13);
+
+	// Save the Excel file.
+	workbook->Save(dataDir_RowsAndColumns->StringAppend(new String("SetRowHeight_out_.xls")));
+
+	// Closing the file stream to free all resources
+	fstream->Close();
+	// ExEnd:SetRowHeight
+}
+
+void SettingAllRowsHeight()
+{
+
+	// ExStart:SettingAllRowsHeight
+	// Creating a file stream containing the Excel file to be opened
+	intrusive_ptr<FileStream> fstream = new FileStream(dataDir_RowsAndColumns->StringAppend(new String("Book1.xlsx")), FileMode_Open);
+
+	// Instantiating a Workbook object and opening the Excel file through the file stream
+	intrusive_ptr<Workbook> workbook = new Workbook(fstream);
+
+	// Accessing the first worksheet in the Excel file
+	intrusive_ptr<Worksheet> worksheet = workbook->GetWorksheets()->GetIndexObject(0);
+
+	// Setting the height of all rows in the worksheet to 15
+	worksheet->GetCells()->SetStandardHeight(15);
+
+	// Save the Excel file.
+	workbook->Save(dataDir_RowsAndColumns->StringAppend(new String("SettingAllRowsHeight_out_.xls")));
+
+	// Closing the file stream to free all resources
+	fstream->Close();
+	// ExEnd:SettingAllRowsHeight
+}
+void SettingColumWidth()
+{
+
+	// ExStart:SettingColumWidth
+	// Creating a file stream containing the Excel file to be opened
+	intrusive_ptr<FileStream> fstream = new FileStream(dataDir_RowsAndColumns->StringAppend(new String("Book1.xlsx")), FileMode_Open);
+
+	// Instantiating a Workbook object and opening the Excel file through the file stream
+	intrusive_ptr<Workbook> workbook = new Workbook(fstream);
+
+	// Accessing the first worksheet in the Excel file
+	intrusive_ptr<Worksheet> worksheet = workbook->GetWorksheets()->GetIndexObject(0);
+
+	// Setting the width of the second column to 17.5
+	worksheet->GetCells()->SetColumnWidth(1, 17.5);
+
+	// Save the Excel file.
+	workbook->Save(dataDir_RowsAndColumns->StringAppend(new String("SettingColumWidth_out_.xls")));
+
+	// Closing the file stream to free all resources
+	fstream->Close();
+	// ExEnd:SettingColumWidth
+}
+void SettingWidthOfAllColumns()
+{
+
+	// ExStart:SettingWidthOfAllColumns
+	// Creating a file stream containing the Excel file to be opened
+	intrusive_ptr<FileStream> fstream = new FileStream(dataDir_RowsAndColumns->StringAppend(new String("Book1.xlsx")), FileMode_Open);
+
+	// Instantiating a Workbook object and opening the Excel file through the file stream
+	intrusive_ptr<Workbook> workbook = new Workbook(fstream);
+
+	// Accessing the first worksheet in the Excel file
+	intrusive_ptr<Worksheet> worksheet = workbook->GetWorksheets()->GetIndexObject(0);
+
+	// Setting the width of all columns in the worksheet to 20.5
+	worksheet->GetCells()->SetStandardWidth(20.5);
+
+	// Save the Excel file.
+	workbook->Save(dataDir_RowsAndColumns->StringAppend(new String("SettingWidthOfAllColumns_out_.xls")));
+
+	// Closing the file stream to free all resources
+	fstream->Close();
+	// ExEnd:SettingWidthOfAllColumns
+}
+void CopyRows()
+{
+	// ExStart:CopyRows
+	// Instantiating a Workbook object and opening the Excel file through the path
+	intrusive_ptr<Workbook> workbook = new Workbook(dataDir_RowsAndColumns->StringAppend(new String("Book1.xlsx")));
+
+	// Accessing the first worksheet in the Excel file
+	intrusive_ptr<Worksheet> worksheet = workbook->GetWorksheets()->GetIndexObject(0);
+
+	// Copy the second row with data, formattings, images and drawing objects to the 16th row in the worksheet.
+	worksheet->GetCells()->CopyRow(worksheet->GetCells(), 1, 15);
+
+	// Save the Excel file.
+	workbook->Save(dataDir_RowsAndColumns->StringAppend(new String("CopyRows_out_.xls")));
+	// ExEnd:CopyRows
+}
+void CopyColumns()
+{
+	// ExStart:CopyColumns
+	// Instantiating a Workbook object and opening the Excel file through the path
+	intrusive_ptr<Workbook> workbook = new Workbook(dataDir_RowsAndColumns->StringAppend(new String("Book1.xlsx")));
+
+	// Accessing the first worksheet in the Excel file
+	intrusive_ptr<Worksheet> worksheet = workbook->GetWorksheets()->GetIndexObject(0);
+
+	// Copy the first column from the first worksheet of the first workbook into the first worksheet of the second workbook.
+	worksheet->GetCells()->CopyColumn(worksheet->GetCells(), 0, 2);
+
+	// Save the Excel file.
+	workbook->Save(dataDir_RowsAndColumns->StringAppend(new String("CopyColumns_out_.xls")));
+	// ExEnd:CopyColumns
+}
+void GroupRowsColumns()
+{
+	// ExStart:GroupRowsColumns
+	// Creating a file stream containing the Excel file to be opened
+	intrusive_ptr<FileStream> fstream = new FileStream(dataDir_RowsAndColumns->StringAppend(new String("Book1.xlsx")), FileMode_Open);
+
+	// Instantiating a Workbook object and opening the Excel file through the file stream
+	intrusive_ptr<Workbook> workbook = new Workbook(fstream);
+
+	// Accessing the first worksheet in the Excel file
+	intrusive_ptr<Worksheet> worksheet = workbook->GetWorksheets()->GetIndexObject(0);
+	
+	// Grouping first six rows and first three columns
+	worksheet->GetCells()->GroupRows(0, 5, true);
+	worksheet->GetCells()->GroupColumns(0, 2, true);
+
+	// Save the Excel file.
+	workbook->Save(dataDir_RowsAndColumns->StringAppend(new String("GroupRowsColumns_out_.xls")));
+
+	// Closing the file stream to free all resources
+	fstream->Close();
+	// ExEnd:GroupRowsColumns
+}
+void SummaryRowBelow()
+{
+	// ExStart:SummaryRowBelow 
+	// Instantiating a Workbook object and opening the Excel file through the path
+	intrusive_ptr<Workbook> workbook = new Workbook(dataDir_RowsAndColumns->StringAppend(new String("Book1.xlsx")));
+
+	// Accessing the first worksheet in the Excel file
+	intrusive_ptr<Worksheet> worksheet = workbook->GetWorksheets()->GetIndexObject(0);
+
+	// Grouping first six rows and first three columns
+	worksheet->GetCells()->GroupRows(0, 5, true);
+	worksheet->GetCells()->GroupColumns(0, 2, true);
+
+	// Setting SummaryRowBelow property to false
+	worksheet->GetOutline()->SummaryRowBelow = false;
+
+	// Save the Excel file.
+	workbook->Save(dataDir_RowsAndColumns->StringAppend(new String("SummaryRowBelow_out_.xls")));
+	// ExEnd:SummaryRowBelow 
+}
+void SummaryColumnRight()
+{
+	// ExStart:SummaryColumnRight  
+	// Instantiating a Workbook object and opening the Excel file through the path
+	intrusive_ptr<Workbook> workbook = new Workbook(dataDir_RowsAndColumns->StringAppend(new String("Book1.xlsx")));
+
+	// Accessing the first worksheet in the Excel file
+	intrusive_ptr<Worksheet> worksheet = workbook->GetWorksheets()->GetIndexObject(0);
+
+	// Grouping first six rows and first three columns
+	worksheet->GetCells()->GroupRows(0, 5, true);
+	worksheet->GetCells()->GroupColumns(0, 2, true);
+
+	worksheet->GetOutline()->SummaryColumnRight = true;
+
+	// Save the Excel file.
+	workbook->Save(dataDir_RowsAndColumns->StringAppend(new String("SummaryColumnRight_out_.xls")));
+	// ExEnd:SummaryColumnRight  
+}
+void UngroupRowsAndColumns()
+{
+	// ExStart:UngroupRowsAndColumns  
+	// Creating a file stream containing the Excel file to be opened
+	intrusive_ptr<FileStream> fstream = new FileStream(dataDir_RowsAndColumns->StringAppend(new String("Book1.xlsx")), FileMode_Open);
+
+	// Instantiating a Workbook object and opening the Excel file through the file stream
+	intrusive_ptr<Workbook> workbook = new Workbook(fstream);
+
+	// Accessing the first worksheet in the Excel file
+	intrusive_ptr<Worksheet> worksheet = workbook->GetWorksheets()->GetIndexObject(0);
+
+	// UnGrouping first six rows and first three columns
+	worksheet->GetCells()->UngroupRows(0, 5);
+	worksheet->GetCells()->UngroupColumns(0, 2);
+
+	// Save the Excel file.
+	workbook->Save(dataDir_RowsAndColumns->StringAppend(new String("UngroupRowsAndColumns_out_.xls")));
+	// Closing the file stream to free all resources
+	fstream->Close();
+	// ExEnd:UngroupRowsAndColumns  
+}
+void InsertRow()
+{
+	// ExStart:InsertRow  
+	// Creating a file stream containing the Excel file to be opened
+	intrusive_ptr<FileStream> fstream = new FileStream(dataDir_RowsAndColumns->StringAppend(new String("Book1.xlsx")), FileMode_Open);
+
+	// Instantiating a Workbook object and opening the Excel file through the file stream
+	intrusive_ptr<Workbook> workbook = new Workbook(fstream);
+
+	// Accessing the first worksheet in the Excel file
+	intrusive_ptr<Worksheet> worksheet = workbook->GetWorksheets()->GetIndexObject(0);
+
+	// Inserting a row into the worksheet at 3rd position
+	worksheet->GetCells()->InsertRow(2);
+
+	// Save the Excel file.
+	workbook->Save(dataDir_RowsAndColumns->StringAppend(new String("InsertRow_out_.xls")));
+	// Closing the file stream to free all resources
+	fstream->Close();
+	// ExEnd:InsertRow  
+}
+void InsertMultipleRows()
+{
+	// ExStart:InsertMultipleRows  
+	// Creating a file stream containing the Excel file to be opened
+	intrusive_ptr<FileStream> fstream = new FileStream(dataDir_RowsAndColumns->StringAppend(new String("Book1.xlsx")), FileMode_Open);
+
+	// Instantiating a Workbook object and opening the Excel file through the file stream
+	intrusive_ptr<Workbook> workbook = new Workbook(fstream);
+
+	// Accessing the first worksheet in the Excel file
+	intrusive_ptr<Worksheet> worksheet = workbook->GetWorksheets()->GetIndexObject(0);
+
+	// Inserting 10 rows into the worksheet starting from 3rd row
+	worksheet->GetCells()->InsertRows(2, 10);
+
+	// Save the Excel file.
+	workbook->Save(dataDir_RowsAndColumns->StringAppend(new String("InsertMultipleRows_out_.xls")));
+	// Closing the file stream to free all resources
+	fstream->Close();
+	// ExEnd:InsertMultipleRows  
+}
+void DeleteMultipleRows()
+{
+	// ExStart:DeleteMultipleRows  
+	// Creating a file stream containing the Excel file to be opened
+	intrusive_ptr<FileStream> fstream = new FileStream(dataDir_RowsAndColumns->StringAppend(new String("Book1.xlsx")), FileMode_OpenOrCreate);
+
+	// Instantiating a Workbook object and opening the Excel file through the file stream
+	intrusive_ptr<Workbook> workbook = new Workbook(fstream);
+
+	// Accessing the first worksheet in the Excel file
+	intrusive_ptr<Worksheet> worksheet = workbook->GetWorksheets()->GetIndexObject(0);
+
+	// Deleting 10 rows from the worksheet starting from 3rd row
+	worksheet->GetCells()->DeleteRows(2, 10);
+
+	// Save the Excel file.
+	workbook->Save(dataDir_RowsAndColumns->StringAppend(new String("DeleteMultipleRows_out_.xls")));
+	// Closing the file stream to free all resources
+	fstream->Close();
+	// ExEnd:DeleteMultipleRows  
+}
+void InsertColumn()
+{
+	// ExStart:InsertColumn  
+	// Creating a file stream containing the Excel file to be opened
+	intrusive_ptr<FileStream> fstream = new FileStream(dataDir_RowsAndColumns->StringAppend(new String("Book1.xlsx")), FileMode_Open);
+
+	// Instantiating a Workbook object and opening the Excel file through the file stream
+	intrusive_ptr<Workbook> workbook = new Workbook(fstream);
+
+	// Accessing the first worksheet in the Excel file
+	intrusive_ptr<Worksheet> worksheet = workbook->GetWorksheets()->GetIndexObject(0);
+
+	// Inserting a column into the worksheet at 2nd position
+	worksheet->GetCells()->InsertColumn(1);
+
+	// Save the Excel file.
+	workbook->Save(dataDir_RowsAndColumns->StringAppend(new String("InsertColumn_out_.xls")));
+	// Closing the file stream to free all resources
+	fstream->Close();
+	// ExEnd:InsertColumn  
+}
+void DeleteColumn()
+{
+	// ExStart:DeleteColumn  
+	// Creating a file stream containing the Excel file to be opened
+	intrusive_ptr<FileStream> fstream = new FileStream(dataDir_RowsAndColumns->StringAppend(new String("Book1.xlsx")), FileMode_Open);
+
+	// Instantiating a Workbook object and opening the Excel file through the file stream
+	intrusive_ptr<Workbook> workbook = new Workbook(fstream);
+
+	// Accessing the first worksheet in the Excel file
+	intrusive_ptr<Worksheet> worksheet = workbook->GetWorksheets()->GetIndexObject(0);
+
+	// Deleting a column from the worksheet at 2nd position
+	worksheet->GetCells()->DeleteColumn(4);
+
+	// Save the Excel file.
+	workbook->Save(dataDir_RowsAndColumns->StringAppend(new String("DeleteColumn_out_.xls")));
+	// Closing the file stream to free all resources
+	fstream->Close();
+	// ExEnd:DeleteColumn  
+}
+#pragma endregion
+
 #pragma region "Worksheets"
 void CopyWorksheetsWithinWorkbook()
 {
@@ -709,6 +1028,28 @@ int main(int argc, char** argv)
 	//FreezePanes();
 	//SplitPanes();
 	//RemovingPanes();
+
+	//// =====================================================
+	//// =====================================================
+	//// Rows and Columns
+	//// =====================================================
+	//// =====================================================
+
+	//SetRowHeight();
+	//SettingAllRowsHeight();
+	//SettingColumWidth();
+	//SettingWidthOfAllColumns();
+	//CopyRows();
+	//CopyColumns();
+	//GroupRowsColumns();
+	//SummaryRowBelow();
+	//SummaryColumnRight();
+	//UngroupRowsAndColumns();
+	//InsertRow();
+	//InsertMultipleRows();
+	//DeleteMultipleRows();
+	//InsertColumn();
+	//DeleteColumn();
 		
 	// Stop before exiting
 	printf("\n\nProgram Finished. Press any key to exit....");
