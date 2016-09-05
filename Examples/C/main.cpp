@@ -1,4 +1,4 @@
-/* The unique head file needed to be included */
+ï»¿/* The unique head file needed to be included */
 #include "Aspose.Cells.h"
 #include <iostream>
 using namespace std;
@@ -18,12 +18,12 @@ static StringPtr dataDir_LoadingAndSaving = sourcePath->StringAppend(new String(
 */
 
 /*
-	To avoid memory leak£¬we import smart pointer "intrusive_ptr" of boost,
+	To avoid memory leakÂ£Â¬we import smart pointer "intrusive_ptr" of boost,
 	for example,if allocate memory for workbook, we use "intrusive_ptr<Workbook> workbook = new Workbook()"
 	rather than  "Workbook *workbook = new Workbook()", if so, we no longer need use "delete".
 */
 
-// Loading and Saving
+#pragma region "Loading and Saving"
 void OpenFileUsingPath()
 {
 	// ExStart:OpenFileUsingPath
@@ -65,6 +65,123 @@ void OpenVisibleSheetOnly()
 	printf("\nVisible sheet loaded successfully!");	
 	// ExEnd:OpenVisibleSheetOnly
 }
+void SavingToStream()
+{
+	// ExStart:SavingToStream
+	// Instantiate a Workbook object and open an Excel file using its file path
+	intrusive_ptr<Workbook>  workbook = new Workbook(dataDir_LoadingAndSaving->StringAppend(new String("Book1.xlsx")));
+
+	intrusive_ptr<FileStream> stream = new FileStream(dataDir_LoadingAndSaving->StringAppend(new String("SavingToStream_out_.xlsx")), FileMode_CreateNew);
+	
+	workbook->Save(stream, new XlsSaveOptions(SaveFormat_Xlsx));
+	stream->Close();
+	printf("\nFile saved successfully to a stream!");
+	// ExEnd:SavingToStream
+}
+void SavingToSomeLocation()
+{
+	// ExStart:SavingToSomeLocation
+	// Instantiate a Workbook object and open an Excel file using its file path
+	intrusive_ptr<Workbook>  workbook = new Workbook(dataDir_LoadingAndSaving->StringAppend(new String("Book1.xlsx")));
+
+	// Save in Excel 97 ï¿½ 2003 format
+	workbook->Save(dataDir_LoadingAndSaving->StringAppend(new String("SavingToSomeLocation.xls")));
+	// OR
+	workbook->Save(dataDir_LoadingAndSaving->StringAppend(new String("SavingToSomeLocation.xls")), new XlsSaveOptions(SaveFormat_Excel97To2003));
+
+	// Save in Excel2007 xlsx format
+	workbook->Save(dataDir_LoadingAndSaving->StringAppend(new String("SavingToSomeLocation.xlsx")), SaveFormat_Xlsx);
+
+	// Save in Excel2007 xlsb format
+	workbook->Save(dataDir_LoadingAndSaving->StringAppend(new String("SavingToSomeLocation.xlsb")), SaveFormat_Xlsb);
+
+	// Save in ODS format
+	workbook->Save(dataDir_LoadingAndSaving->StringAppend(new String("SavingToSomeLocation.ods")), SaveFormat_ODS);
+
+	// Save in Pdf format
+	workbook->Save(dataDir_LoadingAndSaving->StringAppend(new String("SavingToSomeLocation.pdf")), SaveFormat_Pdf);
+
+	// Save in Html format
+	workbook->Save(dataDir_LoadingAndSaving->StringAppend(new String("SavingToSomeLocation.html")), SaveFormat_Html);
+
+	// Save in SpreadsheetML format
+	workbook->Save(dataDir_LoadingAndSaving->StringAppend(new String("SavingToSomeLocation.xml")), SaveFormat_SpreadsheetML);
+	// ExEnd:SavingToSomeLocation
+}
+#pragma endregion
+
+#pragma region "Worksheets"
+void CopyWorksheetsWithinWorkbook()
+{
+	// ExStart:CopyWorksheetsWithinWorkbook
+	// Instantiate a Workbook object and open an Excel file
+	intrusive_ptr<Workbook>  workbook = new Workbook(dataDir_LoadingAndSaving->StringAppend(new String("Book1.xlsx")));
+
+	// Create a Worksheets object with reference to the sheets of the Workbook.
+	intrusive_ptr<WorksheetCollection> sheets = workbook->GetWorksheets();
+
+	// Copy data to a new sheet from an existing sheet within the Workbook.
+	sheets->AddCopy(new String("Sheet1"));
+
+	// Save the Excel file.
+	workbook->Save(dataDir_LoadingAndSaving->StringAppend(new String("CopyWorksheetsWithinWorkbook.xls")));
+	printf("\nWorksheet copied successfully with in a workbook!");
+	// ExEnd:CopyWorksheetsWithinWorkbook
+}
+void MoveWorksheetsWithinWorkbook()
+{
+	// ExStart:MoveWorksheetsWithinWorkbook
+	// Instantiate a Workbook object and open an Excel file
+	intrusive_ptr<Workbook>  workbook = new Workbook(dataDir_LoadingAndSaving->StringAppend(new String("Book1.xlsx")));
+
+	// Create a Worksheets object with reference to the sheets of the Workbook and get the first worksheet.
+	intrusive_ptr<Worksheet> worksheet = workbook->GetWorksheets()->GetIndexObject(0);
+
+	// Move the first sheet to the third position in the workbook.
+	worksheet->MoveTo(2);
+
+	// Save the Excel file.
+	workbook->Save(dataDir_LoadingAndSaving->StringAppend(new String("MoveWorksheetsWithinWorkbook.xls")));
+	printf("\nWorksheet moved successfully with in a workbook!");
+	// ExEnd:MoveWorksheetsWithinWorkbook
+}
+void AddingWorksheetsToNewExcelFile()
+{
+	// ExStart:AddingWorksheetsToNewExcelFile
+	// Instantiate a Workbook object
+	intrusive_ptr<Workbook>  workbook = new Workbook();
+
+	// Adding a new worksheet to the Workbook object
+	int i = workbook->GetWorksheets()->Add();
+
+	// Obtaining the reference of the newly added worksheet by passing its sheet index
+	intrusive_ptr<Worksheet> worksheet = workbook->GetWorksheets()->GetIndexObject(i);
+
+	// Setting the name of the newly added worksheet
+	worksheet->SetName(new String("My Worksheet"));
+
+	// Save the Excel file.
+	workbook->Save(dataDir_LoadingAndSaving->StringAppend(new String("AddingWorksheetsToNewExcelFile.xls")));
+	printf("\nWorksheet moved successfully with in a workbook!");
+	// ExEnd:AddingWorksheetsToNewExcelFile
+}
+
+void AccessingWorksheetsUsingIndex()
+{
+	// ExStart:AccessingWorksheetsUsingIndex
+	// Creating a file stream containing the Excel file to be opened
+	intrusive_ptr<FileStream> fstream = new FileStream(dataDir_LoadingAndSaving->StringAppend(new String("Book1.xlsx")), FileMode_Open);
+
+	// Instantiating a Workbook object and opening the Excel file through the file stream
+	intrusive_ptr<Workbook> workbook = new Workbook(fstream);
+
+	// Accessing a worksheet using its index and Get cell by name from worksheet cells collection
+	intrusive_ptr<Cell> cell = workbook->GetWorksheets()->GetIndexObject(0)->GetCells()->GetCellByName(new String("A1"));	
+	// ExEnd:AccessingWorksheetsUsingIndex
+}
+#pragma endregion
+
+#pragma region "General"
 void OpenSaveTest()
 {
 	// ExStart:OpenSaveTest
@@ -368,6 +485,8 @@ void ListObjectTest()
 	 }
 	 // ExEnd:CustomInProperties
  }
+#pragma endregion
+
 int main(int argc, char** argv)
 {	
 	
@@ -382,10 +501,27 @@ int main(int argc, char** argv)
 
 	//OpenFileUsingPath();
 	//OpenFileUsingStream();
-	OpenVisibleSheetOnly();
+	//OpenVisibleSheetOnly();
+	//SavingToStream();
+	//SavingToSomeLocation();
 
-	//CustomInProperties();
-	//OpenSaveTest();
+	//// =====================================================
+	//// =====================================================
+	//// Worksheets
+	//// =====================================================
+	//// =====================================================
+
+	//CopyWorksheetsWithinWorkbook();
+	//MoveWorksheetsWithinWorkbook();
+	//AddingWorksheetsToNewExcelFile();
+	AccessingWorksheetsUsingIndex();
+	
+	//// =====================================================
+	//// =====================================================
+	//// General
+	//// =====================================================
+	//// =====================================================
+
 	//Font_Style_Test1();
 	//Font_Style_Test2();
 	//Font_Style_Test3();
