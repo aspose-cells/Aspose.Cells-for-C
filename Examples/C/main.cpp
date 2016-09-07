@@ -10,6 +10,7 @@ static StringPtr dataDir_LoadingAndSaving = sourcePath->StringAppend(new String(
 static StringPtr dataDir_Worksheets = sourcePath->StringAppend(new String("Worksheets\\"));
 static StringPtr dataDir_RowsAndColumns = sourcePath->StringAppend(new String("Rows-and-Columns\\"));
 static StringPtr dataDir_Data = sourcePath->StringAppend(new String("Data\\"));
+static StringPtr dataDir_PivotTables = sourcePath->StringAppend(new String("PivotTables\\"));
 
  #define EXPECT_TRUE(condition) \
 		if (condition) printf("--%s,line:%d->Ok--\n", __FUNCTION__, __LINE__); \
@@ -1131,7 +1132,6 @@ void DataSorting()
 	workbook->Save(dataDir_Data->StringAppend(new String("DataSorting_out_.xlsx")));
 	// ExEnd:DataSorting
 }
-
 void TracingPrecedents()
 {
 	// ExStart:TracingPrecedents
@@ -1170,7 +1170,6 @@ void TracingDependents()
 	cell->GetDependents(true);
 	// ExEnd:TracingDependents
 }
-
 void AddLinkToURL()
 {
 	// ExStart:AddLinkToURL
@@ -1227,6 +1226,231 @@ void AddLinkToExternalFile()
 }
 #pragma endregion
 
+#pragma region "Pivot Tables"
+void SettingAutoFormatType()
+{
+	// ExStart:SettingAutoFormatType
+	// Instantiate a Workbook object and open an Excel file
+	intrusive_ptr<Workbook>  workbook = new Workbook(dataDir_PivotTables->StringAppend(new String("Book1.xls")));
+
+	// Accessing the first worksheet in the Excel file
+	intrusive_ptr<Worksheet> worksheet = workbook->GetWorksheets()->GetIndexObject(0);
+
+	// Accessing the PivotTable
+	intrusive_ptr<PivotTable> pivotTable = worksheet->GetPivotTables()->GetIndexObject(0);
+
+	// Setting the PivotTable report is automatically formatted
+	pivotTable->SetIsAutoFormat(true);
+
+	// Setting the PivotTable atuoformat type.
+	pivotTable->SetAutoFormatType(PivotTableAutoFormatType_Report5);
+
+	// Saving the Excel file
+	workbook->Save(dataDir_PivotTables->StringAppend(new String("SettingAutoFormatType_out_.xlsx")));
+	// ExEnd:SettingAutoFormatType
+}
+void SettingFormatOptions()
+{
+	// ExStart:SettingFormatOptions
+	// Instantiate a Workbook object and open an Excel file
+	intrusive_ptr<Workbook>  workbook = new Workbook(dataDir_PivotTables->StringAppend(new String("Book1.xls")));
+
+	// Accessing the first worksheet in the Excel file
+	intrusive_ptr<Worksheet> worksheet = workbook->GetWorksheets()->GetIndexObject(0);
+
+	// Accessing the PivotTable
+	intrusive_ptr<PivotTable> pivotTable = worksheet->GetPivotTables()->GetIndexObject(0);
+
+	// Setting the PivotTable report shows grand totals for rows.
+	pivotTable->SetRowGrand(true);
+
+	// Setting the PivotTable report shows grand totals for columns.
+	pivotTable->SetColumnGrand(true);
+
+	// Setting the PivotTable report displays a custom string in cells that contain null values.
+	pivotTable->SetDisplayNullString(true);
+	pivotTable->SetNullString(new String("null"));
+
+	// Setting the PivotTable report's layout
+	pivotTable->SetPageFieldOrder(PrintOrderType_DownThenOver);
+
+	// Saving the Excel file
+	workbook->Save(dataDir_PivotTables->StringAppend(new String("SettingFormatOptions_out_.xlsx")));
+	// ExEnd:SettingFormatOptions
+}
+void FormattingLookAndFeel()
+{
+	// ExStart:FormattingLookAndFeel
+	// Instantiate a Workbook object and open an Excel file
+	intrusive_ptr<Workbook>  workbook = new Workbook(dataDir_PivotTables->StringAppend(new String("Book1.xls")));
+
+	// Accessing the first worksheet in the Excel file
+	intrusive_ptr<Worksheet> worksheet = workbook->GetWorksheets()->GetIndexObject(0);
+
+	// Accessing the PivotTable
+	intrusive_ptr<PivotTable> pivot = worksheet->GetPivotTables()->GetIndexObject(0);
+
+	pivot->SetPivotTableStyleType(PivotTableStyleType_PivotTableStyleDark1);
+
+	intrusive_ptr<Style> style = workbook->CreateStyle();
+	style->GetFont()->SetName(new String("Arial Black"));
+	style->SetForegroundColor(ColorTranslator::FromHtml(new String("blue")));
+	style->SetPattern(BackgroundType_Solid);
+
+	pivot->FormatAll(style);
+
+	// Saving the Excel file
+	workbook->Save(dataDir_PivotTables->StringAppend(new String("FormattingLookAndFeel_out_.xlsx")));
+	// ExEnd:FormattingLookAndFeel
+}
+void SettingFieldsFormat()
+{
+	// ExStart:SettingFieldsFormat
+	// Instantiate a Workbook object and open an Excel file
+	intrusive_ptr<Workbook>  workbook = new Workbook(dataDir_PivotTables->StringAppend(new String("Book1.xls")));
+
+	// Accessing the first worksheet in the Excel file
+	intrusive_ptr<Worksheet> worksheet = workbook->GetWorksheets()->GetIndexObject(0);
+
+	// Accessing the PivotTable
+	intrusive_ptr<PivotTable> pivotTable = worksheet->GetPivotTables()->GetIndexObject(0);
+
+	// Setting the PivotTable report shows grand totals for rows.
+	pivotTable->SetRowGrand(true);
+
+	// Accessing the row fields.
+	intrusive_ptr<PivotFieldCollection> pivotFields = pivotTable->GetRowFields();
+
+	// Accessing the first row field in the row fields.
+	intrusive_ptr<PivotField> pivotField = pivotFields->GetIndexObject(0);
+
+	// Setting Subtotals.
+	pivotField->SetSubtotals(PivotFieldSubtotalType_Sum, true);
+	pivotField->SetSubtotals(PivotFieldSubtotalType_Count, true);
+
+	// Setting the field auto sort.
+	pivotField->SetIsAutoSort(true);
+
+	// Setting the field auto sort ascend.
+	pivotField->SetIsAscendSort(true);
+
+	// Setting the field auto sort using the field itself.
+	pivotField->SetAutoSortField(-5);
+
+	// Setting the field auto show.
+	pivotField->SetIsAutoShow(true);
+
+	// Setting the field auto show ascend.
+	pivotField->SetIsAscendShow(false);
+
+	// Setting the auto show using field(data field).
+	pivotField->SetAutoShowField(0);
+
+	// Saving the Excel file
+	workbook->Save(dataDir_PivotTables->StringAppend(new String("SettingFieldsFormat_out_.xlsx")));
+	// ExEnd:SettingFieldsFormat
+}
+void SettingDataFieldsFormat()
+{
+	// ExStart:SettingDataFieldsFormat
+	// Instantiate a Workbook object and open an Excel file
+	intrusive_ptr<Workbook>  workbook = new Workbook(dataDir_PivotTables->StringAppend(new String("Book1.xls")));
+
+	// Accessing the first worksheet in the Excel file
+	intrusive_ptr<Worksheet> worksheet = workbook->GetWorksheets()->GetIndexObject(0);
+
+	// Accessing the PivotTable
+	intrusive_ptr<PivotTable> pivotTable = worksheet->GetPivotTables()->GetIndexObject(0);
+	
+	// Accessing the data fields.
+	intrusive_ptr<PivotFieldCollection> pivotFields = pivotTable->GetDataFields();
+
+	// Accessing the first data field in the data fields.
+	intrusive_ptr<PivotField> pivotField = pivotFields->GetIndexObject(0);
+
+	// Setting data display format
+	pivotField->SetDataDisplayFormat(PivotFieldDataDisplayFormat_PercentageOf);
+
+	// Setting the base field.
+	pivotField->SetBaseFieldIndex(1);
+
+	// Setting the base item.
+	pivotField->SetBaseItemPosition(PivotItemPosition_Next);
+
+	// Setting number format
+	pivotField->SetNumber(10);
+
+	// Saving the Excel file
+	workbook->Save(dataDir_PivotTables->StringAppend(new String("SettingDataFieldsFormat_out_.xlsx")));
+	// ExEnd:SettingDataFieldsFormat
+}
+void ClearPivotFields()
+{
+	// ExStart:ClearPivotFields
+	// Instantiate a Workbook object and open an Excel file
+	intrusive_ptr<Workbook>  workbook = new Workbook(dataDir_PivotTables->StringAppend(new String("Book1.xls")));
+
+	// Accessing the first worksheet in the Excel file
+	intrusive_ptr<Worksheet> worksheet = workbook->GetWorksheets()->GetIndexObject(0);
+
+	// Accessing the PivotTable
+	intrusive_ptr<PivotTable> pivotTable = worksheet->GetPivotTables()->GetIndexObject(0);
+
+	// Accessing the data fields.
+	intrusive_ptr<PivotFieldCollection> pivotFields = pivotTable->GetDataFields();
+
+	// Accessing the first data field in the data fields.
+	intrusive_ptr<PivotField> pivotField = pivotFields->GetIndexObject(0);
+
+	// Clear all the data fields
+	pivotTable->GetDataFields()->Clear();
+
+	// Add new data field
+	pivotTable->AddFieldToArea(PivotFieldType_Data, new String("Betrag Netto FW"));
+
+	// Set the refresh data flag on
+	pivotTable->SetRefreshDataFlag(false);
+
+	// Refresh and calculate the pivot table data
+	pivotTable->RefreshData();
+	pivotTable->CalculateData();
+
+	// Saving the Excel file
+	workbook->Save(dataDir_PivotTables->StringAppend(new String("ClearPivotFields_out_.xlsx")));
+	// ExEnd:ClearPivotFields
+}
+void ApplyingConsolidationFunctionToDataFields()
+{
+	// ExStart:ApplyingConsolidationFunctionToDataFields
+	// Instantiate a Workbook object and open an Excel file
+	intrusive_ptr<Workbook>  workbook = new Workbook(dataDir_PivotTables->StringAppend(new String("Book.xlsx")));
+
+	// Accessing the first worksheet in the Excel file
+	intrusive_ptr<Worksheet> worksheet = workbook->GetWorksheets()->GetIndexObject(0);
+
+	// Accessing the PivotTable
+	intrusive_ptr<PivotTable> pivotTable = worksheet->GetPivotTables()->GetIndexObject(0);
+
+	// Accessing the data fields.
+	intrusive_ptr<PivotFieldCollection> pivotFields = pivotTable->GetDataFields();
+
+	// Accessing the first data field in the data fields.
+	intrusive_ptr<PivotField> pivotField = pivotFields->GetIndexObject(0);
+
+	// Apply Average consolidation function to first data field
+	pivotTable->GetDataFields()->GetIndexObject(0)->SetFunction(ConsolidationFunction_Average);
+
+	// Apply DistinctCount consolidation function to second data field
+	pivotTable->GetDataFields()->GetIndexObject(1)->SetFunction(ConsolidationFunction_DistinctCount);
+
+	// Calculate the data to make changes affect
+	pivotTable->CalculateData();
+
+	// Saving the Excel file
+	workbook->Save(dataDir_PivotTables->StringAppend(new String("ApplyingConsolidationFunctionToDataFields_out_.xlsx")));
+	// ExEnd:ApplyingConsolidationFunctionToDataFields
+}
+#pragma endregion
 int main(int argc, char** argv)
 {	
 	
@@ -1322,6 +1546,20 @@ int main(int argc, char** argv)
 	//AddLinkToCell();
 	//AddLinkToExternalFile();	
 	//TracingDependents();
+
+	//// =====================================================
+	//// =====================================================
+	//// Pivot Tables
+	//// =====================================================
+	//// =====================================================
+
+	//SettingAutoFormatType();
+	//SettingFormatOptions();
+	//FormattingLookAndFeel();
+	//SettingFieldsFormat();
+	//SettingDataFieldsFormat();
+	//ClearPivotFields();
+	ApplyingConsolidationFunctionToDataFields();
 		
 	// Stop before exiting
 	printf("\n\nProgram Finished. Press any key to exit....");
