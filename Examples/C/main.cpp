@@ -36,7 +36,6 @@ void OpenSaveTest()
 	EXPECT_TRUE(workbook&&worksheet);
 	// ExEnd:OpenSaveTest
 }
-
 void Font_Style_Test1()
 {
 	// ExStart:Font_Style_Test1
@@ -67,7 +66,6 @@ void Font_Style_Test2()
 	EXPECT_TRUE(cell->GetStringValue()->Equals((StringPtr) new String("6:42")));
 	// ExEnd:Font_Style_Test2
 }
-
 void  Font_Style_Test3()
 {
 	// ExStart:Font_Style_Test3
@@ -98,7 +96,6 @@ void  Font_Style_Test3()
 	}
 	// ExEnd:Font_Style_Test3
 }
-
 void AutofilterTest()
 {
 	// ExStart:AutofilterTest
@@ -113,7 +110,6 @@ void AutofilterTest()
 	workbook->Save(sourcePath->StringAppend(new String("aa_filtre_out_.xls")));
 	// ExEnd:AutofilterTest
 }
-
 void  ConditionalFormatTest1()
 {
 	// ExStart:ConditionalFormatTest1
@@ -152,7 +148,6 @@ void  ConditionalFormatTest2()
 	EXPECT_TRUE(cfs->GetIndexObject(0)->GetCellArea(0)->EndRow == 3);
 	// ExEnd:ConditionalFormatTest2
 }
-
 void HyperlinkTest()
 {
 	// ExStart:HyperlinkTest
@@ -202,8 +197,6 @@ void PageSetupTest()
 	EXPECT_TRUE(pagesetup->GetOrder() == PrintOrderType_OverThenDown);
 	// ExEnd:PageSetupTest
 }
-
-
 void PivotTableDataTest()
 {
 	// ExStart:PivotTableDataTest
@@ -977,7 +970,6 @@ void RemovingPanes()
 #pragma region "Data"
 void UsingCellName()
 {
-
 	// ExStart:UsingCellName
 	// Instantiate a Workbook object and open an Excel file
 	intrusive_ptr<Workbook>  workbook = new Workbook(dataDir_Data->StringAppend(new String("Book1.xlsx")));
@@ -994,7 +986,6 @@ void UsingCellName()
 }
 void UsingRowAndColumnIndex()
 {
-
 	// ExStart:UsingRowAndColumnIndex
 	// Instantiate a Workbook object and open an Excel file
 	intrusive_ptr<Workbook>  workbook = new Workbook(dataDir_Data->StringAppend(new String("Book1.xlsx")));
@@ -1028,7 +1019,6 @@ void MaximumDisplayRange()
 }
 void AddingDataToCells()
 {
-
 	// ExStart:AddingDataToCells
 	// Instantiate a Workbook object
 	intrusive_ptr<Workbook>  workbook = new Workbook();
@@ -1059,7 +1049,6 @@ void AddingDataToCells()
 }
 void RetrievingDataFromCells()
 {
-
 	// ExStart:RetrievingDataFromCells
 	// Instantiate a Workbook object and load excel file from path
 	intrusive_ptr<Workbook>  workbook = new Workbook(dataDir_Data->StringAppend(new String("Book1.xlsx")));
@@ -1102,6 +1091,139 @@ void RetrievingDataFromCells()
 		}
 	}	
 	// ExEnd:RetrievingDataFromCells
+}
+void DataSorting()
+{
+	// ExStart:DataSorting
+	// Instantiate a Workbook object and open an Excel file
+	intrusive_ptr<Workbook>  workbook = new Workbook(dataDir_Data->StringAppend(new String("Book1.xlsx")));
+
+	// Get the workbook datasorter object.
+	intrusive_ptr<DataSorter> sorter = workbook->GetDataSorter();
+
+	// Set the first order for datasorter object.
+	sorter->SetOrder1(SortOrder_Descending);
+
+	// Define the first key.
+	sorter->SetKey1(0);
+
+	// Set the second order for datasorter object.
+	sorter->SetOrder2(SortOrder_Ascending);
+
+	// Define the second key.
+	sorter->SetKey2(1);
+
+	// Create a cells area (range).
+	intrusive_ptr<CellArea> ca = new CellArea();
+
+	// Specify the start row, start column, last row and last column index.
+	ca->StartRow = 0;
+	ca->StartColumn = 0;
+	ca->EndRow = 13;
+	ca->EndColumn = 1;
+
+	// Accessing the first worksheet in the Excel file
+	intrusive_ptr<Worksheet> worksheet = workbook->GetWorksheets()->GetIndexObject(0);
+
+	// Sort data in the specified data range (A1:B14)
+	sorter->Sort(worksheet->GetCells(), ca);
+
+	workbook->Save(dataDir_Data->StringAppend(new String("DataSorting_out_.xlsx")));
+	// ExEnd:DataSorting
+}
+
+void TracingPrecedents()
+{
+	// ExStart:TracingPrecedents
+	// Instantiate a Workbook object and open an Excel file
+	intrusive_ptr<Workbook>  workbook = new Workbook(dataDir_Data->StringAppend(new String("Book1.xlsx")));
+
+	// Accessing the first worksheet in the Excel file
+	intrusive_ptr<Worksheet> worksheet = workbook->GetWorksheets()->GetIndexObject(0);
+
+	// Get cell by name from sheet cells collection
+	intrusive_ptr<Cell> cell = worksheet->GetCells()->GetCellByName(new String("B4"));
+
+	intrusive_ptr<ReferredAreaCollection> ret = cell->GetPrecedents();
+
+	intrusive_ptr<ReferredArea> area = new ReferredArea();
+
+	area->GetSheetName();
+	area->GetStartRow();
+	area->GetStartColumn();
+	area->GetEndRow();
+	area->GetEndColumn();
+	// ExEnd:TracingPrecedents
+}
+void TracingDependents()
+{
+	// ExStart:TracingDependents
+	// Instantiate a Workbook object and open an Excel file
+	intrusive_ptr<Workbook>  workbook = new Workbook(dataDir_Data->StringAppend(new String("Book1.xlsx")));
+
+	// Accessing the first worksheet in the Excel file
+	intrusive_ptr<Worksheet> worksheet = workbook->GetWorksheets()->GetIndexObject(0);
+
+	// Get cell by name from sheet cells collection
+	intrusive_ptr<Cell> cell = worksheet->GetCells()->GetCellByName(new String("B2"));
+
+	cell->GetDependents(true);
+	// ExEnd:TracingDependents
+}
+
+void AddLinkToURL()
+{
+	// ExStart:AddLinkToURL
+	// Instantiate a Workbook object
+	intrusive_ptr<Workbook> workbook = new Workbook();
+
+	// Accessing the first worksheet in the Excel file
+	intrusive_ptr<Worksheet> worksheet = workbook->GetWorksheets()->GetIndexObject(0);
+
+	// Adding a hyperlink to a URL at "A1" cell
+	worksheet->GetHyperlinks()->Add(new String("A1"), 1, 1, new String("http:// Www.aspose.com"));
+	
+	// Saving the Excel file
+	workbook->Save(dataDir_Data->StringAppend(new String("AddLinkToURL_out_.xlsx")));
+	// ExEnd:AddLinkToURL
+}
+void AddLinkToCell()
+{
+	// ExStart:AddLinkToCell
+	// Instantiate a Workbook object
+	intrusive_ptr<Workbook> workbook = new Workbook();
+
+	// Adding a new worksheet to the Workbook object
+	workbook->GetWorksheets()->Add();
+
+	// Accessing the first worksheet in the Excel file
+	intrusive_ptr<Worksheet> worksheet = workbook->GetWorksheets()->GetIndexObject(0);
+
+	// Adding an internal hyperlink to the "B9" cell of the other worksheet "Sheet2" in the same Excel file
+	worksheet->GetHyperlinks()->Add(new String("B3"), 1, 1, new String("Sheet2!B9"));
+
+	// Saving the Excel file
+	workbook->Save(dataDir_Data->StringAppend(new String("AddLinkToCell_out_.xlsx")));
+	// ExEnd:AddLinkToCell
+}
+void AddLinkToExternalFile()
+{
+	// ExStart:AddLinkToExternalFile
+	// Instantiate a Workbook object
+	intrusive_ptr<Workbook> workbook = new Workbook();
+
+	// Adding a new worksheet to the Workbook object
+	int i =  workbook->GetWorksheets()->Add();
+
+	// Obtaining the reference of the newly added worksheet by passing its sheet index
+	intrusive_ptr<Worksheet> worksheet = workbook->GetWorksheets()->GetIndexObject(i);
+
+	// Adding an internal hyperlink to the "B9" cell of the other worksheet "Sheet2" in the same Excel file
+	worksheet->GetHyperlinks()->Add(new String("A5"), 1, 1, dataDir_Data->StringAppend(new String("Book1.xlsx")));
+
+	// Saving the Excel file
+	workbook->Save(dataDir_Data->StringAppend(new String("AddLinkToExternalFile_out_.xlsx")));
+	// ExEnd:AddLinkToExternalFile
 }
 #pragma endregion
 
@@ -1195,6 +1317,11 @@ int main(int argc, char** argv)
 	//MaximumDisplayRange();
 	//AddingDataToCells();
 	//RetrievingDataFromCells();
+	//DataSorting();
+	//AddLinkToURL();
+	//AddLinkToCell();
+	//AddLinkToExternalFile();	
+	//TracingDependents();
 		
 	// Stop before exiting
 	printf("\n\nProgram Finished. Press any key to exit....");
