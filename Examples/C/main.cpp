@@ -9,6 +9,7 @@ static StringPtr sourcePath = new String("Data\\");
 static StringPtr dataDir_LoadingAndSaving = sourcePath->StringAppend(new String("Loading-and-Saving\\"));
 static StringPtr dataDir_Worksheets = sourcePath->StringAppend(new String("Worksheets\\"));
 static StringPtr dataDir_RowsAndColumns = sourcePath->StringAppend(new String("Rows-and-Columns\\"));
+static StringPtr dataDir_Data = sourcePath->StringAppend(new String("Data\\"));
 
  #define EXPECT_TRUE(condition) \
 		if (condition) printf("--%s,line:%d->Ok--\n", __FUNCTION__, __LINE__); \
@@ -412,7 +413,7 @@ void SavingToSomeLocation()
 	workbook->Save(dataDir_LoadingAndSaving->StringAppend(new String("SavingToSomeLocation_out_.html")), SaveFormat_Html);
 
 	// Save in SpreadsheetML format
-	workbook->Save(dataDir_LoadingAndSaving->StringAppend(new String("SavingToSomeLocation_out_.xml")), SaveFormat_SpreadsheetML);
+	workbook->Save(dataDir_LoadingAndSaving->StringAppend(new String("SavingToSomeLocation_out_.xml")), SaveFormat_SpreadsheetML); 
 	// ExEnd:SavingToSomeLocation
 }
 #pragma endregion
@@ -738,6 +739,7 @@ void DeleteColumn()
 #pragma region "Worksheets"
 void CopyWorksheetsWithinWorkbook()
 {
+	
 	// ExStart:CopyWorksheetsWithinWorkbook
 	// Instantiate a Workbook object and open an Excel file
 	intrusive_ptr<Workbook>  workbook = new Workbook(dataDir_Worksheets->StringAppend(new String("Book1.xlsx")));
@@ -972,6 +974,137 @@ void RemovingPanes()
 }
 #pragma endregion
 
+#pragma region "Data"
+void UsingCellName()
+{
+
+	// ExStart:UsingCellName
+	// Instantiate a Workbook object and open an Excel file
+	intrusive_ptr<Workbook>  workbook = new Workbook(dataDir_Data->StringAppend(new String("Book1.xlsx")));
+
+	// Accessing the first worksheet in the Excel file
+	intrusive_ptr<Worksheet> worksheet = workbook->GetWorksheets()->GetIndexObject(0);
+
+	// Get cells from sheet
+	intrusive_ptr<Cells> cells = worksheet->GetCells();
+
+	// Accessing a cell using its name
+	intrusive_ptr<Cell> cell = cells->GetCellByName(new String("A1"));	
+	// ExEnd:UsingCellName
+}
+void UsingRowAndColumnIndex()
+{
+
+	// ExStart:UsingRowAndColumnIndex
+	// Instantiate a Workbook object and open an Excel file
+	intrusive_ptr<Workbook>  workbook = new Workbook(dataDir_Data->StringAppend(new String("Book1.xlsx")));
+
+	// Accessing the first worksheet in the Excel file
+	intrusive_ptr<Worksheet> worksheet = workbook->GetWorksheets()->GetIndexObject(0);
+
+	// Get cells from sheet
+	intrusive_ptr<Cells> cells = worksheet->GetCells();
+
+	// Accessing a cell using its index
+	intrusive_ptr<Cell> cell = cells->GetCellByIndex(0);
+	// ExEnd:UsingRowAndColumnIndex
+}
+void MaximumDisplayRange()
+{
+
+	// ExStart:MaximumDisplayRange
+	// Instantiate a Workbook object and open an Excel file
+	intrusive_ptr<Workbook>  workbook = new Workbook(dataDir_Data->StringAppend(new String("Book1.xlsx")));
+
+	// Accessing the first worksheet in the Excel file
+	intrusive_ptr<Worksheet> worksheet = workbook->GetWorksheets()->GetIndexObject(0);
+
+	// Get cells from sheet
+	intrusive_ptr<Cells> cells = worksheet->GetCells();
+
+	// Access the Maximum Display Range
+	intrusive_ptr<Range> range = cells->GetMaxDisplayRange();
+	// ExEnd:MaximumDisplayRange
+}
+void AddingDataToCells()
+{
+
+	// ExStart:AddingDataToCells
+	// Instantiate a Workbook object
+	intrusive_ptr<Workbook>  workbook = new Workbook();
+
+	// Accessing the first worksheet in the Excel file
+	intrusive_ptr<Worksheet> worksheet = workbook->GetWorksheets()->GetIndexObject(0);	
+
+	// Adding a string value to the cell
+	worksheet->GetCells()->GetCellByName(new String("A1"))->PutValue(new String("Hello World"));
+
+	// Adding a double value to the cell
+	worksheet->GetCells()->GetCellByName(new String("A2"))->PutValue(20.5);
+
+	// Adding an integer  value to the cell
+	worksheet->GetCells()->GetCellByName(new String("A3"))->PutValue(15);
+
+	// Adding a boolean value to the cell
+	worksheet->GetCells()->GetCellByName(new String("A4"))->PutValue(true);
+
+	// Setting the display format of the date
+	intrusive_ptr<Style> style = worksheet->GetCells()->GetCellByName(new String("A5"))->GetStyle();
+	style->SetNumber(15);
+
+	worksheet->GetCells()->GetCellByName(new String("A5"))->SetStyle(style);
+
+	workbook->Save(dataDir_Data->StringAppend(new String("AddingDataToCells_out_.xlsx")));
+	// ExEnd:AddingDataToCells
+}
+void RetrievingDataFromCells()
+{
+
+	// ExStart:RetrievingDataFromCells
+	// Instantiate a Workbook object and load excel file from path
+	intrusive_ptr<Workbook>  workbook = new Workbook(dataDir_Data->StringAppend(new String("Book1.xlsx")));
+
+	// Accessing the first worksheet in the Excel file
+	intrusive_ptr<Worksheet> worksheet = workbook->GetWorksheets()->GetIndexObject(0);
+
+	// Get cells from sheet
+	intrusive_ptr<Cells> cells = worksheet->GetCells();
+
+	for (int i = 0; i < cells->GetCount(); i++)
+	{
+
+		intrusive_ptr<Cell> cell = cells->GetCellByIndex(i);
+
+		switch (cell->GetType())
+		{
+			// Evaluating the data type of the cell data for string value
+		case CellValueType_IsString:
+			cell->GetStringValue();
+			break;
+			// Evaluating the data type of the cell data for double value
+		case CellValueType_IsNumeric:
+			cell->GetDoubleValue();
+			break;
+			// Evaluating the data type of the cell data for boolean value
+		case CellValueType_IsBool:
+			cell->GetBoolValue();
+			break;
+			// Evaluating the data type of the cell data for date/time value
+		case CellValueType_IsDateTime:
+			cell->GetDateTimeValue();
+			break;
+			// Evaluating the unknown data type of the cell data
+		case CellValueType_IsUnknown:
+			cell->GetStringValue();
+			break;
+		default:
+			break;
+		}
+	}	
+	// ExEnd:RetrievingDataFromCells
+}
+#pragma endregion
+
 int main(int argc, char** argv)
 {	
 	
@@ -1050,6 +1183,18 @@ int main(int argc, char** argv)
 	//DeleteMultipleRows();
 	//InsertColumn();
 	//DeleteColumn();
+
+	//// =====================================================
+	//// =====================================================
+	//// Data
+	//// =====================================================
+	//// =====================================================
+
+	//UsingCellName();
+	//UsingRowAndColumnIndex();
+	//MaximumDisplayRange();
+	//AddingDataToCells();
+	//RetrievingDataFromCells();
 		
 	// Stop before exiting
 	printf("\n\nProgram Finished. Press any key to exit....");
