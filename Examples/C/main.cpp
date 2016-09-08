@@ -11,6 +11,7 @@ static StringPtr dataDir_Worksheets = sourcePath->StringAppend(new String("Works
 static StringPtr dataDir_RowsAndColumns = sourcePath->StringAppend(new String("Rows-and-Columns\\"));
 static StringPtr dataDir_Data = sourcePath->StringAppend(new String("Data\\"));
 static StringPtr dataDir_PivotTables = sourcePath->StringAppend(new String("PivotTables\\"));
+static StringPtr dataDir_Tables = sourcePath->StringAppend(new String("Tables\\"));
 
  #define EXPECT_TRUE(condition) \
 		if (condition) printf("--%s,line:%d->Ok--\n", __FUNCTION__, __LINE__); \
@@ -1028,7 +1029,7 @@ void AddingDataToCells()
 	intrusive_ptr<Worksheet> worksheet = workbook->GetWorksheets()->GetIndexObject(0);	
 
 	// Adding a string value to the cell
-	worksheet->GetCells()->GetCellByName(new String("A1"))->PutValue(new String("Hello World"));
+	worksheet->GetCells()->GetCellByName(new String("A1"))->PutValue("Hello World");
 
 	// Adding a double value to the cell
 	worksheet->GetCells()->GetCellByName(new String("A2"))->PutValue(20.5);
@@ -1469,11 +1470,206 @@ void RefreshAndCalculateItems()
 		pivotTable->RefreshData();
 		pivotTable->CalculateData();
 	}
-	// Saving the Excel file
-	workbook->Save(dataDir_PivotTables->StringAppend(new String("RefreshAndCalculateItems_out_.xlsx")), SaveFormat_Pdf);
+	// Saving the pdf file
+	workbook->Save(dataDir_PivotTables->StringAppend(new String("RefreshAndCalculateItems_out_.pdf")), SaveFormat_Pdf);
 	// ExEnd:RefreshAndCalculateItems
 }
 #pragma endregion
+
+#pragma region "Tables"
+void CreatingListObjects()
+{
+	// ExStart:CreatingListObjects
+	// Instantiate a Workbook object and open an Excel file
+	intrusive_ptr<Workbook>  workbook = new Workbook(dataDir_Tables->StringAppend(new String("book1.xls")));
+
+	// Accessing the first worksheet in the Excel file
+	intrusive_ptr<Worksheet> worksheet = workbook->GetWorksheets()->GetIndexObject(0);
+
+	// Get the List objects collection in the first worksheet.
+	intrusive_ptr<ListObjectCollection> listObjects = worksheet->GetListObjects();
+
+	// Add a List based on the data source range with headers on.
+	listObjects->Add(1, 1, 7, 5, true);
+
+	// Show the total row for the List.
+	listObjects->GetIndexObject(0)->SetShowTotals(true);
+
+	// Calculate the total of the last (5th ) list column.
+	listObjects->GetIndexObject(0)->GetListColumns()->GetIndexObject(4)->SetTotalsCalculation(TotalsCalculation_Sum);
+
+	// Saving the Excel file
+	workbook->Save(dataDir_Tables->StringAppend(new String("CreatingListObjects_out_.xls")));
+	// ExEnd:CreatingListObjects
+}
+void FormatTable()
+{
+	// ExStart:FormatTable
+	// Instantiate a Workbook object
+	intrusive_ptr<Workbook>  workbook = new Workbook();
+
+	// Obtaining the reference of the default(first) worksheet
+	intrusive_ptr<Worksheet> worksheet = workbook->GetWorksheets()->GetIndexObject(0);
+
+	// Obtaining Worksheet's cells collection
+	intrusive_ptr<Cells> cells = worksheet->GetCells();
+
+	// Setting the value to the cells
+	cells->GetCellByName(new String("A1"))->PutValue("Employee");
+	cells->GetCellByName(new String("B1"))->PutValue("Quarter");
+	cells->GetCellByName(new String("C1"))->PutValue("Product");
+	cells->GetCellByName(new String("D1"))->PutValue("Continent");
+	cells->GetCellByName(new String("E1"))->PutValue("Country");
+	cells->GetCellByName(new String("F1"))->PutValue("Sale");
+
+	cells->GetCellByName(new String("A2"))->PutValue("David");
+	cells->GetCellByName(new String("A3"))->PutValue("David");
+	cells->GetCellByName(new String("A4"))->PutValue("David");
+	cells->GetCellByName(new String("A5"))->PutValue("David");
+	cells->GetCellByName(new String("A6"))->PutValue("James");
+	cells->GetCellByName(new String("A7"))->PutValue("James");
+	cells->GetCellByName(new String("A8"))->PutValue("James");
+	cells->GetCellByName(new String("A9"))->PutValue("James");
+	cells->GetCellByName(new String("A10"))->PutValue("James");
+	cells->GetCellByName(new String("A11"))->PutValue("Miya");
+	cells->GetCellByName(new String("A12"))->PutValue("Miya");
+	cells->GetCellByName(new String("A13"))->PutValue("Miya");
+	cells->GetCellByName(new String("A14"))->PutValue("Miya");
+	cells->GetCellByName(new String("A15"))->PutValue("Miya");
+
+	cells->GetCellByName(new String("B2"))->PutValue(1);
+	cells->GetCellByName(new String("B3"))->PutValue(2);
+	cells->GetCellByName(new String("B4"))->PutValue(3);
+	cells->GetCellByName(new String("B5"))->PutValue(4);
+	cells->GetCellByName(new String("B6"))->PutValue(1);
+	cells->GetCellByName(new String("B7"))->PutValue(2);
+	cells->GetCellByName(new String("B8"))->PutValue(3);
+	cells->GetCellByName(new String("B9"))->PutValue(4);
+	cells->GetCellByName(new String("B10"))->PutValue(4);
+	cells->GetCellByName(new String("B11"))->PutValue(1);
+	cells->GetCellByName(new String("B12"))->PutValue(1);
+	cells->GetCellByName(new String("B13"))->PutValue(2);
+	cells->GetCellByName(new String("B14"))->PutValue(2);
+	cells->GetCellByName(new String("B15"))->PutValue(2);
+
+	cells->GetCellByName(new String("C2"))->PutValue("Maxilaku");
+	cells->GetCellByName(new String("C3"))->PutValue("Maxilaku");
+	cells->GetCellByName(new String("C4"))->PutValue("Chai");
+	cells->GetCellByName(new String("C5"))->PutValue("Maxilaku");
+	cells->GetCellByName(new String("C6"))->PutValue("Chang");
+	cells->GetCellByName(new String("C7"))->PutValue("Chang");
+	cells->GetCellByName(new String("C8"))->PutValue("Chang");
+	cells->GetCellByName(new String("C9"))->PutValue("Chang");
+	cells->GetCellByName(new String("C10"))->PutValue("Chang");
+	cells->GetCellByName(new String("C11"))->PutValue("Geitost");
+	cells->GetCellByName(new String("C12"))->PutValue("Chai");
+	cells->GetCellByName(new String("C13"))->PutValue("Geitost");
+	cells->GetCellByName(new String("C14"))->PutValue("Geitost");
+	cells->GetCellByName(new String("C15"))->PutValue("Geitost");
+
+	cells->GetCellByName(new String("D2"))->PutValue("Asia");
+	cells->GetCellByName(new String("D3"))->PutValue("Asia");
+	cells->GetCellByName(new String("D4"))->PutValue("Asia");
+	cells->GetCellByName(new String("D5"))->PutValue("Asia");
+	cells->GetCellByName(new String("D6"))->PutValue("Europe");
+	cells->GetCellByName(new String("D7"))->PutValue("Europe");
+	cells->GetCellByName(new String("D8"))->PutValue("Europe");
+	cells->GetCellByName(new String("D9"))->PutValue("Europe");
+	cells->GetCellByName(new String("D10"))->PutValue("Europe");
+	cells->GetCellByName(new String("D11"))->PutValue("America");
+	cells->GetCellByName(new String("D12"))->PutValue("America");
+	cells->GetCellByName(new String("D13"))->PutValue("America");
+	cells->GetCellByName(new String("D14"))->PutValue("America");
+	cells->GetCellByName(new String("D15"))->PutValue("America");
+
+	cells->GetCellByName(new String("E2"))->PutValue("China");
+	cells->GetCellByName(new String("E3"))->PutValue("India");
+	cells->GetCellByName(new String("E4"))->PutValue("Korea");
+	cells->GetCellByName(new String("E5"))->PutValue("India");
+	cells->GetCellByName(new String("E6"))->PutValue("France");
+	cells->GetCellByName(new String("E7"))->PutValue("France");
+	cells->GetCellByName(new String("E8"))->PutValue("Germany");
+	cells->GetCellByName(new String("E9"))->PutValue("Italy");
+	cells->GetCellByName(new String("E10"))->PutValue("France");
+	cells->GetCellByName(new String("E11"))->PutValue("U.S.");
+	cells->GetCellByName(new String("E12"))->PutValue("U.S.");
+	cells->GetCellByName(new String("E13"))->PutValue("Brazil");
+	cells->GetCellByName(new String("E14"))->PutValue("U.S.");
+	cells->GetCellByName(new String("E15"))->PutValue("U.S.");
+
+	cells->GetCellByName(new String("F2"))->PutValue(2000);
+	cells->GetCellByName(new String("F3"))->PutValue(500);
+	cells->GetCellByName(new String("F4"))->PutValue(1200);
+	cells->GetCellByName(new String("F5"))->PutValue(1500);
+	cells->GetCellByName(new String("F6"))->PutValue(500);
+	cells->GetCellByName(new String("F7"))->PutValue(1500);
+	cells->GetCellByName(new String("F8"))->PutValue(800);
+	cells->GetCellByName(new String("F9"))->PutValue(900);
+	cells->GetCellByName(new String("F10"))->PutValue(500);
+	cells->GetCellByName(new String("F11"))->PutValue(1600);
+	cells->GetCellByName(new String("F12"))->PutValue(600);
+	cells->GetCellByName(new String("F13"))->PutValue(2000);
+	cells->GetCellByName(new String("F14"))->PutValue(500);
+	cells->GetCellByName(new String("F15"))->PutValue(900);
+	
+
+	// Adding a new List Object to the worksheet
+	worksheet->GetListObjects()->Add(new String("A1"), new String("F15"), true);
+	intrusive_ptr<ListObject> listObject = worksheet->GetListObjects()->GetIndexObject(0);
+
+	// Adding Default Style to the table
+	listObject->SetTableStyleType(TableStyleType_TableStyleMedium10);
+
+	// Show Total
+	listObject->SetShowTotals(true);
+
+	// Set the Quarter field's calculation type
+	listObject->GetListColumns()->GetIndexObject(1)->SetTotalsCalculation(TotalsCalculation_Count);
+
+	// Saving the Excel file
+	workbook->Save(dataDir_Tables->StringAppend(new String("FormatTable_out_.xlsx")));
+	// ExEnd:FormatTable
+}
+void SetCommentOfTableOrListObject()
+{
+	// ExStart:SetCommentOfTableOrListObject
+	// Instantiate a Workbook object and open an Excel file
+	intrusive_ptr<Workbook>  workbook = new Workbook(dataDir_Tables->StringAppend(new String("source.xlsx")));
+
+	// Accessing the first worksheet in the Excel file
+	intrusive_ptr<Worksheet> worksheet = workbook->GetWorksheets()->GetIndexObject(0);
+
+	// Get the List objects collection in the first worksheet.
+	intrusive_ptr<ListObjectCollection> listObjects = worksheet->GetListObjects();	
+	
+	// Set the comment of the first list object
+	listObjects->GetIndexObject(0)->SetComment(new String("This is Aspose.Cells comment."));
+
+	// Saving the Excel file
+	workbook->Save(dataDir_Tables->StringAppend(new String("SetCommentOfTableOrListObject_out_.xlsx")), SaveFormat_Xlsx);
+	// ExEnd:SetCommentOfTableOrListObject
+}
+void ConvertTableToRange()
+{
+	// ExStart:ConvertTableToRange
+	// Instantiate a Workbook object and open an Excel file
+	intrusive_ptr<Workbook>  workbook = new Workbook(dataDir_Tables->StringAppend(new String("sample.xlsx")));
+
+	// Accessing the first worksheet in the Excel file
+	intrusive_ptr<Worksheet> worksheet = workbook->GetWorksheets()->GetIndexObject(0);
+
+	// Get the List objects collection in the first worksheet.
+	intrusive_ptr<ListObjectCollection> listObjects = worksheet->GetListObjects();	
+
+	// Convert the first table/list object (from the first worksheet) to normal range
+	listObjects->GetIndexObject(0)->ConvertToRange();
+
+	// Saving the Excel file
+	workbook->Save(dataDir_Tables->StringAppend(new String("ConvertTableToRange_out_.xls")));
+	// ExEnd:ConvertTableToRange
+}
+#pragma endregion
+
 int main(int argc, char** argv)
 {	
 	
@@ -1583,7 +1779,18 @@ int main(int argc, char** argv)
 	//SettingDataFieldsFormat();
 	//ClearPivotFields();
 	//ApplyingConsolidationFunctionToDataFields();
-	RefreshAndCalculateItems();
+	//RefreshAndCalculateItems();
+
+	//// =====================================================
+	//// =====================================================
+	//// Tables
+	//// =====================================================
+	//// =====================================================
+
+	//CreatingListObjects();
+	//FormatTable();
+	//SetCommentOfTableOrListObject();
+	ConvertTableToRange();
 		
 	// Stop before exiting
 	printf("\n\nProgram Finished. Press any key to exit....");
