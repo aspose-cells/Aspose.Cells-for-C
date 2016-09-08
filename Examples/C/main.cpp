@@ -1450,6 +1450,29 @@ void ApplyingConsolidationFunctionToDataFields()
 	workbook->Save(dataDir_PivotTables->StringAppend(new String("ApplyingConsolidationFunctionToDataFields_out_.xlsx")));
 	// ExEnd:ApplyingConsolidationFunctionToDataFields
 }
+void RefreshAndCalculateItems()
+{
+	// ExStart:RefreshAndCalculateItems
+	// Instantiate a Workbook object and open an Excel file
+	intrusive_ptr<Workbook>  workbook = new Workbook(dataDir_PivotTables->StringAppend(new String("sample.xlsx")));
+
+	// Accessing the first worksheet in the Excel file
+	intrusive_ptr<Worksheet> worksheet = workbook->GetWorksheets()->GetIndexObject(0);
+
+	// Change the value of cell D2
+	worksheet->GetCells()->GetCellByName(new String("D2"))->PutValue(20);
+
+	for (int i = 0; i < worksheet->GetPivotTables()->GetCount(); i++)
+	{
+		// Accessing the PivotTable
+		intrusive_ptr<PivotTable> pivotTable = worksheet->GetPivotTables()->GetIndexObject(i);
+		pivotTable->RefreshData();
+		pivotTable->CalculateData();
+	}
+	// Saving the Excel file
+	workbook->Save(dataDir_PivotTables->StringAppend(new String("RefreshAndCalculateItems_out_.xlsx")), SaveFormat_Pdf);
+	// ExEnd:RefreshAndCalculateItems
+}
 #pragma endregion
 int main(int argc, char** argv)
 {	
@@ -1559,7 +1582,8 @@ int main(int argc, char** argv)
 	//SettingFieldsFormat();
 	//SettingDataFieldsFormat();
 	//ClearPivotFields();
-	ApplyingConsolidationFunctionToDataFields();
+	//ApplyingConsolidationFunctionToDataFields();
+	RefreshAndCalculateItems();
 		
 	// Stop before exiting
 	printf("\n\nProgram Finished. Press any key to exit....");
