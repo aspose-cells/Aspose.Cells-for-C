@@ -12,6 +12,7 @@ static StringPtr dataDir_RowsAndColumns = sourcePath->StringAppend(new String("R
 static StringPtr dataDir_Data = sourcePath->StringAppend(new String("Data\\"));
 static StringPtr dataDir_PivotTables = sourcePath->StringAppend(new String("PivotTables\\"));
 static StringPtr dataDir_Tables = sourcePath->StringAppend(new String("Tables\\"));
+static StringPtr dataDir_CellsHelperClass = sourcePath->StringAppend(new String("CellsHelperClass\\"));
 
  #define EXPECT_TRUE(condition) \
 		if (condition) printf("--%s,line:%d->Ok--\n", __FUNCTION__, __LINE__); \
@@ -254,40 +255,6 @@ void ListObjectTest()
 	EXPECT_TRUE((style->GetForegroundColor()->ToArgb() & 0xFFFFFF) == (Color::FromArgb(79, 129, 189)->ToArgb() & 0xFFFFFF));
 	EXPECT_TRUE(workbook->GetWorksheets()->GetIndexObject(0)->GetListObjects()->GetCount() == 0);
 	// ExEnd:ListObjectTest
-}
-void Chart()
-{
-	// ExStart:Chart
-	// Instantiating a Workbook object
-	intrusive_ptr<Workbook> workbook = new Workbook();
-
-	// Adding a new worksheet to the Excel object
-	int sheetIndex = workbook->GetWorksheets()->Add();
-
-	// Obtaining the reference of the newly added worksheet by passing its sheet index
-	intrusive_ptr<Worksheet> worksheet = workbook->GetWorksheets()->GetIndexObject(sheetIndex);
-
-	// Adding a sample value to "A1" cell
-	worksheet->GetCells()->GetCellByName(new String("A1"))->PutValue(50);
-
-	// Adding a sample value to "A2" cell
-	worksheet->GetCells()->GetCellByName(new String("A2"))->PutValue(50);
-
-	// Adding a sample value to "A3" cell
-	worksheet->GetCells()->GetCellByName(new String("A3"))->PutValue(50);
-
-	// Adding a sample value to "B1" cell
-	worksheet->GetCells()->GetCellByName(new String("B1"))->PutValue(50);
-
-	// Adding a sample value to "B2" cell
-	worksheet->GetCells()->GetCellByName(new String("B2"))->PutValue(50);
-
-	// Adding a sample value to "B3" cell
-	worksheet->GetCells()->GetCellByName(new String("B3"))->PutValue(50);
-	//chart.NSeries.Add("A1:B3", true);
-	// Saving the Excel file
-	workbook->Save(sourcePath->StringAppend(new String("chart_out_.xls")));
-	// ExEnd:Chart
 }
 void BuiltInProperties()
 {
@@ -1670,6 +1637,26 @@ void ConvertTableToRange()
 }
 #pragma endregion
 
+#pragma region "Cells Helper"
+void GetCellNameFromRowAndColumn()
+{
+	// ExStart:GetCellNameFromRowAndColumn	
+	intrusive_ptr<CellsHelper> cellsHelper = new CellsHelper();
+	String name = cellsHelper->CellIndexToName(3, 5);
+	// ExEnd:GetCellNameFromRowAndColumn
+}
+
+void GetRowAndColumnFromCellName()
+{
+	// ExStart:GetRowAndColumnFromCellName	
+	int row;
+	int column;
+	intrusive_ptr<CellsHelper> cellsHelper = new CellsHelper();
+	cellsHelper->CellNameToIndex(new String("C4"), row, column);	
+	// ExEnd:GetRowAndColumnFromCellName
+}
+#pragma endregion
+
 int main(int argc, char** argv)
 {	
 	
@@ -1790,7 +1777,16 @@ int main(int argc, char** argv)
 	//CreatingListObjects();
 	//FormatTable();
 	//SetCommentOfTableOrListObject();
-	ConvertTableToRange();
+	//ConvertTableToRange();
+
+	//// =====================================================
+	//// =====================================================
+	//// Cells Helper
+	//// =====================================================
+	//// =====================================================
+
+	//GetCellNameFromRowAndColumn();
+	//GetRowAndColumnFromCellName();
 		
 	// Stop before exiting
 	printf("\n\nProgram Finished. Press any key to exit....");
