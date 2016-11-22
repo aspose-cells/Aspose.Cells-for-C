@@ -1,179 +1,223 @@
-﻿/* The unique head file needed to be included */
+﻿/*The unique head file need to be included*/
 #include "Aspose.Cells.h"
-#include <iostream>
 using namespace std;
-/*In order to use DLL we have to import Aspose.Cells.lib first*/
-#pragma comment(lib,"Aspose.Cells.lib")  
 
-static StringPtr sourcePath = new String("Data\\");
+static StringPtr sourcePath = new String("..\\Data\\");
 static StringPtr dataDir_LoadingAndSaving = sourcePath->StringAppend(new String("Loading-and-Saving\\"));
 static StringPtr dataDir_Worksheets = sourcePath->StringAppend(new String("Worksheets\\"));
 static StringPtr dataDir_RowsAndColumns = sourcePath->StringAppend(new String("Rows-and-Columns\\"));
 static StringPtr dataDir_Data = sourcePath->StringAppend(new String("Data\\"));
-static StringPtr dataDir_PivotTables = sourcePath->StringAppend(new String("PivotTables\\"));
 static StringPtr dataDir_Tables = sourcePath->StringAppend(new String("Tables\\"));
 static StringPtr dataDir_CellsHelperClass = sourcePath->StringAppend(new String("CellsHelperClass\\"));
 
+/*Check result*/
  #define EXPECT_TRUE(condition) \
-		if (condition) printf("--%s,line:%d->Ok--\n", __FUNCTION__, __LINE__); \
-			 else  printf("--%s,line:%d->>>>Failed!!!!<<<<--\n", __FUNCTION__, __LINE__);
+		if (condition) printf("--%s,line:%d -> Ok --\n", __FUNCTION__, __LINE__); \
+			 else  printf("--%s,line:%d->>>> Failed!!!! <<<<--\n", __FUNCTION__, __LINE__);
 
-/*	
-	We only list a few case to explain how to test Aspose.Cells Lib,
-	Of course this affirmative is not comprehensive.
-*/
-
-/*
-	To avoid memory leak£¬we import smart pointer "intrusive_ptr" of boost,
-	for example,if allocate memory for workbook, we use "intrusive_ptr<Workbook> workbook = new Workbook()"
-	rather than  "Workbook *workbook = new Workbook()", if so, we no longer need use "delete".
-*/
 #pragma region "General"
+
+void HelloWorld()
+{
+	// ExStart:HelloWorld
+	// Create a new workbook
+	intrusive_ptr<IWorkbook> wb = Factory::CreateIWorkbook();
+
+	// Get the first worksheet
+	intrusive_ptr<IWorksheetCollection> wsc = wb->GetIWorksheets();
+	intrusive_ptr<IWorksheet> ws = wsc->GetObjectByIndex(0);
+
+	// Get cell(0,0)
+	intrusive_ptr<ICells> cells = ws->GetICells();
+	intrusive_ptr<ICell> cell = cells->GetObjectByIndex(0, 0);
+
+	// Write "Hello World" to cell(0,0) of the first sheet
+	intrusive_ptr<String> str = new String("Hello World£¡");
+	cell->PutValue(str);
+
+	// Save this workbook to resultFile folder*/
+	wb->Save(sourcePath->StringAppend(new String("HelloWorld_out.xlsx")));
+	// ExEnd:HelloWorld
+}
+
+void ChangeValue()
+{
+	// ExStart:ChangeValue
+	// Open an existing Workbook from sourceFile folder
+	intrusive_ptr<IWorkbook> wb = Factory::CreateIWorkbook(sourcePath->StringAppend(new String("book.xlsx")));
+
+	// Get the first worsheet
+	intrusive_ptr<IWorksheetCollection> wsc = wb->GetIWorksheets();
+	intrusive_ptr<IWorksheet> ws = wsc->GetObjectByIndex(0);
+
+	// Get cell(0,0)
+	intrusive_ptr<ICells> cells = ws->GetICells();
+	intrusive_ptr<ICell> cell = cells->GetObjectByIndex(0, 0);
+
+	// Modify the value of the first cell from 100 to 200 *
+	cell->PutValue(200);
+
+	// Check value
+	EXPECT_TRUE(cell->GetIntValue() == 200);
+
+	// Save this workbook to resultFile folder
+	wb->Save(sourcePath->StringAppend(new String("ChangeValue_out.xlsx")));
+	// ExEnd:ChangeValue
+}
+
+void ValueType()
+{
+	// ExStart:ValueType
+	// Create a new workbook
+	intrusive_ptr<IWorkbook> wb = Factory::CreateIWorkbook();
+
+	// Get the first worksheet
+	intrusive_ptr<IWorksheetCollection> wsc = wb->GetIWorksheets();
+	intrusive_ptr<IWorksheet> ws = wsc->GetObjectByIndex(0);
+
+	// Get cells
+	intrusive_ptr<ICells> cells = ws->GetICells();
+
+	// Get cell(0,0)
+	intrusive_ptr<ICell> cell0 = cells->GetObjectByIndex(0, 0);
+
+	// Set DatetTime value to cell(0,0)
+	cell0->PutValue((DateTimePtr)new DateTime(2000, 1, 1));
+
+	// Check value
+	EXPECT_TRUE(cell0->GetDateTimeValue()->Equals((DateTimePtr)new DateTime(2000, 1, 1)));
+
+	// Get cell(1,0)
+	intrusive_ptr<ICell> cell1 = cells->GetObjectByIndex(1, 0);
+
+	// Set string type value to cell(1,0)
+	cell1->PutValue((StringPtr)new String("20000101"));
+
+	// Check value
+	EXPECT_TRUE(cell1->GetStringValue()->Equals((StringPtr)new String("20000101")));
+
+	// Get cell(2,0)
+	intrusive_ptr<ICell> cell2 = cells->GetObjectByIndex(2, 0);
+
+	// Set double type value to cell(2,0)
+	cell2->PutValue(20000101.01);
+
+	// Check value
+	EXPECT_TRUE(cell2->GetDoubleValue() == 20000101.01);
+
+	// Get cell(3,0)
+	intrusive_ptr<ICell> cell3 = cells->GetObjectByIndex(3, 0);
+
+	// Set int type value to cell(3,0)
+	cell3->PutValue(20000101);
+
+	// Check value
+	EXPECT_TRUE(cell3->GetIntValue() == 20000101);
+
+	// Get cell(4,0)
+	intrusive_ptr<ICell> cell4 = cells->GetObjectByIndex(4, 0);
+
+	// Set bool type value to cell(4,0)
+	cell4->PutValue(true);
+
+	// Check value
+	EXPECT_TRUE(cell4->GetBoolValue() == true);
+
+	// Save this workbook to resultFile
+	wb->Save(sourcePath->StringAppend(new String("ValueType_out.xlsx")));
+	// ExEnd:ValueType
+}
+
+void SetStyle()
+{
+	// ExStart:SetStyle
+	// Create a new workbook and get the first worksheet
+	intrusive_ptr<IWorkbook> wb = Factory::CreateIWorkbook();
+	intrusive_ptr<IWorksheet> ws = wb->GetIWorksheets()->GetObjectByIndex(0);
+
+	// Get cells style
+	intrusive_ptr<IStyle> style = ws->GetICells()->GetIStyle();
+
+	// Set font color
+	style->GetIFont()->SetColor(Color::GetGreen());
+
+	// Set Background
+	style->SetPattern(BackgroundType::BackgroundType_Gray12);
+	style->SetBackgroundColor(Color::GetRed());
+
+	// Set Border
+	style->SetBorder((BorderType_LeftBorder), CellBorderType_Thin, Color::GetBlue());
+	style->SetBorder((BorderType_RightBorder), CellBorderType_Double, Color::GetGold());
+
+	// Set string value to cell 'A1'
+	intrusive_ptr<ICells> cells = ws->GetICells();
+	intrusive_ptr<ICell> cell = cells->GetObjectByIndex(new String("A1"));
+	cell->PutValue((StringPtr)new String("Text"));
+
+	// Apply style to cell 'A1'
+	cell->SetStyle(style);
+
+	// Save this workbook to resultFile
+	wb->Save(sourcePath->StringAppend(new String("SetStyle_out.xlsx")));
+	// ExEnd:SetStyle
+}
+
+void SetFormula()
+{
+	// ExStart:SetFormula
+	// Create a new workbook
+	intrusive_ptr<IWorkbook> wb = Factory::CreateIWorkbook();
+
+	// Get the first worksheet
+	intrusive_ptr<IWorksheetCollection> wsc = wb->GetIWorksheets();
+	intrusive_ptr<IWorksheet> ws = wsc->GetObjectByIndex(0);
+
+	// Get cells
+	intrusive_ptr<ICells> cells = ws->GetICells();
+
+	// Set value to cell(0,0) and cell(1,0)
+	cells->GetObjectByIndex(0, 0)->PutValue(3);
+	cells->GetObjectByIndex(1, 0)->PutValue(2);
+
+	// Set Formula
+	cells->GetObjectByIndex(0, 1)->SetFormula(new String("=SUM(A1,A2)"));
+
+	// Save this workbook to resultFile
+	wb->Save(sourcePath->StringAppend(new String("SetFormula_out.xlsx")));
+	// ExEnd:SetFormula
+}
+
 void OpenSaveTest()
 {
 	// ExStart:OpenSaveTest
 	// Instantiate a Workbook object and open an Excel file
-	intrusive_ptr<Workbook>  workbook = new Workbook(sourcePath->StringAppend(new String("SG-L-AllInd-Hd+Co-Rank32.xlsx")));
-	workbook->Save(sourcePath->StringAppend(new String("SG-L-AllInd-Hd+Co-Rank32_out_.xlsx")));
-	intrusive_ptr<Worksheet> worksheet = workbook->GetWorksheets()->GetIndexObject(0);
+	intrusive_ptr<IWorkbook>  workbook =Factory::CreateIWorkbook(sourcePath->StringAppend(new String("SG-L-AllInd-Hd+Co-Rank32.xlsx")));
+	workbook->Save(sourcePath->StringAppend(new String("SG-L-AllInd-Hd+Co-Rank32_out.xlsx")));
+	intrusive_ptr<IWorksheet> worksheet = workbook->GetIWorksheets()->GetObjectByIndex(0);
 	EXPECT_TRUE(workbook&&worksheet);
 	// ExEnd:OpenSaveTest
-}
-void Font_Style_Test1()
-{
-	// ExStart:Font_Style_Test1
-	// Instantiate a Workbook object and open an Excel file
-	intrusive_ptr<Workbook> workbook = new Workbook(sourcePath->StringAppend(new String("spreads_ExcelTest.xls")));
-	intrusive_ptr<Cells> cells = workbook->GetWorksheets()->GetIndexObject(0)->GetCells();
-	// Get cell by name from cells collection
-	intrusive_ptr<FontSetting>  chars = cells->GetCellByName(new String("A3"))->Characters(0, 19);
-	chars->GetFont()->SetIsBold(true);
-	EXPECT_TRUE(chars->GetFont()->IsBold());
-	EXPECT_TRUE(chars->GetFont()->GetName()->Equals((StringPtr)new String("Courier New")));
-	EXPECT_TRUE(chars->GetFont()->GetSize() == 8);
-	// ExEnd:Font_Style_Test1
-}
-void Font_Style_Test2()
-{
-	// ExStart:Font_Style_Test2
-	// Instantiate a Workbook object
-	intrusive_ptr<Workbook> workbook = new Workbook();
-	intrusive_ptr<Worksheet> sheet = workbook->GetWorksheets()->GetIndexObject(0);
-	// Get cells from sheet
-	intrusive_ptr<Cells> cells = sheet->GetCells();
-	intrusive_ptr<Cell> cell = cells->GetIndexObject(6, 1);
-	cell->PutValue(new String("06:42"), true);
-	intrusive_ptr<Style> style = cell->GetStyle();
-	style->SetNumber(20);
-	cell->SetStyle(style);
-	EXPECT_TRUE(cell->GetStringValue()->Equals((StringPtr) new String("6:42")));
-	// ExEnd:Font_Style_Test2
-}
-void  Font_Style_Test3()
-{
-	// ExStart:Font_Style_Test3
-	// Instantiate a Workbook object
-	intrusive_ptr<Workbook> workbook = new Workbook();
-	// Get cell by name from cells collection
-	intrusive_ptr<Cell> cell = workbook->GetWorksheets()->GetIndexObject(0)->GetCells()->GetCellByName(new String("A1"));
-	cell->PutValue((StringPtr) new String("Hello. I have Bold texts in blue without any italicized textthat isn't bold last stuff unformatted"));
-	cell->Characters(15, 4)->GetFont()->SetIsBold(true);
-	cell->Characters(29, 4)->GetFont()->SetColor(ColorTranslator::FromHtml(new String("blue")));
-	cell->Characters(33, 16)->GetFont()->SetColor(ColorTranslator::FromHtml(new String("green")));
-	cell->Characters(38, 3)->GetFont()->SetIsStrikeout(true);
-	cell->Characters(46, 15)->GetFont()->SetIsBold(true);
-	cell->Characters(46, 30)->GetFont()->SetIsItalic(true);
-	workbook->Save(sourcePath->StringAppend(new String("Test_160131_out_.xls")));
-	workbook = new Workbook(sourcePath->StringAppend(new String("Test_160131_out_.xls")));
-	cell = workbook->GetWorksheets()->GetIndexObject(0)->GetCells()->GetCellByName(new String("A1"));
-	intrusive_ptr<Array1D<FontSetting*>> chs = cell->GetCharacters();
-	for (int i = 0; i < chs->Length(); i++)
-	{
-		intrusive_ptr<FontSetting> chars = chs->GetValue(i);
-		if (chars->GetStartIndex() == 46)
-		{
-			EXPECT_TRUE(chars->GetLength() == 3);
-			EXPECT_TRUE(chars->GetFont()->IsBold());
-			EXPECT_TRUE(chars->GetFont()->IsItalic());
-		}
-	}
-	// ExEnd:Font_Style_Test3
 }
 void AutofilterTest()
 {
 	// ExStart:AutofilterTest
 	// Instantiate a Workbook object and open an Excel file
-	intrusive_ptr<Workbook> workbook = new Workbook(sourcePath->StringAppend(new String("aa_filtre.xls")));
-	intrusive_ptr<Worksheet> sheet = workbook->GetWorksheets()->GetIndexObject(0);
-	sheet->GetAutoFilter()->SetRange(0, 0, 1);
-	sheet->GetAutoFilter()->Filter(1, new String("Nom2"));
-	sheet->GetAutoFilter()->Refresh();
-	EXPECT_TRUE(workbook->GetWorksheets()->GetIndexObject(0)->GetCells()->GetRowHeight(3) == 0);
-	EXPECT_TRUE(workbook->GetWorksheets()->GetIndexObject(0)->GetCells()->GetRowHeight(4) == 0);
-	workbook->Save(sourcePath->StringAppend(new String("aa_filtre_out_.xls")));
+	intrusive_ptr<IWorkbook> workbook =Factory::CreateIWorkbook(sourcePath->StringAppend(new String("aa_filtre.xls")));
+	intrusive_ptr<IWorksheet> sheet = workbook->GetIWorksheets()->GetObjectByIndex(0);
+	sheet->GetIAutoFilter()->SetRange(0, 0, 1);
+	sheet->GetIAutoFilter()->Filter(1, new String("Nom2"));
+	sheet->GetIAutoFilter()->Refresh();
+	EXPECT_TRUE(workbook->GetIWorksheets()->GetObjectByIndex(0)->GetICells()->GetRowHeight(3) == 0);
+	EXPECT_TRUE(workbook->GetIWorksheets()->GetObjectByIndex(0)->GetICells()->GetRowHeight(4) == 0);
+	workbook->Save(sourcePath->StringAppend(new String("aa_filtre_out.xls")));
 	// ExEnd:AutofilterTest
-}
-void  ConditionalFormatTest1()
-{
-	// ExStart:ConditionalFormatTest1
-	// Instantiate a Workbook object and open an Excel file
-	intrusive_ptr<Workbook> wb = new Workbook(sourcePath->StringAppend(new String("CELLSJAVA41671.xlsx")));
-	// Get cell by name from worksheet cells collection
-	intrusive_ptr<Cell> cell = wb->GetWorksheets()->GetIndexObject(0)->GetCells()->GetCellByName(new String("U78"));
-	intrusive_ptr<Style> style = cell->GetDisplayStyle();
-	intrusive_ptr<Color> color = style->GetForegroundColor();
-	intrusive_ptr<Color> a = style->GetForegroundColor();
-	intrusive_ptr<Color> b = Color::FromArgb(192, 0, 0);
-	EXPECT_TRUE((a->ToArgb() & 0xFFFFFF) == (b->ToArgb() & 0xFFFFFF));
-	// ExEnd:ConditionalFormatTest1
-}
-void  ConditionalFormatTest2()
-{
-	// ExStart:ConditionalFormatTest2
-	// Instantiate a Workbook object and open an Excel file
-	intrusive_ptr<Workbook> workbook = new Workbook();
-	intrusive_ptr<ConditionalFormattingCollection> cfs = workbook->GetWorksheets()->GetIndexObject(0)->GetConditionalFormattings();
-	cfs->Add();
-	cfs->GetIndexObject(0)->AddCondition(FormatConditionType_CellValue, OperatorType_Between, new String("2"), new String("5"));
-	intrusive_ptr<CellArea> ca = new CellArea();
-	ca->StartColumn = 0;
-	ca->StartRow = 0;
-	ca->EndColumn = 5;
-	ca->EndRow = 3;
-	cfs->GetIndexObject(0)->AddArea(ca);
-	workbook->Save(sourcePath->StringAppend(new String("ConditionalFormatTest_001_out_.xls")));
-	workbook = new Workbook(sourcePath->StringAppend(new String("ConditionalFormatTest_001_out_.xls")));
-	cfs = workbook->GetWorksheets()->GetIndexObject(0)->GetConditionalFormattings();
-	intrusive_ptr<FormatCondition> fc = cfs->GetIndexObject(0)->GetIndexObject(0);
-	EXPECT_TRUE(fc->GetFormula1()->Equals(StringPtr(new String("2"))));
-	EXPECT_TRUE(fc->GetFormula2()->Equals(StringPtr(new String("5"))));
-	EXPECT_TRUE(fc->GetOperator() == OperatorType_Between);
-	EXPECT_TRUE(cfs->GetIndexObject(0)->GetCellArea(0)->EndRow == 3);
-	// ExEnd:ConditionalFormatTest2
-}
-void HyperlinkTest()
-{
-	// ExStart:HyperlinkTest
-	// Instantiate a Workbook object
-	intrusive_ptr<Workbook> w = new Workbook();
-	// Get Hyperlinks
-	intrusive_ptr<HyperlinkCollection> links = w->GetWorksheets()->GetIndexObject(0)->GetHyperlinks();
-	// Add Hyperlink in hyperlink collection
-	links->Add(new String("A1"), 1, 1, new String("www.aspose.com"));
-	EXPECT_TRUE(w->GetWorksheets()->GetIndexObject(0)->GetCells()->GetIndexObject(new String("A1"))->GetStringValue()->Equals((StringPtr)new String("www.aspose.com")));
-	w->GetWorksheets()->GetIndexObject(0)->GetCells()->GetIndexObject(new String("A1"))->PutValue((StringPtr) new String("sdfsdf"));
-	EXPECT_TRUE(links->GetIndexObject(0)->GetTextToDisplay()->Equals((StringPtr)new String("sdfsdf")));
-	// Saving the Excel file
-	w->Save(sourcePath->StringAppend(new String("CELLSNET43900_out_.xlsx")));
-	// ExEnd:HyperlinkTest
 }
 void PageSetupTest()
 {
 	// ExStart:PageSetupTest
 	// Instantiate a Workbook object and open excel file
-	intrusive_ptr<Workbook> workbook = new Workbook(sourcePath->StringAppend(new String("pagesetup2.xls")));
-	intrusive_ptr<Worksheet> worksheet = workbook->GetWorksheets()->GetIndexObject(0);
-	intrusive_ptr<PageSetup> pagesetup = worksheet->GetPageSetup();
+	intrusive_ptr<IWorkbook> workbook =Factory::CreateIWorkbook(sourcePath->StringAppend(new String("pagesetup2.xls")));
+	intrusive_ptr<IWorksheet> worksheet = workbook->GetIWorksheets()->GetObjectByIndex(0);
+	intrusive_ptr<IPageSetup> pagesetup = worksheet->GetIPageSetup();
 	// Page
 	EXPECT_TRUE(pagesetup->GetOrientation() == PageOrientationType_Portrait);
 	EXPECT_TRUE(pagesetup->GetZoom() == 105);
@@ -200,96 +244,23 @@ void PageSetupTest()
 	EXPECT_TRUE(pagesetup->GetOrder() == PrintOrderType_OverThenDown);
 	// ExEnd:PageSetupTest
 }
-void PivotTableDataTest()
-{
-	// ExStart:PivotTableDataTest
-	// Instantiate a Workbook object
-	intrusive_ptr<Workbook> wb = new Workbook();
-	wb->GetWorksheets()->Add();
-	intrusive_ptr<Worksheet> data = wb->GetWorksheets()->GetIndexObject(0);
-	int row = 0;
-	data->GetCells()->GetIndexObject(row, 0)->PutValue((StringPtr)new String("Customer"));
-	data->GetCells()->GetIndexObject(row, 1)->PutValue((StringPtr)new String("Sku"));
-	data->GetCells()->GetIndexObject(row, 2)->PutValue((StringPtr)new String("Qty"));
-	intrusive_ptr<Random> r = new Random();
-	for (row = 1; row < 50; row++)
-	{
-		data->GetCells()->GetIndexObject(row, 0)->PutValue(r->Next(3) > 1 ? (StringPtr)new String("Customer A") : (StringPtr)new String("Customer B"));
-		data->GetCells()->GetIndexObject(row, 1)->PutValue(r->Next(3) > 1 ? (StringPtr)new String("Sku A") : (StringPtr)new String("Sku B"));
-		data->GetCells()->GetIndexObject(row, 2)->PutValue(r->Next(1, 100));
-	}
-	intrusive_ptr<Worksheet> pivot = wb->GetWorksheets()->GetIndexObject(1);
-	intrusive_ptr<PivotTable> pt = pivot->GetPivotTables()->GetIndexObject(pivot->GetPivotTables()->Add((StringPtr)new String("=Sheet1!A1:C50"), 0, 0, (StringPtr)new String("Test pivot")));
-	pt->SetEnableWizard(true);
-	pt->AddFieldToArea(PivotFieldType_Row, 0);
-	pt->GetRowFields()->GetIndexObject(0)->SetIsAutoSubtotals(false);
-	pt->AddFieldToArea(PivotFieldType_Row, 1);
-	pt->GetRowFields()->GetIndexObject(1)->SetIsAutoSubtotals(false);
-	pt->AddFieldToArea(PivotFieldType_Data, 2);
-	pt->SetIsAutoFormat(true);
-	pt->SetAutoFormatType(PivotTableAutoFormatType_Report5);
-	pt->SetHasBlankRows(false);
-	EXPECT_TRUE(pt->GetEnableWizard());
-	EXPECT_TRUE(!pt->GetRowFields()->GetIndexObject(0)->IsAutoSubtotals());
-	EXPECT_TRUE(!pt->GetRowFields()->GetIndexObject(1)->IsAutoSubtotals());
-	EXPECT_TRUE(pt->IsAutoFormat());
-	EXPECT_TRUE(!pt->HasBlankRows());
-	// Saving the Excel file
-	wb->Save(sourcePath->StringAppend(new String("Test_156592_out_.xls")));
-	// ExEnd:PivotTableDataTest
-}
 void ListObjectTest()
 {
 	// ExStart:ListObjectTest
 	// Instantiate a Workbook object and open excel file
-	intrusive_ptr<Workbook> workbook = new Workbook(sourcePath->StringAppend(new String("CellsNet41046.xlsx")));
-	intrusive_ptr<ListObject> listObject = workbook->GetWorksheets()->GetIndexObject(0)->GetListObjects()->GetIndexObject(0);
+	intrusive_ptr<IWorkbook> workbook =Factory::CreateIWorkbook(sourcePath->StringAppend(new String("CellsNet41046.xlsx")));
+	intrusive_ptr<IListObject> listObject = workbook->GetIWorksheets()->GetObjectByIndex(0)->GetIListObjects()->GetObjectByIndex(0);
 	listObject->ApplyStyleToRange();
-	intrusive_ptr<Style> style = workbook->GetWorksheets()->GetIndexObject(0)->GetCells()->GetIndexObject(new String("A1"))->GetStyle();
+	intrusive_ptr<IStyle> style = workbook->GetIWorksheets()->GetObjectByIndex(0)->GetICells()->GetObjectByIndex(new String("A1"))->GetIStyle();
 	EXPECT_TRUE((style->GetForegroundColor()->ToArgb() & 0xFFFFFF) == (Color::FromArgb(79, 129, 189)->ToArgb() & 0xFFFFFF));
-	workbook->GetWorksheets()->GetIndexObject(0)->GetListObjects()->RemoveAt(0);
-	workbook = new Workbook(sourcePath->StringAppend(new String("CellsNet41046.xlsx")));
-	listObject = workbook->GetWorksheets()->GetIndexObject(0)->GetListObjects()->GetIndexObject(0);
+	workbook->GetIWorksheets()->GetObjectByIndex(0)->GetIListObjects()->RemoveAt(0);
+	workbook =Factory::CreateIWorkbook(sourcePath->StringAppend(new String("CellsNet41046.xlsx")));
+	listObject = workbook->GetIWorksheets()->GetObjectByIndex(0)->GetIListObjects()->GetObjectByIndex(0);
 	listObject->ConvertToRange();
-	style = workbook->GetWorksheets()->GetIndexObject(0)->GetCells()->GetIndexObject(new String("A1"))->GetStyle();
+	style = workbook->GetIWorksheets()->GetObjectByIndex(0)->GetICells()->GetObjectByIndex(new String("A1"))->GetIStyle();
 	EXPECT_TRUE((style->GetForegroundColor()->ToArgb() & 0xFFFFFF) == (Color::FromArgb(79, 129, 189)->ToArgb() & 0xFFFFFF));
-	EXPECT_TRUE(workbook->GetWorksheets()->GetIndexObject(0)->GetListObjects()->GetCount() == 0);
+	EXPECT_TRUE(workbook->GetIWorksheets()->GetObjectByIndex(0)->GetIListObjects()->GetCount() == 0);
 	// ExEnd:ListObjectTest
-}
-void BuiltInProperties()
-{
-	// ExStart:BuiltInProperties
-	// Instantiate a Workbook object and open an Excel file
-	intrusive_ptr<Workbook> workbook = new Workbook(sourcePath->StringAppend(new String("book1.xls")));
-
-	// Retrieve a list of all custom document properties of the Excel file
-	intrusive_ptr<DocumentPropertyCollection> properties = workbook->GetWorksheets()->GetBuiltInDocumentProperties();
-
-
-	for (int i = 0; i < properties->GetCount(); i++)
-	{
-		// Accessing a custom document property by using the property index
-		intrusive_ptr<DocumentProperty> customProperty1 = properties->GetIndexObject(i);
-		cout << customProperty1;
-	}
-	// ExEnd:BuiltInProperties
-}
-void CustomInProperties()
-{
-	// ExStart:CustomInProperties
-	// Instantiate a Workbook object and open an Excel file
-	intrusive_ptr<Workbook> workbook = new Workbook(sourcePath->StringAppend(new String("book1.xls")));
-
-	// Retrieve a list of all custom document properties of the Excel file
-	intrusive_ptr<DocumentPropertyCollection> properties = workbook->GetWorksheets()->GetCustomDocumentProperties();
-
-	for (int i = 0; i < properties->GetCount(); i++)
-	{
-		// Accessing a custom document property by using the property index
-		intrusive_ptr<DocumentProperty> customProperty1 = properties->GetIndexObject(i);
-		cout << customProperty1;
-	}
-	// ExEnd:CustomInProperties
 }
 #pragma endregion
 
@@ -298,7 +269,7 @@ void OpenFileUsingPath()
 {
 	// ExStart:OpenFileUsingPath
 	// Instantiate a Workbook object and open an Excel file using its file path
-	intrusive_ptr<Workbook>  workbook = new Workbook(dataDir_LoadingAndSaving->StringAppend(new String("Book1.xlsx")));
+	intrusive_ptr<IWorkbook>  workbook =Factory::CreateIWorkbook(dataDir_LoadingAndSaving->StringAppend(new String("Book1.xlsx")));
 	printf("\nWorkbook opened successfully using path!");
 	// ExEnd:OpenFileUsingPath
 }
@@ -309,41 +280,20 @@ void OpenFileUsingStream()
 	intrusive_ptr<FileStream>  fstream = new FileStream(dataDir_LoadingAndSaving->StringAppend(new String("Book1.xlsx")), FileMode_Open);
 
 	// Creating a Workbook object, open the file from a Stream object
-	intrusive_ptr<Workbook>  workbook = new Workbook(fstream);
+	intrusive_ptr<IWorkbook>  workbook =Factory::CreateIWorkbook(fstream);
 	printf("\nWorkbook opened successfully using stream!");
 	fstream->Close();
 	// ExEnd:OpenFileUsingStream
-}
-void OpenVisibleSheetOnly()
-{
-	// ExStart:OpenVisibleSheetOnly
-	// Instantiate LoadOptions specified by the LoadFormat
-	intrusive_ptr<LoadOptions>  loadOptions7 = new LoadOptions(LoadFormat_Xlsx);
-	// Set the LoadDataOption
-	intrusive_ptr<LoadDataOption>  dataOption = new LoadDataOption();
-	
-	dataOption->SetOnlyVisibleWorksheet(true);
-
-	// Only data and formatting should be loaded.
-	loadOptions7->SetLoadDataAndFormatting(true);
-
-	// Specify the LoadDataOption
-	loadOptions7->SetLoadDataOptions(dataOption);
-
-	// Create a Workbook object and opening the file from its path
-	intrusive_ptr<Workbook>  wb = new Workbook(dataDir_LoadingAndSaving->StringAppend(new String("Book1.xlsx")), loadOptions7);	
-	printf("\nVisible sheet loaded successfully!");	
-	// ExEnd:OpenVisibleSheetOnly
 }
 void SavingToStream()
 {
 	// ExStart:SavingToStream
 	// Instantiate a Workbook object and open an Excel file using its file path
-	intrusive_ptr<Workbook>  workbook = new Workbook(dataDir_LoadingAndSaving->StringAppend(new String("Book1.xlsx")));
+	intrusive_ptr<IWorkbook>  workbook =Factory::CreateIWorkbook(dataDir_LoadingAndSaving->StringAppend(new String("Book1.xlsx")));
 
-	intrusive_ptr<FileStream> stream = new FileStream(dataDir_LoadingAndSaving->StringAppend(new String("SavingToStream_out_.xlsx")), FileMode_CreateNew);
-	
-	workbook->Save(stream, new XlsSaveOptions(SaveFormat_Xlsx));
+	intrusive_ptr<FileStream> stream = new FileStream(dataDir_LoadingAndSaving->StringAppend(new String("SavingToStream_out.xlsx")), FileMode_CreateNew);
+
+	workbook->Save(stream, SaveFormat_Xlsx);
 	stream->Close();
 	printf("\nFile saved successfully to a stream!");
 	// ExEnd:SavingToStream
@@ -352,30 +302,30 @@ void SavingToSomeLocation()
 {
 	// ExStart:SavingToSomeLocation
 	// Instantiate a Workbook object and open an Excel file using its file path
-	intrusive_ptr<Workbook>  workbook = new Workbook(dataDir_LoadingAndSaving->StringAppend(new String("Book1.xlsx")));
+	intrusive_ptr<IWorkbook>  workbook =Factory::CreateIWorkbook(dataDir_LoadingAndSaving->StringAppend(new String("Book1.xlsx")));
 
 	// Save in Excel 97 � 2003 format
-	workbook->Save(dataDir_LoadingAndSaving->StringAppend(new String("SavingToSomeLocation_out_.xls")));
+	workbook->Save(dataDir_LoadingAndSaving->StringAppend(new String("SavingToSomeLocation_out.xls")));
 	// OR
-	workbook->Save(dataDir_LoadingAndSaving->StringAppend(new String("SavingToSomeLocation_out_.xls")), new XlsSaveOptions(SaveFormat_Excel97To2003));
+	workbook->Save(dataDir_LoadingAndSaving->StringAppend(new String("SavingToSomeLocation_out.xls")), SaveFormat_Excel97To2003);
 
 	// Save in Excel2007 xlsx format
-	workbook->Save(dataDir_LoadingAndSaving->StringAppend(new String("SavingToSomeLocation_out_.xlsx")), SaveFormat_Xlsx);
+	workbook->Save(dataDir_LoadingAndSaving->StringAppend(new String("SavingToSomeLocation_out.xlsx")), SaveFormat_Xlsx);
 
 	// Save in Excel2007 xlsb format
-	workbook->Save(dataDir_LoadingAndSaving->StringAppend(new String("SavingToSomeLocation_out_.xlsb")), SaveFormat_Xlsb);
+	workbook->Save(dataDir_LoadingAndSaving->StringAppend(new String("SavingToSomeLocation_out.xlsb")), SaveFormat_Xlsb);
 
 	// Save in ODS format
-	workbook->Save(dataDir_LoadingAndSaving->StringAppend(new String("SavingToSomeLocation_out_.ods")), SaveFormat_ODS);
+	workbook->Save(dataDir_LoadingAndSaving->StringAppend(new String("SavingToSomeLocation_out.ods")), SaveFormat_ODS);
 
 	// Save in Pdf format
-	workbook->Save(dataDir_LoadingAndSaving->StringAppend(new String("SavingToSomeLocation_out_.pdf")), SaveFormat_Pdf);
+	workbook->Save(dataDir_LoadingAndSaving->StringAppend(new String("SavingToSomeLocation_out.pdf")), SaveFormat_Pdf);
 
 	// Save in Html format
-	workbook->Save(dataDir_LoadingAndSaving->StringAppend(new String("SavingToSomeLocation_out_.html")), SaveFormat_Html);
+	workbook->Save(dataDir_LoadingAndSaving->StringAppend(new String("SavingToSomeLocation_out.html")), SaveFormat_Html);
 
 	// Save in SpreadsheetML format
-	workbook->Save(dataDir_LoadingAndSaving->StringAppend(new String("SavingToSomeLocation_out_.xml")), SaveFormat_SpreadsheetML); 
+	workbook->Save(dataDir_LoadingAndSaving->StringAppend(new String("SavingToSomeLocation_out.xml")), SaveFormat_SpreadsheetML);
 	// ExEnd:SavingToSomeLocation
 }
 #pragma endregion
@@ -390,16 +340,16 @@ void SetRowHeight()
 	intrusive_ptr<FileStream> fstream = new FileStream(dataDir_RowsAndColumns->StringAppend(new String("Book1.xlsx")), FileMode_Open);
 
 	// Instantiating a Workbook object and opening the Excel file through the file stream
-	intrusive_ptr<Workbook> workbook = new Workbook(fstream);
+	intrusive_ptr<IWorkbook> workbook =Factory::CreateIWorkbook(fstream);
 
 	// Accessing the first worksheet in the Excel file
-	intrusive_ptr<Worksheet> worksheet = workbook->GetWorksheets()->GetIndexObject(0);
+	intrusive_ptr<IWorksheet> worksheet = workbook->GetIWorksheets()->GetObjectByIndex(0);
 
 	// Setting the height of the second row to 13
-	worksheet->GetCells()->SetRowHeight(1, 13);
+	worksheet->GetICells()->SetRowHeight(1, 13);
 
 	// Save the Excel file.
-	workbook->Save(dataDir_RowsAndColumns->StringAppend(new String("SetRowHeight_out_.xls")));
+	workbook->Save(dataDir_RowsAndColumns->StringAppend(new String("SetRowHeight_out.xls")));
 
 	// Closing the file stream to free all resources
 	fstream->Close();
@@ -414,16 +364,16 @@ void SettingAllRowsHeight()
 	intrusive_ptr<FileStream> fstream = new FileStream(dataDir_RowsAndColumns->StringAppend(new String("Book1.xlsx")), FileMode_Open);
 
 	// Instantiating a Workbook object and opening the Excel file through the file stream
-	intrusive_ptr<Workbook> workbook = new Workbook(fstream);
+	intrusive_ptr<IWorkbook> workbook =Factory::CreateIWorkbook(fstream);
 
 	// Accessing the first worksheet in the Excel file
-	intrusive_ptr<Worksheet> worksheet = workbook->GetWorksheets()->GetIndexObject(0);
+	intrusive_ptr<IWorksheet> worksheet = workbook->GetIWorksheets()->GetObjectByIndex(0);
 
 	// Setting the height of all rows in the worksheet to 15
-	worksheet->GetCells()->SetStandardHeight(15);
+	worksheet->GetICells()->SetStandardHeight(15);
 
 	// Save the Excel file.
-	workbook->Save(dataDir_RowsAndColumns->StringAppend(new String("SettingAllRowsHeight_out_.xls")));
+	workbook->Save(dataDir_RowsAndColumns->StringAppend(new String("SettingAllRowsHeight_out.xls")));
 
 	// Closing the file stream to free all resources
 	fstream->Close();
@@ -437,16 +387,16 @@ void SettingColumWidth()
 	intrusive_ptr<FileStream> fstream = new FileStream(dataDir_RowsAndColumns->StringAppend(new String("Book1.xlsx")), FileMode_Open);
 
 	// Instantiating a Workbook object and opening the Excel file through the file stream
-	intrusive_ptr<Workbook> workbook = new Workbook(fstream);
+	intrusive_ptr<IWorkbook> workbook =Factory::CreateIWorkbook(fstream);
 
 	// Accessing the first worksheet in the Excel file
-	intrusive_ptr<Worksheet> worksheet = workbook->GetWorksheets()->GetIndexObject(0);
+	intrusive_ptr<IWorksheet> worksheet = workbook->GetIWorksheets()->GetObjectByIndex(0);
 
 	// Setting the width of the second column to 17.5
-	worksheet->GetCells()->SetColumnWidth(1, 17.5);
+	worksheet->GetICells()->SetColumnWidth(1, 17.5);
 
 	// Save the Excel file.
-	workbook->Save(dataDir_RowsAndColumns->StringAppend(new String("SettingColumWidth_out_.xls")));
+	workbook->Save(dataDir_RowsAndColumns->StringAppend(new String("SettingColumWidth_out.xls")));
 
 	// Closing the file stream to free all resources
 	fstream->Close();
@@ -460,16 +410,16 @@ void SettingWidthOfAllColumns()
 	intrusive_ptr<FileStream> fstream = new FileStream(dataDir_RowsAndColumns->StringAppend(new String("Book1.xlsx")), FileMode_Open);
 
 	// Instantiating a Workbook object and opening the Excel file through the file stream
-	intrusive_ptr<Workbook> workbook = new Workbook(fstream);
+	intrusive_ptr<IWorkbook> workbook =Factory::CreateIWorkbook(fstream);
 
 	// Accessing the first worksheet in the Excel file
-	intrusive_ptr<Worksheet> worksheet = workbook->GetWorksheets()->GetIndexObject(0);
+	intrusive_ptr<IWorksheet> worksheet = workbook->GetIWorksheets()->GetObjectByIndex(0);
 
 	// Setting the width of all columns in the worksheet to 20.5
-	worksheet->GetCells()->SetStandardWidth(20.5);
+	worksheet->GetICells()->SetStandardWidth(20.5);
 
 	// Save the Excel file.
-	workbook->Save(dataDir_RowsAndColumns->StringAppend(new String("SettingWidthOfAllColumns_out_.xls")));
+	workbook->Save(dataDir_RowsAndColumns->StringAppend(new String("SettingWidthOfAllColumns_out.xls")));
 
 	// Closing the file stream to free all resources
 	fstream->Close();
@@ -479,32 +429,32 @@ void CopyRows()
 {
 	// ExStart:CopyRows
 	// Instantiating a Workbook object and opening the Excel file through the path
-	intrusive_ptr<Workbook> workbook = new Workbook(dataDir_RowsAndColumns->StringAppend(new String("Book1.xlsx")));
+	intrusive_ptr<IWorkbook> workbook =Factory::CreateIWorkbook(dataDir_RowsAndColumns->StringAppend(new String("Book1.xlsx")));
 
 	// Accessing the first worksheet in the Excel file
-	intrusive_ptr<Worksheet> worksheet = workbook->GetWorksheets()->GetIndexObject(0);
+	intrusive_ptr<IWorksheet> worksheet = workbook->GetIWorksheets()->GetObjectByIndex(0);
 
 	// Copy the second row with data, formattings, images and drawing objects to the 16th row in the worksheet.
-	worksheet->GetCells()->CopyRow(worksheet->GetCells(), 1, 15);
+	worksheet->GetICells()->CopyRow(worksheet->GetICells(), 1, 15);
 
 	// Save the Excel file.
-	workbook->Save(dataDir_RowsAndColumns->StringAppend(new String("CopyRows_out_.xls")));
+	workbook->Save(dataDir_RowsAndColumns->StringAppend(new String("CopyRows_out.xls")));
 	// ExEnd:CopyRows
 }
 void CopyColumns()
 {
 	// ExStart:CopyColumns
 	// Instantiating a Workbook object and opening the Excel file through the path
-	intrusive_ptr<Workbook> workbook = new Workbook(dataDir_RowsAndColumns->StringAppend(new String("Book1.xlsx")));
+	intrusive_ptr<IWorkbook> workbook =Factory::CreateIWorkbook(dataDir_RowsAndColumns->StringAppend(new String("Book1.xlsx")));
 
 	// Accessing the first worksheet in the Excel file
-	intrusive_ptr<Worksheet> worksheet = workbook->GetWorksheets()->GetIndexObject(0);
+	intrusive_ptr<IWorksheet> worksheet = workbook->GetIWorksheets()->GetObjectByIndex(0);
 
 	// Copy the first column from the first worksheet of the first workbook into the first worksheet of the second workbook.
-	worksheet->GetCells()->CopyColumn(worksheet->GetCells(), 0, 2);
+	worksheet->GetICells()->CopyColumn(worksheet->GetICells(), 0, 2);
 
 	// Save the Excel file.
-	workbook->Save(dataDir_RowsAndColumns->StringAppend(new String("CopyColumns_out_.xls")));
+	workbook->Save(dataDir_RowsAndColumns->StringAppend(new String("CopyColumns_out.xls")));
 	// ExEnd:CopyColumns
 }
 void GroupRowsColumns()
@@ -514,60 +464,21 @@ void GroupRowsColumns()
 	intrusive_ptr<FileStream> fstream = new FileStream(dataDir_RowsAndColumns->StringAppend(new String("Book1.xlsx")), FileMode_Open);
 
 	// Instantiating a Workbook object and opening the Excel file through the file stream
-	intrusive_ptr<Workbook> workbook = new Workbook(fstream);
+	intrusive_ptr<IWorkbook> workbook =Factory::CreateIWorkbook(fstream);
 
 	// Accessing the first worksheet in the Excel file
-	intrusive_ptr<Worksheet> worksheet = workbook->GetWorksheets()->GetIndexObject(0);
-	
+	intrusive_ptr<IWorksheet> worksheet = workbook->GetIWorksheets()->GetObjectByIndex(0);
+
 	// Grouping first six rows and first three columns
-	worksheet->GetCells()->GroupRows(0, 5, true);
-	worksheet->GetCells()->GroupColumns(0, 2, true);
+	worksheet->GetICells()->GroupRows(0, 5, true);
+	worksheet->GetICells()->GroupColumns(0, 2, true);
 
 	// Save the Excel file.
-	workbook->Save(dataDir_RowsAndColumns->StringAppend(new String("GroupRowsColumns_out_.xls")));
+	workbook->Save(dataDir_RowsAndColumns->StringAppend(new String("GroupRowsColumns_out.xls")));
 
 	// Closing the file stream to free all resources
 	fstream->Close();
 	// ExEnd:GroupRowsColumns
-}
-void SummaryRowBelow()
-{
-	// ExStart:SummaryRowBelow 
-	// Instantiating a Workbook object and opening the Excel file through the path
-	intrusive_ptr<Workbook> workbook = new Workbook(dataDir_RowsAndColumns->StringAppend(new String("Book1.xlsx")));
-
-	// Accessing the first worksheet in the Excel file
-	intrusive_ptr<Worksheet> worksheet = workbook->GetWorksheets()->GetIndexObject(0);
-
-	// Grouping first six rows and first three columns
-	worksheet->GetCells()->GroupRows(0, 5, true);
-	worksheet->GetCells()->GroupColumns(0, 2, true);
-
-	// Setting SummaryRowBelow property to false
-	worksheet->GetOutline()->SummaryRowBelow = false;
-
-	// Save the Excel file.
-	workbook->Save(dataDir_RowsAndColumns->StringAppend(new String("SummaryRowBelow_out_.xls")));
-	// ExEnd:SummaryRowBelow 
-}
-void SummaryColumnRight()
-{
-	// ExStart:SummaryColumnRight  
-	// Instantiating a Workbook object and opening the Excel file through the path
-	intrusive_ptr<Workbook> workbook = new Workbook(dataDir_RowsAndColumns->StringAppend(new String("Book1.xlsx")));
-
-	// Accessing the first worksheet in the Excel file
-	intrusive_ptr<Worksheet> worksheet = workbook->GetWorksheets()->GetIndexObject(0);
-
-	// Grouping first six rows and first three columns
-	worksheet->GetCells()->GroupRows(0, 5, true);
-	worksheet->GetCells()->GroupColumns(0, 2, true);
-
-	worksheet->GetOutline()->SummaryColumnRight = true;
-
-	// Save the Excel file.
-	workbook->Save(dataDir_RowsAndColumns->StringAppend(new String("SummaryColumnRight_out_.xls")));
-	// ExEnd:SummaryColumnRight  
 }
 void UngroupRowsAndColumns()
 {
@@ -576,17 +487,17 @@ void UngroupRowsAndColumns()
 	intrusive_ptr<FileStream> fstream = new FileStream(dataDir_RowsAndColumns->StringAppend(new String("Book1.xlsx")), FileMode_Open);
 
 	// Instantiating a Workbook object and opening the Excel file through the file stream
-	intrusive_ptr<Workbook> workbook = new Workbook(fstream);
+	intrusive_ptr<IWorkbook> workbook =Factory::CreateIWorkbook(fstream);
 
 	// Accessing the first worksheet in the Excel file
-	intrusive_ptr<Worksheet> worksheet = workbook->GetWorksheets()->GetIndexObject(0);
+	intrusive_ptr<IWorksheet> worksheet = workbook->GetIWorksheets()->GetObjectByIndex(0);
 
 	// UnGrouping first six rows and first three columns
-	worksheet->GetCells()->UngroupRows(0, 5);
-	worksheet->GetCells()->UngroupColumns(0, 2);
+	worksheet->GetICells()->UngroupRows(0, 5);
+	worksheet->GetICells()->UngroupColumns(0, 2);
 
 	// Save the Excel file.
-	workbook->Save(dataDir_RowsAndColumns->StringAppend(new String("UngroupRowsAndColumns_out_.xls")));
+	workbook->Save(dataDir_RowsAndColumns->StringAppend(new String("UngroupRowsAndColumns_out.xls")));
 	// Closing the file stream to free all resources
 	fstream->Close();
 	// ExEnd:UngroupRowsAndColumns  
@@ -598,16 +509,16 @@ void InsertRow()
 	intrusive_ptr<FileStream> fstream = new FileStream(dataDir_RowsAndColumns->StringAppend(new String("Book1.xlsx")), FileMode_Open);
 
 	// Instantiating a Workbook object and opening the Excel file through the file stream
-	intrusive_ptr<Workbook> workbook = new Workbook(fstream);
+	intrusive_ptr<IWorkbook> workbook =Factory::CreateIWorkbook(fstream);
 
 	// Accessing the first worksheet in the Excel file
-	intrusive_ptr<Worksheet> worksheet = workbook->GetWorksheets()->GetIndexObject(0);
+	intrusive_ptr<IWorksheet> worksheet = workbook->GetIWorksheets()->GetObjectByIndex(0);
 
 	// Inserting a row into the worksheet at 3rd position
-	worksheet->GetCells()->InsertRow(2);
+	worksheet->GetICells()->InsertRow(2);
 
 	// Save the Excel file.
-	workbook->Save(dataDir_RowsAndColumns->StringAppend(new String("InsertRow_out_.xls")));
+	workbook->Save(dataDir_RowsAndColumns->StringAppend(new String("InsertRow_out.xls")));
 	// Closing the file stream to free all resources
 	fstream->Close();
 	// ExEnd:InsertRow  
@@ -619,16 +530,16 @@ void InsertMultipleRows()
 	intrusive_ptr<FileStream> fstream = new FileStream(dataDir_RowsAndColumns->StringAppend(new String("Book1.xlsx")), FileMode_Open);
 
 	// Instantiating a Workbook object and opening the Excel file through the file stream
-	intrusive_ptr<Workbook> workbook = new Workbook(fstream);
+	intrusive_ptr<IWorkbook> workbook =Factory::CreateIWorkbook(fstream);
 
 	// Accessing the first worksheet in the Excel file
-	intrusive_ptr<Worksheet> worksheet = workbook->GetWorksheets()->GetIndexObject(0);
+	intrusive_ptr<IWorksheet> worksheet = workbook->GetIWorksheets()->GetObjectByIndex(0);
 
 	// Inserting 10 rows into the worksheet starting from 3rd row
-	worksheet->GetCells()->InsertRows(2, 10);
+	worksheet->GetICells()->InsertRows(2, 10);
 
 	// Save the Excel file.
-	workbook->Save(dataDir_RowsAndColumns->StringAppend(new String("InsertMultipleRows_out_.xls")));
+	workbook->Save(dataDir_RowsAndColumns->StringAppend(new String("InsertMultipleRows_out.xls")));
 	// Closing the file stream to free all resources
 	fstream->Close();
 	// ExEnd:InsertMultipleRows  
@@ -640,16 +551,16 @@ void DeleteMultipleRows()
 	intrusive_ptr<FileStream> fstream = new FileStream(dataDir_RowsAndColumns->StringAppend(new String("Book1.xlsx")), FileMode_OpenOrCreate);
 
 	// Instantiating a Workbook object and opening the Excel file through the file stream
-	intrusive_ptr<Workbook> workbook = new Workbook(fstream);
+	intrusive_ptr<IWorkbook> workbook =Factory::CreateIWorkbook(fstream);
 
 	// Accessing the first worksheet in the Excel file
-	intrusive_ptr<Worksheet> worksheet = workbook->GetWorksheets()->GetIndexObject(0);
+	intrusive_ptr<IWorksheet> worksheet = workbook->GetIWorksheets()->GetObjectByIndex(0);
 
 	// Deleting 10 rows from the worksheet starting from 3rd row
-	worksheet->GetCells()->DeleteRows(2, 10);
+	worksheet->GetICells()->DeleteRows(2, 10);
 
 	// Save the Excel file.
-	workbook->Save(dataDir_RowsAndColumns->StringAppend(new String("DeleteMultipleRows_out_.xls")));
+	workbook->Save(dataDir_RowsAndColumns->StringAppend(new String("DeleteMultipleRows_out.xls")));
 	// Closing the file stream to free all resources
 	fstream->Close();
 	// ExEnd:DeleteMultipleRows  
@@ -661,16 +572,16 @@ void InsertColumn()
 	intrusive_ptr<FileStream> fstream = new FileStream(dataDir_RowsAndColumns->StringAppend(new String("Book1.xlsx")), FileMode_Open);
 
 	// Instantiating a Workbook object and opening the Excel file through the file stream
-	intrusive_ptr<Workbook> workbook = new Workbook(fstream);
+	intrusive_ptr<IWorkbook> workbook =Factory::CreateIWorkbook(fstream);
 
 	// Accessing the first worksheet in the Excel file
-	intrusive_ptr<Worksheet> worksheet = workbook->GetWorksheets()->GetIndexObject(0);
+	intrusive_ptr<IWorksheet> worksheet = workbook->GetIWorksheets()->GetObjectByIndex(0);
 
 	// Inserting a column into the worksheet at 2nd position
-	worksheet->GetCells()->InsertColumn(1);
+	worksheet->GetICells()->InsertColumn(1);
 
 	// Save the Excel file.
-	workbook->Save(dataDir_RowsAndColumns->StringAppend(new String("InsertColumn_out_.xls")));
+	workbook->Save(dataDir_RowsAndColumns->StringAppend(new String("InsertColumn_out.xls")));
 	// Closing the file stream to free all resources
 	fstream->Close();
 	// ExEnd:InsertColumn  
@@ -682,16 +593,16 @@ void DeleteColumn()
 	intrusive_ptr<FileStream> fstream = new FileStream(dataDir_RowsAndColumns->StringAppend(new String("Book1.xlsx")), FileMode_Open);
 
 	// Instantiating a Workbook object and opening the Excel file through the file stream
-	intrusive_ptr<Workbook> workbook = new Workbook(fstream);
+	intrusive_ptr<IWorkbook> workbook =Factory::CreateIWorkbook(fstream);
 
 	// Accessing the first worksheet in the Excel file
-	intrusive_ptr<Worksheet> worksheet = workbook->GetWorksheets()->GetIndexObject(0);
+	intrusive_ptr<IWorksheet> worksheet = workbook->GetIWorksheets()->GetObjectByIndex(0);
 
 	// Deleting a column from the worksheet at 2nd position
-	worksheet->GetCells()->DeleteColumn(4);
+	worksheet->GetICells()->DeleteColumn(4);
 
 	// Save the Excel file.
-	workbook->Save(dataDir_RowsAndColumns->StringAppend(new String("DeleteColumn_out_.xls")));
+	workbook->Save(dataDir_RowsAndColumns->StringAppend(new String("DeleteColumn_out.xls")));
 	// Closing the file stream to free all resources
 	fstream->Close();
 	// ExEnd:DeleteColumn  
@@ -701,19 +612,19 @@ void DeleteColumn()
 #pragma region "Worksheets"
 void CopyWorksheetsWithinWorkbook()
 {
-	
+
 	// ExStart:CopyWorksheetsWithinWorkbook
 	// Instantiate a Workbook object and open an Excel file
-	intrusive_ptr<Workbook>  workbook = new Workbook(dataDir_Worksheets->StringAppend(new String("Book1.xlsx")));
+	intrusive_ptr<IWorkbook>  workbook =Factory::CreateIWorkbook(dataDir_Worksheets->StringAppend(new String("Book1.xlsx")));
 
 	// Create a Worksheets object with reference to the sheets of the Workbook.
-	intrusive_ptr<WorksheetCollection> sheets = workbook->GetWorksheets();
+	intrusive_ptr<IWorksheetCollection> sheets = workbook->GetIWorksheets();
 
 	// Copy data to a new sheet from an existing sheet within the Workbook.
 	sheets->AddCopy(new String("Sheet1"));
 
 	// Save the Excel file.
-	workbook->Save(dataDir_Worksheets->StringAppend(new String("CopyWorksheetsWithinWorkbook_out_.xls")));
+	workbook->Save(dataDir_Worksheets->StringAppend(new String("CopyWorksheetsWithinWorkbook_out.xls")));
 	printf("\nWorksheet copied successfully with in a workbook!");
 	// ExEnd:CopyWorksheetsWithinWorkbook
 }
@@ -721,16 +632,16 @@ void MoveWorksheetsWithinWorkbook()
 {
 	// ExStart:MoveWorksheetsWithinWorkbook
 	// Instantiate a Workbook object and open an Excel file
-	intrusive_ptr<Workbook>  workbook = new Workbook(dataDir_Worksheets->StringAppend(new String("Book1.xlsx")));
+	intrusive_ptr<IWorkbook>  workbook =Factory::CreateIWorkbook(dataDir_Worksheets->StringAppend(new String("Book1.xlsx")));
 
 	// Create a Worksheets object with reference to the sheets of the Workbook and get the first worksheet.
-	intrusive_ptr<Worksheet> worksheet = workbook->GetWorksheets()->GetIndexObject(0);
+	intrusive_ptr<IWorksheet> worksheet = workbook->GetIWorksheets()->GetObjectByIndex(0);
 
 	// Move the first sheet to the third position in the workbook.
 	worksheet->MoveTo(2);
 
 	// Save the Excel file.
-	workbook->Save(dataDir_Worksheets->StringAppend(new String("MoveWorksheetsWithinWorkbook_out_.xls")));
+	workbook->Save(dataDir_Worksheets->StringAppend(new String("MoveWorksheetsWithinWorkbook_out.xls")));
 	printf("\nWorksheet moved successfully with in a workbook!");
 	// ExEnd:MoveWorksheetsWithinWorkbook
 }
@@ -738,19 +649,19 @@ void AddingWorksheetsToNewExcelFile()
 {
 	// ExStart:AddingWorksheetsToNewExcelFile
 	// Instantiate a Workbook object
-	intrusive_ptr<Workbook>  workbook = new Workbook();
+	intrusive_ptr<IWorkbook>  workbook =Factory::CreateIWorkbook();
 
 	// Adding a new worksheet to the Workbook object
-	int i = workbook->GetWorksheets()->Add();
+	int i = workbook->GetIWorksheets()->Add();
 
 	// Obtaining the reference of the newly added worksheet by passing its sheet index
-	intrusive_ptr<Worksheet> worksheet = workbook->GetWorksheets()->GetIndexObject(i);
+	intrusive_ptr<IWorksheet> worksheet = workbook->GetIWorksheets()->GetObjectByIndex(i);
 
 	// Setting the name of the newly added worksheet
 	worksheet->SetName(new String("My Worksheet"));
 
 	// Save the Excel file.
-	workbook->Save(dataDir_Worksheets->StringAppend(new String("AddingWorksheetsToNewExcelFile_out_.xls")));
+	workbook->Save(dataDir_Worksheets->StringAppend(new String("AddingWorksheetsToNewExcelFile_out.xls")));
 	printf("\nWorksheet moved successfully with in a workbook!");
 	// ExEnd:AddingWorksheetsToNewExcelFile
 }
@@ -762,10 +673,10 @@ void AccessingWorksheetsUsingIndex()
 	intrusive_ptr<FileStream> fstream = new FileStream(dataDir_Worksheets->StringAppend(new String("Book1.xlsx")), FileMode_Open);
 
 	// Instantiating a Workbook object and opening the Excel file through the file stream
-	intrusive_ptr<Workbook> workbook = new Workbook(fstream);
+	intrusive_ptr<IWorkbook> workbook =Factory::CreateIWorkbook(fstream);
 
 	// Accessing a worksheet using its index and Get cell by name from worksheet cells collection
-	intrusive_ptr<Cell> cell = workbook->GetWorksheets()->GetIndexObject(0)->GetCells()->GetCellByName(new String("A1"));	
+	intrusive_ptr<ICell> cell = workbook->GetIWorksheets()->GetObjectByIndex(0)->GetICells()->GetObjectByIndex(new String("A1"));
 	// Closing the file stream to free all resources
 	fstream->Close();
 	// ExEnd:AccessingWorksheetsUsingIndex
@@ -777,13 +688,13 @@ void RemoveWorksheetsUsingIndex()
 	intrusive_ptr<FileStream> fstream = new FileStream(dataDir_Worksheets->StringAppend(new String("Book1.xlsx")), FileMode_Open);
 
 	// Instantiating a Workbook object and opening the Excel file through the file stream
-	intrusive_ptr<Workbook> workbook = new Workbook(fstream);
+	intrusive_ptr<IWorkbook> workbook =Factory::CreateIWorkbook(fstream);
 
 	// Removing a worksheet using its sheet index
-	workbook->GetWorksheets()->RemoveAt(0);
+	workbook->GetIWorksheets()->RemoveAt(0);
 
 	// Save the Excel file.
-	workbook->Save(dataDir_Worksheets->StringAppend(new String("RemoveWorksheetsUsingIndex_out_.xls")));
+	workbook->Save(dataDir_Worksheets->StringAppend(new String("RemoveWorksheetsUsingIndex_out.xls")));
 	// Closing the file stream to free all resources
 	fstream->Close();
 	// ExEnd:RemoveWorksheetsUsingIndex
@@ -792,43 +703,14 @@ void AddPageBreaks()
 {
 	// ExStart:AddPageBreaks
 	// Instantiating a Workbook object
-	intrusive_ptr<Workbook> workbook  = new Workbook();
+	intrusive_ptr<IWorkbook> workbook =Factory::CreateIWorkbook();
 
 	// Add a page break at cell Y30
-	workbook->GetWorksheets()->GetIndexObject(0)->GetHorizontalPageBreaks()->Add(new String("Y30"));
-	workbook->GetWorksheets()->GetIndexObject(0)->GetVerticalPageBreaks()->Add(new String("Y30"));
+	workbook->GetIWorksheets()->GetObjectByIndex(0)->AddPageBreaks(new String("Y30"));	
 
 	// Save the Excel file.
-	workbook->Save(dataDir_Worksheets->StringAppend(new String("AddPageBreaks_out_.xls")));
+	workbook->Save(dataDir_Worksheets->StringAppend(new String("AddPageBreaks_out.xls")));
 	// ExEnd:AddPageBreaks
-}
-void ClearAllPageBreaks()
-{
-	// ExStart:ClearAllPageBreaks
-	// Instantiating a Workbook object
-	intrusive_ptr<Workbook> workbook = new Workbook();
-
-	// Clearing all page breaks
-	workbook->GetWorksheets()->GetIndexObject(0)->GetHorizontalPageBreaks()->Clear();
-	workbook->GetWorksheets()->GetIndexObject(0)->GetVerticalPageBreaks()->Clear();
-
-	// Save the Excel file.
-	workbook->Save(dataDir_Worksheets->StringAppend(new String("ClearAllPageBreaks_out_.xls")));
-	// ExEnd:ClearAllPageBreaks
-}
-void RemoveSpecificPageBreaks()
-{
-	// ExStart:RemoveSpecificPageBreaks
-	// Instantiate a Workbook object and open an Excel file
-	intrusive_ptr<Workbook>  workbook = new Workbook(dataDir_Worksheets->StringAppend(new String("PageBreaks.xls")));
-
-	// Removing a specific page break
-	workbook->GetWorksheets()->GetIndexObject(0)->GetHorizontalPageBreaks()->RemoveAt(0);
-	workbook->GetWorksheets()->GetIndexObject(0)->GetVerticalPageBreaks()->RemoveAt(0);
-
-	// Save the Excel file.
-	workbook->Save(dataDir_Worksheets->StringAppend(new String("RemoveSpecificPageBreaks_out_.xls")));
-	// ExEnd:RemoveSpecificPageBreaks
 }
 void EnableNormalView()
 {
@@ -837,16 +719,16 @@ void EnableNormalView()
 	intrusive_ptr<FileStream> fstream = new FileStream(dataDir_Worksheets->StringAppend(new String("Book1.xlsx")), FileMode_Open);
 
 	// Instantiating a Workbook object and opening the Excel file through the file stream
-	intrusive_ptr<Workbook> workbook = new Workbook(fstream);
+	intrusive_ptr<IWorkbook> workbook =Factory::CreateIWorkbook(fstream);
 
 	// Accessing a worksheet using its index
-	intrusive_ptr<Worksheet> worksheet = workbook->GetWorksheets()->GetIndexObject(0);
+	intrusive_ptr<IWorksheet> worksheet = workbook->GetIWorksheets()->GetObjectByIndex(0);
 
 	// Displaying the worksheet in page break preview
 	worksheet->SetIsPageBreakPreview(true);
 
 	// Saving the modified Excel file
-	workbook->Save(dataDir_Worksheets->StringAppend(new String("EnableNormalView_out_.xls")));
+	workbook->Save(dataDir_Worksheets->StringAppend(new String("EnableNormalView_out.xls")));
 
 	// Closing the file stream to free all resources
 	fstream->Close();
@@ -859,16 +741,16 @@ void SetZoomFactor()
 	intrusive_ptr<FileStream> fstream = new FileStream(dataDir_Worksheets->StringAppend(new String("Book1.xlsx")), FileMode_Open);
 
 	// Instantiating a Workbook object and opening the Excel file through the file stream
-	intrusive_ptr<Workbook> workbook = new Workbook(fstream);
+	intrusive_ptr<IWorkbook> workbook =Factory::CreateIWorkbook(fstream);
 
 	// Accessing a worksheet using its index
-	intrusive_ptr<Worksheet> worksheet = workbook->GetWorksheets()->GetIndexObject(0);
+	intrusive_ptr<IWorksheet> worksheet = workbook->GetIWorksheets()->GetObjectByIndex(0);
 
 	// Setting the zoom factor of the worksheet to 75
 	worksheet->SetZoom(75);
 
 	// Saving the modified Excel file
-	workbook->Save(dataDir_Worksheets->StringAppend(new String("SetZoomFactor_out_.xls")));
+	workbook->Save(dataDir_Worksheets->StringAppend(new String("SetZoomFactor_out.xls")));
 
 	// Closing the file stream to free all resources
 	fstream->Close();
@@ -881,16 +763,16 @@ void FreezePanes()
 	intrusive_ptr<FileStream> fstream = new FileStream(dataDir_Worksheets->StringAppend(new String("Book1.xlsx")), FileMode_Open);
 
 	// Instantiating a Workbook object and opening the Excel file through the file stream
-	intrusive_ptr<Workbook> workbook = new Workbook(fstream);
+	intrusive_ptr<IWorkbook> workbook =Factory::CreateIWorkbook(fstream);
 
 	// Accessing a worksheet using its index
-	intrusive_ptr<Worksheet> worksheet = workbook->GetWorksheets()->GetIndexObject(0);
+	intrusive_ptr<IWorksheet> worksheet = workbook->GetIWorksheets()->GetObjectByIndex(0);
 
 	// Applying freeze panes settings
 	worksheet->FreezePanes(3, 2, 3, 2);
 
 	// Saving the modified Excel file
-	workbook->Save(dataDir_Worksheets->StringAppend(new String("FreezePanes_out_.xls")));
+	workbook->Save(dataDir_Worksheets->StringAppend(new String("FreezePanes_out.xls")));
 
 	// Closing the file stream to free all resources
 	fstream->Close();
@@ -900,29 +782,29 @@ void SplitPanes()
 {
 	// ExStart:SplitPanes
 	// Instantiating a Workbook object and opening the Excel file through the path
-	intrusive_ptr<Workbook> workbook = new Workbook(dataDir_Worksheets->StringAppend(new String("Book1.xlsx")));
+	intrusive_ptr<IWorkbook> workbook =Factory::CreateIWorkbook(dataDir_Worksheets->StringAppend(new String("Book1.xlsx")));
 
 	// Accessing a worksheet using its index
-	intrusive_ptr<Worksheet> worksheet = workbook->GetWorksheets()->GetIndexObject(0);
+	intrusive_ptr<IWorksheet> worksheet = workbook->GetIWorksheets()->GetObjectByIndex(0);
 
-    // Set the active cell
-    worksheet->SetActiveCell(new String("A20"));
+	// Set the active cell
+	worksheet->SetActiveCell(new String("A20"));
 
 	// Split the worksheet window
 	worksheet->Split();
 
 	// Saving the modified Excel file
-	workbook->Save(dataDir_Worksheets->StringAppend(new String("FreezePanes_out_.xls")));
+	workbook->Save(dataDir_Worksheets->StringAppend(new String("FreezePanes_out.xls")));
 	// ExEnd:SplitPanes
 }
 void RemovingPanes()
 {
 	// ExStart:RemovingPanes
 	// Instantiating a Workbook object and opening the Excel file through the path
-	intrusive_ptr<Workbook> workbook = new Workbook(dataDir_Worksheets->StringAppend(new String("Book1.xlsx")));
+	intrusive_ptr<IWorkbook> workbook =Factory::CreateIWorkbook(dataDir_Worksheets->StringAppend(new String("Book1.xlsx")));
 
 	// Accessing a worksheet using its index
-	intrusive_ptr<Worksheet> worksheet = workbook->GetWorksheets()->GetIndexObject(0);
+	intrusive_ptr<IWorksheet> worksheet = workbook->GetIWorksheets()->GetObjectByIndex(0);
 
 	// Set the active cell
 	worksheet->SetActiveCell(new String("A20"));
@@ -931,7 +813,7 @@ void RemovingPanes()
 	worksheet->RemoveSplit();
 
 	// Saving the modified Excel file
-	workbook->Save(dataDir_Worksheets->StringAppend(new String("RemovingPanes_out_.xls")));
+	workbook->Save(dataDir_Worksheets->StringAppend(new String("RemovingPanes_out.xls")));
 	// ExEnd:RemovingPanes
 }
 #pragma endregion
@@ -941,32 +823,32 @@ void UsingCellName()
 {
 	// ExStart:UsingCellName
 	// Instantiate a Workbook object and open an Excel file
-	intrusive_ptr<Workbook>  workbook = new Workbook(dataDir_Data->StringAppend(new String("Book1.xlsx")));
+	intrusive_ptr<IWorkbook>  workbook =Factory::CreateIWorkbook(dataDir_Data->StringAppend(new String("Book1.xlsx")));
 
 	// Accessing the first worksheet in the Excel file
-	intrusive_ptr<Worksheet> worksheet = workbook->GetWorksheets()->GetIndexObject(0);
+	intrusive_ptr<IWorksheet> worksheet = workbook->GetIWorksheets()->GetObjectByIndex(0);
 
 	// Get cells from sheet
-	intrusive_ptr<Cells> cells = worksheet->GetCells();
+	intrusive_ptr<ICells> cells = worksheet->GetICells();
 
 	// Accessing a cell using its name
-	intrusive_ptr<Cell> cell = cells->GetCellByName(new String("A1"));	
+	intrusive_ptr<ICell> cell = cells->GetObjectByIndex(new String("A1"));
 	// ExEnd:UsingCellName
 }
 void UsingRowAndColumnIndex()
 {
 	// ExStart:UsingRowAndColumnIndex
 	// Instantiate a Workbook object and open an Excel file
-	intrusive_ptr<Workbook>  workbook = new Workbook(dataDir_Data->StringAppend(new String("Book1.xlsx")));
+	intrusive_ptr<IWorkbook>  workbook =Factory::CreateIWorkbook(dataDir_Data->StringAppend(new String("Book1.xlsx")));
 
 	// Accessing the first worksheet in the Excel file
-	intrusive_ptr<Worksheet> worksheet = workbook->GetWorksheets()->GetIndexObject(0);
+	intrusive_ptr<IWorksheet> worksheet = workbook->GetIWorksheets()->GetObjectByIndex(0);
 
 	// Get cells from sheet
-	intrusive_ptr<Cells> cells = worksheet->GetCells();
+	intrusive_ptr<ICells> cells = worksheet->GetICells();
 
 	// Accessing a cell using its index
-	intrusive_ptr<Cell> cell = cells->GetCellByIndex(0);
+	intrusive_ptr<ICell> cell = cells->GetObjectByIndex(0);
 	// ExEnd:UsingRowAndColumnIndex
 }
 void MaximumDisplayRange()
@@ -974,64 +856,64 @@ void MaximumDisplayRange()
 
 	// ExStart:MaximumDisplayRange
 	// Instantiate a Workbook object and open an Excel file
-	intrusive_ptr<Workbook>  workbook = new Workbook(dataDir_Data->StringAppend(new String("Book1.xlsx")));
+	intrusive_ptr<IWorkbook>  workbook =Factory::CreateIWorkbook(dataDir_Data->StringAppend(new String("Book1.xlsx")));
 
 	// Accessing the first worksheet in the Excel file
-	intrusive_ptr<Worksheet> worksheet = workbook->GetWorksheets()->GetIndexObject(0);
+	intrusive_ptr<IWorksheet> worksheet = workbook->GetIWorksheets()->GetObjectByIndex(0);
 
 	// Get cells from sheet
-	intrusive_ptr<Cells> cells = worksheet->GetCells();
+	intrusive_ptr<ICells> cells = worksheet->GetICells();
 
 	// Access the Maximum Display Range
-	intrusive_ptr<Range> range = cells->GetMaxDisplayRange();
+	intrusive_ptr<IRange> range = cells->GetMaxDisplayIRange();
 	// ExEnd:MaximumDisplayRange
 }
 void AddingDataToCells()
 {
 	// ExStart:AddingDataToCells
 	// Instantiate a Workbook object
-	intrusive_ptr<Workbook>  workbook = new Workbook();
+	intrusive_ptr<IWorkbook>  workbook =Factory::CreateIWorkbook();
 
 	// Accessing the first worksheet in the Excel file
-	intrusive_ptr<Worksheet> worksheet = workbook->GetWorksheets()->GetIndexObject(0);	
+	intrusive_ptr<IWorksheet> worksheet = workbook->GetIWorksheets()->GetObjectByIndex(0);
 
 	// Adding a string value to the cell
-	worksheet->GetCells()->GetCellByName(new String("A1"))->PutValue("Hello World");
+	worksheet->GetICells()->GetObjectByIndex(new String("A1"))->PutValue("Hello World");
 
 	// Adding a double value to the cell
-	worksheet->GetCells()->GetCellByName(new String("A2"))->PutValue(20.5);
+	worksheet->GetICells()->GetObjectByIndex(new String("A2"))->PutValue(20.5);
 
 	// Adding an integer  value to the cell
-	worksheet->GetCells()->GetCellByName(new String("A3"))->PutValue(15);
+	worksheet->GetICells()->GetObjectByIndex(new String("A3"))->PutValue(15);
 
 	// Adding a boolean value to the cell
-	worksheet->GetCells()->GetCellByName(new String("A4"))->PutValue(true);
+	worksheet->GetICells()->GetObjectByIndex(new String("A4"))->PutValue(true);
 
 	// Setting the display format of the date
-	intrusive_ptr<Style> style = worksheet->GetCells()->GetCellByName(new String("A5"))->GetStyle();
+	intrusive_ptr<IStyle> style = worksheet->GetICells()->GetObjectByIndex(new String("A5"))->GetIStyle();
 	style->SetNumber(15);
 
-	worksheet->GetCells()->GetCellByName(new String("A5"))->SetStyle(style);
+	worksheet->GetICells()->GetObjectByIndex(new String("A5"))->SetStyle(style);
 
-	workbook->Save(dataDir_Data->StringAppend(new String("AddingDataToCells_out_.xlsx")));
+	workbook->Save(dataDir_Data->StringAppend(new String("AddingDataToCells_out.xlsx")));
 	// ExEnd:AddingDataToCells
 }
 void RetrievingDataFromCells()
 {
 	// ExStart:RetrievingDataFromCells
 	// Instantiate a Workbook object and load excel file from path
-	intrusive_ptr<Workbook>  workbook = new Workbook(dataDir_Data->StringAppend(new String("Book1.xlsx")));
+	intrusive_ptr<IWorkbook>  workbook =Factory::CreateIWorkbook(dataDir_Data->StringAppend(new String("Book1.xlsx")));
 
 	// Accessing the first worksheet in the Excel file
-	intrusive_ptr<Worksheet> worksheet = workbook->GetWorksheets()->GetIndexObject(0);
+	intrusive_ptr<IWorksheet> worksheet = workbook->GetIWorksheets()->GetObjectByIndex(0);
 
 	// Get cells from sheet
-	intrusive_ptr<Cells> cells = worksheet->GetCells();
+	intrusive_ptr<ICells> cells = worksheet->GetICells();
 
 	for (int i = 0; i < cells->GetCount(); i++)
 	{
 
-		intrusive_ptr<Cell> cell = cells->GetCellByIndex(i);
+		intrusive_ptr<ICell> cell = cells->GetObjectByIndex(i);
 
 		switch (cell->GetType())
 		{
@@ -1058,63 +940,22 @@ void RetrievingDataFromCells()
 		default:
 			break;
 		}
-	}	
+	}
 	// ExEnd:RetrievingDataFromCells
-}
-void DataSorting()
-{
-	// ExStart:DataSorting
-	// Instantiate a Workbook object and open an Excel file
-	intrusive_ptr<Workbook>  workbook = new Workbook(dataDir_Data->StringAppend(new String("Book1.xlsx")));
-
-	// Get the workbook datasorter object.
-	intrusive_ptr<DataSorter> sorter = workbook->GetDataSorter();
-
-	// Set the first order for datasorter object.
-	sorter->SetOrder1(SortOrder_Descending);
-
-	// Define the first key.
-	sorter->SetKey1(0);
-
-	// Set the second order for datasorter object.
-	sorter->SetOrder2(SortOrder_Ascending);
-
-	// Define the second key.
-	sorter->SetKey2(1);
-
-	// Create a cells area (range).
-	intrusive_ptr<CellArea> ca = new CellArea();
-
-	// Specify the start row, start column, last row and last column index.
-	ca->StartRow = 0;
-	ca->StartColumn = 0;
-	ca->EndRow = 13;
-	ca->EndColumn = 1;
-
-	// Accessing the first worksheet in the Excel file
-	intrusive_ptr<Worksheet> worksheet = workbook->GetWorksheets()->GetIndexObject(0);
-
-	// Sort data in the specified data range (A1:B14)
-	sorter->Sort(worksheet->GetCells(), ca);
-
-	workbook->Save(dataDir_Data->StringAppend(new String("DataSorting_out_.xlsx")));
-	// ExEnd:DataSorting
 }
 void TracingPrecedents()
 {
 	// ExStart:TracingPrecedents
 	// Instantiate a Workbook object and open an Excel file
-	intrusive_ptr<Workbook>  workbook = new Workbook(dataDir_Data->StringAppend(new String("Book1.xlsx")));
+	intrusive_ptr<IWorkbook>  workbook =Factory::CreateIWorkbook(dataDir_Data->StringAppend(new String("Book1.xlsx")));
 
 	// Accessing the first worksheet in the Excel file
-	intrusive_ptr<Worksheet> worksheet = workbook->GetWorksheets()->GetIndexObject(0);
+	intrusive_ptr<IWorksheet> worksheet = workbook->GetIWorksheets()->GetObjectByIndex(0);
 
 	// Get cell by name from sheet cells collection
-	intrusive_ptr<Cell> cell = worksheet->GetCells()->GetCellByName(new String("B4"));
+	intrusive_ptr<ICell> cell = worksheet->GetICells()->GetObjectByIndex(new String("B4"));
 
-	intrusive_ptr<ReferredAreaCollection> ret = cell->GetPrecedents();
-
-	intrusive_ptr<ReferredArea> area = new ReferredArea();
+	intrusive_ptr<IReferredArea> area;
 
 	area->GetSheetName();
 	area->GetStartRow();
@@ -1127,319 +968,16 @@ void TracingDependents()
 {
 	// ExStart:TracingDependents
 	// Instantiate a Workbook object and open an Excel file
-	intrusive_ptr<Workbook>  workbook = new Workbook(dataDir_Data->StringAppend(new String("Book1.xlsx")));
+	intrusive_ptr<IWorkbook>  workbook =Factory::CreateIWorkbook(dataDir_Data->StringAppend(new String("Book1.xlsx")));
 
 	// Accessing the first worksheet in the Excel file
-	intrusive_ptr<Worksheet> worksheet = workbook->GetWorksheets()->GetIndexObject(0);
+	intrusive_ptr<IWorksheet> worksheet = workbook->GetIWorksheets()->GetObjectByIndex(0);
 
 	// Get cell by name from sheet cells collection
-	intrusive_ptr<Cell> cell = worksheet->GetCells()->GetCellByName(new String("B2"));
+	intrusive_ptr<ICell> cell = worksheet->GetICells()->GetObjectByIndex(new String("B2"));
 
-	cell->GetDependents(true);
+	cell->GetDependentICells(true);
 	// ExEnd:TracingDependents
-}
-void AddLinkToURL()
-{
-	// ExStart:AddLinkToURL
-	// Instantiate a Workbook object
-	intrusive_ptr<Workbook> workbook = new Workbook();
-
-	// Accessing the first worksheet in the Excel file
-	intrusive_ptr<Worksheet> worksheet = workbook->GetWorksheets()->GetIndexObject(0);
-
-	// Adding a hyperlink to a URL at "A1" cell
-	worksheet->GetHyperlinks()->Add(new String("A1"), 1, 1, new String("http:// Www.aspose.com"));
-	
-	// Saving the Excel file
-	workbook->Save(dataDir_Data->StringAppend(new String("AddLinkToURL_out_.xlsx")));
-	// ExEnd:AddLinkToURL
-}
-void AddLinkToCell()
-{
-	// ExStart:AddLinkToCell
-	// Instantiate a Workbook object
-	intrusive_ptr<Workbook> workbook = new Workbook();
-
-	// Adding a new worksheet to the Workbook object
-	workbook->GetWorksheets()->Add();
-
-	// Accessing the first worksheet in the Excel file
-	intrusive_ptr<Worksheet> worksheet = workbook->GetWorksheets()->GetIndexObject(0);
-
-	// Adding an internal hyperlink to the "B9" cell of the other worksheet "Sheet2" in the same Excel file
-	worksheet->GetHyperlinks()->Add(new String("B3"), 1, 1, new String("Sheet2!B9"));
-
-	// Saving the Excel file
-	workbook->Save(dataDir_Data->StringAppend(new String("AddLinkToCell_out_.xlsx")));
-	// ExEnd:AddLinkToCell
-}
-void AddLinkToExternalFile()
-{
-	// ExStart:AddLinkToExternalFile
-	// Instantiate a Workbook object
-	intrusive_ptr<Workbook> workbook = new Workbook();
-
-	// Adding a new worksheet to the Workbook object
-	int i =  workbook->GetWorksheets()->Add();
-
-	// Obtaining the reference of the newly added worksheet by passing its sheet index
-	intrusive_ptr<Worksheet> worksheet = workbook->GetWorksheets()->GetIndexObject(i);
-
-	// Adding an internal hyperlink to the "B9" cell of the other worksheet "Sheet2" in the same Excel file
-	worksheet->GetHyperlinks()->Add(new String("A5"), 1, 1, dataDir_Data->StringAppend(new String("Book1.xlsx")));
-
-	// Saving the Excel file
-	workbook->Save(dataDir_Data->StringAppend(new String("AddLinkToExternalFile_out_.xlsx")));
-	// ExEnd:AddLinkToExternalFile
-}
-#pragma endregion
-
-#pragma region "Pivot Tables"
-void SettingAutoFormatType()
-{
-	// ExStart:SettingAutoFormatType
-	// Instantiate a Workbook object and open an Excel file
-	intrusive_ptr<Workbook>  workbook = new Workbook(dataDir_PivotTables->StringAppend(new String("Book1.xls")));
-
-	// Accessing the first worksheet in the Excel file
-	intrusive_ptr<Worksheet> worksheet = workbook->GetWorksheets()->GetIndexObject(0);
-
-	// Accessing the PivotTable
-	intrusive_ptr<PivotTable> pivotTable = worksheet->GetPivotTables()->GetIndexObject(0);
-
-	// Setting the PivotTable report is automatically formatted
-	pivotTable->SetIsAutoFormat(true);
-
-	// Setting the PivotTable atuoformat type.
-	pivotTable->SetAutoFormatType(PivotTableAutoFormatType_Report5);
-
-	// Saving the Excel file
-	workbook->Save(dataDir_PivotTables->StringAppend(new String("SettingAutoFormatType_out_.xlsx")));
-	// ExEnd:SettingAutoFormatType
-}
-void SettingFormatOptions()
-{
-	// ExStart:SettingFormatOptions
-	// Instantiate a Workbook object and open an Excel file
-	intrusive_ptr<Workbook>  workbook = new Workbook(dataDir_PivotTables->StringAppend(new String("Book1.xls")));
-
-	// Accessing the first worksheet in the Excel file
-	intrusive_ptr<Worksheet> worksheet = workbook->GetWorksheets()->GetIndexObject(0);
-
-	// Accessing the PivotTable
-	intrusive_ptr<PivotTable> pivotTable = worksheet->GetPivotTables()->GetIndexObject(0);
-
-	// Setting the PivotTable report shows grand totals for rows.
-	pivotTable->SetRowGrand(true);
-
-	// Setting the PivotTable report shows grand totals for columns.
-	pivotTable->SetColumnGrand(true);
-
-	// Setting the PivotTable report displays a custom string in cells that contain null values.
-	pivotTable->SetDisplayNullString(true);
-	pivotTable->SetNullString(new String("null"));
-
-	// Setting the PivotTable report's layout
-	pivotTable->SetPageFieldOrder(PrintOrderType_DownThenOver);
-
-	// Saving the Excel file
-	workbook->Save(dataDir_PivotTables->StringAppend(new String("SettingFormatOptions_out_.xlsx")));
-	// ExEnd:SettingFormatOptions
-}
-void FormattingLookAndFeel()
-{
-	// ExStart:FormattingLookAndFeel
-	// Instantiate a Workbook object and open an Excel file
-	intrusive_ptr<Workbook>  workbook = new Workbook(dataDir_PivotTables->StringAppend(new String("Book1.xls")));
-
-	// Accessing the first worksheet in the Excel file
-	intrusive_ptr<Worksheet> worksheet = workbook->GetWorksheets()->GetIndexObject(0);
-
-	// Accessing the PivotTable
-	intrusive_ptr<PivotTable> pivot = worksheet->GetPivotTables()->GetIndexObject(0);
-
-	pivot->SetPivotTableStyleType(PivotTableStyleType_PivotTableStyleDark1);
-
-	intrusive_ptr<Style> style = workbook->CreateStyle();
-	style->GetFont()->SetName(new String("Arial Black"));
-	style->SetForegroundColor(ColorTranslator::FromHtml(new String("blue")));
-	style->SetPattern(BackgroundType_Solid);
-
-	pivot->FormatAll(style);
-
-	// Saving the Excel file
-	workbook->Save(dataDir_PivotTables->StringAppend(new String("FormattingLookAndFeel_out_.xlsx")));
-	// ExEnd:FormattingLookAndFeel
-}
-void SettingFieldsFormat()
-{
-	// ExStart:SettingFieldsFormat
-	// Instantiate a Workbook object and open an Excel file
-	intrusive_ptr<Workbook>  workbook = new Workbook(dataDir_PivotTables->StringAppend(new String("Book1.xls")));
-
-	// Accessing the first worksheet in the Excel file
-	intrusive_ptr<Worksheet> worksheet = workbook->GetWorksheets()->GetIndexObject(0);
-
-	// Accessing the PivotTable
-	intrusive_ptr<PivotTable> pivotTable = worksheet->GetPivotTables()->GetIndexObject(0);
-
-	// Setting the PivotTable report shows grand totals for rows.
-	pivotTable->SetRowGrand(true);
-
-	// Accessing the row fields.
-	intrusive_ptr<PivotFieldCollection> pivotFields = pivotTable->GetRowFields();
-
-	// Accessing the first row field in the row fields.
-	intrusive_ptr<PivotField> pivotField = pivotFields->GetIndexObject(0);
-
-	// Setting Subtotals.
-	pivotField->SetSubtotals(PivotFieldSubtotalType_Sum, true);
-	pivotField->SetSubtotals(PivotFieldSubtotalType_Count, true);
-
-	// Setting the field auto sort.
-	pivotField->SetIsAutoSort(true);
-
-	// Setting the field auto sort ascend.
-	pivotField->SetIsAscendSort(true);
-
-	// Setting the field auto sort using the field itself.
-	pivotField->SetAutoSortField(-5);
-
-	// Setting the field auto show.
-	pivotField->SetIsAutoShow(true);
-
-	// Setting the field auto show ascend.
-	pivotField->SetIsAscendShow(false);
-
-	// Setting the auto show using field(data field).
-	pivotField->SetAutoShowField(0);
-
-	// Saving the Excel file
-	workbook->Save(dataDir_PivotTables->StringAppend(new String("SettingFieldsFormat_out_.xlsx")));
-	// ExEnd:SettingFieldsFormat
-}
-void SettingDataFieldsFormat()
-{
-	// ExStart:SettingDataFieldsFormat
-	// Instantiate a Workbook object and open an Excel file
-	intrusive_ptr<Workbook>  workbook = new Workbook(dataDir_PivotTables->StringAppend(new String("Book1.xls")));
-
-	// Accessing the first worksheet in the Excel file
-	intrusive_ptr<Worksheet> worksheet = workbook->GetWorksheets()->GetIndexObject(0);
-
-	// Accessing the PivotTable
-	intrusive_ptr<PivotTable> pivotTable = worksheet->GetPivotTables()->GetIndexObject(0);
-	
-	// Accessing the data fields.
-	intrusive_ptr<PivotFieldCollection> pivotFields = pivotTable->GetDataFields();
-
-	// Accessing the first data field in the data fields.
-	intrusive_ptr<PivotField> pivotField = pivotFields->GetIndexObject(0);
-
-	// Setting data display format
-	pivotField->SetDataDisplayFormat(PivotFieldDataDisplayFormat_PercentageOf);
-
-	// Setting the base field.
-	pivotField->SetBaseFieldIndex(1);
-
-	// Setting the base item.
-	pivotField->SetBaseItemPosition(PivotItemPosition_Next);
-
-	// Setting number format
-	pivotField->SetNumber(10);
-
-	// Saving the Excel file
-	workbook->Save(dataDir_PivotTables->StringAppend(new String("SettingDataFieldsFormat_out_.xlsx")));
-	// ExEnd:SettingDataFieldsFormat
-}
-void ClearPivotFields()
-{
-	// ExStart:ClearPivotFields
-	// Instantiate a Workbook object and open an Excel file
-	intrusive_ptr<Workbook>  workbook = new Workbook(dataDir_PivotTables->StringAppend(new String("Book1.xls")));
-
-	// Accessing the first worksheet in the Excel file
-	intrusive_ptr<Worksheet> worksheet = workbook->GetWorksheets()->GetIndexObject(0);
-
-	// Accessing the PivotTable
-	intrusive_ptr<PivotTable> pivotTable = worksheet->GetPivotTables()->GetIndexObject(0);
-
-	// Accessing the data fields.
-	intrusive_ptr<PivotFieldCollection> pivotFields = pivotTable->GetDataFields();
-
-	// Accessing the first data field in the data fields.
-	intrusive_ptr<PivotField> pivotField = pivotFields->GetIndexObject(0);
-
-	// Clear all the data fields
-	pivotTable->GetDataFields()->Clear();
-
-	// Add new data field
-	pivotTable->AddFieldToArea(PivotFieldType_Data, new String("Betrag Netto FW"));
-
-	// Set the refresh data flag on
-	pivotTable->SetRefreshDataFlag(false);
-
-	// Refresh and calculate the pivot table data
-	pivotTable->RefreshData();
-	pivotTable->CalculateData();
-
-	// Saving the Excel file
-	workbook->Save(dataDir_PivotTables->StringAppend(new String("ClearPivotFields_out_.xlsx")));
-	// ExEnd:ClearPivotFields
-}
-void ApplyingConsolidationFunctionToDataFields()
-{
-	// ExStart:ApplyingConsolidationFunctionToDataFields
-	// Instantiate a Workbook object and open an Excel file
-	intrusive_ptr<Workbook>  workbook = new Workbook(dataDir_PivotTables->StringAppend(new String("Book.xlsx")));
-
-	// Accessing the first worksheet in the Excel file
-	intrusive_ptr<Worksheet> worksheet = workbook->GetWorksheets()->GetIndexObject(0);
-
-	// Accessing the PivotTable
-	intrusive_ptr<PivotTable> pivotTable = worksheet->GetPivotTables()->GetIndexObject(0);
-
-	// Accessing the data fields.
-	intrusive_ptr<PivotFieldCollection> pivotFields = pivotTable->GetDataFields();
-
-	// Accessing the first data field in the data fields.
-	intrusive_ptr<PivotField> pivotField = pivotFields->GetIndexObject(0);
-
-	// Apply Average consolidation function to first data field
-	pivotTable->GetDataFields()->GetIndexObject(0)->SetFunction(ConsolidationFunction_Average);
-
-	// Apply DistinctCount consolidation function to second data field
-	pivotTable->GetDataFields()->GetIndexObject(1)->SetFunction(ConsolidationFunction_DistinctCount);
-
-	// Calculate the data to make changes affect
-	pivotTable->CalculateData();
-
-	// Saving the Excel file
-	workbook->Save(dataDir_PivotTables->StringAppend(new String("ApplyingConsolidationFunctionToDataFields_out_.xlsx")));
-	// ExEnd:ApplyingConsolidationFunctionToDataFields
-}
-void RefreshAndCalculateItems()
-{
-	// ExStart:RefreshAndCalculateItems
-	// Instantiate a Workbook object and open an Excel file
-	intrusive_ptr<Workbook>  workbook = new Workbook(dataDir_PivotTables->StringAppend(new String("sample.xlsx")));
-
-	// Accessing the first worksheet in the Excel file
-	intrusive_ptr<Worksheet> worksheet = workbook->GetWorksheets()->GetIndexObject(0);
-
-	// Change the value of cell D2
-	worksheet->GetCells()->GetCellByName(new String("D2"))->PutValue(20);
-
-	for (int i = 0; i < worksheet->GetPivotTables()->GetCount(); i++)
-	{
-		// Accessing the PivotTable
-		intrusive_ptr<PivotTable> pivotTable = worksheet->GetPivotTables()->GetIndexObject(i);
-		pivotTable->RefreshData();
-		pivotTable->CalculateData();
-	}
-	// Saving the pdf file
-	workbook->Save(dataDir_PivotTables->StringAppend(new String("RefreshAndCalculateItems_out_.pdf")), SaveFormat_Pdf);
-	// ExEnd:RefreshAndCalculateItems
 }
 #pragma endregion
 
@@ -1448,191 +986,185 @@ void CreatingListObjects()
 {
 	// ExStart:CreatingListObjects
 	// Instantiate a Workbook object and open an Excel file
-	intrusive_ptr<Workbook>  workbook = new Workbook(dataDir_Tables->StringAppend(new String("book1.xls")));
+	intrusive_ptr<IWorkbook>  workbook =Factory::CreateIWorkbook(dataDir_Tables->StringAppend(new String("book1.xls")));
 
 	// Accessing the first worksheet in the Excel file
-	intrusive_ptr<Worksheet> worksheet = workbook->GetWorksheets()->GetIndexObject(0);
+	intrusive_ptr<IWorksheet> worksheet = workbook->GetIWorksheets()->GetObjectByIndex(0);
 
 	// Get the List objects collection in the first worksheet.
-	intrusive_ptr<ListObjectCollection> listObjects = worksheet->GetListObjects();
+	intrusive_ptr<IListObjectCollection> listObjects = worksheet->GetIListObjects();
 
 	// Add a List based on the data source range with headers on.
 	listObjects->Add(1, 1, 7, 5, true);
 
 	// Show the total row for the List.
-	listObjects->GetIndexObject(0)->SetShowTotals(true);
-
-	// Calculate the total of the last (5th ) list column.
-	listObjects->GetIndexObject(0)->GetListColumns()->GetIndexObject(4)->SetTotalsCalculation(TotalsCalculation_Sum);
+	listObjects->GetObjectByIndex(0)->SetShowTotals(true);	
 
 	// Saving the Excel file
-	workbook->Save(dataDir_Tables->StringAppend(new String("CreatingListObjects_out_.xls")));
+	workbook->Save(dataDir_Tables->StringAppend(new String("CreatingListObjects_out.xls")));
 	// ExEnd:CreatingListObjects
 }
 void FormatTable()
 {
 	// ExStart:FormatTable
 	// Instantiate a Workbook object
-	intrusive_ptr<Workbook>  workbook = new Workbook();
+	intrusive_ptr<IWorkbook>  workbook =Factory::CreateIWorkbook();
 
 	// Obtaining the reference of the default(first) worksheet
-	intrusive_ptr<Worksheet> worksheet = workbook->GetWorksheets()->GetIndexObject(0);
+	intrusive_ptr<IWorksheet> worksheet = workbook->GetIWorksheets()->GetObjectByIndex(0);
 
 	// Obtaining Worksheet's cells collection
-	intrusive_ptr<Cells> cells = worksheet->GetCells();
+	intrusive_ptr<ICells> cells = worksheet->GetICells();
 
 	// Setting the value to the cells
-	cells->GetCellByName(new String("A1"))->PutValue("Employee");
-	cells->GetCellByName(new String("B1"))->PutValue("Quarter");
-	cells->GetCellByName(new String("C1"))->PutValue("Product");
-	cells->GetCellByName(new String("D1"))->PutValue("Continent");
-	cells->GetCellByName(new String("E1"))->PutValue("Country");
-	cells->GetCellByName(new String("F1"))->PutValue("Sale");
+	cells->GetObjectByIndex(new String("A1"))->PutValue("Employee");
+	cells->GetObjectByIndex(new String("B1"))->PutValue("Quarter");
+	cells->GetObjectByIndex(new String("C1"))->PutValue("Product");
+	cells->GetObjectByIndex(new String("D1"))->PutValue("Continent");
+	cells->GetObjectByIndex(new String("E1"))->PutValue("Country");
+	cells->GetObjectByIndex(new String("F1"))->PutValue("Sale");
 
-	cells->GetCellByName(new String("A2"))->PutValue("David");
-	cells->GetCellByName(new String("A3"))->PutValue("David");
-	cells->GetCellByName(new String("A4"))->PutValue("David");
-	cells->GetCellByName(new String("A5"))->PutValue("David");
-	cells->GetCellByName(new String("A6"))->PutValue("James");
-	cells->GetCellByName(new String("A7"))->PutValue("James");
-	cells->GetCellByName(new String("A8"))->PutValue("James");
-	cells->GetCellByName(new String("A9"))->PutValue("James");
-	cells->GetCellByName(new String("A10"))->PutValue("James");
-	cells->GetCellByName(new String("A11"))->PutValue("Miya");
-	cells->GetCellByName(new String("A12"))->PutValue("Miya");
-	cells->GetCellByName(new String("A13"))->PutValue("Miya");
-	cells->GetCellByName(new String("A14"))->PutValue("Miya");
-	cells->GetCellByName(new String("A15"))->PutValue("Miya");
+	cells->GetObjectByIndex(new String("A2"))->PutValue("David");
+	cells->GetObjectByIndex(new String("A3"))->PutValue("David");
+	cells->GetObjectByIndex(new String("A4"))->PutValue("David");
+	cells->GetObjectByIndex(new String("A5"))->PutValue("David");
+	cells->GetObjectByIndex(new String("A6"))->PutValue("James");
+	cells->GetObjectByIndex(new String("A7"))->PutValue("James");
+	cells->GetObjectByIndex(new String("A8"))->PutValue("James");
+	cells->GetObjectByIndex(new String("A9"))->PutValue("James");
+	cells->GetObjectByIndex(new String("A10"))->PutValue("James");
+	cells->GetObjectByIndex(new String("A11"))->PutValue("Miya");
+	cells->GetObjectByIndex(new String("A12"))->PutValue("Miya");
+	cells->GetObjectByIndex(new String("A13"))->PutValue("Miya");
+	cells->GetObjectByIndex(new String("A14"))->PutValue("Miya");
+	cells->GetObjectByIndex(new String("A15"))->PutValue("Miya");
 
-	cells->GetCellByName(new String("B2"))->PutValue(1);
-	cells->GetCellByName(new String("B3"))->PutValue(2);
-	cells->GetCellByName(new String("B4"))->PutValue(3);
-	cells->GetCellByName(new String("B5"))->PutValue(4);
-	cells->GetCellByName(new String("B6"))->PutValue(1);
-	cells->GetCellByName(new String("B7"))->PutValue(2);
-	cells->GetCellByName(new String("B8"))->PutValue(3);
-	cells->GetCellByName(new String("B9"))->PutValue(4);
-	cells->GetCellByName(new String("B10"))->PutValue(4);
-	cells->GetCellByName(new String("B11"))->PutValue(1);
-	cells->GetCellByName(new String("B12"))->PutValue(1);
-	cells->GetCellByName(new String("B13"))->PutValue(2);
-	cells->GetCellByName(new String("B14"))->PutValue(2);
-	cells->GetCellByName(new String("B15"))->PutValue(2);
+	cells->GetObjectByIndex(new String("B2"))->PutValue(1);
+	cells->GetObjectByIndex(new String("B3"))->PutValue(2);
+	cells->GetObjectByIndex(new String("B4"))->PutValue(3);
+	cells->GetObjectByIndex(new String("B5"))->PutValue(4);
+	cells->GetObjectByIndex(new String("B6"))->PutValue(1);
+	cells->GetObjectByIndex(new String("B7"))->PutValue(2);
+	cells->GetObjectByIndex(new String("B8"))->PutValue(3);
+	cells->GetObjectByIndex(new String("B9"))->PutValue(4);
+	cells->GetObjectByIndex(new String("B10"))->PutValue(4);
+	cells->GetObjectByIndex(new String("B11"))->PutValue(1);
+	cells->GetObjectByIndex(new String("B12"))->PutValue(1);
+	cells->GetObjectByIndex(new String("B13"))->PutValue(2);
+	cells->GetObjectByIndex(new String("B14"))->PutValue(2);
+	cells->GetObjectByIndex(new String("B15"))->PutValue(2);
 
-	cells->GetCellByName(new String("C2"))->PutValue("Maxilaku");
-	cells->GetCellByName(new String("C3"))->PutValue("Maxilaku");
-	cells->GetCellByName(new String("C4"))->PutValue("Chai");
-	cells->GetCellByName(new String("C5"))->PutValue("Maxilaku");
-	cells->GetCellByName(new String("C6"))->PutValue("Chang");
-	cells->GetCellByName(new String("C7"))->PutValue("Chang");
-	cells->GetCellByName(new String("C8"))->PutValue("Chang");
-	cells->GetCellByName(new String("C9"))->PutValue("Chang");
-	cells->GetCellByName(new String("C10"))->PutValue("Chang");
-	cells->GetCellByName(new String("C11"))->PutValue("Geitost");
-	cells->GetCellByName(new String("C12"))->PutValue("Chai");
-	cells->GetCellByName(new String("C13"))->PutValue("Geitost");
-	cells->GetCellByName(new String("C14"))->PutValue("Geitost");
-	cells->GetCellByName(new String("C15"))->PutValue("Geitost");
+	cells->GetObjectByIndex(new String("C2"))->PutValue("Maxilaku");
+	cells->GetObjectByIndex(new String("C3"))->PutValue("Maxilaku");
+	cells->GetObjectByIndex(new String("C4"))->PutValue("Chai");
+	cells->GetObjectByIndex(new String("C5"))->PutValue("Maxilaku");
+	cells->GetObjectByIndex(new String("C6"))->PutValue("Chang");
+	cells->GetObjectByIndex(new String("C7"))->PutValue("Chang");
+	cells->GetObjectByIndex(new String("C8"))->PutValue("Chang");
+	cells->GetObjectByIndex(new String("C9"))->PutValue("Chang");
+	cells->GetObjectByIndex(new String("C10"))->PutValue("Chang");
+	cells->GetObjectByIndex(new String("C11"))->PutValue("Geitost");
+	cells->GetObjectByIndex(new String("C12"))->PutValue("Chai");
+	cells->GetObjectByIndex(new String("C13"))->PutValue("Geitost");
+	cells->GetObjectByIndex(new String("C14"))->PutValue("Geitost");
+	cells->GetObjectByIndex(new String("C15"))->PutValue("Geitost");
 
-	cells->GetCellByName(new String("D2"))->PutValue("Asia");
-	cells->GetCellByName(new String("D3"))->PutValue("Asia");
-	cells->GetCellByName(new String("D4"))->PutValue("Asia");
-	cells->GetCellByName(new String("D5"))->PutValue("Asia");
-	cells->GetCellByName(new String("D6"))->PutValue("Europe");
-	cells->GetCellByName(new String("D7"))->PutValue("Europe");
-	cells->GetCellByName(new String("D8"))->PutValue("Europe");
-	cells->GetCellByName(new String("D9"))->PutValue("Europe");
-	cells->GetCellByName(new String("D10"))->PutValue("Europe");
-	cells->GetCellByName(new String("D11"))->PutValue("America");
-	cells->GetCellByName(new String("D12"))->PutValue("America");
-	cells->GetCellByName(new String("D13"))->PutValue("America");
-	cells->GetCellByName(new String("D14"))->PutValue("America");
-	cells->GetCellByName(new String("D15"))->PutValue("America");
+	cells->GetObjectByIndex(new String("D2"))->PutValue("Asia");
+	cells->GetObjectByIndex(new String("D3"))->PutValue("Asia");
+	cells->GetObjectByIndex(new String("D4"))->PutValue("Asia");
+	cells->GetObjectByIndex(new String("D5"))->PutValue("Asia");
+	cells->GetObjectByIndex(new String("D6"))->PutValue("Europe");
+	cells->GetObjectByIndex(new String("D7"))->PutValue("Europe");
+	cells->GetObjectByIndex(new String("D8"))->PutValue("Europe");
+	cells->GetObjectByIndex(new String("D9"))->PutValue("Europe");
+	cells->GetObjectByIndex(new String("D10"))->PutValue("Europe");
+	cells->GetObjectByIndex(new String("D11"))->PutValue("America");
+	cells->GetObjectByIndex(new String("D12"))->PutValue("America");
+	cells->GetObjectByIndex(new String("D13"))->PutValue("America");
+	cells->GetObjectByIndex(new String("D14"))->PutValue("America");
+	cells->GetObjectByIndex(new String("D15"))->PutValue("America");
 
-	cells->GetCellByName(new String("E2"))->PutValue("China");
-	cells->GetCellByName(new String("E3"))->PutValue("India");
-	cells->GetCellByName(new String("E4"))->PutValue("Korea");
-	cells->GetCellByName(new String("E5"))->PutValue("India");
-	cells->GetCellByName(new String("E6"))->PutValue("France");
-	cells->GetCellByName(new String("E7"))->PutValue("France");
-	cells->GetCellByName(new String("E8"))->PutValue("Germany");
-	cells->GetCellByName(new String("E9"))->PutValue("Italy");
-	cells->GetCellByName(new String("E10"))->PutValue("France");
-	cells->GetCellByName(new String("E11"))->PutValue("U.S.");
-	cells->GetCellByName(new String("E12"))->PutValue("U.S.");
-	cells->GetCellByName(new String("E13"))->PutValue("Brazil");
-	cells->GetCellByName(new String("E14"))->PutValue("U.S.");
-	cells->GetCellByName(new String("E15"))->PutValue("U.S.");
+	cells->GetObjectByIndex(new String("E2"))->PutValue("China");
+	cells->GetObjectByIndex(new String("E3"))->PutValue("India");
+	cells->GetObjectByIndex(new String("E4"))->PutValue("Korea");
+	cells->GetObjectByIndex(new String("E5"))->PutValue("India");
+	cells->GetObjectByIndex(new String("E6"))->PutValue("France");
+	cells->GetObjectByIndex(new String("E7"))->PutValue("France");
+	cells->GetObjectByIndex(new String("E8"))->PutValue("Germany");
+	cells->GetObjectByIndex(new String("E9"))->PutValue("Italy");
+	cells->GetObjectByIndex(new String("E10"))->PutValue("France");
+	cells->GetObjectByIndex(new String("E11"))->PutValue("U.S.");
+	cells->GetObjectByIndex(new String("E12"))->PutValue("U.S.");
+	cells->GetObjectByIndex(new String("E13"))->PutValue("Brazil");
+	cells->GetObjectByIndex(new String("E14"))->PutValue("U.S.");
+	cells->GetObjectByIndex(new String("E15"))->PutValue("U.S.");
 
-	cells->GetCellByName(new String("F2"))->PutValue(2000);
-	cells->GetCellByName(new String("F3"))->PutValue(500);
-	cells->GetCellByName(new String("F4"))->PutValue(1200);
-	cells->GetCellByName(new String("F5"))->PutValue(1500);
-	cells->GetCellByName(new String("F6"))->PutValue(500);
-	cells->GetCellByName(new String("F7"))->PutValue(1500);
-	cells->GetCellByName(new String("F8"))->PutValue(800);
-	cells->GetCellByName(new String("F9"))->PutValue(900);
-	cells->GetCellByName(new String("F10"))->PutValue(500);
-	cells->GetCellByName(new String("F11"))->PutValue(1600);
-	cells->GetCellByName(new String("F12"))->PutValue(600);
-	cells->GetCellByName(new String("F13"))->PutValue(2000);
-	cells->GetCellByName(new String("F14"))->PutValue(500);
-	cells->GetCellByName(new String("F15"))->PutValue(900);
-	
+	cells->GetObjectByIndex(new String("F2"))->PutValue(2000);
+	cells->GetObjectByIndex(new String("F3"))->PutValue(500);
+	cells->GetObjectByIndex(new String("F4"))->PutValue(1200);
+	cells->GetObjectByIndex(new String("F5"))->PutValue(1500);
+	cells->GetObjectByIndex(new String("F6"))->PutValue(500);
+	cells->GetObjectByIndex(new String("F7"))->PutValue(1500);
+	cells->GetObjectByIndex(new String("F8"))->PutValue(800);
+	cells->GetObjectByIndex(new String("F9"))->PutValue(900);
+	cells->GetObjectByIndex(new String("F10"))->PutValue(500);
+	cells->GetObjectByIndex(new String("F11"))->PutValue(1600);
+	cells->GetObjectByIndex(new String("F12"))->PutValue(600);
+	cells->GetObjectByIndex(new String("F13"))->PutValue(2000);
+	cells->GetObjectByIndex(new String("F14"))->PutValue(500);
+	cells->GetObjectByIndex(new String("F15"))->PutValue(900);
+
 
 	// Adding a new List Object to the worksheet
-	worksheet->GetListObjects()->Add(new String("A1"), new String("F15"), true);
-	intrusive_ptr<ListObject> listObject = worksheet->GetListObjects()->GetIndexObject(0);
+	worksheet->GetIListObjects()->Add(new String("A1"), new String("F15"), true);
+	intrusive_ptr<IListObject> listObject = worksheet->GetIListObjects()->GetObjectByIndex(0);
 
 	// Adding Default Style to the table
 	listObject->SetTableStyleType(TableStyleType_TableStyleMedium10);
 
 	// Show Total
-	listObject->SetShowTotals(true);
-
-	// Set the Quarter field's calculation type
-	listObject->GetListColumns()->GetIndexObject(1)->SetTotalsCalculation(TotalsCalculation_Count);
+	listObject->SetShowTotals(true);	
 
 	// Saving the Excel file
-	workbook->Save(dataDir_Tables->StringAppend(new String("FormatTable_out_.xlsx")));
+	workbook->Save(dataDir_Tables->StringAppend(new String("FormatTable_out.xlsx")));
 	// ExEnd:FormatTable
 }
 void SetCommentOfTableOrListObject()
 {
 	// ExStart:SetCommentOfTableOrListObject
 	// Instantiate a Workbook object and open an Excel file
-	intrusive_ptr<Workbook>  workbook = new Workbook(dataDir_Tables->StringAppend(new String("source.xlsx")));
+	intrusive_ptr<IWorkbook>  workbook =Factory::CreateIWorkbook(dataDir_Tables->StringAppend(new String("source.xlsx")));
 
 	// Accessing the first worksheet in the Excel file
-	intrusive_ptr<Worksheet> worksheet = workbook->GetWorksheets()->GetIndexObject(0);
+	intrusive_ptr<IWorksheet> worksheet = workbook->GetIWorksheets()->GetObjectByIndex(0);
 
 	// Get the List objects collection in the first worksheet.
-	intrusive_ptr<ListObjectCollection> listObjects = worksheet->GetListObjects();	
-	
+	intrusive_ptr<IListObjectCollection> listObjects = worksheet->GetIListObjects();
+
 	// Set the comment of the first list object
-	listObjects->GetIndexObject(0)->SetComment(new String("This is Aspose.Cells comment."));
+	listObjects->GetObjectByIndex(0)->SetComment(new String("This is Aspose.Cells comment."));
 
 	// Saving the Excel file
-	workbook->Save(dataDir_Tables->StringAppend(new String("SetCommentOfTableOrListObject_out_.xlsx")), SaveFormat_Xlsx);
+	workbook->Save(dataDir_Tables->StringAppend(new String("SetCommentOfTableOrListObject_out.xlsx")), SaveFormat_Xlsx);
 	// ExEnd:SetCommentOfTableOrListObject
 }
 void ConvertTableToRange()
 {
 	// ExStart:ConvertTableToRange
 	// Instantiate a Workbook object and open an Excel file
-	intrusive_ptr<Workbook>  workbook = new Workbook(dataDir_Tables->StringAppend(new String("sample.xlsx")));
+	intrusive_ptr<IWorkbook>  workbook =Factory::CreateIWorkbook(dataDir_Tables->StringAppend(new String("sample.xlsx")));
 
 	// Accessing the first worksheet in the Excel file
-	intrusive_ptr<Worksheet> worksheet = workbook->GetWorksheets()->GetIndexObject(0);
+	intrusive_ptr<IWorksheet> worksheet = workbook->GetIWorksheets()->GetObjectByIndex(0);
 
 	// Get the List objects collection in the first worksheet.
-	intrusive_ptr<ListObjectCollection> listObjects = worksheet->GetListObjects();	
+	intrusive_ptr<IListObjectCollection> listObjects = worksheet->GetIListObjects();
 
 	// Convert the first table/list object (from the first worksheet) to normal range
-	listObjects->GetIndexObject(0)->ConvertToRange();
+	listObjects->GetObjectByIndex(0)->ConvertToRange();
 
 	// Saving the Excel file
-	workbook->Save(dataDir_Tables->StringAppend(new String("ConvertTableToRange_out_.xls")));
+	workbook->Save(dataDir_Tables->StringAppend(new String("ConvertTableToRange_out.xls")));
 	// ExEnd:ConvertTableToRange
 }
 #pragma endregion
@@ -1641,8 +1173,8 @@ void ConvertTableToRange()
 void GetCellNameFromRowAndColumn()
 {
 	// ExStart:GetCellNameFromRowAndColumn	
-	intrusive_ptr<CellsHelper> cellsHelper = new CellsHelper();
-	String name = cellsHelper->CellIndexToName(3, 5);
+	intrusive_ptr<ICellsHelper> cellsHelper = new ICellsHelper();
+	String name = cellsHelper->CellIndexToName_i(3, 5);
 	// ExEnd:GetCellNameFromRowAndColumn
 }
 
@@ -1651,36 +1183,32 @@ void GetRowAndColumnFromCellName()
 	// ExStart:GetRowAndColumnFromCellName	
 	int row;
 	int column;
-	intrusive_ptr<CellsHelper> cellsHelper = new CellsHelper();
-	cellsHelper->CellNameToIndex(new String("C4"), row, column);	
+	intrusive_ptr<ICellsHelper> cellsHelper = new ICellsHelper();
+	cellsHelper->CellNameToIndex_i(new String("C4"), row, column);
 	// ExEnd:GetRowAndColumnFromCellName
 }
 #pragma endregion
 
 int main(int argc, char** argv)
-{	
-	
+{
+
 	printf("Open main.cpp. \nIn main() method uncomment the example that you want to run.\n");
 	printf("=====================================================\n");
-	
+
 	//// =====================================================
 	//// =====================================================
 	//// General
 	//// =====================================================
 	//// =====================================================
 
-	//Font_Style_Test1();
-	//Font_Style_Test2();
-	//Font_Style_Test3();
-	//AutofilterTest();
-	//ConditionalFormatTest1();
-	//ConditionalFormatTest2();
-	//HyperlinkTest();
-	//PageSetupTest();
-	//PivotTableDataTest();
+	HelloWorld();
+	ChangeValue();
+	//ValueType();
+	//SetStyle();
+	//SetFormula();	
+	//AutofilterTest();	
+	//PageSetupTest();	
 	//ListObjectTest();	
-	//Chart();
-	//BuiltInProperties();
 
 	//// =====================================================
 	//// =====================================================
@@ -1689,8 +1217,7 @@ int main(int argc, char** argv)
 	//// =====================================================
 
 	//OpenFileUsingPath();
-	//OpenFileUsingStream();
-	//OpenVisibleSheetOnly();
+	//OpenFileUsingStream();	
 	//SavingToStream();
 	//SavingToSomeLocation();
 
@@ -1705,9 +1232,7 @@ int main(int argc, char** argv)
 	//AddingWorksheetsToNewExcelFile();
 	//AccessingWorksheetsUsingIndex();	
 	//RemoveWorksheetsUsingIndex();
-	//AddPageBreaks();
-	//RemoveSpecificPageBreaks();
-	//ClearAllPageBreaks();
+	//AddPageBreaks();	
 	//EnableNormalView();
 	//SetZoomFactor();	
 	//FreezePanes();
@@ -1726,10 +1251,7 @@ int main(int argc, char** argv)
 	//SettingWidthOfAllColumns();
 	//CopyRows();
 	//CopyColumns();
-	//GroupRowsColumns();
-	//SummaryRowBelow();
-	//SummaryColumnRight();
-	//UngroupRowsAndColumns();
+	//GroupRowsColumns();	
 	//InsertRow();
 	//InsertMultipleRows();
 	//DeleteMultipleRows();
@@ -1746,27 +1268,8 @@ int main(int argc, char** argv)
 	//UsingRowAndColumnIndex();
 	//MaximumDisplayRange();
 	//AddingDataToCells();
-	//RetrievingDataFromCells();
-	//DataSorting();
-	//AddLinkToURL();
-	//AddLinkToCell();
-	//AddLinkToExternalFile();	
-	//TracingDependents();
-
-	//// =====================================================
-	//// =====================================================
-	//// Pivot Tables
-	//// =====================================================
-	//// =====================================================
-
-	//SettingAutoFormatType();
-	//SettingFormatOptions();
-	//FormattingLookAndFeel();
-	//SettingFieldsFormat();
-	//SettingDataFieldsFormat();
-	//ClearPivotFields();
-	//ApplyingConsolidationFunctionToDataFields();
-	//RefreshAndCalculateItems();
+	//RetrievingDataFromCells();		
+	//TracingDependents();	
 
 	//// =====================================================
 	//// =====================================================
@@ -1787,8 +1290,8 @@ int main(int argc, char** argv)
 
 	//GetCellNameFromRowAndColumn();
 	//GetRowAndColumnFromCellName();
-		
+
 	// Stop before exiting
 	printf("\n\nProgram Finished. Press any key to exit....");
-	getchar();	
+	getchar();
 }

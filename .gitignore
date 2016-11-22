@@ -6,7 +6,7 @@ generated/
 *.suo
 bin/
 Debug/
-*_out_*
+*_out*
 * Out*
 * out*
 *.ldb
