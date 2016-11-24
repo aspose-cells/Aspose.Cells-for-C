@@ -310,22 +310,7 @@ void SavingToSomeLocation()
 	workbook->Save(dataDir_LoadingAndSaving->StringAppend(new String("SavingToSomeLocation_out.xls")), SaveFormat_Excel97To2003);
 
 	// Save in Excel2007 xlsx format
-	workbook->Save(dataDir_LoadingAndSaving->StringAppend(new String("SavingToSomeLocation_out.xlsx")), SaveFormat_Xlsx);
-
-	// Save in Excel2007 xlsb format
-	workbook->Save(dataDir_LoadingAndSaving->StringAppend(new String("SavingToSomeLocation_out.xlsb")), SaveFormat_Xlsb);
-
-	// Save in ODS format
-	workbook->Save(dataDir_LoadingAndSaving->StringAppend(new String("SavingToSomeLocation_out.ods")), SaveFormat_ODS);
-
-	// Save in Pdf format
-	workbook->Save(dataDir_LoadingAndSaving->StringAppend(new String("SavingToSomeLocation_out.pdf")), SaveFormat_Pdf);
-
-	// Save in Html format
-	workbook->Save(dataDir_LoadingAndSaving->StringAppend(new String("SavingToSomeLocation_out.html")), SaveFormat_Html);
-
-	// Save in SpreadsheetML format
-	workbook->Save(dataDir_LoadingAndSaving->StringAppend(new String("SavingToSomeLocation_out.xml")), SaveFormat_SpreadsheetML);
+	workbook->Save(dataDir_LoadingAndSaving->StringAppend(new String("SavingToSomeLocation_out.xlsx")), SaveFormat_Xlsx);	
 	// ExEnd:SavingToSomeLocation
 }
 #pragma endregion
