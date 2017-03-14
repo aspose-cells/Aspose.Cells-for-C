@@ -12,6 +12,11 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="UsingICustomFunctionFeature.cpp" />
+    <ClCompile Include="WaystoCalculateFormulas.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="CellsExamples.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{C3A0CB75-D1F9-4FE0-9510-BC29B33214E3}</ProjectGuid>

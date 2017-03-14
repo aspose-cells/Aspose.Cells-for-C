@@ -1,5 +1,7 @@
 ﻿/*The unique head file need to be included*/
 #include "Aspose.Cells.h"
+#include "CellsExamples.h"
+
 using namespace std;
 
 static StringPtr sourcePath = new String("..\\Data\\");
@@ -1181,8 +1183,7 @@ void ShowCellsVersion()
 
 int main(int argc, char** argv)
 {
-
-	printf("Open main.cpp. \nIn main() method uncomment the example that you want to run.\n");
+	printf("Uncomment the example that you want to run.\n");
 	printf("=====================================================\n");
 
 	//Show Aspose.Cells for C++ Version
@@ -1195,7 +1196,13 @@ int main(int argc, char** argv)
 	//// =====================================================
 
 	HelloWorld();
-	ChangeValue();
+	ChangeValue(); 
+	
+	//AddingFormulasandCalculatingResults();
+	//DirectCalculationofFormula();
+	//CalculatingFormulasOnceOnly();
+	//RunUsingICustomFunctionFeature();
+	
 	//ValueType();
 	//SetStyle();
 	//SetFormula();	
