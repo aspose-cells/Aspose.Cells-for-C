@@ -21,7 +21,7 @@ Directory | Description
 
 * **Website:** [www.aspose.com](http://www.aspose.com)
 * **Product Home:** [Aspose.Cells for C++](https://www.aspose.com/products/cells/cpp)
-* **Download:** [Download Aspose.Cells for C++](https://downloads.aspose.com/cells)
+* **Download:** [Download Aspose.Cells for C++](https://downloads.aspose.com/cells/cpp)
 * **Documentation:** [Aspose.Cells for C++ Documentation](https://docs.aspose.com/display/cellscpp/Home)
 * **Forum:** [Aspose.Cells for C++ Forum](https://www.aspose.com/community/forums/aspose.cells-product-family/19/showforum.aspx)
 * **Blog:** [Aspose.Cells for C++ Blog](https://blog.aspose.com/category/aspose-products/aspose-cells-product-family/)
