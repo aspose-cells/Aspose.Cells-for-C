@@ -1,0 +1,2 @@
+This file is created so that Output directory does not remain Empty. GitHub does not download empty directories.
+So leave this file as it is.
