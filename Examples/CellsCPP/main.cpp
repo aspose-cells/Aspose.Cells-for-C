@@ -27,27 +27,28 @@ int main(int argc, char** argv)
 	Console::WriteLine(new String("--------------------------------------------------------------\r\n"));
 
 	//Opening Files
-	OpeningExcelFileUsingPath();
-	OpeningExcelFileUsingStream();
+	//OpeningExcelFileUsingPath();
+	//OpeningExcelFileUsingStream();
 
 	//Saving Files
-	SavingFiletoSomeLocation();
-	SavingFiletoStream();
+	//SavingFiletoSomeLocation();
+	//SavingFiletoStream();
 
 	//Managing Document Properties
-	ManagingDocumentProperties();
+	//ManagingDocumentProperties();
 
 	//Read and Write CSV File Format
-	ReadAndWriteCSVFileFormat();
+	//ReadAndWriteCSVFileFormat();
 
 	//Read and Write Tab Delimited File Format
-	ReadAndWriteTabDelimitedFileFormat();
+	//ReadAndWriteTabDelimitedFileFormat();
 
 	//Read and Write XLSB File Format 
-	ReadAndWriteXLSBFileFormat();
+	//ReadAndWriteXLSBFileFormat();
 
 	//Read and Write XLSM File Format
-	ReadAndWriteXLSMFileFormat();
+	//ReadAndWriteXLSMFileFormat();
+
 
 	//Developer Guide > Rows and Columns
 	//--------------------------------------------------------------------------------------------------------------------------
@@ -57,46 +58,46 @@ int main(int argc, char** argv)
 	
 	//Adjusting Row Height and Column Width
 	//Setting the Height of a Row
-	SettingHeightOfRow();
+	//SettingHeightOfRow();
 
 	//Setting the Height of All Rows in a Worksheet
-	SettingHeightOfAllRowsInWorksheet();
+	//SettingHeightOfAllRowsInWorksheet();
 
 	//Setting the Width of a Column
-	SettingWidthOfColumn();
+	//SettingWidthOfColumn();
 
 	//Setting the Width of All Columns in a Worksheet
-	SettingWidthOfAllColumnsInWorksheet();
+	//SettingWidthOfAllColumnsInWorksheet();
 
 	//Copying Rows and Columns
 	//Copying Rows
-	CopyingRows();
+	//CopyingRows();
 
 	//Copying Columns
-	CopyingColumns();
+	//CopyingColumns();
 
 	//Grouping, Ungrouping Rows and Columns
 	//Grouping Rows & Columns
-	GroupingRowsColumns();
+	//GroupingRowsColumns();
 
 	//Ungrouping Rows & Columns
-	UnGroupingRowsColumns();
+	//UnGroupingRowsColumns();
 
 	//Inserting, Deleting Rows and Columns
 	//Insert a Row
-	InsertRow();
+	//InsertRow();
 
 	//Inserting Multiple Rows
-	InsertingMultipleRows();
+	//InsertingMultipleRows();
 
 	//Deleting Multiple Rows
-	DeletingMultipleRows();
+	//DeletingMultipleRows();
 
 	//Insert a Column
-	InsertColumn();
+	//InsertColumn();
 
 	//Delete a Column
-	DeleteColumn();
+	//DeleteColumn();
 
 	//Developer Guide > Data
 	//--------------------------------------------------------------------------------------------------------------------------
@@ -106,20 +107,74 @@ int main(int argc, char** argv)
 
 	//Accessing Cells
 	//Using Cell Name
-	AccessingCellsUsingCellName();
+	//AccessingCellsUsingCellName();
 
 	//Using Row & Column Index of the Cell
-	AccessingCellsUsingRowAndColumnIndexOfTheCell();
+	//AccessingCellsUsingRowAndColumnIndexOfTheCell();
 
 	//Maximum Display Range of Worksheet
-	AccessingMaximumDisplayRangeOfWorksheet();
+	//AccessingMaximumDisplayRangeOfWorksheet();
 
 	//Add and Retrieve Data
 	//Adding Data to Cells
-	AddingDataToCells();
+	//AddingDataToCells();
 
 	//Retrieving Data from Cells
-	RetrievingDataFromCells();
+	//RetrievingDataFromCells();
+
+	//Add Hyperlinks to the Cells
+	//AddHyperlinksToTheCells();
+
+	//Apply Conditional Formatting in Worksheet
+	//ApplyConditionalFormattingInWorksheet();
+
+	//Format Cell or Range of Cells
+	//FormatCellOrRangeOfCells();
+
+	//Create Named Range in a Workbook 
+	//CreateNamedRangeInWorkbook();
+
+	//Creating Subtotals
+	//CreatingSubtotals();
+
+	//Find or Search Data 
+	//FindOrSearchData();
+
+	//Manipulate Named Range in a Workbook
+	//ManipulateNamedRangeInWorkbook();
+
+	//Calculate Workbook Formulas
+	//CalculateWorkbookFormulas();
+
+	//Using ICustomFunction Feature
+	//UsingICustomFunctionFeature();
+
+	//Adding Formulas & Calculating Results
+	//AddingFormulasAndCalculatingResults();
+
+	//Direct Calculation of Formula
+	//DirectCalculationOfFormula();
+
+	//Calculating Formulas Once Only
+	//CalculatingFormulasOnceOnly();
+
+	//Create Pivot Table
+	//CreatePivotTable();
+
+	//Manipulate Pivot Table 
+	//ManipulatePivotTable();
+
+	//Apply Custom Theme Colors of the Workbook using Array of Colors 
+	//ApplyCustomThemeColorsOfWorkbookUsingArrayOfColors();
+
+	//Copy Theme from one Workbook to Another
+	//CopyThemeFromOneWorkbookToAnother();
+
+	//Create and Manipulate Excel Table
+	//CreateAndManipulateExcelTable();
+
+	//Group Rows and Columns of Worksheet
+	GroupRowsAndColumnsOfWorksheet();
 
 	// Stop before exiting
 	printf("\n\nProgram Finished. Press any key to exit....");

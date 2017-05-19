@@ -21,6 +21,16 @@
   <ItemGroup>
     <ClCompile Include="Data\AccessingCellsOfWorksheet.cpp" />
     <ClCompile Include="Data\AddAndRetrieveData.cpp" />
+    <ClCompile Include="Data\AddHyperlinksToTheCells.cpp" />
+    <ClCompile Include="Data\ApplyConditionalFormattingInWorksheet.cpp" />
+    <ClCompile Include="Data\CellsFormatting.cpp" />
+    <ClCompile Include="Data\CreateNamedRangeInWorkbook.cpp" />
+    <ClCompile Include="Data\CreatingSubtotals.cpp" />
+    <ClCompile Include="Data\FindOrSearchData.cpp" />
+    <ClCompile Include="Data\ManipulateNamedRangeInWorkbook.cpp" />
+    <ClCompile Include="Formulas\CalculateWorkbookFormulas.cpp" />
+    <ClCompile Include="Formulas\UsingICustomFunctionFeature.cpp" />
+    <ClCompile Include="Formulas\WaysToCalculateFormulas.cpp" />
     <ClCompile Include="LoadingSavingAndConverting\ManagingDocumentProperties.cpp" />
     <ClCompile Include="LoadingSavingAndConverting\OpeningFiles.cpp" />
     <ClCompile Include="LoadingSavingAndConverting\ReadAndWriteCSVFileFormat.cpp" />
@@ -29,10 +39,16 @@
     <ClCompile Include="LoadingSavingAndConverting\ReadAndWriteXLSMFileFormat.cpp" />
     <ClCompile Include="LoadingSavingAndConverting\SavingFiles.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="PivotTables\CreatePivotTable.cpp" />
+    <ClCompile Include="PivotTables\ManipulatePivotTable.cpp" />
     <ClCompile Include="RowsAndColumns\AdjustingRowHeightandColumnWidth.cpp" />
     <ClCompile Include="RowsAndColumns\CopyingRowsAndColumns.cpp" />
     <ClCompile Include="RowsAndColumns\GroupingUngroupingRowsAndColumns.cpp" />
     <ClCompile Include="RowsAndColumns\InsertingDeletingRowsAndColumns.cpp" />
+    <ClCompile Include="TechnicalArticles\ApplyCustomThemeColorsOfWorkbookUsingArrayOfColors.cpp" />
+    <ClCompile Include="TechnicalArticles\CopyThemeFromOneWorkbookToAnother.cpp" />
+    <ClCompile Include="TechnicalArticles\CreateAndManipulateExcelTable.cpp" />
+    <ClCompile Include="TechnicalArticles\GroupRowsAndColumnsOfWorksheet.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CellsExamples.h" />

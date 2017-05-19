@@ -89,3 +89,63 @@ void AddingDataToCells();
 
 //Retrieving Data from Cells
 void RetrievingDataFromCells();
+
+//Add Hyperlinks to the Cells 
+void AddingDataToCells();
+
+//Add Hyperlinks to the Cells
+void AddHyperlinksToTheCells();
+
+//Apply Conditional Formatting in Worksheet
+void ApplyConditionalFormattingInWorksheet();
+
+//Format Cell or Range of Cells
+void FormatCellOrRangeOfCells();
+
+//Create Named Range in a Workbook
+void CreateNamedRangeInWorkbook();
+
+//Create Named Range in a Workbook 
+void CreateNamedRangeInWorkbook();
+
+//Creating Subtotals
+void CreatingSubtotals();
+
+//Find or Search Data 
+void  FindOrSearchData();
+
+//Manipulate Named Range in a Workbook
+void  ManipulateNamedRangeInWorkbook();
+
+//Calculate Workbook Formulas
+void  CalculateWorkbookFormulas();
+
+//Using ICustomFunction Feature
+void  UsingICustomFunctionFeature();
+
+//Adding Formulas & Calculating Results
+void  AddingFormulasAndCalculatingResults();
+
+//Direct Calculation of Formula
+void DirectCalculationOfFormula();
+
+//Calculating Formulas Once Only
+void CalculatingFormulasOnceOnly();
+
+//Create Pivot Table
+void  CreatePivotTable();
+
+//Manipulate Pivot Table 
+void ManipulatePivotTable();
+
+//Apply Custom Theme Colors of the Workbook using Array of Colors 
+void ApplyCustomThemeColorsOfWorkbookUsingArrayOfColors();
+
+//Copy Theme from one Workbook to Another
+void CopyThemeFromOneWorkbookToAnother();
+
+//Create and Manipulate Excel Table
+void  CreateAndManipulateExcelTable();
+
+//Group Rows and Columns of Worksheet
+void GroupRowsAndColumnsOfWorksheet();
