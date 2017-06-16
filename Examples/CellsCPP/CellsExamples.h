@@ -152,3 +152,6 @@ void GroupRowsAndColumnsOfWorksheet();
 
 //Tracing Precedents
 void TracingPrecedents();
+
+//Tracing Dependents
+void TracingDependents();
