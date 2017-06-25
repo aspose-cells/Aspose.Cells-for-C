@@ -117,6 +117,9 @@
     <ClCompile Include="Worksheets\PageBreaks.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Worksheets\WorksheetViews.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CellsExamples.h">

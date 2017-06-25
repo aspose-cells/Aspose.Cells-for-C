@@ -173,3 +173,18 @@ void RemovingWorksheetsUsingSheetIndex();
 
 //Adding Page Breaks
 void AddingPageBreaks();
+
+//Enabling Page Break Preview
+void EnablingPageBreakPreview();
+
+//Zoom Factor
+void ZoomFactor();
+
+//Freeze Panes
+void FreezePanes();
+
+//Split Panes
+void SplitPanes();
+
+//Removing Panes
+void RemovingPanes();

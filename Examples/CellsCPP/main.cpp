@@ -183,7 +183,13 @@ int main(int argc, char** argv)
 	//RemovingWorksheetsUsingSheetIndex();
 	//AddingPageBreaks();
 
-	// Stop before exiting
+	//EnablingPageBreakPreview();
+	//ZoomFactor();
+	//FreezePanes();
+	//SplitPanes();
+	//RemovingPanes();
+
+	//Stop before exiting
 	printf("\n\nProgram Finished. Press any key to exit....");
 	getchar();
 }

@@ -53,6 +53,7 @@
     <ClCompile Include="Worksheets\CopyingAndMovingWorksheets.cpp" />
     <ClCompile Include="Worksheets\ManageWorksheets.cpp" />
     <ClCompile Include="Worksheets\PageBreaks.cpp" />
+    <ClCompile Include="Worksheets\WorksheetViews.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CellsExamples.h" />
