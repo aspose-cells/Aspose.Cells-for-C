@@ -155,3 +155,21 @@ void TracingPrecedents();
 
 //Tracing Dependents
 void TracingDependents();
+
+//Copy Worksheets within a Workbook
+void CopyWorksheetsWithinWorkbook();
+
+//Move Worksheets within Workbook
+void MoveWorksheetsWithinWorkbook();
+
+//Adding Worksheets to a New Excel File
+void AddingWorksheetsToNewExcelFile();
+
+//Accessing Worksheets using Sheet Index
+void AccessingWorksheetsUsingSheetIndex();
+
+//Removing Worksheets using Sheet Index
+void RemovingWorksheetsUsingSheetIndex();
+
+//Adding Page Breaks
+void AddingPageBreaks();

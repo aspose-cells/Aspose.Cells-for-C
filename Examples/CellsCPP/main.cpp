@@ -174,7 +174,14 @@ int main(int argc, char** argv)
 	//CreateAndManipulateExcelTable();
 
 	//Group Rows and Columns of Worksheet
-	GroupRowsAndColumnsOfWorksheet();
+	//GroupRowsAndColumnsOfWorksheet();
+
+	//CopyWorksheetsWithinWorkbook();
+	//MoveWorksheetsWithinWorkbook();
+
+	//AccessingWorksheetsUsingSheetIndex();
+	//RemovingWorksheetsUsingSheetIndex();
+	//AddingPageBreaks();
 
 	// Stop before exiting
 	printf("\n\nProgram Finished. Press any key to exit....");

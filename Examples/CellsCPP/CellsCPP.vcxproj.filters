@@ -108,6 +108,15 @@
     <ClCompile Include="Data\PrecedentsAndDependents.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Worksheets\CopyingAndMovingWorksheets.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Worksheets\ManageWorksheets.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Worksheets\PageBreaks.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CellsExamples.h">
