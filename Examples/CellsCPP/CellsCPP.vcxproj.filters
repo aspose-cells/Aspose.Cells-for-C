@@ -114,10 +114,10 @@
     <ClCompile Include="Worksheets\ManageWorksheets.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Worksheets\PageBreaks.cpp">
+    <ClCompile Include="Worksheets\WorksheetViews.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Worksheets\WorksheetViews.cpp">
+    <ClCompile Include="Worksheets\ManagingPageBreaks.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

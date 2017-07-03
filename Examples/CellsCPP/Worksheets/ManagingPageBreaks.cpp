@@ -7,7 +7,7 @@ void AddingPageBreaks()
 	StringPtr outDir = new String("..\\Data\\02_OutputDirectory\\");
 
 	//Path of output excel file
-	StringPtr outputPageBreaks = outDir->StringAppend(new String("outputPageBreaks.xlsx"));
+	StringPtr outputPageBreaks = outDir->StringAppend(new String("outputManagingPageBreaks.xlsx"));
 
 	//Instantiating a Workbook object
 	intrusive_ptr<IWorkbook> workbook = Factory::CreateIWorkbook();

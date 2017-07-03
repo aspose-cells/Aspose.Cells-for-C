@@ -52,7 +52,7 @@
     <ClCompile Include="TechnicalArticles\GroupRowsAndColumnsOfWorksheet.cpp" />
     <ClCompile Include="Worksheets\CopyingAndMovingWorksheets.cpp" />
     <ClCompile Include="Worksheets\ManageWorksheets.cpp" />
-    <ClCompile Include="Worksheets\PageBreaks.cpp" />
+    <ClCompile Include="Worksheets\ManagingPageBreaks.cpp" />
     <ClCompile Include="Worksheets\WorksheetViews.cpp" />
   </ItemGroup>
   <ItemGroup>
