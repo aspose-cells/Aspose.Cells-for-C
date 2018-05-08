@@ -188,3 +188,4 @@ void SplitPanes();
 
 //Removing Panes
 void RemovingPanes();
+
