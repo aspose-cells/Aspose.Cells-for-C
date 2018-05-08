@@ -22,7 +22,7 @@ void CopyingRows()
 	intrusive_ptr<IWorksheet> worksheet = workbook->GetIWorksheets()->GetObjectByIndex(0);
 
 	//Copy the second row with data, formattings, images and drawing objects to the 16th row in the worksheet.
-	worksheet->GetICells()->CopyRow(worksheet->GetICells(), 1, 15);
+	worksheet->GetICells()->CopyIRow(worksheet->GetICells(), 1, 15);
 
 	//Save the Excel file.
 	workbook->Save(outputCopyingRowsAndColumns);
@@ -53,7 +53,7 @@ void CopyingColumns()
 	intrusive_ptr<IWorksheet> worksheet = workbook->GetIWorksheets()->GetObjectByIndex(0);
 
 	//Copy the third column to eighth column
-	worksheet->GetICells()->CopyColumn(worksheet->GetICells(), 2, 7);
+	worksheet->GetICells()->CopyIColumn(worksheet->GetICells(), 2, 7);
 
 	//Save the Excel file.
 	workbook->Save(outputCopyingRowsAndColumns);

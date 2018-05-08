@@ -32,7 +32,20 @@
     <ClCompile Include="Formulas\CalculateWorkbookFormulas.cpp" />
     <ClCompile Include="Formulas\UsingICustomFunctionFeature.cpp" />
     <ClCompile Include="Formulas\WaysToCalculateFormulas.cpp" />
+    <ClCompile Include="LoadingSavingAndConverting\ManagingDocumentProperties.cpp" />
+    <ClCompile Include="LoadingSavingAndConverting\OpeningFiles.cpp" />
+    <ClCompile Include="LoadingSavingAndConverting\ReadAndWriteCSVFileFormat.cpp" />
+    <ClCompile Include="LoadingSavingAndConverting\ReadAndWriteTabDelimitedFileFormat.cpp" />
+    <ClCompile Include="LoadingSavingAndConverting\ReadAndWriteXLSBFileFormat.cpp" />
+    <ClCompile Include="LoadingSavingAndConverting\ReadAndWriteXLSMFileFormat.cpp" />
+    <ClCompile Include="LoadingSavingAndConverting\SavingFiles.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="PivotTables\CreatePivotTable.cpp" />
+    <ClCompile Include="PivotTables\ManipulatePivotTable.cpp" />
+    <ClCompile Include="RowsAndColumns\AdjustingRowHeightandColumnWidth.cpp" />
+    <ClCompile Include="RowsAndColumns\CopyingRowsAndColumns.cpp" />
+    <ClCompile Include="RowsAndColumns\GroupingUngroupingRowsAndColumns.cpp" />
+    <ClCompile Include="RowsAndColumns\InsertingDeletingRowsAndColumns.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CellsExamples.h" />
