@@ -28,7 +28,7 @@ void ApplyConditionalFormattingInWorksheet()
 	//Add condition and set the background color
 	idx = fcs->AddCondition(FormatConditionType_CellValue, OperatorType_Between, new String("=A2"), new String("100"));
 	intrusive_ptr<IFormatCondition> fc = fcs->GetObjectByIndex(idx);
-	fc->GetIStyle()->SetBackgroundColor(Color::GetRed());
+	fc->GetIStyle()->SetBackgroundColor(System::Drawing::Color::GetRed());
 
 	//User friendly message to test the output excel file.
 	StringPtr msgStr = new String("Red color in cells A1 and B2 is because of Conditional Formatting. Put 101 or any value >100 in cell A2 and B2, you will see Red background color will be gone.");
