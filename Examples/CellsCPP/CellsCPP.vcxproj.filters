@@ -96,6 +96,18 @@
     <ClCompile Include="RowsAndColumns\InsertingDeletingRowsAndColumns.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="TechnicalArticles\ApplyCustomThemeColorsOfWorkbookUsingArrayOfColors.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="TechnicalArticles\CopyThemeFromOneWorkbookToAnother.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="TechnicalArticles\CreateAndManipulateExcelTable.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="TechnicalArticles\GroupRowsAndColumnsOfWorksheet.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CellsExamples.h">

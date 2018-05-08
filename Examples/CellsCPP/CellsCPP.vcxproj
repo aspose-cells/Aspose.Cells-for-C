@@ -46,6 +46,10 @@
     <ClCompile Include="RowsAndColumns\CopyingRowsAndColumns.cpp" />
     <ClCompile Include="RowsAndColumns\GroupingUngroupingRowsAndColumns.cpp" />
     <ClCompile Include="RowsAndColumns\InsertingDeletingRowsAndColumns.cpp" />
+    <ClCompile Include="TechnicalArticles\ApplyCustomThemeColorsOfWorkbookUsingArrayOfColors.cpp" />
+    <ClCompile Include="TechnicalArticles\CopyThemeFromOneWorkbookToAnother.cpp" />
+    <ClCompile Include="TechnicalArticles\CreateAndManipulateExcelTable.cpp" />
+    <ClCompile Include="TechnicalArticles\GroupRowsAndColumnsOfWorksheet.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CellsExamples.h" />
