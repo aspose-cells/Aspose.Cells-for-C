@@ -19,12 +19,29 @@ int main(int argc, char** argv)
 {
 	//Show Aspose.Cells for C++ Version
 	ShowCellsVersion();
+
+	Console::WriteLine(new String("<<-------Formulas------->>\n"));
+
+	//Calculate Workbook Formulas
+	CalculateWorkbookFormulas();
+
+	//Using ICustomFunction Feature
+	UsingICustomFunctionFeature();
+
+	//Adding Formulas & Calculating Results
+	AddingFormulasAndCalculatingResults();
+
+	//Direct Calculation of Formula
+	DirectCalculationOfFormula();
+
+	//Calculating Formulas Once Only
+	CalculatingFormulasOnceOnly();
 	
 	//Developer Guide > Loading, Saving and Converting
 	//--------------------------------------------------------------------------------------------------------------------------
-	Console::WriteLine(new String("Section: Developer Guide > Loading, Saving and Converting"));
-	Console::WriteLine(new String("--------------------------------------------------------------"));
-	Console::WriteLine(new String("--------------------------------------------------------------\r\n"));
+	//Console::WriteLine(new String("Section: Developer Guide > Loading, Saving and Converting"));
+	//Console::WriteLine(new String("--------------------------------------------------------------"));
+	//Console::WriteLine(new String("--------------------------------------------------------------\r\n"));
 
 	//Opening Files
 	//OpeningExcelFileUsingPath();
@@ -52,9 +69,9 @@ int main(int argc, char** argv)
 
 	//Developer Guide > Rows and Columns
 	//--------------------------------------------------------------------------------------------------------------------------
-	Console::WriteLine(new String("Section: Developer Guide > Rows and Columns"));
-	Console::WriteLine(new String("--------------------------------------------------------------"));
-	Console::WriteLine(new String("--------------------------------------------------------------\r\n"));
+	//Console::WriteLine(new String("Section: Developer Guide > Rows and Columns"));
+	//Console::WriteLine(new String("--------------------------------------------------------------"));
+	//Console::WriteLine(new String("--------------------------------------------------------------\r\n"));
 	
 	//Adjusting Row Height and Column Width
 	//Setting the Height of a Row
@@ -101,9 +118,9 @@ int main(int argc, char** argv)
 
 	//Developer Guide > Data
 	//--------------------------------------------------------------------------------------------------------------------------
-	Console::WriteLine(new String("Section: Developer Guide > Data"));
-	Console::WriteLine(new String("--------------------------------------------------------------"));
-	Console::WriteLine(new String("--------------------------------------------------------------\r\n"));
+	//Console::WriteLine(new String("Section: Developer Guide > Data"));
+	//Console::WriteLine(new String("--------------------------------------------------------------"));
+	//Console::WriteLine(new String("--------------------------------------------------------------\r\n"));
 
 	//Accessing Cells
 	//Using Cell Name
@@ -142,21 +159,6 @@ int main(int argc, char** argv)
 
 	//Manipulate Named Range in a Workbook
 	//ManipulateNamedRangeInWorkbook();
-
-	//Calculate Workbook Formulas
-	//CalculateWorkbookFormulas();
-
-	//Using ICustomFunction Feature
-	//UsingICustomFunctionFeature();
-
-	//Adding Formulas & Calculating Results
-	//AddingFormulasAndCalculatingResults();
-
-	//Direct Calculation of Formula
-	//DirectCalculationOfFormula();
-
-	//Calculating Formulas Once Only
-	//CalculatingFormulasOnceOnly();
 
 	//Create Pivot Table
 	//CreatePivotTable();
