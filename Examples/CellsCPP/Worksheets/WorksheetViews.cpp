@@ -22,7 +22,7 @@ void EnablingPageBreakPreview()
 	intrusive_ptr<IWorksheet> worksheet = workbook->GetIWorksheets()->GetObjectByIndex(0);
 
 	//Displaying the worksheet in page break preview
-	worksheet->SetIsPageBreakPreview(true);
+	worksheet->SetPageBreakPreview(true);
 
 	//Save the Excel file
 	workbook->Save(outputWorksheetViews);
