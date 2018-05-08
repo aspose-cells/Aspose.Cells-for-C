@@ -27,7 +27,7 @@ void CopyThemeFromOneWorkbookToAnother()
 	intrusive_ptr<IWorkbook> wb = Factory::CreateIWorkbook(sampleCopyThemeFromOneWorkbookToAnother);
 
 	//Copy theme from source file
-	wb->CopyTheme(damask);
+	wb->CopyITheme(damask);
 
 	//Save the workbook in xlsx format
 	wb->Save(outputCopyThemeFromOneWorkbookToAnother, SaveFormat_Xlsx);
