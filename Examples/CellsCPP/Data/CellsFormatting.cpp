@@ -26,21 +26,21 @@ void FormatCellOrRangeOfCells()
 
 	//Fille the cell color to Yellow
 	st->SetPattern(BackgroundType_Solid);
-	st->SetForegroundColor(Color::GetYellow());
+	st->SetForegroundColor(System::Drawing::Color::GetYellow());
 
 	//Set the text to wrapp
-	st->SetIsTextWrapped(true);
+	st->SetTextWrapped(true);
 
 	//Set the left and right border to Red
-	st->SetBorder(BorderType_LeftBorder, CellBorderType_Thick, Color::GetRed());
-	st->SetBorder(BorderType_RightBorder, CellBorderType_Thick, Color::GetRed());
+	st->SetBorder(BorderType_LeftBorder, CellBorderType_Thick, System::Drawing::Color::GetRed());
+	st->SetBorder(BorderType_RightBorder, CellBorderType_Thick, System::Drawing::Color::GetRed());
 
 	//Set font color, font size, strike, bold, italic
-	st->GetIFont()->SetColor(Color::GetBlue());
+	st->GetIFont()->SetColor(System::Drawing::Color::GetBlue());
 	st->GetIFont()->SetSize(16);
 	st->GetIFont()->SetStrikeType(TextStrikeType_Single);
-	st->GetIFont()->SetIsBold(true);
-	st->GetIFont()->SetIsItalic(true);
+	st->GetIFont()->SetBold(true);
+	st->GetIFont()->SetItalic(true);
 
 	//Set text horizontal and vertical alignment to center
 	st->SetHorizontalAlignment(TextAlignmentType_Center);
