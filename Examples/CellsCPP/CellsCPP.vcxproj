@@ -19,6 +19,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Charts\CreatingAndCustomizingCharts_PyramidChart.cpp" />
     <ClCompile Include="Charts\ReadAndManipulateExcel2016Charts.cpp" />
     <ClCompile Include="Data\AccessingCellsOfWorksheet.cpp" />
     <ClCompile Include="Data\AddAndRetrieveData.cpp" />

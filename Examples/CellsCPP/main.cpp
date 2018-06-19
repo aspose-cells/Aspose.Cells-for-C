@@ -20,7 +20,8 @@ int main(int argc, char** argv)
 	//Show Aspose.Cells for C++ Version
 	ShowCellsVersion();
 
-	ReadAndManipulateExcel2016Charts();
+	//ReadAndManipulateExcel2016Charts();
+	CreatingAndCustomizingCharts_PyramidChart();
 
 	//Console::WriteLine(new String("<<-------Formulas------->>\n"));
 

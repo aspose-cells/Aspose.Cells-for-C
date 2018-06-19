@@ -126,6 +126,9 @@
     <ClCompile Include="Charts\ReadAndManipulateExcel2016Charts.cpp">
       <Filter>Source Files\Charts</Filter>
     </ClCompile>
+    <ClCompile Include="Charts\CreatingAndCustomizingCharts_PyramidChart.cpp">
+      <Filter>Source Files\Charts</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CellsExamples.h">

@@ -191,3 +191,6 @@ void RemovingPanes();
 
 //Read and Manipulate Excel 2016 Charts
 void ReadAndManipulateExcel2016Charts();
+
+//Creating and Customizing Charts - Pyramid Chart
+void CreatingAndCustomizingCharts_PyramidChart();
