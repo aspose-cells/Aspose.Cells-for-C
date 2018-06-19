@@ -188,3 +188,6 @@ void SplitPanes();
 
 //Removing Panes
 void RemovingPanes();
+
+//Read and Manipulate Excel 2016 Charts
+void ReadAndManipulateExcel2016Charts();

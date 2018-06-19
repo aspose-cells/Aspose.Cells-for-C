@@ -20,22 +20,24 @@ int main(int argc, char** argv)
 	//Show Aspose.Cells for C++ Version
 	ShowCellsVersion();
 
-	Console::WriteLine(new String("<<-------Formulas------->>\n"));
+	ReadAndManipulateExcel2016Charts();
+
+	//Console::WriteLine(new String("<<-------Formulas------->>\n"));
 
 	//Calculate Workbook Formulas
-	CalculateWorkbookFormulas();
+	//CalculateWorkbookFormulas();
 
 	//Using ICustomFunction Feature
-	UsingICustomFunctionFeature();
+	//UsingICustomFunctionFeature();
 
 	//Adding Formulas & Calculating Results
-	AddingFormulasAndCalculatingResults();
+	//AddingFormulasAndCalculatingResults();
 
 	//Direct Calculation of Formula
-	DirectCalculationOfFormula();
+	//DirectCalculationOfFormula();
 
 	//Calculating Formulas Once Only
-	CalculatingFormulasOnceOnly();
+	//CalculatingFormulasOnceOnly();
 	
 	//Developer Guide > Loading, Saving and Converting
 	//--------------------------------------------------------------------------------------------------------------------------
@@ -192,6 +194,6 @@ int main(int argc, char** argv)
 	//RemovingPanes();
 
 	//Stop before exiting
-	printf("\n\nProgram Finished. Press any key to exit....");
+	printf("\nProgram Finished. Press any key to exit....");
 	getchar();
 }
