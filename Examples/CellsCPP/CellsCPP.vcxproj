@@ -39,6 +39,12 @@
     <ClCompile Include="Formulas\CalculateWorkbookFormulas.cpp" />
     <ClCompile Include="Formulas\UsingICustomFunctionFeature.cpp" />
     <ClCompile Include="Formulas\WaysToCalculateFormulas.cpp" />
+    <ClCompile Include="LoadingSavingAndConverting\ConvertExcelWorkbookToPDF_A_CompliedFiles.cpp" />
+    <ClCompile Include="LoadingSavingAndConverting\ConvertExcelWorkbookToPDF_DirectConversion.cpp" />
+    <ClCompile Include="LoadingSavingAndConverting\ConvertExcelWorkbookToPDF_SetPDFCreationTime.cpp" />
+    <ClCompile Include="LoadingSavingAndConverting\ConvertingWorksheetToImage_PNG.cpp" />
+    <ClCompile Include="LoadingSavingAndConverting\ConvertingWorksheetToImage_SVG.cpp" />
+    <ClCompile Include="LoadingSavingAndConverting\ConvertingWorksheetToImage_TIFF.cpp" />
     <ClCompile Include="LoadingSavingAndConverting\ManagingDocumentProperties.cpp" />
     <ClCompile Include="LoadingSavingAndConverting\OpeningFiles.cpp" />
     <ClCompile Include="LoadingSavingAndConverting\ReadAndWriteCSVFileFormat.cpp" />

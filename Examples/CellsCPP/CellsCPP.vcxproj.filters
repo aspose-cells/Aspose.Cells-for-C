@@ -168,6 +168,24 @@
     <ClCompile Include="DrawingObjects\InsertingOLEObjectsIntoWorksheet.cpp">
       <Filter>Source Files\DrawingObjects</Filter>
     </ClCompile>
+    <ClCompile Include="LoadingSavingAndConverting\ConvertExcelWorkbookToPDF_A_CompliedFiles.cpp">
+      <Filter>Source Files\LoadingSavingAndConverting</Filter>
+    </ClCompile>
+    <ClCompile Include="LoadingSavingAndConverting\ConvertExcelWorkbookToPDF_DirectConversion.cpp">
+      <Filter>Source Files\LoadingSavingAndConverting</Filter>
+    </ClCompile>
+    <ClCompile Include="LoadingSavingAndConverting\ConvertExcelWorkbookToPDF_SetPDFCreationTime.cpp">
+      <Filter>Source Files\LoadingSavingAndConverting</Filter>
+    </ClCompile>
+    <ClCompile Include="LoadingSavingAndConverting\ConvertingWorksheetToImage_TIFF.cpp">
+      <Filter>Source Files\LoadingSavingAndConverting</Filter>
+    </ClCompile>
+    <ClCompile Include="LoadingSavingAndConverting\ConvertingWorksheetToImage_PNG.cpp">
+      <Filter>Source Files\LoadingSavingAndConverting</Filter>
+    </ClCompile>
+    <ClCompile Include="LoadingSavingAndConverting\ConvertingWorksheetToImage_SVG.cpp">
+      <Filter>Source Files\LoadingSavingAndConverting</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CellsExamples.h">

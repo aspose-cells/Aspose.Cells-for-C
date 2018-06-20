@@ -28,6 +28,14 @@ int main(int argc, char** argv)
 	ExtractingOLEObjectsFromWorksheet();
 	InsertingOLEObjectsIntoWorksheet();
 
+	ConvertExcelWorkbookToPDF_A_CompliedFiles();
+	ConvertExcelWorkbookToPDF_DirectConversion();
+	ConvertExcelWorkbookToPDF_SetPDFCreationTime();
+
+	ConvertingWorksheetToImage_PNG();
+	ConvertingWorksheetToImage_SVG();
+	ConvertingWorksheetToImage_TIFF();
+
 	//Stop before exiting
 	printf("\nProgram Finished. Press any key to exit....");
 	getchar();

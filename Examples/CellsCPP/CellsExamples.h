@@ -209,3 +209,21 @@ void ExtractingOLEObjectsFromWorksheet();
 
 //Inserting OLE Objects into Worksheet
 void InsertingOLEObjectsIntoWorksheet();
+
+//Convert Excel Workbook To PDF/A Complied Files
+void ConvertExcelWorkbookToPDF_A_CompliedFiles();
+
+//Convert Excel Workbook To PDF - Direct Conversion
+void ConvertExcelWorkbookToPDF_DirectConversion();
+
+//Convert Excel Workbook To PDF - Set PDF Creation Time
+void ConvertExcelWorkbookToPDF_SetPDFCreationTime();
+
+//Converting Worksheet To Image - PNG
+void ConvertingWorksheetToImage_PNG();
+
+//Converting Worksheet To Image - SVG
+void ConvertingWorksheetToImage_SVG();
+
+//Converting Worksheet To Image - TIFF
+void ConvertingWorksheetToImage_TIFF();
