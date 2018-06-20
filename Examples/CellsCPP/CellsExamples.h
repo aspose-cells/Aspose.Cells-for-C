@@ -203,3 +203,9 @@ void CreatingAndCustomizingCharts_LineChart();
 
 //Creating and Customizing Charts - Pyramid Chart
 void CreatingAndCustomizingCharts_PyramidChart();
+
+//Extracting OLE Objects from Worksheet
+void ExtractingOLEObjectsFromWorksheet();
+
+//Inserting OLE Objects into Worksheet
+void InsertingOLEObjectsIntoWorksheet();

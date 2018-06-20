@@ -20,11 +20,13 @@ int main(int argc, char** argv)
 	//Show Aspose.Cells for C++ Version
 	ShowCellsVersion();
 
-	ReadAndManipulateExcel2016Charts();
-	CreatingAndCustomizingCharts_BubbleChart();
-	CreatingAndCustomizingCharts_CustomChart();
-	CreatingAndCustomizingCharts_LineChart();
-	CreatingAndCustomizingCharts_PyramidChart();
+	//ReadAndManipulateExcel2016Charts();
+	//CreatingAndCustomizingCharts_BubbleChart();
+	//CreatingAndCustomizingCharts_CustomChart();
+	//CreatingAndCustomizingCharts_LineChart();
+	//CreatingAndCustomizingCharts_PyramidChart();
+
+	ExtractingOLEObjectsFromWorksheet();
 
 	//Console::WriteLine(new String("<<-------Formulas------->>\n"));
 

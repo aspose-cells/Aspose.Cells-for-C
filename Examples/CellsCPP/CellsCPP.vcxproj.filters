@@ -37,6 +37,9 @@
     <Filter Include="Source Files\TechnicalArticles">
       <UniqueIdentifier>{f635cd50-88fc-4af6-9f7c-e01d5dbd7a87}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\DrawingObjects">
+      <UniqueIdentifier>{3fa5b3af-3c69-40a9-bf0f-c7f173eff81e}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -158,6 +161,12 @@
     </ClCompile>
     <ClCompile Include="Charts\CreatingAndCustomizingCharts_CustomChart.cpp">
       <Filter>Source Files\Charts</Filter>
+    </ClCompile>
+    <ClCompile Include="DrawingObjects\ExtractingOLEObjectsFromWorksheet.cpp">
+      <Filter>Source Files\DrawingObjects</Filter>
+    </ClCompile>
+    <ClCompile Include="DrawingObjects\InsertingOLEObjectsIntoWorksheet.cpp">
+      <Filter>Source Files\DrawingObjects</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

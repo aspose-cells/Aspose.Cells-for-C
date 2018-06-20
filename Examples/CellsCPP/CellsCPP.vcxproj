@@ -34,6 +34,8 @@
     <ClCompile Include="Data\FindOrSearchData.cpp" />
     <ClCompile Include="Data\ManipulateNamedRangeInWorkbook.cpp" />
     <ClCompile Include="Data\PrecedentsAndDependents.cpp" />
+    <ClCompile Include="DrawingObjects\ExtractingOLEObjectsFromWorksheet.cpp" />
+    <ClCompile Include="DrawingObjects\InsertingOLEObjectsIntoWorksheet.cpp" />
     <ClCompile Include="Formulas\CalculateWorkbookFormulas.cpp" />
     <ClCompile Include="Formulas\UsingICustomFunctionFeature.cpp" />
     <ClCompile Include="Formulas\WaysToCalculateFormulas.cpp" />
