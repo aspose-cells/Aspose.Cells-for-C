@@ -153,6 +153,12 @@
     <ClCompile Include="Charts\CreatingAndCustomizingCharts_LineChart.cpp">
       <Filter>Source Files\Charts</Filter>
     </ClCompile>
+    <ClCompile Include="Charts\CreatingAndCustomizingCharts_BubbleChart.cpp">
+      <Filter>Source Files\Charts</Filter>
+    </ClCompile>
+    <ClCompile Include="Charts\CreatingAndCustomizingCharts_CustomChart.cpp">
+      <Filter>Source Files\Charts</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CellsExamples.h">
