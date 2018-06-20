@@ -22,6 +22,7 @@ int main(int argc, char** argv)
 
 	//ReadAndManipulateExcel2016Charts();
 	CreatingAndCustomizingCharts_PyramidChart();
+	CreatingAndCustomizingCharts_LineChart();
 
 	//Console::WriteLine(new String("<<-------Formulas------->>\n"));
 

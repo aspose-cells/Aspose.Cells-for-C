@@ -150,6 +150,9 @@
     <ClCompile Include="TechnicalArticles\GroupRowsAndColumnsOfWorksheet.cpp">
       <Filter>Source Files\TechnicalArticles</Filter>
     </ClCompile>
+    <ClCompile Include="Charts\CreatingAndCustomizingCharts_LineChart.cpp">
+      <Filter>Source Files\Charts</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CellsExamples.h">

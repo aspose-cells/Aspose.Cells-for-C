@@ -194,3 +194,6 @@ void ReadAndManipulateExcel2016Charts();
 
 //Creating and Customizing Charts - Pyramid Chart
 void CreatingAndCustomizingCharts_PyramidChart();
+
+//Creating and Customizing Charts - Line Chart
+void CreatingAndCustomizingCharts_LineChart();
