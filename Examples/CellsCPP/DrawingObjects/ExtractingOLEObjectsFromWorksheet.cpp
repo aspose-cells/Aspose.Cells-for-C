@@ -58,6 +58,6 @@ void ExtractingOLEObjectsFromWorksheet()
 		fout->Close();
 	}//for
 
-	 //Show successfull execution message on console
+	//Show successfull execution message on console
 	ShowMessageOnConsole("ExtractingOLEObjectsFromWorksheet executed successfully.");
 }
