@@ -1,7 +1,7 @@
 #include "../CellsExamples.h"
 
 //Creating and Customizing Charts - Pyramid Chart
-void CreatingAndCustomizingCharts_PyramidChart()
+void CreatingAndCustomizingCharts_PyramidChart() 
 {
 	// Output directory path
 	StringPtr outDir = new String("..\\Data\\02_OutputDirectory\\");

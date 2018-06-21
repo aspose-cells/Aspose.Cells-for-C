@@ -1,7 +1,7 @@
 #include "../CellsExamples.h"
 
 //Inserting OLE Objects Into Worksheet
-void InsertingOLEObjectsIntoWorksheet()
+void InsertingOLEObjectsIntoWorksheet() 
 {
 	// Source directory path.
 	StringPtr srcDir = new String("..\\Data\\01_SourceDirectory\\");

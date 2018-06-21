@@ -1,7 +1,7 @@
 #include "../CellsExamples.h"
 
 //Creating and Customizing Charts - Bubble Chart
-void CreatingAndCustomizingCharts_BubbleChart()
+void CreatingAndCustomizingCharts_BubbleChart() 
 {
 	// Output directory path
 	StringPtr outDir = new String("..\\Data\\02_OutputDirectory\\");
