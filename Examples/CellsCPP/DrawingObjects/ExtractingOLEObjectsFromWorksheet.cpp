@@ -1,7 +1,7 @@
 #include "../CellsExamples.h"
 
 //Extracting OLE Objects From Worksheet
-void ExtractingOLEObjectsFromWorksheet() 
+void ExtractingOLEObjectsFromWorksheet()
 {
 	// Source directory path.
 	StringPtr srcDir = new String("..\\Data\\01_SourceDirectory\\");

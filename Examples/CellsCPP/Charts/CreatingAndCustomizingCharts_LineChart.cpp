@@ -1,7 +1,7 @@
 #include "../CellsExamples.h"
 
 //Creating and Customizing Charts - Line Chart
-void CreatingAndCustomizingCharts_LineChart() 
+void CreatingAndCustomizingCharts_LineChart()
 {
 	// Output directory path
 	StringPtr outDir = new String("..\\Data\\02_OutputDirectory\\");

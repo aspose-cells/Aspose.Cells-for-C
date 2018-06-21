@@ -1,7 +1,7 @@
 #include "../CellsExamples.h"
 
 //Read and Manipulate Excel 2016 Charts
-void ReadAndManipulateExcel2016Charts() 
+void ReadAndManipulateExcel2016Charts()
 {
 	//Source directory path
 	StringPtr srcDir = new String("..\\Data\\01_SourceDirectory\\");
