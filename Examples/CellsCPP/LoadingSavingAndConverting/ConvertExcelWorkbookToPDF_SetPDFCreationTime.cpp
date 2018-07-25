@@ -1,7 +1,7 @@
 #include "../CellsExamples.h"
 
 //Convert Excel Workbook To PDF - Set PDF Creation Time
-void ConvertExcelWorkbookToPDF_SetPDFCreationTime()
+void ConvertExcelWorkbookToPDF_SetPDFCreationTime() 
 {
 	// Output directory path.
 	StringPtr outDir = new String("..\\Data\\02_OutputDirectory\\");

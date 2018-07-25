@@ -21,6 +21,14 @@ int main(int argc, char** argv)
 	ShowCellsVersion();
 
 	//Uncomment the one you want to try out
+
+	//Aspose.Cells for C++ v18.5
+	ConvertExcelWorkbookToPDF_A_CompliedFiles();
+	ConvertExcelWorkbookToPDF_DirectConversion();
+	ConvertExcelWorkbookToPDF_SetPDFCreationTime();
+	ConvertingWorksheetToImage_PNG();
+	ConvertingWorksheetToImage_SVG();
+	ConvertingWorksheetToImage_TIFF();
 	
 	//Aspose.Cells for C++ v18.4
 	//ReadAndManipulateExcel2016Charts();
@@ -30,14 +38,6 @@ int main(int argc, char** argv)
 	//CreatingAndCustomizingCharts_PyramidChart();
 	//ExtractingOLEObjectsFromWorksheet();
 	//InsertingOLEObjectsIntoWorksheet();
-
-	//ConvertExcelWorkbookToPDF_A_CompliedFiles();
-	//ConvertExcelWorkbookToPDF_DirectConversion();
-	//ConvertExcelWorkbookToPDF_SetPDFCreationTime();
-	
-	ConvertingWorksheetToImage_PNG();
-	ConvertingWorksheetToImage_SVG();
-	ConvertingWorksheetToImage_TIFF();
 
 	//Stop before exiting
 	printf("\nProgram Finished. Press Enter to Exit....");

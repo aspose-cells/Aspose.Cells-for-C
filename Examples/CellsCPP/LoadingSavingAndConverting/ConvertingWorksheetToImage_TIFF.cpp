@@ -1,7 +1,7 @@
 #include "../CellsExamples.h"
 
 //Converting Worksheet To Image - TIFF
-void ConvertingWorksheetToImage_TIFF()
+void ConvertingWorksheetToImage_TIFF() 
 {
 	// Source directory path.
 	StringPtr srcDir = new String("..\\Data\\01_SourceDirectory\\");

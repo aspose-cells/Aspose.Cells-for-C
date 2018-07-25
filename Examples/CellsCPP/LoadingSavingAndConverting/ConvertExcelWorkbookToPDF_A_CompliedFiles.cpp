@@ -1,7 +1,7 @@
 #include "../CellsExamples.h"
 
 //Convert Excel Workbook To PDF/A Complied Files
-void ConvertExcelWorkbookToPDF_A_CompliedFiles()
+void ConvertExcelWorkbookToPDF_A_CompliedFiles() 
 {
 	// Output directory path.
 	StringPtr outDir = new String("..\\Data\\02_OutputDirectory\\");
