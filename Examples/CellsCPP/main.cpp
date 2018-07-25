@@ -23,17 +23,17 @@ int main(int argc, char** argv)
 	//Uncomment the one you want to try out
 	
 	//Aspose.Cells for C++ v18.4
-	ReadAndManipulateExcel2016Charts();
-	CreatingAndCustomizingCharts_BubbleChart();
-	CreatingAndCustomizingCharts_CustomChart();
-	CreatingAndCustomizingCharts_LineChart();
-	CreatingAndCustomizingCharts_PyramidChart();
-	ExtractingOLEObjectsFromWorksheet();
-	InsertingOLEObjectsIntoWorksheet();
+	//ReadAndManipulateExcel2016Charts();
+	//CreatingAndCustomizingCharts_BubbleChart();
+	//CreatingAndCustomizingCharts_CustomChart();
+	//CreatingAndCustomizingCharts_LineChart();
+	//CreatingAndCustomizingCharts_PyramidChart();
+	//ExtractingOLEObjectsFromWorksheet();
+	//InsertingOLEObjectsIntoWorksheet();
 
-	//ConvertExcelWorkbookToPDF_A_CompliedFiles();
-	//ConvertExcelWorkbookToPDF_DirectConversion();
-	//ConvertExcelWorkbookToPDF_SetPDFCreationTime();
+	ConvertExcelWorkbookToPDF_A_CompliedFiles();
+	ConvertExcelWorkbookToPDF_DirectConversion();
+	ConvertExcelWorkbookToPDF_SetPDFCreationTime();
 	//ConvertingWorksheetToImage_PNG();
 	//ConvertingWorksheetToImage_SVG();
 	//ConvertingWorksheetToImage_TIFF();
