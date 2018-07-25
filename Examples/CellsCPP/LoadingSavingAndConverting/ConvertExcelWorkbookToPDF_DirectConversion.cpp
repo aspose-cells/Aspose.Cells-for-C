@@ -1,7 +1,7 @@
 #include "../CellsExamples.h"
 
 //Convert Excel Workbook To PDF - Direct Conversion
-void ConvertExcelWorkbookToPDF_DirectConversion() 
+void ConvertExcelWorkbookToPDF_DirectConversion()
 {
 	// Source directory path.
 	StringPtr srcDir = new String("..\\Data\\01_SourceDirectory\\");

@@ -1,7 +1,7 @@
 #include "../CellsExamples.h"
 
 //Converting Worksheet To Image - SVG
-void ConvertingWorksheetToImage_SVG() 
+void ConvertingWorksheetToImage_SVG()
 {
 	// Source directory path.
 	StringPtr srcDir = new String("..\\Data\\01_SourceDirectory\\");

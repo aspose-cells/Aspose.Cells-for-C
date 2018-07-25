@@ -1,7 +1,7 @@
 #include "../CellsExamples.h"
 
 //Converting Worksheet To Image - PNG
-void ConvertingWorksheetToImage_PNG() 
+void ConvertingWorksheetToImage_PNG()
 {
 	// Source directory path.
 	StringPtr srcDir = new String("..\\Data\\01_SourceDirectory\\");
