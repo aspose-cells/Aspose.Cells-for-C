@@ -1,8 +1,8 @@
 # Aspose.Cells for C++
 
-[Aspose.Cells for C++](https://products.aspose.com/cells/cpp) is an Excel Spreadsheet Programming API allowing software developers to manipulate and convert spreadsheet files from within their own applications. A combination of APIs and GUI controls - Aspose.Cells for C++ speeds up Microsoft Excel programming and conversion.
+[Aspose.Cells for C++](https://products.aspose.com/cells/cpp) is an Excel Spreadsheet Programming API allowing software developers to manipulate and convert spreadsheet files from within their applications. A combination of APIs and GUI controls - Aspose.Cells for C++ speeds up Microsoft Excel programming and conversion.
 
-This repository contains [Examples](Examples) for [Aspose.Cells for C++](https://products.aspose.com/cells/cpp) to help you learn and write your own applications.
+This repository contains [Examples](Examples) for [Aspose.Cells for C++](https://products.aspose.com/cells/cpp) to help you learn and write your applications.
 
 <p align="center">
   <a title="Download ZIP" href="https://github.com/aspose-cells/Aspose.Cells-for-c/archive/master.zip">
@@ -23,7 +23,7 @@ Directory | Description
 * Open **main.cpp**, all the examples are called from here.
 * Uncomment the examples you want to run from within the project.
 
-Please find more details for how to run the examples [here](https://docs.aspose.com/display/cellscpp/How+to+Run+the+Examples).
+Please find more details on how to run the examples [here](https://docs.aspose.com/display/cellscpp/How+to+Run+the+Examples).
 
 ## Resources
 
