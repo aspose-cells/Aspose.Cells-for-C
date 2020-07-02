@@ -36,15 +36,15 @@ It allows the developers to work with spreadsheet [rows, columns](https://docs.a
 
 ## Read & Write Formats
 
-**Microsoft Excel:** XLS, XLSX, XLSB
-**Text:** CSV, TSV
-**OpenDocument:** ODS
+**Microsoft Excel:** XLS, XLSX, XLSB\
+**Text:** CSV, TSV\
+**OpenDocument:** ODS\
 **Others:** HTML, MHTML
 
 ## Save Spreadsheet Documents As
 
-**Microsoft Excel:** XLSM, XLTX, XLTM, XLAM
-**Fixed Layout:** PDF, XPS
+**Microsoft Excel:** XLSM, XLTX, XLTM, XLAM\
+**Fixed Layout:** PDF, XPS\
 **Images:** JPEG, PNG, BMP, TIFF, GIF, EMF, SVG
 
 ## Getting Started with Aspose.Cells for C++
