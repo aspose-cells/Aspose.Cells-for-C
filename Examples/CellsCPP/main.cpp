@@ -42,8 +42,8 @@ int main(int argc, char** argv)
 	//CreatingSubtotals();
 	//FindOrSearchData();
 	//ManipulateNamedRangeInWorkbook();
-	TracingPrecedents();
-	TracingDependents();
+	//TracingPrecedents();
+	//TracingDependents();
 
 	// DrawingObjects
 	//ExtractingOLEObjectsFromWorksheet();
