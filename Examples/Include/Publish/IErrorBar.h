@@ -1,7 +1,7 @@
 #pragma once
-#include "System/Object.h"
-#include "System/Double.h"
-#include "System/String.h"
+#include "Aspose.Cells.Systems/Object.h"
+#include "Aspose.Cells.Systems/Double.h"
+#include "Aspose.Cells.Systems/String.h"
 #include "ILine.h"
 
 namespace Aspose {
@@ -41,12 +41,12 @@ namespace Charts{
 			/// Represents amount of error bar.
 			/// <remarks> The amount must be greater than and equal to zero.</remarks>
 			/// </summary>
-			 virtual Aspose::Cells::System::Double GetAmount()=0;
+			 virtual Aspose::Cells::Systems::Double GetAmount()=0;
 			/// <summary>
 			/// Represents amount of error bar.
 			/// <remarks> The amount must be greater than and equal to zero.</remarks>
 			/// </summary>
-			 virtual void SetAmount(Aspose::Cells::System::Double value)=0;
+			 virtual void SetAmount(Aspose::Cells::Systems::Double value)=0;
 			/// <summary>
 			/// Indicates if formatting error bars with a T-top.
 			/// </summary>
@@ -58,19 +58,19 @@ namespace Charts{
 			/// <summary>
 			/// Represents positive error amount when error bar type is InnerCustom.
 			/// </summary>
-			 virtual intrusive_ptr<Aspose::Cells::System::String> GetPlusValue()=0;
+			 virtual intrusive_ptr<Aspose::Cells::Systems::String> GetPlusValue()=0;
 			/// <summary>
 			/// Represents positive error amount when error bar type is InnerCustom.
 			/// </summary>
-			 virtual void SetPlusValue(intrusive_ptr<Aspose::Cells::System::String> value)=0;
+			 virtual void SetPlusValue(intrusive_ptr<Aspose::Cells::Systems::String> value)=0;
 			/// <summary>
 			/// Represents negative error amount when error bar type is InnerCustom.
 			/// </summary>
-			 virtual intrusive_ptr<Aspose::Cells::System::String> GetMinusValue()=0;
+			 virtual intrusive_ptr<Aspose::Cells::Systems::String> GetMinusValue()=0;
 			/// <summary>
 			/// Represents negative error amount when error bar type is InnerCustom.
 			/// </summary>
-			 virtual void SetMinusValue(intrusive_ptr<Aspose::Cells::System::String> value)=0;
+			 virtual void SetMinusValue(intrusive_ptr<Aspose::Cells::Systems::String> value)=0;
 
 	};
 }

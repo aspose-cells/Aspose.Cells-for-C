@@ -1,6 +1,6 @@
 #pragma once
-#include "System/Object.h"
-#include "System/Double.h"
+#include "Aspose.Cells.Systems/Object.h"
+#include "Aspose.Cells.Systems/Double.h"
 #include "IFillFormat.h"
 
 namespace Aspose {
@@ -108,11 +108,11 @@ namespace Drawing{
 			/// <summary>
 			/// Gets the weight of the line in unit of points.
 			/// </summary>
-			 virtual Aspose::Cells::System::Double GetWeight()=0;
+			 virtual Aspose::Cells::Systems::Double GetWeight()=0;
 			/// <summary>
 			/// Sets the weight of the line in unit of points.
 			/// </summary>
-			 virtual void SetWeight(Aspose::Cells::System::Double value)=0;
+			 virtual void SetWeight(Aspose::Cells::Systems::Double value)=0;
 
 	};
 }

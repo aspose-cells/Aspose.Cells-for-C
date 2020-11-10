@@ -1,12 +1,12 @@
 #pragma once
-#include "System/Object.h"
-#include "System/Int32.h"
-#include "System/Double.h"
-#include "System/String.h"
-#include "System/DateTime.h"
-#include "System/Single.h"
-#include "System/Array1D.h"
-#include "System/Collections/IEnumerator.h"
+#include "Aspose.Cells.Systems/Object.h"
+#include "Aspose.Cells.Systems/Int32.h"
+#include "Aspose.Cells.Systems/Double.h"
+#include "Aspose.Cells.Systems/String.h"
+#include "Aspose.Cells.Systems/DateTime.h"
+#include "Aspose.Cells.Systems/Single.h"
+#include "Aspose.Cells.Systems/Array1D.h"
+#include "Aspose.Cells.Systems/Collections/IEnumerator.h"
 
 namespace Aspose {
 	namespace Cells {
@@ -76,7 +76,7 @@ namespace Cells{
 			/// </code>
 			/// 
 			/// </example>
-	class ASPOSE_CELLS_API ICell : public Aspose::Cells::System::Object
+	class ASPOSE_CELLS_API ICell : public Aspose::Cells::Systems::Object
 	{
 		public:
 			/// <summary>
@@ -107,53 +107,53 @@ namespace Cells{
 			/// Puts an int value into the cell.
 			/// </summary>
 			/// <param name="intValue" >Input value</param>
-			 virtual void PutValue(Aspose::Cells::System::Int32 intValue)=0;
+			 virtual void PutValue(Aspose::Cells::Systems::Int32 intValue)=0;
 			/// <summary>
 			/// Puts a double value into the cell.
 			/// </summary>
 			/// <param name="doubleValue" >Input value</param>
-			 virtual void PutValue(Aspose::Cells::System::Double doubleValue)=0;
+			 virtual void PutValue(Aspose::Cells::Systems::Double doubleValue)=0;
 			/// <summary>
 			/// Puts a value into the cell, if appropriate the value will be converted to other data type and cell's number format will be reset.
 			/// </summary>
 			/// <param name="stringValue" >Input value</param>
 			/// <param name="isConverted" >True: converted to other data type if appropriate.</param>
 			/// <param name="setStyle" >True: set the number format to cell's style when converting to other data type</param>
-			 virtual void PutValue(intrusive_ptr<Aspose::Cells::System::String> stringValue , bool isConverted , bool setStyle)=0;
+			 virtual void PutValue(intrusive_ptr<Aspose::Cells::Systems::String> stringValue , bool isConverted , bool setStyle)=0;
 			/// <summary>
 			/// Puts a string value into the cell and converts the value to other data type if appropriate. 
 			/// </summary>
 			/// <param name="stringValue" >Input value</param>
 			/// <param name="isConverted" >True: converted to other data type if appropriate.</param>
-			 virtual void PutValue(intrusive_ptr<Aspose::Cells::System::String> stringValue , bool isConverted)=0;
+			 virtual void PutValue(intrusive_ptr<Aspose::Cells::Systems::String> stringValue , bool isConverted)=0;
 			/// <summary>
 			/// Puts a string value into the cell.
 			/// </summary>
 			/// <param name="stringValue" >Input value</param>
-			  virtual void PutValue(intrusive_ptr<Aspose::Cells::System::String> stringValue)=0;
+			  virtual void PutValue(intrusive_ptr<Aspose::Cells::Systems::String> stringValue)=0;
 			/// <summary>
 			/// Puts a DateTime value into the cell.
 			/// </summary>
 			/// <param name="dateTime" >Input value</param>
-			 virtual void PutValue(intrusive_ptr<Aspose::Cells::System::DateTime> dateTime)=0;
+			 virtual void PutValue(intrusive_ptr<Aspose::Cells::Systems::DateTime> dateTime)=0;
 			/// <summary>
 			/// Gets the DateTime value contained in the cell.
 			/// </summary>
-			 virtual intrusive_ptr<Aspose::Cells::System::DateTime> GetDateTimeValue()=0;
+			 virtual intrusive_ptr<Aspose::Cells::Systems::DateTime> GetDateTimeValue()=0;
 			/// <summary>
 			/// Puts an object value into the cell.
 			/// </summary>
 			/// <param name="objectValue" >input value</param>
-			 virtual void PutValue(intrusive_ptr<Aspose::Cells::System::Object> objectValue)=0;
+			 virtual void PutValue(intrusive_ptr<Aspose::Cells::Systems::Object> objectValue)=0;
 			/// <summary>
 			/// Gets row number (zero based) of the cell.
 			/// </summary>
 			/// <value>Cell row number</value>
-			 virtual Aspose::Cells::System::Int32 GetRow()=0;
+			 virtual Aspose::Cells::Systems::Int32 GetRow()=0;
 			/// <summary>
 			/// Gets column number (zero based) of the cell.
 			/// </summary>
-			 virtual Aspose::Cells::System::Int32 GetColumn()=0;
+			 virtual Aspose::Cells::Systems::Int32 GetColumn()=0;
 			/// <summary>
 			/// Represents if the specified cell contains formula.
 			/// </summary>
@@ -168,7 +168,7 @@ namespace Cells{
 			/// <remarks>
 			/// A cell name includes its column letter and row number. For example, the name of a cell in row 0 and column 0 is A1.
 			/// </remarks>
-			 virtual intrusive_ptr<Aspose::Cells::System::String> GetName()=0;
+			 virtual intrusive_ptr<Aspose::Cells::Systems::String> GetName()=0;
 			/// <summary>
 			/// Checks if a formula can properly evaluate a result.
 			/// </summary>
@@ -180,18 +180,18 @@ namespace Cells{
 			/// <param name="formatStrategy" >The formatted strategy.</param>
 			/// <returns/>
 			/// 
-			 virtual intrusive_ptr<Aspose::Cells::System::String> GetStringValue(Aspose::Cells::CellValueFormatStrategy formatStrategy)=0;
+			 virtual intrusive_ptr<Aspose::Cells::Systems::String> GetStringValue(Aspose::Cells::CellValueFormatStrategy formatStrategy)=0;
 			/// <summary>
 			/// Gets the string value contained in the cell. If the type of this cell is string, then return the string value itself.
 			/// For other cell types, the formatted string value (formatted with the specified style of this cell) will be returned.
 			/// The formatted cell value is same with what you can get from excel when copying a cell as text (such as
 			/// copying cell to text editor or exporting to csv).
 			/// </summary>
-			 virtual intrusive_ptr<Aspose::Cells::System::String> GetStringValue()=0;
+			 virtual intrusive_ptr<Aspose::Cells::Systems::String> GetStringValue()=0;
 			/// <summary>
 			/// Gets cell's value as string without any format.
 			/// </summary>
-			 virtual intrusive_ptr<Aspose::Cells::System::String> GetStringValueWithoutFormat()=0;
+			 virtual intrusive_ptr<Aspose::Cells::Systems::String> GetStringValueWithoutFormat()=0;
 			/// <summary>
 			/// Represents the category type of this cell's number formatting.
 			/// </summary>
@@ -199,19 +199,19 @@ namespace Cells{
 			/// <summary>
 			/// Gets the formatted string value of this cell.
 			/// </summary>
-			 virtual intrusive_ptr<Aspose::Cells::System::String> GetDisplayStringValue()=0;
+			 virtual intrusive_ptr<Aspose::Cells::Systems::String> GetDisplayStringValue()=0;
 			/// <summary>
 			/// Gets the int value contained in the cell.
 			/// </summary>
-			 virtual Aspose::Cells::System::Int32 GetIntValue()=0;
+			 virtual Aspose::Cells::Systems::Int32 GetIntValue()=0;
 			/// <summary>
 			/// Gets the double value contained in the cell.
 			/// </summary>
-			 virtual Aspose::Cells::System::Double GetDoubleValue()=0;
+			 virtual Aspose::Cells::Systems::Double GetDoubleValue()=0;
 			/// <summary>
 			/// Gets the float value contained in the cell.
 			/// </summary>
-			 virtual Aspose::Cells::System::Single GetFloatValue()=0;
+			 virtual Aspose::Cells::Systems::Single GetFloatValue()=0;
 			/// <summary>
 			/// Gets the bool value contained in the cell.
 			/// </summary>
@@ -226,7 +226,7 @@ namespace Cells{
 			/// </summary>
 			/// <returns>Returns <see cref="IFormatConditionCollection" />
 			///  object</returns>
-			 virtual intrusive_ptr<Aspose::Cells::System::Array1D<Aspose::Cells::IFormatConditionCollection*>> 		GetIFormatConditions()=0;
+			 virtual intrusive_ptr<Aspose::Cells::Systems::Array1D<Aspose::Cells::IFormatConditionCollection*>> 		GetIFormatConditions()=0;
 			/// <summary>
 			///  Gets the cell style.
 			///  </summary>
@@ -267,7 +267,7 @@ namespace Cells{
 			/// <summary>
 			/// Gets cell's shared style index in the style pool.
 			/// </summary>
-			 virtual Aspose::Cells::System::Int32 GetSharedStyleIndex()=0;
+			 virtual Aspose::Cells::Systems::Int32 GetSharedStyleIndex()=0;
 			/// <summary>
 			///  Gets or sets a formula of the <see cref="ICell" /> 
 			///  </summary>
@@ -290,7 +290,7 @@ namespace Cells{
 			/// 
 			/// </code>
 			/// </example>
-			 virtual intrusive_ptr<Aspose::Cells::System::String> GetFormula()=0;
+			 virtual intrusive_ptr<Aspose::Cells::Systems::String> GetFormula()=0;
 			/// <summary>
 			///  Gets or sets a formula of the <see cref="ICell" />
 			///  </summary>
@@ -313,21 +313,21 @@ namespace Cells{
 			/// 
 			/// </code>
 			/// </example>
-			 virtual void SetFormula(intrusive_ptr<Aspose::Cells::System::String> value)=0;
+			 virtual void SetFormula(intrusive_ptr<Aspose::Cells::Systems::String> value)=0;
 			/// <summary>
 			/// Set the formula and the value of the formula.
 			/// </summary>
 			/// <param name="formula" >The formula.</param>
 			/// <param name="value" >The value of the formula.</param>
-			 virtual void SetFormula(intrusive_ptr<Aspose::Cells::System::String> formula , intrusive_ptr<Aspose::Cells::System::Object> value)=0;
+			 virtual void SetFormula(intrusive_ptr<Aspose::Cells::Systems::String> formula , intrusive_ptr<Aspose::Cells::Systems::Object> value)=0;
 			/// <summary>
 			/// Gets an R1C1 formula of the <see cref="ICell" />
 			/// </summary>
-			 virtual intrusive_ptr<Aspose::Cells::System::String> GetR1C1Formula()=0;
+			 virtual intrusive_ptr<Aspose::Cells::Systems::String> GetR1C1Formula()=0;
 			/// <summary>
 			/// Sets an R1C1 formula of the <see cref="ICell" /> 
 			/// </summary>
-			 virtual void SetR1C1Formula(intrusive_ptr<Aspose::Cells::System::String> value)=0;
+			 virtual void SetR1C1Formula(intrusive_ptr<Aspose::Cells::Systems::String> value)=0;
 			/// <summary>
 			/// Indicates whether this cell contains an external link.
 			/// Only applies when the cell is a formula cell.
@@ -377,24 +377,24 @@ namespace Cells{
 			/// Get all cells which refer to the specific cell.
 			/// </summary>
 			/// <param name="isAll" >Indicates whether check other worksheets</param>
-			 virtual intrusive_ptr<Aspose::Cells::System::Array1D<Aspose::Cells::ICell*>> 		GetDependentICells(bool isAll)=0;
+			 virtual intrusive_ptr<Aspose::Cells::Systems::Array1D<Aspose::Cells::ICell*>> 		GetDependentICells(bool isAll)=0;
 			/// <summary>
 			/// Get all cells which will be updated when this cell is modified.
 			/// This method can only work after calling CalculateFormula method of IWorkbook.
 			/// </summary>
-			 virtual intrusive_ptr<Aspose::Cells::System::Collections::IEnumerator> GetLeafs()=0;
+			 virtual intrusive_ptr<Aspose::Cells::Systems::Collections::IEnumerator> GetLeafs()=0;
 			/// <summary>
 			/// Gets the width of the value in unit of pixels.
 			/// </summary>
 			/// <returns/>
 			/// 
-			  virtual Aspose::Cells::System::Int32 GetWidthOfValue()=0;
+			  virtual Aspose::Cells::Systems::Int32 GetWidthOfValue()=0;
 			/// <summary>
 			/// Gets the height of the value in unit of pixels.
 			/// </summary>
 			/// <returns/>
 			/// 
-			  virtual Aspose::Cells::System::Int32 GetHeightOfValue()=0;
+			  virtual Aspose::Cells::Systems::Int32 GetHeightOfValue()=0;
 			/// <summary>
 			/// Indicates the cell's formula is and array formula 
 			/// and it is the first cell of the array. 
@@ -422,7 +422,7 @@ namespace Cells{
 			/// <param name="arrayFormula" >Array formula.</param>
 			/// <param name="rowNumber" >Number of rows to populate result of the array formula.</param>
 			/// <param name="columnNumber" >Number of columns to populate result of the array formula.</param>
-			 virtual void SetArrayFormula(intrusive_ptr<Aspose::Cells::System::String> arrayFormula , Aspose::Cells::System::Int32 rowNumber , Aspose::Cells::System::Int32 columnNumber)=0;
+			 virtual void SetArrayFormula(intrusive_ptr<Aspose::Cells::Systems::String> arrayFormula , Aspose::Cells::Systems::Int32 rowNumber , Aspose::Cells::Systems::Int32 columnNumber)=0;
 			/// <summary>
 			/// Remove array formula.
 			/// </summary>
@@ -447,7 +447,7 @@ namespace Cells{
 			///  Add-In file should be placed in the directory or sub-directory of Workbook Add-In library.
 			///  For example, file name can be "Eurotool.xla" or "solver\solver.xla". 
 			///  </remarks>
-			 virtual void SetAddInFormula(intrusive_ptr<Aspose::Cells::System::String> addInFileName , intrusive_ptr<Aspose::Cells::System::String> addInFunction)=0;
+			 virtual void SetAddInFormula(intrusive_ptr<Aspose::Cells::Systems::String> addInFileName , intrusive_ptr<Aspose::Cells::Systems::String> addInFunction)=0;
 			/// <summary>
 			/// Copies data from a source cell.
 			/// </summary>
@@ -465,7 +465,7 @@ namespace Cells{
 			/// <p>Integer</p>
 			/// <p>String.</p>
 			/// </remarks>
-			 virtual intrusive_ptr<Aspose::Cells::System::Object> GetValue()=0;
+			 virtual intrusive_ptr<Aspose::Cells::Systems::Object> GetValue()=0;
 			/// <summary>
 			/// Gets the value contained in this cell.
 			/// </summary>
@@ -477,7 +477,7 @@ namespace Cells{
 			/// <p>Integer</p>
 			/// <p>String.</p>
 			/// </remarks>
-			 virtual void SetValue(intrusive_ptr<Aspose::Cells::System::Object> value)=0;
+			 virtual void SetValue(intrusive_ptr<Aspose::Cells::Systems::Object> value)=0;
 			/// <summary>
 			/// Indicates if the cell's style is set. If return false, it means this cell has a default cell format.
 			/// </summary>
@@ -500,7 +500,7 @@ namespace Cells{
 			/// 
 			/// </code>
 			/// </example>
-			 virtual intrusive_ptr<Aspose::Cells::IFontSetting> 		GetIFontSetting(Aspose::Cells::System::Int32 startIndex , Aspose::Cells::System::Int32 length)=0;
+			 virtual intrusive_ptr<Aspose::Cells::IFontSetting> 		GetIFontSetting(Aspose::Cells::Systems::Int32 startIndex , Aspose::Cells::Systems::Int32 length)=0;
 			/// <summary>
 			/// Indicates whether the cell string value is a rich text.
 			/// </summary>
@@ -510,19 +510,19 @@ namespace Cells{
 			/// that represents a range of characters within the cell text.
 			/// </summary>
 			/// <returns>All Characters objects </returns>
-			 virtual intrusive_ptr<Aspose::Cells::System::Array1D<Aspose::Cells::IFontSetting*>> 		GetIFontSettings()=0;
+			 virtual intrusive_ptr<Aspose::Cells::Systems::Array1D<Aspose::Cells::IFontSetting*>> 		GetIFontSettings()=0;
 			/// <summary>
 			/// Returns all Characters objects 
 			/// that represents a range of characters within the cell text.
 			/// </summary>
 			/// <param name="flag" >Indicates whether applying table style to the cell if the cell is in the table.</param>
 			/// <returns>All Characters objects </returns>
-			 virtual intrusive_ptr<Aspose::Cells::System::Array1D<Aspose::Cells::IFontSetting*>> 		GetIFontSettings(bool flag)=0;
+			 virtual intrusive_ptr<Aspose::Cells::Systems::Array1D<Aspose::Cells::IFontSetting*>> 		GetIFontSettings(bool flag)=0;
 			/// <summary>
 			/// Sets rich text format of the cell.
 			/// </summary>
 			/// <param name="characters" >All Characters objects.</param>
-			 virtual void 		SetIFontSettings(intrusive_ptr<Aspose::Cells::System::Array1D<Aspose::Cells::IFontSetting*>> characters)=0;
+			 virtual void 		SetIFontSettings(intrusive_ptr<Aspose::Cells::Systems::Array1D<Aspose::Cells::IFontSetting*>> characters)=0;
 			/// <summary>
 			/// Checks if a cell is part of a merged range or not. 
 			/// </summary>
@@ -537,11 +537,11 @@ namespace Cells{
 			/// <summary>
 			/// Gets and sets the html string which contains data and some formats in this cell.
 			/// </summary>
-			  virtual intrusive_ptr<Aspose::Cells::System::String> GetHtmlString() = 0;
+			  virtual intrusive_ptr<Aspose::Cells::Systems::String> GetHtmlString() = 0;
 			/// <summary>
 			/// Gets and sets the html string which contains data and some formats in this cell.
 			/// </summary>
-			  virtual void SetHtmlString(intrusive_ptr<Aspose::Cells::System::String> value) = 0;
+			  virtual void SetHtmlString(intrusive_ptr<Aspose::Cells::Systems::String> value) = 0;
 			/// <summary>
 			/// Sets a formula to a range of cells.
 			/// </summary>
@@ -551,7 +551,7 @@ namespace Cells{
 			/// <remarks>
 			/// 
 			/// </remarks>
-			 virtual void SetSharedFormula(intrusive_ptr<Aspose::Cells::System::String> sharedFormula , Aspose::Cells::System::Int32 rowNumber , Aspose::Cells::System::Int32 columnNumber)=0;
+			 virtual void SetSharedFormula(intrusive_ptr<Aspose::Cells::Systems::String> sharedFormula , Aspose::Cells::Systems::Int32 rowNumber , Aspose::Cells::Systems::Int32 columnNumber)=0;
 			/// <summary>
 			/// Checks whether this object refers to the same cell with another cell object.
 			/// </summary>

@@ -1,10 +1,10 @@
 #pragma once
-#include "System/Object.h"
-#include "System/Collections/ArrayList.h"
-#include "System/String.h"
-#include "System/Int32.h"
-#include "System/Int16.h"
-#include "System/Array1D.h"
+#include "Aspose.Cells.Systems/Object.h"
+#include "Aspose.Cells.Systems/Collections/ArrayList.h"
+#include "Aspose.Cells.Systems/String.h"
+#include "Aspose.Cells.Systems/Int32.h"
+#include "Aspose.Cells.Systems/Int16.h"
+#include "Aspose.Cells.Systems/Array1D.h"
 
 namespace Aspose {
 	namespace Cells {
@@ -30,7 +30,7 @@ namespace Pivot{
 			/// <summary>
 			/// Represents a field in a PivotTable report.
 			/// </summary>
-	class ASPOSE_CELLS_API IPivotField : public Aspose::Cells::System::Object
+	class ASPOSE_CELLS_API IPivotField : public Aspose::Cells::Systems::Object
 	{
 		public:
 			/// <summary>
@@ -48,7 +48,7 @@ namespace Pivot{
 			/// <summary>
 			/// Gets the pivot filters of the pivot field 
 			/// </summary>
-			  virtual intrusive_ptr<Aspose::Cells::System::Collections::ArrayList> GetPivotFilters()=0;
+			  virtual intrusive_ptr<Aspose::Cells::Systems::Collections::ArrayList> GetPivotFilters()=0;
 			/// <summary>
 			/// Init the pivot items of the pivot field
 			/// </summary>
@@ -60,31 +60,31 @@ namespace Pivot{
 			/// <summary>
 			/// Get the formula string of the specified calculated field .
 			/// </summary>
-			  virtual intrusive_ptr<Aspose::Cells::System::String> GetCalculatedFieldFormula()=0;
+			  virtual intrusive_ptr<Aspose::Cells::Systems::String> GetCalculatedFieldFormula()=0;
 			/// <summary>
 			/// Represents the PivotField index in the base PivotFields.
 			/// </summary>
-			  virtual Aspose::Cells::System::Int32 GetBaseIndex() = 0;
+			  virtual Aspose::Cells::Systems::Int32 GetBaseIndex() = 0;
 			/// <summary>
 			/// Represents the PivotField index in the base PivotFields.
 			/// </summary>
-			  virtual void SetBaseIndex(Aspose::Cells::System::Int32 value) = 0;
+			  virtual void SetBaseIndex(Aspose::Cells::Systems::Int32 value) = 0;
 			/// <summary>
 			/// Represents the PivotField index in the PivotFields.
 			/// </summary>
-			  virtual Aspose::Cells::System::Int32 GetPosition() = 0;
+			  virtual Aspose::Cells::Systems::Int32 GetPosition() = 0;
 			/// <summary>
 			/// Represents the PivotField name.
 			/// </summary>
-			  virtual intrusive_ptr<Aspose::Cells::System::String> GetName() = 0;
+			  virtual intrusive_ptr<Aspose::Cells::Systems::String> GetName() = 0;
 			/// <summary>
 			/// Represents the PivotField display name.
 			/// </summary>
-			  virtual intrusive_ptr<Aspose::Cells::System::String> GetDisplayName() = 0;
+			  virtual intrusive_ptr<Aspose::Cells::Systems::String> GetDisplayName() = 0;
 			/// <summary>
 			/// Represents the PivotField display name.
 			/// </summary>
-			  virtual void SetDisplayName(intrusive_ptr<Aspose::Cells::System::String> value) = 0;
+			  virtual void SetDisplayName(intrusive_ptr<Aspose::Cells::Systems::String> value) = 0;
 			/// <summary>
 			/// Sets whether the specified field shows that subtotals.
 			/// </summary>
@@ -235,12 +235,12 @@ namespace Pivot{
 			/// Represents auto sort field index. 
 			/// -1 means PivotField itself,others means the position of the data fields.
 			/// </summary>
-			  virtual Aspose::Cells::System::Int32 GetAutoSortField() = 0;
+			  virtual Aspose::Cells::Systems::Int32 GetAutoSortField() = 0;
 			/// <summary>
 			/// Represents auto sort field index. 
 			/// -1 means PivotField itself,others means the position of the data fields.
 			/// </summary>
-			  virtual void SetAutoSortField(Aspose::Cells::System::Int32 value) = 0;
+			  virtual void SetAutoSortField(Aspose::Cells::Systems::Int32 value) = 0;
 			/// <summary>
 			/// Indicates whether the specified PivotTable field is automatically shown,only valid for excel 2003.
 			/// </summary>
@@ -261,22 +261,22 @@ namespace Pivot{
 			/// Represent the number of top or bottom items
 			/// that are automatically shown in the specified PivotTable field.
 			/// </summary>
-			  virtual Aspose::Cells::System::Int32 GetAutoShowCount() = 0;
+			  virtual Aspose::Cells::Systems::Int32 GetAutoShowCount() = 0;
 			/// <summary>
 			/// Represent the number of top or bottom items
 			/// that are automatically shown in the specified PivotTable field.
 			/// </summary>
-			  virtual void SetAutoShowCount(Aspose::Cells::System::Int32 value) = 0;
+			  virtual void SetAutoShowCount(Aspose::Cells::Systems::Int32 value) = 0;
 			/// <summary>
 			/// Represents auto show field index. -1 means PivotField itself.
 			/// It should be the index of the data fields.
 			/// </summary>
-			  virtual Aspose::Cells::System::Int32 GetAutoShowField() = 0;
+			  virtual Aspose::Cells::Systems::Int32 GetAutoShowField() = 0;
 			/// <summary>
 			/// Represents auto show field index. -1 means PivotField itself.
 			/// It should be the index of the data fields.
 			/// </summary>
-			  virtual void SetAutoShowField(Aspose::Cells::System::Int32 value) = 0;
+			  virtual void SetAutoShowField(Aspose::Cells::Systems::Int32 value) = 0;
 			/// <summary>
 			/// Represents the function used to summarize the PivotTable data field.
 			/// </summary>
@@ -301,20 +301,20 @@ namespace Pivot{
 			/// Represents the base field for a custom calculation.
 			/// Please use PivotField.BaseFieldIndex instead
 			/// </summary>
-			 virtual Aspose::Cells::System::Int32 GetBaseField()=0;
+			 virtual Aspose::Cells::Systems::Int32 GetBaseField()=0;
 			/// <summary>
 			/// Represents the base field for a custom calculation.
 			/// Please use PivotField.BaseFieldIndex instead
 			/// </summary>
-			 virtual void SetBaseField(Aspose::Cells::System::Int32 value)=0;
+			 virtual void SetBaseField(Aspose::Cells::Systems::Int32 value)=0;
 			/// <summary>
 			/// Represents the base field for a custom calculation.
 			/// </summary>
-			  virtual Aspose::Cells::System::Int32 GetBaseFieldIndex() = 0;
+			  virtual Aspose::Cells::Systems::Int32 GetBaseFieldIndex() = 0;
 			/// <summary>
 			/// Represents the base field for a custom calculation.
 			/// </summary>
-			  virtual void SetBaseFieldIndex(Aspose::Cells::System::Int32 value) = 0;
+			  virtual void SetBaseFieldIndex(Aspose::Cells::Systems::Int32 value) = 0;
 			/// <summary>
 			///  Represents the item in the base field for a custom calculation.
 			///  Valid only for data fields. 
@@ -337,38 +337,38 @@ namespace Pivot{
 			///  Represents the item in the base field for a custom calculation.
 			///  Valid only for data fields. 
 			/// </summary>
-			 virtual Aspose::Cells::System::Int32 GetBaseItem()=0;
+			 virtual Aspose::Cells::Systems::Int32 GetBaseItem()=0;
 			/// <summary>
 			///  Represents the item in the base field for a custom calculation.
 			///  Valid only for data fields. 
 			/// </summary>
-			 virtual void SetBaseItem(Aspose::Cells::System::Int32 value)=0;
+			 virtual void SetBaseItem(Aspose::Cells::Systems::Int32 value)=0;
 			/// <summary>
 			///  Represents the item in the base field for a custom calculation.
 			///  Valid only for data fields. 
 			/// </summary>
-			  virtual Aspose::Cells::System::Int32 GetBaseItemIndex() = 0;
+			  virtual Aspose::Cells::Systems::Int32 GetBaseItemIndex() = 0;
 			/// <summary>
 			///  Represents the item in the base field for a custom calculation.
 			///  Valid only for data fields. 
 			/// </summary>
-			  virtual void SetBaseItemIndex(Aspose::Cells::System::Int32 value) = 0;
+			  virtual void SetBaseItemIndex(Aspose::Cells::Systems::Int32 value) = 0;
 			/// <summary>
 			/// Represents the current page item showing for the page field (valid only for page fields). 
 			/// </summary>
-			  virtual Aspose::Cells::System::Int16 GetCurrentPageItem() = 0;
+			  virtual Aspose::Cells::Systems::Int16 GetCurrentPageItem() = 0;
 			/// <summary>
 			/// Represents the current page item showing for the page field (valid only for page fields). 
 			/// </summary>
-			  virtual void SetCurrentPageItem(Aspose::Cells::System::Int16 value) = 0;
+			  virtual void SetCurrentPageItem(Aspose::Cells::Systems::Int16 value) = 0;
 			/// <summary>
 			/// Represents the built-in display format of numbers and dates.
 			/// </summary>
-			  virtual Aspose::Cells::System::Int32 GetNumber() = 0;
+			  virtual Aspose::Cells::Systems::Int32 GetNumber() = 0;
 			/// <summary>
 			/// Represents the built-in display format of numbers and dates.
 			/// </summary>
-			  virtual void SetNumber(Aspose::Cells::System::Int32 value) = 0;
+			  virtual void SetNumber(Aspose::Cells::Systems::Int32 value) = 0;
 			/// <summary>
 			/// Indicates whether inserting blank line after each item.
 			/// </summary>
@@ -396,35 +396,35 @@ namespace Pivot{
 			/// <summary>
 			/// Represents the custom display format of numbers and dates.
 			/// </summary>
-			  virtual intrusive_ptr<Aspose::Cells::System::String> Get_NumberFormat() = 0;
+			  virtual intrusive_ptr<Aspose::Cells::Systems::String> Get_NumberFormat() = 0;
 			/// <summary>
 			/// Represents the custom display format of numbers and dates.
 			/// </summary>
-			  virtual void SetNumberFormat(intrusive_ptr<Aspose::Cells::System::String> value) = 0;
+			  virtual void SetNumberFormat(intrusive_ptr<Aspose::Cells::Systems::String> value) = 0;
 			/// <summary>
 			/// Indicates whether the specific PivotItem is hidden.
 			/// </summary>
 			/// <param name="index" >the index of the pivotItem in the pivotField.</param>
 			/// <returns>whether the specific PivotItem is hidden</returns>
-			  virtual bool IsHiddenItem(Aspose::Cells::System::Int32 index)=0;
+			  virtual bool IsHiddenItem(Aspose::Cells::Systems::Int32 index)=0;
 			/// <summary>
 			///  Sets whether the specific PivotItem in a data field is hidden.
 			/// </summary>
 			/// <param name="index" >the index of the pivotItem in the pivotField.</param>
 			/// <param name="isHidden" >whether the specific PivotItem is hidden</param>
-			  virtual void HideItem(Aspose::Cells::System::Int32 index , bool isHidden)=0;
+			  virtual void HideItem(Aspose::Cells::Systems::Int32 index , bool isHidden)=0;
 			/// <summary>
 			/// Indicates whether the specific PivotItem is hidden detail.
 			/// </summary>
 			/// <param name="index" >the index of the pivotItem in the pivotField.</param>
 			/// <returns>whether the specific PivotItem is hidden detail</returns>
-			  virtual bool IsHiddenItemDetail(Aspose::Cells::System::Int32 index)=0;
+			  virtual bool IsHiddenItemDetail(Aspose::Cells::Systems::Int32 index)=0;
 			/// <summary>
 			///  Sets whether the specific PivotItem in a pivot field is hidden detail.
 			/// </summary>
 			/// <param name="index" >the index of the pivotItem in the pivotField.</param>
 			/// <param name="isHiddenDetail" >whether the specific PivotItem is hidden</param>
-			  virtual void HideItemDetail(Aspose::Cells::System::Int32 index , bool isHiddenDetail)=0;
+			  virtual void HideItemDetail(Aspose::Cells::Systems::Int32 index , bool isHiddenDetail)=0;
 			/// <summary>
 			///  Sets whether the PivotItems in a pivot field is hidden detail.That is collapse/expand this field.
 			/// </summary>
@@ -435,19 +435,19 @@ namespace Pivot{
 			/// </summary>
 			/// <param name="itemValue" >the value of the pivotItem in the pivotField.</param>
 			/// <param name="isHidden" >whether the specific PivotItem is hidden</param>
-			  virtual void HideItem(intrusive_ptr<Aspose::Cells::System::String> itemValue , bool isHidden)=0;
+			  virtual void HideItem(intrusive_ptr<Aspose::Cells::Systems::String> itemValue , bool isHidden)=0;
 			/// <summary>
 			/// Get all base items;
 			/// </summary>
-			  virtual intrusive_ptr<Aspose::Cells::System::Array1D<Aspose::Cells::System::String*>> GetItems() = 0;
+			  virtual intrusive_ptr<Aspose::Cells::Systems::Array1D<Aspose::Cells::Systems::String*>> GetItems() = 0;
 			/// <summary>
 			/// Get the original base items;
 			/// </summary>
-			  virtual intrusive_ptr<Aspose::Cells::System::Array1D<Aspose::Cells::System::String*>> GetOriginalItems() = 0;
+			  virtual intrusive_ptr<Aspose::Cells::Systems::Array1D<Aspose::Cells::Systems::String*>> GetOriginalItems() = 0;
 			/// <summary>
 			/// Gets the base item count of this pivot field.
 			/// </summary>
-			  virtual Aspose::Cells::System::Int32 GetItemCount() = 0;
+			  virtual Aspose::Cells::Systems::Int32 GetItemCount() = 0;
 			/// <summary>
 			/// Add a calculated item to the pivot field.
 			/// </summary>
@@ -456,7 +456,7 @@ namespace Pivot{
 			/// <remarks>
 			/// Only supports to add calculated item to Row/Column field.
 			/// </remarks>
-			  virtual void AddCalculatedItem(intrusive_ptr<Aspose::Cells::System::String> name , intrusive_ptr<Aspose::Cells::System::String> formula)=0;
+			  virtual void AddCalculatedItem(intrusive_ptr<Aspose::Cells::Systems::String> name , intrusive_ptr<Aspose::Cells::Systems::String> formula)=0;
 			/// <summary>
 			/// Indicates whether showing in compact mode.
 			/// </summary>

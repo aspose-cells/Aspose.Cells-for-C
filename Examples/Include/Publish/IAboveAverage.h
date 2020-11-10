@@ -1,6 +1,6 @@
 #pragma once
-#include "System/Object.h"
-#include "System/Int32.h"
+#include "Aspose.Cells.Systems/Object.h"
+#include "Aspose.Cells.Systems/Int32.h"
 
 namespace Aspose{
 namespace Cells{
@@ -9,7 +9,7 @@ namespace Cells{
 			/// This conditional formatting rule highlights cells that
 			/// are above or below the average for all values in the range. 
 			/// </summary>
-	class ASPOSE_CELLS_API IAboveAverage : public Aspose::Cells::System::Object
+	class ASPOSE_CELLS_API IAboveAverage : public Aspose::Cells::Systems::Object
 	{
 		public:
 			/// <summary>
@@ -45,7 +45,7 @@ namespace Cells{
 			/// Setting this value to 0 means stdDev is not set.
 			/// The default value is 0.
 			/// </summary>
-			 virtual Aspose::Cells::System::Int32 GetStdDev()=0;
+			 virtual Aspose::Cells::Systems::Int32 GetStdDev()=0;
 			/// <summary>
 			/// Sets the number of standard deviations to include above or below the average in the
 			/// conditional formatting rule. 
@@ -53,7 +53,7 @@ namespace Cells{
 			/// Setting this value to 0 means stdDev is not set.
 			/// The default value is 0.
 			/// </summary>
-			 virtual void SetStdDev(Aspose::Cells::System::Int32 value)=0;
+			 virtual void SetStdDev(Aspose::Cells::Systems::Int32 value)=0;
 
 	};
 }

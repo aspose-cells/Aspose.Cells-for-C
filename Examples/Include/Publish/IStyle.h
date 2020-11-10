@@ -1,8 +1,8 @@
 #pragma once
-#include "System/Object.h"
-#include "System/String.h"
-#include "System/Drawing/Color.h"
-#include "System/Int32.h"
+#include "Aspose.Cells.Systems/Object.h"
+#include "Aspose.Cells.Systems/String.h"
+#include "Aspose.Cells.Systems/Drawing/Color.h"
+#include "Aspose.Cells.Systems/Int32.h"
 
 namespace Aspose {
 	namespace Cells {
@@ -32,7 +32,7 @@ namespace Cells{
 			///  </summary>
 			/// 
 			/// 
-	class ASPOSE_CELLS_API IStyle : public Aspose::Cells::System::Object
+	class ASPOSE_CELLS_API IStyle : public Aspose::Cells::Systems::Object
 	{
 		public:
 			/// <summary>
@@ -68,13 +68,13 @@ namespace Cells{
 			/// </summary>
 			/// 
 			/// 
-			 virtual intrusive_ptr<Aspose::Cells::System::String> GetName()=0;
+			 virtual intrusive_ptr<Aspose::Cells::Systems::String> GetName()=0;
 			/// <summary>
 			/// Sets the name of the style.
 			/// </summary>
 			/// 
 			/// 
-			 virtual void SetName(intrusive_ptr<Aspose::Cells::System::String> value)=0;
+			 virtual void SetName(intrusive_ptr<Aspose::Cells::Systems::String> value)=0;
 			/// <summary>
 			/// Gets the cell background pattern type.
 			/// </summary>
@@ -102,7 +102,7 @@ namespace Cells{
 			/// Only if the cell style pattern is other than none or solid, this property will take effect.</remarks>
 			/// 
 			/// 
-			 virtual intrusive_ptr<Aspose::Cells::System::Drawing::Color> GetBackgroundColor()=0;
+			 virtual intrusive_ptr<Aspose::Cells::Systems::Drawing::Color> GetBackgroundColor()=0;
 			/// <summary>
 			/// Sets a style's background color.
 			/// </summary>
@@ -111,19 +111,19 @@ namespace Cells{
 			/// Only if the cell style pattern is other than none or solid, this property will take effect.</remarks>
 			/// 
 			/// 
-			 virtual void SetBackgroundColor(intrusive_ptr<Aspose::Cells::System::Drawing::Color> value)=0;
+			 virtual void SetBackgroundColor(intrusive_ptr<Aspose::Cells::Systems::Drawing::Color> value)=0;
 			/// <summary>
 			/// Gets the background color with a 32-bit ARGB value.
 			/// </summary>
 			/// 
 			/// 
-			 virtual Aspose::Cells::System::Int32 GetBackgroundArgbColor()=0;
+			 virtual Aspose::Cells::Systems::Int32 GetBackgroundArgbColor()=0;
 			/// <summary>
 			/// Sets the background color with a 32-bit ARGB value.
 			/// </summary>
 			/// 
 			/// 
-			 virtual void SetBackgroundArgbColor(Aspose::Cells::System::Int32 value)=0;
+			 virtual void SetBackgroundArgbColor(Aspose::Cells::Systems::Int32 value)=0;
 			/// <summary>
 			/// Gets a style's foreground color.
 			/// </summary>
@@ -131,7 +131,7 @@ namespace Cells{
 			/// <remarks>It means no color setting if Color::Empty is returned.</remarks>
 			/// 
 			/// 
-			 virtual intrusive_ptr<Aspose::Cells::System::Drawing::Color> GetForegroundColor()=0;
+			 virtual intrusive_ptr<Aspose::Cells::Systems::Drawing::Color> GetForegroundColor()=0;
 			/// <summary>
 			/// Sets a style's foreground color.
 			/// </summary>
@@ -139,19 +139,19 @@ namespace Cells{
 			/// <remarks>It means no color setting if Color::Empty is returned.</remarks>
 			/// 
 			/// 
-			 virtual void SetForegroundColor(intrusive_ptr<Aspose::Cells::System::Drawing::Color> value)=0;
+			 virtual void SetForegroundColor(intrusive_ptr<Aspose::Cells::Systems::Drawing::Color> value)=0;
 			/// <summary>
 			/// Gets the foreground color with a 32-bit ARGB value.
 			/// </summary>
 			/// 
 			/// 
-			 virtual Aspose::Cells::System::Int32 GetForegroundArgbColor()=0;
+			 virtual Aspose::Cells::Systems::Int32 GetForegroundArgbColor()=0;
 			/// <summary>
 			/// Sets the foreground color with a 32-bit ARGB value.
 			/// </summary>
 			/// 
 			/// 
-			 virtual void SetForegroundArgbColor(Aspose::Cells::System::Int32 value)=0;
+			 virtual void SetForegroundArgbColor(Aspose::Cells::Systems::Int32 value)=0;
 			/// <summary>
 			/// Copies data from another style object
 			/// </summary>
@@ -200,7 +200,7 @@ namespace Cells{
 			/// </returns>
 			/// 
 			/// 
-			  virtual bool Equals(intrusive_ptr<Aspose::Cells::System::Object> obj)=0;
+			  virtual bool Equals(intrusive_ptr<Aspose::Cells::Systems::Object> obj)=0;
 			/// <summary>
 			/// Serves as a hash function for an IStyle object.
 			/// </summary>
@@ -210,7 +210,7 @@ namespace Cells{
 			/// <remarks>This method is only for internal use.</remarks>
 			/// 
 			/// 
-			  virtual Aspose::Cells::System::Int32 GetHashCode()=0;
+			  virtual Aspose::Cells::Systems::Int32 GetHashCode()=0;
 			/// <summary>
 			/// Represents the m_IndentLevel level for the cell or range. Can only be an integer from 0 to 15.
 			/// </summary>
@@ -221,7 +221,7 @@ namespace Cells{
 			/// </remarks>
 			/// 
 			/// 
-			 virtual Aspose::Cells::System::Int32 GetIndentLevel()=0;
+			 virtual Aspose::Cells::Systems::Int32 GetIndentLevel()=0;
 			/// <summary>
 			/// Represents the m_IndentLevel level for the cell or range. Can only be an integer from 0 to 15.
 			/// </summary>
@@ -232,7 +232,7 @@ namespace Cells{
 			/// </remarks>
 			/// 
 			/// 
-			 virtual void SetIndentLevel(Aspose::Cells::System::Int32 value)=0;
+			 virtual void SetIndentLevel(Aspose::Cells::Systems::Int32 value)=0;
 			/// <summary>
 			/// Gets an <see cref="IFont" />
 			///  object.
@@ -255,7 +255,7 @@ namespace Cells{
 			/// You can set 255 or value ranged from -90 to 90.</remarks>
 			/// 
 			/// 
-			 virtual Aspose::Cells::System::Int32 GetRotationAngle()=0;
+			 virtual Aspose::Cells::Systems::Int32 GetRotationAngle()=0;
 			/// <summary>
 			/// Represents text rotation angle.
 			/// </summary>
@@ -271,7 +271,7 @@ namespace Cells{
 			/// You can set 255 or value ranged from -90 to 90.</remarks>
 			/// 
 			/// 
-			 virtual void SetRotationAngle(Aspose::Cells::System::Int32 value)=0;
+			 virtual void SetRotationAngle(Aspose::Cells::Systems::Int32 value)=0;
 			/// <summary>
 			/// Represents text rotation angle.
 			/// </summary>
@@ -290,7 +290,7 @@ namespace Cells{
 			/// please use GetRotationAngle() method.</remarks>
 			/// 
 			/// 
-			 virtual Aspose::Cells::System::Int32 GetRotation()=0;
+			 virtual Aspose::Cells::Systems::Int32 GetRotation()=0;
 			/// <summary>
 			/// Represents text rotation angle.
 			/// </summary>
@@ -309,7 +309,7 @@ namespace Cells{
 			/// please use SetRotationAngle() method.</remarks>
 			/// 
 			/// 
-			 virtual void SetRotation(Aspose::Cells::System::Int32 value)=0;
+			 virtual void SetRotation(Aspose::Cells::Systems::Int32 value)=0;
 			/// <summary>
 			///  Gets the vertical alignment type of the text in a cell. 
 			///  </summary>
@@ -352,13 +352,13 @@ namespace Cells{
 			/// 
 			/// 
 			/// 
-			 virtual Aspose::Cells::System::Int32 GetNumber()=0;
+			 virtual Aspose::Cells::Systems::Int32 GetNumber()=0;
 			/// <summary>
 			///  Sets the display format of numbers and dates.
 			///  </summary>
 			/// 
 			/// 
-			 virtual void SetNumber(Aspose::Cells::System::Int32 value)=0;
+			 virtual void SetNumber(Aspose::Cells::Systems::Int32 value)=0;
 			/// <summary>
 			/// Sets the border of the style.
 			/// </summary>
@@ -372,7 +372,7 @@ namespace Cells{
 			/// <returns/>
 			/// 
 			/// 
-			 virtual bool SetBorder(Aspose::Cells::BorderType borderEdge , Aspose::Cells::CellBorderType borderStyle , intrusive_ptr<Aspose::Cells::System::Drawing::Color> borderColor)=0;
+			 virtual bool SetBorder(Aspose::Cells::BorderType borderEdge , Aspose::Cells::CellBorderType borderStyle , intrusive_ptr<Aspose::Cells::Systems::Drawing::Color> borderColor)=0;
 			/// <summary>
 			///  Gets a value indicating whether a cell can be modified or not.
 			///  </summary>
@@ -399,7 +399,7 @@ namespace Cells{
 			/// corresponding to current regional settings, whether set the number format as built-in instead of custom.</param>
 			/// 
 			/// 
-			 virtual void SetCustom(intrusive_ptr<Aspose::Cells::System::String> custom , bool builtinPreference)=0;
+			 virtual void SetCustom(intrusive_ptr<Aspose::Cells::Systems::String> custom , bool builtinPreference)=0;
 			/// <summary>
 			/// Represents the custom number format string of a cell.
 			/// If the custom number format is not set, we will return "".
@@ -410,7 +410,7 @@ namespace Cells{
 			/// </remarks>
 			/// 
 			/// 
-			 virtual intrusive_ptr<Aspose::Cells::System::String> GetCustom()=0;
+			 virtual intrusive_ptr<Aspose::Cells::Systems::String> GetCustom()=0;
 			/// <summary>
 			/// Represents the custom number format string of a cell.
 			/// If the custom number format is not set, we will return "".
@@ -421,19 +421,19 @@ namespace Cells{
 			/// </remarks>
 			/// 
 			/// 
-			 virtual void SetCustom(intrusive_ptr<Aspose::Cells::System::String> value)=0;
+			 virtual void SetCustom(intrusive_ptr<Aspose::Cells::Systems::String> value)=0;
 			/// <summary>
 			/// Gets the culture custom number format.
 			/// </summary>
 			/// 
 			/// 
-			 virtual intrusive_ptr<Aspose::Cells::System::String> GetCultureCustom()=0;
+			 virtual intrusive_ptr<Aspose::Cells::Systems::String> GetCultureCustom()=0;
 			/// <summary>
 			/// Sets the culture custom number format.
 			/// </summary>
 			/// 
 			/// 
-			 virtual void SetCultureCustom(intrusive_ptr<Aspose::Cells::System::String> value)=0;
+			 virtual void SetCultureCustom(intrusive_ptr<Aspose::Cells::Systems::String> value)=0;
 			/// <summary>
 			/// Represents if the formula will be hidden when the worksheet is protected.
 			/// </summary>
@@ -521,7 +521,7 @@ namespace Cells{
 			/// <param name="variant" >The gradient variant. Can be a value from 1 through 4, corresponding to one of the four variants on the Gradient tab in the Fill Effects dialog box. If style is GradientStyleType_FromCenter, the Variant argument can only be 1 or 2.</param>
 			/// 
 			/// 
-			 virtual void SetTwoColorGradient(intrusive_ptr<Aspose::Cells::System::Drawing::Color> color1 , intrusive_ptr<Aspose::Cells::System::Drawing::Color> color2 , Aspose::Cells::Drawing::GradientStyleType gradientStyleType , Aspose::Cells::System::Int32 variant)=0;
+			 virtual void SetTwoColorGradient(intrusive_ptr<Aspose::Cells::Systems::Drawing::Color> color1 , intrusive_ptr<Aspose::Cells::Systems::Drawing::Color> color2 , Aspose::Cells::Drawing::GradientStyleType gradientStyleType , Aspose::Cells::Systems::Int32 variant)=0;
 			/// <summary>
 			/// Get the two-color gradient setting.
 			/// </summary>
@@ -535,7 +535,7 @@ namespace Cells{
 			/// <param name="variant" >The gradient variant.</param>
 			/// 
 			/// 
-			 virtual void GetTwoColorGradient(intrusive_ptr<Aspose::Cells::System::Drawing::Color>& color1 , intrusive_ptr<Aspose::Cells::System::Drawing::Color>& color2 , Aspose::Cells::Drawing::GradientStyleType& gradientStyleType , Aspose::Cells::System::Int32& variant)=0;
+			 virtual void GetTwoColorGradient(intrusive_ptr<Aspose::Cells::Systems::Drawing::Color>& color1 , intrusive_ptr<Aspose::Cells::Systems::Drawing::Color>& color2 , Aspose::Cells::Drawing::GradientStyleType& gradientStyleType , Aspose::Cells::Systems::Int32& variant)=0;
 			/// <summary>
 			/// Indicates whether the number format is a percent format.
 			/// </summary>

@@ -19,7 +19,7 @@ void InsertingOLEObjectsIntoWorksheet()
 	intrusive_ptr<IWorksheet> worksheet = workbook->GetIWorksheets()->GetObjectByIndex(0);
 
 	//Create File object.
-	intrusive_ptr<Aspose::Cells::System::IO::File> ioFile = new Aspose::Cells::System::IO::File();
+	intrusive_ptr<Aspose::Cells::Systems::IO::File> ioFile = new Aspose::Cells::Systems::IO::File();
 
 	// Read Image for Ole Object into array of bytes.
 	StringPtr imagePath = srcDir->StringAppend(new String("AsposeLogo.png"));
@@ -30,7 +30,7 @@ void InsertingOLEObjectsIntoWorksheet()
 	intrusive_ptr<Array1D<Byte>> oleObjectData = ioFile->ReadAllBytes(oleObjectPath);
 
 	// Add an Ole object into the worksheet with the image.
-	Aspose::Cells::System::Int32 idx = worksheet->GetIOleObjects()->Add(2, 2, 200, 220, imageData);
+	Aspose::Cells::Systems::Int32 idx = worksheet->GetIOleObjects()->Add(2, 2, 200, 220, imageData);
 
 	// Set the Ole object data.
 	intrusive_ptr<Aspose::Cells::Drawing::IOleObject> oleObj = worksheet->GetIOleObjects()->GetObjectByIndex(idx);

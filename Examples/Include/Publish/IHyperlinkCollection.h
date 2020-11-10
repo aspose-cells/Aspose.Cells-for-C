@@ -1,8 +1,8 @@
 #pragma once
-#include "System/Object.h"
-#include "System/Int32.h"
-#include "System/String.h"
-#include "System/Collections/CollectionBase.h"
+#include "Aspose.Cells.Systems/Object.h"
+#include "Aspose.Cells.Systems/Int32.h"
+#include "Aspose.Cells.Systems/String.h"
+#include "Aspose.Cells.Systems/Collections/CollectionBase.h"
 
 namespace Aspose {
 	namespace Cells {
@@ -36,7 +36,7 @@ namespace Cells{
 			/// 
 			/// </code>
 			/// </example>
-	class ASPOSE_CELLS_API IHyperlinkCollection : public Aspose::Cells::System::Collections::CollectionBase
+	class ASPOSE_CELLS_API IHyperlinkCollection : public Aspose::Cells::Systems::Collections::CollectionBase
 	{
 		public:
 			/// <summary>
@@ -60,7 +60,7 @@ namespace Cells{
 			/// 
 			/// </code>
 			/// </example>
-			 virtual Aspose::Cells::System::Int32 Add(Aspose::Cells::System::Int32 firstRow , Aspose::Cells::System::Int32 firstColumn , Aspose::Cells::System::Int32 totalRows , Aspose::Cells::System::Int32 totalColumns , intrusive_ptr<Aspose::Cells::System::String> address)=0;
+			 virtual Aspose::Cells::Systems::Int32 Add(Aspose::Cells::Systems::Int32 firstRow , Aspose::Cells::Systems::Int32 firstColumn , Aspose::Cells::Systems::Int32 totalRows , Aspose::Cells::Systems::Int32 totalColumns , intrusive_ptr<Aspose::Cells::Systems::String> address)=0;
 			/// <summary>
 			/// Adds a hyperlink to a specified cell or a range of cells.
 			/// </summary>
@@ -70,7 +70,7 @@ namespace Cells{
 			/// <param name="address" >Address of the hyperlink.</param>
 			/// <returns><see cref="IHyperlink" />
 			///  object index.</returns>
-			 virtual Aspose::Cells::System::Int32 Add(intrusive_ptr<Aspose::Cells::System::String> cellName , Aspose::Cells::System::Int32 totalRows , Aspose::Cells::System::Int32 totalColumns , intrusive_ptr<Aspose::Cells::System::String> address)=0;
+			 virtual Aspose::Cells::Systems::Int32 Add(intrusive_ptr<Aspose::Cells::Systems::String> cellName , Aspose::Cells::Systems::Int32 totalRows , Aspose::Cells::Systems::Int32 totalColumns , intrusive_ptr<Aspose::Cells::Systems::String> address)=0;
 			/// <summary>
 			/// Adds a hyperlink to a specified cell or a range of cells.
 			/// </summary>
@@ -81,19 +81,19 @@ namespace Cells{
 			/// <param name="screenTip" >The screen tip text for the specified hyperlink.</param>
 			/// <returns><see cref="IHyperlink" />
 			///  object index.</returns>
-			 virtual Aspose::Cells::System::Int32 Add(intrusive_ptr<Aspose::Cells::System::String> startCellName , intrusive_ptr<Aspose::Cells::System::String> endCellName , intrusive_ptr<Aspose::Cells::System::String> address , intrusive_ptr<Aspose::Cells::System::String> textToDisplay , intrusive_ptr<Aspose::Cells::System::String> screenTip)=0;
+			 virtual Aspose::Cells::Systems::Int32 Add(intrusive_ptr<Aspose::Cells::Systems::String> startCellName , intrusive_ptr<Aspose::Cells::Systems::String> endCellName , intrusive_ptr<Aspose::Cells::Systems::String> address , intrusive_ptr<Aspose::Cells::Systems::String> textToDisplay , intrusive_ptr<Aspose::Cells::Systems::String> screenTip)=0;
 			/// <summary>
 			///  Gets the <see cref="IHyperlink" />
 			///  element at the specified index.
 			///  </summary>
 			/// <param name="index" >The zero based index of the element.</param>
 			/// <returns>The element at the specified index.</returns>
-			 virtual intrusive_ptr<Aspose::Cells::IHyperlink> 		GetObjectByIndex(Aspose::Cells::System::Int32 index)=0;
+			 virtual intrusive_ptr<Aspose::Cells::IHyperlink> 		GetObjectByIndex(Aspose::Cells::Systems::Int32 index)=0;
 			/// <summary>
 			/// Remove the hyperlink at the specified index.
 			/// </summary>
 			/// <param name="index" >The zero based index of the element.</param>
-			 virtual void RemoveAt(Aspose::Cells::System::Int32 index)=0;
+			 virtual void RemoveAt(Aspose::Cells::Systems::Int32 index)=0;
 			/// <summary>
 			/// Clears all hyperlinks.
 			/// </summary>

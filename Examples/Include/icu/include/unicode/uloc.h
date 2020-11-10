@@ -171,7 +171,7 @@
  *       int32_t
  *       uloc_getDisplayName(const char* localeID,
  *                 const char* inLocaleID, 
- *                 UChar* result,
+ *                 UnChar* result,
  *                 int32_t maxResultSize,
  *                  UErrorCode* err);
  * 
@@ -559,7 +559,7 @@ uloc_getLCID(const char* localeID);
 U_STABLE int32_t U_EXPORT2
 uloc_getDisplayLanguage(const char* locale,
             const char* displayLocale,
-            UChar* language,
+            UnChar* language,
             int32_t languageCapacity,
             UErrorCode* status);
 
@@ -582,7 +582,7 @@ uloc_getDisplayLanguage(const char* locale,
 U_STABLE int32_t U_EXPORT2
 uloc_getDisplayScript(const char* locale,
             const char* displayLocale,
-            UChar* script,
+            UnChar* script,
             int32_t scriptCapacity,
             UErrorCode* status);
 
@@ -605,7 +605,7 @@ uloc_getDisplayScript(const char* locale,
 U_STABLE int32_t U_EXPORT2
 uloc_getDisplayCountry(const char* locale,
                        const char* displayLocale,
-                       UChar* country,
+                       UnChar* country,
                        int32_t countryCapacity,
                        UErrorCode* status);
 
@@ -629,7 +629,7 @@ uloc_getDisplayCountry(const char* locale,
 U_STABLE int32_t U_EXPORT2
 uloc_getDisplayVariant(const char* locale,
                        const char* displayLocale,
-                       UChar* variant,
+                       UnChar* variant,
                        int32_t variantCapacity,
                        UErrorCode* status);
 
@@ -643,7 +643,7 @@ uloc_getDisplayVariant(const char* locale,
  *    const char* keyword =NULL;
  *    int32_t keywordLen = 0;
  *    int32_t keywordCount = 0;
- *    UChar displayKeyword[256];
+ *    UnChar displayKeyword[256];
  *    int32_t displayKeywordLen = 0;
  *    UEnumeration* keywordEnum = uloc_openKeywords("de_DE@collation=PHONEBOOK;calendar=TRADITIONAL", &status);
  *    for(keywordCount = uenum_count(keywordEnum, &status); keywordCount > 0 ; keywordCount--){
@@ -676,7 +676,7 @@ uloc_getDisplayVariant(const char* locale,
 U_STABLE int32_t U_EXPORT2
 uloc_getDisplayKeyword(const char* keyword,
                        const char* displayLocale,
-                       UChar* dest,
+                       UnChar* dest,
                        int32_t destCapacity,
                        UErrorCode* status);
 /**
@@ -703,7 +703,7 @@ U_STABLE int32_t U_EXPORT2
 uloc_getDisplayKeywordValue(   const char* locale,
                                const char* keyword,
                                const char* displayLocale,
-                               UChar* dest,
+                               UnChar* dest,
                                int32_t destCapacity,
                                UErrorCode* status);
 /**
@@ -725,7 +725,7 @@ uloc_getDisplayKeywordValue(   const char* locale,
 U_STABLE int32_t U_EXPORT2
 uloc_getDisplayName(const char* localeID,
             const char* inLocaleID,
-            UChar* result,
+            UnChar* result,
             int32_t maxResultSize,
             UErrorCode* err);
 

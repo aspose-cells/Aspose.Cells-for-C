@@ -1,7 +1,7 @@
 #pragma once
-#include "System/Object.h"
-#include "System/String.h"
-#include "System/IO/Stream.h"
+#include "Aspose.Cells.Systems/Object.h"
+#include "Aspose.Cells.Systems/String.h"
+#include "Aspose.Cells.Systems/IO/Stream.h"
 
 namespace Aspose {
 	namespace Cells {
@@ -34,7 +34,7 @@ namespace Metadata{
 			/// meta->Save(new String("c:\\book2.xlsx"));
 			/// </code>
 			/// </example>
-	class ASPOSE_CELLS_API IWorkbookMetadata : public Aspose::Cells::System::Object
+	class ASPOSE_CELLS_API IWorkbookMetadata : public Aspose::Cells::Systems::Object
 	{
 		public:
 			/// <summary>
@@ -53,12 +53,12 @@ namespace Metadata{
 			/// Save the modified metadata to the file.
 			/// </summary>
 			/// <param name="fileName" >The file name.</param>
-			 virtual void Save(intrusive_ptr<Aspose::Cells::System::String> fileName)=0;
+			 virtual void Save(intrusive_ptr<Aspose::Cells::Systems::String> fileName)=0;
 			/// <summary>
 			/// Save the modified metadata to the stream.
 			/// </summary>
 			/// <param name="stream" >The stream.</param>
-			 virtual void Save(intrusive_ptr<Aspose::Cells::System::IO::Stream> stream)=0;
+			 virtual void Save(intrusive_ptr<Aspose::Cells::Systems::IO::Stream> stream)=0;
 
 	};
 }

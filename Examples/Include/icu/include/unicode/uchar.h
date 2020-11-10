@@ -3438,7 +3438,7 @@ u_getUnicodeVersion(UVersionInfo versionArray);
  * @stable ICU 2.2
  */
 U_STABLE int32_t U_EXPORT2
-u_getFC_NFKC_Closure(UChar32 c, UChar *dest, int32_t destCapacity, UErrorCode *pErrorCode);
+u_getFC_NFKC_Closure(UChar32 c, UnChar *dest, int32_t destCapacity, UErrorCode *pErrorCode);
 
 #endif
 

@@ -1,9 +1,9 @@
 #pragma once
-#include "System/Object.h"
-#include "System/Int32.h"
-#include "System/IO/Stream.h"
-#include "System/String.h"
-#include "System/Collections/CollectionBase.h"
+#include "Aspose.Cells.Systems/Object.h"
+#include "Aspose.Cells.Systems/Int32.h"
+#include "Aspose.Cells.Systems/IO/Stream.h"
+#include "Aspose.Cells.Systems/String.h"
+#include "Aspose.Cells.Systems/Collections/CollectionBase.h"
 
 namespace Aspose {
 	namespace Cells {
@@ -19,7 +19,7 @@ namespace Drawing{
 			/// Encapsulates a collection of <see cref="IPicture" />
 			///  objects.
 			/// </summary>
-	class ASPOSE_CELLS_API IPictureCollection : public Aspose::Cells::System::Collections::CollectionBase
+	class ASPOSE_CELLS_API IPictureCollection : public Aspose::Cells::Systems::Collections::CollectionBase
 	{
 		public:
 			/// <summary>
@@ -32,7 +32,7 @@ namespace Drawing{
 			/// <param name="stream" >Stream object which contains the image data.</param>
 			/// <returns><see cref="IPicture" />
 			///  object index.</returns>
-			 virtual Aspose::Cells::System::Int32 Add(Aspose::Cells::System::Int32 upperLeftRow , Aspose::Cells::System::Int32 upperLeftColumn , Aspose::Cells::System::Int32 lowerRightRow , Aspose::Cells::System::Int32 lowerRightColumn , intrusive_ptr<Aspose::Cells::System::IO::Stream> stream)=0;
+			 virtual Aspose::Cells::Systems::Int32 Add(Aspose::Cells::Systems::Int32 upperLeftRow , Aspose::Cells::Systems::Int32 upperLeftColumn , Aspose::Cells::Systems::Int32 lowerRightRow , Aspose::Cells::Systems::Int32 lowerRightColumn , intrusive_ptr<Aspose::Cells::Systems::IO::Stream> stream)=0;
 			/// <summary>
 			/// Adds a picture to the collection.
 			/// </summary>
@@ -43,7 +43,7 @@ namespace Drawing{
 			/// <param name="fileName" >Image filename.</param>
 			/// <returns><see cref="IPicture" />
 			///  object index.</returns>
-			 virtual Aspose::Cells::System::Int32 Add(Aspose::Cells::System::Int32 upperLeftRow , Aspose::Cells::System::Int32 upperLeftColumn , Aspose::Cells::System::Int32 lowerRightRow , Aspose::Cells::System::Int32 lowerRightColumn , intrusive_ptr<Aspose::Cells::System::String> fileName)=0;
+			 virtual Aspose::Cells::Systems::Int32 Add(Aspose::Cells::Systems::Int32 upperLeftRow , Aspose::Cells::Systems::Int32 upperLeftColumn , Aspose::Cells::Systems::Int32 lowerRightRow , Aspose::Cells::Systems::Int32 lowerRightColumn , intrusive_ptr<Aspose::Cells::Systems::String> fileName)=0;
 			/// <summary>
 			/// Adds a picture to the collection.
 			/// </summary>
@@ -52,7 +52,7 @@ namespace Drawing{
 			/// <param name="stream" >Stream object which contains the image data.</param>
 			/// <returns><see cref="IPicture" />
 			///  object index.</returns>
-			 virtual Aspose::Cells::System::Int32 Add(Aspose::Cells::System::Int32 upperLeftRow , Aspose::Cells::System::Int32 upperLeftColumn , intrusive_ptr<Aspose::Cells::System::IO::Stream> stream)=0;
+			 virtual Aspose::Cells::Systems::Int32 Add(Aspose::Cells::Systems::Int32 upperLeftRow , Aspose::Cells::Systems::Int32 upperLeftColumn , intrusive_ptr<Aspose::Cells::Systems::IO::Stream> stream)=0;
 			/// <summary>
 			/// Adds a picture to the collection.
 			/// </summary>
@@ -61,7 +61,7 @@ namespace Drawing{
 			/// <param name="fileName" >Image filename.</param>
 			/// <returns><see cref="IPicture" />
 			///  object index.</returns>
-			 virtual Aspose::Cells::System::Int32 Add(Aspose::Cells::System::Int32 upperLeftRow , Aspose::Cells::System::Int32 upperLeftColumn , intrusive_ptr<Aspose::Cells::System::String> fileName)=0;
+			 virtual Aspose::Cells::Systems::Int32 Add(Aspose::Cells::Systems::Int32 upperLeftRow , Aspose::Cells::Systems::Int32 upperLeftColumn , intrusive_ptr<Aspose::Cells::Systems::String> fileName)=0;
 			/// <summary>
 			/// Adds a picture to the collection.
 			/// </summary>
@@ -72,7 +72,7 @@ namespace Drawing{
 			/// <param name="heightScale" >Scale of image height, a percentage.</param>
 			/// <returns><see cref="IPicture" />
 			///  object index.</returns>
-			 virtual Aspose::Cells::System::Int32 Add(Aspose::Cells::System::Int32 upperLeftRow , Aspose::Cells::System::Int32 upperLeftColumn , intrusive_ptr<Aspose::Cells::System::IO::Stream> stream , Aspose::Cells::System::Int32 widthScale , Aspose::Cells::System::Int32 heightScale)=0;
+			 virtual Aspose::Cells::Systems::Int32 Add(Aspose::Cells::Systems::Int32 upperLeftRow , Aspose::Cells::Systems::Int32 upperLeftColumn , intrusive_ptr<Aspose::Cells::Systems::IO::Stream> stream , Aspose::Cells::Systems::Int32 widthScale , Aspose::Cells::Systems::Int32 heightScale)=0;
 			/// <summary>
 			/// Adds a picture to the collection.
 			/// </summary>
@@ -83,14 +83,14 @@ namespace Drawing{
 			/// <param name="heightScale" >Scale of image height, a percentage.</param>
 			/// <returns><see cref="IPicture" />
 			///  object index.</returns>
-			 virtual Aspose::Cells::System::Int32 Add(Aspose::Cells::System::Int32 upperLeftRow , Aspose::Cells::System::Int32 upperLeftColumn , intrusive_ptr<Aspose::Cells::System::String> fileName , Aspose::Cells::System::Int32 widthScale , Aspose::Cells::System::Int32 heightScale)=0;
+			 virtual Aspose::Cells::Systems::Int32 Add(Aspose::Cells::Systems::Int32 upperLeftRow , Aspose::Cells::Systems::Int32 upperLeftColumn , intrusive_ptr<Aspose::Cells::Systems::String> fileName , Aspose::Cells::Systems::Int32 widthScale , Aspose::Cells::Systems::Int32 heightScale)=0;
 			/// <summary>
 			///  Gets the <see cref="IPicture" />
 			///  element at the specified index.
 			///  </summary>
 			/// <param name="index" >The zero based index of the element.</param>
 			/// <returns>The element at the specified index.</returns>
-			 virtual intrusive_ptr<Aspose::Cells::Drawing::IPicture> 		GetObjectByIndex(Aspose::Cells::System::Int32 index)=0;
+			 virtual intrusive_ptr<Aspose::Cells::Drawing::IPicture> 		GetObjectByIndex(Aspose::Cells::Systems::Int32 index)=0;
 			/// <summary>
 			/// Clear all pictures.
 			/// </summary>
@@ -98,7 +98,7 @@ namespace Drawing{
 			/// <summary>
 			/// Remove shapes at the specific index
 			/// </summary>
-			 virtual void RemoveAt(Aspose::Cells::System::Int32 index)=0;
+			 virtual void RemoveAt(Aspose::Cells::Systems::Int32 index)=0;
 
 	};
 }

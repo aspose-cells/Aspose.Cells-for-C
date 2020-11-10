@@ -22,7 +22,7 @@ void ConvertingWorksheetToImage_PNG()
 	intrusive_ptr<Aspose::Cells::Rendering::IImageOrPrintOptions> imgOptions = Factory::CreateIImageOrPrintOptions();
 
 	// Specify the image format.
-	imgOptions->SetImageFormat(Aspose::Cells::System::Drawing::Imaging::ImageFormat::GetPng());
+	imgOptions->SetImageFormat(Aspose::Cells::Systems::Drawing::Imaging::ImageFormat::GetPng());
 
 	// Specify horizontal and vertical resolution
 	imgOptions->SetHorizontalResolution(200);
@@ -32,10 +32,10 @@ void ConvertingWorksheetToImage_PNG()
 	intrusive_ptr<Aspose::Cells::Rendering::ISheetRender> sr = Factory::CreateISheetRender(worksheet, imgOptions);
 
 	// Get page count.
-	Aspose::Cells::System::Int32 pageCount = sr->GetPageCount();
+	Aspose::Cells::Systems::Int32 pageCount = sr->GetPageCount();
 
 	// Create string builder object for string concatenations.
-	intrusive_ptr<Aspose::Cells::System::Text::StringBuilder> sb = new Aspose::Cells::System::Text::StringBuilder();
+	intrusive_ptr<Aspose::Cells::Systems::Text::StringBuilder> sb = new Aspose::Cells::Systems::Text::StringBuilder();
 
 	// Render each page to png image one by one.
 	for (int i = 0; i < pageCount; i++)

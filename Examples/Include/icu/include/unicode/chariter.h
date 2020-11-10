@@ -76,7 +76,7 @@ U_NAMESPACE_BEGIN
  * }
  *
  * void function1(ForwardCharacterIterator &it) {
- *     UChar c;
+ *     UnChar c;
  *     while((c=it.nextPostInc())!=ForwardCharacterIterator::DONE) {
  *         // use c
  *      }
@@ -147,7 +147,7 @@ public:
      * @return the current code unit.
      * @stable ICU 2.0
      */
-    virtual UChar         nextPostInc(void) = 0;
+    virtual UnChar         nextPostInc(void) = 0;
     
     /**
      * Gets the current code point for returning and advances to the next code point
@@ -228,7 +228,7 @@ protected:
  * showing a way to convert simple for() loops:
  * \code
  * void forward2(CharacterIterator &it) {
- *     UChar c;
+ *     UnChar c;
  *     for(c=it.firstPostInc(); c!=CharacterIterator::DONE; c=it.nextPostInc()) {
  *          // use c
  *      }
@@ -247,7 +247,7 @@ protected:
  * Backward iteration with a more traditional for() loop:
  * \code
  * void backward2(CharacterIterator &it) {
- *     UChar c;
+ *     UnChar c;
  *     for(c=it.last(); c!=CharacterIterator::DONE; c=it.previous()) {
  *         // use c
  *      }
@@ -264,7 +264,7 @@ protected:
  *      // get the position
  *      int32_t pos=it.getIndex();
  *      // get the previous code unit
- *      UChar u=it.previous();
+ *      UnChar u=it.previous();
  *      // move back one more code unit
  *      it.move(-1, CharacterIterator::kCurrent);
  *      // set the position back to where it was
@@ -281,7 +281,7 @@ protected:
  * Function processing characters, in this example simple output
  * <pre>
  * \code
- *  void processChar( UChar c )
+ *  void processChar( UnChar c )
  *  {
  *      cout << " " << c;
  *  }
@@ -292,7 +292,7 @@ protected:
  * \code
  *  void traverseForward(CharacterIterator& iter)
  *  {
- *      for(UChar c = iter.first(); c != CharacterIterator.DONE; c = iter.next()) {
+ *      for(UnChar c = iter.first(); c != CharacterIterator.DONE; c = iter.next()) {
  *          processChar(c);
  *      }
  *  }
@@ -303,7 +303,7 @@ protected:
  * \code
  *  void traverseBackward(CharacterIterator& iter)
  *  {
- *      for(UChar c = iter.last(); c != CharacterIterator.DONE; c = iter.previous()) {
+ *      for(UnChar c = iter.last(); c != CharacterIterator.DONE; c = iter.previous()) {
  *          processChar(c);
  *      }
  *  }
@@ -315,7 +315,7 @@ protected:
  * \code
  * void traverseOut(CharacterIterator& iter, int32_t pos)
  * {
- *      UChar c;
+ *      UnChar c;
  *      for (c = iter.setIndex(pos);
  *      c != CharacterIterator.DONE && (Unicode::isLetter(c) || Unicode::isDigit(c));
  *          c = iter.next()) {}
@@ -384,7 +384,7 @@ public:
      * @return the first code unit in its iteration range.
      * @stable ICU 2.0
      */
-    virtual UChar         first(void) = 0;
+    virtual UnChar         first(void) = 0;
 
     /**
      * Sets the iterator to refer to the first code unit in its
@@ -394,7 +394,7 @@ public:
      * @return the first code unit in its iteration range.
      * @stable ICU 2.0
      */
-    virtual UChar         firstPostInc(void);
+    virtual UnChar         firstPostInc(void);
 
     /**
      * Sets the iterator to refer to the first code point in its
@@ -433,7 +433,7 @@ public:
      * @return the last code unit.
      * @stable ICU 2.0
      */
-    virtual UChar         last(void) = 0;
+    virtual UnChar         last(void) = 0;
         
     /**
      * Sets the iterator to refer to the last code point in its
@@ -461,7 +461,7 @@ public:
      * @return the "position"-th code unit.
      * @stable ICU 2.0
      */
-    virtual UChar         setIndex(int32_t position) = 0;
+    virtual UnChar         setIndex(int32_t position) = 0;
 
     /**
      * Sets the iterator to refer to the beginning of the code point
@@ -481,7 +481,7 @@ public:
      * @return the current code unit. 
      * @stable ICU 2.0
      */
-    virtual UChar         current(void) const = 0;
+    virtual UnChar         current(void) const = 0;
         
     /**
      * Returns the code point the iterator currently refers to.  
@@ -497,7 +497,7 @@ public:
      * @return the next code unit.
      * @stable ICU 2.0
      */
-    virtual UChar         next(void) = 0;
+    virtual UnChar         next(void) = 0;
         
     /**
      * Advances to the next code point in the iteration range
@@ -518,7 +518,7 @@ public:
      * @return the previous code unit.
      * @stable ICU 2.0
      */
-    virtual UChar         previous(void) = 0;
+    virtual UnChar         previous(void) = 0;
 
     /**
      * Advances to the previous code point in the iteration range

@@ -309,8 +309,8 @@ utf8_back1SafeBody(const uint8_t *s, int32_t start, int32_t i);
         if((c)<0xe0) { \
             (c)=(((c)&0x1f)<<6)|((s)[(i)++]&0x3f); \
         } else if((c)<0xf0) { \
-            /* no need for (c&0xf) because the upper bits are truncated after <<12 in the cast to (UChar) */ \
-            (c)=(UChar)(((c)<<12)|(((s)[i]&0x3f)<<6)|((s)[(i)+1]&0x3f)); \
+            /* no need for (c&0xf) because the upper bits are truncated after <<12 in the cast to (UnChar) */ \
+            (c)=(UnChar)(((c)<<12)|(((s)[i]&0x3f)<<6)|((s)[(i)+1]&0x3f)); \
             (i)+=2; \
         } else { \
             (c)=(((c)&7)<<18)|(((s)[i]&0x3f)<<12)|(((s)[(i)+1]&0x3f)<<6)|((s)[(i)+2]&0x3f); \
@@ -349,8 +349,8 @@ utf8_back1SafeBody(const uint8_t *s, int32_t start, int32_t i);
             (__t1=(uint8_t)((s)[i]-0x80))<=0x3f && \
             (__t2=(uint8_t)((s)[(i)+1]-0x80))<= 0x3f \
         ) { \
-            /* no need for (c&0xf) because the upper bits are truncated after <<12 in the cast to (UChar) */ \
-            (c)=(UChar)(((c)<<12)|(__t1<<6)|__t2); \
+            /* no need for (c&0xf) because the upper bits are truncated after <<12 in the cast to (UnChar) */ \
+            (c)=(UnChar)(((c)<<12)|(__t1<<6)|__t2); \
             (i)+=2; \
         } else if( /* handle U+0080..U+07FF inline */ \
             ((c)<0xe0 && (c)>=0xc2) && \
@@ -400,8 +400,8 @@ utf8_back1SafeBody(const uint8_t *s, int32_t start, int32_t i);
             (__t1=(uint8_t)((s)[i]-0x80))<=0x3f && \
             (__t2=(uint8_t)((s)[(i)+1]-0x80))<= 0x3f \
         ) { \
-            /* no need for (c&0xf) because the upper bits are truncated after <<12 in the cast to (UChar) */ \
-            (c)=(UChar)(((c)<<12)|(__t1<<6)|__t2); \
+            /* no need for (c&0xf) because the upper bits are truncated after <<12 in the cast to (UnChar) */ \
+            (c)=(UnChar)(((c)<<12)|(__t1<<6)|__t2); \
             (i)+=2; \
         } else if( /* handle U+0080..U+07FF inline */ \
             ((c)<0xe0 && (c)>=0xc2) && \

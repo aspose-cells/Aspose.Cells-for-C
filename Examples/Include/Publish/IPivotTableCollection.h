@@ -1,9 +1,9 @@
 #pragma once
-#include "System/Object.h"
-#include "System/Int32.h"
-#include "System/String.h"
-#include "System/Array1D.h"
-#include "System/Collections/CollectionBase.h"
+#include "Aspose.Cells.Systems/Object.h"
+#include "Aspose.Cells.Systems/Int32.h"
+#include "Aspose.Cells.Systems/String.h"
+#include "Aspose.Cells.Systems/Array1D.h"
+#include "Aspose.Cells.Systems/Collections/CollectionBase.h"
 
 namespace Aspose {
 	namespace Cells {
@@ -19,7 +19,7 @@ namespace Pivot{
 			/// <summary>
 			/// Represents the collection of all the PivotTable objects on the specified worksheet.
 			/// </summary>
-	class ASPOSE_CELLS_API IPivotTableCollection : public Aspose::Cells::System::Collections::CollectionBase
+	class ASPOSE_CELLS_API IPivotTableCollection : public Aspose::Cells::Systems::Collections::CollectionBase
 	{
 		public:
 			/// <summary>
@@ -29,7 +29,7 @@ namespace Pivot{
 			/// <param name="destCellName" >The cell in the upper-left corner of the PivotTable report's destination range.</param>
 			/// <param name="tableName" >The name of the new PivotTable report.</param>
 			/// <returns>The new added cache index.</returns>
-			 virtual Aspose::Cells::System::Int32 Add(intrusive_ptr<Aspose::Cells::System::String> sourceData , intrusive_ptr<Aspose::Cells::System::String> destCellName , intrusive_ptr<Aspose::Cells::System::String> tableName)=0;
+			 virtual Aspose::Cells::Systems::Int32 Add(intrusive_ptr<Aspose::Cells::Systems::String> sourceData , intrusive_ptr<Aspose::Cells::Systems::String> destCellName , intrusive_ptr<Aspose::Cells::Systems::String> tableName)=0;
 			/// <summary>
 			/// Adds a new PivotTable cache to a PivotCaches collection.
 			/// </summary>
@@ -39,7 +39,7 @@ namespace Pivot{
 			/// <param name="useSameSource" >Indicates whether using same data source when another existing pivot table has used this data source.
 			/// If the property is true, it will save memory.</param>
 			/// <returns>The new added cache index.</returns>
-			 virtual Aspose::Cells::System::Int32 Add(intrusive_ptr<Aspose::Cells::System::String> sourceData , intrusive_ptr<Aspose::Cells::System::String> destCellName , intrusive_ptr<Aspose::Cells::System::String> tableName , bool useSameSource)=0;
+			 virtual Aspose::Cells::Systems::Int32 Add(intrusive_ptr<Aspose::Cells::Systems::String> sourceData , intrusive_ptr<Aspose::Cells::Systems::String> destCellName , intrusive_ptr<Aspose::Cells::Systems::String> tableName , bool useSameSource)=0;
 			/// <summary>
 			/// Adds a new PivotTable cache to a PivotCaches collection.
 			/// </summary>
@@ -48,7 +48,7 @@ namespace Pivot{
 			/// <param name="column" >Column index of the cell in the upper-left corner of the PivotTable report's destination range.</param>
 			/// <param name="tableName" >The name of the new PivotTable report.</param>
 			/// <returns>The new added cache index.</returns>
-			 virtual Aspose::Cells::System::Int32 Add(intrusive_ptr<Aspose::Cells::System::String> sourceData , Aspose::Cells::System::Int32 row , Aspose::Cells::System::Int32 column , intrusive_ptr<Aspose::Cells::System::String> tableName)=0;
+			 virtual Aspose::Cells::Systems::Int32 Add(intrusive_ptr<Aspose::Cells::Systems::String> sourceData , Aspose::Cells::Systems::Int32 row , Aspose::Cells::Systems::Int32 column , intrusive_ptr<Aspose::Cells::Systems::String> tableName)=0;
 			/// <summary>
 			/// Adds a new PivotTable cache to a PivotCaches collection.
 			/// </summary>
@@ -59,7 +59,7 @@ namespace Pivot{
 			/// <param name="useSameSource" >Indicates whether using same data source when another existing pivot table has used this data source.
 			/// If the property is true, it will save memory.</param>
 			/// <returns>The new added cache index.</returns>
-			 virtual Aspose::Cells::System::Int32 Add(intrusive_ptr<Aspose::Cells::System::String> sourceData , Aspose::Cells::System::Int32 row , Aspose::Cells::System::Int32 column , intrusive_ptr<Aspose::Cells::System::String> tableName , bool useSameSource)=0;
+			 virtual Aspose::Cells::Systems::Int32 Add(intrusive_ptr<Aspose::Cells::Systems::String> sourceData , Aspose::Cells::Systems::Int32 row , Aspose::Cells::Systems::Int32 column , intrusive_ptr<Aspose::Cells::Systems::String> tableName , bool useSameSource)=0;
 			/// <summary>
 			/// Adds a new PivotTable Object to the collection from another PivotTable.
 			/// </summary>
@@ -67,7 +67,7 @@ namespace Pivot{
 			/// <param name="destCellName" >The cell in the upper-left corner of the PivotTable report's destination range.</param>
 			/// <param name="tableName" >The name of the new PivotTable report.</param>
 			/// <returns>The new added PivotTable index.</returns>
-			 virtual Aspose::Cells::System::Int32 		Add(intrusive_ptr<Aspose::Cells::Pivot::IPivotTable> pivotTable , intrusive_ptr<Aspose::Cells::System::String> destCellName , intrusive_ptr<Aspose::Cells::System::String> tableName)=0;
+			 virtual Aspose::Cells::Systems::Int32 		Add(intrusive_ptr<Aspose::Cells::Pivot::IPivotTable> pivotTable , intrusive_ptr<Aspose::Cells::Systems::String> destCellName , intrusive_ptr<Aspose::Cells::Systems::String> tableName)=0;
 			/// <summary>
 			/// Adds a new PivotTable Object to the collection from another PivotTable.
 			/// </summary>
@@ -76,7 +76,7 @@ namespace Pivot{
 			/// <param name="column" >Column index of the cell in the upper-left corner of the PivotTable report's destination range.</param>
 			/// <param name="tableName" >The name of the new PivotTable report.</param>
 			/// <returns>The new added PivotTable index.</returns>
-			 virtual Aspose::Cells::System::Int32 		Add(intrusive_ptr<Aspose::Cells::Pivot::IPivotTable> pivotTable , Aspose::Cells::System::Int32 row , Aspose::Cells::System::Int32 column , intrusive_ptr<Aspose::Cells::System::String> tableName)=0;
+			 virtual Aspose::Cells::Systems::Int32 		Add(intrusive_ptr<Aspose::Cells::Pivot::IPivotTable> pivotTable , Aspose::Cells::Systems::Int32 row , Aspose::Cells::Systems::Int32 column , intrusive_ptr<Aspose::Cells::Systems::String> tableName)=0;
 			/// <summary>
 			/// Adds a new PivotTable Object to the collection with multiple consolidation ranges as data source.
 			/// </summary>
@@ -89,7 +89,7 @@ namespace Pivot{
 			/// <param name="destCellName" >destCellName The name of the new PivotTable report.</param>
 			/// <param name="tableName" >the name of the new PivotTable report.</param>
 			/// <returns>The new added PivotTable index.</returns>
-			 virtual Aspose::Cells::System::Int32 		Add(intrusive_ptr<Aspose::Cells::System::Array1D<Aspose::Cells::System::String*>> sourceData , bool isAutoPage , intrusive_ptr<Aspose::Cells::Pivot::IPivotPageFields> pageFields , intrusive_ptr<Aspose::Cells::System::String> destCellName , intrusive_ptr<Aspose::Cells::System::String> tableName)=0;
+			 virtual Aspose::Cells::Systems::Int32 		Add(intrusive_ptr<Aspose::Cells::Systems::Array1D<Aspose::Cells::Systems::String*>> sourceData , bool isAutoPage , intrusive_ptr<Aspose::Cells::Pivot::IPivotPageFields> pageFields , intrusive_ptr<Aspose::Cells::Systems::String> destCellName , intrusive_ptr<Aspose::Cells::Systems::String> tableName)=0;
 			/// <summary>
 			/// Adds a new PivotTable Object to the collection with multiple consolidation ranges as data source.
 			/// </summary>
@@ -102,19 +102,19 @@ namespace Pivot{
 			/// <param name="column" >Column index of the cell in the upper-left corner of the PivotTable report's destination range.</param>
 			/// <param name="tableName" >The name of the new PivotTable report.</param>
 			/// <returns>The new added PivotTable index.</returns>
-			 virtual Aspose::Cells::System::Int32 		Add(intrusive_ptr<Aspose::Cells::System::Array1D<Aspose::Cells::System::String*>> sourceData , bool isAutoPage , intrusive_ptr<Aspose::Cells::Pivot::IPivotPageFields> pageFields , Aspose::Cells::System::Int32 row , Aspose::Cells::System::Int32 column , intrusive_ptr<Aspose::Cells::System::String> tableName)=0;
+			 virtual Aspose::Cells::Systems::Int32 		Add(intrusive_ptr<Aspose::Cells::Systems::Array1D<Aspose::Cells::Systems::String*>> sourceData , bool isAutoPage , intrusive_ptr<Aspose::Cells::Pivot::IPivotPageFields> pageFields , Aspose::Cells::Systems::Int32 row , Aspose::Cells::Systems::Int32 column , intrusive_ptr<Aspose::Cells::Systems::String> tableName)=0;
 			/// <summary>
 			/// Gets the PivotTable report by index.
 			/// </summary>
-			 virtual intrusive_ptr<Aspose::Cells::Pivot::IPivotTable> 		GetObjectByIndex(Aspose::Cells::System::Int32 index)=0;
+			 virtual intrusive_ptr<Aspose::Cells::Pivot::IPivotTable> 		GetObjectByIndex(Aspose::Cells::Systems::Int32 index)=0;
 			/// <summary>
 			/// Gets the PivotTable report by pivottable's name.
 			/// </summary>
-			 virtual intrusive_ptr<Aspose::Cells::Pivot::IPivotTable> 		GetObjectByIndex(intrusive_ptr<Aspose::Cells::System::String> name)=0;
+			 virtual intrusive_ptr<Aspose::Cells::Pivot::IPivotTable> 		GetObjectByIndex(intrusive_ptr<Aspose::Cells::Systems::String> name)=0;
 			/// <summary>
 			/// Gets the PivotTable report by pivottable's position.
 			/// </summary>
-			 virtual intrusive_ptr<Aspose::Cells::Pivot::IPivotTable> 		GetObjectByIndex(Aspose::Cells::System::Int32 row , Aspose::Cells::System::Int32 column)=0;
+			 virtual intrusive_ptr<Aspose::Cells::Pivot::IPivotTable> 		GetObjectByIndex(Aspose::Cells::Systems::Int32 row , Aspose::Cells::Systems::Int32 column)=0;
 			/// <summary>
 			/// Clear all pivot tables.
 			/// </summary>
@@ -128,7 +128,7 @@ namespace Pivot{
 			/// Deletes the PivotTable at the specified index
 			/// </summary>
 			/// <param name="index" >the position index in PivotTable collection</param>
-			 virtual void RemoveAt(Aspose::Cells::System::Int32 index)=0;
+			 virtual void RemoveAt(Aspose::Cells::Systems::Int32 index)=0;
 
 	};
 }

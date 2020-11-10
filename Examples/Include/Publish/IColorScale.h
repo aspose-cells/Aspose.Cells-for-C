@@ -1,6 +1,6 @@
 #pragma once
-#include "System/Object.h"
-#include "System/Drawing/Color.h"
+#include "Aspose.Cells.Systems/Object.h"
+#include "Aspose.Cells.Systems/Drawing/Color.h"
 
 namespace Aspose {
 	namespace Cells {
@@ -13,7 +13,7 @@ namespace Cells{
 			/// Describe the ColorScale conditional formatting rule. 
 			/// This conditional formatting rule creates a gradated color scale on the cells.
 			/// </summary>
-	class ASPOSE_CELLS_API IColorScale : public Aspose::Cells::System::Object
+	class ASPOSE_CELLS_API IColorScale : public Aspose::Cells::Systems::Object
 	{
 		public:
 			/// <summary>
@@ -42,27 +42,27 @@ namespace Cells{
 			/// <summary>
 			/// Get the min value object's corresponding color.
 			/// </summary>
-			 virtual intrusive_ptr<Aspose::Cells::System::Drawing::Color> GetMinColor()=0;
+			 virtual intrusive_ptr<Aspose::Cells::Systems::Drawing::Color> GetMinColor()=0;
 			/// <summary>
 			/// Set the min value object's corresponding color.
 			/// </summary>
-			 virtual void SetMinColor(intrusive_ptr<Aspose::Cells::System::Drawing::Color> value)=0;
+			 virtual void SetMinColor(intrusive_ptr<Aspose::Cells::Systems::Drawing::Color> value)=0;
 			/// <summary>
 			/// Get the mid value object's corresponding color.
 			/// </summary>
-			 virtual intrusive_ptr<Aspose::Cells::System::Drawing::Color> GetMidColor()=0;
+			 virtual intrusive_ptr<Aspose::Cells::Systems::Drawing::Color> GetMidColor()=0;
 			/// <summary>
 			/// Set the mid value object's corresponding color.
 			/// </summary>
-			 virtual void SetMidColor(intrusive_ptr<Aspose::Cells::System::Drawing::Color> value)=0;
+			 virtual void SetMidColor(intrusive_ptr<Aspose::Cells::Systems::Drawing::Color> value)=0;
 			/// <summary>
 			/// Get the max value object's corresponding color.
 			/// </summary>
-			 virtual intrusive_ptr<Aspose::Cells::System::Drawing::Color> GetMaxColor()=0;
+			 virtual intrusive_ptr<Aspose::Cells::Systems::Drawing::Color> GetMaxColor()=0;
 			/// <summary>
 			/// Set the max value object's corresponding color.
 			/// </summary>
-			 virtual void SetMaxColor(intrusive_ptr<Aspose::Cells::System::Drawing::Color> value)=0;
+			 virtual void SetMaxColor(intrusive_ptr<Aspose::Cells::Systems::Drawing::Color> value)=0;
 
 	};
 }

@@ -1,8 +1,8 @@
 #pragma once
-#include "System/Object.h"
-#include "System/Char.h"
-#include "System/String.h"
-#include "System/Text/Encoding.h"
+#include "Aspose.Cells.Systems/Object.h"
+#include "Aspose.Cells.Systems/Char.h"
+#include "Aspose.Cells.Systems/String.h"
+#include "Aspose.Cells.Systems/Text/Encoding.h"
 #include "ILoadOptions.h"
 
 namespace Aspose {
@@ -30,27 +30,27 @@ namespace Cells{
 			/// <summary>
 			/// Gets char Delimiter of text file.
 			/// </summary>
-			 virtual Aspose::Cells::System::Char GetSeparator()=0;
+			 virtual Aspose::Cells::Systems::Char GetSeparator()=0;
 			/// <summary>
 			/// Sets char Delimiter of text file.
 			/// </summary>
-			 virtual void SetSeparator(Aspose::Cells::System::Char value)=0;
+			 virtual void SetSeparator(Aspose::Cells::Systems::Char value)=0;
 			/// <summary>
 			/// Gets the a string value as separator.
 			/// </summary>
-			 virtual intrusive_ptr<Aspose::Cells::System::String> GetSeparatorString()=0;
+			 virtual intrusive_ptr<Aspose::Cells::Systems::String> GetSeparatorString()=0;
 			/// <summary>
 			/// Sets the a string value as separator.
 			/// </summary>
-			 virtual void SetSeparatorString(intrusive_ptr<Aspose::Cells::System::String> value)=0;
+			 virtual void SetSeparatorString(intrusive_ptr<Aspose::Cells::Systems::String> value)=0;
 			/// <summary>
 			/// Gets the default encoding.Only applies for csv file.
 			/// </summary>
-			 virtual intrusive_ptr<Aspose::Cells::System::Text::Encoding> GetEncoding()=0;
+			 virtual intrusive_ptr<Aspose::Cells::Systems::Text::Encoding> GetEncoding()=0;
 			/// <summary>
 			/// Sets the default encoding.Only applies for csv file.
 			/// </summary>
-			 virtual void SetEncoding(intrusive_ptr<Aspose::Cells::System::Text::Encoding> value)=0;
+			 virtual void SetEncoding(intrusive_ptr<Aspose::Cells::Systems::Text::Encoding> value)=0;
 			/// <summary>
 			/// True means that the file contains several encoding.
 			/// </summary>

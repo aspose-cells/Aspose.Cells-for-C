@@ -1,6 +1,6 @@
 #pragma once
-#include "System/Object.h"
-#include "System/Int32.h"
+#include "Aspose.Cells.Systems/Object.h"
+#include "Aspose.Cells.Systems/Int32.h"
 
 namespace Aspose {
 	namespace Cells {
@@ -30,7 +30,7 @@ namespace Cells{
 			/// workbook->Save(new String("D:\\Book1.xlsx"));
 			/// </code>
 			/// </example>
-	class ASPOSE_CELLS_API IErrorCheckOption : public Aspose::Cells::System::Object
+	class ASPOSE_CELLS_API IErrorCheckOption : public Aspose::Cells::Systems::Object
 	{
 		public:
 			/// <summary>
@@ -49,24 +49,24 @@ namespace Cells{
 			/// Gets the count of ranges that influenced by this setting.
 			/// </summary>
 			/// <returns>the count of ranges that influenced by this setting.</returns>
-			 virtual Aspose::Cells::System::Int32 GetCountOfRange()=0;
+			 virtual Aspose::Cells::Systems::Int32 GetCountOfRange()=0;
 			/// <summary>
 			/// Adds one influenced range by this setting.
 			/// </summary>
 			/// <param name="ca" >the range to be added.</param>
 			/// <returns>the index of the added range in the range list of this setting.</returns>
-			 virtual Aspose::Cells::System::Int32 		AddIRange(intrusive_ptr<Aspose::Cells::ICellArea> ca)=0;
+			 virtual Aspose::Cells::Systems::Int32 		AddIRange(intrusive_ptr<Aspose::Cells::ICellArea> ca)=0;
 			/// <summary>
 			///  Gets the influenced range of this setting by given index.
 			/// </summary>
 			/// <param name="index" >the index of range</param>
 			/// <returns>return influenced range at given index.</returns>
-			 virtual intrusive_ptr<Aspose::Cells::ICellArea> 		GetIRange(Aspose::Cells::System::Int32 index)=0;
+			 virtual intrusive_ptr<Aspose::Cells::ICellArea> 		GetIRange(Aspose::Cells::Systems::Int32 index)=0;
 			/// <summary>
 			/// Removes one range by given index.
 			/// </summary>
 			/// <param name="index" >the index of the range to be removed.</param>
-			 virtual void RemoveRange(Aspose::Cells::System::Int32 index)=0;
+			 virtual void RemoveRange(Aspose::Cells::Systems::Int32 index)=0;
 
 	};
 }

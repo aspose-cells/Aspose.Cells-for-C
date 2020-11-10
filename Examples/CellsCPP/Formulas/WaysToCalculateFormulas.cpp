@@ -58,7 +58,7 @@ void DirectCalculationOfFormula()
 	cellA2->PutValue(30);
 
 	//Calculate the Sum of A1 and A2
-	intrusive_ptr<Aspose::Cells::System::Object> results = ws->CalculateFormula(new String("=Sum(A1:A2)"));
+	intrusive_ptr<Aspose::Cells::Systems::Object> results = ws->CalculateFormula(new String("=Sum(A1:A2)"));
 
 	//Print the output
 	StringPtr str1 = new String("Value of A1: ");
@@ -88,13 +88,13 @@ void CalculatingFormulasOnceOnly()
 	wb->GetISettings()->SetCreateCalcChain(false);
 
 	//Get the time in milliseconds before formula calculation
-	int before_miliseconds = Aspose::Cells::System::DateTime::GetNow()->GetMillisecond();
+	int before_miliseconds = Aspose::Cells::Systems::DateTime::GetNow()->GetMillisecond();
 
 	//Calculate the workbook formulas
 	wb->CalculateFormula();
 
 	//Get the time in milliseconds after formula calculation
-	int after_miliseconds = Aspose::Cells::System::DateTime::GetNow()->GetMillisecond();
+	int after_miliseconds = Aspose::Cells::Systems::DateTime::GetNow()->GetMillisecond();
 
 	//Print the difference in milliseconds
 	StringPtr str1 = new String("Workbook Formula Calculation Elapsed Time in Milliseconds: ");

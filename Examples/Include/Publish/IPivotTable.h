@@ -1,11 +1,11 @@
 #pragma once
-#include "System/Object.h"
-#include "System/String.h"
-#include "System/Int32.h"
-#include "System/Array1D.h"
-#include "System/Double.h"
-#include "System/Collections/ArrayList.h"
-#include "System/DateTime.h"
+#include "Aspose.Cells.Systems/Object.h"
+#include "Aspose.Cells.Systems/String.h"
+#include "Aspose.Cells.Systems/Int32.h"
+#include "Aspose.Cells.Systems/Array1D.h"
+#include "Aspose.Cells.Systems/Double.h"
+#include "Aspose.Cells.Systems/Collections/ArrayList.h"
+#include "Aspose.Cells.Systems/DateTime.h"
 
 namespace Aspose {
 	namespace Cells {
@@ -36,7 +36,7 @@ namespace Pivot{
 			/// <summary>
 			/// Summary description for PivotTable.
 			/// </summary>
-	class ASPOSE_CELLS_API IPivotTable : public Aspose::Cells::System::Object
+	class ASPOSE_CELLS_API IPivotTable : public Aspose::Cells::Systems::Object
 	{
 		public:
 			/// <summary>
@@ -56,11 +56,11 @@ namespace Pivot{
 			/// <summary>
 			/// Gets the pivottable style name.
 			/// </summary>
-			  virtual intrusive_ptr<Aspose::Cells::System::String> GetPivotTableStyleName() = 0;
+			  virtual intrusive_ptr<Aspose::Cells::Systems::String> GetPivotTableStyleName() = 0;
 			/// <summary>
 			/// Sets the pivottable style name.
 			/// </summary>
-			  virtual void SetPivotTableStyleName(intrusive_ptr<Aspose::Cells::System::String> value) = 0;
+			  virtual void SetPivotTableStyleName(intrusive_ptr<Aspose::Cells::Systems::String> value) = 0;
 			/// <summary>
 			/// Gets the built-in pivot table style.
 			/// </summary>
@@ -81,7 +81,7 @@ namespace Pivot{
 			/// <param name="fieldName" >The name in the base fields.</param>
 			/// <see cref="RemoveField(PivotFieldType,PivotField)" />
 			/// 
-			  virtual void RemoveField(Aspose::Cells::Pivot::PivotFieldType fieldType , intrusive_ptr<Aspose::Cells::System::String> fieldName)=0;
+			  virtual void RemoveField(Aspose::Cells::Pivot::PivotFieldType fieldType , intrusive_ptr<Aspose::Cells::Systems::String> fieldName)=0;
 			/// <summary>
 			/// Removes a field from specific field area
 			/// </summary>
@@ -89,7 +89,7 @@ namespace Pivot{
 			/// <param name="baseFieldIndex" >The field index in the base fields.</param>
 			/// <see cref="RemoveField(PivotFieldType,PivotField)" />
 			/// 
-			  virtual void RemoveField(Aspose::Cells::Pivot::PivotFieldType fieldType , Aspose::Cells::System::Int32 baseFieldIndex)=0;
+			  virtual void RemoveField(Aspose::Cells::Pivot::PivotFieldType fieldType , Aspose::Cells::Systems::Int32 baseFieldIndex)=0;
 			/// <summary>
 			/// Remove field from specific field area
 			/// </summary>
@@ -127,7 +127,7 @@ namespace Pivot{
 			/// <returns>The field position in the specific fields.If there is no field named as it, return -1.</returns>
 			/// <see cref="AddFieldToArea(PivotFieldType,PivotField)" />
 			/// 
-			  virtual Aspose::Cells::System::Int32 AddFieldToArea(Aspose::Cells::Pivot::PivotFieldType fieldType , intrusive_ptr<Aspose::Cells::System::String> fieldName)=0;
+			  virtual Aspose::Cells::Systems::Int32 AddFieldToArea(Aspose::Cells::Pivot::PivotFieldType fieldType , intrusive_ptr<Aspose::Cells::Systems::String> fieldName)=0;
 			/// <summary>
 			/// Adds the field to the specific area.
 			/// </summary>
@@ -136,7 +136,7 @@ namespace Pivot{
 			/// <returns>The field position in the specific fields.</returns>
 			/// <see cref="AddFieldToArea(PivotFieldType,PivotField)" />
 			/// 
-			  virtual Aspose::Cells::System::Int32 AddFieldToArea(Aspose::Cells::Pivot::PivotFieldType fieldType , Aspose::Cells::System::Int32 baseFieldIndex)=0;
+			  virtual Aspose::Cells::Systems::Int32 AddFieldToArea(Aspose::Cells::Pivot::PivotFieldType fieldType , Aspose::Cells::Systems::Int32 baseFieldIndex)=0;
 			/// <summary>
 			/// Adds the field to the specific area.
 			/// </summary>
@@ -166,20 +166,20 @@ namespace Pivot{
 			/// </param>
 			/// <param name="pivotField" >the field in the base fields.</param>
 			/// <returns>the field position in the specific fields.</returns>
-			 virtual Aspose::Cells::System::Int32 		AddFieldToArea(Aspose::Cells::Pivot::PivotFieldType fieldType , intrusive_ptr<Aspose::Cells::Pivot::IPivotField> pivotField)=0;
+			 virtual Aspose::Cells::Systems::Int32 		AddFieldToArea(Aspose::Cells::Pivot::PivotFieldType fieldType , intrusive_ptr<Aspose::Cells::Pivot::IPivotField> pivotField)=0;
 			/// <summary>
 			/// Adds a calclulated field to pivot field.
 			/// </summary>
 			/// <param name="name" >The name of the calculated field</param>
 			/// <param name="formula" >The formula of the calculated field.</param>
 			/// <param name="dragToDataArea" >True,drag this field to data area immediately</param>
-			  virtual void AddCalculatedField(intrusive_ptr<Aspose::Cells::System::String> name , intrusive_ptr<Aspose::Cells::System::String> formula , bool dragToDataArea)=0;
+			  virtual void AddCalculatedField(intrusive_ptr<Aspose::Cells::Systems::String> name , intrusive_ptr<Aspose::Cells::Systems::String> formula , bool dragToDataArea)=0;
 			/// <summary>
 			/// Adds a calclulated field to pivot field and drag it to data area.
 			/// </summary>
 			/// <param name="name" >The name of the calculated field</param>
 			/// <param name="formula" >The formula of the calculated field.</param>
-			  virtual void AddCalculatedField(intrusive_ptr<Aspose::Cells::System::String> name , intrusive_ptr<Aspose::Cells::System::String> formula)=0;
+			  virtual void AddCalculatedField(intrusive_ptr<Aspose::Cells::Systems::String> name , intrusive_ptr<Aspose::Cells::Systems::String> formula)=0;
 			/// <summary>
 			/// Gets the specific fields by the field type.
 			/// </summary>
@@ -248,12 +248,12 @@ namespace Pivot{
 			/// </summary>
 			/// <param name="row" >row index.</param>
 			/// <param name="column" >column index.</param>
-			  virtual void Move(Aspose::Cells::System::Int32 row , Aspose::Cells::System::Int32 column)=0;
+			  virtual void Move(Aspose::Cells::Systems::Int32 row , Aspose::Cells::Systems::Int32 column)=0;
 			/// <summary>
 			/// Moves the PivotTable to a different location in the worksheet.
 			/// </summary>
 			/// <param name="destCellName" >the dest cell name.</param>
-			  virtual void Move(intrusive_ptr<Aspose::Cells::System::String> destCellName)=0;
+			  virtual void Move(intrusive_ptr<Aspose::Cells::Systems::String> destCellName)=0;
 			/// <summary>
 			/// Indicates whether the PivotTable report shows grand totals for columns.
 			/// </summary>
@@ -294,12 +294,12 @@ namespace Pivot{
 			/// Gets the string displayed in cells that contain null values
 			/// when the DisplayNullString property is true.The default value is an empty string.
 			/// </summary>
-			  virtual intrusive_ptr<Aspose::Cells::System::String> GetNullString() = 0;
+			  virtual intrusive_ptr<Aspose::Cells::Systems::String> GetNullString() = 0;
 			/// <summary>
 			/// Gets the string displayed in cells that contain null values
 			/// when the DisplayNullString property is true.The default value is an empty string.
 			/// </summary>
-			  virtual void SetNullString(intrusive_ptr<Aspose::Cells::System::String> value) = 0;
+			  virtual void SetNullString(intrusive_ptr<Aspose::Cells::Systems::String> value) = 0;
 			/// <summary>
 			/// Indicates whether the PivotTable report displays a custom string in cells that contain errors.
 			/// </summary>
@@ -312,12 +312,12 @@ namespace Pivot{
 			/// Gets the string displayed in cells that contain errors
 			/// when the DisplayErrorString property is true.The default value is an empty string.
 			/// </summary>
-			  virtual intrusive_ptr<Aspose::Cells::System::String> GetErrorString() = 0;
+			  virtual intrusive_ptr<Aspose::Cells::Systems::String> GetErrorString() = 0;
 			/// <summary>
 			/// Gets the string displayed in cells that contain errors
 			/// when the DisplayErrorString property is true.The default value is an empty string.
 			/// </summary>
-			  virtual void SetErrorString(intrusive_ptr<Aspose::Cells::System::String> value) = 0;
+			  virtual void SetErrorString(intrusive_ptr<Aspose::Cells::Systems::String> value) = 0;
 			/// <summary>
 			/// Indicates whether the PivotTable report is automatically formatted.
 			/// Checkbox "autoformat table "which in pivottable option for Excel 2003
@@ -428,12 +428,12 @@ namespace Pivot{
 			/// Returns the text string label that is displayed in the grand total column or row heading.
 			/// The default value is the string "Grand Total".
 			/// </summary>
-			  virtual intrusive_ptr<Aspose::Cells::System::String> GetGrandTotalName() = 0;
+			  virtual intrusive_ptr<Aspose::Cells::Systems::String> GetGrandTotalName() = 0;
 			/// <summary>
 			/// Returns the text string label that is displayed in the grand total column or row heading.
 			/// The default value is the string "Grand Total".
 			/// </summary>
-			  virtual void SetGrandTotalName(intrusive_ptr<Aspose::Cells::System::String> value) = 0;
+			  virtual void SetGrandTotalName(intrusive_ptr<Aspose::Cells::Systems::String> value) = 0;
 			/// <summary>
 			/// Indicates whether the PivotTable report is recalculated only at the user's request.
 			/// </summary>
@@ -531,51 +531,51 @@ namespace Pivot{
 			/// <summary>
 			///  Gets the title of the alttext
 			/// </summary>
-			  virtual intrusive_ptr<Aspose::Cells::System::String> GetAltTextTitle() = 0;
+			  virtual intrusive_ptr<Aspose::Cells::Systems::String> GetAltTextTitle() = 0;
 			/// <summary>
 			///  Gets the title of the alttext
 			/// </summary>
-			  virtual void SetAltTextTitle(intrusive_ptr<Aspose::Cells::System::String> value) = 0;
+			  virtual void SetAltTextTitle(intrusive_ptr<Aspose::Cells::Systems::String> value) = 0;
 			/// <summary>
 			///  Gets the description of the alt text
 			/// </summary>
-			  virtual intrusive_ptr<Aspose::Cells::System::String> GetAltTextDescription() = 0;
+			  virtual intrusive_ptr<Aspose::Cells::Systems::String> GetAltTextDescription() = 0;
 			/// <summary>
 			///  Gets the description of the alt text
 			/// </summary>
-			  virtual void SetAltTextDescription(intrusive_ptr<Aspose::Cells::System::String> value) = 0;
+			  virtual void SetAltTextDescription(intrusive_ptr<Aspose::Cells::Systems::String> value) = 0;
 			/// <summary>
 			///  Gets the name of the PivotTable
 			/// </summary>
-			  virtual intrusive_ptr<Aspose::Cells::System::String> GetName() = 0;
+			  virtual intrusive_ptr<Aspose::Cells::Systems::String> GetName() = 0;
 			/// <summary>
 			///  Sets the name of the PivotTable
 			/// </summary>
-			  virtual void SetName(intrusive_ptr<Aspose::Cells::System::String> value) = 0;
+			  virtual void SetName(intrusive_ptr<Aspose::Cells::Systems::String> value) = 0;
 			/// <summary>
 			///  Gets the Column Header Caption of the PivotTable.
 			/// </summary>
-			  virtual intrusive_ptr<Aspose::Cells::System::String> GetColumnHeaderCaption() = 0;
+			  virtual intrusive_ptr<Aspose::Cells::Systems::String> GetColumnHeaderCaption() = 0;
 			/// <summary>
 			///  Sets the Column Header Caption of the PivotTable.
 			/// </summary>
-			  virtual void SetColumnHeaderCaption(intrusive_ptr<Aspose::Cells::System::String> value) = 0;
+			  virtual void SetColumnHeaderCaption(intrusive_ptr<Aspose::Cells::Systems::String> value) = 0;
 			/// <summary>
 			///  Specifies the indentation increment for compact axis and can be used to set the Report Layout to Compact Form.
 			/// </summary>
-			  virtual Aspose::Cells::System::Int32 GetIndent() = 0;
+			  virtual Aspose::Cells::Systems::Int32 GetIndent() = 0;
 			/// <summary>
 			///  Specifies the indentation increment for compact axis and can be used to set the Report Layout to Compact Form.
 			/// </summary>
-			  virtual void SetIndent(Aspose::Cells::System::Int32 value) = 0;
+			  virtual void SetIndent(Aspose::Cells::Systems::Int32 value) = 0;
 			/// <summary>
 			///  Gets the Row Header Caption of the PivotTable.
 			/// </summary>
-			  virtual intrusive_ptr<Aspose::Cells::System::String> GetRowHeaderCaption() = 0;
+			  virtual intrusive_ptr<Aspose::Cells::Systems::String> GetRowHeaderCaption() = 0;
 			/// <summary>
 			///  Sets the Row Header Caption of the PivotTable.
 			/// </summary>
-			  virtual void SetRowHeaderCaption(intrusive_ptr<Aspose::Cells::System::String> value) = 0;
+			  virtual void SetRowHeaderCaption(intrusive_ptr<Aspose::Cells::Systems::String> value) = 0;
 			/// <summary>
 			///  Indicates whether row header caption is shown in the PivotTable report
 			///  Indicates whether Display field captions and filter drop downs
@@ -609,19 +609,19 @@ namespace Pivot{
 			/// <summary>
 			/// Gets the number of page fields in each column or row in the PivotTable report.
 			/// </summary>
-			  virtual Aspose::Cells::System::Int32 GetPageFieldWrapCount() = 0;
+			  virtual Aspose::Cells::Systems::Int32 GetPageFieldWrapCount() = 0;
 			/// <summary>
 			/// Sets the number of page fields in each column or row in the PivotTable report.
 			/// </summary>
-			  virtual void SetPageFieldWrapCount(Aspose::Cells::System::Int32 value) = 0;
+			  virtual void SetPageFieldWrapCount(Aspose::Cells::Systems::Int32 value) = 0;
 			/// <summary>
 			/// Gets a string saved with the PivotTable report.
 			/// </summary>
-			  virtual intrusive_ptr<Aspose::Cells::System::String> GetTag() = 0;
+			  virtual intrusive_ptr<Aspose::Cells::Systems::String> GetTag() = 0;
 			/// <summary>
 			/// Sets a string saved with the PivotTable report.
 			/// </summary>
-			  virtual void SetTag(intrusive_ptr<Aspose::Cells::System::String> value) = 0;
+			  virtual void SetTag(intrusive_ptr<Aspose::Cells::Systems::String> value) = 0;
 			/// <summary>
 			/// Indicates whether data for the PivotTable report is saved with the workbook.
 			/// </summary>
@@ -649,20 +649,20 @@ namespace Pivot{
 			/// <summary>
 			/// Gets and sets the data source of the pivot table.
 			/// </summary>
-			  virtual intrusive_ptr<Aspose::Cells::System::Array1D<Aspose::Cells::System::String*>> GetDataSource() = 0;
+			  virtual intrusive_ptr<Aspose::Cells::Systems::Array1D<Aspose::Cells::Systems::String*>> GetDataSource() = 0;
 			/// <summary>
 			/// Sets and sets the data source of the pivot table.
 			/// </summary>
-			  virtual void SetDataSource(intrusive_ptr<Aspose::Cells::System::Array1D<Aspose::Cells::System::String*>> value) = 0;
+			  virtual void SetDataSource(intrusive_ptr<Aspose::Cells::Systems::Array1D<Aspose::Cells::Systems::String*>> value) = 0;
 			/// <summary>
 			/// Set pivottable's source data.
 			/// Sheet1!$A$1:$C$3
 			/// </summary>
-			  virtual void ChangeDataSource(intrusive_ptr<Aspose::Cells::System::Array1D<Aspose::Cells::System::String*>> source)=0;
+			  virtual void ChangeDataSource(intrusive_ptr<Aspose::Cells::Systems::Array1D<Aspose::Cells::Systems::String*>> source)=0;
 			/// <summary>
 			/// Get pivottable's source data.
 			/// </summary>
-			  virtual intrusive_ptr<Aspose::Cells::System::Array1D<Aspose::Cells::System::String*>> GetSource()=0;
+			  virtual intrusive_ptr<Aspose::Cells::Systems::Array1D<Aspose::Cells::Systems::String*>> GetSource()=0;
 			/// <summary>
 			/// Refreshes pivottable's data and setting from it's data source.
 			/// </summary>
@@ -705,7 +705,7 @@ namespace Pivot{
 			/// <param name="row" >RowIndex of the cell</param>
 			/// <param name="column" >Column index of the cell</param>
 			/// <param name="style" >Style which is to format the cell</param>
-			 virtual void 		Format(Aspose::Cells::System::Int32 row , Aspose::Cells::System::Int32 column , intrusive_ptr<Aspose::Cells::IStyle> style)=0;
+			 virtual void 		Format(Aspose::Cells::Systems::Int32 row , Aspose::Cells::Systems::Int32 column , intrusive_ptr<Aspose::Cells::IStyle> style)=0;
 			/// <summary>
 			/// A bit that specifies whether pivot item captions on the row axis
 			/// are repeated on each printed page for pivot fields in tabular form.
@@ -788,7 +788,7 @@ namespace Pivot{
 			/// Sets auto field group by the PivotTable.
 			/// </summary>
 			/// <param name="baseFieldIndex" >The row or column field index in the base fields</param>
-			  virtual void SetAutoGroupField(Aspose::Cells::System::Int32 baseFieldIndex)=0;
+			  virtual void SetAutoGroupField(Aspose::Cells::Systems::Int32 baseFieldIndex)=0;
 			/// <summary>
 			/// Sets auto field group by the PivotTable.
 			/// </summary>
@@ -802,7 +802,7 @@ namespace Pivot{
 			/// <param name="endVal" >Specifies the ending value for numeric grouping. </param>
 			/// <param name="groupByList" >Specifies the grouping type list. Specified by PivotTableGroupType</param>
 			/// <param name="intervalNum" >Specifies the interval number group by  numeric grouping.</param>
-			  virtual void SetManualGroupField(Aspose::Cells::System::Int32 baseFieldIndex , Aspose::Cells::System::Double startVal , Aspose::Cells::System::Double endVal , intrusive_ptr<Aspose::Cells::System::Collections::ArrayList> groupByList , Aspose::Cells::System::Double intervalNum)=0;
+			  virtual void SetManualGroupField(Aspose::Cells::Systems::Int32 baseFieldIndex , Aspose::Cells::Systems::Double startVal , Aspose::Cells::Systems::Double endVal , intrusive_ptr<Aspose::Cells::Systems::Collections::ArrayList> groupByList , Aspose::Cells::Systems::Double intervalNum)=0;
 			/// <summary>
 			/// Sets manual field group by the PivotTable.
 			/// </summary>
@@ -811,7 +811,7 @@ namespace Pivot{
 			/// <param name="endVal" >Specifies the ending value for numeric grouping. </param>
 			/// <param name="groupByList" >Specifies the grouping type list. Specified by PivotTableGroupType</param>
 			/// <param name="intervalNum" >Specifies the interval number group by numeric grouping.</param>
-			 virtual void 		SetManualGroupField(intrusive_ptr<Aspose::Cells::Pivot::IPivotField> pivotField , Aspose::Cells::System::Double startVal , Aspose::Cells::System::Double endVal , intrusive_ptr<Aspose::Cells::System::Collections::ArrayList> groupByList , Aspose::Cells::System::Double intervalNum)=0;
+			 virtual void 		SetManualGroupField(intrusive_ptr<Aspose::Cells::Pivot::IPivotField> pivotField , Aspose::Cells::Systems::Double startVal , Aspose::Cells::Systems::Double endVal , intrusive_ptr<Aspose::Cells::Systems::Collections::ArrayList> groupByList , Aspose::Cells::Systems::Double intervalNum)=0;
 			/// <summary>
 			/// Sets manual field group by the PivotTable.
 			/// </summary>
@@ -820,7 +820,7 @@ namespace Pivot{
 			/// <param name="endVal" >Specifies the ending value for date grouping.</param>
 			/// <param name="groupByList" >Specifies the grouping type list. Specified by PivotTableGroupType</param>
 			/// <param name="intervalNum" >Specifies the interval number group by in days grouping.The number of days must be positive integer of nonzero</param>
-			  virtual void SetManualGroupField(Aspose::Cells::System::Int32 baseFieldIndex , intrusive_ptr<Aspose::Cells::System::DateTime> startVal , intrusive_ptr<Aspose::Cells::System::DateTime> endVal , intrusive_ptr<Aspose::Cells::System::Collections::ArrayList> groupByList , Aspose::Cells::System::Int32 intervalNum)=0;
+			  virtual void SetManualGroupField(Aspose::Cells::Systems::Int32 baseFieldIndex , intrusive_ptr<Aspose::Cells::Systems::DateTime> startVal , intrusive_ptr<Aspose::Cells::Systems::DateTime> endVal , intrusive_ptr<Aspose::Cells::Systems::Collections::ArrayList> groupByList , Aspose::Cells::Systems::Int32 intervalNum)=0;
 			/// <summary>
 			/// Sets manual field group by the PivotTable.
 			/// </summary>
@@ -829,12 +829,12 @@ namespace Pivot{
 			/// <param name="endVal" >Specifies the ending value for date grouping.</param>
 			/// <param name="groupByList" >Specifies the grouping type list. Specified by PivotTableGroupType</param>
 			/// <param name="intervalNum" >Specifies the interval number group by in days grouping.The number of days must be positive integer of nonzero</param>
-			 virtual void 		SetManualGroupField(intrusive_ptr<Aspose::Cells::Pivot::IPivotField> pivotField , intrusive_ptr<Aspose::Cells::System::DateTime> startVal , intrusive_ptr<Aspose::Cells::System::DateTime> endVal , intrusive_ptr<Aspose::Cells::System::Collections::ArrayList> groupByList , Aspose::Cells::System::Int32 intervalNum)=0;
+			 virtual void 		SetManualGroupField(intrusive_ptr<Aspose::Cells::Pivot::IPivotField> pivotField , intrusive_ptr<Aspose::Cells::Systems::DateTime> startVal , intrusive_ptr<Aspose::Cells::Systems::DateTime> endVal , intrusive_ptr<Aspose::Cells::Systems::Collections::ArrayList> groupByList , Aspose::Cells::Systems::Int32 intervalNum)=0;
 			/// <summary>
 			/// Sets ungroup by the PivotTable
 			/// </summary>
 			/// <param name="baseFieldIndex" >The row or column field index in the base fields</param>
-			  virtual void SetUngroup(Aspose::Cells::System::Int32 baseFieldIndex)=0;
+			  virtual void SetUngroup(Aspose::Cells::Systems::Int32 baseFieldIndex)=0;
 			/// <summary>
 			/// Sets ungroup by the PivotTable
 			/// </summary>
@@ -845,7 +845,7 @@ namespace Pivot{
 			/// </summary>
 			/// <returns/>
 			/// 
-			  virtual intrusive_ptr<Aspose::Cells::System::Collections::ArrayList> GetHorizontalBreaks()=0;
+			  virtual intrusive_ptr<Aspose::Cells::Systems::Collections::ArrayList> GetHorizontalBreaks()=0;
 			/// <summary>
 			/// Layouts the PivotTable in compact form.
 			/// </summary>
@@ -863,7 +863,7 @@ namespace Pivot{
 			/// </summary>
 			/// <param name="displayName" >the DisplayName of PivotField</param>
 			/// <returns>the Cell object</returns>
-			 virtual intrusive_ptr<Aspose::Cells::ICell> 		GetICellByDisplayName(intrusive_ptr<Aspose::Cells::System::String> displayName)=0;
+			 virtual intrusive_ptr<Aspose::Cells::ICell> 		GetICellByDisplayName(intrusive_ptr<Aspose::Cells::Systems::String> displayName)=0;
 
 	};
 }

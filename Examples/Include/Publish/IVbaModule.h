@@ -1,6 +1,6 @@
 #pragma once
-#include "System/Object.h"
-#include "System/String.h"
+#include "Aspose.Cells.Systems/Object.h"
+#include "Aspose.Cells.Systems/String.h"
 
 namespace Aspose {
 	namespace Cells {
@@ -15,17 +15,17 @@ namespace Vba{
 			/// <summary>
 			/// Represents module that is contained in VBA project.
 			/// </summary>
-	class ASPOSE_CELLS_API IVbaModule : public Aspose::Cells::System::Object
+	class ASPOSE_CELLS_API IVbaModule : public Aspose::Cells::Systems::Object
 	{
 		public:
 			/// <summary>
 			/// Gets the name of Module.
 			/// </summary>
-			 virtual intrusive_ptr<Aspose::Cells::System::String> GetName()=0;
+			 virtual intrusive_ptr<Aspose::Cells::Systems::String> GetName()=0;
 			/// <summary>
 			/// Sets the name of Module.
 			/// </summary>
-			 virtual void SetName(intrusive_ptr<Aspose::Cells::System::String> value)=0;
+			 virtual void SetName(intrusive_ptr<Aspose::Cells::Systems::String> value)=0;
 			/// <summary>
 			/// Gets the type of module.
 			/// </summary>
@@ -33,11 +33,11 @@ namespace Vba{
 			/// <summary>
 			/// Gets the codes of module.
 			/// </summary>
-			 virtual intrusive_ptr<Aspose::Cells::System::String> GetCodes()=0;
+			 virtual intrusive_ptr<Aspose::Cells::Systems::String> GetCodes()=0;
 			/// <summary>
 			/// Sets the codes of module.
 			/// </summary>
-			 virtual void SetCodes(intrusive_ptr<Aspose::Cells::System::String> value)=0;
+			 virtual void SetCodes(intrusive_ptr<Aspose::Cells::Systems::String> value)=0;
 
 	};
 }

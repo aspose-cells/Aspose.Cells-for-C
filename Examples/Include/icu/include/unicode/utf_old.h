@@ -82,23 +82,23 @@
  *
  * <p>The original concept for these files was for ICU to allow
  * in principle to set which UTF (UTF-8/16/32) is used internally
- * by defining UTF_SIZE to either 8, 16, or 32. utf.h would then define the UChar type
+ * by defining UTF_SIZE to either 8, 16, or 32. utf.h would then define the UnChar type
  * accordingly. UTF-16 was the default.</p>
  *
  * <p>This concept has been abandoned.
- * A lot of the ICU source code assumes UChar strings are in UTF-16.
+ * A lot of the ICU source code assumes UnChar strings are in UTF-16.
  * This is especially true for low-level code like
  * conversion, normalization, and collation.
  * The utf.h header enforces the default of UTF-16.
  * The UTF-8 and UTF-32 macros remain for now for completeness and backward compatibility.</p>
  *
- * <p>Accordingly, utf.h defines UChar to be an unsigned 16-bit integer. If this matches wchar_t, then
- * UChar is defined to be exactly wchar_t, otherwise uint16_t.</p>
+ * <p>Accordingly, utf.h defines UnChar to be an unsigned 16-bit integer. If this matches wchar_t, then
+ * UnChar is defined to be exactly wchar_t, otherwise uint16_t.</p>
  *
  * <p>UChar32 is defined to be a signed 32-bit integer (int32_t), large enough for a 21-bit
  * Unicode code point (Unicode scalar value, 0..0x10ffff).
  * Before ICU 2.4, the definition of UChar32 was similarly platform-dependent as
- * the definition of UChar. For details see the documentation for UChar32 itself.</p>
+ * the definition of UnChar. For details see the documentation for UChar32 itself.</p>
  *
  * <p>utf.h also defines a number of C macros for handling single Unicode code points and
  * for using UTF Unicode strings. It includes utf8.h, utf16.h, and utf32.h for the actual
@@ -514,10 +514,10 @@ typedef int32_t UTextOffset;
     (((first)<<10UL)+(second)-UTF_SURROGATE_OFFSET)
 
 /** @deprecated ICU 2.4. Renamed to U16_LEAD, see utf_old.h. */
-#define UTF_FIRST_SURROGATE(supplementary) (UChar)(((supplementary)>>10)+0xd7c0)
+#define UTF_FIRST_SURROGATE(supplementary) (UnChar)(((supplementary)>>10)+0xd7c0)
 
 /** @deprecated ICU 2.4. Renamed to U16_TRAIL, see utf_old.h. */
-#define UTF_SECOND_SURROGATE(supplementary) (UChar)(((supplementary)&0x3ff)|0xdc00)
+#define UTF_SECOND_SURROGATE(supplementary) (UnChar)(((supplementary)&0x3ff)|0xdc00)
 
 /** @deprecated ICU 2.4. Renamed to U16_LEAD, see utf_old.h. */
 #define UTF16_LEAD(supplementary) UTF_FIRST_SURROGATE(supplementary)

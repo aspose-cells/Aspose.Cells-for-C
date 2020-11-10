@@ -1,7 +1,7 @@
 #pragma once
-#include "System/Object.h"
-#include "System/Int32.h"
-#include "System/String.h"
+#include "Aspose.Cells.Systems/Object.h"
+#include "Aspose.Cells.Systems/Int32.h"
+#include "Aspose.Cells.Systems/String.h"
 #include "IChartFrame.h"
 
 namespace Aspose {
@@ -60,7 +60,7 @@ namespace Charts{
 			/// <br>-90: Downward.</br>
 			/// <br>90: Upward.</br>
 			/// </remarks>
-			 virtual Aspose::Cells::System::Int32 GetRotationAngle()=0;
+			 virtual Aspose::Cells::Systems::Int32 GetRotationAngle()=0;
 			/// <summary>
 			/// Represents text rotation angle.
 			/// </summary>
@@ -69,30 +69,30 @@ namespace Charts{
 			/// <br>-90: Downward.</br>
 			/// <br>90: Upward.</br>
 			/// </remarks>
-			 virtual void SetRotationAngle(Aspose::Cells::System::Int32 value)=0;
+			 virtual void SetRotationAngle(Aspose::Cells::Systems::Int32 value)=0;
 			/// <summary>
 			/// Returns a Characters object that represents a range of characters within the text.
 			/// </summary>
 			/// <param name="startIndex" >The index of the start of the character.</param>
 			/// <param name="length" >The number of characters.</param>
 			/// <returns>Characters object.</returns>
-			 virtual intrusive_ptr<Aspose::Cells::IFontSetting> 		GetCharacters(Aspose::Cells::System::Int32 startIndex , Aspose::Cells::System::Int32 length)=0;
+			 virtual intrusive_ptr<Aspose::Cells::IFontSetting> 		GetCharacters(Aspose::Cells::Systems::Int32 startIndex , Aspose::Cells::Systems::Int32 length)=0;
 			/// <summary>
 			/// Gets the text of a frame's title.
 			/// </summary>
-			  virtual intrusive_ptr<Aspose::Cells::System::String> GetText()=0;
+			  virtual intrusive_ptr<Aspose::Cells::Systems::String> GetText()=0;
 			/// <summary>
 			/// Sets the text of a frame's title.
 			/// </summary>
-			  virtual void SetText(intrusive_ptr<Aspose::Cells::System::String> value)=0;
+			  virtual void SetText(intrusive_ptr<Aspose::Cells::Systems::String> value)=0;
 			/// <summary>
 			/// Gets a reference to the worksheet.
 			/// </summary>
-			  virtual intrusive_ptr<Aspose::Cells::System::String> GetLinkedSource()=0;
+			  virtual intrusive_ptr<Aspose::Cells::Systems::String> GetLinkedSource()=0;
 			/// <summary>
 			/// Sets a reference to the worksheet.
 			/// </summary>
-			  virtual void SetLinkedSource(intrusive_ptr<Aspose::Cells::System::String> value)=0;
+			  virtual void SetLinkedSource(intrusive_ptr<Aspose::Cells::Systems::String> value)=0;
 			/// <summary>
 			///  Represents text reading order.
 			/// </summary>

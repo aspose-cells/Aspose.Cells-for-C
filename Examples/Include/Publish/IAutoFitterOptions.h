@@ -1,13 +1,13 @@
 #pragma once
-#include "System/Object.h"
-#include "System/Double.h"
+#include "Aspose.Cells.Systems/Object.h"
+#include "Aspose.Cells.Systems/Double.h"
 
 namespace Aspose{
 namespace Cells{
 			/// <summary>
 			/// Represents all auto fitter options.
 			/// </summary>
-	class ASPOSE_CELLS_API IAutoFitterOptions : public Aspose::Cells::System::Object
+	class ASPOSE_CELLS_API IAutoFitterOptions : public Aspose::Cells::Systems::Object
 	{
 		public:
 			/// <summary>
@@ -49,11 +49,11 @@ namespace Cells{
 			/// <summary>
 			/// Gets the max row height(in unit of Point) when autofitting rows.
 			/// </summary>
-			 virtual Aspose::Cells::System::Double GetMaxRowHeight()=0;
+			 virtual Aspose::Cells::Systems::Double GetMaxRowHeight()=0;
 			/// <summary>
 			/// Sets the max row height(in unit of Point) when autofitting rows.
 			/// </summary>
-			 virtual void SetMaxRowHeight(Aspose::Cells::System::Double value)=0;
+			 virtual void SetMaxRowHeight(Aspose::Cells::Systems::Double value)=0;
 
 	};
 }

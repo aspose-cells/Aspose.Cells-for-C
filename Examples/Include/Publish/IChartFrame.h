@@ -1,6 +1,6 @@
 #pragma once
-#include "System/Object.h"
-#include "System/Int32.h"
+#include "Aspose.Cells.Systems/Object.h"
+#include "Aspose.Cells.Systems/Int32.h"
 
 namespace Aspose {
 	namespace Cells {
@@ -29,7 +29,7 @@ namespace Charts{
 			/// <summary>
 			/// Encapsulates the object that represents the frame object in a chart. 
 			/// </summary>
-	class ASPOSE_CELLS_API IChartFrame : public Aspose::Cells::System::Object
+	class ASPOSE_CELLS_API IChartFrame : public Aspose::Cells::Systems::Object
 	{
 		public:
 			/// <summary>
@@ -113,7 +113,7 @@ namespace Charts{
 			/// How to convert units of 1/4000 to pixels? 
 			/// X In Pixels = X * Chart.ChartObject.Width / 4000;
 			/// </remarks>
-			  virtual Aspose::Cells::System::Int32 GetX()=0;
+			  virtual Aspose::Cells::Systems::Int32 GetX()=0;
 			/// <summary>
 			/// Sets the x coordinate of the upper left corner in units of 1/4000 of the chart area.
 			/// </summary>
@@ -121,7 +121,7 @@ namespace Charts{
 			/// How to convert units of 1/4000 to pixels? 
 			/// X In Pixels = X * Chart.ChartObject.Width / 4000;
 			/// </remarks>
-			  virtual void SetX(Aspose::Cells::System::Int32 value)=0;
+			  virtual void SetX(Aspose::Cells::Systems::Int32 value)=0;
 			/// <summary>
 			/// Gets the y coordinate of the upper left corner in units of 1/4000 of the chart area.		
 			/// </summary>
@@ -129,7 +129,7 @@ namespace Charts{
 			/// How to convert units of 1/4000 to pixels? 
 			/// Y In Pixels = Y * Chart.ChartObject.Height / 4000;
 			/// </remarks>
-			  virtual Aspose::Cells::System::Int32 GetY()=0;
+			  virtual Aspose::Cells::Systems::Int32 GetY()=0;
 			/// <summary>
 			/// Sets the y coordinate of the upper left corner in units of 1/4000 of the chart area.		
 			/// </summary>
@@ -137,7 +137,7 @@ namespace Charts{
 			/// How to convert units of 1/4000 to pixels? 
 			/// Y In Pixels = Y * Chart.ChartObject.Height / 4000;
 			/// </remarks>
-			  virtual void SetY(Aspose::Cells::System::Int32 value)=0;
+			  virtual void SetY(Aspose::Cells::Systems::Int32 value)=0;
 			/// <summary>
 			/// Gets the height of frame in units of 1/4000 of the chart area.
 			/// </summary>
@@ -145,7 +145,7 @@ namespace Charts{
 			/// How to convert units of 1/4000 to pixels? 
 			/// Height In Pixels = Y * Chart.ChartObject.Height / 4000;
 			/// </remarks>
-			  virtual Aspose::Cells::System::Int32 GetHeight()=0;
+			  virtual Aspose::Cells::Systems::Int32 GetHeight()=0;
 			/// <summary>
 			/// Sets the height of frame in units of 1/4000 of the chart area.
 			/// </summary>
@@ -153,7 +153,7 @@ namespace Charts{
 			/// How to convert units of 1/4000 to pixels? 
 			/// Height In Pixels = Y * Chart.ChartObject.Height / 4000;
 			/// </remarks>
-			  virtual void SetHeight(Aspose::Cells::System::Int32 value)=0;
+			  virtual void SetHeight(Aspose::Cells::Systems::Int32 value)=0;
 			/// <summary>
 			/// Gets the width of frame in units of 1/4000 of the chart area.
 			/// </summary>
@@ -161,7 +161,7 @@ namespace Charts{
 			/// How to convert units of 1/4000 to pixels? 
 			/// Width In Pixels = Width * Chart.ChartObject.Height / 4000;
 			/// </remarks>
-			  virtual Aspose::Cells::System::Int32 GetWidth()=0;
+			  virtual Aspose::Cells::Systems::Int32 GetWidth()=0;
 			/// <summary>
 			/// Sets the width of frame in units of 1/4000 of the chart area.
 			/// </summary>
@@ -169,7 +169,7 @@ namespace Charts{
 			/// How to convert units of 1/4000 to pixels? 
 			/// Width In Pixels = Width * Chart.ChartObject.Height / 4000;
 			/// </remarks>
-			  virtual void SetWidth(Aspose::Cells::System::Int32 value)=0;
+			  virtual void SetWidth(Aspose::Cells::Systems::Int32 value)=0;
 			/// <summary>
 			/// True if the frame has a shadow. 
 			/// </summary>
@@ -190,19 +190,19 @@ namespace Charts{
 			/// <summary>
 			/// Represents x of default position
 			/// </summary>
-			 virtual Aspose::Cells::System::Int32 GetDefaultX()=0;
+			 virtual Aspose::Cells::Systems::Int32 GetDefaultX()=0;
 			/// <summary>
 			/// Represents y of default position
 			/// </summary>
-			 virtual Aspose::Cells::System::Int32 GetDefaultY()=0;
+			 virtual Aspose::Cells::Systems::Int32 GetDefaultY()=0;
 			/// <summary>
 			/// Represents width of default position
 			/// </summary>
-			 virtual Aspose::Cells::System::Int32 GetDefaultWidth()=0;
+			 virtual Aspose::Cells::Systems::Int32 GetDefaultWidth()=0;
 			/// <summary>
 			/// Represents height of default position
 			/// </summary>
-			 virtual Aspose::Cells::System::Int32 GetDefaultHeight()=0;
+			 virtual Aspose::Cells::Systems::Int32 GetDefaultHeight()=0;
 			/// <summary>
 			/// Set position of the frame to automatic
 			/// </summary>

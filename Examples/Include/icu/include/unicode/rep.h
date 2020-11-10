@@ -91,7 +91,7 @@ public:
      * @return 16-bit code unit of text at given offset
      * @stable ICU 1.8
      */
-    inline UChar charAt(int32_t offset) const;
+    inline UnChar charAt(int32_t offset) const;
 
     /**
      * Returns the 32-bit code point at the given 16-bit offset into
@@ -228,7 +228,7 @@ protected:
      * Virtual version of charAt().
      * @stable ICU 2.4
      */
-    virtual UChar getCharAt(int32_t offset) const = 0;
+    virtual UnChar getCharAt(int32_t offset) const = 0;
 
     /**
      * Virtual version of char32At().
@@ -244,7 +244,7 @@ Replaceable::length() const {
     return getLength();
 }
 
-inline UChar
+inline UnChar
 Replaceable::charAt(int32_t offset) const {
     return getCharAt(offset);
 }

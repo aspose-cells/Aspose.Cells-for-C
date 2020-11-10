@@ -1,9 +1,9 @@
 #pragma once
-#include "System/Object.h"
-#include "System/Array1D.h"
-#include "System/Byte.h"
-#include "System/String.h"
-#include "System/Drawing/Imaging/ImageFormat.h"
+#include "Aspose.Cells.Systems/Object.h"
+#include "Aspose.Cells.Systems/Array1D.h"
+#include "Aspose.Cells.Systems/Byte.h"
+#include "Aspose.Cells.Systems/String.h"
+#include "Aspose.Cells.Systems/Drawing/Imaging/ImageFormat.h"
 #include "IShape.h"
 
 namespace Aspose {
@@ -58,19 +58,19 @@ namespace Drawing{
 			/// <summary>
 			/// Represents image of ole object as byte array.
 			/// </summary>
-			 virtual intrusive_ptr<Aspose::Cells::System::Array1D<Aspose::Cells::System::Byte>> GetImageData()=0;
+			 virtual intrusive_ptr<Aspose::Cells::Systems::Array1D<Aspose::Cells::Systems::Byte>> GetImageData()=0;
 			/// <summary>
 			/// Represents image of ole object as byte array.
 			/// </summary>
-			 virtual void SetImageData(intrusive_ptr<Aspose::Cells::System::Array1D<Aspose::Cells::System::Byte>> value)=0;
+			 virtual void SetImageData(intrusive_ptr<Aspose::Cells::Systems::Array1D<Aspose::Cells::Systems::Byte>> value)=0;
 			/// <summary>
 			/// Represents embedded ole object data as byte array.
 			/// </summary>
-			 virtual intrusive_ptr<Aspose::Cells::System::Array1D<Aspose::Cells::System::Byte>> GetObjectData()=0;
+			 virtual intrusive_ptr<Aspose::Cells::Systems::Array1D<Aspose::Cells::Systems::Byte>> GetObjectData()=0;
 			/// <summary>
 			/// Represents embedded ole object data as byte array.
 			/// </summary>
-			 virtual void SetObjectData(intrusive_ptr<Aspose::Cells::System::Array1D<Aspose::Cells::System::Byte>> value)=0;
+			 virtual void SetObjectData(intrusive_ptr<Aspose::Cells::Systems::Array1D<Aspose::Cells::Systems::Byte>> value)=0;
 			/// <summary>
 			/// Gets or sets the path and name of the source file for the linked image. 
 			/// </summary>
@@ -79,7 +79,7 @@ namespace Drawing{
 			/// If SourceFullName is not an empty string, the image is linked.
 			/// If SourceFullName is not an empty string, but Data is null, then the image is linked and not stored in the file.
 			/// </remarks>
-			 virtual intrusive_ptr<Aspose::Cells::System::String> GetImageSourceFullName()=0;
+			 virtual intrusive_ptr<Aspose::Cells::Systems::String> GetImageSourceFullName()=0;
 			/// <summary>
 			/// Gets or sets the path and name of the source file for the linked image. 
 			/// </summary>
@@ -88,20 +88,20 @@ namespace Drawing{
 			/// If SourceFullName is not an empty string, the image is linked.
 			/// If SourceFullName is not an empty string, but Data is null, then the image is linked and not stored in the file.
 			/// </remarks>
-			 virtual void SetImageSourceFullName(intrusive_ptr<Aspose::Cells::System::String> value)=0;
+			 virtual void SetImageSourceFullName(intrusive_ptr<Aspose::Cells::Systems::String> value)=0;
 			/// <summary>
 			/// Sets the ole native source full file name with path.
 			/// </summary>
 			/// <param name="sourceFullName" >the ole native source full file name</param>
-			 virtual void SetNativeSourceFullName(intrusive_ptr<Aspose::Cells::System::String> sourceFullName)=0;
+			 virtual void SetNativeSourceFullName(intrusive_ptr<Aspose::Cells::Systems::String> sourceFullName)=0;
 			/// <summary>
 			/// Gets or sets the ProgID of the OLE object. 
 			/// </summary>
-			 virtual intrusive_ptr<Aspose::Cells::System::String> GetProgID()=0;
+			 virtual intrusive_ptr<Aspose::Cells::Systems::String> GetProgID()=0;
 			/// <summary>
 			/// Gets or sets the ProgID of the OLE object. 
 			/// </summary>
-			 virtual void SetProgID(intrusive_ptr<Aspose::Cells::System::String> value)=0;
+			 virtual void SetProgID(intrusive_ptr<Aspose::Cells::Systems::String> value)=0;
 			/// <summary>
 			/// Gets and sets the file type of the embedded ole object data
 			/// </summary>
@@ -126,24 +126,24 @@ namespace Drawing{
 			/// <remarks>Only supports setting the source full name when the file type is OleFileType.Unknown.
 			/// Such as wav file ,avi file..etc..
 			/// </remarks>
-			 virtual intrusive_ptr<Aspose::Cells::System::String> GetObjectSourceFullName()=0;
+			 virtual intrusive_ptr<Aspose::Cells::Systems::String> GetObjectSourceFullName()=0;
 			/// <summary>
 			/// Returns the source full name of the source file for the linked OLE object.
 			/// </summary>
 			/// <remarks>Only supports setting the source full name when the file type is OleFileType.Unknown.
 			/// Such as wav file ,avi file..etc..
 			/// </remarks>
-			 virtual void SetObjectSourceFullName(intrusive_ptr<Aspose::Cells::System::String> value)=0;
+			 virtual void SetObjectSourceFullName(intrusive_ptr<Aspose::Cells::Systems::String> value)=0;
 			/// <summary>
 			/// Returns the source full name of the source file for the linked OLE object.
 			/// </summary>
 			/// <remarks>
-			 virtual intrusive_ptr<Aspose::Cells::System::String> GetSourceFullName()=0;
+			 virtual intrusive_ptr<Aspose::Cells::Systems::String> GetSourceFullName()=0;
 			/// <summary>
 			/// Returns the source full name of the source file for the linked OLE object.
 			/// </summary>
 			/// <remarks>
-			 virtual void SetSourceFullName(intrusive_ptr<Aspose::Cells::System::String> value)=0;
+			 virtual void SetSourceFullName(intrusive_ptr<Aspose::Cells::Systems::String> value)=0;
 			/// <summary>
 			/// Specifies whether the link to the OleObject is automatically updated or not.
 			/// </summary>
@@ -166,16 +166,16 @@ namespace Drawing{
 			/// Gets and sets the class identifier of the embedded object. 
 			/// It means which application opens the embedded file.
 			/// </summary>
-			 virtual intrusive_ptr<Aspose::Cells::System::Array1D<Aspose::Cells::System::Byte>> GetClassIdentifier()=0;
+			 virtual intrusive_ptr<Aspose::Cells::Systems::Array1D<Aspose::Cells::Systems::Byte>> GetClassIdentifier()=0;
 			/// <summary>
 			/// Gets and sets the class identifier of the embedded object. 
 			/// It means which application opens the embedded file.
 			/// </summary>
-			 virtual void SetClassIdentifier(intrusive_ptr<Aspose::Cells::System::Array1D<Aspose::Cells::System::Byte>> value)=0;
+			 virtual void SetClassIdentifier(intrusive_ptr<Aspose::Cells::Systems::Array1D<Aspose::Cells::Systems::Byte>> value)=0;
 			/// <summary>
 			/// Gets the image format of the picture.
 			/// </summary>
-			 virtual intrusive_ptr<Aspose::Cells::System::Drawing::Imaging::ImageFormat> GetImageFormat()=0;
+			 virtual intrusive_ptr<Aspose::Cells::Systems::Drawing::Imaging::ImageFormat> GetImageFormat()=0;
 
 	};
 }

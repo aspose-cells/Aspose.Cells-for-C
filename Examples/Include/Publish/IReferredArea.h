@@ -1,7 +1,7 @@
 #pragma once
-#include "System/Object.h"
-#include "System/String.h"
-#include "System/Int32.h"
+#include "Aspose.Cells.Systems/Object.h"
+#include "Aspose.Cells.Systems/String.h"
+#include "Aspose.Cells.Systems/Int32.h"
 
 namespace Aspose{
 namespace Cells{
@@ -10,7 +10,7 @@ namespace Cells{
 			/// </summary>
 			/// 
 			/// 
-	class ASPOSE_CELLS_API IReferredArea : public Aspose::Cells::System::Object
+	class ASPOSE_CELLS_API IReferredArea : public Aspose::Cells::Systems::Object
 	{
 		public:
 			/// <summary>
@@ -24,13 +24,13 @@ namespace Cells{
 			/// </summary>
 			/// 
 			/// 
-			 virtual intrusive_ptr<Aspose::Cells::System::String> GetExternalFileName()=0;
+			 virtual intrusive_ptr<Aspose::Cells::Systems::String> GetExternalFileName()=0;
 			/// <summary>
 			/// Indicates which sheet this is in
 			/// </summary>
 			/// 
 			/// 
-			 virtual intrusive_ptr<Aspose::Cells::System::String> GetSheetName()=0;
+			 virtual intrusive_ptr<Aspose::Cells::Systems::String> GetSheetName()=0;
 			/// <summary>
 			/// Indicates whether this is an area.
 			/// </summary>
@@ -46,25 +46,25 @@ namespace Cells{
 			/// </summary>
 			/// 
 			/// 
-			 virtual Aspose::Cells::System::Int32 GetEndColumn()=0;
+			 virtual Aspose::Cells::Systems::Int32 GetEndColumn()=0;
 			/// <summary>
 			/// The start column of the area.
 			/// </summary>
 			/// 
 			/// 
-			 virtual Aspose::Cells::System::Int32 GetStartColumn()=0;
+			 virtual Aspose::Cells::Systems::Int32 GetStartColumn()=0;
 			/// <summary>
 			/// The end row of the area.
 			/// </summary>
 			/// 
 			/// 
-			 virtual Aspose::Cells::System::Int32 GetEndRow()=0;
+			 virtual Aspose::Cells::Systems::Int32 GetEndRow()=0;
 			/// <summary>
 			/// The start row of the area.
 			/// </summary>
 			/// 
 			/// 
-			 virtual Aspose::Cells::System::Int32 GetStartRow()=0;
+			 virtual Aspose::Cells::Systems::Int32 GetStartRow()=0;
 			/// <summary>
 			/// Gets cell values in this area.
 			/// </summary>
@@ -74,7 +74,7 @@ namespace Cells{
 			/// Otherwise return one array for all values in this area.</returns>
 			/// 
 			/// 
-			 virtual intrusive_ptr<Aspose::Cells::System::Object> GetValues()=0;
+			 virtual intrusive_ptr<Aspose::Cells::Systems::Object> GetValues()=0;
 			/// <summary>
 			/// Gets cell value with given offset from the top-left of this area.
 			/// </summary>
@@ -88,7 +88,7 @@ namespace Cells{
 			/// Otherwise return the cell value at given position.</returns>
 			/// 
 			/// 
-			 virtual intrusive_ptr<Aspose::Cells::System::Object> GetValue(Aspose::Cells::System::Int32 rowOffset , Aspose::Cells::System::Int32 colOffset)=0;
+			 virtual intrusive_ptr<Aspose::Cells::Systems::Object> GetValue(Aspose::Cells::Systems::Int32 rowOffset , Aspose::Cells::Systems::Int32 colOffset)=0;
 
 	};
 }

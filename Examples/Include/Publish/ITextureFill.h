@@ -1,8 +1,8 @@
 #pragma once
-#include "System/Object.h"
-#include "System/Array1D.h"
-#include "System/Byte.h"
-#include "System/Double.h"
+#include "Aspose.Cells.Systems/Object.h"
+#include "Aspose.Cells.Systems/Array1D.h"
+#include "Aspose.Cells.Systems/Byte.h"
+#include "Aspose.Cells.Systems/Double.h"
 #include "IFill.h"
 
 namespace Aspose {
@@ -34,11 +34,11 @@ namespace Drawing{
 			/// <summary>
 			/// Gets the image data of the fill.
 			/// </summary>
-			 virtual intrusive_ptr<Aspose::Cells::System::Array1D<Aspose::Cells::System::Byte>> GetImageData()=0;
+			 virtual intrusive_ptr<Aspose::Cells::Systems::Array1D<Aspose::Cells::Systems::Byte>> GetImageData()=0;
 			/// <summary>
 			/// Sets the image data of the fill.
 			/// </summary>
-			 virtual void SetImageData(intrusive_ptr<Aspose::Cells::System::Array1D<Aspose::Cells::System::Byte>> value)=0;
+			 virtual void SetImageData(intrusive_ptr<Aspose::Cells::Systems::Array1D<Aspose::Cells::Systems::Byte>> value)=0;
 			/// <summary>
 			/// Gets tile picture option.
 			/// </summary>
@@ -58,19 +58,19 @@ namespace Drawing{
 			/// <summary>
 			/// Gets the picture format scale.
 			/// </summary>
-			 virtual Aspose::Cells::System::Double GetScale()=0;
+			 virtual Aspose::Cells::Systems::Double GetScale()=0;
 			/// <summary>
 			/// Sets the picture format scale.
 			/// </summary>
-			 virtual void SetScale(Aspose::Cells::System::Double value)=0;
+			 virtual void SetScale(Aspose::Cells::Systems::Double value)=0;
 			/// <summary>
 			/// Returns or sets the degree of transparency of the area as a value from 0.0 (opaque) through 1.0 (clear).
 			/// </summary>
-			 virtual Aspose::Cells::System::Double GetTransparency()=0;
+			 virtual Aspose::Cells::Systems::Double GetTransparency()=0;
 			/// <summary>
 			/// Returns or sets the degree of transparency of the area as a value from 0.0 (opaque) through 1.0 (clear).
 			/// </summary>
-			 virtual void SetTransparency(Aspose::Cells::System::Double value)=0;
+			 virtual void SetTransparency(Aspose::Cells::Systems::Double value)=0;
 
 	};
 }

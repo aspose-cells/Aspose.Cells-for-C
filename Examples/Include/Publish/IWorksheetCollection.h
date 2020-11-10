@@ -1,9 +1,9 @@
 #pragma once
-#include "System/Object.h"
-#include "System/String.h"
-#include "System/Int32.h"
-#include "System/Array1D.h"
-#include "System/Collections/CollectionBase.h"
+#include "Aspose.Cells.Systems/Object.h"
+#include "Aspose.Cells.Systems/String.h"
+#include "Aspose.Cells.Systems/Int32.h"
+#include "Aspose.Cells.Systems/Array1D.h"
+#include "Aspose.Cells.Systems/Collections/CollectionBase.h"
 
 namespace Aspose {
 	namespace Cells {
@@ -41,7 +41,7 @@ namespace Cells{
 			/// sheets->Add();
 			/// 
 			/// //Change the name of a worksheet
-			/// sheets->GetObjectByIndex(0)->SetName(new Aspose::Cells::System::String("First Sheet"));
+			/// sheets->GetObjectByIndex(0)->SetName(new Aspose::Cells::Systems::String("First Sheet"));
 			/// 
 			/// //Set the active sheet to the second worksheet
 			/// sheets->SetActiveSheetIndex(1);
@@ -52,7 +52,7 @@ namespace Cells{
 			/// </example>
 			/// 
 			/// 
-	class ASPOSE_CELLS_API IWorksheetCollection : public Aspose::Cells::System::Collections::CollectionBase
+	class ASPOSE_CELLS_API IWorksheetCollection : public Aspose::Cells::Systems::Collections::CollectionBase
 	{
 		public:
 			/// <summary>
@@ -76,7 +76,7 @@ namespace Cells{
 			/// <param name="sheetIndex" >The sheet index.</param>
 			/// <returns>A <see cref="IRange" />
 			///  object</returns>
-			 virtual intrusive_ptr<Aspose::Cells::IRange> 		CreateIRange(intrusive_ptr<Aspose::Cells::System::String> address , Aspose::Cells::System::Int32 sheetIndex)=0;
+			 virtual intrusive_ptr<Aspose::Cells::IRange> 		CreateIRange(intrusive_ptr<Aspose::Cells::Systems::String> address , Aspose::Cells::Systems::Int32 sheetIndex)=0;
 			/// <summary>
 			/// Gets the collection of all the Name objects in the spreadsheet. 
 			/// </summary>
@@ -91,7 +91,7 @@ namespace Cells{
 			/// <returns>The element at the specified index.</returns>
 			/// 
 			/// 
-			 virtual intrusive_ptr<Aspose::Cells::IWorksheet> 		GetObjectByIndex(Aspose::Cells::System::Int32 index)=0;
+			 virtual intrusive_ptr<Aspose::Cells::IWorksheet> 		GetObjectByIndex(Aspose::Cells::Systems::Int32 index)=0;
 			 
 			/// <summary>
 			/// Gets the <see cref="IWorksheet" />
@@ -103,7 +103,7 @@ namespace Cells{
 			/// <returns>The element with the specified name.</returns>
 			/// 
 			/// 
-			 virtual intrusive_ptr<Aspose::Cells::IWorksheet> 		GetObjectByIndex(intrusive_ptr<Aspose::Cells::System::String> sheetName)=0;
+			 virtual intrusive_ptr<Aspose::Cells::IWorksheet> 		GetObjectByIndex(intrusive_ptr<Aspose::Cells::Systems::String> sheetName)=0;
 			 
 			/// <summary>
 			/// Gets the worksheet by the code name.
@@ -114,7 +114,7 @@ namespace Cells{
 			/// <returns>The element with the specified code name.</returns>
 			/// 
 			/// 
-			 virtual intrusive_ptr<Aspose::Cells::IWorksheet> 		GetISheetByCodeName(intrusive_ptr<Aspose::Cells::System::String> codeName)=0;
+			 virtual intrusive_ptr<Aspose::Cells::IWorksheet> 		GetISheetByCodeName(intrusive_ptr<Aspose::Cells::Systems::String> codeName)=0;
 			 
 			/// <summary>
 			/// Represents the index of active worksheet when the spreadsheet is opened.
@@ -123,7 +123,7 @@ namespace Cells{
 			/// <remarks>Sheet index is zero based.</remarks>
 			/// 
 			/// 
-			 virtual Aspose::Cells::System::Int32 GetActiveSheetIndex()=0;
+			 virtual Aspose::Cells::Systems::Int32 GetActiveSheetIndex()=0;
 			 
 			/// <summary>
 			/// Represents the index of active worksheet when the spreadsheet is opened.
@@ -132,7 +132,7 @@ namespace Cells{
 			/// <remarks>Sheet index is zero based.</remarks>
 			/// 
 			/// 
-			 virtual void SetActiveSheetIndex(Aspose::Cells::System::Int32 value)=0;
+			 virtual void SetActiveSheetIndex(Aspose::Cells::Systems::Int32 value)=0;
 			 
 			/// <summary>
 			/// Sorts defined names.
@@ -155,7 +155,7 @@ namespace Cells{
 			/// <returns>Returns an inserted worksheet.</returns>
 			/// 
 			/// 
-			 virtual intrusive_ptr<Aspose::Cells::IWorksheet> 		InsertIWorksheet(Aspose::Cells::System::Int32 index , Aspose::Cells::SheetType sheetType)=0;
+			 virtual intrusive_ptr<Aspose::Cells::IWorksheet> 		InsertIWorksheet(Aspose::Cells::Systems::Int32 index , Aspose::Cells::SheetType sheetType)=0;
 			 
 			/// <summary>
 			/// Insert a worksheet.
@@ -170,7 +170,7 @@ namespace Cells{
 			/// <returns>Returns an inserted worksheet.</returns>
 			/// 
 			/// 
-			 virtual intrusive_ptr<Aspose::Cells::IWorksheet> 		InsertIWorksheet(Aspose::Cells::System::Int32 index , Aspose::Cells::SheetType sheetType , intrusive_ptr<Aspose::Cells::System::String> sheetName)=0;
+			 virtual intrusive_ptr<Aspose::Cells::IWorksheet> 		InsertIWorksheet(Aspose::Cells::Systems::Int32 index , Aspose::Cells::SheetType sheetType , intrusive_ptr<Aspose::Cells::Systems::String> sheetName)=0;
 			 
 			/// <summary>
 			///  Adds a worksheet to the collection.
@@ -199,7 +199,7 @@ namespace Cells{
 			///  </example>
 			/// 
 			/// 
-			 virtual Aspose::Cells::System::Int32 Add(Aspose::Cells::SheetType type)=0;
+			 virtual Aspose::Cells::Systems::Int32 Add(Aspose::Cells::SheetType type)=0;
 			 
 			/// <summary>
 			/// Swaps the two sheets.
@@ -210,7 +210,7 @@ namespace Cells{
 			/// <param name="sheetIndex2" >The second worksheet.</param>
 			/// 
 			/// 
-			 virtual void SwapSheet(Aspose::Cells::System::Int32 sheetIndex1 , Aspose::Cells::System::Int32 sheetIndex2)=0;
+			 virtual void SwapSheet(Aspose::Cells::Systems::Int32 sheetIndex1 , Aspose::Cells::Systems::Int32 sheetIndex2)=0;
 			 
 			/// <summary>
 			/// Adds a worksheet to the collection.
@@ -220,7 +220,7 @@ namespace Cells{
 			///  object index.</returns>
 			/// 
 			/// 
-			 virtual Aspose::Cells::System::Int32 Add()=0;
+			 virtual Aspose::Cells::Systems::Int32 Add()=0;
 			 
 			/// <summary>
 			/// Adds a worksheet to the collection.
@@ -232,7 +232,7 @@ namespace Cells{
 			///  object.</returns>
 			/// 
 			/// 
-			 virtual intrusive_ptr<Aspose::Cells::IWorksheet> 		AddIWorksheet(intrusive_ptr<Aspose::Cells::System::String> sheetName)=0;
+			 virtual intrusive_ptr<Aspose::Cells::IWorksheet> 		AddIWorksheet(intrusive_ptr<Aspose::Cells::Systems::String> sheetName)=0;
 			 
 			/// <summary>
 			/// Removes the element at a specified name.
@@ -241,7 +241,7 @@ namespace Cells{
 			/// <param name="name" >The name of the element to remove.</param>
 			/// 
 			/// 
-			 virtual void RemoveAt(intrusive_ptr<Aspose::Cells::System::String> name)=0;
+			 virtual void RemoveAt(intrusive_ptr<Aspose::Cells::Systems::String> name)=0;
 			 
 			/// <summary>
 			/// Removes the element at a specified index.
@@ -250,7 +250,7 @@ namespace Cells{
 			/// <param name="index" >The index value of the element to remove.</param>
 			/// 
 			/// 
-			 virtual void RemoveAt(Aspose::Cells::System::Int32 index)=0;
+			 virtual void RemoveAt(Aspose::Cells::Systems::Int32 index)=0;
 			 
 			/// <summary>
 			/// Clear all worksheets.
@@ -275,7 +275,7 @@ namespace Cells{
 			/// <exception cref="ICellsException" >Specifies an invalid worksheet name.</exception>
 			/// 
 			/// 
-			 virtual Aspose::Cells::System::Int32 AddCopy(intrusive_ptr<Aspose::Cells::System::String> sheetName)=0;
+			 virtual Aspose::Cells::Systems::Int32 AddCopy(intrusive_ptr<Aspose::Cells::Systems::String> sheetName)=0;
 			 
 			/// <summary>
 			/// Adds a worksheet to the collection and copies data from an existed worksheet.
@@ -287,7 +287,7 @@ namespace Cells{
 			///  object index.</returns>
 			/// 
 			/// 
-			 virtual Aspose::Cells::System::Int32 AddCopy(Aspose::Cells::System::Int32 sheetIndex)=0;
+			 virtual Aspose::Cells::Systems::Int32 AddCopy(Aspose::Cells::Systems::Int32 sheetIndex)=0;
 			 
 			/// <summary>
 			/// Gets Range object by pre-defined name.
@@ -299,7 +299,7 @@ namespace Cells{
 			/// Returns null if the named range does not exist.</returns>
 			/// 
 			/// 
-			 virtual intrusive_ptr<Aspose::Cells::IRange> 		GetIRangeByName(intrusive_ptr<Aspose::Cells::System::String> rangeName)=0;
+			 virtual intrusive_ptr<Aspose::Cells::IRange> 		GetIRangeByName(intrusive_ptr<Aspose::Cells::Systems::String> rangeName)=0;
 			 
 			/// <summary>
 			/// Gets all pre-defined named ranges in the spreadsheet.
@@ -309,7 +309,7 @@ namespace Cells{
 			/// Returns null if the named range does not exist.</returns>
 			/// 
 			/// 
-			 virtual intrusive_ptr<Aspose::Cells::System::Array1D<Aspose::Cells::IRange*>> 		GetNamedIRanges()=0;
+			 virtual intrusive_ptr<Aspose::Cells::Systems::Array1D<Aspose::Cells::IRange*>> 		GetNamedIRanges()=0;
 			 
 			/// <summary>
 			/// Gets all pre-defined named ranges in the spreadsheet.
@@ -319,7 +319,7 @@ namespace Cells{
 			/// Returns null if the named range does not exist.</returns>
 			/// 
 			/// 
-			 virtual intrusive_ptr<Aspose::Cells::System::Array1D<Aspose::Cells::IRange*>> 		GetNamedIRangesAndTables()=0;
+			 virtual intrusive_ptr<Aspose::Cells::Systems::Array1D<Aspose::Cells::IRange*>> 		GetNamedIRangesAndTables()=0;
 			/// <summary>
 			/// Returns an IDocumentProperty collection that represents all the built-in document properties of the spreadsheet. 
 			/// </summary>
@@ -386,7 +386,7 @@ namespace Cells{
 			/// </remarks>
 			/// 
 			/// 
-			 virtual intrusive_ptr<Aspose::Cells::System::Object> GetOleSize()=0;
+			 virtual intrusive_ptr<Aspose::Cells::Systems::Object> GetOleSize()=0;
 			 
 			/// <summary>
 			/// Gets and Sets displayed size when Workbook file is used as an Ole object.
@@ -397,7 +397,7 @@ namespace Cells{
 			/// </remarks>
 			/// 
 			/// 
-			 virtual void SetOleSize(intrusive_ptr<Aspose::Cells::System::Object> value)=0;
+			 virtual void SetOleSize(intrusive_ptr<Aspose::Cells::Systems::Object> value)=0;
 			 
 			/// <summary>
 			/// Sets displayed size when Workbook file is used as an Ole object.
@@ -414,7 +414,7 @@ namespace Cells{
 			/// <remarks>This method is generally used to adjust display size in ppt file or doc file.</remarks>
 			/// 
 			/// 
-			 virtual void SetOleSize(Aspose::Cells::System::Int32 startRow , Aspose::Cells::System::Int32 endRow , Aspose::Cells::System::Int32 startColumn , Aspose::Cells::System::Int32 endColumn)=0;
+			 virtual void SetOleSize(Aspose::Cells::Systems::Int32 startRow , Aspose::Cells::Systems::Int32 endRow , Aspose::Cells::Systems::Int32 startColumn , Aspose::Cells::Systems::Int32 endColumn)=0;
 			/// <summary>
 			/// Represents external links in a workbook.
 			/// </summary>

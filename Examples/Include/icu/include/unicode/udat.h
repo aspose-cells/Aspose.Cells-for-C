@@ -40,13 +40,13 @@
  * <pre>
  * \code
  *  UErrorCode status = U_ZERO_ERROR;
- *  UChar *myString;
+ *  UnChar *myString;
  *  int32_t myStrlen = 0;
  *  UDateFormat* dfmt = udat_open(UDAT_DEFAULT, UDAT_DEFAULT, NULL, NULL, -1, NULL, -1, &status);
  *  myStrlen = udat_format(dfmt, myDate, NULL, myStrlen, NULL, &status);
  *  if (status==U_BUFFER_OVERFLOW_ERROR){
  *      status=U_ZERO_ERROR;
- *      myString=(UChar*)malloc(sizeof(UChar) * (myStrlen+1) );
+ *      myString=(UnChar*)malloc(sizeof(UnChar) * (myStrlen+1) );
  *      udat_format(dfmt, myDate, myString, myStrlen+1, NULL, &status);
  *  }
  * \endcode
@@ -58,7 +58,7 @@
  * \code
  *  UErrorCode status = U_ZERO_ERROR;
  *  int32_t i, myStrlen = 0;
- *  UChar* myString;
+ *  UnChar* myString;
  *  char buffer[1024];
  *  UDate myDateArr[] = { 0.0, 100000000.0, 2000000000.0 }; // test values
  *  UDateFormat* df = udat_open(UDAT_DEFAULT, UDAT_DEFAULT, NULL, NULL, -1, NULL, 0, &status);
@@ -66,7 +66,7 @@
  *      myStrlen = udat_format(df, myDateArr[i], NULL, myStrlen, NULL, &status);
  *      if(status == U_BUFFER_OVERFLOW_ERROR){
  *          status = U_ZERO_ERROR;
- *          myString = (UChar*)malloc(sizeof(UChar) * (myStrlen+1) );
+ *          myString = (UnChar*)malloc(sizeof(UnChar) * (myStrlen+1) );
  *          udat_format(df, myDateArr[i], myString, myStrlen+1, NULL, &status);
  *          printf("%s\n", u_austrcpy(buffer, myString) );
  *          free(myString);
@@ -80,7 +80,7 @@
  * \code
  *  UErrorCode status = U_ZERO_ERROR;
  *  UFieldPosition pos;
- *  UChar *myString;
+ *  UnChar *myString;
  *  int32_t myStrlen = 0;
  *  char buffer[1024];
  *
@@ -89,7 +89,7 @@
  *  myStrlen = udat_format(dfmt, myDate, NULL, myStrlen, &pos, &status);
  *  if (status==U_BUFFER_OVERFLOW_ERROR){
  *      status=U_ZERO_ERROR;
- *      myString=(UChar*)malloc(sizeof(UChar) * (myStrlen+1) );
+ *      myString=(UnChar*)malloc(sizeof(UnChar) * (myStrlen+1) );
  *      udat_format(dfmt, myDate, myString, myStrlen+1, &pos, &status);
  *  }
  *  printf("date format: %s\n", u_austrcpy(buffer, myString));
@@ -827,9 +827,9 @@ U_STABLE UDateFormat* U_EXPORT2
 udat_open(UDateFormatStyle  timeStyle,
           UDateFormatStyle  dateStyle,
           const char        *locale,
-          const UChar       *tzID,
+          const UnChar       *tzID,
           int32_t           tzIDLength,
-          const UChar       *pattern,
+          const UnChar       *pattern,
           int32_t           patternLength,
           UErrorCode        *status);
 
@@ -961,7 +961,7 @@ udat_clone(const UDateFormat *fmt,
 U_STABLE int32_t U_EXPORT2 
 udat_format(    const    UDateFormat*    format,
                         UDate           dateToFormat,
-                        UChar*          result,
+                        UnChar*          result,
                         int32_t         resultLength,
                         UFieldPosition* position,
                         UErrorCode*     status);
@@ -992,7 +992,7 @@ udat_format(    const    UDateFormat*    format,
 U_DRAFT int32_t U_EXPORT2
 udat_formatCalendar(    const UDateFormat*  format,
                         UCalendar*      calendar,
-                        UChar*          result,
+                        UnChar*          result,
                         int32_t         capacity,
                         UFieldPosition* position,
                         UErrorCode*     status);
@@ -1027,7 +1027,7 @@ udat_formatCalendar(    const UDateFormat*  format,
 U_DRAFT int32_t U_EXPORT2 
 udat_formatForFields(   const UDateFormat* format,
                         UDate           dateToFormat,
-                        UChar*          result,
+                        UnChar*          result,
                         int32_t         resultLength,
                         UFieldPositionIterator* fpositer,
                         UErrorCode*     status);
@@ -1065,7 +1065,7 @@ udat_formatForFields(   const UDateFormat* format,
 U_DRAFT int32_t U_EXPORT2
 udat_formatCalendarForFields( const UDateFormat* format,
                         UCalendar*      calendar,
-                        UChar*          result,
+                        UnChar*          result,
                         int32_t         capacity,
                         UFieldPositionIterator* fpositer,
                         UErrorCode*     status);
@@ -1099,7 +1099,7 @@ udat_formatCalendarForFields( const UDateFormat* format,
 */
 U_STABLE UDate U_EXPORT2 
 udat_parse(const    UDateFormat*    format,
-           const    UChar*          text,
+           const    UnChar*          text,
                     int32_t         textLength,
                     int32_t         *parsePos,
                     UErrorCode      *status);
@@ -1128,7 +1128,7 @@ udat_parse(const    UDateFormat*    format,
 U_STABLE void U_EXPORT2 
 udat_parseCalendar(const    UDateFormat*    format,
                             UCalendar*      calendar,
-                   const    UChar*          text,
+                   const    UnChar*          text,
                             int32_t         textLength,
                             int32_t         *parsePos,
                             UErrorCode      *status);
@@ -1206,7 +1206,7 @@ udat_getNumberFormat(const UDateFormat* fmt);
 * @draft ICU 54
 */
 U_DRAFT const UNumberFormat* U_EXPORT2 
-udat_getNumberFormatForField(const UDateFormat* fmt, UChar field);
+udat_getNumberFormatForField(const UDateFormat* fmt, UnChar field);
 
 /**
 * Set the UNumberFormat for specific field associated with an UDateFormat.
@@ -1225,7 +1225,7 @@ udat_getNumberFormatForField(const UDateFormat* fmt, UChar field);
 */
 U_DRAFT void U_EXPORT2 
 udat_adoptNumberFormatForFields(  UDateFormat* fmt,
-                            const UChar* fields,
+                            const UnChar* fields,
                                   UNumberFormat*  numberFormatToSet,
                                   UErrorCode* status);
 #endif  /* U_HIDE_DRAFT_API */
@@ -1328,7 +1328,7 @@ udat_set2DigitYearStart(    UDateFormat     *fmt,
 U_STABLE int32_t U_EXPORT2 
 udat_toPattern(    const   UDateFormat     *fmt,
                         UBool          localized,
-                        UChar           *result,
+                        UnChar           *result,
                         int32_t         resultLength,
                         UErrorCode      *status);
 
@@ -1345,7 +1345,7 @@ udat_toPattern(    const   UDateFormat     *fmt,
 U_STABLE void U_EXPORT2 
 udat_applyPattern(            UDateFormat     *format,
                             UBool          localized,
-                    const   UChar           *pattern,
+                    const   UnChar           *pattern,
                             int32_t         patternLength);
 
 /** 
@@ -1475,7 +1475,7 @@ U_STABLE int32_t U_EXPORT2
 udat_getSymbols(const   UDateFormat             *fmt,
                         UDateFormatSymbolType   type,
                         int32_t                 symbolIndex,
-                        UChar                   *result,
+                        UnChar                   *result,
                         int32_t                 resultLength,
                         UErrorCode              *status);
 
@@ -1514,7 +1514,7 @@ U_STABLE void U_EXPORT2
 udat_setSymbols(    UDateFormat             *format,
                     UDateFormatSymbolType   type,
                     int32_t                 symbolIndex,
-                    UChar                   *value,
+                    UnChar                   *value,
                     int32_t                 valueLength,
                     UErrorCode              *status);
 
@@ -1569,7 +1569,7 @@ udat_getContext(const UDateFormat* fmt, UDisplayContextType type, UErrorCode* st
 */
 U_INTERNAL int32_t U_EXPORT2 
 udat_toPatternRelativeDate(const UDateFormat *fmt,
-                           UChar             *result,
+                           UnChar             *result,
                            int32_t           resultLength,
                            UErrorCode        *status);
 
@@ -1586,7 +1586,7 @@ udat_toPatternRelativeDate(const UDateFormat *fmt,
 */
 U_INTERNAL int32_t U_EXPORT2 
 udat_toPatternRelativeTime(const UDateFormat *fmt,
-                           UChar             *result,
+                           UnChar             *result,
                            int32_t           resultLength,
                            UErrorCode        *status);
 
@@ -1604,9 +1604,9 @@ udat_toPatternRelativeTime(const UDateFormat *fmt,
 */
 U_INTERNAL void U_EXPORT2 
 udat_applyPatternRelative(UDateFormat *format,
-                          const UChar *datePattern,
+                          const UnChar *datePattern,
                           int32_t     datePatternLength,
-                          const UChar *timePattern,
+                          const UnChar *timePattern,
                           int32_t     timePatternLength,
                           UErrorCode  *status);
 
@@ -1617,9 +1617,9 @@ udat_applyPatternRelative(UDateFormat *format,
 typedef UDateFormat* (U_EXPORT2 *UDateFormatOpener) (UDateFormatStyle  timeStyle,
                                                     UDateFormatStyle  dateStyle,
                                                     const char        *locale,
-                                                    const UChar       *tzID,
+                                                    const UnChar       *tzID,
                                                     int32_t           tzIDLength,
-                                                    const UChar       *pattern,
+                                                    const UnChar       *pattern,
                                                     int32_t           patternLength,
                                                     UErrorCode        *status);
 

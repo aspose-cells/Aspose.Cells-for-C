@@ -1,6 +1,6 @@
 #pragma once
-#include "System/Object.h"
-#include "System/String.h"
+#include "Aspose.Cells.Systems/Object.h"
+#include "Aspose.Cells.Systems/String.h"
 #include "IShape.h"
 
 namespace Aspose {
@@ -22,11 +22,11 @@ namespace Drawing{
 			/// <summary>
 			///  Represents the cell linked to value of the radiobutton.
 			/// </summary>
-			  virtual intrusive_ptr<Aspose::Cells::System::String> GetLinkedCell()=0;
+			  virtual intrusive_ptr<Aspose::Cells::Systems::String> GetLinkedCell()=0;
 			/// <summary>
 			///  Represents the cell linked to value of the radiobutton.
 			/// </summary>
-			  virtual void SetLinkedCell(intrusive_ptr<Aspose::Cells::System::String> value)=0;
+			  virtual void SetLinkedCell(intrusive_ptr<Aspose::Cells::Systems::String> value)=0;
 			/// <summary>
 			/// Indicates if the radiobutton is checked or not.
 			/// </summary>

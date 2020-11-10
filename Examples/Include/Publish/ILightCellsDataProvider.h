@@ -1,6 +1,6 @@
 #pragma once
-#include "System/Object.h"
-#include "System/Int32.h"
+#include "Aspose.Cells.Systems/Object.h"
+#include "Aspose.Cells.Systems/Int32.h"
 
 namespace Aspose {
 	namespace Cells {
@@ -29,17 +29,17 @@ namespace Cells{
 			/// .
 			/// After data of this cell is set, this cell will be saved directy to the generated spreadsheet file and the next cell will be checked and processed.
 			/// </remarks>
-	class ASPOSE_CELLS_API ILightCellsDataProvider : public Aspose::Cells::System::Object
+	class ASPOSE_CELLS_API ILightCellsDataProvider : public Aspose::Cells::Systems::Object
 	{
 		public:
 
-			 virtual bool StartSheet(Aspose::Cells::System::Int32 sheetIndex) = 0;
+			 virtual bool StartSheet(Aspose::Cells::Systems::Int32 sheetIndex) = 0;
 
-			 virtual Aspose::Cells::System::Int32 NextRow() = 0;
+			 virtual Aspose::Cells::Systems::Int32 NextRow() = 0;
 
 			 virtual void 		StartRow(intrusive_ptr<Aspose::Cells::IRow> row)=0;
 
-			 virtual Aspose::Cells::System::Int32 NextCell() = 0;
+			 virtual Aspose::Cells::Systems::Int32 NextCell() = 0;
 
 			 virtual void 		StartCell(intrusive_ptr<Aspose::Cells::ICell> cell)=0;
 

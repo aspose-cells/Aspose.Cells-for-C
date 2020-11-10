@@ -348,17 +348,17 @@ public:
 private:
     /**
      * Cause a compilation error if an application accidentally attempts to
-     *   create a matcher with a (UChar *) string as input rather than
+     *   create a matcher with a (UnChar *) string as input rather than
      *   a UnicodeString.  Avoids a dangling reference to a temporary string.
      * <p>
-     * To efficiently work with UChar *strings, wrap the data in a UnicodeString
+     * To efficiently work with UnChar *strings, wrap the data in a UnicodeString
      * using one of the aliasing constructors, such as
-     * <code>UnicodeString(UBool isTerminated, const UChar *text, int32_t textLength);</code>
+     * <code>UnicodeString(UBool isTerminated, const UnChar *text, int32_t textLength);</code>
      * or in a UText, using
-     * <code>utext_openUChars(UText *ut, const UChar *text, int64_t textLength, UErrorCode *status);</code>
+     * <code>utext_openUChars(UText *ut, const UnChar *text, int64_t textLength, UErrorCode *status);</code>
      *
      */
-    RegexMatcher *matcher(const UChar *input,
+    RegexMatcher *matcher(const UnChar *input,
         UErrorCode          &status) const;
 public:
 
@@ -746,17 +746,17 @@ public:
 private:
     /**
      * Cause a compilation error if an application accidentally attempts to
-     *   create a matcher with a (UChar *) string as input rather than
+     *   create a matcher with a (UnChar *) string as input rather than
      *   a UnicodeString.    Avoids a dangling reference to a temporary string.
      * <p>
-     * To efficiently work with UChar *strings, wrap the data in a UnicodeString
+     * To efficiently work with UnChar *strings, wrap the data in a UnicodeString
      * using one of the aliasing constructors, such as
-     * <code>UnicodeString(UBool isTerminated, const UChar *text, int32_t textLength);</code>
+     * <code>UnicodeString(UBool isTerminated, const UnChar *text, int32_t textLength);</code>
      * or in a UText, using
-     * <code>utext_openUChars(UText *ut, const UChar *text, int64_t textLength, UErrorCode *status);</code>
+     * <code>utext_openUChars(UText *ut, const UnChar *text, int64_t textLength, UErrorCode *status);</code>
      *
      */
-    RegexMatcher(const UnicodeString &regexp, const UChar *input,
+    RegexMatcher(const UnicodeString &regexp, const UnChar *input,
         uint32_t flags, UErrorCode &status);
 public:
 
@@ -1154,17 +1154,17 @@ public:
 private:
     /**
      * Cause a compilation error if an application accidentally attempts to
-     *   reset a matcher with a (UChar *) string as input rather than
+     *   reset a matcher with a (UnChar *) string as input rather than
      *   a UnicodeString.    Avoids a dangling reference to a temporary string.
      * <p>
-     * To efficiently work with UChar *strings, wrap the data in a UnicodeString
+     * To efficiently work with UnChar *strings, wrap the data in a UnicodeString
      * using one of the aliasing constructors, such as
-     * <code>UnicodeString(UBool isTerminated, const UChar *text, int32_t textLength);</code>
+     * <code>UnicodeString(UBool isTerminated, const UnChar *text, int32_t textLength);</code>
      * or in a UText, using
-     * <code>utext_openUChars(UText *ut, const UChar *text, int64_t textLength, UErrorCode *status);</code>
+     * <code>utext_openUChars(UText *ut, const UnChar *text, int64_t textLength, UErrorCode *status);</code>
      *
      */
-    RegexMatcher &reset(const UChar *input);
+    RegexMatcher &reset(const UnChar *input);
 public:
 
    /**

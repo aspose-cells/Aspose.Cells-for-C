@@ -46,11 +46,16 @@ namespace Cells {
 			/// 
 			SaveFormat_Xlam = 10 ,
 			/// <summary>
-			/// Represents a tab delimited text file.
+			/// Represents a TSV(tab-separated values file) file.
 			/// </summary>
-			/// 
-			/// 
-			SaveFormat_TabDelimited = 11 ,
+			SaveFormat_TSV = 11,
+			/// <summary>
+			/// Represents a tab delimited text file, same with <see cref="SaveFormat_TSV"/>.
+			/// NOTE: This member is now obsolete. Instead, 
+			/// please use <see cref="SaveFormat_TSV"/> .
+			/// Aspose apologizes for any inconvenience you may have experienced.
+			/// </summary>
+			SaveFormat_TabDelimited = SaveFormat_TSV,
 			/// <summary>
 			/// Represents an html file.
 			/// </summary>

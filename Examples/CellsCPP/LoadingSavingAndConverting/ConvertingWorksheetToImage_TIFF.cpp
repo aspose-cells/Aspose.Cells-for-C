@@ -22,7 +22,7 @@ void ConvertingWorksheetToImage_TIFF()
 	intrusive_ptr<Aspose::Cells::Rendering::IImageOrPrintOptions> imgOptions = Factory::CreateIImageOrPrintOptions();
 
 	// Specify the image format.
-	imgOptions->SetImageFormat(Aspose::Cells::System::Drawing::Imaging::ImageFormat::GetTiff());
+	imgOptions->SetImageFormat(Aspose::Cells::Systems::Drawing::Imaging::ImageFormat::GetTiff());
 
 	// Specify horizontal and vertical resolution
 	imgOptions->SetHorizontalResolution(200);

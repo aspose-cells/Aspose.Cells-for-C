@@ -1,6 +1,6 @@
 #pragma once
-#include "System/Object.h"
-#include "System/String.h"
+#include "Aspose.Cells.Systems/Object.h"
+#include "Aspose.Cells.Systems/String.h"
 #include "IChartTextFrame.h"
 
 namespace Aspose {
@@ -20,11 +20,11 @@ namespace Charts{
 			/// <summary>
 			/// Gets or sets the text of a frame's title.
 			/// </summary>
-			  virtual intrusive_ptr<Aspose::Cells::System::String> GetText()=0;
+			  virtual intrusive_ptr<Aspose::Cells::Systems::String> GetText()=0;
 			/// <summary>
 			/// Gets or sets the text of a frame's title.
 			/// </summary>
-			  virtual void SetText(intrusive_ptr<Aspose::Cells::System::String> value)=0;
+			  virtual void SetText(intrusive_ptr<Aspose::Cells::Systems::String> value)=0;
 			/// <summary>
 			/// Gets a <see cref="IFont" />
 			///  object of the specified ChartFrame object.

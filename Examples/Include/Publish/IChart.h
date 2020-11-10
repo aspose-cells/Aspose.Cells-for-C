@@ -1,13 +1,13 @@
 #pragma once
-#include "System/Object.h"
-#include "System/Int32.h"
-#include "System/String.h"
-#include "System/Int16.h"
-#include "System/Drawing/Bitmap.h"
-#include "System/Drawing/Imaging/ImageFormat.h"
-#include "System/Int64.h"
-#include "System/IO/Stream.h"
-#include "System/Drawing/Size.h"
+#include "Aspose.Cells.Systems/Object.h"
+#include "Aspose.Cells.Systems/Int32.h"
+#include "Aspose.Cells.Systems/String.h"
+#include "Aspose.Cells.Systems/Int16.h"
+#include "Aspose.Cells.Systems/Drawing/Bitmap.h"
+#include "Aspose.Cells.Systems/Drawing/Imaging/ImageFormat.h"
+#include "Aspose.Cells.Systems/Int64.h"
+#include "Aspose.Cells.Systems/IO/Stream.h"
+#include "Aspose.Cells.Systems/Drawing/Size.h"
 
 namespace Aspose {
 	namespace Cells {
@@ -91,7 +91,7 @@ namespace Charts{
 			///  </code>
 			/// 
 			///  </example>
-	class ASPOSE_CELLS_API IChart : public Aspose::Cells::System::Object
+	class ASPOSE_CELLS_API IChart : public Aspose::Cells::Systems::Object
 	{
 		public:
 			/// <summary>
@@ -101,11 +101,11 @@ namespace Charts{
 			/// It should be between 1 and 48.
 			/// Return -1 if it's not be set.
 			/// </remarks>
-			 virtual Aspose::Cells::System::Int32 GetStyle()=0;
+			 virtual Aspose::Cells::Systems::Int32 GetStyle()=0;
 			/// <summary>
 			/// Sets the builtin style.
 			/// </summary>
-			 virtual void SetStyle(Aspose::Cells::System::Int32 value)=0;
+			 virtual void SetStyle(Aspose::Cells::Systems::Int32 value)=0;
 			/// <summary>
 			/// Represents the chartShape;
 			/// </summary>
@@ -130,7 +130,7 @@ namespace Charts{
 			/// The pivotSource could be "[Book1.xls]Sheet1!PivotTable1" if the chart and the PivotTable is not in the same workbook.
 			/// If you set this method ,the previous data source setting will be lost.
 			/// </remarks>
-			 virtual intrusive_ptr<Aspose::Cells::System::String> GetPivotSource()=0;
+			 virtual intrusive_ptr<Aspose::Cells::Systems::String> GetPivotSource()=0;
 			/// <summary>
 			/// The source is the data of the pivotTable.
 			/// If PivotSource is not empty ,the chart is PivotChart.
@@ -139,7 +139,7 @@ namespace Charts{
 			/// The pivotSource could be "[Book1.xls]Sheet1!PivotTable1" if the chart and the PivotTable is not in the same workbook.
 			/// If you set this property ,the previous data source setting will be lost.
 			/// </remarks>
-			 virtual void SetPivotSource(intrusive_ptr<Aspose::Cells::System::String> value)=0;
+			 virtual void SetPivotSource(intrusive_ptr<Aspose::Cells::Systems::String> value)=0;
 			/// <summary>
 			/// Detects if a chart's data source has changed.
 			/// </summary>
@@ -177,11 +177,11 @@ namespace Charts{
 			/// <summary>
 			/// Gets the name of the chart.
 			/// </summary>
-			 virtual intrusive_ptr<Aspose::Cells::System::String> GetName()=0;
+			 virtual intrusive_ptr<Aspose::Cells::Systems::String> GetName()=0;
 			/// <summary>
 			/// Sets the name of the chart.
 			/// </summary>
-			 virtual void SetName(intrusive_ptr<Aspose::Cells::System::String> value)=0;
+			 virtual void SetName(intrusive_ptr<Aspose::Cells::Systems::String> value)=0;
 			/// <summary>
 			/// True if Microsoft Excel resizes the chart to match the size of the chart sheet window.
 			/// </summary>
@@ -221,7 +221,7 @@ namespace Charts{
 			/// <param name="upperLeftRow" >Upper left row index.</param>
 			/// <param name="lowerRightColumn" >Lower right column index</param>
 			/// <param name="lowerRightRow" >Lower right row index</param>
-			 virtual void Move(Aspose::Cells::System::Int32 upperLeftRow , Aspose::Cells::System::Int32 upperLeftColumn , Aspose::Cells::System::Int32 lowerRightRow , Aspose::Cells::System::Int32 lowerRightColumn)=0;
+			 virtual void Move(Aspose::Cells::Systems::Int32 upperLeftRow , Aspose::Cells::Systems::Int32 upperLeftColumn , Aspose::Cells::Systems::Int32 lowerRightRow , Aspose::Cells::Systems::Int32 lowerRightColumn)=0;
 			/// <summary>
 			/// Gets a <see cref="ISeriesCollection" />
 			///  collection representing the data series in the chart.
@@ -317,31 +317,31 @@ namespace Charts{
 			/// <summary>
 			/// Gets the angle of the first pie-chart or doughnut-chart slice, in degrees (clockwise from vertical). Applies only to pie, 3-D pie, and doughnut charts, 0 to 360. 
 			/// </summary>
-			 virtual Aspose::Cells::System::Int32 GetFirstSliceAngle()=0;
+			 virtual Aspose::Cells::Systems::Int32 GetFirstSliceAngle()=0;
 			/// <summary>
 			/// Gets the angle of the first pie-chart or doughnut-chart slice, in degrees (clockwise from vertical). Applies only to pie, 3-D pie, and doughnut charts, 0 to 360. 
 			/// </summary>
-			 virtual void SetFirstSliceAngle(Aspose::Cells::System::Int32 value)=0;
+			 virtual void SetFirstSliceAngle(Aspose::Cells::Systems::Int32 value)=0;
 			/// <summary>
 			/// Returns or sets the space between bar or column clusters, as a percentage of the bar or column width.
 			/// The value of this property must be between 0 and 500.
 			/// </summary>
-			 virtual Aspose::Cells::System::Int32 GetGapWidth()=0;
+			 virtual Aspose::Cells::Systems::Int32 GetGapWidth()=0;
 			/// <summary>
 			/// Returns or sets the space between bar or column clusters, as a percentage of the bar or column width.
 			/// The value of this property must be between 0 and 500.
 			/// </summary>
-			 virtual void SetGapWidth(Aspose::Cells::System::Int32 value)=0;
+			 virtual void SetGapWidth(Aspose::Cells::Systems::Int32 value)=0;
 			/// <summary>
 			/// Gets the distance between the data series in a 3-D chart, as a percentage of the marker width.
 			/// The value of this property must be between 0 and 500.
 			/// </summary>
-			 virtual Aspose::Cells::System::Int32 GetGapDepth()=0;
+			 virtual Aspose::Cells::Systems::Int32 GetGapDepth()=0;
 			/// <summary>
 			/// Sets the distance between the data series in a 3-D chart, as a percentage of the marker width.
 			/// The value of this property must be between 0 and 500.
 			/// </summary>
-			 virtual void SetGapDepth(Aspose::Cells::System::Int32 value)=0;
+			 virtual void SetGapDepth(Aspose::Cells::Systems::Int32 value)=0;
 			/// <summary>
 			/// Calcuate the custom position of plot area, axises if the position of them are auto assigned.
 			/// </summary>
@@ -383,7 +383,7 @@ namespace Charts{
 			/// The value of this property must be from 0 to 360, except for 3-D bar charts, where the value must be from 0 to 44. 
 			/// The default value is 20. Applies only to 3-D charts. 
 			/// </remarks>
-			 virtual Aspose::Cells::System::Int32 GetRotationAngle()=0;
+			 virtual Aspose::Cells::Systems::Int32 GetRotationAngle()=0;
 			/// <summary>
 			/// Represents the rotation of the 3-D chart view (the rotation of the plot area around the z-axis, in degrees).
 			/// </summary>
@@ -391,7 +391,7 @@ namespace Charts{
 			/// The value of this property must be from 0 to 360, except for 3-D bar charts, where the value must be from 0 to 44. 
 			/// The default value is 20. Applies only to 3-D charts. 
 			/// </remarks>
-			 virtual void SetRotationAngle(Aspose::Cells::System::Int32 value)=0;
+			 virtual void SetRotationAngle(Aspose::Cells::Systems::Int32 value)=0;
 			/// <summary>
 			/// Represents the rotation of the 3-D chart view (the rotation of the plot area around the z-axis, in degrees).
 			/// </summary>
@@ -399,7 +399,7 @@ namespace Charts{
 			/// The value of this property must be from 0 to 360, except for 3-D bar charts, where the value must be from 0 to 44. 
 			/// The default value is 20. Applies only to 3-D charts. 
 			/// </remarks>
-			 virtual Aspose::Cells::System::Int32 GetRotation()=0;
+			 virtual Aspose::Cells::Systems::Int32 GetRotation()=0;
 			/// <summary>
 			/// Represents the rotation of the 3-D chart view (the rotation of the plot area around the z-axis, in degrees).
 			/// </summary>
@@ -407,7 +407,7 @@ namespace Charts{
 			/// The value of this property must be from 0 to 360, except for 3-D bar charts, where the value must be from 0 to 44. 
 			/// The default value is 20. Applies only to 3-D charts. 
 			/// </remarks>
-			 virtual void SetRotation(Aspose::Cells::System::Int32 value)=0;
+			 virtual void SetRotation(Aspose::Cells::Systems::Int32 value)=0;
 			/// <summary>
 			/// Represents the elevation of the 3-D chart view, in degrees.
 			/// </summary>
@@ -416,7 +416,7 @@ namespace Charts{
 			/// The default is 15 for most chart types. 
 			/// The value of this property must be between -90 and 90, except for 3-D bar charts, where it must be between 0 and 44.
 			/// </remarks>
-			 virtual Aspose::Cells::System::Int32 GetElevation()=0;
+			 virtual Aspose::Cells::Systems::Int32 GetElevation()=0;
 			/// <summary>
 			/// Represents the elevation of the 3-D chart view, in degrees.
 			/// </summary>
@@ -425,7 +425,7 @@ namespace Charts{
 			/// The default is 15 for most chart types. 
 			/// The value of this property must be between -90 and 90, except for 3-D bar charts, where it must be between 0 and 44.
 			/// </remarks>
-			 virtual void SetElevation(Aspose::Cells::System::Int32 value)=0;
+			 virtual void SetElevation(Aspose::Cells::Systems::Int32 value)=0;
 			/// <summary>
 			/// True if the chart axes are at right angles.Applies only for 3-D charts(except Column3D and 3-D Pie Charts).
 			/// </summary>
@@ -453,21 +453,21 @@ namespace Charts{
 			/// <summary>
 			/// Returns or sets the height of a 3-D chart as a percentage of the chart width (between 5 and 500 percent).
 			/// </summary>
-			 virtual Aspose::Cells::System::Int16 GetHeightPercent()=0;
+			 virtual Aspose::Cells::Systems::Int16 GetHeightPercent()=0;
 			/// <summary>
 			/// Returns or sets the height of a 3-D chart as a percentage of the chart width (between 5 and 500 percent).
 			/// </summary>
-			 virtual void SetHeightPercent(Aspose::Cells::System::Int16 value)=0;
+			 virtual void SetHeightPercent(Aspose::Cells::Systems::Int16 value)=0;
 			/// <summary>
 			/// Returns or sets the perspective for the 3-D chart view. Must be between 0 and 100.
 			/// This property is ignored if the RightAngleAxes property is True. 
 			/// </summary>
-			 virtual Aspose::Cells::System::Int16 GetPerspective()=0;
+			 virtual Aspose::Cells::Systems::Int16 GetPerspective()=0;
 			/// <summary>
 			/// Returns or sets the perspective for the 3-D chart view. Must be between 0 and 100.
 			/// This property is ignored if the RightAngleAxes property is True. 
 			/// </summary>
-			 virtual void SetPerspective(Aspose::Cells::System::Int16 value)=0;
+			 virtual void SetPerspective(Aspose::Cells::Systems::Int16 value)=0;
 			/// <summary>
 			/// Indicates whether the chart is a 3d chart.
 			/// </summary>
@@ -475,17 +475,17 @@ namespace Charts{
 			/// <summary>
 			/// Represents the depth of a 3-D chart as a percentage of the chart width (between 20 and 2000 percent). 
 			/// </summary>
-			 virtual Aspose::Cells::System::Int32 GetDepthPercent()=0;
+			 virtual Aspose::Cells::Systems::Int32 GetDepthPercent()=0;
 			/// <summary>
 			/// Represents the depth of a 3-D chart as a percentage of the chart width (between 20 and 2000 percent). 
 			/// </summary>
-			 virtual void SetDepthPercent(Aspose::Cells::System::Int32 value)=0;
+			 virtual void SetDepthPercent(Aspose::Cells::Systems::Int32 value)=0;
 			/// <summary>
 			/// Gets a 32-bit <c>Bitmap</c>
 			///  object of the chart.
 			/// </summary>
 			/// <returns>the picture of the chart.</returns>
-			 virtual intrusive_ptr<Aspose::Cells::System::Drawing::Bitmap> ToImage()=0;
+			 virtual intrusive_ptr<Aspose::Cells::Systems::Drawing::Bitmap> ToImage()=0;
 			/// <summary>
 			///  Gets a 32-bit <c>Bitmap</c>
 			///  object of the chart.
@@ -510,11 +510,11 @@ namespace Charts{
 			///  options->SetVerticalResolution(300);
 			///  
 			///  intrusive_ptr<IWorkbook> wb = Factory::CreateIWorkbook(new String("c:\test.xls"));
-			///  intrusive_ptr<Aspose::Cells::System::Drawing::Bitmap> chartObject = wb->GetIWorksheets()->GetObjectByIndex(0)->GetICharts()->GetObjectByIndex(0)->ToImage(options);
+			///  intrusive_ptr<Aspose::Cells::Systems::Drawing::Bitmap> chartObject = wb->GetIWorksheets()->GetObjectByIndex(0)->GetICharts()->GetObjectByIndex(0)->ToImage(options);
 			///  </code>
 			/// 
 			///  </example>
-			 virtual intrusive_ptr<Aspose::Cells::System::Drawing::Bitmap> 		ToImage(intrusive_ptr<Aspose::Cells::Rendering::IImageOrPrintOptions> options)=0;
+			 virtual intrusive_ptr<Aspose::Cells::Systems::Drawing::Bitmap> 		ToImage(intrusive_ptr<Aspose::Cells::Rendering::IImageOrPrintOptions> options)=0;
 			/// <summary>
 			/// Creates the chart image and saves it to a file.
 			/// The extension of the file name determines the format of the image.
@@ -527,7 +527,7 @@ namespace Charts{
 			/// 
 			/// If the width or height is zero or the chart is not supported according to Supported Charts List, this method will do nothing.
 			/// </remarks>
-			 virtual void ToImage(intrusive_ptr<Aspose::Cells::System::String> imageFile)=0;
+			 virtual void ToImage(intrusive_ptr<Aspose::Cells::Systems::String> imageFile)=0;
 			/// <summary>
 			/// Creates the chart image and saves it to a file in the specified format.
 			/// </summary>
@@ -540,7 +540,7 @@ namespace Charts{
 			/// 
 			/// If the width or height is zero or the chart is not supported according to Supported Charts List, this method will do nothing.
 			/// </remarks>
-			 virtual void ToImage(intrusive_ptr<Aspose::Cells::System::String> imageFile , intrusive_ptr<Aspose::Cells::System::Drawing::Imaging::ImageFormat> imageFormat)=0;
+			 virtual void ToImage(intrusive_ptr<Aspose::Cells::Systems::String> imageFile , intrusive_ptr<Aspose::Cells::Systems::Drawing::Imaging::ImageFormat> imageFormat)=0;
 			/// <summary>
 			/// Creates the chart image and saves it to a file in the Jpeg format.
 			/// </summary>
@@ -549,7 +549,7 @@ namespace Charts{
 			/// <remarks>
 			/// If the width or height is zero or the chart is not supported according to Supported Charts List, this method will do nothing.
 			/// </remarks>
-			 virtual void ToImage(intrusive_ptr<Aspose::Cells::System::String> imageFile , Aspose::Cells::System::Int64 jpegQuality)=0;
+			 virtual void ToImage(intrusive_ptr<Aspose::Cells::Systems::String> imageFile , Aspose::Cells::Systems::Int64 jpegQuality)=0;
 			/// <summary>
 			/// Creates the chart image and saves it to a stream in the Jpeg format.
 			/// </summary>
@@ -558,7 +558,7 @@ namespace Charts{
 			/// <remarks>
 			/// If the width or height is zero or the chart is not supported according to Supported Charts List, this method will do nothing.
 			/// </remarks>
-			 virtual void ToImage(intrusive_ptr<Aspose::Cells::System::IO::Stream> stream , Aspose::Cells::System::Int64 jpegQuality)=0;
+			 virtual void ToImage(intrusive_ptr<Aspose::Cells::Systems::IO::Stream> stream , Aspose::Cells::Systems::Int64 jpegQuality)=0;
 			/// <summary>
 			/// Creates the chart image and saves it to a stream in the specified format.
 			/// </summary>
@@ -571,17 +571,17 @@ namespace Charts{
 			/// 
 			/// If the width or height is zero or the chart is not supported according to Supported Charts List, this method will do nothing.
 			/// </remarks>
-			 virtual void ToImage(intrusive_ptr<Aspose::Cells::System::IO::Stream> stream , intrusive_ptr<Aspose::Cells::System::Drawing::Imaging::ImageFormat> imageFormat)=0;
+			 virtual void ToImage(intrusive_ptr<Aspose::Cells::Systems::IO::Stream> stream , intrusive_ptr<Aspose::Cells::Systems::Drawing::Imaging::ImageFormat> imageFormat)=0;
 			/// <summary>
 			/// Saves the chart to a pdf file.
 			/// </summary>
 			/// <param name="fileName" >the pdf file name with full path</param>
-			 virtual void ToPdf(intrusive_ptr<Aspose::Cells::System::String> fileName)=0;
+			 virtual void ToPdf(intrusive_ptr<Aspose::Cells::Systems::String> fileName)=0;
 			/// <summary>
 			/// Creates the chart pdf and saves it to a stream.
 			/// </summary>
 			/// <param name="stream" >The output stream.</param>
-			 virtual void ToPdf(intrusive_ptr<Aspose::Cells::System::IO::Stream> stream)=0;
+			 virtual void ToPdf(intrusive_ptr<Aspose::Cells::Systems::IO::Stream> stream)=0;
 			/// <summary>
 			///  Creates the chart image and saves it to a file.
 			///  The extension of the file name determines the format of the image.
@@ -612,7 +612,7 @@ namespace Charts{
 			///  </code>
 			/// 
 			///  
-			 virtual void 		ToImage(intrusive_ptr<Aspose::Cells::System::String> imageFile , intrusive_ptr<Aspose::Cells::Rendering::IImageOrPrintOptions> options)=0;
+			 virtual void 		ToImage(intrusive_ptr<Aspose::Cells::Systems::String> imageFile , intrusive_ptr<Aspose::Cells::Rendering::IImageOrPrintOptions> options)=0;
 			/// <summary>
 			/// Creates the chart image and saves it to a stream in the specified format.
 			/// </summary>
@@ -625,11 +625,11 @@ namespace Charts{
 			/// 
 			/// If the width or height is zero or the chart is not supported according to Supported Charts List, this method will do nothing.
 			/// </remarks>
-			 virtual void 		ToImage(intrusive_ptr<Aspose::Cells::System::IO::Stream> stream , intrusive_ptr<Aspose::Cells::Rendering::IImageOrPrintOptions> options)=0;
+			 virtual void 		ToImage(intrusive_ptr<Aspose::Cells::Systems::IO::Stream> stream , intrusive_ptr<Aspose::Cells::Rendering::IImageOrPrintOptions> options)=0;
 			/// <summary>
 			/// Gets actual size of chart
 			/// </summary>
-			 virtual intrusive_ptr<Aspose::Cells::System::Drawing::Size> GetActualChartSize()=0;
+			 virtual intrusive_ptr<Aspose::Cells::Systems::Drawing::Size> GetActualChartSize()=0;
 			/// <summary>
 			/// Represents the way the chart is attached to the cells below it.
 			/// </summary>
@@ -654,7 +654,7 @@ namespace Charts{
 			/// </summary>
 			/// <param name="area" >Specifies values from which to plot the data series</param>
 			/// <param name="isVertical" >Specifies whether to plot the series from a range of cell values by row or by column.</param>
-			 virtual void SetChartDataRange(intrusive_ptr<Aspose::Cells::System::String> area , bool isVertical)=0;
+			 virtual void SetChartDataRange(intrusive_ptr<Aspose::Cells::Systems::String> area , bool isVertical)=0;
 			/// <summary>
 			/// Gets the line.
 			/// </summary>

@@ -13,31 +13,31 @@ void ApplyCustomThemeColorsOfWorkbookUsingArrayOfColors()
 	intrusive_ptr<IWorkbook> wb = Factory::CreateIWorkbook();
 
 	//Create array of custom theme colors
-	intrusive_ptr<Array1D<System::Drawing::Color*>> clrs = new Array1D<System::Drawing::Color*>(12);
+	intrusive_ptr<Array1D<Systems::Drawing::Color*>> clrs = new Array1D<Systems::Drawing::Color*>(12);
 	//Background1
-	clrs->SetValue(System::Drawing::Color::GetRed(), 0);
+	clrs->SetValue(Systems::Drawing::Color::GetRed(), 0);
 	//Text1
-	clrs->SetValue(System::Drawing::Color::GetRed(), 1);
+	clrs->SetValue(Systems::Drawing::Color::GetRed(), 1);
 	//Background2
-	clrs->SetValue(System::Drawing::Color::GetRed(), 2);
+	clrs->SetValue(Systems::Drawing::Color::GetRed(), 2);
 	//Text2
-	clrs->SetValue(System::Drawing::Color::GetRed(), 3);
+	clrs->SetValue(Systems::Drawing::Color::GetRed(), 3);
 	//Accent1
-	clrs->SetValue(System::Drawing::Color::GetRed(), 4);
+	clrs->SetValue(Systems::Drawing::Color::GetRed(), 4);
 	//Accent2
-	clrs->SetValue(System::Drawing::Color::GetGreen(), 5);
+	clrs->SetValue(Systems::Drawing::Color::GetGreen(), 5);
 	//Accent3
-	clrs->SetValue(System::Drawing::Color::GetGreen(), 6);
+	clrs->SetValue(Systems::Drawing::Color::GetGreen(), 6);
 	//Accent4
-	clrs->SetValue(System::Drawing::Color::GetGreen(), 7);
+	clrs->SetValue(Systems::Drawing::Color::GetGreen(), 7);
 	//Accent5
-	clrs->SetValue(System::Drawing::Color::GetGreen(), 8);
+	clrs->SetValue(Systems::Drawing::Color::GetGreen(), 8);
 	//Accent6
-	clrs->SetValue(System::Drawing::Color::GetBlue(), 9);
+	clrs->SetValue(Systems::Drawing::Color::GetBlue(), 9);
 	//Hyperlink
-	clrs->SetValue(System::Drawing::Color::GetBlue(), 10);
+	clrs->SetValue(Systems::Drawing::Color::GetBlue(), 10);
 	//Followed Hyperlink
-	clrs->SetValue(System::Drawing::Color::GetBlue(), 11);
+	clrs->SetValue(Systems::Drawing::Color::GetBlue(), 11);
 
 	//Apply custom theme colors on workbook
 	wb->CustomTheme(new String("AnyTheme"), clrs);

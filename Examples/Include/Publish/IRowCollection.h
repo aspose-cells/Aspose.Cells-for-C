@@ -1,8 +1,8 @@
 #pragma once
-#include "System/Object.h"
-#include "System/Int32.h"
-#include "System/Collections/IEnumerator.h"
-#include "System/Collections/IEnumerable.h"
+#include "Aspose.Cells.Systems/Object.h"
+#include "Aspose.Cells.Systems/Int32.h"
+#include "Aspose.Cells.Systems/Collections/IEnumerator.h"
+#include "Aspose.Cells.Systems/Collections/IEnumerable.h"
 
 namespace Aspose {
 	namespace Cells {
@@ -17,7 +17,7 @@ namespace Cells{
 			/// </summary>
 			/// 
 			/// 
-	class ASPOSE_CELLS_API IRowCollection : public Aspose::Cells::System::Collections::IEnumerable , public Aspose::Cells::System::Object
+	class ASPOSE_CELLS_API IRowCollection : public Aspose::Cells::Systems::Collections::IEnumerable , public Aspose::Cells::Systems::Object
 	{
 		public:
 			/// <summary>
@@ -25,7 +25,7 @@ namespace Cells{
 			/// </summary>
 			/// 
 			/// 
-			 virtual Aspose::Cells::System::Int32 GetCount()=0;
+			 virtual Aspose::Cells::Systems::Int32 GetCount()=0;
 			/// <summary>
 			/// Gets an enumerator that iterates through this collection
 			/// </summary>
@@ -33,7 +33,7 @@ namespace Cells{
 			/// <returns>enumerator</returns>
 			/// 
 			/// 
-			 virtual intrusive_ptr<Aspose::Cells::System::Collections::IEnumerator> GetEnumerator()=0;
+			 virtual intrusive_ptr<Aspose::Cells::Systems::Collections::IEnumerator> GetEnumerator()=0;
 			/// <summary>
 			/// Gets the row object by the position in the list.
 			/// </summary>
@@ -43,14 +43,14 @@ namespace Cells{
 			/// <returns>The Row object at given position.</returns>
 			/// 
 			/// 
-			 virtual intrusive_ptr<Aspose::Cells::IRow> 		GetIRowByIndex(Aspose::Cells::System::Int32 index)=0;
+			 virtual intrusive_ptr<Aspose::Cells::IRow> 		GetIRowByIndex(Aspose::Cells::Systems::Int32 index)=0;
 			/// <summary>
 			/// Gets an <seealso cref="IRow" />
 			///  object by given row index. The Row object of given row index will be instantiated if it does not exist before.
 			/// </summary>
 			/// 
 			/// 
-			 virtual intrusive_ptr<Aspose::Cells::IRow> 		GetObjectByIndex(Aspose::Cells::System::Int32 rowIndex)=0;
+			 virtual intrusive_ptr<Aspose::Cells::IRow> 		GetObjectByIndex(Aspose::Cells::Systems::Int32 rowIndex)=0;
 			/// <summary>
 			/// Clear all rows and cells.
 			/// </summary>
@@ -64,7 +64,7 @@ namespace Cells{
 			/// <param name="index" >zero-based row index</param>
 			/// 
 			/// 
-			 virtual void RemoveAt(Aspose::Cells::System::Int32 index)=0;
+			 virtual void RemoveAt(Aspose::Cells::Systems::Int32 index)=0;
 public:
 		public:
 			virtual void add_ref() {++ref_count_;}

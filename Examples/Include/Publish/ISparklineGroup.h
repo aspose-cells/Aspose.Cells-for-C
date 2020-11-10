@@ -1,7 +1,7 @@
 #pragma once
-#include "System/Object.h"
-#include "System/String.h"
-#include "System/Double.h"
+#include "Aspose.Cells.Systems/Object.h"
+#include "Aspose.Cells.Systems/String.h"
+#include "Aspose.Cells.Systems/Double.h"
 
 namespace Aspose {
 	namespace Cells {
@@ -27,7 +27,7 @@ namespace Charts{
 			///  is organized into sparkline group. A SparklineGroup contains a variable number of sparkline items.
 			/// A sparkline group specifies the type, display settings and axis settings for the sparklines.
 			/// </summary>
-	class ASPOSE_CELLS_API ISparklineGroup : public Aspose::Cells::System::Object
+	class ASPOSE_CELLS_API ISparklineGroup : public Aspose::Cells::Systems::Object
 	{
 		public:
 			/// <summary>
@@ -37,7 +37,7 @@ namespace Charts{
 			/// <param name="dataRange" >Specifies the new data range of the sparkline group.</param>
 			/// <param name="isVertical" >Specifies whether to plot the sparklines from the new data range by row or by column.</param>
 			/// <param name="locationRange" >Specifies where the sparklines to be placed.</param>
-			 virtual void 		ResetRanges(intrusive_ptr<Aspose::Cells::System::String> dataRange , bool isVertical , intrusive_ptr<Aspose::Cells::ICellArea> locationRange)=0;
+			 virtual void 		ResetRanges(intrusive_ptr<Aspose::Cells::Systems::String> dataRange , bool isVertical , intrusive_ptr<Aspose::Cells::ICellArea> locationRange)=0;
 			/// <summary>
 			/// Gets the preset style type of the sparkline group.
 			/// </summary>
@@ -190,11 +190,11 @@ namespace Charts{
 			/// <summary>
 			/// Gets the line weight in each line sparkline in the sparkline group, in the unit of points.
 			/// </summary>
-			 virtual Aspose::Cells::System::Double GetLineWeight()=0;
+			 virtual Aspose::Cells::Systems::Double GetLineWeight()=0;
 			/// <summary>
 			/// Sets the line weight in each line sparkline in the sparkline group, in the unit of points.
 			/// </summary>
-			 virtual void SetLineWeight(Aspose::Cells::System::Double value)=0;
+			 virtual void SetLineWeight(Aspose::Cells::Systems::Double value)=0;
 			/// <summary>
 			/// Gets the color of the horizontal axis in the sparkline group.
 			/// </summary>
@@ -216,11 +216,11 @@ namespace Charts{
 			/// <summary>
 			/// Represents the range that contains the date values for the sparkline data.
 			/// </summary>
-			 virtual intrusive_ptr<Aspose::Cells::System::String> GetHorizontalAxisDateRange()=0;
+			 virtual intrusive_ptr<Aspose::Cells::Systems::String> GetHorizontalAxisDateRange()=0;
 			/// <summary>
 			/// Represents the range that contains the date values for the sparkline data.
 			/// </summary>
-			 virtual void SetHorizontalAxisDateRange(intrusive_ptr<Aspose::Cells::System::String> value)=0;
+			 virtual void SetHorizontalAxisDateRange(intrusive_ptr<Aspose::Cells::Systems::String> value)=0;
 			/// <summary>
 			/// Represents the vertical axis maximum value type.
 			/// </summary>
@@ -232,11 +232,11 @@ namespace Charts{
 			/// <summary>
 			/// Gets the custom maximum value for the vertical axis.
 			/// </summary>
-			 virtual Aspose::Cells::System::Double GetVerticalAxisMaxValue()=0;
+			 virtual Aspose::Cells::Systems::Double GetVerticalAxisMaxValue()=0;
 			/// <summary>
 			/// Sets the custom maximum value for the vertical axis.
 			/// </summary>
-			 virtual void SetVerticalAxisMaxValue(Aspose::Cells::System::Double value)=0;
+			 virtual void SetVerticalAxisMaxValue(Aspose::Cells::Systems::Double value)=0;
 			/// <summary>
 			/// Represents the vertical axis minimum value type.
 			/// </summary>
@@ -248,11 +248,11 @@ namespace Charts{
 			/// <summary>
 			/// Gets the custom minimum value for the vertical axis.
 			/// </summary>
-			 virtual Aspose::Cells::System::Double GetVerticalAxisMinValue()=0;
+			 virtual Aspose::Cells::Systems::Double GetVerticalAxisMinValue()=0;
 			/// <summary>
 			/// Sets the custom minimum value for the vertical axis.
 			/// </summary>
-			 virtual void SetVerticalAxisMinValue(Aspose::Cells::System::Double value)=0;
+			 virtual void SetVerticalAxisMinValue(Aspose::Cells::Systems::Double value)=0;
 
 	};
 }

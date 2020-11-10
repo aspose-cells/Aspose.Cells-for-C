@@ -1,7 +1,7 @@
 #pragma once
-#include "System/Object.h"
-#include "System/Int32.h"
-#include "System/Collections/CollectionBase.h"
+#include "Aspose.Cells.Systems/Object.h"
+#include "Aspose.Cells.Systems/Int32.h"
+#include "Aspose.Cells.Systems/Collections/CollectionBase.h"
 
 namespace Aspose {
 	namespace Cells {
@@ -13,7 +13,7 @@ namespace Cells{
 			/// <summary>
 			/// Represents all referred cells and areas.
 			/// </summary>
-	class ASPOSE_CELLS_API IReferredAreaCollection : public Aspose::Cells::System::Collections::CollectionBase
+	class ASPOSE_CELLS_API IReferredAreaCollection : public Aspose::Cells::Systems::Collections::CollectionBase
 	{
 		public:
 			/// <summary>
@@ -23,7 +23,7 @@ namespace Cells{
 			/// 
 			/// <returns/>
 			/// 
-			 virtual intrusive_ptr<Aspose::Cells::IReferredArea> 		GetObjectByIndex(Aspose::Cells::System::Int32 index)=0;
+			 virtual intrusive_ptr<Aspose::Cells::IReferredArea> 		GetObjectByIndex(Aspose::Cells::Systems::Int32 index)=0;
 
 	};
 }

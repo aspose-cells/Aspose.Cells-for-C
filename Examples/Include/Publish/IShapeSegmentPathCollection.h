@@ -1,7 +1,7 @@
 #pragma once
-#include "System/Object.h"
-#include "System/Int32.h"
-#include "System/Collections/CollectionBase.h"
+#include "Aspose.Cells.Systems/Object.h"
+#include "Aspose.Cells.Systems/Int32.h"
+#include "Aspose.Cells.Systems/Collections/CollectionBase.h"
 
 namespace Aspose {
 	namespace Cells {
@@ -17,7 +17,7 @@ namespace Drawing{
 			/// <summary>
 			/// Represents a creation path consisting of a series of moves, lines and curves that when combined will form a geometric shape.
 			/// </summary>
-	class ASPOSE_CELLS_API IShapeSegmentPathCollection : public Aspose::Cells::System::Collections::CollectionBase
+	class ASPOSE_CELLS_API IShapeSegmentPathCollection : public Aspose::Cells::Systems::Collections::CollectionBase
 	{
 		public:
 			/// <summary>
@@ -26,7 +26,7 @@ namespace Drawing{
 			/// <param name="type" >The path type.</param>
 			/// <returns>Returns the position of <see cref="IShapeSegmentPath" />
 			///  object in the list. </returns>
-			 virtual Aspose::Cells::System::Int32 Add(Aspose::Cells::Drawing::ShapePathType type)=0;
+			 virtual Aspose::Cells::Systems::Int32 Add(Aspose::Cells::Drawing::ShapePathType type)=0;
 			/// <summary>
 			/// Gets <see cref="ShapeSegmentPath" />
 			///  object.
@@ -34,7 +34,7 @@ namespace Drawing{
 			/// <param name="index" >The index.</param>
 			/// <returns>Returns a <see cref="IShapeSegmentPath" />
 			///  object.</returns>
-			 virtual intrusive_ptr<Aspose::Cells::Drawing::IShapeSegmentPath> 		GetObjectByIndex(Aspose::Cells::System::Int32 index)=0;
+			 virtual intrusive_ptr<Aspose::Cells::Drawing::IShapeSegmentPath> 		GetObjectByIndex(Aspose::Cells::Systems::Int32 index)=0;
 
 	};
 }

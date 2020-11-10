@@ -1,5 +1,5 @@
 #pragma once
-#include "System/Object.h"
+#include "Aspose.Cells.Systems/Object.h"
 #include "IShape.h"
 
 namespace Aspose {
@@ -27,13 +27,13 @@ namespace Drawing{
 			///  //Set the placement of the arc.
 			/// arc1->SetPlacement(PlacementType_FreeFloating); 
 			///  //Set the fill format.
-			/// arc1->GetIMsoFillFormat()->SetForeColor(System::Drawing::Color::GetBlue()); 
+			/// arc1->GetIMsoFillFormat()->SetForeColor(Systems::Drawing::Color::GetBlue()); 
 			///  //Set the line style.
 			/// arc1->GetIMsoLineFormat()->SetStyle(MsoLineStyle_Single);  
 			///  //Set the line weight.
 			/// arc1->GetIMsoLineFormat()->SetWeight(1); 
 			///  //Set the color of the arc line.
-			/// arc1->GetIMsoLineFormat()->SetForeColor(System::Drawing::Color::GetBlue()); 
+			/// arc1->GetIMsoLineFormat()->SetForeColor(Systems::Drawing::Color::GetBlue()); 
 			///  //Set the dash style of the arc.
 			/// arc1->GetIMsoLineFormat()->SetDashStyle(MsoLineDashStyle_Solid); 
 			///  //Add another arc shape.
@@ -45,7 +45,7 @@ namespace Drawing{
 			///  //Set the line weight.
 			/// arc2->GetIMsoLineFormat()->SetWeight(1); 
 			///  //Set the color of the arc line.
-			/// arc2->GetIMsoLineFormat()->SetForeColor(System::Drawing::Color::GetBlue()); 
+			/// arc2->GetIMsoLineFormat()->SetForeColor(Systems::Drawing::Color::GetBlue()); 
 			///  //Set the dash style of the arc.
 			/// arc2->GetIMsoLineFormat()->SetDashStyle(MsoLineDashStyle_Solid); 
 			///  //Save the excel file.

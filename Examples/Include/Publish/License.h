@@ -1,7 +1,7 @@
 #pragma once
-#include "System/IO/Stream.h"
-#include "System/Object.h"
-#include "System/String.h"
+#include "Aspose.Cells.Systems/IO/Stream.h"
+#include "Aspose.Cells.Systems/Object.h"
+#include "Aspose.Cells.Systems/String.h"
 #define STATIC_LICENSE() 
 
 
@@ -9,9 +9,9 @@ namespace Aspose {
 	namespace Cells {
 
 #ifdef WIN32
-		class ASPOSE_CELLS_API License : public Aspose::Cells::System::Object
+		class ASPOSE_CELLS_API License : public Aspose::Cells::Systems::Object
 #else	
-		class License : public Aspose::Cells::System::Object
+		class License : public Aspose::Cells::Systems::Object
 #endif
 		{
 		private:
@@ -37,11 +37,11 @@ namespace Aspose {
 			/// 
 			///  </example>
 			/// 
-			void SetLicense(intrusive_ptr<Aspose::Cells::System::String> licenseName);
+			void SetLicense(intrusive_ptr<Aspose::Cells::Systems::String> licenseName);
 			/// <summary>
 			///  Set a valid license by file stream.
 			/// </summary>					
-			void SetLicense(intrusive_ptr<Aspose::Cells::System::IO::Stream> stream);
+			void SetLicense(intrusive_ptr<Aspose::Cells::Systems::IO::Stream> stream);
 		public:
 			virtual ~License();
 		};

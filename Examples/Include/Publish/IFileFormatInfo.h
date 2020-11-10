@@ -1,5 +1,5 @@
 #pragma once
-#include "System/Object.h"
+#include "Aspose.Cells.Systems/Object.h"
 
 namespace Aspose {
 	namespace Cells {
@@ -13,7 +13,7 @@ namespace Cells{
 			/// Contains data returned by <see cref="IFileFormatUtil" />
 			///  file format detection methods. 
 			///  </summary>
-	class ASPOSE_CELLS_API IFileFormatInfo : public Aspose::Cells::System::Object
+	class ASPOSE_CELLS_API IFileFormatInfo : public Aspose::Cells::Systems::Object
 	{
 		public:
 			/// <summary>

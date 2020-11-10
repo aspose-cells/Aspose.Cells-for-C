@@ -213,7 +213,7 @@ typedef enum USentenceBreakTag {
 U_STABLE UBreakIterator* U_EXPORT2
 ubrk_open(UBreakIteratorType type,
       const char *locale,
-      const UChar *text,
+      const UnChar *text,
       int32_t textLength,
       UErrorCode *status);
 
@@ -233,9 +233,9 @@ ubrk_open(UBreakIteratorType type,
  * @stable ICU 2.2
  */
 U_STABLE UBreakIterator* U_EXPORT2
-ubrk_openRules(const UChar     *rules,
+ubrk_openRules(const UnChar     *rules,
                int32_t         rulesLength,
-               const UChar     *text,
+               const UnChar     *text,
                int32_t          textLength,
                UParseError     *parseErr,
                UErrorCode      *status);
@@ -313,7 +313,7 @@ U_NAMESPACE_END
  */
 U_STABLE void U_EXPORT2
 ubrk_setText(UBreakIterator* bi,
-             const UChar*    text,
+             const UnChar*    text,
              int32_t         textLength,
              UErrorCode*     status);
 

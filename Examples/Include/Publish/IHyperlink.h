@@ -1,6 +1,6 @@
 #pragma once
-#include "System/Object.h"
-#include "System/String.h"
+#include "Aspose.Cells.Systems/Object.h"
+#include "Aspose.Cells.Systems/String.h"
 
 namespace Aspose {
 	namespace Cells {
@@ -29,25 +29,25 @@ namespace Cells{
 			/// 
 			/// </code>
 			/// </example>
-	class ASPOSE_CELLS_API IHyperlink : public Aspose::Cells::System::Object
+	class ASPOSE_CELLS_API IHyperlink : public Aspose::Cells::Systems::Object
 	{
 		public:
 			/// <summary>
 			/// Gets the address of a hyperlink.
 			/// </summary>
-			 virtual intrusive_ptr<Aspose::Cells::System::String> GetAddress()=0;
+			 virtual intrusive_ptr<Aspose::Cells::Systems::String> GetAddress()=0;
 			/// <summary>
 			/// Sets the address of a hyperlink.
 			/// </summary>
-			 virtual void SetAddress(intrusive_ptr<Aspose::Cells::System::String> value)=0;
+			 virtual void SetAddress(intrusive_ptr<Aspose::Cells::Systems::String> value)=0;
 			/// <summary>
 			/// Gets the text to be displayed for the specified hyperlink. The default value is the address of the hyperlink. 
 			/// </summary>
-			 virtual intrusive_ptr<Aspose::Cells::System::String> GetTextToDisplay()=0;
+			 virtual intrusive_ptr<Aspose::Cells::Systems::String> GetTextToDisplay()=0;
 			/// <summary>
 			/// Sets the text to be displayed for the specified hyperlink. 
 			/// </summary>
-			 virtual void SetTextToDisplay(intrusive_ptr<Aspose::Cells::System::String> value)=0;
+			 virtual void SetTextToDisplay(intrusive_ptr<Aspose::Cells::Systems::String> value)=0;
 			/// <summary>
 			/// Gets the range of hyperlink.
 			/// </summary>
@@ -55,11 +55,11 @@ namespace Cells{
 			/// <summary>
 			/// Gets the screen tip text for the specified hyperlink.
 			/// </summary>
-			 virtual intrusive_ptr<Aspose::Cells::System::String> GetScreenTip()=0;
+			 virtual intrusive_ptr<Aspose::Cells::Systems::String> GetScreenTip()=0;
 			/// <summary>
 			/// Sets the screen tip text for the specified hyperlink.
 			/// </summary>
-			 virtual void SetScreenTip(intrusive_ptr<Aspose::Cells::System::String> value)=0;
+			 virtual void SetScreenTip(intrusive_ptr<Aspose::Cells::Systems::String> value)=0;
 
 	};
 }

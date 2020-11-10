@@ -1,8 +1,8 @@
 #pragma once
-#include "System/Object.h"
-#include "System/Int32.h"
-#include "System/String.h"
-#include "System/Array1D.h"
+#include "Aspose.Cells.Systems/Object.h"
+#include "Aspose.Cells.Systems/Int32.h"
+#include "Aspose.Cells.Systems/String.h"
+#include "Aspose.Cells.Systems/Array1D.h"
 
 namespace Aspose {
 	namespace Cells {
@@ -24,20 +24,20 @@ namespace Cells{
 			/// workbook->GetIWorksheets()->GetIExternalLinks()->GetObjectByIndex(0)->SetDataSource(new String("d:\\link.xls"));
 			/// </code>
 			/// </example>
-	class ASPOSE_CELLS_API IExternalLinkCollection : public Aspose::Cells::System::Object
+	class ASPOSE_CELLS_API IExternalLinkCollection : public Aspose::Cells::Systems::Object
 	{
 		public:
 			/// <summary>
 			/// Gets the number of elements actually contained in the collection.
 			/// </summary>
-			 virtual Aspose::Cells::System::Int32 GetCount()=0;
+			 virtual Aspose::Cells::Systems::Int32 GetCount()=0;
 			/// <summary>
 			/// Adds an external link.
 			/// </summary>
 			/// <param name="fileName" >The external file name.</param>
 			/// <param name="sheetNames" >All sheet names of the external file.</param>
 			/// <returns>The position of the external name in this list. </returns>
-			 virtual Aspose::Cells::System::Int32 Add(intrusive_ptr<Aspose::Cells::System::String> fileName , intrusive_ptr<Aspose::Cells::System::Array1D<Aspose::Cells::System::String*>> sheetNames)=0;
+			 virtual Aspose::Cells::Systems::Int32 Add(intrusive_ptr<Aspose::Cells::Systems::String> fileName , intrusive_ptr<Aspose::Cells::Systems::Array1D<Aspose::Cells::Systems::String*>> sheetNames)=0;
 			/// <summary>
 			/// Add an external link .
 			/// </summary>
@@ -45,14 +45,14 @@ namespace Cells{
 			/// <param name="fileName" >the file name.</param>
 			/// <param name="sheetNames" >All sheet names of the external file.</param>
 			/// <returns>The position of the external name in this list. </returns>
-			 virtual Aspose::Cells::System::Int32 Add(Aspose::Cells::DirectoryType directoryType , intrusive_ptr<Aspose::Cells::System::String> fileName , intrusive_ptr<Aspose::Cells::System::Array1D<Aspose::Cells::System::String*>> sheetNames)=0;
+			 virtual Aspose::Cells::Systems::Int32 Add(Aspose::Cells::DirectoryType directoryType , intrusive_ptr<Aspose::Cells::Systems::String> fileName , intrusive_ptr<Aspose::Cells::Systems::Array1D<Aspose::Cells::Systems::String*>> sheetNames)=0;
 			/// <summary>
 			///  Gets the <see cref="IExternalLink" />
 			///  element at the specified index.
 			///  </summary>
 			/// <param name="index" >The zero based index of the element.</param>
 			/// <returns>The element at the specified index.</returns>
-			 virtual intrusive_ptr<Aspose::Cells::IExternalLink> 		GetObjectByIndex(Aspose::Cells::System::Int32 index)=0;
+			 virtual intrusive_ptr<Aspose::Cells::IExternalLink> 		GetObjectByIndex(Aspose::Cells::Systems::Int32 index)=0;
 
 	};
 }

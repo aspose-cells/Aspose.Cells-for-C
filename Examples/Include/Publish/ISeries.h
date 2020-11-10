@@ -1,10 +1,10 @@
 #pragma once
-#include "System/Object.h"
-#include "System/Int32.h"
-#include "System/String.h"
-#include "System/Drawing/Color.h"
-#include "System/Int16.h"
-#include "System/Double.h"
+#include "Aspose.Cells.Systems/Object.h"
+#include "Aspose.Cells.Systems/Int32.h"
+#include "Aspose.Cells.Systems/String.h"
+#include "Aspose.Cells.Systems/Drawing/Color.h"
+#include "Aspose.Cells.Systems/Int16.h"
+#include "Aspose.Cells.Systems/Double.h"
 
 namespace Aspose {
 	namespace Cells {
@@ -40,7 +40,7 @@ namespace Charts{
 			/// <summary>
 			/// Encapsulates the object that represents a single data series in a chart.
 			/// </summary>
-	class ASPOSE_CELLS_API ISeries : public Aspose::Cells::System::Object
+	class ASPOSE_CELLS_API ISeries : public Aspose::Cells::Systems::Object
 	{
 		public:
 			/// <summary>
@@ -50,7 +50,7 @@ namespace Charts{
 			/// Move the series up if this is less than zero;
 			/// Move the series down if this is greater than zero.
 			/// </param>
-			 virtual void Move(Aspose::Cells::System::Int32 count)=0;
+			 virtual void Move(Aspose::Cells::Systems::Int32 count)=0;
 			/// <summary>
 			/// Gets the collection of points in a series in a chart.
 			/// </summary>
@@ -77,20 +77,20 @@ namespace Charts{
 			/// <summary>
 			/// Gets the name of the data series.
 			/// </summary>
-			 virtual intrusive_ptr<Aspose::Cells::System::String> GetName()=0;
+			 virtual intrusive_ptr<Aspose::Cells::Systems::String> GetName()=0;
 			/// <summary>
 			/// Sets the name of the data series.
 			/// </summary>
 
-			 virtual void SetName(intrusive_ptr<Aspose::Cells::System::String> value)=0;
+			 virtual void SetName(intrusive_ptr<Aspose::Cells::Systems::String> value)=0;
 			/// <summary>
 			/// Gets the series's name that displays on the chart graph.
 			/// </summary>
-			 virtual intrusive_ptr<Aspose::Cells::System::String> GetDisplayName()=0;
+			 virtual intrusive_ptr<Aspose::Cells::Systems::String> GetDisplayName()=0;
 			/// <summary>
 			/// Gets the number of the data values.
 			/// </summary>
-			 virtual Aspose::Cells::System::Int32 GetCountOfDataValues()=0;
+			 virtual Aspose::Cells::Systems::Int32 GetCountOfDataValues()=0;
 			/// <summary>
 			/// Indicates whether the data source is vertical.
 			/// </summary>
@@ -98,27 +98,27 @@ namespace Charts{
 			/// <summary>
 			/// Represents the data of the chart series.
 			/// </summary>
-			 virtual intrusive_ptr<Aspose::Cells::System::String> GetValues()=0;
+			 virtual intrusive_ptr<Aspose::Cells::Systems::String> GetValues()=0;
 			/// <summary>
 			/// Represents the data of the chart series.
 			/// </summary>
-			 virtual void SetValues(intrusive_ptr<Aspose::Cells::System::String> value)=0;
+			 virtual void SetValues(intrusive_ptr<Aspose::Cells::Systems::String> value)=0;
 			/// <summary>
 			/// Represents the x values of the chart series.
 			/// </summary>
-			 virtual intrusive_ptr<Aspose::Cells::System::String> GetXValues()=0;
+			 virtual intrusive_ptr<Aspose::Cells::Systems::String> GetXValues()=0;
 			/// <summary>
 			/// Represents the x values of the chart series.
 			/// </summary>
-			 virtual void SetXValues(intrusive_ptr<Aspose::Cells::System::String> value)=0;
+			 virtual void SetXValues(intrusive_ptr<Aspose::Cells::Systems::String> value)=0;
 			/// <summary>
 			/// Gets the bubble sizes values of the chart series.
 			/// </summary>
-			 virtual intrusive_ptr<Aspose::Cells::System::String> GetBubbleSizes()=0;
+			 virtual intrusive_ptr<Aspose::Cells::Systems::String> GetBubbleSizes()=0;
 			/// <summary>
 			/// Sets the bubble sizes values of the chart series.
 			/// </summary>
-			 virtual void SetBubbleSizes(intrusive_ptr<Aspose::Cells::System::String> value)=0;
+			 virtual void SetBubbleSizes(intrusive_ptr<Aspose::Cells::Systems::String> value)=0;
 			/// <summary>
 			/// Returns an object that represents a collection of all the trendlines for the series.
 			/// </summary>
@@ -197,19 +197,19 @@ namespace Charts{
 			/// <summary>
 			/// Represents the marker size in a line chart, scatter chart, or radar chart. 
 			/// </summary>
-			 virtual Aspose::Cells::System::Int32 GetMarkerSize()=0;
+			 virtual Aspose::Cells::Systems::Int32 GetMarkerSize()=0;
 			/// <summary>
 			/// Represents the marker size in a line chart, scatter chart, or radar chart. 
 			/// </summary>
-			 virtual void SetMarkerSize(Aspose::Cells::System::Int32 value)=0;
+			 virtual void SetMarkerSize(Aspose::Cells::Systems::Int32 value)=0;
 			/// <summary>
 			/// Represents the marker foreground color in a line chart, scatter chart, or radar chart. 
 			/// </summary>
-			 virtual intrusive_ptr<Aspose::Cells::System::Drawing::Color> GetMarkerForegroundColor()=0;
+			 virtual intrusive_ptr<Aspose::Cells::Systems::Drawing::Color> GetMarkerForegroundColor()=0;
 			/// <summary>
 			/// Represents the marker foreground color in a line chart, scatter chart, or radar chart. 
 			/// </summary>
-			 virtual void SetMarkerForegroundColor(intrusive_ptr<Aspose::Cells::System::Drawing::Color> value)=0;
+			 virtual void SetMarkerForegroundColor(intrusive_ptr<Aspose::Cells::Systems::Drawing::Color> value)=0;
 			/// <summary>
 			/// Gets the marker foreground color set type.
 			/// </summary>
@@ -221,11 +221,11 @@ namespace Charts{
 			/// <summary>
 			/// Represents the marker background color in a line chart, scatter chart, or radar chart. 
 			/// </summary>
-			 virtual intrusive_ptr<Aspose::Cells::System::Drawing::Color> GetMarkerBackgroundColor()=0;
+			 virtual intrusive_ptr<Aspose::Cells::Systems::Drawing::Color> GetMarkerBackgroundColor()=0;
 			/// <summary>
 			/// Represents the marker background color in a line chart, scatter chart, or radar chart. 
 			/// </summary>
-			 virtual void SetMarkerBackgroundColor(intrusive_ptr<Aspose::Cells::System::Drawing::Color> value)=0;
+			 virtual void SetMarkerBackgroundColor(intrusive_ptr<Aspose::Cells::Systems::Drawing::Color> value)=0;
 			/// <summary>
 			/// Gets the marker background color set type.
 			/// </summary>
@@ -333,46 +333,46 @@ namespace Charts{
 			/// Returns or sets the space between bar or column clusters, as a percentage of the bar or column width.
 			/// The value of this property must be between 0 and 500.
 			/// </summary>
-			 virtual Aspose::Cells::System::Int16 GetGapWidth()=0;
+			 virtual Aspose::Cells::Systems::Int16 GetGapWidth()=0;
 			/// <summary>
 			/// Returns or sets the space between bar or column clusters, as a percentage of the bar or column width.
 			/// The value of this property must be between 0 and 500.
 			/// </summary>
-			 virtual void SetGapWidth(Aspose::Cells::System::Int16 value)=0;
+			 virtual void SetGapWidth(Aspose::Cells::Systems::Int16 value)=0;
 			/// <summary>
 			/// Gets the angle of the first pie-chart or doughnut-chart slice, in degrees (clockwise from vertical). 
 			/// Applies only to pie, 3-D pie, and doughnut charts, 0 to 360. 
 			/// </summary>
-			 virtual Aspose::Cells::System::Int16 GetFirstSliceAngle()=0;
+			 virtual Aspose::Cells::Systems::Int16 GetFirstSliceAngle()=0;
 			/// <summary>
 			/// Sets the angle of the first pie-chart or doughnut-chart slice, in degrees (clockwise from vertical). 
 			/// Applies only to pie, 3-D pie, and doughnut charts, 0 to 360. 
 			/// </summary>
-			 virtual void SetFirstSliceAngle(Aspose::Cells::System::Int16 value)=0;
+			 virtual void SetFirstSliceAngle(Aspose::Cells::Systems::Int16 value)=0;
 			/// <summary>
 			/// Specifies how bars and columns are positioned.
 			/// Can be a value between C 100 and 100. 
 			/// Applies only to 2-D bar and 2-D column charts. 
 			/// </summary>
-			 virtual Aspose::Cells::System::Int16 GetOverlap()=0;
+			 virtual Aspose::Cells::Systems::Int16 GetOverlap()=0;
 			/// <summary>
 			/// Specifies how bars and columns are positioned.
 			/// Can be a value between C 100 and 100. 
 			/// Applies only to 2-D bar and 2-D column charts. 
 			/// </summary>
-			 virtual void SetOverlap(Aspose::Cells::System::Int16 value)=0;
+			 virtual void SetOverlap(Aspose::Cells::Systems::Int16 value)=0;
 			/// <summary>
 			/// Returns or sets the size of the secondary section of either a pie of pie chart or a bar of pie chart, 
 			/// as a percentage of the size of the primary pie.
 			/// Can be a value from 5 to 200. 
 			/// </summary>
-			 virtual Aspose::Cells::System::Int16 GetSecondPlotSize()=0;
+			 virtual Aspose::Cells::Systems::Int16 GetSecondPlotSize()=0;
 			/// <summary>
 			/// Returns or sets the size of the secondary section of either a pie of pie chart or a bar of pie chart, 
 			/// as a percentage of the size of the primary pie.
 			/// Can be a value from 5 to 200. 
 			/// </summary>
-			 virtual void SetSecondPlotSize(Aspose::Cells::System::Int16 value)=0;
+			 virtual void SetSecondPlotSize(Aspose::Cells::Systems::Int16 value)=0;
 			/// <summary>
 			/// Returns or sets a value that how to determine which data points are in the second pie or bar on a pie of pie or bar of
 			/// pie chart.
@@ -387,12 +387,12 @@ namespace Charts{
 			/// Returns or sets a value that shall be used to determine which data points are in the second pie or bar on
 			/// a pie of pie or bar of pie chart.
 			/// </summary>
-			 virtual Aspose::Cells::System::Double GetSplitValue()=0;
+			 virtual Aspose::Cells::Systems::Double GetSplitValue()=0;
 			/// <summary>
 			/// Returns or sets a value that shall be used to determine which data points are in the second pie or bar on
 			/// a pie of pie or bar of pie chart.
 			/// </summary>
-			 virtual void SetSplitValue(Aspose::Cells::System::Double value)=0;
+			 virtual void SetSplitValue(Aspose::Cells::Systems::Double value)=0;
 			/// <summary>
 			/// Indicates whether the threshold value is automatic.
 			/// </summary>
@@ -403,14 +403,14 @@ namespace Charts{
 			/// corresponding to a percentage of the default size.
 			/// Applies only to bubble charts. 
 			/// </summary>
-			 virtual Aspose::Cells::System::Int32 GetBubbleScale()=0;
+			 virtual Aspose::Cells::Systems::Int32 GetBubbleScale()=0;
 			/// <summary>
 			/// Sets the scale factor for bubbles in the specified chart group. 
 			/// It can be an integer value from 0 (zero) to 300, 
 			/// corresponding to a percentage of the default size.
 			/// Applies only to bubble charts. 
 			/// </summary>
-			 virtual void SetBubbleScale(Aspose::Cells::System::Int32 value)=0;
+			 virtual void SetBubbleScale(Aspose::Cells::Systems::Int32 value)=0;
 			/// <summary>
 			/// Gets what the bubble size represents on a bubble chart.
 			/// </summary>
@@ -443,20 +443,20 @@ namespace Charts{
 			/// Returns or sets the size of the hole in a doughnut chart group. 
 			/// The hole size is expressed as a percentage of the chart size, between 10 and 90 percent.
 			/// </summary>
-			 virtual Aspose::Cells::System::Int32 GetDoughnutHoleSize()=0;
+			 virtual Aspose::Cells::Systems::Int32 GetDoughnutHoleSize()=0;
 			/// <summary>
 			/// Returns or sets the size of the hole in a doughnut chart group. 
 			/// The hole size is expressed as a percentage of the chart size, between 10 and 90 percent.
 			/// </summary>
-			 virtual void SetDoughnutHoleSize(Aspose::Cells::System::Int32 value)=0;
+			 virtual void SetDoughnutHoleSize(Aspose::Cells::Systems::Int32 value)=0;
 			/// <summary>
 			/// The distance of an open pie slice from the center of the pie chart is expressed as a percentage of the pie diameter.
 			/// </summary>
-			 virtual Aspose::Cells::System::Int32 GetExplosion()=0;
+			 virtual Aspose::Cells::Systems::Int32 GetExplosion()=0;
 			/// <summary>
 			/// The distance of an open pie slice from the center of the pie chart is expressed as a percentage of the pie diameter.
 			/// </summary>
-			 virtual void SetExplosion(Aspose::Cells::System::Int32 value)=0;
+			 virtual void SetExplosion(Aspose::Cells::Systems::Int32 value)=0;
 			/// <summary>
 			/// True if a radar chart has category axis labels. Applies only to radar charts.
 			/// </summary>

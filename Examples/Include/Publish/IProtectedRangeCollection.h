@@ -1,8 +1,8 @@
 #pragma once
-#include "System/Object.h"
-#include "System/Int32.h"
-#include "System/String.h"
-#include "System/Collections/CollectionBase.h"
+#include "Aspose.Cells.Systems/Object.h"
+#include "Aspose.Cells.Systems/Int32.h"
+#include "Aspose.Cells.Systems/String.h"
+#include "Aspose.Cells.Systems/Collections/CollectionBase.h"
 
 namespace Aspose {
 	namespace Cells {
@@ -15,7 +15,7 @@ namespace Cells{
 			/// Encapsulates a collection of <see cref="IProtectedRange" />
 			///  objects.
 			/// </summary>
-	class ASPOSE_CELLS_API IProtectedRangeCollection : public Aspose::Cells::System::Collections::CollectionBase
+	class ASPOSE_CELLS_API IProtectedRangeCollection : public Aspose::Cells::Systems::Collections::CollectionBase
 	{
 		public:
 			/// <summary>
@@ -24,7 +24,7 @@ namespace Cells{
 			///  </summary>
 			/// <param name="index" >The zero based index of the element.</param>
 			/// <returns>The element at the specified index.</returns>
-			 virtual intrusive_ptr<Aspose::Cells::IProtectedRange> 		GetObjectByIndex(Aspose::Cells::System::Int32 index)=0;
+			 virtual intrusive_ptr<Aspose::Cells::IProtectedRange> 		GetObjectByIndex(Aspose::Cells::Systems::Int32 index)=0;
 			/// <summary>
 			/// Adds a <see cref="IProtectedRange" />
 			///  item to the collection.
@@ -35,7 +35,7 @@ namespace Cells{
 			/// <param name="endRow" >End row index of the range.</param>
 			/// <param name="endColumn" >End column index of the range.</param>
 			/// <returns>object index.</returns>
-			 virtual Aspose::Cells::System::Int32 Add(intrusive_ptr<Aspose::Cells::System::String> name , Aspose::Cells::System::Int32 startRow , Aspose::Cells::System::Int32 startColumn , Aspose::Cells::System::Int32 endRow , Aspose::Cells::System::Int32 endColumn)=0;
+			 virtual Aspose::Cells::Systems::Int32 Add(intrusive_ptr<Aspose::Cells::Systems::String> name , Aspose::Cells::Systems::Int32 startRow , Aspose::Cells::Systems::Int32 startColumn , Aspose::Cells::Systems::Int32 endRow , Aspose::Cells::Systems::Int32 endColumn)=0;
 
 	};
 }

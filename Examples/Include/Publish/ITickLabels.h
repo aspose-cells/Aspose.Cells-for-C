@@ -1,7 +1,7 @@
 #pragma once
-#include "System/Object.h"
-#include "System/Int32.h"
-#include "System/String.h"
+#include "Aspose.Cells.Systems/Object.h"
+#include "Aspose.Cells.Systems/Int32.h"
+#include "Aspose.Cells.Systems/String.h"
 
 namespace Aspose {
 	namespace Cells {
@@ -22,7 +22,7 @@ namespace Charts{
 			/// <summary>
 			/// Represents the tick-mark labels associated with tick marks on a chart axis.
 			/// </summary>
-	class ASPOSE_CELLS_API ITickLabels : public Aspose::Cells::System::Object
+	class ASPOSE_CELLS_API ITickLabels : public Aspose::Cells::Systems::Object
 	{
 		public:
 			/// <summary>
@@ -62,7 +62,7 @@ namespace Charts{
 			/// <br>-90: Downward.</br>
 			/// <br>90: Upward.</br>
 			/// </remarks>
-			 virtual Aspose::Cells::System::Int32 GetRotationAngle()=0;
+			 virtual Aspose::Cells::Systems::Int32 GetRotationAngle()=0;
 			/// <summary>
 			/// Represents text rotation angle in clockwise.
 			/// </summary>
@@ -71,25 +71,25 @@ namespace Charts{
 			/// <br>-90: Downward.</br>
 			/// <br>90: Upward.</br>
 			/// </remarks>
-			 virtual void SetRotationAngle(Aspose::Cells::System::Int32 value)=0;
+			 virtual void SetRotationAngle(Aspose::Cells::Systems::Int32 value)=0;
 			/// <summary>
 			/// Represents the format string for the TickLabels object.
 			/// </summary>
 			/// <remarks>The formating string is same as a custom format string setting to a cell. For example, "$0".</remarks>
-			 virtual intrusive_ptr<Aspose::Cells::System::String> Get_NumberFormat()=0;
+			 virtual intrusive_ptr<Aspose::Cells::Systems::String> Get_NumberFormat()=0;
 			/// <summary>
 			/// Represents the format string for the TickLabels object.
 			/// </summary>
 			/// <remarks>The formating string is same as a custom format string setting to a cell. For example, "$0".</remarks>
-			 virtual void SetNumberFormat(intrusive_ptr<Aspose::Cells::System::String> value)=0;
+			 virtual void SetNumberFormat(intrusive_ptr<Aspose::Cells::Systems::String> value)=0;
 			/// <summary>
 			/// Represents the format number for the TickLabels object.
 			/// </summary>
-			 virtual Aspose::Cells::System::Int32 GetNumber()=0;
+			 virtual Aspose::Cells::Systems::Int32 GetNumber()=0;
 			/// <summary>
 			/// Represents the format number for the TickLabels object.
 			/// </summary>
-			 virtual void SetNumber(Aspose::Cells::System::Int32 value)=0;
+			 virtual void SetNumber(Aspose::Cells::Systems::Int32 value)=0;
 			/// <summary>
 			/// True if the number format is linked to the cells 
 			/// (so that the number format changes in the labels when it changes in the cells). 
@@ -107,7 +107,7 @@ namespace Charts{
 			/// The default distance is 100 percent, which represents the default spacing between the axis labels and the axis line.
 			/// The value can be an integer percentage from 0 through 1000, relative to the axis labels font size.
 			/// </remarks>
-			 virtual Aspose::Cells::System::Int32 GetOffset()=0;
+			 virtual Aspose::Cells::Systems::Int32 GetOffset()=0;
 			/// <summary>
 			/// Represents the distance between the levels of labels, and the distance between the first level and the axis line.  
 			/// </summary>
@@ -115,7 +115,7 @@ namespace Charts{
 			/// The default distance is 100 percent, which represents the default spacing between the axis labels and the axis line.
 			/// The value can be an integer percentage from 0 through 1000, relative to the axis labels font size.
 			/// </remarks>
-			 virtual void SetOffset(Aspose::Cells::System::Int32 value)=0;
+			 virtual void SetOffset(Aspose::Cells::Systems::Int32 value)=0;
 			/// <summary>
 			///  Represents text reading order.
 			/// </summary>

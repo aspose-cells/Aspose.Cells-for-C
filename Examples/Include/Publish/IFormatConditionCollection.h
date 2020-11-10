@@ -1,8 +1,8 @@
 #pragma once
-#include "System/Object.h"
-#include "System/Array1D.h"
-#include "System/Int32.h"
-#include "System/String.h"
+#include "Aspose.Cells.Systems/Object.h"
+#include "Aspose.Cells.Systems/Array1D.h"
+#include "Aspose.Cells.Systems/Int32.h"
+#include "Aspose.Cells.Systems/String.h"
 
 namespace Aspose {
 	namespace Cells {
@@ -52,7 +52,7 @@ namespace Cells{
 			///  </code>
 			/// 
 			///  </example>
-	class ASPOSE_CELLS_API IFormatConditionCollection : public Aspose::Cells::System::Object
+	class ASPOSE_CELLS_API IFormatConditionCollection : public Aspose::Cells::Systems::Object
 	{
 		public:
 			/// <summary>
@@ -70,13 +70,13 @@ namespace Cells{
 			/// 
 			/// <set cref="FormatConditionType" />
 			/// 
-			 virtual intrusive_ptr<Aspose::Cells::System::Array1D<Aspose::Cells::System::Int32>> 		Add(intrusive_ptr<Aspose::Cells::ICellArea> cellArea , Aspose::Cells::FormatConditionType type , Aspose::Cells::OperatorType operatorType , intrusive_ptr<Aspose::Cells::System::String> formula1 , intrusive_ptr<Aspose::Cells::System::String> formula2)=0;
+			 virtual intrusive_ptr<Aspose::Cells::Systems::Array1D<Aspose::Cells::Systems::Int32>> 		Add(intrusive_ptr<Aspose::Cells::ICellArea> cellArea , Aspose::Cells::FormatConditionType type , Aspose::Cells::OperatorType operatorType , intrusive_ptr<Aspose::Cells::Systems::String> formula1 , intrusive_ptr<Aspose::Cells::Systems::String> formula2)=0;
 			/// <summary>
 			/// Adds a conditional formatted cell range.
 			/// </summary>
 			/// <param name="cellArea" >Conditional formatted cell range.</param>
 			/// <returns>Conditional formatted cell rang index.</returns>
-			 virtual Aspose::Cells::System::Int32 		AddArea(intrusive_ptr<Aspose::Cells::ICellArea> cellArea)=0;
+			 virtual Aspose::Cells::Systems::Int32 		AddArea(intrusive_ptr<Aspose::Cells::ICellArea> cellArea)=0;
 			/// <summary>
 			/// Adds a formatting condition.
 			/// </summary>
@@ -87,38 +87,38 @@ namespace Cells{
 			/// <param name="formula1" >The value or expression associated with conditinal formatting.</param>
 			/// <param name="formula2" >The value or expression associated with conditinal formatting.</param>
 			/// <returns>Formatting condition object index;</returns>
-			 virtual Aspose::Cells::System::Int32 AddCondition(Aspose::Cells::FormatConditionType type , Aspose::Cells::OperatorType operatorType , intrusive_ptr<Aspose::Cells::System::String> formula1 , intrusive_ptr<Aspose::Cells::System::String> formula2)=0;
+			 virtual Aspose::Cells::Systems::Int32 AddCondition(Aspose::Cells::FormatConditionType type , Aspose::Cells::OperatorType operatorType , intrusive_ptr<Aspose::Cells::Systems::String> formula1 , intrusive_ptr<Aspose::Cells::Systems::String> formula2)=0;
 			/// <summary>
 			/// Add a format condition.
 			/// </summary>
 			/// <param name="type" >Format condition type.</param>
 			/// <returns>Formatting condition object index;</returns>
-			 virtual Aspose::Cells::System::Int32 AddCondition(Aspose::Cells::FormatConditionType type)=0;
+			 virtual Aspose::Cells::Systems::Int32 AddCondition(Aspose::Cells::FormatConditionType type)=0;
 			/// <summary>
 			/// Gets the count of the conditions.
 			/// </summary>
-			 virtual Aspose::Cells::System::Int32 GetCount()=0;
+			 virtual Aspose::Cells::Systems::Int32 GetCount()=0;
 			/// <summary>
 			/// Gets count of conditionally formatted ranges.
 			///  </summary>
-			 virtual Aspose::Cells::System::Int32 GetRangeCount()=0;
+			 virtual Aspose::Cells::Systems::Int32 GetRangeCount()=0;
 			/// <summary>
 			/// Gets the formatting conidition by index.
 			/// </summary>
 			/// <param name="index" >the index of the formatting conidition to return.</param>
 			/// <returns>the formatting conidition </returns>
-			 virtual intrusive_ptr<Aspose::Cells::IFormatCondition> 		GetObjectByIndex(Aspose::Cells::System::Int32 index)=0;
+			 virtual intrusive_ptr<Aspose::Cells::IFormatCondition> 		GetObjectByIndex(Aspose::Cells::Systems::Int32 index)=0;
 			/// <summary>
 			/// Gets the conditional formatted cell range by index.
 			/// </summary>
 			/// <param name="index" >the index of the coditional formatted cell range.</param>
 			/// <returns>the conditional formatted cell range</returns>
-			 virtual intrusive_ptr<Aspose::Cells::ICellArea> 		GetICellArea(Aspose::Cells::System::Int32 index)=0;
+			 virtual intrusive_ptr<Aspose::Cells::ICellArea> 		GetICellArea(Aspose::Cells::Systems::Int32 index)=0;
 			/// <summary>
 			/// Removes conditional formatted cell range by index.
 			/// </summary>
 			/// <param name="index" >The index of the conditional formatted cell range to be removed.</param>
-			 virtual void RemoveArea(Aspose::Cells::System::Int32 index)=0;
+			 virtual void RemoveArea(Aspose::Cells::Systems::Int32 index)=0;
 			/// <summary>
 			/// Remove conditional formatting int the range.
 			/// </summary>
@@ -129,12 +129,12 @@ namespace Cells{
 			/// <returns>
 			/// Returns TRUE, this FormatCondtionCollection should be removed.
 			/// </returns>
-			 virtual bool RemoveArea(Aspose::Cells::System::Int32 startRow , Aspose::Cells::System::Int32 startColumn , Aspose::Cells::System::Int32 totalRows , Aspose::Cells::System::Int32 totalColumns)=0;
+			 virtual bool RemoveArea(Aspose::Cells::Systems::Int32 startRow , Aspose::Cells::Systems::Int32 startColumn , Aspose::Cells::Systems::Int32 totalRows , Aspose::Cells::Systems::Int32 totalColumns)=0;
 			/// <summary>
 			/// Removes the formatting condition by index.
 			/// </summary>
 			/// <param name="index" >The index of the formatting condition to be removed.</param>
-			 virtual void RemoveCondition(Aspose::Cells::System::Int32 index)=0;
+			 virtual void RemoveCondition(Aspose::Cells::Systems::Int32 index)=0;
 
 	};
 }

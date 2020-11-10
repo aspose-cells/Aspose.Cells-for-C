@@ -130,7 +130,7 @@ typedef enum URegexpFlag{
   *
   */
 U_STABLE URegularExpression * U_EXPORT2
-uregex_open( const  UChar          *pattern,
+uregex_open( const  UnChar          *pattern,
                     int32_t         patternLength,
                     uint32_t        flags,
                     UParseError    *pe,
@@ -265,14 +265,14 @@ uregex_clone(const URegularExpression *regexp, UErrorCode *status);
  *                   will remain valid until the regular expression is closed.
  * @stable ICU 3.0
  */
-U_STABLE const UChar * U_EXPORT2 
+U_STABLE const UnChar * U_EXPORT2 
 uregex_pattern(const URegularExpression *regexp,
                      int32_t            *patLength,
                      UErrorCode         *status);
 
 /**
  *  Returns the source text of the pattern for this regular expression.
- *  This function will work even if the pattern was originally specified as a UChar string.
+ *  This function will work even if the pattern was originally specified as a UnChar string.
  *
  * @param regexp     The compiled regular expression.
  * @param status     Receives errors detected by this function.
@@ -320,7 +320,7 @@ uregex_flags(const  URegularExpression   *regexp,
   */
 U_STABLE void U_EXPORT2 
 uregex_setText(URegularExpression *regexp,
-               const UChar        *text,
+               const UnChar        *text,
                int32_t             textLength,
                UErrorCode         *status);
 
@@ -366,7 +366,7 @@ uregex_setUText(URegularExpression *regexp,
   *                    this regular expression.
   * @stable ICU 3.0
   */
-U_STABLE const UChar * U_EXPORT2 
+U_STABLE const UnChar * U_EXPORT2 
 uregex_getText(URegularExpression *regexp,
                int32_t            *textLength,
                UErrorCode         *status);
@@ -375,7 +375,7 @@ uregex_getText(URegularExpression *regexp,
   *  Get the subject text that is currently associated with this 
   *   regular expression object.
   *
-  *  This function will work even if the input was originally specified as a UChar string.
+  *  This function will work even if the input was originally specified as a UnChar string.
   *
   * @param regexp      The compiled regular expression.
   * @param dest        A mutable UText in which to store the current input.
@@ -626,7 +626,7 @@ uregex_groupCount(URegularExpression *regexp,
   */
 U_DRAFT int32_t U_EXPORT2
 uregex_groupNumberFromName(URegularExpression *regexp,
-                           const UChar        *groupName,
+                           const UnChar        *groupName,
                            int32_t             nameLength,
                            UErrorCode          *status);
 
@@ -674,7 +674,7 @@ uregex_groupNumberFromCName(URegularExpression *regexp,
 U_STABLE int32_t U_EXPORT2 
 uregex_group(URegularExpression *regexp,
              int32_t             groupNum,
-             UChar              *dest,
+             UnChar              *dest,
              int32_t             destCapacity,
              UErrorCode          *status);
 
@@ -1070,7 +1070,7 @@ uregex_requireEnd(const  URegularExpression   *regexp,
   *    @param   replacementText    A string containing the replacement text.
   *    @param   replacementLength  The length of the replacement string, or
   *                                -1 if it is NUL terminated.
-  *    @param   destBuf            A (UChar *) buffer that will receive the result.
+  *    @param   destBuf            A (UnChar *) buffer that will receive the result.
   *    @param   destCapacity       The capacity of the destination buffer.
   *    @param   status             A reference to a UErrorCode to receive any errors.
   *    @return                     The length of the string resulting from the find
@@ -1081,9 +1081,9 @@ uregex_requireEnd(const  URegularExpression   *regexp,
   */
 U_STABLE int32_t U_EXPORT2 
 uregex_replaceAll(URegularExpression    *regexp,
-                  const UChar           *replacementText,
+                  const UnChar           *replacementText,
                   int32_t                replacementLength,
-                  UChar                 *destBuf,
+                  UnChar                 *destBuf,
                   int32_t                destCapacity,
                   UErrorCode            *status);
 
@@ -1129,7 +1129,7 @@ uregex_replaceAllUText(URegularExpression *regexp,
   *    @param   replacementText    A string containing the replacement text.
   *    @param   replacementLength  The length of the replacement string, or
   *                                -1 if it is NUL terminated.
-  *    @param   destBuf            A (UChar *) buffer that will receive the result.
+  *    @param   destBuf            A (UnChar *) buffer that will receive the result.
   *    @param   destCapacity       The capacity of the destination buffer.
   *    @param   status             a reference to a UErrorCode to receive any errors.
   *    @return                     The length of the string resulting from the find
@@ -1140,9 +1140,9 @@ uregex_replaceAllUText(URegularExpression *regexp,
   */
 U_STABLE int32_t U_EXPORT2 
 uregex_replaceFirst(URegularExpression  *regexp,
-                    const UChar         *replacementText,
+                    const UnChar         *replacementText,
                     int32_t              replacementLength,
-                    UChar               *destBuf,
+                    UnChar               *destBuf,
                     int32_t              destCapacity,
                     UErrorCode          *status);
 
@@ -1221,9 +1221,9 @@ uregex_replaceFirstUText(URegularExpression *regexp,
   */
 U_STABLE int32_t U_EXPORT2 
 uregex_appendReplacement(URegularExpression    *regexp,
-                         const UChar           *replacementText,
+                         const UnChar           *replacementText,
                          int32_t                replacementLength,
-                         UChar                **destBuf,
+                         UnChar                **destBuf,
                          int32_t               *destCapacity,
                          UErrorCode            *status);
 
@@ -1281,7 +1281,7 @@ uregex_appendReplacementUText(URegularExpression    *regexp,
   */
 U_STABLE int32_t U_EXPORT2 
 uregex_appendTail(URegularExpression    *regexp,
-                  UChar                **destBuf,
+                  UnChar                **destBuf,
                   int32_t               *destCapacity,
                   UErrorCode            *status);
 
@@ -1332,7 +1332,7 @@ uregex_appendTailUText(URegularExpression    *regexp,
    *  This behavior differs from Java, which ignores capture groups.
    * 
    *    @param   regexp      The compiled regular expression.
-   *    @param   destBuf     A (UChar *) buffer to receive the fields that
+   *    @param   destBuf     A (UnChar *) buffer to receive the fields that
    *                         are extracted from the input string. These
    *                         field pointers will refer to positions within the
    *                         destination buffer supplied by the caller.  Any
@@ -1361,10 +1361,10 @@ uregex_appendTailUText(URegularExpression    *regexp,
    */
 U_STABLE int32_t U_EXPORT2 
 uregex_split(   URegularExpression      *regexp,
-                  UChar                 *destBuf,
+                  UnChar                 *destBuf,
                   int32_t                destCapacity,
                   int32_t               *requiredCapacity,
-                  UChar                 *destFields[],
+                  UnChar                 *destFields[],
                   int32_t                destFieldsCapacity,
                   UErrorCode            *status);
 

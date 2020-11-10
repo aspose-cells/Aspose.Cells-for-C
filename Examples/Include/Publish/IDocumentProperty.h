@@ -1,9 +1,9 @@
 #pragma once
-#include "System/Object.h"
-#include "System/String.h"
-#include "System/Int32.h"
-#include "System/Double.h"
-#include "System/DateTime.h"
+#include "Aspose.Cells.Systems/Object.h"
+#include "Aspose.Cells.Systems/String.h"
+#include "Aspose.Cells.Systems/Int32.h"
+#include "Aspose.Cells.Systems/Double.h"
+#include "Aspose.Cells.Systems/DateTime.h"
 
 namespace Aspose {
 	namespace Cells {
@@ -36,21 +36,21 @@ namespace Properties{
 			///  </code>
 			/// 
 			///  </example>
-	class ASPOSE_CELLS_API IDocumentProperty : public Aspose::Cells::System::Object
+	class ASPOSE_CELLS_API IDocumentProperty : public Aspose::Cells::Systems::Object
 	{
 		public:
 			/// <summary>
 			/// Returns the name of the property.
 			/// </summary>
-			 virtual intrusive_ptr<Aspose::Cells::System::String> GetName()=0;
+			 virtual intrusive_ptr<Aspose::Cells::Systems::String> GetName()=0;
 			/// <summary>
 			/// Gets the value of the property.
 			/// </summary>
-			 virtual intrusive_ptr<Aspose::Cells::System::Object> GetValue()=0;
+			 virtual intrusive_ptr<Aspose::Cells::Systems::Object> GetValue()=0;
 			/// <summary>
 			/// Sets the value of the property.
 			/// </summary>
-			 virtual void SetValue(intrusive_ptr<Aspose::Cells::System::Object> value)=0;
+			 virtual void SetValue(intrusive_ptr<Aspose::Cells::Systems::Object> value)=0;
 			/// <summary>
 			/// Indicates whether this property is linked to content
 			/// </summary>
@@ -58,7 +58,7 @@ namespace Properties{
 			/// <summary>
 			/// The linked content source.
 			/// </summary>
-			 virtual intrusive_ptr<Aspose::Cells::System::String> GetSource()=0;
+			 virtual intrusive_ptr<Aspose::Cells::Systems::String> GetSource()=0;
 			/// <summary>
 			/// Gets the data type of the property.
 			/// </summary>
@@ -74,27 +74,27 @@ namespace Properties{
 			/// <remarks><p>Converts a number property using Object.ToString(). Converts a boolean property
 			/// into "Y" or "N". Converts a date property into a short date string.</p>
 			/// </remarks>
-			  virtual intrusive_ptr<Aspose::Cells::System::String> ToString()=0;
+			  virtual intrusive_ptr<Aspose::Cells::Systems::String> ToString()=0;
 			/// <summary>
 			/// Returns the property value as integer.
 			/// </summary>
 			/// <remarks>
 			/// Throws an exception if the property type is not PropertyType_Number.
 			/// </remarks>
-			 virtual Aspose::Cells::System::Int32 ToInt()=0;
+			 virtual Aspose::Cells::Systems::Int32 ToInt()=0;
 			/// <summary>
 			/// Returns the property value as double.
 			/// </summary>
 			/// <remarks>
 			/// Throws an exception if the property type is not PropertyType_Float.
 			/// </remarks>
-			 virtual Aspose::Cells::System::Double ToDouble()=0;
+			 virtual Aspose::Cells::Systems::Double ToDouble()=0;
 			/// <summary>
 			/// Returns the property value as DateTime in local time zone.
 			/// </summary>
 			/// <remarks><p>Throws an exception if the property type is not PropertyType_Date.</p>
 			/// </remarks>
-			 virtual intrusive_ptr<Aspose::Cells::System::DateTime> ToDateTime()=0;
+			 virtual intrusive_ptr<Aspose::Cells::Systems::DateTime> ToDateTime()=0;
 			/// <summary>
 			/// Returns the property value as bool.
 			/// </summary>

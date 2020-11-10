@@ -1,7 +1,7 @@
 #pragma once
-#include "System/Object.h"
-#include "System/Drawing/Color.h"
-#include "System/Double.h"
+#include "Aspose.Cells.Systems/Object.h"
+#include "Aspose.Cells.Systems/Drawing/Color.h"
+#include "Aspose.Cells.Systems/Double.h"
 #include "IFill.h"
 
 namespace Aspose {
@@ -22,12 +22,12 @@ namespace Drawing{
 			/// Gets the <see cref="Color" />
 			/// .
 			/// </summary>
-			 virtual intrusive_ptr<Aspose::Cells::System::Drawing::Color> GetColor()=0;
+			 virtual intrusive_ptr<Aspose::Cells::Systems::Drawing::Color> GetColor()=0;
 			/// <summary>
 			/// Sets the <see cref="Color" />
 			/// .
 			/// </summary>
-			 virtual void SetColor(intrusive_ptr<Aspose::Cells::System::Drawing::Color> value)=0;
+			 virtual void SetColor(intrusive_ptr<Aspose::Cells::Systems::Drawing::Color> value)=0;
 			/// <summary>
 			/// Gets the <see cref="ICellsColor" />
 			///  oject.
@@ -41,11 +41,11 @@ namespace Drawing{
 			/// <summary>
 			/// Returns or sets the degree of transparency of the area as a value from 0.0 (opaque) through 1.0 (clear).
 			/// </summary>
-			 virtual Aspose::Cells::System::Double GetTransparency()=0;
+			 virtual Aspose::Cells::Systems::Double GetTransparency()=0;
 			/// <summary>
 			/// Returns or sets the degree of transparency of the area as a value from 0.0 (opaque) through 1.0 (clear).
 			/// </summary>
-			 virtual void SetTransparency(Aspose::Cells::System::Double value)=0;
+			 virtual void SetTransparency(Aspose::Cells::Systems::Double value)=0;
 
 	};
 }

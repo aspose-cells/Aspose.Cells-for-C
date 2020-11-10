@@ -45,8 +45,8 @@
  * Other functions provide more Unicode-specific functionality like locale-specific
  * upper/lower-casing and string comparison in code point order.
  *
- * ICU uses 16-bit Unicode (UTF-16) in the form of arrays of UChar code units.
- * UTF-16 encodes each Unicode code point with either one or two UChar code units.
+ * ICU uses 16-bit Unicode (UTF-16) in the form of arrays of UnChar code units.
+ * UTF-16 encodes each Unicode code point with either one or two UnChar code units.
  * (This is the default form of Unicode, and a forward-compatible extension of the original,
  * fixed-width form that was known as UCS-2. UTF-16 superseded UCS-2 with Unicode 2.0
  * in 1996.)
@@ -68,7 +68,7 @@
  * Although it is important to support supplementary characters
  * (which use pairs of lead/trail code units called "surrogates"),
  * their occurrence is rare. Almost all characters in modern use require only
- * a single UChar code unit (i.e., their code point values are <=0xffff).
+ * a single UnChar code unit (i.e., their code point values are <=0xffff).
  *
  * For more details see the User Guide Strings chapter (http://icu-project.org/userguide/strings.html).
  * For a discussion of the handling of unpaired surrogates see also
@@ -81,31 +81,31 @@
  */
 /*@{*/
 /**
- * Determine the length of an array of UChar.
+ * Determine the length of an array of UnChar.
  *
  * @param s The array of UChars, NULL (U+0000) terminated.
  * @return The number of UChars in <code>chars</code>, minus the terminator.
  * @stable ICU 2.0
  */
 U_STABLE int32_t U_EXPORT2
-u_strlen(const UChar *s);
+u_strlen(const UnChar *s);
 /*@}*/
 
 /**
- * Count Unicode code points in the length UChar code units of the string.
- * A code point may occupy either one or two UChar code units.
+ * Count Unicode code points in the length UnChar code units of the string.
+ * A code point may occupy either one or two UnChar code units.
  * Counting code points involves reading all code units.
  *
  * This functions is basically the inverse of the U16_FWD_N() macro (see utf.h).
  *
  * @param s The input string.
- * @param length The number of UChar code units to be checked, or -1 to count all
+ * @param length The number of UnChar code units to be checked, or -1 to count all
  *               code points before the first NUL (U+0000).
  * @return The number of code points in the specified code units.
  * @stable ICU 2.0
  */
 U_STABLE int32_t U_EXPORT2
-u_countChar32(const UChar *s, int32_t length);
+u_countChar32(const UnChar *s, int32_t length);
 
 /**
  * Check if the string contains more Unicode code points than a certain number.
@@ -115,7 +115,7 @@ u_countChar32(const UChar *s, int32_t length);
  * (not -1 for NUL-termination) and falls within a certain range, and
  * never needs to count more than 'number+1' code points.
  * Logically equivalent to (u_countChar32(s, length)>number).
- * A Unicode code point may occupy either one or two UChar code units.
+ * A Unicode code point may occupy either one or two UnChar code units.
  *
  * @param s The input string.
  * @param length The length of the string, or -1 if it is NUL-terminated.
@@ -126,7 +126,7 @@ u_countChar32(const UChar *s, int32_t length);
  * @stable ICU 2.4
  */
 U_STABLE UBool U_EXPORT2
-u_strHasMoreChar32Than(const UChar *s, int32_t length, int32_t number);
+u_strHasMoreChar32Than(const UnChar *s, int32_t length, int32_t number);
 
 /**
  * Concatenate two ustrings.  Appends a copy of <code>src</code>,
@@ -138,9 +138,9 @@ u_strHasMoreChar32Than(const UChar *s, int32_t length, int32_t number);
  * @return A pointer to <code>dst</code>.
  * @stable ICU 2.0
  */
-U_STABLE UChar* U_EXPORT2
-u_strcat(UChar     *dst, 
-    const UChar     *src);
+U_STABLE UnChar* U_EXPORT2
+u_strcat(UnChar     *dst, 
+    const UnChar     *src);
 
 /**
  * Concatenate two ustrings.  
@@ -156,9 +156,9 @@ u_strcat(UChar     *dst,
  * @return A pointer to <code>dst</code>.
  * @stable ICU 2.0
  */
-U_STABLE UChar* U_EXPORT2
-u_strncat(UChar     *dst, 
-     const UChar     *src, 
+U_STABLE UnChar* U_EXPORT2
+u_strncat(UnChar     *dst, 
+     const UnChar     *src, 
      int32_t     n);
 
 /**
@@ -181,8 +181,8 @@ u_strncat(UChar     *dst,
  * @see u_strFindFirst
  * @see u_strFindLast
  */
-U_STABLE UChar * U_EXPORT2
-u_strstr(const UChar *s, const UChar *substring);
+U_STABLE UnChar * U_EXPORT2
+u_strstr(const UnChar *s, const UnChar *substring);
 
 /**
  * Find the first occurrence of a substring in a string.
@@ -205,8 +205,8 @@ u_strstr(const UChar *s, const UChar *substring);
  * @see u_strstr
  * @see u_strFindLast
  */
-U_STABLE UChar * U_EXPORT2
-u_strFindFirst(const UChar *s, int32_t length, const UChar *substring, int32_t subLength);
+U_STABLE UnChar * U_EXPORT2
+u_strFindFirst(const UnChar *s, int32_t length, const UnChar *substring, int32_t subLength);
 
 /**
  * Find the first occurrence of a BMP code point in a string.
@@ -225,8 +225,8 @@ u_strFindFirst(const UChar *s, int32_t length, const UChar *substring, int32_t s
  * @see u_strstr
  * @see u_strFindFirst
  */
-U_STABLE UChar * U_EXPORT2
-u_strchr(const UChar *s, UChar c);
+U_STABLE UnChar * U_EXPORT2
+u_strchr(const UnChar *s, UnChar c);
 
 /**
  * Find the first occurrence of a code point in a string.
@@ -245,8 +245,8 @@ u_strchr(const UChar *s, UChar c);
  * @see u_strstr
  * @see u_strFindFirst
  */
-U_STABLE UChar * U_EXPORT2
-u_strchr32(const UChar *s, UChar32 c);
+U_STABLE UnChar * U_EXPORT2
+u_strchr32(const UnChar *s, UChar32 c);
 
 /**
  * Find the last occurrence of a substring in a string.
@@ -268,8 +268,8 @@ u_strchr32(const UChar *s, UChar32 c);
  * @see u_strFindFirst
  * @see u_strFindLast
  */
-U_STABLE UChar * U_EXPORT2
-u_strrstr(const UChar *s, const UChar *substring);
+U_STABLE UnChar * U_EXPORT2
+u_strrstr(const UnChar *s, const UnChar *substring);
 
 /**
  * Find the last occurrence of a substring in a string.
@@ -292,8 +292,8 @@ u_strrstr(const UChar *s, const UChar *substring);
  * @see u_strstr
  * @see u_strFindLast
  */
-U_STABLE UChar * U_EXPORT2
-u_strFindLast(const UChar *s, int32_t length, const UChar *substring, int32_t subLength);
+U_STABLE UnChar * U_EXPORT2
+u_strFindLast(const UnChar *s, int32_t length, const UnChar *substring, int32_t subLength);
 
 /**
  * Find the last occurrence of a BMP code point in a string.
@@ -312,8 +312,8 @@ u_strFindLast(const UChar *s, int32_t length, const UChar *substring, int32_t su
  * @see u_strrstr
  * @see u_strFindLast
  */
-U_STABLE UChar * U_EXPORT2
-u_strrchr(const UChar *s, UChar c);
+U_STABLE UnChar * U_EXPORT2
+u_strrchr(const UnChar *s, UnChar c);
 
 /**
  * Find the last occurrence of a code point in a string.
@@ -332,8 +332,8 @@ u_strrchr(const UChar *s, UChar c);
  * @see u_strrstr
  * @see u_strFindLast
  */
-U_STABLE UChar * U_EXPORT2
-u_strrchr32(const UChar *s, UChar32 c);
+U_STABLE UnChar * U_EXPORT2
+u_strrchr32(const UnChar *s, UChar32 c);
 
 /**
  * Locates the first occurrence in the string <code>string</code> of any of the characters
@@ -347,8 +347,8 @@ u_strrchr32(const UChar *s, UChar32 c);
  *         characters in <code>matchSet</code>, or NULL if no such character is found.
  * @stable ICU 2.0
  */
-U_STABLE UChar * U_EXPORT2
-u_strpbrk(const UChar *string, const UChar *matchSet);
+U_STABLE UnChar * U_EXPORT2
+u_strpbrk(const UnChar *string, const UnChar *matchSet);
 
 /**
  * Returns the number of consecutive characters in <code>string</code>,
@@ -364,7 +364,7 @@ u_strpbrk(const UChar *string, const UChar *matchSet);
  * @stable ICU 2.0
  */
 U_STABLE int32_t U_EXPORT2
-u_strcspn(const UChar *string, const UChar *matchSet);
+u_strcspn(const UnChar *string, const UnChar *matchSet);
 
 /**
  * Returns the number of consecutive characters in <code>string</code>,
@@ -380,7 +380,7 @@ u_strcspn(const UChar *string, const UChar *matchSet);
  * @stable ICU 2.0
  */
 U_STABLE int32_t U_EXPORT2
-u_strspn(const UChar *string, const UChar *matchSet);
+u_strspn(const UnChar *string, const UnChar *matchSet);
 
 /**
  * The string tokenizer API allows an application to break a string into
@@ -401,16 +401,16 @@ u_strspn(const UChar *string, const UChar *matchSet);
  * @param saveState The current pointer within the original string,
  *              which is set by this function. The saveState
  *              parameter should the address of a local variable of type
- *              UChar *. (i.e. defined "Uhar *myLocalSaveState" and use
+ *              UnChar *. (i.e. defined "Uhar *myLocalSaveState" and use
  *              &myLocalSaveState for this parameter).
  * @return A pointer to the next token found in src, or NULL
  *         when there are no more tokens.
  * @stable ICU 2.0
  */
-U_STABLE UChar * U_EXPORT2
-u_strtok_r(UChar    *src, 
-     const UChar    *delim,
-           UChar   **saveState);
+U_STABLE UnChar * U_EXPORT2
+u_strtok_r(UnChar    *src, 
+     const UnChar    *delim,
+           UnChar   **saveState);
 
 /**
  * Compare two Unicode strings for bitwise equality (code unit order).
@@ -423,8 +423,8 @@ u_strtok_r(UChar    *src,
  * @stable ICU 2.0
  */
 U_STABLE int32_t  U_EXPORT2
-u_strcmp(const UChar     *s1, 
-         const UChar     *s2);
+u_strcmp(const UnChar     *s1, 
+         const UnChar     *s2);
 
 /**
  * Compare two Unicode strings in code point order.
@@ -438,7 +438,7 @@ u_strcmp(const UChar     *s1,
  * @stable ICU 2.0
  */
 U_STABLE int32_t U_EXPORT2
-u_strcmpCodePointOrder(const UChar *s1, const UChar *s2);
+u_strcmpCodePointOrder(const UnChar *s1, const UnChar *s2);
 
 /**
  * Compare two Unicode strings (binary order).
@@ -468,8 +468,8 @@ u_strcmpCodePointOrder(const UChar *s1, const UChar *s2);
  * @stable ICU 2.2
  */
 U_STABLE int32_t U_EXPORT2
-u_strCompare(const UChar *s1, int32_t length1,
-             const UChar *s2, int32_t length2,
+u_strCompare(const UnChar *s1, int32_t length1,
+             const UnChar *s2, int32_t length2,
              UBool codePointOrder);
 
 /**
@@ -546,8 +546,8 @@ u_strCompareIter(UCharIterator *iter1, UCharIterator *iter2, UBool codePointOrde
  * @stable ICU 2.2
  */
 U_STABLE int32_t U_EXPORT2
-u_strCaseCompare(const UChar *s1, int32_t length1,
-                 const UChar *s2, int32_t length2,
+u_strCaseCompare(const UnChar *s1, int32_t length1,
+                 const UnChar *s2, int32_t length2,
                  uint32_t options,
                  UErrorCode *pErrorCode);
 
@@ -564,8 +564,8 @@ u_strCaseCompare(const UChar *s1, int32_t length1,
  * @stable ICU 2.0
  */
 U_STABLE int32_t U_EXPORT2
-u_strncmp(const UChar     *ucs1, 
-     const UChar     *ucs2, 
+u_strncmp(const UnChar     *ucs1, 
+     const UnChar     *ucs2, 
      int32_t     n);
 
 /**
@@ -582,7 +582,7 @@ u_strncmp(const UChar     *ucs1,
  * @stable ICU 2.0
  */
 U_STABLE int32_t U_EXPORT2
-u_strncmpCodePointOrder(const UChar *s1, const UChar *s2, int32_t n);
+u_strncmpCodePointOrder(const UnChar *s1, const UnChar *s2, int32_t n);
 
 /**
  * Compare two strings case-insensitively using full case folding.
@@ -604,7 +604,7 @@ u_strncmpCodePointOrder(const UChar *s1, const UChar *s2, int32_t n);
  * @stable ICU 2.0
  */
 U_STABLE int32_t U_EXPORT2
-u_strcasecmp(const UChar *s1, const UChar *s2, uint32_t options);
+u_strcasecmp(const UnChar *s1, const UnChar *s2, uint32_t options);
 
 /**
  * Compare two strings case-insensitively using full case folding.
@@ -628,7 +628,7 @@ u_strcasecmp(const UChar *s1, const UChar *s2, uint32_t options);
  * @stable ICU 2.0
  */
 U_STABLE int32_t U_EXPORT2
-u_strncasecmp(const UChar *s1, const UChar *s2, int32_t n, uint32_t options);
+u_strncasecmp(const UnChar *s1, const UnChar *s2, int32_t n, uint32_t options);
 
 /**
  * Compare two strings case-insensitively using full case folding.
@@ -652,7 +652,7 @@ u_strncasecmp(const UChar *s1, const UChar *s2, int32_t n, uint32_t options);
  * @stable ICU 2.0
  */
 U_STABLE int32_t U_EXPORT2
-u_memcasecmp(const UChar *s1, const UChar *s2, int32_t length, uint32_t options);
+u_memcasecmp(const UnChar *s1, const UnChar *s2, int32_t length, uint32_t options);
 
 /**
  * Copy a ustring. Adds a null terminator.
@@ -662,9 +662,9 @@ u_memcasecmp(const UChar *s1, const UChar *s2, int32_t length, uint32_t options)
  * @return A pointer to <code>dst</code>.
  * @stable ICU 2.0
  */
-U_STABLE UChar* U_EXPORT2
-u_strcpy(UChar     *dst, 
-    const UChar     *src);
+U_STABLE UnChar* U_EXPORT2
+u_strcpy(UnChar     *dst, 
+    const UnChar     *src);
 
 /**
  * Copy a ustring.
@@ -677,9 +677,9 @@ u_strcpy(UChar     *dst,
  * @return A pointer to <code>dst</code>.
  * @stable ICU 2.0
  */
-U_STABLE UChar* U_EXPORT2
-u_strncpy(UChar     *dst, 
-     const UChar     *src, 
+U_STABLE UnChar* U_EXPORT2
+u_strncpy(UnChar     *dst, 
+     const UnChar     *src, 
      int32_t     n);
 
 #if !UCONFIG_NO_CONVERSION
@@ -687,21 +687,21 @@ u_strncpy(UChar     *dst,
 /**
  * Copy a byte string encoded in the default codepage to a ustring.
  * Adds a null terminator.
- * Performs a host byte to UChar conversion
+ * Performs a host byte to UnChar conversion
  *
  * @param dst The destination string.
  * @param src The source string.
  * @return A pointer to <code>dst</code>.
  * @stable ICU 2.0
  */
-U_STABLE UChar* U_EXPORT2 u_uastrcpy(UChar *dst,
+U_STABLE UnChar* U_EXPORT2 u_uastrcpy(UnChar *dst,
                const char *src );
 
 /**
  * Copy a byte string encoded in the default codepage to a ustring.
  * Copies at most <code>n</code> characters.  The result will be null terminated
  * if the length of <code>src</code> is less than <code>n</code>.
- * Performs a host byte to UChar conversion
+ * Performs a host byte to UnChar conversion
  *
  * @param dst The destination string.
  * @param src The source string.
@@ -709,14 +709,14 @@ U_STABLE UChar* U_EXPORT2 u_uastrcpy(UChar *dst,
  * @return A pointer to <code>dst</code>.
  * @stable ICU 2.0
  */
-U_STABLE UChar* U_EXPORT2 u_uastrncpy(UChar *dst,
+U_STABLE UnChar* U_EXPORT2 u_uastrncpy(UnChar *dst,
             const char *src,
             int32_t n);
 
 /**
  * Copy ustring to a byte string encoded in the default codepage.
  * Adds a null terminator.
- * Performs a UChar to host byte conversion
+ * Performs a UnChar to host byte conversion
  *
  * @param dst The destination string.
  * @param src The source string.
@@ -724,13 +724,13 @@ U_STABLE UChar* U_EXPORT2 u_uastrncpy(UChar *dst,
  * @stable ICU 2.0
  */
 U_STABLE char* U_EXPORT2 u_austrcpy(char *dst,
-            const UChar *src );
+            const UnChar *src );
 
 /**
  * Copy ustring to a byte string encoded in the default codepage.
  * Copies at most <code>n</code> characters.  The result will be null terminated
  * if the length of <code>src</code> is less than <code>n</code>.
- * Performs a UChar to host byte conversion
+ * Performs a UnChar to host byte conversion
  *
  * @param dst The destination string.
  * @param src The source string.
@@ -739,7 +739,7 @@ U_STABLE char* U_EXPORT2 u_austrcpy(char *dst,
  * @stable ICU 2.0
  */
 U_STABLE char* U_EXPORT2 u_austrncpy(char *dst,
-            const UChar *src,
+            const UnChar *src,
             int32_t n );
 
 #endif
@@ -752,8 +752,8 @@ U_STABLE char* U_EXPORT2 u_austrncpy(char *dst,
  * @return A pointer to <code>dest</code>
  * @stable ICU 2.0
  */
-U_STABLE UChar* U_EXPORT2
-u_memcpy(UChar *dest, const UChar *src, int32_t count);
+U_STABLE UnChar* U_EXPORT2
+u_memcpy(UnChar *dest, const UnChar *src, int32_t count);
 
 /**
  * Synonym for memmove(), but with UChars only.
@@ -763,8 +763,8 @@ u_memcpy(UChar *dest, const UChar *src, int32_t count);
  * @return A pointer to <code>dest</code>
  * @stable ICU 2.0
  */
-U_STABLE UChar* U_EXPORT2
-u_memmove(UChar *dest, const UChar *src, int32_t count);
+U_STABLE UnChar* U_EXPORT2
+u_memmove(UnChar *dest, const UnChar *src, int32_t count);
 
 /**
  * Initialize <code>count</code> characters of <code>dest</code> to <code>c</code>.
@@ -775,8 +775,8 @@ u_memmove(UChar *dest, const UChar *src, int32_t count);
  * @return A pointer to <code>dest</code>.
  * @stable ICU 2.0
  */
-U_STABLE UChar* U_EXPORT2
-u_memset(UChar *dest, UChar c, int32_t count);
+U_STABLE UnChar* U_EXPORT2
+u_memset(UnChar *dest, UnChar c, int32_t count);
 
 /**
  * Compare the first <code>count</code> UChars of each buffer.
@@ -790,7 +790,7 @@ u_memset(UChar *dest, UChar c, int32_t count);
  * @stable ICU 2.0
  */
 U_STABLE int32_t U_EXPORT2
-u_memcmp(const UChar *buf1, const UChar *buf2, int32_t count);
+u_memcmp(const UnChar *buf1, const UnChar *buf2, int32_t count);
 
 /**
  * Compare two Unicode strings in code point order.
@@ -806,7 +806,7 @@ u_memcmp(const UChar *buf1, const UChar *buf2, int32_t count);
  * @stable ICU 2.0
  */
 U_STABLE int32_t U_EXPORT2
-u_memcmpCodePointOrder(const UChar *s1, const UChar *s2, int32_t count);
+u_memcmpCodePointOrder(const UnChar *s1, const UnChar *s2, int32_t count);
 
 /**
  * Find the first occurrence of a BMP code point in a string.
@@ -825,8 +825,8 @@ u_memcmpCodePointOrder(const UChar *s1, const UChar *s2, int32_t count);
  * @see u_memchr32
  * @see u_strFindFirst
  */
-U_STABLE UChar* U_EXPORT2
-u_memchr(const UChar *s, UChar c, int32_t count);
+U_STABLE UnChar* U_EXPORT2
+u_memchr(const UnChar *s, UnChar c, int32_t count);
 
 /**
  * Find the first occurrence of a code point in a string.
@@ -845,8 +845,8 @@ u_memchr(const UChar *s, UChar c, int32_t count);
  * @see u_memchr
  * @see u_strFindFirst
  */
-U_STABLE UChar* U_EXPORT2
-u_memchr32(const UChar *s, UChar32 c, int32_t count);
+U_STABLE UnChar* U_EXPORT2
+u_memchr32(const UnChar *s, UChar32 c, int32_t count);
 
 /**
  * Find the last occurrence of a BMP code point in a string.
@@ -865,8 +865,8 @@ u_memchr32(const UChar *s, UChar32 c, int32_t count);
  * @see u_memrchr32
  * @see u_strFindLast
  */
-U_STABLE UChar* U_EXPORT2
-u_memrchr(const UChar *s, UChar c, int32_t count);
+U_STABLE UnChar* U_EXPORT2
+u_memrchr(const UnChar *s, UnChar c, int32_t count);
 
 /**
  * Find the last occurrence of a code point in a string.
@@ -885,8 +885,8 @@ u_memrchr(const UChar *s, UChar c, int32_t count);
  * @see u_memrchr
  * @see u_strFindLast
  */
-U_STABLE UChar* U_EXPORT2
-u_memrchr32(const UChar *s, UChar32 c, int32_t count);
+U_STABLE UnChar* U_EXPORT2
+u_memrchr32(const UnChar *s, UChar32 c, int32_t count);
 
 /**
  * Unicode String literals in C.
@@ -939,19 +939,19 @@ u_memrchr32(const UChar *s, UChar32 c, int32_t count);
  * @stable ICU 2.0
  */
 #if defined(U_DECLARE_UTF16)
-#   define U_STRING_DECL(var, cs, length) static const UChar *var=(const UChar *)U_DECLARE_UTF16(cs)
+#   define U_STRING_DECL(var, cs, length) static const UnChar *var=(const UnChar *)U_DECLARE_UTF16(cs)
     /**@stable ICU 2.0 */
 #   define U_STRING_INIT(var, cs, length)
 #elif U_SIZEOF_WCHAR_T==U_SIZEOF_UCHAR && (U_CHARSET_FAMILY==U_ASCII_FAMILY || (U_SIZEOF_UCHAR == 2 && defined(U_WCHAR_IS_UTF16)))
-#   define U_STRING_DECL(var, cs, length) static const UChar var[(length)+1]=L ## cs
+#   define U_STRING_DECL(var, cs, length) static const UnChar var[(length)+1]=L ## cs
     /**@stable ICU 2.0 */
 #   define U_STRING_INIT(var, cs, length)
 #elif U_SIZEOF_UCHAR==1 && U_CHARSET_FAMILY==U_ASCII_FAMILY
-#   define U_STRING_DECL(var, cs, length) static const UChar var[(length)+1]=cs
+#   define U_STRING_DECL(var, cs, length) static const UnChar var[(length)+1]=cs
     /**@stable ICU 2.0 */
 #   define U_STRING_INIT(var, cs, length)
 #else
-#   define U_STRING_DECL(var, cs, length) static UChar var[(length)+1]
+#   define U_STRING_DECL(var, cs, length) static UnChar var[(length)+1]
     /**@stable ICU 2.0 */
 #   define U_STRING_INIT(var, cs, length) u_charsToUChars(cs, var, length+1)
 #endif
@@ -1005,7 +1005,7 @@ u_memrchr32(const UChar *s, UChar32 c, int32_t count);
  */
 U_STABLE int32_t U_EXPORT2
 u_unescape(const char *src,
-           UChar *dest, int32_t destCapacity);
+           UnChar *dest, int32_t destCapacity);
 
 U_CDECL_BEGIN
 /**
@@ -1020,13 +1020,13 @@ U_CDECL_BEGIN
  * @see u_unescapeAt
  * @stable ICU 2.0
  */
-typedef UChar (U_CALLCONV *UNESCAPE_CHAR_AT)(int32_t offset, void *context);
+typedef UnChar (U_CALLCONV *UNESCAPE_CHAR_AT)(int32_t offset, void *context);
 U_CDECL_END
 
 /**
  * Unescape a single sequence. The character at offset-1 is assumed
  * (without checking) to be a backslash.  This method takes a callback
- * pointer to a function that returns the UChar at a given offset.  By
+ * pointer to a function that returns the UnChar at a given offset.  By
  * varying this callback, ICU functions are able to unescape char*
  * strings, UnicodeString objects, and UFILE pointers.
  *
@@ -1034,7 +1034,7 @@ U_CDECL_END
  * (UChar32)0xFFFFFFFF is returned.  See documentation of u_unescape()
  * for a list of recognized sequences.
  *
- * @param charAt callback function that returns a UChar of the source
+ * @param charAt callback function that returns a UnChar of the source
  * text given an offset and a context pointer.
  * @param offset pointer to the offset that will be passed to charAt.
  * The offset value will be updated upon return to point after the
@@ -1078,8 +1078,8 @@ u_unescapeAt(UNESCAPE_CHAR_AT charAt,
  * @stable ICU 2.0
  */
 U_STABLE int32_t U_EXPORT2
-u_strToUpper(UChar *dest, int32_t destCapacity,
-             const UChar *src, int32_t srcLength,
+u_strToUpper(UnChar *dest, int32_t destCapacity,
+             const UnChar *src, int32_t srcLength,
              const char *locale,
              UErrorCode *pErrorCode);
 
@@ -1104,8 +1104,8 @@ u_strToUpper(UChar *dest, int32_t destCapacity,
  * @stable ICU 2.0
  */
 U_STABLE int32_t U_EXPORT2
-u_strToLower(UChar *dest, int32_t destCapacity,
-             const UChar *src, int32_t srcLength,
+u_strToLower(UnChar *dest, int32_t destCapacity,
+             const UnChar *src, int32_t srcLength,
              const char *locale,
              UErrorCode *pErrorCode);
 
@@ -1150,8 +1150,8 @@ u_strToLower(UChar *dest, int32_t destCapacity,
  * @stable ICU 2.1
  */
 U_STABLE int32_t U_EXPORT2
-u_strToTitle(UChar *dest, int32_t destCapacity,
-             const UChar *src, int32_t srcLength,
+u_strToTitle(UnChar *dest, int32_t destCapacity,
+             const UnChar *src, int32_t srcLength,
              UBreakIterator *titleIter,
              const char *locale,
              UErrorCode *pErrorCode);
@@ -1183,8 +1183,8 @@ u_strToTitle(UChar *dest, int32_t destCapacity,
  * @stable ICU 2.0
  */
 U_STABLE int32_t U_EXPORT2
-u_strFoldCase(UChar *dest, int32_t destCapacity,
-              const UChar *src, int32_t srcLength,
+u_strFoldCase(UnChar *dest, int32_t destCapacity,
+              const UnChar *src, int32_t srcLength,
               uint32_t options,
               UErrorCode *pErrorCode);
 
@@ -1215,7 +1215,7 @@ U_STABLE wchar_t* U_EXPORT2
 u_strToWCS(wchar_t *dest, 
            int32_t destCapacity,
            int32_t *pDestLength,
-           const UChar *src, 
+           const UnChar *src, 
            int32_t srcLength,
            UErrorCode *pErrorCode);
 /**
@@ -1240,8 +1240,8 @@ u_strToWCS(wchar_t *dest,
  * @return The pointer to destination buffer.
  * @stable ICU 2.0
  */
-U_STABLE UChar* U_EXPORT2
-u_strFromWCS(UChar   *dest,
+U_STABLE UnChar* U_EXPORT2
+u_strFromWCS(UnChar   *dest,
              int32_t destCapacity, 
              int32_t *pDestLength,
              const wchar_t *src,
@@ -1275,7 +1275,7 @@ U_STABLE char* U_EXPORT2
 u_strToUTF8(char *dest,           
             int32_t destCapacity,
             int32_t *pDestLength,
-            const UChar *src, 
+            const UnChar *src, 
             int32_t srcLength,
             UErrorCode *pErrorCode);
 
@@ -1301,8 +1301,8 @@ u_strToUTF8(char *dest,
  * @see u_strFromUTF8WithSub
  * @see u_strFromUTF8Lenient
  */
-U_STABLE UChar* U_EXPORT2
-u_strFromUTF8(UChar *dest,             
+U_STABLE UnChar* U_EXPORT2
+u_strFromUTF8(UnChar *dest,             
               int32_t destCapacity,
               int32_t *pDestLength,
               const char *src, 
@@ -1348,7 +1348,7 @@ U_STABLE char* U_EXPORT2
 u_strToUTF8WithSub(char *dest,
             int32_t destCapacity,
             int32_t *pDestLength,
-            const UChar *src,
+            const UnChar *src,
             int32_t srcLength,
             UChar32 subchar, int32_t *pNumSubstitutions,
             UErrorCode *pErrorCode);
@@ -1389,8 +1389,8 @@ u_strToUTF8WithSub(char *dest,
  * @see u_strToUTF8WithSub
  * @stable ICU 3.6
  */
-U_STABLE UChar* U_EXPORT2
-u_strFromUTF8WithSub(UChar *dest,
+U_STABLE UnChar* U_EXPORT2
+u_strFromUTF8WithSub(UnChar *dest,
               int32_t destCapacity,
               int32_t *pDestLength,
               const char *src,
@@ -1449,8 +1449,8 @@ u_strFromUTF8WithSub(UChar *dest,
  * @see u_strToUTF8WithSub
  * @stable ICU 3.6
  */
-U_STABLE UChar * U_EXPORT2
-u_strFromUTF8Lenient(UChar *dest,
+U_STABLE UnChar * U_EXPORT2
+u_strFromUTF8Lenient(UnChar *dest,
                      int32_t destCapacity,
                      int32_t *pDestLength,
                      const char *src,
@@ -1483,7 +1483,7 @@ U_STABLE UChar32* U_EXPORT2
 u_strToUTF32(UChar32 *dest, 
              int32_t  destCapacity,
              int32_t  *pDestLength,
-             const UChar *src, 
+             const UnChar *src, 
              int32_t  srcLength,
              UErrorCode *pErrorCode);
 
@@ -1509,8 +1509,8 @@ u_strToUTF32(UChar32 *dest,
  * @see u_strToUTF32
  * @stable ICU 2.0
  */
-U_STABLE UChar* U_EXPORT2 
-u_strFromUTF32(UChar   *dest,
+U_STABLE UnChar* U_EXPORT2 
+u_strFromUTF32(UnChar   *dest,
                int32_t destCapacity, 
                int32_t *pDestLength,
                const UChar32 *src,
@@ -1556,7 +1556,7 @@ U_STABLE UChar32* U_EXPORT2
 u_strToUTF32WithSub(UChar32 *dest,
              int32_t destCapacity,
              int32_t *pDestLength,
-             const UChar *src,
+             const UnChar *src,
              int32_t srcLength,
              UChar32 subchar, int32_t *pNumSubstitutions,
              UErrorCode *pErrorCode);
@@ -1596,8 +1596,8 @@ u_strToUTF32WithSub(UChar32 *dest,
  * @see u_strToUTF32WithSub
  * @stable ICU 4.2
  */
-U_STABLE UChar* U_EXPORT2
-u_strFromUTF32WithSub(UChar *dest,
+U_STABLE UnChar* U_EXPORT2
+u_strFromUTF32WithSub(UnChar *dest,
                int32_t destCapacity,
                int32_t *pDestLength,
                const UChar32 *src,
@@ -1642,7 +1642,7 @@ u_strToJavaModifiedUTF8(
         char *dest,
         int32_t destCapacity,
         int32_t *pDestLength,
-        const UChar *src, 
+        const UnChar *src, 
         int32_t srcLength,
         UErrorCode *pErrorCode);
 
@@ -1687,9 +1687,9 @@ u_strToJavaModifiedUTF8(
  * @see u_strToJavaModifiedUTF8
  * @stable ICU 4.4
  */
-U_STABLE UChar* U_EXPORT2
+U_STABLE UnChar* U_EXPORT2
 u_strFromJavaModifiedUTF8WithSub(
-        UChar *dest,
+        UnChar *dest,
         int32_t destCapacity,
         int32_t *pDestLength,
         const char *src,

@@ -1,8 +1,8 @@
 #pragma once
-#include "System/Object.h"
-#include "System/Int32.h"
-#include "System/String.h"
-#include "System/Collections/CollectionBase.h"
+#include "Aspose.Cells.Systems/Object.h"
+#include "Aspose.Cells.Systems/Int32.h"
+#include "Aspose.Cells.Systems/String.h"
+#include "Aspose.Cells.Systems/Collections/CollectionBase.h"
 
 namespace Aspose {
 	namespace Cells {
@@ -25,7 +25,7 @@ namespace Charts{
 			/// intrusive_ptr<IChartCollection> charts = workbook->GetIWorksheets()->GetObjectByIndex(0)->GetICharts();
 			/// </code>
 			/// </example>
-	class ASPOSE_CELLS_API IChartCollection : public Aspose::Cells::System::Collections::CollectionBase
+	class ASPOSE_CELLS_API IChartCollection : public Aspose::Cells::Systems::Collections::CollectionBase
 	{
 		public:
 			/// <summary>
@@ -38,7 +38,7 @@ namespace Charts{
 			/// <param name="height" >The chart height</param>
 			/// <returns><see cref="IChart" />
 			///  object index.</returns>
-			 virtual Aspose::Cells::System::Int32 AddFloatingChart(Aspose::Cells::Charts::ChartType type , Aspose::Cells::System::Int32 left , Aspose::Cells::System::Int32 top , Aspose::Cells::System::Int32 width , Aspose::Cells::System::Int32 height)=0;
+			 virtual Aspose::Cells::Systems::Int32 AddFloatingChart(Aspose::Cells::Charts::ChartType type , Aspose::Cells::Systems::Int32 left , Aspose::Cells::Systems::Int32 top , Aspose::Cells::Systems::Int32 width , Aspose::Cells::Systems::Int32 height)=0;
 			/// <summary>
 			/// Adds a chart to the collection.
 			/// </summary>
@@ -49,14 +49,14 @@ namespace Charts{
 			/// <param name="lowerRightColumn" >Lower right column index</param>
 			/// <returns><see cref="IChart" />
 			///  object index.</returns>
-			 virtual Aspose::Cells::System::Int32 Add(Aspose::Cells::Charts::ChartType type , Aspose::Cells::System::Int32 upperLeftRow , Aspose::Cells::System::Int32 upperLeftColumn , Aspose::Cells::System::Int32 lowerRightRow , Aspose::Cells::System::Int32 lowerRightColumn)=0;
+			 virtual Aspose::Cells::Systems::Int32 Add(Aspose::Cells::Charts::ChartType type , Aspose::Cells::Systems::Int32 upperLeftRow , Aspose::Cells::Systems::Int32 upperLeftColumn , Aspose::Cells::Systems::Int32 lowerRightRow , Aspose::Cells::Systems::Int32 lowerRightColumn)=0;
 			/// <summary>
 			///  Gets the <see cref="IChart" />
 			///  element at the specified index.
 			///  </summary>
 			/// <param name="index" >The zero based index of the element.</param>
 			/// <returns>The element at the specified index.</returns>
-			 virtual intrusive_ptr<Aspose::Cells::Charts::IChart> 		GetObjectByIndex(Aspose::Cells::System::Int32 index)=0;
+			 virtual intrusive_ptr<Aspose::Cells::Charts::IChart> 		GetObjectByIndex(Aspose::Cells::Systems::Int32 index)=0;
 			/// <summary>
 			/// Gets the chart by the name.
 			/// </summary>
@@ -65,12 +65,12 @@ namespace Charts{
 			/// <remarks>
 			/// The default chart name is null. So you have to explicitly set the name of the chart.
 			/// </remarks>
-			 virtual intrusive_ptr<Aspose::Cells::Charts::IChart> 		GetObjectByIndex(intrusive_ptr<Aspose::Cells::System::String> name)=0;
+			 virtual intrusive_ptr<Aspose::Cells::Charts::IChart> 		GetObjectByIndex(intrusive_ptr<Aspose::Cells::Systems::String> name)=0;
 			/// <summary>
 			/// Remove a chart at the specific index.
 			/// </summary>
 			/// <param name="index" >The chart index.</param>
-			 virtual void RemoveAt(Aspose::Cells::System::Int32 index)=0;
+			 virtual void RemoveAt(Aspose::Cells::Systems::Int32 index)=0;
 			/// <summary>
 			/// Clear all charts.
 			/// </summary>

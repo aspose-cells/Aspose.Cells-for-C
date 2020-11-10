@@ -1,7 +1,7 @@
 #pragma once
-#include "System/Object.h"
-#include "System/String.h"
-#include "System/Int32.h"
+#include "Aspose.Cells.Systems/Object.h"
+#include "Aspose.Cells.Systems/String.h"
+#include "Aspose.Cells.Systems/Int32.h"
 
 namespace Aspose {
 	namespace Cells {
@@ -16,7 +16,7 @@ namespace Metadata{
 			/// <summary>
 			/// Represents the options of loading metadata of the file.
 			/// </summary>
-	class ASPOSE_CELLS_API IMetadataOptions : public Aspose::Cells::System::Object
+	class ASPOSE_CELLS_API IMetadataOptions : public Aspose::Cells::Systems::Object
 	{
 		public:
 			/// <summary>
@@ -26,19 +26,19 @@ namespace Metadata{
 			/// <summary>
 			/// Gets Workbook file encryption password.
 			/// </summary>
-			 virtual intrusive_ptr<Aspose::Cells::System::String> GetPassword()=0;
+			 virtual intrusive_ptr<Aspose::Cells::Systems::String> GetPassword()=0;
 			/// <summary>
 			/// Sets Workbook file encryption password.
 			/// </summary>
-			 virtual void SetPassword(intrusive_ptr<Aspose::Cells::System::String> value)=0;
+			 virtual void SetPassword(intrusive_ptr<Aspose::Cells::Systems::String> value)=0;
 			/// <summary>
 			/// Gets The key length.
 			/// </summary>
-			 virtual Aspose::Cells::System::Int32 GetKeyLength()=0;
+			 virtual Aspose::Cells::Systems::Int32 GetKeyLength()=0;
 			/// <summary>
 			/// Sets The key length.
 			/// </summary>
-			 virtual void SetKeyLength(Aspose::Cells::System::Int32 value)=0;
+			 virtual void SetKeyLength(Aspose::Cells::Systems::Int32 value)=0;
 
 	};
 }

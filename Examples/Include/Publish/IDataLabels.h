@@ -1,7 +1,7 @@
 #pragma once
-#include "System/Object.h"
-#include "System/String.h"
-#include "System/Int32.h"
+#include "Aspose.Cells.Systems/Object.h"
+#include "Aspose.Cells.Systems/String.h"
+#include "Aspose.Cells.Systems/Int32.h"
 #include "IChartTextFrame.h"
 
 namespace Aspose {
@@ -38,11 +38,11 @@ namespace Charts{
 			/// <summary>
 			/// Gets or sets the text of a frame's title.
 			/// </summary>
-			  virtual intrusive_ptr<Aspose::Cells::System::String> GetText()=0;
+			  virtual intrusive_ptr<Aspose::Cells::Systems::String> GetText()=0;
 			/// <summary>
 			/// Gets or sets the text of a frame's title.
 			/// </summary>
-			  virtual void SetText(intrusive_ptr<Aspose::Cells::System::String> value)=0;
+			  virtual void SetText(intrusive_ptr<Aspose::Cells::Systems::String> value)=0;
 			/// <summary>
 			/// Gets or sets a value indicating whether the text is wrapped.
 			/// </summary>
@@ -174,19 +174,19 @@ namespace Charts{
 			/// <summary>
 			/// Represents the format string for the DataLabels object. 
 			/// </summary>
-			 virtual intrusive_ptr<Aspose::Cells::System::String> Get_NumberFormat()=0;
+			 virtual intrusive_ptr<Aspose::Cells::Systems::String> Get_NumberFormat()=0;
 			/// <summary>
 			/// Represents the format string for the DataLabels object. 
 			/// </summary>
-			 virtual void SetNumberFormat(intrusive_ptr<Aspose::Cells::System::String> value)=0;
+			 virtual void SetNumberFormat(intrusive_ptr<Aspose::Cells::Systems::String> value)=0;
 			/// <summary>
 			/// Gets ans sets the built-in number format.
 			/// </summary>
-			 virtual Aspose::Cells::System::Int32 GetNumber()=0;
+			 virtual Aspose::Cells::Systems::Int32 GetNumber()=0;
 			/// <summary>
 			/// Gets ans sets the built-in number format.
 			/// </summary>
-			 virtual void SetNumber(Aspose::Cells::System::Int32 value)=0;
+			 virtual void SetNumber(Aspose::Cells::Systems::Int32 value)=0;
 			/// <summary>
 			/// True if the number format is linked to the cells 
 			/// (so that the number format changes in the labels when it changes in the cells). 
@@ -230,11 +230,11 @@ namespace Charts{
 			/// <summary>
 			/// Sets or returns the separator value used for the data labels on a chart.
 			/// </summary>
-			 virtual intrusive_ptr<Aspose::Cells::System::String> GetSeparatorValue()=0;
+			 virtual intrusive_ptr<Aspose::Cells::Systems::String> GetSeparatorValue()=0;
 			/// <summary>
 			/// Sets or returns the separator value used for the data labels on a chart.
 			/// </summary>
-			 virtual void SetSeparatorValue(intrusive_ptr<Aspose::Cells::System::String> value)=0;
+			 virtual void SetSeparatorValue(intrusive_ptr<Aspose::Cells::Systems::String> value)=0;
 			/// <summary>
 			/// Represents the position of the data lable.
 			/// </summary>

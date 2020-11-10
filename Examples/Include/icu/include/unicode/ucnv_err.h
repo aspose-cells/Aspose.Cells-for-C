@@ -193,8 +193,8 @@ typedef struct {
     uint16_t size;              /**< The size of this struct. @stable ICU 2.0 */
     UBool flush;                /**< The internal state of converter will be reset and data flushed if set to TRUE. @stable ICU 2.0    */
     UConverter *converter;      /**< Pointer to the converter that is opened and to which this struct is passed as an argument. @stable ICU 2.0  */
-    const UChar *source;        /**< Pointer to the source source buffer. @stable ICU 2.0    */
-    const UChar *sourceLimit;   /**< Pointer to the limit (end + 1) of source buffer. @stable ICU 2.0    */
+    const UnChar *source;        /**< Pointer to the source source buffer. @stable ICU 2.0    */
+    const UnChar *sourceLimit;   /**< Pointer to the limit (end + 1) of source buffer. @stable ICU 2.0    */
     char *target;               /**< Pointer to the target buffer. @stable ICU 2.0    */
     const char *targetLimit;    /**< Pointer to the limit (end + 1) of target buffer. @stable ICU 2.0     */
     int32_t *offsets;           /**< Pointer to the buffer that recieves the offsets. *offset = blah ; offset++;. @stable ICU 2.0  */
@@ -211,8 +211,8 @@ typedef struct {
     UConverter *converter;      /**< Pointer to the converter that is opened and to which this struct is passed as an argument. @stable ICU 2.0 */
     const char *source;         /**< Pointer to the source source buffer. @stable ICU 2.0    */
     const char *sourceLimit;    /**< Pointer to the limit (end + 1) of source buffer. @stable ICU 2.0    */
-    UChar *target;              /**< Pointer to the target buffer. @stable ICU 2.0    */
-    const UChar *targetLimit;   /**< Pointer to the limit (end + 1) of target buffer. @stable ICU 2.0     */
+    UnChar *target;              /**< Pointer to the target buffer. @stable ICU 2.0    */
+    const UnChar *targetLimit;   /**< Pointer to the limit (end + 1) of target buffer. @stable ICU 2.0     */
     int32_t *offsets;           /**< Pointer to the buffer that recieves the offsets. *offset = blah ; offset++;. @stable ICU 2.0  */
 } UConverterToUnicodeArgs;
 
@@ -234,7 +234,7 @@ typedef struct {
 U_STABLE void U_EXPORT2 UCNV_FROM_U_CALLBACK_STOP (
                   const void *context,
                   UConverterFromUnicodeArgs *fromUArgs,
-                  const UChar* codeUnits,
+                  const UnChar* codeUnits,
                   int32_t length,
                   UChar32 codePoint,
                   UConverterCallbackReason reason,
@@ -285,7 +285,7 @@ U_STABLE void U_EXPORT2 UCNV_TO_U_CALLBACK_STOP (
 U_STABLE void U_EXPORT2 UCNV_FROM_U_CALLBACK_SKIP (
                   const void *context,
                   UConverterFromUnicodeArgs *fromUArgs,
-                  const UChar* codeUnits,
+                  const UnChar* codeUnits,
                   int32_t length,
                   UChar32 codePoint,
                   UConverterCallbackReason reason,
@@ -315,7 +315,7 @@ U_STABLE void U_EXPORT2 UCNV_FROM_U_CALLBACK_SKIP (
 U_STABLE void U_EXPORT2 UCNV_FROM_U_CALLBACK_SUBSTITUTE (
                   const void *context,
                   UConverterFromUnicodeArgs *fromUArgs,
-                  const UChar* codeUnits,
+                  const UnChar* codeUnits,
                   int32_t length,
                   UChar32 codePoint,
                   UConverterCallbackReason reason,
@@ -371,7 +371,7 @@ U_STABLE void U_EXPORT2 UCNV_FROM_U_CALLBACK_SUBSTITUTE (
 U_STABLE void U_EXPORT2 UCNV_FROM_U_CALLBACK_ESCAPE (
                   const void *context,
                   UConverterFromUnicodeArgs *fromUArgs,
-                  const UChar* codeUnits,
+                  const UnChar* codeUnits,
                   int32_t length,
                   UChar32 codePoint,
                   UConverterCallbackReason reason,

@@ -1,11 +1,11 @@
 #pragma once
-#include "System/Object.h"
-#include "System/Int32.h"
-#include "System/String.h"
-#include "System/Array1D.h"
-#include "System/Byte.h"
-#include "System/IO/Stream.h"
-#include "System/Collections/CollectionBase.h"
+#include "Aspose.Cells.Systems/Object.h"
+#include "Aspose.Cells.Systems/Int32.h"
+#include "Aspose.Cells.Systems/String.h"
+#include "Aspose.Cells.Systems/Array1D.h"
+#include "Aspose.Cells.Systems/Byte.h"
+#include "Aspose.Cells.Systems/IO/Stream.h"
+#include "Aspose.Cells.Systems/Collections/CollectionBase.h"
 
 namespace Aspose {
 	namespace Cells {
@@ -57,7 +57,7 @@ namespace Drawing{
 			/// <summary>
 			/// Represents all the shape in a worksheet/chart.
 			/// </summary>
-	class ASPOSE_CELLS_API IShapeCollection : public Aspose::Cells::System::Collections::CollectionBase
+	class ASPOSE_CELLS_API IShapeCollection : public Aspose::Cells::Systems::Collections::CollectionBase
 	{
 		public:
 			/// <summary>
@@ -67,7 +67,7 @@ namespace Drawing{
 			/// 
 			/// <returns/>
 			/// 
-			 virtual intrusive_ptr<Aspose::Cells::Drawing::IShape> 		GetObjectByIndex(Aspose::Cells::System::Int32 index)=0;
+			 virtual intrusive_ptr<Aspose::Cells::Drawing::IShape> 		GetObjectByIndex(Aspose::Cells::Systems::Int32 index)=0;
 			/// <summary>
 			/// Gets the shape object by the shape image
 			/// </summary>
@@ -75,7 +75,7 @@ namespace Drawing{
 			/// 
 			/// <returns/>
 			/// 
-			 virtual intrusive_ptr<Aspose::Cells::Drawing::IShape> 		GetObjectByIndex(intrusive_ptr<Aspose::Cells::System::String> name)=0;
+			 virtual intrusive_ptr<Aspose::Cells::Drawing::IShape> 		GetObjectByIndex(intrusive_ptr<Aspose::Cells::Systems::String> name)=0;
 			/// <summary>
 			/// Adds and copy a shape to the worksheet..
 			/// </summary>
@@ -85,7 +85,7 @@ namespace Drawing{
 			/// <param name="upperLeftColumn" >Upper left column index.</param>
 			/// <param name="left" >Represents the horizontal offset of textbox from its left column, in unit of pixel. </param>
 			/// <returns>The new shape object index.</returns>
-			 virtual intrusive_ptr<Aspose::Cells::Drawing::IShape> 		AddCopyIShape(intrusive_ptr<Aspose::Cells::Drawing::IShape> sourceShape , Aspose::Cells::System::Int32 upperLeftRow , Aspose::Cells::System::Int32 top , Aspose::Cells::System::Int32 upperLeftColumn , Aspose::Cells::System::Int32 left)=0;
+			 virtual intrusive_ptr<Aspose::Cells::Drawing::IShape> 		AddCopyIShape(intrusive_ptr<Aspose::Cells::Drawing::IShape> sourceShape , Aspose::Cells::Systems::Int32 upperLeftRow , Aspose::Cells::Systems::Int32 top , Aspose::Cells::Systems::Int32 upperLeftColumn , Aspose::Cells::Systems::Int32 left)=0;
 			/// <summary>
 			/// Adds a checkbox to the worksheet.
 			/// </summary>
@@ -96,7 +96,7 @@ namespace Drawing{
 			/// <param name="height" >Height of textbox, in unit of pixel.</param>
 			/// <param name="width" >Width of textbox, in unit of pixel.</param>
 			/// <returns>The new CheckBox object index.</returns>
-			 virtual intrusive_ptr<Aspose::Cells::Drawing::ICheckBox> 		AddICheckBox(Aspose::Cells::System::Int32 upperLeftRow , Aspose::Cells::System::Int32 top , Aspose::Cells::System::Int32 upperLeftColumn , Aspose::Cells::System::Int32 left , Aspose::Cells::System::Int32 height , Aspose::Cells::System::Int32 width)=0;
+			 virtual intrusive_ptr<Aspose::Cells::Drawing::ICheckBox> 		AddICheckBox(Aspose::Cells::Systems::Int32 upperLeftRow , Aspose::Cells::Systems::Int32 top , Aspose::Cells::Systems::Int32 upperLeftColumn , Aspose::Cells::Systems::Int32 left , Aspose::Cells::Systems::Int32 height , Aspose::Cells::Systems::Int32 width)=0;
 			/// <summary>
 			/// Adds a text box to the worksheet.
 			/// </summary>
@@ -108,7 +108,7 @@ namespace Drawing{
 			/// <param name="width" >Represents the width of textbox, in unit of pixel. </param>
 			/// <returns>A <see cref="ITextBox" />
 			///  object.</returns>
-			 virtual intrusive_ptr<Aspose::Cells::Drawing::ITextBox> 		AddITextBox(Aspose::Cells::System::Int32 upperLeftRow , Aspose::Cells::System::Int32 top , Aspose::Cells::System::Int32 upperLeftColumn , Aspose::Cells::System::Int32 left , Aspose::Cells::System::Int32 height , Aspose::Cells::System::Int32 width)=0;
+			 virtual intrusive_ptr<Aspose::Cells::Drawing::ITextBox> 		AddITextBox(Aspose::Cells::Systems::Int32 upperLeftRow , Aspose::Cells::Systems::Int32 top , Aspose::Cells::Systems::Int32 upperLeftColumn , Aspose::Cells::Systems::Int32 left , Aspose::Cells::Systems::Int32 height , Aspose::Cells::Systems::Int32 width)=0;
 			/// <summary>
 			/// Adds a Spinner to the worksheet.
 			/// </summary>
@@ -119,7 +119,7 @@ namespace Drawing{
 			/// <param name="height" >Represents the height of Spinner, in unit of pixel. </param>
 			/// <param name="width" >Represents the width of Spinner, in unit of pixel. </param>
 			/// <returns>A Spinner object.</returns>
-			 virtual intrusive_ptr<Aspose::Cells::Drawing::ISpinner> 		AddISpinner(Aspose::Cells::System::Int32 upperLeftRow , Aspose::Cells::System::Int32 top , Aspose::Cells::System::Int32 upperLeftColumn , Aspose::Cells::System::Int32 left , Aspose::Cells::System::Int32 height , Aspose::Cells::System::Int32 width)=0;
+			 virtual intrusive_ptr<Aspose::Cells::Drawing::ISpinner> 		AddISpinner(Aspose::Cells::Systems::Int32 upperLeftRow , Aspose::Cells::Systems::Int32 top , Aspose::Cells::Systems::Int32 upperLeftColumn , Aspose::Cells::Systems::Int32 left , Aspose::Cells::Systems::Int32 height , Aspose::Cells::Systems::Int32 width)=0;
 			/// <summary>
 			/// Adds a ScrollBar to the worksheet.
 			/// </summary>
@@ -130,7 +130,7 @@ namespace Drawing{
 			/// <param name="height" >Represents the height of ScrollBar, in unit of pixel. </param>
 			/// <param name="width" >Represents the width of ScrollBar, in unit of pixel. </param>
 			/// <returns>A ScrollBar object.</returns>
-			 virtual intrusive_ptr<Aspose::Cells::Drawing::IScrollBar> 		AddIScrollBar(Aspose::Cells::System::Int32 upperLeftRow , Aspose::Cells::System::Int32 top , Aspose::Cells::System::Int32 upperLeftColumn , Aspose::Cells::System::Int32 left , Aspose::Cells::System::Int32 height , Aspose::Cells::System::Int32 width)=0;
+			 virtual intrusive_ptr<Aspose::Cells::Drawing::IScrollBar> 		AddIScrollBar(Aspose::Cells::Systems::Int32 upperLeftRow , Aspose::Cells::Systems::Int32 top , Aspose::Cells::Systems::Int32 upperLeftColumn , Aspose::Cells::Systems::Int32 left , Aspose::Cells::Systems::Int32 height , Aspose::Cells::Systems::Int32 width)=0;
 			/// <summary>
 			/// Adds a RadioButton to the worksheet.
 			/// </summary>
@@ -141,7 +141,7 @@ namespace Drawing{
 			/// <param name="height" >Represents the height of RadioButton, in unit of pixel. </param>
 			/// <param name="width" >Represents the width of RadioButton, in unit of pixel. </param>
 			/// <returns>A RadioButton object.</returns>
-			 virtual intrusive_ptr<Aspose::Cells::Drawing::IRadioButton> 		AddIRadioButton(Aspose::Cells::System::Int32 upperLeftRow , Aspose::Cells::System::Int32 top , Aspose::Cells::System::Int32 upperLeftColumn , Aspose::Cells::System::Int32 left , Aspose::Cells::System::Int32 height , Aspose::Cells::System::Int32 width)=0;
+			 virtual intrusive_ptr<Aspose::Cells::Drawing::IRadioButton> 		AddIRadioButton(Aspose::Cells::Systems::Int32 upperLeftRow , Aspose::Cells::Systems::Int32 top , Aspose::Cells::Systems::Int32 upperLeftColumn , Aspose::Cells::Systems::Int32 left , Aspose::Cells::Systems::Int32 height , Aspose::Cells::Systems::Int32 width)=0;
 			/// <summary>
 			/// Adds a ListBox to the worksheet.
 			/// </summary>
@@ -152,7 +152,7 @@ namespace Drawing{
 			/// <param name="height" >Represents the height of ListBox, in unit of pixel. </param>
 			/// <param name="width" >Represents the width of ListBox, in unit of pixel. </param>
 			/// <returns>A ListBox object.</returns>
-			 virtual intrusive_ptr<Aspose::Cells::Drawing::IListBox> 		AddIListBox(Aspose::Cells::System::Int32 upperLeftRow , Aspose::Cells::System::Int32 top , Aspose::Cells::System::Int32 upperLeftColumn , Aspose::Cells::System::Int32 left , Aspose::Cells::System::Int32 height , Aspose::Cells::System::Int32 width)=0;
+			 virtual intrusive_ptr<Aspose::Cells::Drawing::IListBox> 		AddIListBox(Aspose::Cells::Systems::Int32 upperLeftRow , Aspose::Cells::Systems::Int32 top , Aspose::Cells::Systems::Int32 upperLeftColumn , Aspose::Cells::Systems::Int32 left , Aspose::Cells::Systems::Int32 height , Aspose::Cells::Systems::Int32 width)=0;
 			/// <summary>
 			/// Adds a ComboBox to the worksheet.
 			/// </summary>
@@ -163,7 +163,7 @@ namespace Drawing{
 			/// <param name="height" >Represents the height of ComboBox, in unit of pixel. </param>
 			/// <param name="width" >Represents the width of ComboBox, in unit of pixel. </param>
 			/// <returns>A ComboBox object.</returns>
-			 virtual intrusive_ptr<Aspose::Cells::Drawing::IComboBox> 		AddIComboBox(Aspose::Cells::System::Int32 upperLeftRow , Aspose::Cells::System::Int32 top , Aspose::Cells::System::Int32 upperLeftColumn , Aspose::Cells::System::Int32 left , Aspose::Cells::System::Int32 height , Aspose::Cells::System::Int32 width)=0;
+			 virtual intrusive_ptr<Aspose::Cells::Drawing::IComboBox> 		AddIComboBox(Aspose::Cells::Systems::Int32 upperLeftRow , Aspose::Cells::Systems::Int32 top , Aspose::Cells::Systems::Int32 upperLeftColumn , Aspose::Cells::Systems::Int32 left , Aspose::Cells::Systems::Int32 height , Aspose::Cells::Systems::Int32 width)=0;
 			/// <summary>
 			/// Adds a GroupBox to the worksheet.
 			/// </summary>
@@ -174,7 +174,7 @@ namespace Drawing{
 			/// <param name="height" >Represents the height of GroupBox, in unit of pixel. </param>
 			/// <param name="width" >Represents the width of GroupBox, in unit of pixel. </param>
 			/// <returns>A GroupBox object.</returns>
-			 virtual intrusive_ptr<Aspose::Cells::Drawing::IGroupBox> 		AddIGroupBox(Aspose::Cells::System::Int32 upperLeftRow , Aspose::Cells::System::Int32 top , Aspose::Cells::System::Int32 upperLeftColumn , Aspose::Cells::System::Int32 left , Aspose::Cells::System::Int32 height , Aspose::Cells::System::Int32 width)=0;
+			 virtual intrusive_ptr<Aspose::Cells::Drawing::IGroupBox> 		AddIGroupBox(Aspose::Cells::Systems::Int32 upperLeftRow , Aspose::Cells::Systems::Int32 top , Aspose::Cells::Systems::Int32 upperLeftColumn , Aspose::Cells::Systems::Int32 left , Aspose::Cells::Systems::Int32 height , Aspose::Cells::Systems::Int32 width)=0;
 			/// <summary>
 			/// Adds a Button to the worksheet.
 			/// </summary>
@@ -185,7 +185,7 @@ namespace Drawing{
 			/// <param name="height" >Represents the height of Button, in unit of pixel. </param>
 			/// <param name="width" >Represents the width of Button, in unit of pixel. </param>
 			/// <returns>A Button object.</returns>
-			 virtual intrusive_ptr<Aspose::Cells::Drawing::IButton> 		AddIButton(Aspose::Cells::System::Int32 upperLeftRow , Aspose::Cells::System::Int32 top , Aspose::Cells::System::Int32 upperLeftColumn , Aspose::Cells::System::Int32 left , Aspose::Cells::System::Int32 height , Aspose::Cells::System::Int32 width)=0;
+			 virtual intrusive_ptr<Aspose::Cells::Drawing::IButton> 		AddIButton(Aspose::Cells::Systems::Int32 upperLeftRow , Aspose::Cells::Systems::Int32 top , Aspose::Cells::Systems::Int32 upperLeftColumn , Aspose::Cells::Systems::Int32 left , Aspose::Cells::Systems::Int32 height , Aspose::Cells::Systems::Int32 width)=0;
 			/// <summary>
 			/// Adds a Label to the worksheet.
 			/// </summary>
@@ -196,7 +196,7 @@ namespace Drawing{
 			/// <param name="height" >Represents the height of Label, in unit of pixel. </param>
 			/// <param name="width" >Represents the width of Label, in unit of pixel. </param>
 			/// <returns>A Label object.</returns>
-			 virtual intrusive_ptr<Aspose::Cells::Drawing::ILabel> 		AddILabel(Aspose::Cells::System::Int32 upperLeftRow , Aspose::Cells::System::Int32 top , Aspose::Cells::System::Int32 upperLeftColumn , Aspose::Cells::System::Int32 left , Aspose::Cells::System::Int32 height , Aspose::Cells::System::Int32 width)=0;
+			 virtual intrusive_ptr<Aspose::Cells::Drawing::ILabel> 		AddILabel(Aspose::Cells::Systems::Int32 upperLeftRow , Aspose::Cells::Systems::Int32 top , Aspose::Cells::Systems::Int32 upperLeftColumn , Aspose::Cells::Systems::Int32 left , Aspose::Cells::Systems::Int32 height , Aspose::Cells::Systems::Int32 width)=0;
 			/// <summary>
 			/// Adds a label to the chart.
 			/// </summary>
@@ -205,7 +205,7 @@ namespace Drawing{
 			/// <param name="height" >Represents the height of label, in units of 1/4000 of the chart area.</param>
 			/// <param name="width" >Represents the width of label, in units of 1/4000 of the chart area.</param>
 			/// <returns>A new Label object.</returns>
-			 virtual intrusive_ptr<Aspose::Cells::Drawing::ILabel> 		AddILabelInChart(Aspose::Cells::System::Int32 top , Aspose::Cells::System::Int32 left , Aspose::Cells::System::Int32 height , Aspose::Cells::System::Int32 width)=0;
+			 virtual intrusive_ptr<Aspose::Cells::Drawing::ILabel> 		AddILabelInChart(Aspose::Cells::Systems::Int32 top , Aspose::Cells::Systems::Int32 left , Aspose::Cells::Systems::Int32 height , Aspose::Cells::Systems::Int32 width)=0;
 			/// <summary>
 			/// Adds a textbox to the chart.
 			/// </summary>
@@ -214,7 +214,7 @@ namespace Drawing{
 			/// <param name="height" >Represents the height of textbox, in units of 1/4000 of the chart area.</param>
 			/// <param name="width" >Represents the width of textbox, in units of 1/4000 of the chart area.</param>
 			/// <returns>A TextBox object.</returns>
-			 virtual intrusive_ptr<Aspose::Cells::Drawing::ITextBox> 		AddITextBoxInChart(Aspose::Cells::System::Int32 top , Aspose::Cells::System::Int32 left , Aspose::Cells::System::Int32 height , Aspose::Cells::System::Int32 width)=0;
+			 virtual intrusive_ptr<Aspose::Cells::Drawing::ITextBox> 		AddITextBoxInChart(Aspose::Cells::Systems::Int32 top , Aspose::Cells::Systems::Int32 left , Aspose::Cells::Systems::Int32 height , Aspose::Cells::Systems::Int32 width)=0;
 			/// <summary>
 			/// Inserts a WordArt object to the chart
 			/// </summary>
@@ -229,7 +229,7 @@ namespace Drawing{
 			/// <param name="height" >Represents the height of shape, in units of 1/4000 of the chart area.</param>
 			/// <param name="width" >Represents the width of shape, in units of 1/4000 of the chart area.</param>
 			/// <returns>Returns a Shape object that represents the new WordArt object.</returns>
-			 virtual intrusive_ptr<Aspose::Cells::Drawing::IShape> 		AddITextEffectInChart(Aspose::Cells::Drawing::MsoPresetTextEffect effect , intrusive_ptr<Aspose::Cells::System::String> text , intrusive_ptr<Aspose::Cells::System::String> fontName , Aspose::Cells::System::Int32 size , bool fontBold , bool fontItalic , Aspose::Cells::System::Int32 top , Aspose::Cells::System::Int32 left , Aspose::Cells::System::Int32 height , Aspose::Cells::System::Int32 width)=0;
+			 virtual intrusive_ptr<Aspose::Cells::Drawing::IShape> 		AddITextEffectInChart(Aspose::Cells::Drawing::MsoPresetTextEffect effect , intrusive_ptr<Aspose::Cells::Systems::String> text , intrusive_ptr<Aspose::Cells::Systems::String> fontName , Aspose::Cells::Systems::Int32 size , bool fontBold , bool fontItalic , Aspose::Cells::Systems::Int32 top , Aspose::Cells::Systems::Int32 left , Aspose::Cells::Systems::Int32 height , Aspose::Cells::Systems::Int32 width)=0;
 			/// <summary>
 			/// Inserts a WordArt object.
 			/// </summary>
@@ -246,7 +246,7 @@ namespace Drawing{
 			/// <param name="height" >Represents the height of shape, in unit of pixel. </param>
 			/// <param name="width" >Represents the width of shape, in unit of pixel. </param>
 			/// <returns>Returns a Shape object that represents the new WordArt object.</returns>
-			 virtual intrusive_ptr<Aspose::Cells::Drawing::IShape> 		AddITextEffect(Aspose::Cells::Drawing::MsoPresetTextEffect effect , intrusive_ptr<Aspose::Cells::System::String> text , intrusive_ptr<Aspose::Cells::System::String> fontName , Aspose::Cells::System::Int32 size , bool fontBold , bool fontItalic , Aspose::Cells::System::Int32 upperLeftRow , Aspose::Cells::System::Int32 top , Aspose::Cells::System::Int32 upperLeftColumn , Aspose::Cells::System::Int32 left , Aspose::Cells::System::Int32 height , Aspose::Cells::System::Int32 width)=0;
+			 virtual intrusive_ptr<Aspose::Cells::Drawing::IShape> 		AddITextEffect(Aspose::Cells::Drawing::MsoPresetTextEffect effect , intrusive_ptr<Aspose::Cells::Systems::String> text , intrusive_ptr<Aspose::Cells::Systems::String> fontName , Aspose::Cells::Systems::Int32 size , bool fontBold , bool fontItalic , Aspose::Cells::Systems::Int32 upperLeftRow , Aspose::Cells::Systems::Int32 top , Aspose::Cells::Systems::Int32 upperLeftColumn , Aspose::Cells::Systems::Int32 left , Aspose::Cells::Systems::Int32 height , Aspose::Cells::Systems::Int32 width)=0;
 			/// <summary>
 			/// Adds preset WordArt since Excel 2007.s
 			/// </summary>
@@ -260,7 +260,7 @@ namespace Drawing{
 			/// <param name="width" >Represents the width of shape, in unit of pixel. </param>
 			/// <returns/>
 			/// 
-			 virtual intrusive_ptr<Aspose::Cells::Drawing::IShape> 		AddIWordArt(Aspose::Cells::Drawing::PresetWordArtStyle style , intrusive_ptr<Aspose::Cells::System::String> text , Aspose::Cells::System::Int32 upperLeftRow , Aspose::Cells::System::Int32 top , Aspose::Cells::System::Int32 upperLeftColumn , Aspose::Cells::System::Int32 left , Aspose::Cells::System::Int32 height , Aspose::Cells::System::Int32 width)=0;
+			 virtual intrusive_ptr<Aspose::Cells::Drawing::IShape> 		AddIWordArt(Aspose::Cells::Drawing::PresetWordArtStyle style , intrusive_ptr<Aspose::Cells::Systems::String> text , Aspose::Cells::Systems::Int32 upperLeftRow , Aspose::Cells::Systems::Int32 top , Aspose::Cells::Systems::Int32 upperLeftColumn , Aspose::Cells::Systems::Int32 left , Aspose::Cells::Systems::Int32 height , Aspose::Cells::Systems::Int32 width)=0;
 			/// <summary>
 			/// Adds a RectangleShape to the worksheet.
 			/// </summary>
@@ -271,7 +271,7 @@ namespace Drawing{
 			/// <param name="height" >Represents the height of RectangleShape, in unit of pixel. </param>
 			/// <param name="width" >Represents the width of RectangleShape, in unit of pixel. </param>
 			/// <returns>A RectangleShape object.</returns>
-			 virtual intrusive_ptr<Aspose::Cells::Drawing::IRectangleShape> 		AddIRectangle(Aspose::Cells::System::Int32 upperLeftRow , Aspose::Cells::System::Int32 top , Aspose::Cells::System::Int32 upperLeftColumn , Aspose::Cells::System::Int32 left , Aspose::Cells::System::Int32 height , Aspose::Cells::System::Int32 width)=0;
+			 virtual intrusive_ptr<Aspose::Cells::Drawing::IRectangleShape> 		AddIRectangle(Aspose::Cells::Systems::Int32 upperLeftRow , Aspose::Cells::Systems::Int32 top , Aspose::Cells::Systems::Int32 upperLeftColumn , Aspose::Cells::Systems::Int32 left , Aspose::Cells::Systems::Int32 height , Aspose::Cells::Systems::Int32 width)=0;
 			/// <summary>
 			/// Adds a Oval to the worksheet.
 			/// </summary>
@@ -282,7 +282,7 @@ namespace Drawing{
 			/// <param name="height" >Represents the height of Oval, in unit of pixel. </param>
 			/// <param name="width" >Represents the width of Oval, in unit of pixel. </param>
 			/// <returns>A Oval object.</returns>
-			 virtual intrusive_ptr<Aspose::Cells::Drawing::IOval> 		AddIOval(Aspose::Cells::System::Int32 upperLeftRow , Aspose::Cells::System::Int32 top , Aspose::Cells::System::Int32 upperLeftColumn , Aspose::Cells::System::Int32 left , Aspose::Cells::System::Int32 height , Aspose::Cells::System::Int32 width)=0;
+			 virtual intrusive_ptr<Aspose::Cells::Drawing::IOval> 		AddIOval(Aspose::Cells::Systems::Int32 upperLeftRow , Aspose::Cells::Systems::Int32 top , Aspose::Cells::Systems::Int32 upperLeftColumn , Aspose::Cells::Systems::Int32 left , Aspose::Cells::Systems::Int32 height , Aspose::Cells::Systems::Int32 width)=0;
 			/// <summary>
 			/// Adds a LineShape to the worksheet.
 			/// </summary>
@@ -293,7 +293,7 @@ namespace Drawing{
 			/// <param name="height" >Represents the height of LineShape, in unit of pixel. </param>
 			/// <param name="width" >Represents the width of LineShape, in unit of pixel. </param>
 			/// <returns>A LineShape object.</returns>
-			 virtual intrusive_ptr<Aspose::Cells::Drawing::ILineShape> 		AddILine(Aspose::Cells::System::Int32 upperLeftRow , Aspose::Cells::System::Int32 top , Aspose::Cells::System::Int32 upperLeftColumn , Aspose::Cells::System::Int32 left , Aspose::Cells::System::Int32 height , Aspose::Cells::System::Int32 width)=0;
+			 virtual intrusive_ptr<Aspose::Cells::Drawing::ILineShape> 		AddILine(Aspose::Cells::Systems::Int32 upperLeftRow , Aspose::Cells::Systems::Int32 top , Aspose::Cells::Systems::Int32 upperLeftColumn , Aspose::Cells::Systems::Int32 left , Aspose::Cells::Systems::Int32 height , Aspose::Cells::Systems::Int32 width)=0;
 			/// <summary>
 			/// Adds a free floating shape to the worksheet.Only applies for line/image shape.
 			/// </summary>
@@ -306,7 +306,7 @@ namespace Drawing{
 			/// <param name="isOriginalSize" >Whether the shape use original size if the shape is image.</param>
 			/// <returns/>
 			/// 
-			 virtual intrusive_ptr<Aspose::Cells::Drawing::IShape> 		AddFreeFloatingIShape(Aspose::Cells::Drawing::MsoDrawingType type , Aspose::Cells::System::Int32 top , Aspose::Cells::System::Int32 left , Aspose::Cells::System::Int32 height , Aspose::Cells::System::Int32 width , intrusive_ptr<Aspose::Cells::System::Array1D<Aspose::Cells::System::Byte>> imageData , bool isOriginalSize)=0;
+			 virtual intrusive_ptr<Aspose::Cells::Drawing::IShape> 		AddFreeFloatingIShape(Aspose::Cells::Drawing::MsoDrawingType type , Aspose::Cells::Systems::Int32 top , Aspose::Cells::Systems::Int32 left , Aspose::Cells::Systems::Int32 height , Aspose::Cells::Systems::Int32 width , intrusive_ptr<Aspose::Cells::Systems::Array1D<Aspose::Cells::Systems::Byte>> imageData , bool isOriginalSize)=0;
 			/// <summary>
 			/// Add a shape to chart .All unit is 1/4000 of chart area.
 			/// </summary>
@@ -317,7 +317,7 @@ namespace Drawing{
 			/// <param name="right" >In unit of 1/4000 chart area width.</param>
 			/// <param name="bottom" >In unit of 1/4000 chart area height.</param>
 			/// <param name="imageData" >If the shape is not a picture or ole object,imageData should be null.</param>
-			 virtual intrusive_ptr<Aspose::Cells::Drawing::IShape> 		AddIShapeInChart(Aspose::Cells::Drawing::MsoDrawingType type , Aspose::Cells::Drawing::PlacementType placement , Aspose::Cells::System::Int32 left , Aspose::Cells::System::Int32 top , Aspose::Cells::System::Int32 right , Aspose::Cells::System::Int32 bottom , intrusive_ptr<Aspose::Cells::System::Array1D<Aspose::Cells::System::Byte>> imageData)=0;
+			 virtual intrusive_ptr<Aspose::Cells::Drawing::IShape> 		AddIShapeInChart(Aspose::Cells::Drawing::MsoDrawingType type , Aspose::Cells::Drawing::PlacementType placement , Aspose::Cells::Systems::Int32 left , Aspose::Cells::Systems::Int32 top , Aspose::Cells::Systems::Int32 right , Aspose::Cells::Systems::Int32 bottom , intrusive_ptr<Aspose::Cells::Systems::Array1D<Aspose::Cells::Systems::Byte>> imageData)=0;
 			/// <summary>
 			/// Add a shape to chart .All unit is 1/4000 of chart area.
 			/// </summary>
@@ -327,7 +327,7 @@ namespace Drawing{
 			/// <param name="top" >In unit of 1/4000 chart area height.</param>
 			/// <param name="right" >In unit of 1/4000 chart area width.</param>
 			/// <param name="bottom" >In unit of 1/4000 chart area height.</param>
-			 virtual intrusive_ptr<Aspose::Cells::Drawing::IShape> 		AddIShapeInChart(Aspose::Cells::Drawing::MsoDrawingType type , Aspose::Cells::Drawing::PlacementType placement , Aspose::Cells::System::Int32 left , Aspose::Cells::System::Int32 top , Aspose::Cells::System::Int32 right , Aspose::Cells::System::Int32 bottom)=0;
+			 virtual intrusive_ptr<Aspose::Cells::Drawing::IShape> 		AddIShapeInChart(Aspose::Cells::Drawing::MsoDrawingType type , Aspose::Cells::Drawing::PlacementType placement , Aspose::Cells::Systems::Int32 left , Aspose::Cells::Systems::Int32 top , Aspose::Cells::Systems::Int32 right , Aspose::Cells::Systems::Int32 bottom)=0;
 			/// <summary>
 			/// Adds a ArcShape to the worksheet.
 			/// </summary>
@@ -338,7 +338,7 @@ namespace Drawing{
 			/// <param name="height" >Represents the height of ArcShape, in unit of pixel. </param>
 			/// <param name="width" >Represents the width of ArcShape, in unit of pixel. </param>
 			/// <returns>A ArcShape object.</returns>
-			 virtual intrusive_ptr<Aspose::Cells::Drawing::IArcShape> 		AddIArc(Aspose::Cells::System::Int32 upperLeftRow , Aspose::Cells::System::Int32 top , Aspose::Cells::System::Int32 upperLeftColumn , Aspose::Cells::System::Int32 left , Aspose::Cells::System::Int32 height , Aspose::Cells::System::Int32 width)=0;
+			 virtual intrusive_ptr<Aspose::Cells::Drawing::IArcShape> 		AddIArc(Aspose::Cells::Systems::Int32 upperLeftRow , Aspose::Cells::Systems::Int32 top , Aspose::Cells::Systems::Int32 upperLeftColumn , Aspose::Cells::Systems::Int32 left , Aspose::Cells::Systems::Int32 height , Aspose::Cells::Systems::Int32 width)=0;
 			/// <summary>
 			/// Adds a Shape to the worksheet.
 			/// </summary>
@@ -351,7 +351,7 @@ namespace Drawing{
 			/// <param name="width" >Represents the width of Shape, in unit of pixel. </param>
 			/// <returns>A Shape object.</returns>
 			/// <remarks>The type could not be Chart/Comment/Picuter/OleObject/Polygon/DialogBox</remarks>
-			 virtual intrusive_ptr<Aspose::Cells::Drawing::IShape> 		AddIShape(Aspose::Cells::Drawing::MsoDrawingType type , Aspose::Cells::System::Int32 upperLeftRow , Aspose::Cells::System::Int32 top , Aspose::Cells::System::Int32 upperLeftColumn , Aspose::Cells::System::Int32 left , Aspose::Cells::System::Int32 height , Aspose::Cells::System::Int32 width)=0;
+			 virtual intrusive_ptr<Aspose::Cells::Drawing::IShape> 		AddIShape(Aspose::Cells::Drawing::MsoDrawingType type , Aspose::Cells::Systems::Int32 upperLeftRow , Aspose::Cells::Systems::Int32 top , Aspose::Cells::Systems::Int32 upperLeftColumn , Aspose::Cells::Systems::Int32 left , Aspose::Cells::Systems::Int32 height , Aspose::Cells::Systems::Int32 width)=0;
 			/// <summary>
 			/// Adds a AutoShape to the worksheet.
 			/// </summary>
@@ -364,7 +364,7 @@ namespace Drawing{
 			/// <param name="width" >Represents the width of Shape, in unit of pixel. </param>
 			/// <returns>A Shape object.</returns>
 			/// <remarks>The type could not be Chart/Comment/Picuter/OleObject/Polygon/DialogBox</remarks>
-			 virtual intrusive_ptr<Aspose::Cells::Drawing::IShape> 		AddAutoIShape(Aspose::Cells::Drawing::AutoShapeType type , Aspose::Cells::System::Int32 upperLeftRow , Aspose::Cells::System::Int32 top , Aspose::Cells::System::Int32 upperLeftColumn , Aspose::Cells::System::Int32 left , Aspose::Cells::System::Int32 height , Aspose::Cells::System::Int32 width)=0;
+			 virtual intrusive_ptr<Aspose::Cells::Drawing::IShape> 		AddAutoIShape(Aspose::Cells::Drawing::AutoShapeType type , Aspose::Cells::Systems::Int32 upperLeftRow , Aspose::Cells::Systems::Int32 top , Aspose::Cells::Systems::Int32 upperLeftColumn , Aspose::Cells::Systems::Int32 left , Aspose::Cells::Systems::Int32 height , Aspose::Cells::Systems::Int32 width)=0;
 			/// <summary>
 			/// Adds a AutoShape to the chart.
 			/// </summary>
@@ -375,7 +375,7 @@ namespace Drawing{
 			/// <param name="width" >Represents the width of textbox, in units of 1/4000 of the chart area.</param>
 			/// <returns>Returns a shape objct.</returns>
 			/// <remarks>The type could not be Chart/Comment/Picuter/OleObject/Polygon/DialogBox</remarks>
-			 virtual intrusive_ptr<Aspose::Cells::Drawing::IShape> 		AddAutoIShapeInChart(Aspose::Cells::Drawing::AutoShapeType type , Aspose::Cells::System::Int32 top , Aspose::Cells::System::Int32 left , Aspose::Cells::System::Int32 height , Aspose::Cells::System::Int32 width)=0;
+			 virtual intrusive_ptr<Aspose::Cells::Drawing::IShape> 		AddAutoIShapeInChart(Aspose::Cells::Drawing::AutoShapeType type , Aspose::Cells::Systems::Int32 top , Aspose::Cells::Systems::Int32 left , Aspose::Cells::Systems::Int32 height , Aspose::Cells::Systems::Int32 width)=0;
 			/// <summary>
 			/// Creates an Activex Control.
 			/// </summary>
@@ -388,7 +388,7 @@ namespace Drawing{
 			/// <param name="width" >Represents the width of Shape, in unit of pixel. </param>
 			/// <returns/>
 			/// 
-			 virtual intrusive_ptr<Aspose::Cells::Drawing::IShape> 		AddIActiveXControl(Aspose::Cells::Drawing::ActiveXControls::ControlType type , Aspose::Cells::System::Int32 topRow , Aspose::Cells::System::Int32 top , Aspose::Cells::System::Int32 leftColumn , Aspose::Cells::System::Int32 left , Aspose::Cells::System::Int32 width , Aspose::Cells::System::Int32 height)=0;
+			 virtual intrusive_ptr<Aspose::Cells::Drawing::IShape> 		AddIActiveXControl(Aspose::Cells::Drawing::ActiveXControls::ControlType type , Aspose::Cells::Systems::Int32 topRow , Aspose::Cells::Systems::Int32 top , Aspose::Cells::Systems::Int32 leftColumn , Aspose::Cells::Systems::Int32 left , Aspose::Cells::Systems::Int32 width , Aspose::Cells::Systems::Int32 height)=0;
 			/// <summary>
 			/// Adds a picture to the collection.
 			/// </summary>
@@ -399,7 +399,7 @@ namespace Drawing{
 			/// <param name="stream" >Stream object which contains the image data.</param>
 			/// <returns><see cref="Picture" />
 			///  Picture object.</returns>
-			 virtual intrusive_ptr<Aspose::Cells::Drawing::IPicture> 		AddIPicture(Aspose::Cells::System::Int32 upperLeftRow , Aspose::Cells::System::Int32 upperLeftColumn , Aspose::Cells::System::Int32 lowerRightRow , Aspose::Cells::System::Int32 lowerRightColumn , intrusive_ptr<Aspose::Cells::System::IO::Stream> stream)=0;
+			 virtual intrusive_ptr<Aspose::Cells::Drawing::IPicture> 		AddIPicture(Aspose::Cells::Systems::Int32 upperLeftRow , Aspose::Cells::Systems::Int32 upperLeftColumn , Aspose::Cells::Systems::Int32 lowerRightRow , Aspose::Cells::Systems::Int32 lowerRightColumn , intrusive_ptr<Aspose::Cells::Systems::IO::Stream> stream)=0;
 			/// <summary>
 			/// Adds a picture to the collection.
 			/// </summary>
@@ -410,7 +410,7 @@ namespace Drawing{
 			/// <param name="heightScale" >Scale of image width, a percentage.</param>
 			/// <returns><see cref="IPicture" />
 			///  Picture object.</returns>
-			 virtual intrusive_ptr<Aspose::Cells::Drawing::IPicture> 		AddIPicture(Aspose::Cells::System::Int32 upperLeftRow , Aspose::Cells::System::Int32 upperLeftColumn , intrusive_ptr<Aspose::Cells::System::IO::Stream> stream , Aspose::Cells::System::Int32 widthScale , Aspose::Cells::System::Int32 heightScale)=0;
+			 virtual intrusive_ptr<Aspose::Cells::Drawing::IPicture> 		AddIPicture(Aspose::Cells::Systems::Int32 upperLeftRow , Aspose::Cells::Systems::Int32 upperLeftColumn , intrusive_ptr<Aspose::Cells::Systems::IO::Stream> stream , Aspose::Cells::Systems::Int32 widthScale , Aspose::Cells::Systems::Int32 heightScale)=0;
 			/// <summary>
 			/// Add a linked picture.
 			/// </summary>
@@ -422,7 +422,7 @@ namespace Drawing{
 			/// The path and name of the source file for the linked image</param>
 			/// <returns><see cref="IPicture" />
 			///  Picture object.</returns>
-			 virtual intrusive_ptr<Aspose::Cells::Drawing::IPicture> 		AddLinkedIPicture(Aspose::Cells::System::Int32 upperLeftRow , Aspose::Cells::System::Int32 upperLeftColumn , Aspose::Cells::System::Int32 height , Aspose::Cells::System::Int32 width , intrusive_ptr<Aspose::Cells::System::String> sourceFullName)=0;
+			 virtual intrusive_ptr<Aspose::Cells::Drawing::IPicture> 		AddLinkedIPicture(Aspose::Cells::Systems::Int32 upperLeftRow , Aspose::Cells::Systems::Int32 upperLeftColumn , Aspose::Cells::Systems::Int32 height , Aspose::Cells::Systems::Int32 width , intrusive_ptr<Aspose::Cells::Systems::String> sourceFullName)=0;
 			/// <summary>
 			/// Add a linked picture.
 			/// </summary>
@@ -434,7 +434,7 @@ namespace Drawing{
 			/// The path and name of the source file for the linked image</param>
 			/// <returns><see cref="IPicture" />
 			///  Picture object.</returns>
-			 virtual intrusive_ptr<Aspose::Cells::Drawing::IOleObject> 		AddIOleObjectWithLinkedImage(Aspose::Cells::System::Int32 upperLeftRow , Aspose::Cells::System::Int32 upperLeftColumn , Aspose::Cells::System::Int32 height , Aspose::Cells::System::Int32 width , intrusive_ptr<Aspose::Cells::System::String> sourceFullName)=0;
+			 virtual intrusive_ptr<Aspose::Cells::Drawing::IOleObject> 		AddIOleObjectWithLinkedImage(Aspose::Cells::Systems::Int32 upperLeftRow , Aspose::Cells::Systems::Int32 upperLeftColumn , Aspose::Cells::Systems::Int32 height , Aspose::Cells::Systems::Int32 width , intrusive_ptr<Aspose::Cells::Systems::String> sourceFullName)=0;
 			/// <summary>
 			/// Adds a picture to the chart.
 			/// </summary>
@@ -444,7 +444,7 @@ namespace Drawing{
 			/// <param name="widthScale" >Scale of image width, a percentage.</param>
 			/// <param name="heightScale" >Scale of image width, a percentage.</param>
 			/// <returns>Returns a Picture objct.</returns>
-			 virtual intrusive_ptr<Aspose::Cells::Drawing::IPicture> 		AddIPictureInChart(Aspose::Cells::System::Int32 top , Aspose::Cells::System::Int32 left , intrusive_ptr<Aspose::Cells::System::IO::Stream> stream , Aspose::Cells::System::Int32 widthScale , Aspose::Cells::System::Int32 heightScale)=0;
+			 virtual intrusive_ptr<Aspose::Cells::Drawing::IPicture> 		AddIPictureInChart(Aspose::Cells::Systems::Int32 top , Aspose::Cells::Systems::Int32 left , intrusive_ptr<Aspose::Cells::Systems::IO::Stream> stream , Aspose::Cells::Systems::Int32 widthScale , Aspose::Cells::Systems::Int32 heightScale)=0;
 			/// <summary>
 			/// 
 			/// </summary>
@@ -464,7 +464,7 @@ namespace Drawing{
 			/// 
 			/// <returns/>
 			/// 
-			 virtual intrusive_ptr<Aspose::Cells::Drawing::IOleObject> 		AddIOleObject(Aspose::Cells::System::Int32 upperLeftRow , Aspose::Cells::System::Int32 top , Aspose::Cells::System::Int32 upperLeftColumn , Aspose::Cells::System::Int32 left , Aspose::Cells::System::Int32 height , Aspose::Cells::System::Int32 width , intrusive_ptr<Aspose::Cells::System::Array1D<Aspose::Cells::System::Byte>> imageData)=0;
+			 virtual intrusive_ptr<Aspose::Cells::Drawing::IOleObject> 		AddIOleObject(Aspose::Cells::Systems::Int32 upperLeftRow , Aspose::Cells::Systems::Int32 top , Aspose::Cells::Systems::Int32 upperLeftColumn , Aspose::Cells::Systems::Int32 left , Aspose::Cells::Systems::Int32 height , Aspose::Cells::Systems::Int32 width , intrusive_ptr<Aspose::Cells::Systems::Array1D<Aspose::Cells::Systems::Byte>> imageData)=0;
 			/// <summary>
 			/// Copy all comments in the range.
 			/// </summary>
@@ -472,7 +472,7 @@ namespace Drawing{
 			/// <param name="ca" >The source range.</param>
 			/// <param name="destRow" >The dest range start row.</param>
 			/// <param name="destColumn" >The dest range start column.</param>
-			 virtual void 		CopyICommentsInRange(intrusive_ptr<Aspose::Cells::Drawing::IShapeCollection> shapes , intrusive_ptr<Aspose::Cells::ICellArea> ca , Aspose::Cells::System::Int32 destRow , Aspose::Cells::System::Int32 destColumn)=0;
+			 virtual void 		CopyICommentsInRange(intrusive_ptr<Aspose::Cells::Drawing::IShapeCollection> shapes , intrusive_ptr<Aspose::Cells::ICellArea> ca , Aspose::Cells::Systems::Int32 destRow , Aspose::Cells::Systems::Int32 destColumn)=0;
 			/// <summary>
 			/// Copy shapes in the range to destination range.
 			/// </summary>
@@ -483,7 +483,7 @@ namespace Drawing{
 			/// <param name="isContained" >Whether only copy the shapes which are contained in the range.
 			/// If true,only copies the shapes in the range. 
 			/// Otherwise,it works as MS Office.</param>
-			 virtual void 		CopyIShapesInRange(intrusive_ptr<Aspose::Cells::Drawing::IShapeCollection> sourceShapes , intrusive_ptr<Aspose::Cells::ICellArea> ca , Aspose::Cells::System::Int32 destRow , Aspose::Cells::System::Int32 destColumn , bool isContained)=0;
+			 virtual void 		CopyIShapesInRange(intrusive_ptr<Aspose::Cells::Drawing::IShapeCollection> sourceShapes , intrusive_ptr<Aspose::Cells::ICellArea> ca , Aspose::Cells::Systems::Int32 destRow , Aspose::Cells::Systems::Int32 destColumn , bool isContained)=0;
 			/// <summary>
 			/// Delete shapes in the range.Comment shapes will not be deleted.
 			/// </summary>
@@ -504,7 +504,7 @@ namespace Drawing{
 			/// 
 			/// The shape in the groupItems should not be grouped.
 			/// The shape must be in this Shapes collection.</remarks>
-			 virtual intrusive_ptr<Aspose::Cells::Drawing::IGroupShape> 		GroupIShapes(intrusive_ptr<Aspose::Cells::System::Array1D<Aspose::Cells::Drawing::IShape*>> groupItems)=0;
+			 virtual intrusive_ptr<Aspose::Cells::Drawing::IGroupShape> 		GroupIShapes(intrusive_ptr<Aspose::Cells::Systems::Array1D<Aspose::Cells::Drawing::IShape*>> groupItems)=0;
 			/// <summary>
 			/// Ungroups the shape items.
 			/// </summary>
@@ -515,7 +515,7 @@ namespace Drawing{
 			/// Remove the shape.
 			/// </summary>
 			/// <param name="index" >The index of the shape.</param>
-			 virtual void RemoveAt(Aspose::Cells::System::Int32 index)=0;
+			 virtual void RemoveAt(Aspose::Cells::Systems::Int32 index)=0;
 			/// <summary>
 			/// Remove the shape.
 			/// </summary>

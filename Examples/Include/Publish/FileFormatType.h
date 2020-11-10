@@ -68,10 +68,16 @@ namespace Cells {
 			/// </summary>
 			FileFormatType_Excel2007Xltm = 9 ,
 			/// <summary>
-			/// Represents a tab delimited text file.
+			/// Represents a TSV(tab-separated values file) file.
 			/// </summary>
-			FileFormatType_TabDelimited = 11 ,
+			FileFormatType_TSV = 11,
 			/// <summary>
+			/// Represents a tab delimited text file, same with <see cref="FileFormatType_TSV"/>.
+			/// NOTE: This member is now obsolete. Instead, 
+			/// please use <see cref="FileFormatType_TSV"/> property.
+			/// Aspose apologizes for any inconvenience you may have experienced.
+			/// </summary>
+			FileFormatType_TabDelimited = FileFormatType_TSV,
 			/// Represents an html file.
 			/// </summary>
 			FileFormatType_Html = 12 ,

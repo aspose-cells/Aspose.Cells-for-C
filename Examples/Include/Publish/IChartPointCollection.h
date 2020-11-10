@@ -1,7 +1,7 @@
 #pragma once
-#include "System/Object.h"
-#include "System/Collections/IEnumerator.h"
-#include "System/Int32.h"
+#include "Aspose.Cells.Systems/Object.h"
+#include "Aspose.Cells.Systems/Collections/IEnumerator.h"
+#include "Aspose.Cells.Systems/Int32.h"
 
 namespace Aspose {
 	namespace Cells {
@@ -50,14 +50,14 @@ namespace Charts{
 		    /// 	//Set Pir Explosion
 		    /// 	point->SetExplosion (15);
 			/// 	//Set Border Color
-			/// 	point->GetBorderILine()->SetColor(System::Drawing::Color::GetRed());
+			/// 	point->GetBorderILine()->SetColor(Systems::Drawing::Color::GetRed());
 		    /// }
 		    /// //Saving the Excel file
 			/// workbook->Save(new String("D:\\test\\ChartPointCollectionTest.xls"));
 			///  </code>
 			/// 
 			///  </example>
-	class ASPOSE_CELLS_API IChartPointCollection : public Aspose::Cells::System::Object
+	class ASPOSE_CELLS_API IChartPointCollection : public Aspose::Cells::Systems::Object
 	{
 		public:
 			/// <summary>
@@ -66,7 +66,7 @@ namespace Charts{
 			/// </summary>
 			/// <returns/>
 			/// 
-			 virtual intrusive_ptr<Aspose::Cells::System::Collections::IEnumerator> GetEnumerator()=0;
+			 virtual intrusive_ptr<Aspose::Cells::Systems::Collections::IEnumerator> GetEnumerator()=0;
 			/// <summary>
 			/// Remove all setting of the chart points.
 			/// </summary>
@@ -75,18 +75,18 @@ namespace Charts{
 			/// Removes point at the index of the series..
 			/// </summary>
 			/// <param name="index" >The index of the point.</param>
-			 virtual void RemoveAt(Aspose::Cells::System::Int32 index)=0;
+			 virtual void RemoveAt(Aspose::Cells::Systems::Int32 index)=0;
 			/// <summary>
 			/// Gets the count of the chart point.
 			/// </summary>
-			 virtual Aspose::Cells::System::Int32 GetCount()=0;
+			 virtual Aspose::Cells::Systems::Int32 GetCount()=0;
 			/// <summary>
 			///  Gets the <see cref="IChartPoint" />
 			///  element at the specified index in the series.
 			///  </summary>
 			/// <param name="index" >The index of chart point in the series.</param>
 			/// <returns>The ChartPoint object.</returns>
-			 virtual intrusive_ptr<Aspose::Cells::Charts::IChartPoint> 		GetObjectByIndex(Aspose::Cells::System::Int32 index)=0;
+			 virtual intrusive_ptr<Aspose::Cells::Charts::IChartPoint> 		GetObjectByIndex(Aspose::Cells::Systems::Int32 index)=0;
 
 	};
 }

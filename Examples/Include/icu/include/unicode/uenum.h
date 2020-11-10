@@ -40,7 +40,7 @@ typedef struct UEnumeration UEnumeration;
 
 /**
  * Disposes of resources in use by the iterator.  If en is NULL,
- * does nothing.  After this call, any char* or UChar* pointer
+ * does nothing.  After this call, any char* or UnChar* pointer
  * returned by uenum_unext() or uenum_next() is invalid.
  * @param en UEnumeration structure pointer
  * @stable ICU 2.2
@@ -89,8 +89,8 @@ uenum_count(UEnumeration* en, UErrorCode* status);
  * no more elements, returns NULL.  If the iterator is out-of-sync
  * with its service, status is set to U_ENUM_OUT_OF_SYNC_ERROR and
  * NULL is returned.  If the native service string is a char* string,
- * it is converted to UChar* with the invariant converter.
- * The result is terminated by (UChar)0.
+ * it is converted to UnChar* with the invariant converter.
+ * The result is terminated by (UnChar)0.
  * @param en the iterator object
  * @param resultLength pointer to receive the length of the result
  *                     (not including the terminating \\0).
@@ -105,7 +105,7 @@ uenum_count(UEnumeration* en, UErrorCode* status);
  *         traversed, returns NULL.
  * @stable ICU 2.2
  */
-U_STABLE const UChar* U_EXPORT2
+U_STABLE const UnChar* U_EXPORT2
 uenum_unext(UEnumeration* en,
             int32_t* resultLength,
             UErrorCode* status);
@@ -114,7 +114,7 @@ uenum_unext(UEnumeration* en,
  * Returns the next element in the iterator's list.  If there are
  * no more elements, returns NULL.  If the iterator is out-of-sync
  * with its service, status is set to U_ENUM_OUT_OF_SYNC_ERROR and
- * NULL is returned.  If the native service string is a UChar*
+ * NULL is returned.  If the native service string is a UnChar*
  * string, it is converted to char* with the invariant converter.
  * The result is terminated by (char)0.  If the conversion fails
  * (because a character cannot be converted) then status is set to
@@ -127,7 +127,7 @@ uenum_unext(UEnumeration* en,
  * @param status the error code, set to U_ENUM_OUT_OF_SYNC_ERROR if
  *               the iterator is out of sync with its service.  Set to
  *               U_INVARIANT_CONVERSION_ERROR if the underlying native string is
- *               UChar* and conversion to char* with the invariant converter
+ *               UnChar* and conversion to char* with the invariant converter
  *               fails. This error pertains only to current string, so iteration
  *               might be able to continue successfully.
  * @return a pointer to the string.  The string will be
@@ -167,15 +167,15 @@ uenum_reset(UEnumeration* en, UErrorCode* status);
  * @stable ICU 4.2
  */
 U_STABLE UEnumeration* U_EXPORT2
-uenum_openFromStringEnumeration(icu::StringEnumeration* adopted, UErrorCode* ec);
+uenum_openFromStringEnumeration(icucells::StringEnumeration* adopted, UErrorCode* ec);
 
 #endif
 
 /**
- * Given an array of const UChar* strings, return a UEnumeration.  String pointers from 0..count-1 must not be null.
+ * Given an array of const UnChar* strings, return a UEnumeration.  String pointers from 0..count-1 must not be null.
  * Do not free or modify either the string array or the characters it points to until this object has been destroyed with uenum_close.
  * \snippet test/cintltst/uenumtst.c uenum_openUCharStringsEnumeration
- * @param strings array of const UChar* strings (each null terminated). All storage is owned by the caller.
+ * @param strings array of const UnChar* strings (each null terminated). All storage is owned by the caller.
  * @param count length of the array
  * @param ec error code
  * @return the new UEnumeration object. Caller is responsible for calling uenum_close to free memory.
@@ -183,7 +183,7 @@ uenum_openFromStringEnumeration(icu::StringEnumeration* adopted, UErrorCode* ec)
  * @stable ICU 50
  */
 U_STABLE UEnumeration* U_EXPORT2
-uenum_openUCharStringsEnumeration(const UChar* const strings[], int32_t count,
+uenum_openUCharStringsEnumeration(const UnChar* const strings[], int32_t count,
                                  UErrorCode* ec);
 
 /* Note:  next function is not hidden as draft, as it is used internally (it was formerly an internal function). */

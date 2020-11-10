@@ -1,9 +1,9 @@
 #pragma once
-#include "System/Object.h"
-#include "System/Int32.h"
-#include "System/Double.h"
-#include "System/String.h"
-#include "System/Drawing/Color.h"
+#include "Aspose.Cells.Systems/Object.h"
+#include "Aspose.Cells.Systems/Int32.h"
+#include "Aspose.Cells.Systems/Double.h"
+#include "Aspose.Cells.Systems/String.h"
+#include "Aspose.Cells.Systems/Drawing/Color.h"
 
 namespace Aspose {
 	namespace Cells {
@@ -48,17 +48,17 @@ namespace Cells{
 			/// </example>
 			/// 
 			/// 
-	class ASPOSE_CELLS_API IFont : public Aspose::Cells::System::Object
+	class ASPOSE_CELLS_API IFont : public Aspose::Cells::Systems::Object
 	{
 		public:
 			/// <summary>
 			/// Represent the character get.
 			/// </summary>
-			 virtual Aspose::Cells::System::Int32 GetCharset()=0;
+			 virtual Aspose::Cells::Systems::Int32 GetCharset()=0;
 			/// <summary>
 			/// Represent the character set.
 			/// </summary>
-			 virtual void SetCharset(Aspose::Cells::System::Int32 value)=0;
+			 virtual void SetCharset(Aspose::Cells::Systems::Int32 value)=0;
 			/// <summary>
 			/// Gets a value indicating whether the font is italic.
 			/// </summary>
@@ -102,11 +102,11 @@ namespace Cells{
 			/// <summary>
 			/// Gets the script offset, in unit of percentage
 			/// </summary>
-			 virtual Aspose::Cells::System::Double GetScriptOffset()=0;
+			 virtual Aspose::Cells::Systems::Double GetScriptOffset()=0;
 			/// <summary>
 			/// Sets the script offset, in unit of percentage
 			/// </summary>
-			 virtual void SetScriptOffset(Aspose::Cells::System::Double value)=0;
+			 virtual void SetScriptOffset(Aspose::Cells::Systems::Double value)=0;
 			/// <summary>
 			/// Gets a value indicating whether the font is super script.
 			/// </summary>
@@ -149,7 +149,7 @@ namespace Cells{
 			/// </example>
 			/// 
 			/// 
-			  virtual intrusive_ptr<Aspose::Cells::System::String> GetName()=0;
+			  virtual intrusive_ptr<Aspose::Cells::Systems::String> GetName()=0;
 			/// <summary>
 			/// Sets the name of the <see cref="Font" />
 			/// .
@@ -166,23 +166,23 @@ namespace Cells{
 			/// 
 			/// </code>
 			/// </example>
-			  virtual void SetName(intrusive_ptr<Aspose::Cells::System::String> value)=0;
+			  virtual void SetName(intrusive_ptr<Aspose::Cells::Systems::String> value)=0;
 			/// <summary>
 			/// Gets the double size of the font.
 			/// </summary>
-			 virtual Aspose::Cells::System::Double GetDoubleSize()=0;
+			 virtual Aspose::Cells::Systems::Double GetDoubleSize()=0;
 			/// <summary>
 			/// Sets the double size of the font.
 			/// </summary>
-			 virtual void SetDoubleSize(Aspose::Cells::System::Double value)=0;
+			 virtual void SetDoubleSize(Aspose::Cells::Systems::Double value)=0;
 			/// <summary>
 			/// Gets the size of the font.
 			/// </summary>
-			 virtual Aspose::Cells::System::Int32 GetSize()=0;
+			 virtual Aspose::Cells::Systems::Int32 GetSize()=0;
 			/// <summary>
 			/// Sets the size of the font.
 			/// </summary>
-			 virtual void SetSize(Aspose::Cells::System::Int32 value)=0;
+			 virtual void SetSize(Aspose::Cells::Systems::Int32 value)=0;
 			/// <summary>
 			/// Gets the theme color.
 			/// </summary>
@@ -201,20 +201,20 @@ namespace Cells{
 			/// Gets or sets the <see cref="System.Drawing.Color" />
 			///  of the font.
 			/// </summary>
-			 virtual intrusive_ptr<Aspose::Cells::System::Drawing::Color> GetColor()=0;
+			 virtual intrusive_ptr<Aspose::Cells::Systems::Drawing::Color> GetColor()=0;
 			/// <summary>
 			/// Sets the <see cref="System.Drawing.Color" />
 			///  of the font.
 			/// </summary>
-			 virtual void SetColor(intrusive_ptr<Aspose::Cells::System::Drawing::Color> value)=0;
+			 virtual void SetColor(intrusive_ptr<Aspose::Cells::Systems::Drawing::Color> value)=0;
 			/// <summary>
 			/// Gets the color with a 32-bit ARGB value.
 			/// </summary>
-			 virtual Aspose::Cells::System::Int32 GetArgbColor()=0;
+			 virtual Aspose::Cells::Systems::Int32 GetArgbColor()=0;
 			/// <summary>
 			/// Sets the color with a 32-bit ARGB value.
 			/// </summary>
-			 virtual void SetArgbColor(Aspose::Cells::System::Int32 value)=0;
+			 virtual void SetArgbColor(Aspose::Cells::Systems::Int32 value)=0;
 			/// <summary>
 			/// Checks if two fonts are equals.
 			/// </summary>
@@ -234,7 +234,7 @@ namespace Cells{
 			/// </summary>
 			/// <returns/>
 			/// 
-			  virtual intrusive_ptr<Aspose::Cells::System::String> ToString()=0;
+			  virtual intrusive_ptr<Aspose::Cells::Systems::String> ToString()=0;
 
 	};
 }

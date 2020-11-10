@@ -1,6 +1,6 @@
 #pragma once
-#include "System/Object.h"
-#include "System/Int32.h"
+#include "Aspose.Cells.Systems/Object.h"
+#include "Aspose.Cells.Systems/Int32.h"
 
 namespace Aspose {
 	namespace Cells {
@@ -23,7 +23,7 @@ namespace Charts{
 			/// <summary>
 			/// Represents the marker in a line chart, scatter chart, or radar chart.
 			/// </summary>
-	class ASPOSE_CELLS_API IMarker : public Aspose::Cells::System::Object
+	class ASPOSE_CELLS_API IMarker : public Aspose::Cells::Systems::Object
 	{
 		public:
 			/// <summary>
@@ -47,19 +47,19 @@ namespace Charts{
 			/// <summary>
 			/// Represents the marker size in unit of points. Applies to line chart, scatter chart, or radar chart. 
 			/// </summary>
-			 virtual Aspose::Cells::System::Int32 GetMarkerSize()=0;
+			 virtual Aspose::Cells::Systems::Int32 GetMarkerSize()=0;
 			/// <summary>
 			/// Represents the marker size in unit of points. Applies to line chart, scatter chart, or radar chart. 
 			/// </summary>
-			 virtual void SetMarkerSize(Aspose::Cells::System::Int32 value)=0;
+			 virtual void SetMarkerSize(Aspose::Cells::Systems::Int32 value)=0;
 			/// <summary>
 			/// Represents the marker size in unit of pixels. Applies to line chart, scatter chart, or radar chart. 
 			/// </summary>
-			 virtual Aspose::Cells::System::Int32 GetMarkerSizePx()=0;
+			 virtual Aspose::Cells::Systems::Int32 GetMarkerSizePx()=0;
 			/// <summary>
 			/// Represents the marker size in unit of pixels. Applies to line chart, scatter chart, or radar chart. 
 			/// </summary>
-			 virtual void SetMarkerSizePx(Aspose::Cells::System::Int32 value)=0;
+			 virtual void SetMarkerSizePx(Aspose::Cells::Systems::Int32 value)=0;
 
 	};
 }

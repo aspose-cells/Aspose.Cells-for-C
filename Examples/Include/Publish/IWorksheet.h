@@ -1,12 +1,12 @@
 #pragma once
-#include "System/Object.h"
-#include "System/String.h"
-#include "System/Int32.h"
-#include "System/Collections/ArrayList.h"
-#include "System/Drawing/Color.h"
-#include "System/Array1D.h"
-#include "System/Byte.h"
-#include "System/IDisposable.h"
+#include "Aspose.Cells.Systems/Object.h"
+#include "Aspose.Cells.Systems/String.h"
+#include "Aspose.Cells.Systems/Int32.h"
+#include "Aspose.Cells.Systems/Collections/ArrayList.h"
+#include "Aspose.Cells.Systems/Drawing/Color.h"
+#include "Aspose.Cells.Systems/Array1D.h"
+#include "Aspose.Cells.Systems/Byte.h"
+#include "Aspose.Cells.Systems/IDisposable.h"
 
 namespace Aspose {
 	namespace Cells {
@@ -105,7 +105,7 @@ namespace Cells{
 			/// </example>
 			/// 
 			/// 
-	class ASPOSE_CELLS_API IWorksheet : public Aspose::Cells::System::IDisposable , public Aspose::Cells::System::Object
+	class ASPOSE_CELLS_API IWorksheet : public Aspose::Cells::Systems::IDisposable , public Aspose::Cells::Systems::Object
 	{
 		public:
 			/// <summary>
@@ -161,7 +161,7 @@ namespace Cells{
 			/// For example, you cannot set "SheetName1" to the first worksheet and set "SHEETNAME1" to the second worksheet.</remarks>
 			/// 
 			/// 
-			 virtual intrusive_ptr<Aspose::Cells::System::String> GetName()=0;
+			 virtual intrusive_ptr<Aspose::Cells::Systems::String> GetName()=0;
 			 
 			/// <summary>
 			/// Sets the name of the worksheet.
@@ -171,7 +171,7 @@ namespace Cells{
 			/// For example, you cannot set "SheetName1" to the first worksheet and set "SHEETNAME1" to the second worksheet.</remarks>
 			/// 
 			/// 
-			 virtual void SetName(intrusive_ptr<Aspose::Cells::System::String> value)=0;
+			 virtual void SetName(intrusive_ptr<Aspose::Cells::Systems::String> value)=0;
 			 
 			/// <summary>
 			/// Indicates whether to show formulas or their results.
@@ -262,7 +262,7 @@ namespace Cells{
 			/// 
 			/// <p>The first two parameters specify the frozen position and the last two parameters specify the area frozen on the left top pane.</p>
 			/// </remarks>
-			  virtual void FreezePanes(Aspose::Cells::System::Int32 row , Aspose::Cells::System::Int32 column , Aspose::Cells::System::Int32 freezedRows , Aspose::Cells::System::Int32 freezedColumns)=0;
+			  virtual void FreezePanes(Aspose::Cells::Systems::Int32 row , Aspose::Cells::Systems::Int32 column , Aspose::Cells::Systems::Int32 freezedRows , Aspose::Cells::Systems::Int32 freezedColumns)=0;
 			/// <summary>
 			/// Gets the freeze panes.
 			/// </summary>
@@ -271,7 +271,7 @@ namespace Cells{
 			/// <param name="freezedRows" >Number of visible rows in top pane, no more than row index.</param>
 			/// <param name="freezedColumns" >Number of visible columns in left pane, no more than column index.</param>
 			/// <returns>Return whether the worksheet is frozen</returns>
-			  virtual bool GetFreezedPanes(Aspose::Cells::System::Int32& row , Aspose::Cells::System::Int32& column , Aspose::Cells::System::Int32& freezedRows , Aspose::Cells::System::Int32& freezedColumns)=0;
+			  virtual bool GetFreezedPanes(Aspose::Cells::Systems::Int32& row , Aspose::Cells::Systems::Int32& column , Aspose::Cells::Systems::Int32& freezedRows , Aspose::Cells::Systems::Int32& freezedColumns)=0;
 			/// <summary>
 			/// Splits window.
 			/// </summary>
@@ -284,7 +284,7 @@ namespace Cells{
 			/// <param name="freezedColumns" >Number of visible columns in left pane, no more than column index.</param>
 			/// <remarks>Row index and column index cannot all be zero. Number of rows and number of columns
 			/// also cannot all be zero.</remarks>
-			  virtual void FreezePanes(intrusive_ptr<Aspose::Cells::System::String> cellName , Aspose::Cells::System::Int32 freezedRows , Aspose::Cells::System::Int32 freezedColumns)=0;
+			  virtual void FreezePanes(intrusive_ptr<Aspose::Cells::Systems::String> cellName , Aspose::Cells::Systems::Int32 freezedRows , Aspose::Cells::Systems::Int32 freezedColumns)=0;
 			/// <summary>
 			/// Unfreezes panes in the worksheet.
 			/// </summary>
@@ -312,7 +312,7 @@ namespace Cells{
 			/// </summary>
 			/// <param name="cellName" />
 			/// 
-			  virtual void AddPageBreaks(intrusive_ptr<Aspose::Cells::System::String> cellName)=0;
+			  virtual void AddPageBreaks(intrusive_ptr<Aspose::Cells::Systems::String> cellName)=0;
 			/// <summary>
 			/// Gets the <see cref="HyperlinkCollection" />
 			///  collection.
@@ -339,7 +339,7 @@ namespace Cells{
 			/// <param name="lastRow" >Last row index.</param>
 			/// <remarks>This method autofits a row based on content in a range of cells within the row.
 			/// </remarks>
-			  virtual void AutoFitColumn(Aspose::Cells::System::Int32 columnIndex , Aspose::Cells::System::Int32 firstRow , Aspose::Cells::System::Int32 lastRow)=0;
+			  virtual void AutoFitColumn(Aspose::Cells::Systems::Int32 columnIndex , Aspose::Cells::Systems::Int32 firstRow , Aspose::Cells::Systems::Int32 lastRow)=0;
 			/// <summary>
 			/// Autofits all columns in this worksheet.
 			/// </summary>
@@ -355,14 +355,14 @@ namespace Cells{
 			/// </summary>
 			/// <param name="columnIndex" >Column index.</param>
 			/// <remarks>AutoFitColumn is an imprecise function.</remarks>
-			  virtual void AutoFitColumn(Aspose::Cells::System::Int32 columnIndex)=0;
+			  virtual void AutoFitColumn(Aspose::Cells::Systems::Int32 columnIndex)=0;
 			/// <summary>
 			/// Autofits the columns width.
 			/// </summary>
 			/// <param name="firstColumn" >First column index.</param>
 			/// <param name="lastColumn" >Last column index.</param>
 			/// <remarks>AutoFitColumn is an imprecise function.</remarks>
-			  virtual void AutoFitColumns(Aspose::Cells::System::Int32 firstColumn , Aspose::Cells::System::Int32 lastColumn)=0;
+			  virtual void AutoFitColumns(Aspose::Cells::Systems::Int32 firstColumn , Aspose::Cells::Systems::Int32 lastColumn)=0;
 			/// <summary>
 			/// Autofits the columns width.
 			/// </summary>
@@ -370,7 +370,7 @@ namespace Cells{
 			/// <param name="lastColumn" >Last column index.</param>
 			/// <param name="options" >The auto fitting options</param>
 			/// <remarks>AutoFitColumn is an imprecise function.</remarks>
-			 virtual void 		AutoFitColumns(Aspose::Cells::System::Int32 firstColumn , Aspose::Cells::System::Int32 lastColumn , intrusive_ptr<Aspose::Cells::IAutoFitterOptions> options)=0;
+			 virtual void 		AutoFitColumns(Aspose::Cells::Systems::Int32 firstColumn , Aspose::Cells::Systems::Int32 lastColumn , intrusive_ptr<Aspose::Cells::IAutoFitterOptions> options)=0;
 			/// <summary>
 			/// Autofits the columns width.
 			/// </summary>
@@ -379,7 +379,7 @@ namespace Cells{
 			/// <param name="lastRow" >Last row index.</param>
 			/// <param name="lastColumn" >Last column index.</param>
 			/// <remarks>AutoFitColumn is an imprecise function.</remarks>
-			  virtual void AutoFitColumns(Aspose::Cells::System::Int32 firstRow , Aspose::Cells::System::Int32 firstColumn , Aspose::Cells::System::Int32 lastRow , Aspose::Cells::System::Int32 lastColumn)=0;
+			  virtual void AutoFitColumns(Aspose::Cells::Systems::Int32 firstRow , Aspose::Cells::Systems::Int32 firstColumn , Aspose::Cells::Systems::Int32 lastRow , Aspose::Cells::Systems::Int32 lastColumn)=0;
 			/// <summary>
 			/// Autofits the columns width.
 			/// </summary>
@@ -389,7 +389,7 @@ namespace Cells{
 			/// <param name="lastColumn" >Last column index.</param>
 			/// <param name="options" >The auto fitting options</param>
 			/// <remarks>AutoFitColumn is an imprecise function.</remarks>
-			 virtual void 		AutoFitColumns(Aspose::Cells::System::Int32 firstRow , Aspose::Cells::System::Int32 firstColumn , Aspose::Cells::System::Int32 lastRow , Aspose::Cells::System::Int32 lastColumn , intrusive_ptr<Aspose::Cells::IAutoFitterOptions> options)=0;
+			 virtual void 		AutoFitColumns(Aspose::Cells::Systems::Int32 firstRow , Aspose::Cells::Systems::Int32 firstColumn , Aspose::Cells::Systems::Int32 lastRow , Aspose::Cells::Systems::Int32 lastColumn , intrusive_ptr<Aspose::Cells::IAutoFitterOptions> options)=0;
 			/// <summary>
 			/// Autofits the row height.
 			/// </summary>
@@ -398,7 +398,7 @@ namespace Cells{
 			/// <param name="lastColumn" >Last column index.</param>
 			/// <remarks>This method autofits a row based on content in a range of cells within the row.
 			/// </remarks>
-			  virtual void AutoFitRow(Aspose::Cells::System::Int32 rowIndex , Aspose::Cells::System::Int32 firstColumn , Aspose::Cells::System::Int32 lastColumn)=0;
+			  virtual void AutoFitRow(Aspose::Cells::Systems::Int32 rowIndex , Aspose::Cells::Systems::Int32 firstColumn , Aspose::Cells::Systems::Int32 lastColumn)=0;
 			/// <summary>
 			/// Autofits the row height.
 			/// </summary>
@@ -408,7 +408,7 @@ namespace Cells{
 			/// <param name="options" >The auto fitter options</param>
 			/// <remarks>This method autofits a row based on content in a range of cells within the row.
 			/// </remarks>
-			 virtual void 		AutoFitRow(Aspose::Cells::System::Int32 rowIndex , Aspose::Cells::System::Int32 firstColumn , Aspose::Cells::System::Int32 lastColumn , intrusive_ptr<Aspose::Cells::IAutoFitterOptions> options)=0;
+			 virtual void 		AutoFitRow(Aspose::Cells::Systems::Int32 rowIndex , Aspose::Cells::Systems::Int32 firstColumn , Aspose::Cells::Systems::Int32 lastColumn , intrusive_ptr<Aspose::Cells::IAutoFitterOptions> options)=0;
 			/// <summary>
 			/// Autofits all rows in this worksheet.
 			/// </summary>
@@ -430,14 +430,14 @@ namespace Cells{
 			/// </summary>
 			/// <param name="startRow" >Start row index.</param>
 			/// <param name="endRow" >End row index.</param>
-			  virtual void AutoFitRows(Aspose::Cells::System::Int32 startRow , Aspose::Cells::System::Int32 endRow)=0;
+			  virtual void AutoFitRows(Aspose::Cells::Systems::Int32 startRow , Aspose::Cells::Systems::Int32 endRow)=0;
 			/// <summary>
 			/// Autofits row height in a range.
 			/// </summary>
 			/// <param name="startRow" >Start row index.</param>
 			/// <param name="endRow" >End row index.</param>
 			/// <param name="options" >The options of auto fitter.</param>
-			 virtual void 		AutoFitRows(Aspose::Cells::System::Int32 startRow , Aspose::Cells::System::Int32 endRow , intrusive_ptr<Aspose::Cells::IAutoFitterOptions> options)=0;
+			 virtual void 		AutoFitRows(Aspose::Cells::Systems::Int32 startRow , Aspose::Cells::Systems::Int32 endRow , intrusive_ptr<Aspose::Cells::IAutoFitterOptions> options)=0;
 			/// <summary>
 			/// Autofits row height in a rectangle range.
 			/// </summary>
@@ -445,13 +445,13 @@ namespace Cells{
 			/// <param name="endRow" >End row index.</param>
 			/// <param name="startColumn" >Start column index.</param>
 			/// <param name="endColumn" >End column index.</param>
-			  virtual void AutoFitRow(Aspose::Cells::System::Int32 startRow , Aspose::Cells::System::Int32 endRow , Aspose::Cells::System::Int32 startColumn , Aspose::Cells::System::Int32 endColumn)=0;
+			  virtual void AutoFitRow(Aspose::Cells::Systems::Int32 startRow , Aspose::Cells::Systems::Int32 endRow , Aspose::Cells::Systems::Int32 startColumn , Aspose::Cells::Systems::Int32 endColumn)=0;
 			/// <summary>
 			/// Autofits the row height.
 			/// </summary>
 			/// <param name="rowIndex" >Row index.</param>
 			/// <remarks>AutoFitRow is an imprecise function.</remarks>
-			  virtual void AutoFitRow(Aspose::Cells::System::Int32 rowIndex)=0;
+			  virtual void AutoFitRow(Aspose::Cells::Systems::Int32 rowIndex)=0;
 			/// <summary>
 			/// Represents the page setup description in this sheet.
 			/// </summary>
@@ -516,7 +516,7 @@ namespace Cells{
 			/// <param name="totalColumns" >The number of columns</param>
 			/// <param name="removeOthers" >True means removing other selected range and only select this range.
 			/// </param>
-			  virtual void SelectRange(Aspose::Cells::System::Int32 startRow , Aspose::Cells::System::Int32 startColumn , Aspose::Cells::System::Int32 totalRows , Aspose::Cells::System::Int32 totalColumns , bool removeOthers)=0;
+			  virtual void SelectRange(Aspose::Cells::Systems::Int32 startRow , Aspose::Cells::Systems::Int32 startColumn , Aspose::Cells::Systems::Int32 totalRows , Aspose::Cells::Systems::Int32 totalColumns , bool removeOthers)=0;
 			/// <summary>
 			/// Removes all drawing objects in this worksheet.
 			/// </summary>
@@ -579,7 +579,7 @@ namespace Cells{
 			/// <remarks>This method can protect worksheet in all versions of Excel file. 
 			/// </remarks>
 
-			  virtual void Protect(Aspose::Cells::ProtectionType type , intrusive_ptr<Aspose::Cells::System::String> password , intrusive_ptr<Aspose::Cells::System::String> oldPassword)=0;
+			  virtual void Protect(Aspose::Cells::ProtectionType type , intrusive_ptr<Aspose::Cells::Systems::String> password , intrusive_ptr<Aspose::Cells::Systems::String> oldPassword)=0;
 			/// <summary>
 			/// Unprotects worksheet.
 			/// </summary>
@@ -592,16 +592,16 @@ namespace Cells{
 			/// <param name="password" >Password</param>
 			/// <remarks>If the worksheet is protected without a password, you can set a null value or blank string to password parameter.
 			/// </remarks>
-			  virtual void Unprotect(intrusive_ptr<Aspose::Cells::System::String> password)=0;
+			  virtual void Unprotect(intrusive_ptr<Aspose::Cells::Systems::String> password)=0;
 			/// <summary>
 			/// Gets the index of sheet in the worksheet collection.
 			/// </summary>
-			  virtual Aspose::Cells::System::Int32 GetIndex() = 0;
+			  virtual Aspose::Cells::Systems::Int32 GetIndex() = 0;
 			/// <summary>
 			/// Moves the sheet to another location in the spreadsheet.
 			/// </summary>
 			/// <param name="index" >Destination sheet index.</param>
-			  virtual void MoveTo(Aspose::Cells::System::Int32 index)=0;
+			  virtual void MoveTo(Aspose::Cells::Systems::Int32 index)=0;
 			/// <summary>
 			/// Indicates if the worksheet is protected.
 			/// </summary>
@@ -625,35 +625,35 @@ namespace Cells{
 			/// <summary>
 			/// Represents first visible row index.
 			/// </summary>
-			  virtual Aspose::Cells::System::Int32 GetFirstVisibleRow() = 0;
+			  virtual Aspose::Cells::Systems::Int32 GetFirstVisibleRow() = 0;
 			/// <summary>
 			/// Represents first visible row index.
 			/// </summary>
-			  virtual void SetFirstVisibleRow(Aspose::Cells::System::Int32 value) = 0;
+			  virtual void SetFirstVisibleRow(Aspose::Cells::Systems::Int32 value) = 0;
 			/// <summary>
 			/// Represents first visible column index.
 			/// </summary>
-			  virtual Aspose::Cells::System::Int32 GetFirstVisibleColumn() = 0;
+			  virtual Aspose::Cells::Systems::Int32 GetFirstVisibleColumn() = 0;
 			/// <summary>
 			/// Represents first visible column index.
 			/// </summary>
-			  virtual void SetFirstVisibleColumn(Aspose::Cells::System::Int32 value) = 0;
+			  virtual void SetFirstVisibleColumn(Aspose::Cells::Systems::Int32 value) = 0;
 			/// <summary>
 			/// Replaces all cells' text with a new string.
 			/// </summary>
 			/// <param name="oldString" >Old string value.</param>
 			/// <param name="newString" >New string value.</param>
-			  virtual Aspose::Cells::System::Int32 Replace(intrusive_ptr<Aspose::Cells::System::String> oldString , intrusive_ptr<Aspose::Cells::System::String> newString)=0;
+			  virtual Aspose::Cells::Systems::Int32 Replace(intrusive_ptr<Aspose::Cells::Systems::String> oldString , intrusive_ptr<Aspose::Cells::Systems::String> newString)=0;
 			/// <summary>
 			/// Represents the scaling factor in percentage. It should be between 10 and 400.
 			/// </summary>
 			/// <remarks>Please set the view type first.</remarks>
-			  virtual Aspose::Cells::System::Int32 GetZoom() = 0;
+			  virtual Aspose::Cells::Systems::Int32 GetZoom() = 0;
 			/// <summary>
 			/// Represents the scaling factor in percentage. It should be between 10 and 400.
 			/// </summary>
 			/// <remarks>Please set the view type first.</remarks>
-			  virtual void SetZoom(Aspose::Cells::System::Int32 value) = 0;
+			  virtual void SetZoom(Aspose::Cells::Systems::Int32 value) = 0;
 			/// <summary>
 			/// Gets and sets the view type.
 			/// </summary>
@@ -683,35 +683,35 @@ namespace Cells{
 			/// </summary>
 			/// <returns>An <see cref="ArrayList" />
 			///  which contains selected ranges.</returns>
-			  virtual intrusive_ptr<Aspose::Cells::System::Collections::ArrayList> GetSelectedRanges()=0;
+			  virtual intrusive_ptr<Aspose::Cells::Systems::Collections::ArrayList> GetSelectedRanges()=0;
 			/// <summary>
 			/// Represents worksheet tab color.
 			/// </summary>
 			/// <remarks>This feature is only supported in ExcelXP(Excel2002) and later versions. 
 			/// If you save file as Excel97 or Excel2000 format, it will be omitted.</remarks>
-			  virtual intrusive_ptr<Aspose::Cells::System::Drawing::Color> GetTabColor() = 0;
+			  virtual intrusive_ptr<Aspose::Cells::Systems::Drawing::Color> GetTabColor() = 0;
 			/// <summary>
 			/// Represents worksheet tab color.
 			/// </summary>
 			/// <remarks>This feature is only supported in ExcelXP(Excel2002) and later versions. 
 			/// If you save file as Excel97 or Excel2000 format, it will be omitted.</remarks>
-			  virtual void SetTabColor(intrusive_ptr<Aspose::Cells::System::Drawing::Color> value) = 0;
+			  virtual void SetTabColor(intrusive_ptr<Aspose::Cells::Systems::Drawing::Color> value) = 0;
 			/// <summary>
 			/// Gets worksheet code name.
 			/// </summary>
-			  virtual intrusive_ptr<Aspose::Cells::System::String> GetCodeName() = 0;
+			  virtual intrusive_ptr<Aspose::Cells::Systems::String> GetCodeName() = 0;
 			/// <summary>
 			/// Sets worksheet code name.
 			/// </summary>
-			  virtual void SetCodeName(intrusive_ptr<Aspose::Cells::System::String> value) = 0;
+			  virtual void SetCodeName(intrusive_ptr<Aspose::Cells::Systems::String> value) = 0;
 			/// <summary>
 			/// Gets worksheet background image.
 			/// </summary>
-			  virtual intrusive_ptr<Aspose::Cells::System::Array1D<Aspose::Cells::System::Byte>> GetBackgroundImage() = 0;
+			  virtual intrusive_ptr<Aspose::Cells::Systems::Array1D<Aspose::Cells::Systems::Byte>> GetBackgroundImage() = 0;
 			/// <summary>
 			/// Sets worksheet background image.
 			/// </summary>
-			  virtual void SetBackgroundImage(intrusive_ptr<Aspose::Cells::System::Array1D<Aspose::Cells::System::Byte>> value) = 0;
+			  virtual void SetBackgroundImage(intrusive_ptr<Aspose::Cells::Systems::Array1D<Aspose::Cells::Systems::Byte>> value) = 0;
 			/// <summary>
 			/// Gets the ConditionalFormattings in the worksheet.
 			/// </summary>
@@ -719,11 +719,11 @@ namespace Cells{
 			/// <summary>
 			/// Gets the active cell in the worksheet. 
 			/// </summary>
-			  virtual intrusive_ptr<Aspose::Cells::System::String> GetActiveCell() = 0;
+			  virtual intrusive_ptr<Aspose::Cells::Systems::String> GetActiveCell() = 0;
 			/// <summary>
 			/// Sets the active cell in the worksheet. 
 			/// </summary>
-			  virtual void SetActiveCell(intrusive_ptr<Aspose::Cells::System::String> value) = 0;
+			  virtual void SetActiveCell(intrusive_ptr<Aspose::Cells::Systems::String> value) = 0;
 			/// <summary>
 			/// Gets an object representing 
 			/// the identifier information associated with a worksheet. 
@@ -741,7 +741,7 @@ namespace Cells{
 			/// <remarks>
 			/// Each cell area represents a paper.
 			/// </remarks>
-			 virtual intrusive_ptr<Aspose::Cells::System::Array1D<Aspose::Cells::ICellArea*>> 		GetPrintingPageBreaks(intrusive_ptr<Aspose::Cells::Rendering::IImageOrPrintOptions> options)=0;
+			 virtual intrusive_ptr<Aspose::Cells::Systems::Array1D<Aspose::Cells::ICellArea*>> 		GetPrintingPageBreaks(intrusive_ptr<Aspose::Cells::Rendering::IImageOrPrintOptions> options)=0;
 			/// <summary>
 			/// Gets the collection of <see cref="Scenario" />
 			/// .
@@ -752,14 +752,14 @@ namespace Cells{
 			/// </summary>
 			/// <param name="formula" >Formula to be calculated.</param>
 			/// <returns>Calculated formula result.</returns>
-			  virtual intrusive_ptr<Aspose::Cells::System::Object> CalculateFormula(intrusive_ptr<Aspose::Cells::System::String> formula)=0;
+			  virtual intrusive_ptr<Aspose::Cells::Systems::Object> CalculateFormula(intrusive_ptr<Aspose::Cells::Systems::String> formula)=0;
 			/// <summary>
 			/// Calculates a formula.
 			/// </summary>
 			/// <param name="formula" >Formula to be calculated.</param>
 			/// <param name="opts" >Options for calculating formula</param>
 			/// <returns>Calculated formula result.</returns>
-			 virtual intrusive_ptr<Aspose::Cells::System::Object> 		CalculateFormula(intrusive_ptr<Aspose::Cells::System::String> formula , intrusive_ptr<Aspose::Cells::ICalculationOptions> opts)=0;
+			 virtual intrusive_ptr<Aspose::Cells::Systems::Object> 		CalculateFormula(intrusive_ptr<Aspose::Cells::Systems::String> formula , intrusive_ptr<Aspose::Cells::ICalculationOptions> opts)=0;
 			/// <summary>
 			/// Refreshes all PivotTables in this Worksheet.
 			/// </summary>

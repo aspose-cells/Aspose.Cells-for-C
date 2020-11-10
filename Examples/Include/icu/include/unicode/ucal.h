@@ -43,9 +43,9 @@
  * <pre>
  * \code
  * UCalendar *caldef;
- * UChar *tzId;
+ * UnChar *tzId;
  * UErrorCode status;
- * tzId=(UChar*)malloc(sizeof(UChar) * (strlen("PST") +1) );
+ * tzId=(UnChar*)malloc(sizeof(UnChar) * (strlen("PST") +1) );
  * u_uastrcpy(tzId, "PST");
  * caldef=ucal_open(tzID, u_strlen(tzID), NULL, UCAL_TRADITIONAL, &status);
  * \endcode
@@ -618,7 +618,7 @@ ucal_openCountryTimeZones(const char* country, UErrorCode* ec);
  * @stable ICU 2.6
  */
 U_STABLE int32_t U_EXPORT2
-ucal_getDefaultTimeZone(UChar* result, int32_t resultCapacity, UErrorCode* ec);
+ucal_getDefaultTimeZone(UnChar* result, int32_t resultCapacity, UErrorCode* ec);
 
 /**
  * Set the default time zone.
@@ -630,7 +630,7 @@ ucal_getDefaultTimeZone(UChar* result, int32_t resultCapacity, UErrorCode* ec);
  * @stable ICU 2.6
  */
 U_STABLE void U_EXPORT2
-ucal_setDefaultTimeZone(const UChar* zoneID, UErrorCode* ec);
+ucal_setDefaultTimeZone(const UnChar* zoneID, UErrorCode* ec);
 
 /**
  * Return the amount of time in milliseconds that the clock is
@@ -649,7 +649,7 @@ ucal_setDefaultTimeZone(const UChar* zoneID, UErrorCode* ec);
  * @stable ICU 2.6
  */
 U_STABLE int32_t U_EXPORT2
-ucal_getDSTSavings(const UChar* zoneID, UErrorCode* ec);
+ucal_getDSTSavings(const UnChar* zoneID, UErrorCode* ec);
 
 /**
  * Get the current date and time.
@@ -684,7 +684,7 @@ ucal_getNow(void);
  * @stable ICU 2.0
  */
 U_STABLE UCalendar* U_EXPORT2 
-ucal_open(const UChar*   zoneID,
+ucal_open(const UnChar*   zoneID,
           int32_t        len,
           const char*    locale,
           UCalendarType  type,
@@ -741,7 +741,7 @@ ucal_clone(const UCalendar* cal,
  */
 U_STABLE void U_EXPORT2 
 ucal_setTimeZone(UCalendar*    cal,
-                 const UChar*  zoneID,
+                 const UnChar*  zoneID,
                  int32_t       len,
                  UErrorCode*   status);
 
@@ -757,7 +757,7 @@ ucal_setTimeZone(UCalendar*    cal,
  */ 
 U_STABLE int32_t U_EXPORT2 
 ucal_getTimeZoneID(const UCalendar *cal,
-                   UChar *result,
+                   UnChar *result,
                    int32_t resultLength,
                    UErrorCode *status);
 
@@ -796,7 +796,7 @@ U_STABLE int32_t U_EXPORT2
 ucal_getTimeZoneDisplayName(const UCalendar*          cal,
                             UCalendarDisplayNameType  type,
                             const char*               locale,
-                            UChar*                    result,
+                            UnChar*                    result,
                             int32_t                   resultLength,
                             UErrorCode*               status);
 
@@ -1296,8 +1296,8 @@ ucal_getTZDataVersion(UErrorCode* status);
  * @stable ICU 4.0
  */
 U_STABLE int32_t U_EXPORT2
-ucal_getCanonicalTimeZoneID(const UChar* id, int32_t len,
-                            UChar* result, int32_t resultCapacity, UBool *isSystemID, UErrorCode* status);
+ucal_getCanonicalTimeZoneID(const UnChar* id, int32_t len,
+                            UnChar* result, int32_t resultCapacity, UBool *isSystemID, UErrorCode* status);
 /**
  * Get the resource keyword value string designating the calendar type for the UCalendar.
  * @param cal The UCalendar to query.
@@ -1520,8 +1520,8 @@ ucal_getTimeZoneTransitionDate(const UCalendar* cal, UTimeZoneTransitionType typ
 * @stable ICU 52
 */
 U_STABLE int32_t U_EXPORT2
-ucal_getWindowsTimeZoneID(const UChar* id, int32_t len,
-                            UChar* winid, int32_t winidCapacity, UErrorCode* status);
+ucal_getWindowsTimeZoneID(const UnChar* id, int32_t len,
+                            UnChar* winid, int32_t winidCapacity, UErrorCode* status);
 
 /**
 * Converts a Windows time zone ID to an equivalent system time zone ID
@@ -1552,8 +1552,8 @@ ucal_getWindowsTimeZoneID(const UChar* id, int32_t len,
 * @stable ICU 52
 */
 U_STABLE int32_t U_EXPORT2
-ucal_getTimeZoneIDForWindowsID(const UChar* winid, int32_t len, const char* region,
-                                UChar* id, int32_t idCapacity, UErrorCode* status);
+ucal_getTimeZoneIDForWindowsID(const UnChar* winid, int32_t len, const char* region,
+                                UnChar* id, int32_t idCapacity, UErrorCode* status);
 
 #endif /* #if !UCONFIG_NO_FORMATTING */
 

@@ -1,7 +1,7 @@
 #pragma once
-#include "System/Object.h"
-#include "System/Drawing/Color.h"
-#include "System/Int32.h"
+#include "Aspose.Cells.Systems/Object.h"
+#include "Aspose.Cells.Systems/Drawing/Color.h"
+#include "Aspose.Cells.Systems/Int32.h"
 
 namespace Aspose {
 	namespace Cells {
@@ -34,7 +34,7 @@ namespace Cells{
 			/// 
 			/// </code>
 			/// </example>
-	class ASPOSE_CELLS_API IBorder : public Aspose::Cells::System::Object
+	class ASPOSE_CELLS_API IBorder : public Aspose::Cells::Systems::Object
 	{
 		public:
 			/// <summary>
@@ -49,20 +49,20 @@ namespace Cells{
 			/// Gets the <see cref="System.Drawing.Color" />
 			///  of the border.
 			/// </summary>
-			 virtual intrusive_ptr<Aspose::Cells::System::Drawing::Color> GetColor()=0;
+			 virtual intrusive_ptr<Aspose::Cells::Systems::Drawing::Color> GetColor()=0;
 			/// <summary>
 			/// Sets the <see cref="System.Drawing.Color" />
 			///  of the border.
 			/// </summary>
-			 virtual void SetColor(intrusive_ptr<Aspose::Cells::System::Drawing::Color> value)=0;
+			 virtual void SetColor(intrusive_ptr<Aspose::Cells::Systems::Drawing::Color> value)=0;
 			/// <summary>
 			/// Gets the color with a 32-bit ARGB value.
 			/// </summary>
-			 virtual Aspose::Cells::System::Int32 GetArgbColor()=0;
+			 virtual Aspose::Cells::Systems::Int32 GetArgbColor()=0;
 			/// <summary>
 			/// Sets the color with a 32-bit ARGB value.
 			/// </summary>
-			 virtual void SetArgbColor(Aspose::Cells::System::Int32 value)=0;
+			 virtual void SetArgbColor(Aspose::Cells::Systems::Int32 value)=0;
 			/// <summary>
 			/// Gets the cell border type.
 			/// </summary>

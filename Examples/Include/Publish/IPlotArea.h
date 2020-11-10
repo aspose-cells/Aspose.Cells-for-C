@@ -1,6 +1,6 @@
 #pragma once
-#include "System/Object.h"
-#include "System/Int32.h"
+#include "Aspose.Cells.Systems/Object.h"
+#include "Aspose.Cells.Systems/Int32.h"
 #include "IChartFrame.h"
 
 namespace Aspose{
@@ -35,7 +35,7 @@ namespace Charts{
 			/// <p>For excel 2007 or latter, the defaut value is zero. you should call get the value after calling Chart.Calculate().</p>
 			///  
 			/// </remarks>
-			  virtual Aspose::Cells::System::Int32 GetX()=0;
+			  virtual Aspose::Cells::Systems::Int32 GetX()=0;
 			/// <summary>
 			/// Sets the x coordinate of the upper left corner of plot-area bounding box in units of 1/4000 of the chart area.
 			/// </summary>
@@ -59,7 +59,7 @@ namespace Charts{
 			/// <p>For excel 2007 or latter, the defaut value is zero. you should call get the value after calling Chart.Calculate().</p>
 			///  
 			/// </remarks>
-			  virtual void SetX(Aspose::Cells::System::Int32 value)=0;
+			  virtual void SetX(Aspose::Cells::Systems::Int32 value)=0;
 			/// <summary>
 			/// Gets the y coordinate of the upper top corner  of plot-area bounding box in units of 1/4000 of the chart area.	
 			/// </summary>
@@ -83,7 +83,7 @@ namespace Charts{
 			/// <p>For excel 2007 or latter, the defaut value is zero. you should call get the value after calling Chart.Calculate().</p>
 			///  
 			/// </remarks>
-			  virtual Aspose::Cells::System::Int32 GetY()=0;
+			  virtual Aspose::Cells::Systems::Int32 GetY()=0;
 			/// <summary>
 			/// Sets the y coordinate of the upper top corner  of plot-area bounding box in units of 1/4000 of the chart area.	
 			/// </summary>
@@ -107,7 +107,7 @@ namespace Charts{
 			/// <p>For excel 2007 or latter, the defaut value is zero. you should call get the value after calling Chart.Calculate().</p>
 			///  
 			/// </remarks>
-			  virtual void SetY(Aspose::Cells::System::Int32 value)=0;
+			  virtual void SetY(Aspose::Cells::Systems::Int32 value)=0;
 			/// <summary>
 			/// Gets the height of plot-area bounding box in units of 1/4000 of the chart area.		
 			/// </summary>
@@ -131,7 +131,7 @@ namespace Charts{
 			/// <p>For excel 2007 or latter, the defaut value is zero. you should call get the value after calling Chart.Calculate().</p>
 			///  
 			/// </remarks>
-			  virtual Aspose::Cells::System::Int32 GetHeight()=0;
+			  virtual Aspose::Cells::Systems::Int32 GetHeight()=0;
 			/// <summary>
 			/// Sets the height of plot-area bounding box in units of 1/4000 of the chart area.		
 			/// </summary>
@@ -155,7 +155,7 @@ namespace Charts{
 			/// <p>For excel 2007 or latter, the defaut value is zero. you should call get the value after calling Chart.Calculate().</p>
 			///  
 			/// </remarks>
-			  virtual void SetHeight(Aspose::Cells::System::Int32 value)=0;
+			  virtual void SetHeight(Aspose::Cells::Systems::Int32 value)=0;
 			/// <summary>
 			/// Gets the width of plot-area bounding box in units of 1/4000 of the chart area.	
 			/// </summary>
@@ -179,7 +179,7 @@ namespace Charts{
 			/// <p>For excel 2007 or latter, the defaut value is zero. you should call get the value after calling Chart.Calculate().</p>
 			///  
 			/// </remarks>
-			  virtual Aspose::Cells::System::Int32 GetWidth()=0;
+			  virtual Aspose::Cells::Systems::Int32 GetWidth()=0;
 			/// <summary>
 			/// Sets the width of plot-area bounding box in units of 1/4000 of the chart area.	
 			/// </summary>
@@ -203,7 +203,7 @@ namespace Charts{
 			/// <p>For excel 2007 or latter, the defaut value is zero. you should call get the value after calling Chart.Calculate().</p>
 			///  
 			/// </remarks>
-			  virtual void SetWidth(Aspose::Cells::System::Int32 value)=0;
+			  virtual void SetWidth(Aspose::Cells::Systems::Int32 value)=0;
 			/// <summary>
 			/// Gets the x coordinate of the upper top corner of plot area in units of 1/4000 of the chart area.
 			/// </summary>
@@ -227,7 +227,7 @@ namespace Charts{
 			/// <p>For excel 2007 or latter, the defaut value is zero. you should call get the value after calling Chart.Calculate().</p>
 			///  
 			/// </remarks>
-			 virtual Aspose::Cells::System::Int32 GetInnerX()=0;
+			 virtual Aspose::Cells::Systems::Int32 GetInnerX()=0;
 			/// <summary>
 			/// Sets the x coordinate of the upper top corner of plot area in units of 1/4000 of the chart area.
 			/// </summary>
@@ -251,7 +251,7 @@ namespace Charts{
 			/// <p>For excel 2007 or latter, the defaut value is zero. you should call get the value after calling Chart.Calculate().</p>
 			///  
 			/// </remarks>
-			 virtual void SetInnerX(Aspose::Cells::System::Int32 value)=0;
+			 virtual void SetInnerX(Aspose::Cells::Systems::Int32 value)=0;
 			/// <summary>
 			/// Gets the x coordinate of the upper top corner of plot area in units of 1/4000 of the chart area.		
 			/// </summary>
@@ -275,7 +275,7 @@ namespace Charts{
 			/// <p>For excel 2007 or latter, the defaut value is zero. you should call get the value after calling Chart.Calculate().</p>
 			///  
 			/// </remarks>
-			 virtual Aspose::Cells::System::Int32 GetInnerY()=0;
+			 virtual Aspose::Cells::Systems::Int32 GetInnerY()=0;
 			/// <summary>
 			/// Sets the x coordinate of the upper top corner of plot area in units of 1/4000 of the chart area.		
 			/// </summary>
@@ -299,7 +299,7 @@ namespace Charts{
 			/// <p>For excel 2007 or latter, the defaut value is zero. you should call get the value after calling Chart.Calculate().</p>
 			///  
 			/// </remarks>
-			 virtual void SetInnerY(Aspose::Cells::System::Int32 value)=0;
+			 virtual void SetInnerY(Aspose::Cells::Systems::Int32 value)=0;
 			/// <summary>
 			/// Gets the height of plot area in units of 1/4000 of the chart area.		
 			/// </summary>
@@ -323,7 +323,7 @@ namespace Charts{
 			/// <p>For excel 2007 or latter, the defaut value is zero. you should call get the value after calling Chart.Calculate().</p>
 			///  
 			/// </remarks>
-			 virtual Aspose::Cells::System::Int32 GetInnerHeight()=0;
+			 virtual Aspose::Cells::Systems::Int32 GetInnerHeight()=0;
 			/// <summary>
 			/// Sets the height of plot area in units of 1/4000 of the chart area.		
 			/// </summary>
@@ -347,7 +347,7 @@ namespace Charts{
 			/// <p>For excel 2007 or latter, the defaut value is zero. you should call get the value after calling Chart.Calculate().</p>
 			///  
 			/// </remarks>
-			 virtual void SetInnerHeight(Aspose::Cells::System::Int32 value)=0;
+			 virtual void SetInnerHeight(Aspose::Cells::Systems::Int32 value)=0;
 			/// <summary>
 			/// Gets the width  of plot area in units of 1/4000 of the chart area.		
 			/// </summary>
@@ -371,7 +371,7 @@ namespace Charts{
 			/// <p>For excel 2007 or latter, the defaut value is zero. you should call get the value after calling Chart.Calculate().</p>
 			///  
 			/// </remarks>
-			 virtual Aspose::Cells::System::Int32 GetInnerWidth()=0;
+			 virtual Aspose::Cells::Systems::Int32 GetInnerWidth()=0;
 			/// <summary>
 			/// Sets the width  of plot area in units of 1/4000 of the chart area.		
 			/// </summary>
@@ -395,7 +395,7 @@ namespace Charts{
 			/// <p>For excel 2007 or latter, the defaut value is zero. you should call get the value after calling Chart.Calculate().</p>
 			///  
 			/// </remarks>
-			 virtual void SetInnerWidth(Aspose::Cells::System::Int32 value)=0;
+			 virtual void SetInnerWidth(Aspose::Cells::Systems::Int32 value)=0;
 			/// <summary>
 			/// Set position of the plot area to automatic
 			/// </summary>

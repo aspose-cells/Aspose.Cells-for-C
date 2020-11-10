@@ -1,8 +1,8 @@
 #pragma once
-#include "System/Object.h"
-#include "System/Int32.h"
-#include "System/String.h"
-#include "System/Collections/CollectionBase.h"
+#include "Aspose.Cells.Systems/Object.h"
+#include "Aspose.Cells.Systems/Int32.h"
+#include "Aspose.Cells.Systems/String.h"
+#include "Aspose.Cells.Systems/Collections/CollectionBase.h"
 
 namespace Aspose {
 	namespace Cells {
@@ -16,7 +16,7 @@ namespace Cells{
 			/// Describes a collection of CFValueObject.
 			/// Use only for icon sets.
 			/// </summary>
-	class ASPOSE_CELLS_API IConditionalFormattingValueCollection : public Aspose::Cells::System::Collections::CollectionBase
+	class ASPOSE_CELLS_API IConditionalFormattingValueCollection : public Aspose::Cells::Systems::Collections::CollectionBase
 	{
 		public:
 			/// <summary>
@@ -24,7 +24,7 @@ namespace Cells{
 			/// </summary>
 			/// <param name="index" >The zero based index of the element.</param>
 			/// <returns>The element at the specified index.</returns>
-			 virtual intrusive_ptr<Aspose::Cells::IConditionalFormattingValue> 		GetObjectByIndex(Aspose::Cells::System::Int32 index)=0;
+			 virtual intrusive_ptr<Aspose::Cells::IConditionalFormattingValue> 		GetObjectByIndex(Aspose::Cells::Systems::Int32 index)=0;
 			/// <summary>
 			/// Adds <see cref="IConditionalFormattingValue" />
 			///  object.
@@ -32,7 +32,7 @@ namespace Cells{
 			/// <param name="type" >The value type.</param>
 			/// <param name="value" >The value.</param>
 			/// <returns>Returns the index of new object in the list.</returns>
-			 virtual Aspose::Cells::System::Int32 Add(Aspose::Cells::FormatConditionValueType type , intrusive_ptr<Aspose::Cells::System::String> value)=0;
+			 virtual Aspose::Cells::Systems::Int32 Add(Aspose::Cells::FormatConditionValueType type , intrusive_ptr<Aspose::Cells::Systems::String> value)=0;
 
 	};
 }

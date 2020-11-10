@@ -51,7 +51,7 @@ class  StringThreadTest;
  * \ingroup ustring_ustrlen
  */
 U_STABLE int32_t U_EXPORT2
-u_strlen(const UChar *s);
+u_strlen(const UnChar *s);
 #endif
 
 /**
@@ -67,8 +67,8 @@ u_strlen(const UChar *s);
  */
 typedef int32_t U_CALLCONV
 UStringCaseMapper(const UCaseMap *csm,
-                  UChar *dest, int32_t destCapacity,
-                  const UChar *src, int32_t srcLength,
+                  UnChar *dest, int32_t destCapacity,
+                  const UnChar *src, int32_t srcLength,
                   UErrorCode *pErrorCode);
 
 #endif
@@ -92,7 +92,7 @@ class UnicodeStringAppendable;  // unicode/appendable.h
  *
  * @stable ICU 3.2
  */
-#define US_INV icu::UnicodeString::kInvariant
+#define US_INV icucells::UnicodeString::kInvariant
 
 /**
  * Unicode String literals in C++.
@@ -112,13 +112,13 @@ class UnicodeStringAppendable;  // unicode/appendable.h
  * @stable ICU 2.0
  */
 #if defined(U_DECLARE_UTF16)
-#   define UNICODE_STRING(cs, _length) icu::UnicodeString(TRUE, (const UChar *)U_DECLARE_UTF16(cs), _length)
+#   define UNICODE_STRING(cs, _length) icucells::UnicodeString(TRUE, (const UnChar *)U_DECLARE_UTF16(cs), _length)
 #elif U_SIZEOF_WCHAR_T==U_SIZEOF_UCHAR && (U_CHARSET_FAMILY==U_ASCII_FAMILY || (U_SIZEOF_UCHAR == 2 && defined(U_WCHAR_IS_UTF16)))
-#   define UNICODE_STRING(cs, _length) icu::UnicodeString(TRUE, (const UChar *)L ## cs, _length)
+#   define UNICODE_STRING(cs, _length) icucells::UnicodeString(TRUE, (const UnChar *)L ## cs, _length)
 #elif U_SIZEOF_UCHAR==1 && U_CHARSET_FAMILY==U_ASCII_FAMILY
-#   define UNICODE_STRING(cs, _length) icu::UnicodeString(TRUE, (const UChar *)cs, _length)
+#   define UNICODE_STRING(cs, _length) icucells::UnicodeString(TRUE, (const UnChar *)cs, _length)
 #else
-#   define UNICODE_STRING(cs, _length) icu::UnicodeString(cs, _length, US_INV)
+#   define UNICODE_STRING(cs, _length) icucells::UnicodeString(cs, _length, US_INV)
 #endif
 
 /**
@@ -139,7 +139,7 @@ class UnicodeStringAppendable;  // unicode/appendable.h
 /**
  * \def UNISTR_FROM_CHAR_EXPLICIT
  * This can be defined to be empty or "explicit".
- * If explicit, then the UnicodeString(UChar) and UnicodeString(UChar32)
+ * If explicit, then the UnicodeString(UnChar) and UnicodeString(UChar32)
  * constructors are marked as explicit, preventing their inadvertent use.
  * @stable ICU 49
  */
@@ -156,7 +156,7 @@ class UnicodeStringAppendable;  // unicode/appendable.h
 /**
  * \def UNISTR_FROM_STRING_EXPLICIT
  * This can be defined to be empty or "explicit".
- * If explicit, then the UnicodeString(const char *) and UnicodeString(const UChar *)
+ * If explicit, then the UnicodeString(const char *) and UnicodeString(const UnChar *)
  * constructors are marked as explicit, preventing their inadvertent use.
  *
  * In particular, this helps prevent accidentally depending on ICU conversion code
@@ -233,7 +233,7 @@ class UnicodeStringAppendable;  // unicode/appendable.h
  * <p>In ICU, a Unicode string consists of 16-bit Unicode <em>code units</em>.
  * A Unicode character may be stored with either one code unit
  * (the most common case) or with a matched pair of special code units
- * ("surrogates"). The data type for code units is UChar. 
+ * ("surrogates"). The data type for code units is UnChar. 
  * For single-character handling, a Unicode character code <em>point</em> is a value
  * in the range 0..0x10ffff. ICU uses the UChar32 type for code points.</p>
  *
@@ -249,7 +249,7 @@ class UnicodeStringAppendable;  // unicode/appendable.h
  * than other ICU APIs. In particular:
  * - If indexes are out of bounds for a UnicodeString object
  *   (<0 or >length()) then they are "pinned" to the nearest boundary.
- * - If primitive string pointer values (e.g., const UChar * or char *)
+ * - If primitive string pointer values (e.g., const UnChar * or char *)
  *   for input strings are NULL, then those input string parameters are treated
  *   as if they pointed to an empty string.
  *   However, this is <em>not</em> the case for char * parameters for charset names
@@ -436,7 +436,7 @@ public:
    * in <code>srcChars</code>.
    * @stable ICU 2.0
    */
-  inline int8_t compare(const UChar *srcChars,
+  inline int8_t compare(const UnChar *srcChars,
          int32_t srcLength) const;
 
   /**
@@ -455,7 +455,7 @@ public:
    */
   inline int8_t compare(int32_t start,
          int32_t length,
-         const UChar *srcChars) const;
+         const UnChar *srcChars) const;
 
   /**
    * Compare the characters bitwise in the range
@@ -476,7 +476,7 @@ public:
    */
   inline int8_t compare(int32_t start,
          int32_t length,
-         const UChar *srcChars,
+         const UnChar *srcChars,
          int32_t srcStart,
          int32_t srcLength) const;
 
@@ -590,7 +590,7 @@ public:
    * in code point order
    * @stable ICU 2.0
    */
-  inline int8_t compareCodePointOrder(const UChar *srcChars,
+  inline int8_t compareCodePointOrder(const UnChar *srcChars,
                                       int32_t srcLength) const;
 
   /**
@@ -614,7 +614,7 @@ public:
    */
   inline int8_t compareCodePointOrder(int32_t start,
                                       int32_t length,
-                                      const UChar *srcChars) const;
+                                      const UnChar *srcChars) const;
 
   /**
    * Compare two Unicode strings in code point order.
@@ -639,7 +639,7 @@ public:
    */
   inline int8_t compareCodePointOrder(int32_t start,
                                       int32_t length,
-                                      const UChar *srcChars,
+                                      const UnChar *srcChars,
                                       int32_t srcStart,
                                       int32_t srcLength) const;
 
@@ -763,7 +763,7 @@ public:
    * @return A negative, zero, or positive integer indicating the comparison result.
    * @stable ICU 2.0
    */
-  inline int8_t caseCompare(const UChar *srcChars,
+  inline int8_t caseCompare(const UnChar *srcChars,
          int32_t srcLength,
          uint32_t options) const;
 
@@ -789,7 +789,7 @@ public:
    */
   inline int8_t caseCompare(int32_t start,
          int32_t length,
-         const UChar *srcChars,
+         const UnChar *srcChars,
          uint32_t options) const;
 
   /**
@@ -816,7 +816,7 @@ public:
    */
   inline int8_t caseCompare(int32_t start,
          int32_t length,
-         const UChar *srcChars,
+         const UnChar *srcChars,
          int32_t srcStart,
          int32_t srcLength,
          uint32_t options) const;
@@ -881,7 +881,7 @@ public:
    * FALSE otherwise
    * @stable ICU 2.0
    */
-  inline UBool startsWith(const UChar *srcChars,
+  inline UBool startsWith(const UnChar *srcChars,
             int32_t srcLength) const;
 
   /**
@@ -893,7 +893,7 @@ public:
    * @return TRUE if this ends with the characters in <TT>srcChars</TT>, FALSE otherwise
    * @stable ICU 2.0
    */
-  inline UBool startsWith(const UChar *srcChars,
+  inline UBool startsWith(const UnChar *srcChars,
             int32_t srcStart,
             int32_t srcLength) const;
 
@@ -928,7 +928,7 @@ public:
    * FALSE otherwise
    * @stable ICU 2.0
    */
-  inline UBool endsWith(const UChar *srcChars,
+  inline UBool endsWith(const UnChar *srcChars,
           int32_t srcLength) const;
 
   /**
@@ -941,7 +941,7 @@ public:
    * FALSE otherwise
    * @stable ICU 2.0
    */
-  inline UBool endsWith(const UChar *srcChars,
+  inline UBool endsWith(const UnChar *srcChars,
           int32_t srcStart,
           int32_t srcLength) const;
 
@@ -1018,7 +1018,7 @@ public:
    * or -1 if not found.
    * @stable ICU 2.0
    */
-  inline int32_t indexOf(const UChar *srcChars,
+  inline int32_t indexOf(const UnChar *srcChars,
               int32_t srcLength,
               int32_t start) const;
 
@@ -1034,7 +1034,7 @@ public:
    * or -1 if not found.
    * @stable ICU 2.0
    */
-  inline int32_t indexOf(const UChar *srcChars,
+  inline int32_t indexOf(const UnChar *srcChars,
               int32_t srcLength,
               int32_t start,
               int32_t length) const;
@@ -1055,7 +1055,7 @@ public:
    * or -1 if not found.
    * @stable ICU 2.0
    */
-  int32_t indexOf(const UChar *srcChars,
+  int32_t indexOf(const UnChar *srcChars,
               int32_t srcStart,
               int32_t srcLength,
               int32_t start,
@@ -1068,7 +1068,7 @@ public:
    * @return The offset into this of <TT>c</TT>, or -1 if not found.
    * @stable ICU 2.0
    */
-  inline int32_t indexOf(UChar c) const;
+  inline int32_t indexOf(UnChar c) const;
 
   /**
    * Locate in this the first occurrence of the code point <TT>c</TT>,
@@ -1088,7 +1088,7 @@ public:
    * @return The offset into this of <TT>c</TT>, or -1 if not found.
    * @stable ICU 2.0
    */
-  inline int32_t indexOf(UChar c,
+  inline int32_t indexOf(UnChar c,
               int32_t start) const;
 
   /**
@@ -1113,7 +1113,7 @@ public:
    * @return The offset into this of <TT>c</TT>, or -1 if not found.
    * @stable ICU 2.0
    */
-  inline int32_t indexOf(UChar c,
+  inline int32_t indexOf(UnChar c,
               int32_t start,
               int32_t length) const;
 
@@ -1201,7 +1201,7 @@ public:
    * or -1 if not found.
    * @stable ICU 2.0
    */
-  inline int32_t lastIndexOf(const UChar *srcChars,
+  inline int32_t lastIndexOf(const UnChar *srcChars,
               int32_t srcLength,
               int32_t start) const;
 
@@ -1217,7 +1217,7 @@ public:
    * or -1 if not found.
    * @stable ICU 2.0
    */
-  inline int32_t lastIndexOf(const UChar *srcChars,
+  inline int32_t lastIndexOf(const UnChar *srcChars,
               int32_t srcLength,
               int32_t start,
               int32_t length) const;
@@ -1238,7 +1238,7 @@ public:
    * or -1 if not found.
    * @stable ICU 2.0
    */
-  int32_t lastIndexOf(const UChar *srcChars,
+  int32_t lastIndexOf(const UnChar *srcChars,
               int32_t srcStart,
               int32_t srcLength,
               int32_t start,
@@ -1251,7 +1251,7 @@ public:
    * @return The offset into this of <TT>c</TT>, or -1 if not found.
    * @stable ICU 2.0
    */
-  inline int32_t lastIndexOf(UChar c) const;
+  inline int32_t lastIndexOf(UnChar c) const;
 
   /**
    * Locate in this the last occurrence of the code point <TT>c</TT>,
@@ -1271,7 +1271,7 @@ public:
    * @return The offset into this of <TT>c</TT>, or -1 if not found.
    * @stable ICU 2.0
    */
-  inline int32_t lastIndexOf(UChar c,
+  inline int32_t lastIndexOf(UnChar c,
               int32_t start) const;
 
   /**
@@ -1296,7 +1296,7 @@ public:
    * @return The offset into this of <TT>c</TT>, or -1 if not found.
    * @stable ICU 2.0
    */
-  inline int32_t lastIndexOf(UChar c,
+  inline int32_t lastIndexOf(UnChar c,
               int32_t start,
               int32_t length) const;
 
@@ -1326,7 +1326,7 @@ public:
    *         or 0xffff if the offset is not valid for this string
    * @stable ICU 2.0
    */
-  inline UChar charAt(int32_t offset) const;
+  inline UnChar charAt(int32_t offset) const;
 
   /**
    * Return the code unit at offset <tt>offset</tt>.
@@ -1335,7 +1335,7 @@ public:
    * @return the code unit at offset <tt>offset</tt>
    * @stable ICU 2.0
    */
-  inline UChar operator[] (int32_t offset) const;
+  inline UnChar operator[] (int32_t offset) const;
 
   /**
    * Return the code point that contains the code unit
@@ -1456,7 +1456,7 @@ public:
    */
   inline void extract(int32_t start,
            int32_t length,
-           UChar *dst,
+           UnChar *dst,
            int32_t dstStart = 0) const;
 
   /**
@@ -1481,7 +1481,7 @@ public:
    * @stable ICU 2.0
    */
   int32_t
-  extract(UChar *dest, int32_t destCapacity,
+  extract(UnChar *dest, int32_t destCapacity,
           UErrorCode &errorCode) const;
 
   /**
@@ -1511,7 +1511,7 @@ public:
    */
   inline void extractBetween(int32_t start,
               int32_t limit,
-              UChar *dst,
+              UnChar *dst,
               int32_t dstStart = 0) const;
 
   /**
@@ -1756,7 +1756,7 @@ public:
 
   /**
    * Return the length of the UnicodeString object.
-   * The length is the number of UChar code units are in the UnicodeString.
+   * The length is the number of UnChar code units are in the UnicodeString.
    * If you want the number of code points, please use countChar32().
    * @return the length of the UnicodeString object
    * @see countChar32
@@ -1765,14 +1765,14 @@ public:
   inline int32_t length(void) const;
 
   /**
-   * Count Unicode code points in the length UChar code units of the string.
-   * A code point may occupy either one or two UChar code units.
+   * Count Unicode code points in the length UnChar code units of the string.
+   * A code point may occupy either one or two UnChar code units.
    * Counting code points involves reading all code units.
    *
    * This functions is basically the inverse of moveIndex32().
    *
    * @param start the index of the first code unit to check
-   * @param length the number of UChar code units to check
+   * @param length the number of UnChar code units to check
    * @return the number of code points in the specified code units
    * @see length
    * @stable ICU 2.0
@@ -1781,7 +1781,7 @@ public:
   countChar32(int32_t start=0, int32_t length=INT32_MAX) const;
 
   /**
-   * Check if the length UChar code units of the string
+   * Check if the length UnChar code units of the string
    * contain more Unicode code points than a certain number.
    * This is more efficient than counting all code points in this part of the string
    * and comparing that number with a threshold.
@@ -1789,10 +1789,10 @@ public:
    * falls within a certain range, and
    * never needs to count more than 'number+1' code points.
    * Logically equivalent to (countChar32(start, length)>number).
-   * A Unicode code point may occupy either one or two UChar code units.
+   * A Unicode code point may occupy either one or two UnChar code units.
    *
    * @param start the index of the first code unit to check (0 for the entire string)
-   * @param length the number of UChar code units to check
+   * @param length the number of UnChar code units to check
    *               (use INT32_MAX for the entire string; remember that start/length
    *                values are pinned)
    * @param number The number of code points in the (sub)string is compared against
@@ -1953,7 +1953,7 @@ public:
    * @return a reference to this
    * @stable ICU 2.0
    */
-  inline UnicodeString& operator= (UChar ch);
+  inline UnicodeString& operator= (UnChar ch);
 
   /**
    * Assignment operator.  Replace the characters in this UnicodeString
@@ -2013,7 +2013,7 @@ public:
    * @return a reference to this
    * @stable ICU 2.0
    */
-  inline UnicodeString& setTo(const UChar *srcChars,
+  inline UnicodeString& setTo(const UnChar *srcChars,
                int32_t srcLength);
 
   /**
@@ -2024,7 +2024,7 @@ public:
    * @return a reference to this
    * @stable ICU 2.0
    */
-  UnicodeString& setTo(UChar srcChar);
+  UnicodeString& setTo(UnChar srcChar);
 
   /**
    * Set the characters in the UnicodeString object to the code point
@@ -2037,7 +2037,7 @@ public:
   UnicodeString& setTo(UChar32 srcChar);
 
   /**
-   * Aliasing setTo() function, analogous to the readonly-aliasing UChar* constructor.
+   * Aliasing setTo() function, analogous to the readonly-aliasing UnChar* constructor.
    * The text will be used for the UnicodeString object, but
    * it will not be released when the UnicodeString is destroyed.
    * This has copy-on-write semantics:
@@ -2060,11 +2060,11 @@ public:
    * @stable ICU 2.0
    */
   UnicodeString &setTo(UBool isTerminated,
-                       const UChar *text,
+                       const UnChar *text,
                        int32_t textLength);
 
   /**
-   * Aliasing setTo() function, analogous to the writable-aliasing UChar* constructor.
+   * Aliasing setTo() function, analogous to the writable-aliasing UnChar* constructor.
    * The text will be used for the UnicodeString object, but
    * it will not be released when the UnicodeString is destroyed.
    * This has write-through semantics:
@@ -2073,7 +2073,7 @@ public:
    * a new buffer will be allocated and the contents copied as with regularly
    * constructed strings.
    * In an assignment to another UnicodeString, the buffer will be copied.
-   * The extract(UChar *dst) function detects whether the dst pointer is the same
+   * The extract(UnChar *dst) function detects whether the dst pointer is the same
    * as the string buffer itself and will in this case not copy the contents.
    *
    * @param buffer The characters to alias for the UnicodeString.
@@ -2082,7 +2082,7 @@ public:
    * @return a reference to this
    * @stable ICU 2.0
    */
-  UnicodeString &setTo(UChar *buffer,
+  UnicodeString &setTo(UnChar *buffer,
                        int32_t buffLength,
                        int32_t buffCapacity);
 
@@ -2118,7 +2118,7 @@ public:
    *   s.truncate(0);        // set to an empty string (complete truncation), or
    *   s=UnicodeString();    // assign an empty string, or
    *   s.setTo((UChar32)-1); // set to a pseudo code point that is out of range, or
-   *   static const UChar nul=0;
+   *   static const UnChar nul=0;
    *   s.setTo(&nul, 0);     // set to an empty C Unicode string
    * }
    * \endcode
@@ -2136,7 +2136,7 @@ public:
    * @stable ICU 2.0
    */
   UnicodeString& setCharAt(int32_t offset,
-               UChar ch);
+               UnChar ch);
 
 
   /* Append operations */
@@ -2148,7 +2148,7 @@ public:
    * @return a reference to this
    * @stable ICU 2.0
    */
- inline  UnicodeString& operator+= (UChar ch);
+ inline  UnicodeString& operator+= (UnChar ch);
 
   /**
    * Append operator. Append the code point <TT>ch</TT> to the UnicodeString
@@ -2208,7 +2208,7 @@ public:
    * @return a reference to this
    * @stable ICU 2.0
    */
-  inline UnicodeString& append(const UChar *srcChars,
+  inline UnicodeString& append(const UnChar *srcChars,
             int32_t srcStart,
             int32_t srcLength);
 
@@ -2221,7 +2221,7 @@ public:
    * @return a reference to this
    * @stable ICU 2.0
    */
-  inline UnicodeString& append(const UChar *srcChars,
+  inline UnicodeString& append(const UnChar *srcChars,
             int32_t srcLength);
 
   /**
@@ -2230,7 +2230,7 @@ public:
    * @return a reference to this
    * @stable ICU 2.0
    */
-  inline UnicodeString& append(UChar srcChar);
+  inline UnicodeString& append(UnChar srcChar);
 
   /**
    * Append the code point <TT>srcChar</TT> to the UnicodeString object.
@@ -2286,7 +2286,7 @@ public:
    * @stable ICU 2.0
    */
   inline UnicodeString& insert(int32_t start,
-            const UChar *srcChars,
+            const UnChar *srcChars,
             int32_t srcStart,
             int32_t srcLength);
 
@@ -2300,7 +2300,7 @@ public:
    * @stable ICU 2.0
    */
   inline UnicodeString& insert(int32_t start,
-            const UChar *srcChars,
+            const UnChar *srcChars,
             int32_t srcLength);
 
   /**
@@ -2312,7 +2312,7 @@ public:
    * @stable ICU 2.0
    */
   inline UnicodeString& insert(int32_t start,
-            UChar srcChar);
+            UnChar srcChar);
 
   /**
    * Insert the code point <TT>srcChar</TT> into the UnicodeString object at
@@ -2386,7 +2386,7 @@ public:
    */
   UnicodeString& replace(int32_t start,
              int32_t length,
-             const UChar *srcChars,
+             const UnChar *srcChars,
              int32_t srcStart,
              int32_t srcLength);
 
@@ -2404,7 +2404,7 @@ public:
    */
   inline UnicodeString& replace(int32_t start,
              int32_t length,
-             const UChar *srcChars,
+             const UnChar *srcChars,
              int32_t srcLength);
 
   /**
@@ -2420,7 +2420,7 @@ public:
    */
   inline UnicodeString& replace(int32_t start,
              int32_t length,
-             UChar srcChar);
+             UnChar srcChar);
 
   /**
    * Replace the characters in the range
@@ -2618,7 +2618,7 @@ public:
    * @stable ICU 2.0
    */
   UBool padLeading(int32_t targetLength,
-                    UChar padChar = 0x0020);
+                    UnChar padChar = 0x0020);
 
   /**
    * Pad the end of this UnicodeString with the character <TT>padChar</TT>.
@@ -2632,7 +2632,7 @@ public:
    * @stable ICU 2.0
    */
   UBool padTrailing(int32_t targetLength,
-                     UChar padChar = 0x0020);
+                     UnChar padChar = 0x0020);
 
   /**
    * Truncate this UnicodeString to the <TT>targetLength</TT>.
@@ -2860,7 +2860,7 @@ public:
    * @see getTerminatedBuffer()
    * @stable ICU 2.0
    */
-  UChar *getBuffer(int32_t minCapacity);
+  UnChar *getBuffer(int32_t minCapacity);
 
   /**
    * Release a read/write buffer on a UnicodeString object with an
@@ -2914,7 +2914,7 @@ public:
    * @see getTerminatedBuffer()
    * @stable ICU 2.0
    */
-  inline const UChar *getBuffer() const;
+  inline const UnChar *getBuffer() const;
 
   /**
    * Get a read-only pointer to the internal buffer,
@@ -2949,7 +2949,7 @@ public:
    * @see getBuffer()
    * @stable ICU 2.2
    */
-  const UChar *getTerminatedBuffer();
+  const UnChar *getTerminatedBuffer();
 
   //========================================
   // Constructors
@@ -2974,7 +2974,7 @@ public:
   UnicodeString(int32_t capacity, UChar32 c, int32_t count);
 
   /**
-   * Single UChar (code unit) constructor.
+   * Single UnChar (code unit) constructor.
    *
    * It is recommended to mark this constructor "explicit" by
    * <code>-DUNISTR_FROM_CHAR_EXPLICIT=explicit</code>
@@ -2982,7 +2982,7 @@ public:
    * @param ch the character to place in the UnicodeString
    * @stable ICU 2.0
    */
-  UNISTR_FROM_CHAR_EXPLICIT UnicodeString(UChar ch);
+  UNISTR_FROM_CHAR_EXPLICIT UnicodeString(UnChar ch);
 
   /**
    * Single UChar32 (code point) constructor.
@@ -2996,7 +2996,7 @@ public:
   UNISTR_FROM_CHAR_EXPLICIT UnicodeString(UChar32 ch);
 
   /**
-   * UChar* constructor.
+   * UnChar* constructor.
    *
    * It is recommended to mark this constructor "explicit" by
    * <code>-DUNISTR_FROM_STRING_EXPLICIT=explicit</code>
@@ -3005,20 +3005,20 @@ public:
    * must be NULL (U+0000) terminated.
    * @stable ICU 2.0
    */
-  UNISTR_FROM_STRING_EXPLICIT UnicodeString(const UChar *text);
+  UNISTR_FROM_STRING_EXPLICIT UnicodeString(const UnChar *text);
 
   /**
-   * UChar* constructor.
+   * UnChar* constructor.
    * @param text The characters to place in the UnicodeString.
    * @param textLength The number of Unicode characters in <TT>text</TT>
    * to copy.
    * @stable ICU 2.0
    */
-  UnicodeString(const UChar *text,
+  UnicodeString(const UnChar *text,
         int32_t textLength);
 
   /**
-   * Readonly-aliasing UChar* constructor.
+   * Readonly-aliasing UnChar* constructor.
    * The text will be used for the UnicodeString object, but
    * it will not be released when the UnicodeString is destroyed.
    * This has copy-on-write semantics:
@@ -3040,11 +3040,11 @@ public:
    * @stable ICU 2.0
    */
   UnicodeString(UBool isTerminated,
-                const UChar *text,
+                const UnChar *text,
                 int32_t textLength);
 
   /**
-   * Writable-aliasing UChar* constructor.
+   * Writable-aliasing UnChar* constructor.
    * The text will be used for the UnicodeString object, but
    * it will not be released when the UnicodeString is destroyed.
    * This has write-through semantics:
@@ -3053,7 +3053,7 @@ public:
    * a new buffer will be allocated and the contents copied as with regularly
    * constructed strings.
    * In an assignment to another UnicodeString, the buffer will be copied.
-   * The extract(UChar *dst) function detects whether the dst pointer is the same
+   * The extract(UnChar *dst) function detects whether the dst pointer is the same
    * as the string buffer itself and will in this case not copy the contents.
    *
    * @param buffer The characters to alias for the UnicodeString.
@@ -3061,7 +3061,7 @@ public:
    * @param buffCapacity The size of <code>buffer</code> in UChars.
    * @stable ICU 2.0
    */
-  UnicodeString(UChar *buffer, int32_t buffLength, int32_t buffCapacity);
+  UnicodeString(UnChar *buffer, int32_t buffLength, int32_t buffCapacity);
 
 #if U_CHARSET_IS_UTF8 || !UCONFIG_NO_CONVERSION
 
@@ -3380,7 +3380,7 @@ protected:
    * UnicodeString::charAt() to be inline again (see jitterbug 709).
    * @stable ICU 2.4
    */
-  virtual UChar getCharAt(int32_t offset) const;
+  virtual UnChar getCharAt(int32_t offset) const;
 
   /**
    * The change in Replaceable to use virtual getChar32At() allows
@@ -3416,7 +3416,7 @@ private:
 
   int8_t doCompare(int32_t start,
            int32_t length,
-           const UChar *srcChars,
+           const UnChar *srcChars,
            int32_t srcStart,
            int32_t srcLength) const;
 
@@ -3429,7 +3429,7 @@ private:
 
   int8_t doCompareCodePointOrder(int32_t start,
                                  int32_t length,
-                                 const UChar *srcChars,
+                                 const UnChar *srcChars,
                                  int32_t srcStart,
                                  int32_t srcLength) const;
 
@@ -3444,12 +3444,12 @@ private:
   int8_t
   doCaseCompare(int32_t start,
                 int32_t length,
-                const UChar *srcChars,
+                const UnChar *srcChars,
                 int32_t srcStart,
                 int32_t srcLength,
                 uint32_t options) const;
 
-  int32_t doIndexOf(UChar c,
+  int32_t doIndexOf(UnChar c,
             int32_t start,
             int32_t length) const;
 
@@ -3457,7 +3457,7 @@ private:
                         int32_t start,
                         int32_t length) const;
 
-  int32_t doLastIndexOf(UChar c,
+  int32_t doLastIndexOf(UnChar c,
                 int32_t start,
                 int32_t length) const;
 
@@ -3467,14 +3467,14 @@ private:
 
   void doExtract(int32_t start,
          int32_t length,
-         UChar *dst,
+         UnChar *dst,
          int32_t dstStart) const;
 
   inline void doExtract(int32_t start,
          int32_t length,
          UnicodeString& target) const;
 
-  inline UChar doCharAt(int32_t offset)  const;
+  inline UnChar doCharAt(int32_t offset)  const;
 
   UnicodeString& doReplace(int32_t start,
                int32_t length,
@@ -3484,12 +3484,12 @@ private:
 
   UnicodeString& doReplace(int32_t start,
                int32_t length,
-               const UChar *srcChars,
+               const UnChar *srcChars,
                int32_t srcStart,
                int32_t srcLength);
 
   UnicodeString& doAppend(const UnicodeString& src, int32_t srcStart, int32_t srcLength);
-  UnicodeString& doAppend(const UChar *srcChars, int32_t srcStart, int32_t srcLength);
+  UnicodeString& doAppend(const UnChar *srcChars, int32_t srcStart, int32_t srcLength);
 
   UnicodeString& doReverse(int32_t start,
                int32_t length);
@@ -3499,8 +3499,8 @@ private:
 
   // get pointer to start of array
   // these do not check for kOpenGetBuffer, unlike the public getBuffer() function
-  inline UChar* getArrayStart(void);
-  inline const UChar* getArrayStart(void) const;
+  inline UnChar* getArrayStart(void);
+  inline const UnChar* getArrayStart(void) const;
 
   inline UBool hasShortLength() const;
   inline int32_t getShortLength() const;
@@ -3517,7 +3517,7 @@ private:
   inline void setShortLength(int32_t len);
   inline void setLength(int32_t len);
   inline void setToEmpty();
-  inline void setArray(UChar *array, int32_t len, int32_t capacity); // sets length but not flags
+  inline void setArray(UnChar *array, int32_t len, int32_t capacity); // sets length but not flags
 
   // allocate the array; result may be the stack buffer
   // sets refCount to 1 if appropriate
@@ -3693,7 +3693,7 @@ private:
     // Each struct of the union must begin with fLengthAndFlags.
     struct {
       int16_t fLengthAndFlags;          // bit fields: see constants above
-      UChar fBuffer[US_STACKBUF_SIZE];  // buffer for short strings
+      UnChar fBuffer[US_STACKBUF_SIZE];  // buffer for short strings
     } fStackFields;
     struct {
       int16_t fLengthAndFlags;          // bit fields: see constants above
@@ -3701,7 +3701,7 @@ private:
       int32_t fCapacity;  // capacity of fArray (in UChars)
       // array pointer last to minimize padding for machines with P128 data model
       // or pointer sizes that are not a power of 2
-      UChar   *fArray;    // the Unicode data
+      UnChar   *fArray;    // the Unicode data
     } fFields;
   } fUnion;
 };
@@ -3754,13 +3754,13 @@ UnicodeString::pinIndices(int32_t& start,
   }
 }
 
-inline UChar*
+inline UnChar*
 UnicodeString::getArrayStart() {
   return (fUnion.fFields.fLengthAndFlags&kUsingStackBuffer) ?
     fUnion.fStackFields.fBuffer : fUnion.fFields.fArray;
 }
 
-inline const UChar*
+inline const UnChar*
 UnicodeString::getArrayStart() const {
   return (fUnion.fFields.fLengthAndFlags&kUsingStackBuffer) ?
     fUnion.fStackFields.fBuffer : fUnion.fFields.fArray;
@@ -3821,7 +3821,7 @@ UnicodeString::isBufferWritable() const
       (!(fUnion.fFields.fLengthAndFlags&kRefCounted) || refCount()==1));
 }
 
-inline const UChar *
+inline const UnChar *
 UnicodeString::getBuffer() const {
   if(fUnion.fFields.fLengthAndFlags&(kIsBogus|kOpenGetBuffer)) {
     return 0;
@@ -3892,7 +3892,7 @@ UnicodeString::compare(int32_t start,
 { return doCompare(start, _length, srcText, 0, srcText.length()); }
 
 inline int8_t
-UnicodeString::compare(const UChar *srcChars,
+UnicodeString::compare(const UnChar *srcChars,
                int32_t srcLength) const
 { return doCompare(0, length(), srcChars, 0, srcLength); }
 
@@ -3907,13 +3907,13 @@ UnicodeString::compare(int32_t start,
 inline int8_t
 UnicodeString::compare(int32_t start,
                int32_t _length,
-               const UChar *srcChars) const
+               const UnChar *srcChars) const
 { return doCompare(start, _length, srcChars, 0, _length); }
 
 inline int8_t
 UnicodeString::compare(int32_t start,
                int32_t _length,
-               const UChar *srcChars,
+               const UnChar *srcChars,
                int32_t srcStart,
                int32_t srcLength) const
 { return doCompare(start, _length, srcChars, srcStart, srcLength); }
@@ -3953,7 +3953,7 @@ UnicodeString::compareCodePointOrder(int32_t start,
 { return doCompareCodePointOrder(start, _length, srcText, 0, srcText.length()); }
 
 inline int8_t
-UnicodeString::compareCodePointOrder(const UChar *srcChars,
+UnicodeString::compareCodePointOrder(const UnChar *srcChars,
                                      int32_t srcLength) const
 { return doCompareCodePointOrder(0, length(), srcChars, 0, srcLength); }
 
@@ -3968,13 +3968,13 @@ UnicodeString::compareCodePointOrder(int32_t start,
 inline int8_t
 UnicodeString::compareCodePointOrder(int32_t start,
                                      int32_t _length,
-                                     const UChar *srcChars) const
+                                     const UnChar *srcChars) const
 { return doCompareCodePointOrder(start, _length, srcChars, 0, _length); }
 
 inline int8_t
 UnicodeString::compareCodePointOrder(int32_t start,
                                      int32_t _length,
-                                     const UChar *srcChars,
+                                     const UnChar *srcChars,
                                      int32_t srcStart,
                                      int32_t srcLength) const
 { return doCompareCodePointOrder(start, _length, srcChars, srcStart, srcLength); }
@@ -4018,7 +4018,7 @@ UnicodeString::caseCompare(int32_t start,
 }
 
 inline int8_t
-UnicodeString::caseCompare(const UChar *srcChars,
+UnicodeString::caseCompare(const UnChar *srcChars,
                            int32_t srcLength,
                            uint32_t options) const {
   return doCaseCompare(0, length(), srcChars, 0, srcLength, options);
@@ -4037,7 +4037,7 @@ UnicodeString::caseCompare(int32_t start,
 inline int8_t
 UnicodeString::caseCompare(int32_t start,
                            int32_t _length,
-                           const UChar *srcChars,
+                           const UnChar *srcChars,
                            uint32_t options) const {
   return doCaseCompare(start, _length, srcChars, 0, _length, options);
 }
@@ -4045,7 +4045,7 @@ UnicodeString::caseCompare(int32_t start,
 inline int8_t
 UnicodeString::caseCompare(int32_t start,
                            int32_t _length,
-                           const UChar *srcChars,
+                           const UnChar *srcChars,
                            int32_t srcStart,
                            int32_t srcLength,
                            uint32_t options) const {
@@ -4096,7 +4096,7 @@ UnicodeString::indexOf(const UnicodeString& text,
 { return indexOf(text, 0, text.length(), start, _length); }
 
 inline int32_t
-UnicodeString::indexOf(const UChar *srcChars,
+UnicodeString::indexOf(const UnChar *srcChars,
                int32_t srcLength,
                int32_t start) const {
   pinIndex(start);
@@ -4104,14 +4104,14 @@ UnicodeString::indexOf(const UChar *srcChars,
 }
 
 inline int32_t
-UnicodeString::indexOf(const UChar *srcChars,
+UnicodeString::indexOf(const UnChar *srcChars,
                int32_t srcLength,
                int32_t start,
                int32_t _length) const
 { return indexOf(srcChars, 0, srcLength, start, _length); }
 
 inline int32_t
-UnicodeString::indexOf(UChar c,
+UnicodeString::indexOf(UnChar c,
                int32_t start,
                int32_t _length) const
 { return doIndexOf(c, start, _length); }
@@ -4123,7 +4123,7 @@ UnicodeString::indexOf(UChar32 c,
 { return doIndexOf(c, start, _length); }
 
 inline int32_t
-UnicodeString::indexOf(UChar c) const
+UnicodeString::indexOf(UnChar c) const
 { return doIndexOf(c, 0, length()); }
 
 inline int32_t
@@ -4131,7 +4131,7 @@ UnicodeString::indexOf(UChar32 c) const
 { return indexOf(c, 0, length()); }
 
 inline int32_t
-UnicodeString::indexOf(UChar c,
+UnicodeString::indexOf(UnChar c,
                int32_t start) const {
   pinIndex(start);
   return doIndexOf(c, start, length() - start);
@@ -4145,14 +4145,14 @@ UnicodeString::indexOf(UChar32 c,
 }
 
 inline int32_t
-UnicodeString::lastIndexOf(const UChar *srcChars,
+UnicodeString::lastIndexOf(const UnChar *srcChars,
                int32_t srcLength,
                int32_t start,
                int32_t _length) const
 { return lastIndexOf(srcChars, 0, srcLength, start, _length); }
 
 inline int32_t
-UnicodeString::lastIndexOf(const UChar *srcChars,
+UnicodeString::lastIndexOf(const UnChar *srcChars,
                int32_t srcLength,
                int32_t start) const {
   pinIndex(start);
@@ -4193,7 +4193,7 @@ UnicodeString::lastIndexOf(const UnicodeString& text) const
 { return lastIndexOf(text, 0, text.length(), 0, length()); }
 
 inline int32_t
-UnicodeString::lastIndexOf(UChar c,
+UnicodeString::lastIndexOf(UnChar c,
                int32_t start,
                int32_t _length) const
 { return doLastIndexOf(c, start, _length); }
@@ -4206,7 +4206,7 @@ UnicodeString::lastIndexOf(UChar32 c,
 }
 
 inline int32_t
-UnicodeString::lastIndexOf(UChar c) const
+UnicodeString::lastIndexOf(UnChar c) const
 { return doLastIndexOf(c, 0, length()); }
 
 inline int32_t
@@ -4215,7 +4215,7 @@ UnicodeString::lastIndexOf(UChar32 c) const {
 }
 
 inline int32_t
-UnicodeString::lastIndexOf(UChar c,
+UnicodeString::lastIndexOf(UnChar c,
                int32_t start) const {
   pinIndex(start);
   return doLastIndexOf(c, start, length() - start);
@@ -4239,7 +4239,7 @@ UnicodeString::startsWith(const UnicodeString& srcText,
 { return doCompare(0, srcLength, srcText, srcStart, srcLength) == 0; }
 
 inline UBool
-UnicodeString::startsWith(const UChar *srcChars, int32_t srcLength) const {
+UnicodeString::startsWith(const UnChar *srcChars, int32_t srcLength) const {
   if(srcLength < 0) {
     srcLength = u_strlen(srcChars);
   }
@@ -4247,7 +4247,7 @@ UnicodeString::startsWith(const UChar *srcChars, int32_t srcLength) const {
 }
 
 inline UBool
-UnicodeString::startsWith(const UChar *srcChars, int32_t srcStart, int32_t srcLength) const {
+UnicodeString::startsWith(const UnChar *srcChars, int32_t srcStart, int32_t srcLength) const {
   if(srcLength < 0) {
     srcLength = u_strlen(srcChars);
   }
@@ -4269,7 +4269,7 @@ UnicodeString::endsWith(const UnicodeString& srcText,
 }
 
 inline UBool
-UnicodeString::endsWith(const UChar *srcChars,
+UnicodeString::endsWith(const UnChar *srcChars,
             int32_t srcLength) const {
   if(srcLength < 0) {
     srcLength = u_strlen(srcChars);
@@ -4279,7 +4279,7 @@ UnicodeString::endsWith(const UChar *srcChars,
 }
 
 inline UBool
-UnicodeString::endsWith(const UChar *srcChars,
+UnicodeString::endsWith(const UnChar *srcChars,
             int32_t srcStart,
             int32_t srcLength) const {
   if(srcLength < 0) {
@@ -4309,14 +4309,14 @@ UnicodeString::replace(int32_t start,
 inline UnicodeString&
 UnicodeString::replace(int32_t start,
                int32_t _length,
-               const UChar *srcChars,
+               const UnChar *srcChars,
                int32_t srcLength)
 { return doReplace(start, _length, srcChars, 0, srcLength); }
 
 inline UnicodeString&
 UnicodeString::replace(int32_t start,
                int32_t _length,
-               const UChar *srcChars,
+               const UnChar *srcChars,
                int32_t srcStart,
                int32_t srcLength)
 { return doReplace(start, _length, srcChars, srcStart, srcLength); }
@@ -4324,7 +4324,7 @@ UnicodeString::replace(int32_t start,
 inline UnicodeString&
 UnicodeString::replace(int32_t start,
                int32_t _length,
-               UChar srcChar)
+               UnChar srcChar)
 { return doReplace(start, _length, &srcChar, 0, 1); }
 
 inline UnicodeString&
@@ -4367,7 +4367,7 @@ UnicodeString::doExtract(int32_t start,
 inline void
 UnicodeString::extract(int32_t start,
                int32_t _length,
-               UChar *target,
+               UnChar *target,
                int32_t targetStart) const
 { doExtract(start, _length, target, targetStart); }
 
@@ -4395,7 +4395,7 @@ UnicodeString::extract(int32_t start,
 inline void
 UnicodeString::extractBetween(int32_t start,
                   int32_t limit,
-                  UChar *dst,
+                  UnChar *dst,
                   int32_t dstStart) const {
   pinIndex(start);
   pinIndex(limit);
@@ -4407,7 +4407,7 @@ UnicodeString::tempSubStringBetween(int32_t start, int32_t limit) const {
     return tempSubString(start, limit - start);
 }
 
-inline UChar
+inline UnChar
 UnicodeString::doCharAt(int32_t offset) const
 {
   if((uint32_t)offset < (uint32_t)length()) {
@@ -4417,11 +4417,11 @@ UnicodeString::doCharAt(int32_t offset) const
   }
 }
 
-inline UChar
+inline UnChar
 UnicodeString::charAt(int32_t offset) const
 { return doCharAt(offset); }
 
-inline UChar
+inline UnChar
 UnicodeString::operator[] (int32_t offset) const
 { return doCharAt(offset); }
 
@@ -4462,14 +4462,14 @@ UnicodeString::setToEmpty() {
 }
 
 inline void
-UnicodeString::setArray(UChar *array, int32_t len, int32_t capacity) {
+UnicodeString::setArray(UnChar *array, int32_t len, int32_t capacity) {
   setLength(len);
   fUnion.fFields.fArray = array;
   fUnion.fFields.fCapacity = capacity;
 }
 
 inline UnicodeString&
-UnicodeString::operator= (UChar ch)
+UnicodeString::operator= (UnChar ch)
 { return doReplace(0, length(), &ch, 0, 1); }
 
 inline UnicodeString&
@@ -4501,7 +4501,7 @@ UnicodeString::setTo(const UnicodeString& srcText)
 }
 
 inline UnicodeString&
-UnicodeString::setTo(const UChar *srcChars,
+UnicodeString::setTo(const UnChar *srcChars,
              int32_t srcLength)
 {
   unBogus();
@@ -4509,7 +4509,7 @@ UnicodeString::setTo(const UChar *srcChars,
 }
 
 inline UnicodeString&
-UnicodeString::setTo(UChar srcChar)
+UnicodeString::setTo(UnChar srcChar)
 {
   unBogus();
   return doReplace(0, length(), &srcChar, 0, 1);
@@ -4533,22 +4533,22 @@ UnicodeString::append(const UnicodeString& srcText)
 { return doAppend(srcText, 0, srcText.length()); }
 
 inline UnicodeString&
-UnicodeString::append(const UChar *srcChars,
+UnicodeString::append(const UnChar *srcChars,
               int32_t srcStart,
               int32_t srcLength)
 { return doAppend(srcChars, srcStart, srcLength); }
 
 inline UnicodeString&
-UnicodeString::append(const UChar *srcChars,
+UnicodeString::append(const UnChar *srcChars,
               int32_t srcLength)
 { return doAppend(srcChars, 0, srcLength); }
 
 inline UnicodeString&
-UnicodeString::append(UChar srcChar)
+UnicodeString::append(UnChar srcChar)
 { return doAppend(&srcChar, 0, 1); }
 
 inline UnicodeString&
-UnicodeString::operator+= (UChar ch)
+UnicodeString::operator+= (UnChar ch)
 { return doAppend(&ch, 0, 1); }
 
 inline UnicodeString&
@@ -4574,20 +4574,20 @@ UnicodeString::insert(int32_t start,
 
 inline UnicodeString&
 UnicodeString::insert(int32_t start,
-              const UChar *srcChars,
+              const UnChar *srcChars,
               int32_t srcStart,
               int32_t srcLength)
 { return doReplace(start, 0, srcChars, srcStart, srcLength); }
 
 inline UnicodeString&
 UnicodeString::insert(int32_t start,
-              const UChar *srcChars,
+              const UnChar *srcChars,
               int32_t srcLength)
 { return doReplace(start, 0, srcChars, 0, srcLength); }
 
 inline UnicodeString&
 UnicodeString::insert(int32_t start,
-              UChar srcChar)
+              UnChar srcChar)
 { return doReplace(start, 0, &srcChar, 0, 1); }
 
 inline UnicodeString&

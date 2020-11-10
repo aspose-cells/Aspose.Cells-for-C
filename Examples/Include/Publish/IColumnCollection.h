@@ -1,7 +1,7 @@
 #pragma once
-#include "System/Object.h"
-#include "System/Int32.h"
-#include "System/Collections/CollectionBase.h"
+#include "Aspose.Cells.Systems/Object.h"
+#include "Aspose.Cells.Systems/Int32.h"
+#include "Aspose.Cells.Systems/Collections/CollectionBase.h"
 
 namespace Aspose {
 	namespace Cells {
@@ -41,7 +41,7 @@ namespace Cells{
 			/// }
 			/// //Get the Column with non default formatting
 			/// intrusive_ptr<IColumnCollection> columns = worksheet->GetICells()->GetIColumns();
-			/// for (intrusive_ptr<Aspose::Cells::System::Collections::IEnumerator> iter = columns->GetEnumerator(); iter->MoveNext();)
+			/// for (intrusive_ptr<Aspose::Cells::Systems::Collections::IEnumerator> iter = columns->GetEnumerator(); iter->MoveNext();)
 			/// {
 			///   //Apply Style to first ten Columns
 			/// 	intrusive_ptr<Aspose::Cells::IColumn> column = dynamic_pointer_cast<Aspose::Cells::IColumn>(iter->GetCurrent());
@@ -55,7 +55,7 @@ namespace Cells{
 			/// </example>
 			/// 
 			/// 
-	class ASPOSE_CELLS_API IColumnCollection : public Aspose::Cells::System::Collections::CollectionBase
+	class ASPOSE_CELLS_API IColumnCollection : public Aspose::Cells::Systems::Collections::CollectionBase
 	{
 		public:
 			/// <summary>
@@ -68,19 +68,19 @@ namespace Cells{
 			/// please use GetIColumnByIndex(int) method.</remarks>
 			/// 
 			/// 
-			 virtual intrusive_ptr<Aspose::Cells::IColumn> 		GetIColumn(Aspose::Cells::System::Int32 index)=0;
+			 virtual intrusive_ptr<Aspose::Cells::IColumn> 		GetIColumn(Aspose::Cells::Systems::Int32 index)=0;
 			/// <summary>
 			/// Gets the <see cref="IColumn" />
 			///  object by the position in the list.
 			/// </summary>
 			/// <param name="index" >The position in the list.</param>
 			/// <returns>Returns the column object.</returns>
-			 virtual intrusive_ptr<Aspose::Cells::IColumn> 		GetIColumnByIndex(Aspose::Cells::System::Int32 index)=0;
+			 virtual intrusive_ptr<Aspose::Cells::IColumn> 		GetIColumnByIndex(Aspose::Cells::Systems::Int32 index)=0;
 			/// <summary>
 			/// Gets a <see cref="IColumn" />
 			///  object by column index. The Column object of given column index will be instantiated if it does not exist before.
 			/// </summary>
-			 virtual intrusive_ptr<Aspose::Cells::IColumn> 		GetObjectByIndex(Aspose::Cells::System::Int32 columnIndex)=0;
+			 virtual intrusive_ptr<Aspose::Cells::IColumn> 		GetObjectByIndex(Aspose::Cells::Systems::Int32 columnIndex)=0;
 
 	};
 }

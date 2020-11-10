@@ -1,7 +1,7 @@
 #pragma once
-#include "System/Object.h"
-#include "System/Drawing/Color.h"
-#include "System/Double.h"
+#include "Aspose.Cells.Systems/Object.h"
+#include "Aspose.Cells.Systems/Drawing/Color.h"
+#include "Aspose.Cells.Systems/Double.h"
 
 namespace Aspose {
 	namespace Cells {
@@ -51,36 +51,36 @@ namespace Drawing{
 			/// //Adding NSeries (chart data source) to the chart ranging from "A1" cell to "B3"
 			/// chart->GetNISeries()->Add(new String("A1:B3"), true);
 			/// //Setting the foreground color of the plot area
-			/// chart->GetIPlotArea()->GetIArea()->SetForegroundColor(System::Drawing::Color::GetBlue());
+			/// chart->GetIPlotArea()->GetIArea()->SetForegroundColor(Systems::Drawing::Color::GetBlue());
 			/// //Setting the foreground color of the chart area
-			/// chart->GetIChartArea()->GetIArea()->SetForegroundColor(System::Drawing::Color::GetYellow());
+			/// chart->GetIChartArea()->GetIArea()->SetForegroundColor(Systems::Drawing::Color::GetYellow());
 			/// //Setting the foreground color of the 1st NSeries area
-			/// chart->GetNISeries()->GetObjectByIndex(0)->GetIArea()->SetForegroundColor(System::Drawing::Color::GetRed());
+			/// chart->GetNISeries()->GetObjectByIndex(0)->GetIArea()->SetForegroundColor(Systems::Drawing::Color::GetRed());
 			/// //Setting the foreground color of the area of the 1st NSeries point
-			/// chart->GetNISeries()->GetObjectByIndex(0)->GetIPoints()->GetObjectByIndex(0)->GetIArea()->SetForegroundColor(System::Drawing::Color::GetCyan());
+			/// chart->GetNISeries()->GetObjectByIndex(0)->GetIPoints()->GetObjectByIndex(0)->GetIArea()->SetForegroundColor(Systems::Drawing::Color::GetCyan());
 			/// //Saving the Excel file
 			/// workbook->Save(new String("D:\\test\\AreaTest.xls"));
 			/// </code>
 			/// </example>
-	class ASPOSE_CELLS_API IArea : public Aspose::Cells::System::Object
+	class ASPOSE_CELLS_API IArea : public Aspose::Cells::Systems::Object
 	{
 		public:
 			/// <summary>
 			/// Gets the backgroundColor
 			/// </summary>
-			 virtual intrusive_ptr<Aspose::Cells::System::Drawing::Color> GetBackgroundColor()=0;
+			 virtual intrusive_ptr<Aspose::Cells::Systems::Drawing::Color> GetBackgroundColor()=0;
 			/// <summary>
 			/// Sets the backgroundColor
 			/// </summary>
-			 virtual void SetBackgroundColor(intrusive_ptr<Aspose::Cells::System::Drawing::Color> value)=0;
+			 virtual void SetBackgroundColor(intrusive_ptr<Aspose::Cells::Systems::Drawing::Color> value)=0;
 			/// <summary>
 			/// Gets the foreground Color
 			/// </summary>
-			 virtual intrusive_ptr<Aspose::Cells::System::Drawing::Color> GetForegroundColor()=0;
+			 virtual intrusive_ptr<Aspose::Cells::Systems::Drawing::Color> GetForegroundColor()=0;
 			/// <summary>
 			/// Sets the foreground Color
 			/// </summary>
-			 virtual void SetForegroundColor(intrusive_ptr<Aspose::Cells::System::Drawing::Color> value)=0;
+			 virtual void SetForegroundColor(intrusive_ptr<Aspose::Cells::Systems::Drawing::Color> value)=0;
 			/// <summary>
 			/// Represents the formatting of the area.
 			/// </summary>
@@ -117,10 +117,10 @@ namespace Drawing{
 			/// chart->GetNISeries()->Add(new String("A1:A3"), true);
 			/// chart->GetNISeries()->GetObjectByIndex(0)->GetIArea()->SetInvertIfNegative(true);
 			/// //Setting the foreground color of the 1st NSeries area
-			/// chart->GetNISeries()->GetObjectByIndex(0)->GetIArea()->SetForegroundColor(System::Drawing::Color::GetRed());
+			/// chart->GetNISeries()->GetObjectByIndex(0)->GetIArea()->SetForegroundColor(Systems::Drawing::Color::GetRed());
 			/// //Setting the background color of the 1st NSeries area.
 			/// //The displayed area color of second chart point will be the background color.
-			/// chart->GetNISeries()->GetObjectByIndex(0)->GetIArea()->SetBackgroundColor(System::Drawing::Color::GetYellow());
+			/// chart->GetNISeries()->GetObjectByIndex(0)->GetIArea()->SetBackgroundColor(Systems::Drawing::Color::GetYellow());
 			/// //Saving the Excel file
 			/// workbook->Save(new String("D:\\test\\AreaTest2.xls"));			
 			/// 
@@ -140,11 +140,11 @@ namespace Drawing{
 			/// <summary>
 			/// Returns or sets the degree of transparency of the area as a value from 0.0 (opaque) through 1.0 (clear).
 			/// </summary>
-			 virtual Aspose::Cells::System::Double GetTransparency()=0;
+			 virtual Aspose::Cells::Systems::Double GetTransparency()=0;
 			/// <summary>
 			/// Returns or sets the degree of transparency of the area as a value from 0.0 (opaque) through 1.0 (clear).
 			/// </summary>
-			 virtual void SetTransparency(Aspose::Cells::System::Double value)=0;
+			 virtual void SetTransparency(Aspose::Cells::Systems::Double value)=0;
 
 	};
 }

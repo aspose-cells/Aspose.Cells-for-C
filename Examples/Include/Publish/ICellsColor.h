@@ -1,8 +1,8 @@
 #pragma once
-#include "System/Object.h"
-#include "System/Int32.h"
-#include "System/Drawing/Color.h"
-#include "System/Double.h"
+#include "Aspose.Cells.Systems/Object.h"
+#include "Aspose.Cells.Systems/Int32.h"
+#include "Aspose.Cells.Systems/Drawing/Color.h"
+#include "Aspose.Cells.Systems/Double.h"
 
 namespace Aspose {
 	namespace Cells {
@@ -15,7 +15,7 @@ namespace Cells{
 			/// <summary>
 			/// Represents all types of color.
 			/// </summary>
-	class ASPOSE_CELLS_API ICellsColor : public Aspose::Cells::System::Object
+	class ASPOSE_CELLS_API ICellsColor : public Aspose::Cells::Systems::Object
 	{
 		public:
 			/// <summary>
@@ -49,41 +49,41 @@ namespace Cells{
 			/// <summary>
 			/// Gets the color index in the color palette. Only applies of indexed color.
 			/// </summary>
-			 virtual Aspose::Cells::System::Int32 GetColorIndex()=0;
+			 virtual Aspose::Cells::Systems::Int32 GetColorIndex()=0;
 			/// <summary>
 			/// Sets the color index in the color palette. Only applies of indexed color.
 			/// </summary>
-			 virtual void SetColorIndex(Aspose::Cells::System::Int32 value)=0;
+			 virtual void SetColorIndex(Aspose::Cells::Systems::Int32 value)=0;
 			/// <summary>
 			/// Gets the RGB color.
 			/// </summary>
-			 virtual intrusive_ptr<Aspose::Cells::System::Drawing::Color> GetColor()=0;
+			 virtual intrusive_ptr<Aspose::Cells::Systems::Drawing::Color> GetColor()=0;
 			/// <summary>
 			/// Sets the RGB color.
 			/// </summary>
-			 virtual void SetColor(intrusive_ptr<Aspose::Cells::System::Drawing::Color> value)=0;
+			 virtual void SetColor(intrusive_ptr<Aspose::Cells::Systems::Drawing::Color> value)=0;
 			/// <summary>
 			/// Gets the color from a 32-bit ARGB value.
 			/// </summary>
-			 virtual Aspose::Cells::System::Int32 GetArgb()=0;
+			 virtual Aspose::Cells::Systems::Int32 GetArgb()=0;
 			/// <summary>
 			/// Sets the color from a 32-bit ARGB value.
 			/// </summary>
-			 virtual void SetArgb(Aspose::Cells::System::Int32 value)=0;
+			 virtual void SetArgb(Aspose::Cells::Systems::Int32 value)=0;
 			/// <summary>
 			/// Gets transparency as a value from 0.0 (opaque) through 1.0 (clear).
 			/// </summary>
-			 virtual Aspose::Cells::System::Double GetTransparency()=0;
+			 virtual Aspose::Cells::Systems::Double GetTransparency()=0;
 			/// <summary>
 			/// Sets transparency as a value from 0.0 (opaque) through 1.0 (clear).
 			/// </summary>
-			 virtual void SetTransparency(Aspose::Cells::System::Double value)=0;
+			 virtual void SetTransparency(Aspose::Cells::Systems::Double value)=0;
 			/// <summary>
 			/// Set the tint of the shape color
 			/// </summary>
 			/// <param name="tint" />
 			/// 
-			 virtual void SetTintOfShapeColor(Aspose::Cells::System::Double tint)=0;
+			 virtual void SetTintOfShapeColor(Aspose::Cells::Systems::Double tint)=0;
 
 	};
 }

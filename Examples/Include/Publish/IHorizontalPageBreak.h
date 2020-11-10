@@ -1,6 +1,6 @@
 #pragma once
-#include "System/Object.h"
-#include "System/Int32.h"
+#include "Aspose.Cells.Systems/Object.h"
+#include "Aspose.Cells.Systems/Int32.h"
 
 namespace Aspose{
 namespace Cells{
@@ -25,21 +25,21 @@ namespace Cells{
 			/// 
 			/// </code>
 			/// </example>
-	class ASPOSE_CELLS_API IHorizontalPageBreak : public Aspose::Cells::System::Object
+	class ASPOSE_CELLS_API IHorizontalPageBreak : public Aspose::Cells::Systems::Object
 	{
 		public:
 			/// <summary>
 			/// Gets the start column index of this horizontal page break.
 			/// </summary>
-			 virtual Aspose::Cells::System::Int32 GetStartColumn()=0;
+			 virtual Aspose::Cells::Systems::Int32 GetStartColumn()=0;
 			/// <summary>
 			/// Gets the end column index of this horizontal page break.
 			/// </summary>
-			 virtual Aspose::Cells::System::Int32 GetEndColumn()=0;
+			 virtual Aspose::Cells::Systems::Int32 GetEndColumn()=0;
 			/// <summary>
 			/// Gets the zero based row index.
 			/// </summary>
-			 virtual Aspose::Cells::System::Int32 GetRow()=0;
+			 virtual Aspose::Cells::Systems::Int32 GetRow()=0;
 
 	};
 }

@@ -1,10 +1,10 @@
 #pragma once
-#include "System/Object.h"
-#include "System/Int32.h"
-#include "System/Double.h"
-#include "System/String.h"
-#include "System/Globalization/CultureInfo.h"
-#include "System/Char.h"
+#include "Aspose.Cells.Systems/Object.h"
+#include "Aspose.Cells.Systems/Int32.h"
+#include "Aspose.Cells.Systems/Double.h"
+#include "Aspose.Cells.Systems/String.h"
+#include "Aspose.Cells.Systems/Globalization/CultureInfo.h"
+#include "Aspose.Cells.Systems/Char.h"
 
 namespace Aspose {
 	namespace Cells {
@@ -23,7 +23,7 @@ namespace Cells{
 			/// <summary>
 			/// Represents all settings of the workbook.
 			/// </summary>
-	class ASPOSE_CELLS_API IWorkbookSettings : public Aspose::Cells::System::Object
+	class ASPOSE_CELLS_API IWorkbookSettings : public Aspose::Cells::Systems::Object
 	{
 		public:
 			/// <summary>
@@ -103,19 +103,19 @@ namespace Cells{
 			/// <summary>
 			/// Returns or sets the maximum number of iterations that Aspose.Cells can use to resolve a circular reference.
 			/// </summary>
-			  virtual Aspose::Cells::System::Int32 GetMaxIteration() = 0;
+			  virtual Aspose::Cells::Systems::Int32 GetMaxIteration() = 0;
 			/// <summary>
 			/// Returns or sets the maximum number of iterations that Aspose.Cells can use to resolve a circular reference.
 			/// </summary>
-			  virtual void SetMaxIteration(Aspose::Cells::System::Int32 value) = 0;
+			  virtual void SetMaxIteration(Aspose::Cells::Systems::Int32 value) = 0;
 			/// <summary>
 			/// Returns or sets the maximum number of change that Microsoft Excel can use to resolve a circular reference.
 			/// </summary>
-			  virtual Aspose::Cells::System::Double GetMaxChange() = 0;
+			  virtual Aspose::Cells::Systems::Double GetMaxChange() = 0;
 			/// <summary>
 			/// Returns or sets the maximum number of change that Microsoft Excel can use to resolve a circular reference.
 			/// </summary>
-			  virtual void SetMaxChange(Aspose::Cells::System::Double value) = 0;
+			  virtual void SetMaxChange(Aspose::Cells::Systems::Double value) = 0;
 			/// <summary>
 			/// It specifies whether to calculate formulas manually,
 			/// automatically or automatically except for multiple table operations.
@@ -129,25 +129,25 @@ namespace Cells{
 			/// <summary>
 			/// Specifies the version of the calculation engine used to calculate values in the workbook.
 			/// </summary>
-			  virtual intrusive_ptr<Aspose::Cells::System::String> GetCalculationId() = 0;
+			  virtual intrusive_ptr<Aspose::Cells::Systems::String> GetCalculationId() = 0;
 			/// <summary>
 			/// Specifies the version of the calculation engine used to calculate values in the workbook.
 			/// </summary>
-			  virtual void SetCalculationId(intrusive_ptr<Aspose::Cells::System::String> value) = 0;
+			  virtual void SetCalculationId(intrusive_ptr<Aspose::Cells::Systems::String> value) = 0;
 			/// <summary>
 			/// Specifies the stack size for calculating cells recursively.
 			/// The large value for this size will give better performance when there are lots of cells need to be calculated recursively.
 			/// On the other hand, larger value will raise the risk of StackOverflowException.
 			/// If user gets StackOverflowException when calculating formulas, this value should be decreased.
 			/// </summary>
-			  virtual Aspose::Cells::System::Int32 GetCalcStackSize() = 0;
+			  virtual Aspose::Cells::Systems::Int32 GetCalcStackSize() = 0;
 			/// <summary>
 			/// Specifies the stack size for calculating cells recursively.
 			/// The large value for this size will give better performance when there are lots of cells need to be calculated recursively.
 			/// On the other hand, larger value will raise the risk of StackOverflowException.
 			/// If user gets StackOverflowException when calculating formulas, this value should be decreased.
 			/// </summary>
-			  virtual void SetCalcStackSize(Aspose::Cells::System::Int32 value) = 0;
+			  virtual void SetCalcStackSize(Aspose::Cells::Systems::Int32 value) = 0;
 			/// <summary>
 			/// Indicates whether to recalculate before saving the document.
 			/// </summary>
@@ -161,13 +161,13 @@ namespace Cells{
 			/// </summary>
 			/// 
 			/// 
-			 virtual Aspose::Cells::System::Int32 GetSheetTabBarWidth()=0;
+			 virtual Aspose::Cells::Systems::Int32 GetSheetTabBarWidth()=0;
 			/// <summary>
 			/// Width of worksheet tab bar (in 1/1000 of window width).
 			/// </summary>
 			/// 
 			/// 
-			 virtual void SetSheetTabBarWidth(Aspose::Cells::System::Int32 value)=0;
+			 virtual void SetSheetTabBarWidth(Aspose::Cells::Systems::Int32 value)=0;
 			/// <summary>
 			/// Get a value whether the Workbook tabs are displayed.
 			/// </summary>
@@ -200,13 +200,13 @@ namespace Cells{
 			/// </summary>
 			/// 
 			/// 
-			 virtual Aspose::Cells::System::Int32 GetFirstVisibleTab()=0;
+			 virtual Aspose::Cells::Systems::Int32 GetFirstVisibleTab()=0;
 			/// <summary>
 			/// Sets the first visible worksheet tab.
 			/// </summary>
 			/// 
 			/// 
-			 virtual void SetFirstVisibleTab(Aspose::Cells::System::Int32 value)=0;
+			 virtual void SetFirstVisibleTab(Aspose::Cells::Systems::Int32 value)=0;
 			/// <summary>
 			/// Gets a value indicating whether the generated spreadsheet will contain a horizontal scroll bar.
 			/// </summary>
@@ -345,7 +345,7 @@ namespace Cells{
 			/// </remarks>
 			/// 
 			/// 
-			 virtual intrusive_ptr<Aspose::Cells::System::Globalization::CultureInfo> GetCultureInfo()=0;
+			 virtual intrusive_ptr<Aspose::Cells::Systems::Globalization::CultureInfo> GetCultureInfo()=0;
 			/// <summary>
 			/// Sets the system culture info.
 			/// </summary>
@@ -354,43 +354,43 @@ namespace Cells{
 			/// </remarks>
 			/// 
 			/// 
-			 virtual void SetCultureInfo(intrusive_ptr<Aspose::Cells::System::Globalization::CultureInfo> value)=0;
+			 virtual void SetCultureInfo(intrusive_ptr<Aspose::Cells::Systems::Globalization::CultureInfo> value)=0;
 			/// <summary>
 			/// Gets the decimal separator for formatting/parsing numeric values. Default is the decimal separator of current Region.
 			/// </summary>
 			/// 
 			/// 
-			 virtual Aspose::Cells::System::Char GetNumberDecimalSeparator()=0;
+			 virtual Aspose::Cells::Systems::Char GetNumberDecimalSeparator()=0;
 			/// <summary>
 			/// Sets the decimal separator for formatting/parsing numeric values. Default is the decimal separator of current Region.
 			/// </summary>
 			/// 
 			/// 
-			 virtual void SetNumberDecimalSeparator(Aspose::Cells::System::Char value)=0;
+			 virtual void SetNumberDecimalSeparator(Aspose::Cells::Systems::Char value)=0;
 			/// <summary>
 			/// Gets the character that separates groups of digits to the left of the decimal in numeric values. Default is the group separator of current Region.
 			/// </summary>
 			/// 
 			/// 
-			 virtual Aspose::Cells::System::Char GetNumberGroupSeparator()=0;
+			 virtual Aspose::Cells::Systems::Char GetNumberGroupSeparator()=0;
 			/// <summary>
 			/// Sets the character that separates groups of digits to the left of the decimal in numeric values. Default is the group separator of current Region.
 			/// </summary>
 			/// 
 			/// 
-			 virtual void SetNumberGroupSeparator(Aspose::Cells::System::Char value)=0;
+			 virtual void SetNumberGroupSeparator(Aspose::Cells::Systems::Char value)=0;
 			/// <summary>
 			/// Represents Workbook file encryption password.
 			/// </summary>
 			/// 
 			/// 
-			 virtual intrusive_ptr<Aspose::Cells::System::String> GetPassword()=0;
+			 virtual intrusive_ptr<Aspose::Cells::Systems::String> GetPassword()=0;
 			/// <summary>
 			/// Represents Workbook file encryption password.
 			/// </summary>
 			/// 
 			/// 
-			 virtual void SetPassword(intrusive_ptr<Aspose::Cells::System::String> value)=0;
+			 virtual void SetPassword(intrusive_ptr<Aspose::Cells::Systems::String> value)=0;
 			/// <summary>
 			/// Provides access to the workbook write protection options. 
 			/// </summary>
@@ -446,7 +446,7 @@ namespace Cells{
 			/// please use GetIWriteProtection()->SetPassword() method.</remarks>
 			/// 
 			/// 
-			 virtual void SetWriteProtectedPassword(intrusive_ptr<Aspose::Cells::System::String> value)=0;
+			 virtual void SetWriteProtectedPassword(intrusive_ptr<Aspose::Cells::Systems::String> value)=0;
 			/// <summary>
 			/// Gets a value that indicates whether a password is required to open this workbook.
 			/// </summary>
@@ -550,103 +550,103 @@ namespace Cells{
 			/// <summary>
 			/// The distance from the left edge of the client area to the left edge of the window, in unit of point.
 			/// </summary>
-			  virtual Aspose::Cells::System::Double GetWindowLeft() = 0;
+			  virtual Aspose::Cells::Systems::Double GetWindowLeft() = 0;
 			/// <summary>
 			/// The distance from the left edge of the client area to the left edge of the window, in unit of point.
 			/// </summary>
-			  virtual void SetWindowLeft(Aspose::Cells::System::Double value) = 0;
+			  virtual void SetWindowLeft(Aspose::Cells::Systems::Double value) = 0;
 			/// <summary>
 			/// The distance from the left edge of the client area to the left edge of the window.
 			/// In unit of inch.
 			/// </summary>
-			  virtual Aspose::Cells::System::Double GetWindowLeftInch() = 0;
+			  virtual Aspose::Cells::Systems::Double GetWindowLeftInch() = 0;
 			/// <summary>
 			/// The distance from the left edge of the client area to the left edge of the window.
 			/// In unit of inch.
 			/// </summary>
-			  virtual void SetWindowLeftInch(Aspose::Cells::System::Double value) = 0;
+			  virtual void SetWindowLeftInch(Aspose::Cells::Systems::Double value) = 0;
 			/// <summary>
 			/// The distance from the left edge of the client area to the left edge of the window.
 			/// In unit of centimeter.
 			/// </summary>
-			  virtual Aspose::Cells::System::Double GetWindowLeftCM() = 0;
+			  virtual Aspose::Cells::Systems::Double GetWindowLeftCM() = 0;
 			/// <summary>
 			/// The distance from the left edge of the client area to the left edge of the window.
 			/// In unit of centimeter.
 			/// </summary>
-			  virtual void SetWindowLeftCM(Aspose::Cells::System::Double value) = 0;
+			  virtual void SetWindowLeftCM(Aspose::Cells::Systems::Double value) = 0;
 			/// <summary>
 			/// The distance from the top edge of the client area to the top edge of the window, in unit of point.
 			/// </summary>
-			  virtual Aspose::Cells::System::Double GetWindowTop() = 0;
+			  virtual Aspose::Cells::Systems::Double GetWindowTop() = 0;
 			/// <summary>
 			/// The distance from the top edge of the client area to the top edge of the window, in unit of point.
 			/// </summary>
-			  virtual void SetWindowTop(Aspose::Cells::System::Double value) = 0;
+			  virtual void SetWindowTop(Aspose::Cells::Systems::Double value) = 0;
 			/// <summary>
 			/// The distance from the top edge of the client area to the top edge of the window, in unit of inch.
 			/// </summary>
-			  virtual Aspose::Cells::System::Double GetWindowTopInch() = 0;
+			  virtual Aspose::Cells::Systems::Double GetWindowTopInch() = 0;
 			/// <summary>
 			/// The distance from the top edge of the client area to the top edge of the window, in unit of inch.
 			/// </summary>
-			  virtual void SetWindowTopInch(Aspose::Cells::System::Double value) = 0;
+			  virtual void SetWindowTopInch(Aspose::Cells::Systems::Double value) = 0;
 			/// <summary>
 			/// The distance from the top edge of the client area to the top edge of the window, in unit of centimeter.
 			/// </summary>
-			  virtual Aspose::Cells::System::Double GetWindowTopCM() = 0;
+			  virtual Aspose::Cells::Systems::Double GetWindowTopCM() = 0;
 			/// <summary>
 			/// The distance from the top edge of the client area to the top edge of the window, in unit of centimeter.
 			/// </summary>
-			  virtual void SetWindowTopCM(Aspose::Cells::System::Double value) = 0;
+			  virtual void SetWindowTopCM(Aspose::Cells::Systems::Double value) = 0;
 			/// <summary>
 			/// The width of the window, in unit of point.
 			/// </summary>
-			  virtual Aspose::Cells::System::Double GetWindowWidth() = 0;
+			  virtual Aspose::Cells::Systems::Double GetWindowWidth() = 0;
 			/// <summary>
 			/// The width of the window, in unit of point.
 			/// </summary>
-			  virtual void SetWindowWidth(Aspose::Cells::System::Double value) = 0;
+			  virtual void SetWindowWidth(Aspose::Cells::Systems::Double value) = 0;
 			/// <summary>
 			/// The width of the window, in unit of inch.
 			/// </summary>
-			  virtual Aspose::Cells::System::Double GetWindowWidthInch() = 0;
+			  virtual Aspose::Cells::Systems::Double GetWindowWidthInch() = 0;
 			/// <summary>
 			/// The width of the window, in unit of inch.
 			/// </summary>
-			  virtual void SetWindowWidthInch(Aspose::Cells::System::Double value) = 0;
+			  virtual void SetWindowWidthInch(Aspose::Cells::Systems::Double value) = 0;
 			/// <summary>
 			/// The width of the window, in unit of centimeter.
 			/// </summary>
-			  virtual Aspose::Cells::System::Double GetWindowWidthCM() = 0;
+			  virtual Aspose::Cells::Systems::Double GetWindowWidthCM() = 0;
 			/// <summary>
 			/// The width of the window, in unit of centimeter.
 			/// </summary>
-			  virtual void SetWindowWidthCM(Aspose::Cells::System::Double value) = 0;
+			  virtual void SetWindowWidthCM(Aspose::Cells::Systems::Double value) = 0;
 			/// <summary>
 			/// The height of the window, in unit of point.
 			/// </summary>
-			  virtual Aspose::Cells::System::Double GetWindowHeight() = 0;
+			  virtual Aspose::Cells::Systems::Double GetWindowHeight() = 0;
 			/// <summary>
 			/// The height of the window, in unit of point.
 			/// </summary>
-			  virtual void SetWindowHeight(Aspose::Cells::System::Double value) = 0;
+			  virtual void SetWindowHeight(Aspose::Cells::Systems::Double value) = 0;
 			/// <summary>
 			/// The height of the window, in unit of inch.
 			/// </summary>
-			  virtual Aspose::Cells::System::Double GetWindowHeightInch() = 0;
+			  virtual Aspose::Cells::Systems::Double GetWindowHeightInch() = 0;
 			/// <summary>
 			/// The height of the window, in unit of inch.
 			/// </summary>
-			  virtual void SetWindowHeightInch(Aspose::Cells::System::Double value) = 0;
+			  virtual void SetWindowHeightInch(Aspose::Cells::Systems::Double value) = 0;
 			/// <summary>
 			/// The height of the window, in unit of centimeter.
 			/// </summary>
-			  virtual Aspose::Cells::System::Double GetWindowHeightCM() = 0;
+			  virtual Aspose::Cells::Systems::Double GetWindowHeightCM() = 0;
 			/// <summary>
 			/// The height of the window, in unit of centimeter.
 			/// </summary>
-			  virtual void SetWindowHeightCM(Aspose::Cells::System::Double value) = 0;
+			  virtual void SetWindowHeightCM(Aspose::Cells::Systems::Double value) = 0;
 			/// <summary>
 			/// Indicates whether update adjacent cells' border.
 			/// </summary>
@@ -757,11 +757,11 @@ namespace Cells{
 			/// <summary>
 			/// Specifies the incremental public release of the application.
 			/// </summary>
-			  virtual intrusive_ptr<Aspose::Cells::System::String> GetBuildVersion() = 0;
+			  virtual intrusive_ptr<Aspose::Cells::Systems::String> GetBuildVersion() = 0;
 			/// <summary>
 			/// Specifies the incremental public release of the application.
 			/// </summary>
-			  virtual void SetBuildVersion(intrusive_ptr<Aspose::Cells::System::String> value) = 0;
+			  virtual void SetBuildVersion(intrusive_ptr<Aspose::Cells::Systems::String> value) = 0;
 			/// <summary>
 			/// Gets the memory usage options. The new option will be taken as the default option for newly created worksheets but does not take effect for existing worksheets.
 			/// </summary>

@@ -77,7 +77,7 @@ void TracingDependents()
 	Console::WriteLine(new String("-------------------------------"));
 
 	//Parameter false means we do not want to search other sheets
-	intrusive_ptr<Aspose::Cells::System::Array1D<ICell*>> depCells = cell->GetDependentICells(false);
+	intrusive_ptr<Aspose::Cells::Systems::Array1D<ICell*>> depCells = cell->GetDependentICells(false);
 
 	//Get the length of the array
 	int len = depCells->Length();

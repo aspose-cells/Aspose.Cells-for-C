@@ -1,8 +1,8 @@
 #pragma once
-#include "System/Object.h"
-#include "System/Int32.h"
-#include "System/String.h"
-#include "System/IComparable.h"
+#include "Aspose.Cells.Systems/Object.h"
+#include "Aspose.Cells.Systems/Int32.h"
+#include "Aspose.Cells.Systems/String.h"
+#include "Aspose.Cells.Systems/IComparable.h"
 
 namespace Aspose {
 	namespace Cells {
@@ -25,41 +25,41 @@ namespace Cells{
 			/// ca->SetendColumn(0);
 			/// </code>
 			/// </example>
-	class ASPOSE_CELLS_API ICellArea : public Aspose::Cells::System::IComparable , public Aspose::Cells::System::Object
+	class ASPOSE_CELLS_API ICellArea : public Aspose::Cells::Systems::IComparable , public Aspose::Cells::Systems::Object
 	{
 		public:
 			/// <summary>
 			/// Gets the start row of this area.
 			/// </summary>
-			 virtual Aspose::Cells::System::Int32 GetstartRow()=0;
+			 virtual Aspose::Cells::Systems::Int32 GetstartRow()=0;
 			/// <summary>
 			/// Set the start row of this area.
 			/// </summary>
-			 virtual void SetstartRow(Aspose::Cells::System::Int32 value)=0;
+			 virtual void SetstartRow(Aspose::Cells::Systems::Int32 value)=0;
 			/// <summary>
 			/// Gets the end row of this area.
 			/// </summary>
-			 virtual Aspose::Cells::System::Int32 GetendRow()=0;
+			 virtual Aspose::Cells::Systems::Int32 GetendRow()=0;
 			/// <summary>
 			/// Set the end row of this area.
 			/// </summary>
-			 virtual void SetendRow(Aspose::Cells::System::Int32 value)=0;
+			 virtual void SetendRow(Aspose::Cells::Systems::Int32 value)=0;
 			/// <summary>
 			/// Gets the start column of this area.
 			/// </summary>
-			 virtual Aspose::Cells::System::Int32 GetstartColumn()=0;
+			 virtual Aspose::Cells::Systems::Int32 GetstartColumn()=0;
 			/// <summary>
 			/// Set the start column of this area.
 			/// </summary>
-			 virtual void SetstartColumn(Aspose::Cells::System::Int32 value)=0;
+			 virtual void SetstartColumn(Aspose::Cells::Systems::Int32 value)=0;
 			/// <summary>
 			/// Gets the end column of this area.
 			/// </summary>
-			 virtual Aspose::Cells::System::Int32 GetendColumn()=0;
+			 virtual Aspose::Cells::Systems::Int32 GetendColumn()=0;
 			/// <summary>
 			/// Set the end column of this area.
 			/// </summary>
-			 virtual void SetendColumn(Aspose::Cells::System::Int32 value)=0;
+			 virtual void SetendColumn(Aspose::Cells::Systems::Int32 value)=0;
 			/// <summary>
 			/// Internal use only.
 			/// </summary>
@@ -67,13 +67,13 @@ namespace Cells{
 			/// 
 			/// <returns/>
 			/// 
-			 virtual Aspose::Cells::System::Int32 CompareTo(intrusive_ptr<Aspose::Cells::System::Object> obj)=0;
+			 virtual Aspose::Cells::Systems::Int32 CompareTo(intrusive_ptr<Aspose::Cells::Systems::Object> obj)=0;
 			/// <summary>
 			/// Returns a string represents the current Worksheet object.
 			/// </summary>
 			/// <returns/>
 			/// 
-			  virtual intrusive_ptr<Aspose::Cells::System::String> ToString()=0;
+			  virtual intrusive_ptr<Aspose::Cells::Systems::String> ToString()=0;
 public:
 			/// <summary>
 			/// Create a cell area.
@@ -84,7 +84,7 @@ public:
 			/// <param name="endColumn" >The end column.</param>
 			/// <returns>Return an <see cref="ICellArea" /></returns>
 			/// 
-			static  intrusive_ptr<Aspose::Cells::ICellArea> 		CreateICellArea(Aspose::Cells::System::Int32 startRow , Aspose::Cells::System::Int32 startColumn , Aspose::Cells::System::Int32 endRow , Aspose::Cells::System::Int32 endColumn);
+			static  intrusive_ptr<Aspose::Cells::ICellArea> 		CreateICellArea(Aspose::Cells::Systems::Int32 startRow , Aspose::Cells::Systems::Int32 startColumn , Aspose::Cells::Systems::Int32 endRow , Aspose::Cells::Systems::Int32 endColumn);
 			/// <summary>
 			/// Create a cell area.
 			/// </summary>
@@ -92,7 +92,7 @@ public:
 			/// <param name="endCellName" >The bottom-right cell of the range.</param>
 			/// <returns>Return an <see cref="ICellArea" /></returns>
 			/// 
-			static  intrusive_ptr<Aspose::Cells::ICellArea> 		CreateICellArea(intrusive_ptr<Aspose::Cells::System::String> startCellName , intrusive_ptr<Aspose::Cells::System::String> endCellName);
+			static  intrusive_ptr<Aspose::Cells::ICellArea> 		CreateICellArea(intrusive_ptr<Aspose::Cells::Systems::String> startCellName , intrusive_ptr<Aspose::Cells::Systems::String> endCellName);
 public:
 		public:
 			virtual void add_ref() {++ref_count_;}

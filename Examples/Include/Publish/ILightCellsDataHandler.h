@@ -1,6 +1,6 @@
 #pragma once
-#include "System/Object.h"
-#include "System/Int32.h"
+#include "Aspose.Cells.Systems/Object.h"
+#include "Aspose.Cells.Systems/Int32.h"
 
 namespace Aspose {
 	namespace Cells {
@@ -30,7 +30,7 @@ namespace Cells{
 			/// then <see cref="ProcessICell(ICell)" />
 			///  will be called to process the cell by the implementation of this interface.
 			/// </remarks>
-	class ASPOSE_CELLS_API ILightCellsDataHandler : public Aspose::Cells::System::Object
+	class ASPOSE_CELLS_API ILightCellsDataHandler : public Aspose::Cells::Systems::Object
 	{
 		public:
 	        /// <summary>
@@ -49,7 +49,7 @@ namespace Cells{
 	        /// </summary>
 	        /// <param name="rowIndex">the index of next row to be processed</param>
 	        /// <returns>whether this row(properties or cells data) needs to be processed. false to ignore this row and its cells and check the next row.</returns>
-			 virtual bool StartRow(Aspose::Cells::System::Int32 rowIndex) = 0;
+			 virtual bool StartRow(Aspose::Cells::Systems::Int32 rowIndex) = 0;
 	        /// <summary>
 	        /// Starts to process one row.
 	        /// </summary>
@@ -69,7 +69,7 @@ namespace Cells{
 	        /// </remarks>
 	        /// <param name="columnIndex">column index of the cell to be processed</param>
 	        /// <returns>whether this cell needs to be processed. false to ignore the cell and check the next one until reach the end of cells data of current row</returns>
-			 virtual bool StartCell(Aspose::Cells::System::Int32 columnIndex) = 0;
+			 virtual bool StartCell(Aspose::Cells::Systems::Int32 columnIndex) = 0;
 	        /// <summary>
 	        /// Starts to process one cell.
 	        /// </summary>

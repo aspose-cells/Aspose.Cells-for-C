@@ -1,9 +1,9 @@
 #pragma once
-#include "System/Object.h"
-#include "System/String.h"
-#include "System/Int32.h"
-#include "System/DateTime.h"
-#include "System/Double.h"
+#include "Aspose.Cells.Systems/Object.h"
+#include "Aspose.Cells.Systems/String.h"
+#include "Aspose.Cells.Systems/Int32.h"
+#include "Aspose.Cells.Systems/DateTime.h"
+#include "Aspose.Cells.Systems/Double.h"
 #include "IDocumentPropertyCollection.h"
 
 namespace Aspose {
@@ -51,7 +51,7 @@ namespace Properties{
 			/// <param name="name" >The name of the property.</param>
 			/// <param name="value" >The value of the property.</param>
 			/// <returns>The newly created property object.</returns>
-			 virtual intrusive_ptr<Aspose::Cells::Properties::IDocumentProperty> 		AddIDocumentProperty(intrusive_ptr<Aspose::Cells::System::String> name , intrusive_ptr<Aspose::Cells::System::String> value)=0;
+			 virtual intrusive_ptr<Aspose::Cells::Properties::IDocumentProperty> 		AddIDocumentProperty(intrusive_ptr<Aspose::Cells::Systems::String> name , intrusive_ptr<Aspose::Cells::Systems::String> value)=0;
 			/// <summary>
 			/// Creates a new custom document property of the <b>PropertyType.Number</b>
 			///  data type.
@@ -59,7 +59,7 @@ namespace Properties{
 			/// <param name="name" >The name of the property.</param>
 			/// <param name="value" >The value of the property.</param>
 			/// <returns>The newly created property object.</returns>
-			 virtual intrusive_ptr<Aspose::Cells::Properties::IDocumentProperty> 		AddIDocumentProperty(intrusive_ptr<Aspose::Cells::System::String> name , Aspose::Cells::System::Int32 value)=0;
+			 virtual intrusive_ptr<Aspose::Cells::Properties::IDocumentProperty> 		AddIDocumentProperty(intrusive_ptr<Aspose::Cells::Systems::String> name , Aspose::Cells::Systems::Int32 value)=0;
 			/// <summary>
 			/// Creates a new custom document property of the <b>PropertyType.DateTime</b>
 			///  data type.
@@ -67,7 +67,7 @@ namespace Properties{
 			/// <param name="name" >The name of the property.</param>
 			/// <param name="value" >The value of the property.</param>
 			/// <returns>The newly created property object.</returns>
-			 virtual intrusive_ptr<Aspose::Cells::Properties::IDocumentProperty> 		AddIDocumentProperty(intrusive_ptr<Aspose::Cells::System::String> name , intrusive_ptr<Aspose::Cells::System::DateTime> value)=0;
+			 virtual intrusive_ptr<Aspose::Cells::Properties::IDocumentProperty> 		AddIDocumentProperty(intrusive_ptr<Aspose::Cells::Systems::String> name , intrusive_ptr<Aspose::Cells::Systems::DateTime> value)=0;
 			/// <summary>
 			/// Creates a new custom document property of the <b>PropertyType.Boolean</b>
 			///  data type.
@@ -75,7 +75,7 @@ namespace Properties{
 			/// <param name="name" >The name of the property.</param>
 			/// <param name="value" >The value of the property.</param>
 			/// <returns>The newly created property object.</returns>
-			 virtual intrusive_ptr<Aspose::Cells::Properties::IDocumentProperty> 		AddIDocumentProperty(intrusive_ptr<Aspose::Cells::System::String> name , bool value)=0;
+			 virtual intrusive_ptr<Aspose::Cells::Properties::IDocumentProperty> 		AddIDocumentProperty(intrusive_ptr<Aspose::Cells::Systems::String> name , bool value)=0;
 			/// <summary>
 			/// Creates a new custom document property of the <b>PropertyType.Float</b>
 			///  data type.
@@ -83,14 +83,14 @@ namespace Properties{
 			/// <param name="name" >The name of the property.</param>
 			/// <param name="value" >The value of the property.</param>
 			/// <returns>The newly created property object.</returns>
-			 virtual intrusive_ptr<Aspose::Cells::Properties::IDocumentProperty> 		AddIDocumentProperty(intrusive_ptr<Aspose::Cells::System::String> name , Aspose::Cells::System::Double value)=0;
+			 virtual intrusive_ptr<Aspose::Cells::Properties::IDocumentProperty> 		AddIDocumentProperty(intrusive_ptr<Aspose::Cells::Systems::String> name , Aspose::Cells::Systems::Double value)=0;
 			/// <summary>
 			///  Creates a new custom document property which links to content.
 			/// </summary>
 			/// <param name="name" >The name of the property.</param>
 			/// <param name="source" >The source of the property</param>
 			/// <returns>The newly created property object.</returns>
-			 virtual intrusive_ptr<Aspose::Cells::Properties::IDocumentProperty> 		AddLinkToContentProperty(intrusive_ptr<Aspose::Cells::System::String> name , intrusive_ptr<Aspose::Cells::System::String> source)=0;
+			 virtual intrusive_ptr<Aspose::Cells::Properties::IDocumentProperty> 		AddLinkToContentProperty(intrusive_ptr<Aspose::Cells::Systems::String> name , intrusive_ptr<Aspose::Cells::Systems::String> source)=0;
 			/// <summary>
 			/// Update custom document property value which links to content.
 			/// </summary>

@@ -1,7 +1,7 @@
 #pragma once
-#include "System/Object.h"
-#include "System/Int32.h"
-#include "System/Collections/CollectionBase.h"
+#include "Aspose.Cells.Systems/Object.h"
+#include "Aspose.Cells.Systems/Int32.h"
+#include "Aspose.Cells.Systems/Collections/CollectionBase.h"
 
 namespace Aspose {
 	namespace Cells {
@@ -53,7 +53,7 @@ namespace Cells{
 			/// 
 			/// </code>
 			/// </example>
-	class ASPOSE_CELLS_API IConditionalFormattingCollection : public Aspose::Cells::System::Collections::CollectionBase
+	class ASPOSE_CELLS_API IConditionalFormattingCollection : public Aspose::Cells::Systems::Collections::CollectionBase
 	{
 		public:
 			/// <summary>
@@ -63,7 +63,7 @@ namespace Cells{
 			/// <param name="startColumn" >The start column of the range.</param>
 			/// <param name="totalRows" >The number of rows of the range.</param>
 			/// <param name="totalColumns" >The number of columns of the range.</param>
-			 virtual void RemoveArea(Aspose::Cells::System::Int32 startRow , Aspose::Cells::System::Int32 startColumn , Aspose::Cells::System::Int32 totalRows , Aspose::Cells::System::Int32 totalColumns)=0;
+			 virtual void RemoveArea(Aspose::Cells::Systems::Int32 startRow , Aspose::Cells::Systems::Int32 startColumn , Aspose::Cells::Systems::Int32 totalRows , Aspose::Cells::Systems::Int32 totalColumns)=0;
 			/// <summary>
 			/// Copies condtional formattings.
 			/// </summary>
@@ -73,12 +73,12 @@ namespace Cells{
 			/// Gets the FormatConditions element at the specified index.
 			/// </summary>
 			/// <param name="index" >The zero based index of the element.</param>
-			 virtual intrusive_ptr<Aspose::Cells::IFormatConditionCollection> 		GetObjectByIndex(Aspose::Cells::System::Int32 index)=0;
+			 virtual intrusive_ptr<Aspose::Cells::IFormatConditionCollection> 		GetObjectByIndex(Aspose::Cells::Systems::Int32 index)=0;
 			/// <summary>
 			/// Adds a FormatConditions to the collection.
 			/// </summary>
 			/// <returns>FormatConditions object index.</returns>
-			 virtual Aspose::Cells::System::Int32 Add()=0;
+			 virtual Aspose::Cells::Systems::Int32 Add()=0;
 
 	};
 }

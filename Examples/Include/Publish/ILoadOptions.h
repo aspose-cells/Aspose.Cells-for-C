@@ -1,8 +1,8 @@
 #pragma once
-#include "System/Object.h"
-#include "System/String.h"
-#include "System/Globalization/CultureInfo.h"
-#include "System/Double.h"
+#include "Aspose.Cells.Systems/Object.h"
+#include "Aspose.Cells.Systems/String.h"
+#include "Aspose.Cells.Systems/Globalization/CultureInfo.h"
+#include "Aspose.Cells.Systems/Double.h"
 
 namespace Aspose {
 	namespace Cells {
@@ -22,7 +22,7 @@ namespace Cells{
 			/// </summary>
 			/// 
 			/// 
-	class ASPOSE_CELLS_API ILoadOptions : public Aspose::Cells::System::Object
+	class ASPOSE_CELLS_API ILoadOptions : public Aspose::Cells::Systems::Object
 	{
 		public:
 			/// <summary>
@@ -36,13 +36,13 @@ namespace Cells{
 			/// </summary>
 			/// 
 			/// 
-			 virtual intrusive_ptr<Aspose::Cells::System::String> GetPassword()=0;
+			 virtual intrusive_ptr<Aspose::Cells::Systems::String> GetPassword()=0;
 			/// <summary>
 			/// Set the password of the workbook.
 			/// </summary>
 			/// 
 			/// 
-			 virtual void SetPassword(intrusive_ptr<Aspose::Cells::System::String> value)=0;
+			 virtual void SetPassword(intrusive_ptr<Aspose::Cells::Systems::String> value)=0;
 			/// <summary>
 			/// Indicates whether parsing the formula when reading the file.
 			/// </summary>
@@ -174,11 +174,11 @@ namespace Cells{
 			/// <summary>
 			/// Gets the system culture info at the time the file was loaded.
 			/// </summary>
-			 virtual intrusive_ptr<Aspose::Cells::System::Globalization::CultureInfo> GetCultureInfo()=0;
+			 virtual intrusive_ptr<Aspose::Cells::Systems::Globalization::CultureInfo> GetCultureInfo()=0;
 			/// <summary>
 			/// Sets the system culture info at the time the file was loaded.
 			/// </summary>
-			 virtual void SetCultureInfo(intrusive_ptr<Aspose::Cells::System::Globalization::CultureInfo> value)=0;
+			 virtual void SetCultureInfo(intrusive_ptr<Aspose::Cells::Systems::Globalization::CultureInfo> value)=0;
 			/// <summary>
 			/// Gets a value that indicates whether the string in text file is converted to numeric data.
 			/// </summary>
@@ -202,25 +202,25 @@ namespace Cells{
 			/// </summary>
 			/// 
 			/// 
-			 virtual intrusive_ptr<Aspose::Cells::System::String> GetStandardFont()=0;
+			 virtual intrusive_ptr<Aspose::Cells::Systems::String> GetStandardFont()=0;
 			/// <summary>
 			/// Sets the default standard font name.
 			/// </summary>
 			/// 
 			/// 
-			 virtual void SetStandardFont(intrusive_ptr<Aspose::Cells::System::String> value)=0;
+			 virtual void SetStandardFont(intrusive_ptr<Aspose::Cells::Systems::String> value)=0;
 			/// <summary>
 			/// Sets the default standard font size.
 			/// </summary>
 			/// 
 			/// 
-			 virtual Aspose::Cells::System::Double GetStandardFontSize()=0;
+			 virtual Aspose::Cells::Systems::Double GetStandardFontSize()=0;
 			/// <summary>
 			/// Sets the default standard font size.
 			/// </summary>
 			/// 
 			/// 
-			 virtual void SetStandardFontSize(Aspose::Cells::System::Double value)=0;
+			 virtual void SetStandardFontSize(Aspose::Cells::Systems::Double value)=0;
 			/// <summary>
 			/// Ignore the data which are not printed if directly printing the file.
 			/// </summary>

@@ -1,6 +1,6 @@
 #pragma once
-#include "System/Object.h"
-#include "System/Int32.h"
+#include "Aspose.Cells.Systems/Object.h"
+#include "Aspose.Cells.Systems/Int32.h"
 #include "IShape.h"
 
 namespace Aspose{
@@ -16,43 +16,43 @@ namespace Drawing{
 			/// <summary>
 			/// Gets the current value.
 			/// </summary>
-			 virtual Aspose::Cells::System::Int32 GetCurrentValue()=0;
+			 virtual Aspose::Cells::Systems::Int32 GetCurrentValue()=0;
 			/// <summary>
 			/// Sets the current value.
 			/// </summary>
-			 virtual void SetCurrentValue(Aspose::Cells::System::Int32 value)=0;
+			 virtual void SetCurrentValue(Aspose::Cells::Systems::Int32 value)=0;
 			/// <summary>
 			/// Gets the minimum value of a scroll bar or spinner range.
 			/// </summary>
-			 virtual Aspose::Cells::System::Int32 GetMin()=0;
+			 virtual Aspose::Cells::Systems::Int32 GetMin()=0;
 			/// <summary>
 			/// Sets the minimum value of a scroll bar or spinner range.
 			/// </summary>
-			 virtual void SetMin(Aspose::Cells::System::Int32 value)=0;
+			 virtual void SetMin(Aspose::Cells::Systems::Int32 value)=0;
 			/// <summary>
 			/// Gets the maximum value of a scroll bar or spinner range.
 			/// </summary>
-			 virtual Aspose::Cells::System::Int32 GetMax()=0;
+			 virtual Aspose::Cells::Systems::Int32 GetMax()=0;
 			/// <summary>
 			/// Sets the maximum value of a scroll bar or spinner range.
 			/// </summary>
-			 virtual void SetMax(Aspose::Cells::System::Int32 value)=0;
+			 virtual void SetMax(Aspose::Cells::Systems::Int32 value)=0;
 			/// <summary>
 			/// Gets the amount that the scroll bar or spinner is incremented a line scroll.
 			/// </summary>
-			 virtual Aspose::Cells::System::Int32 GetIncrementalChange()=0;
+			 virtual Aspose::Cells::Systems::Int32 GetIncrementalChange()=0;
 			/// <summary>
 			/// Sets the amount that the scroll bar or spinner is incremented a line scroll.
 			/// </summary>
-			 virtual void SetIncrementalChange(Aspose::Cells::System::Int32 value)=0;
+			 virtual void SetIncrementalChange(Aspose::Cells::Systems::Int32 value)=0;
 			/// <summary>
 			/// Gets page change
 			/// </summary>
-			 virtual Aspose::Cells::System::Int32 GetPageChange()=0;
+			 virtual Aspose::Cells::Systems::Int32 GetPageChange()=0;
 			/// <summary>
 			/// Sets page change
 			/// </summary>
-			 virtual void SetPageChange(Aspose::Cells::System::Int32 value)=0;
+			 virtual void SetPageChange(Aspose::Cells::Systems::Int32 value)=0;
 			/// <summary>
 			/// Indicates whether the shape has 3-D shading.
 			/// </summary>

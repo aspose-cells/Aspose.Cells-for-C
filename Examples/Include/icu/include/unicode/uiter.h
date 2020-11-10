@@ -589,13 +589,13 @@ uiter_setState(UCharIterator *iter, uint32_t state, UErrorCode *pErrorCode);
  * @stable ICU 2.1
  */
 U_STABLE void U_EXPORT2
-uiter_setString(UCharIterator *iter, const UChar *s, int32_t length);
+uiter_setString(UCharIterator *iter, const UnChar *s, int32_t length);
 
 /**
  * Set up a UCharIterator to iterate over a UTF-16BE string
- * (byte vector with a big-endian pair of bytes per UChar).
+ * (byte vector with a big-endian pair of bytes per UnChar).
  *
- * Everything works just like with a normal UChar iterator (uiter_setString),
+ * Everything works just like with a normal UnChar iterator (uiter_setString),
  * except that UChars are assembled from byte pairs,
  * and that the length argument here indicates an even number of bytes.
  *
@@ -632,7 +632,7 @@ uiter_setUTF16BE(UCharIterator *iter, const char *s, int32_t length);
  *
  * getState() returns a state value consisting of
  * - the current UTF-8 source byte index (bits 31..1)
- * - a flag (bit 0) that indicates whether the UChar position is in the middle
+ * - a flag (bit 0) that indicates whether the UnChar position is in the middle
  *   of a surrogate pair
  *   (from a 4-byte UTF-8 sequence for the corresponding supplementary code point)
  *
@@ -673,7 +673,7 @@ uiter_setUTF8(UCharIterator *iter, const char *s, int32_t length);
  * @stable ICU 2.1
  */
 U_STABLE void U_EXPORT2
-uiter_setCharacterIterator(UCharIterator *iter, icu::CharacterIterator *charIter);
+uiter_setCharacterIterator(UCharIterator *iter, icucells::CharacterIterator *charIter);
 
 /**
  * Set up a UCharIterator to iterate over a C++ Replaceable.
@@ -698,7 +698,7 @@ uiter_setCharacterIterator(UCharIterator *iter, icu::CharacterIterator *charIter
  * @stable ICU 2.1
  */
 U_STABLE void U_EXPORT2
-uiter_setReplaceable(UCharIterator *iter, const icu::Replaceable *rep);
+uiter_setReplaceable(UCharIterator *iter, const icucells::Replaceable *rep);
 
 #endif
 

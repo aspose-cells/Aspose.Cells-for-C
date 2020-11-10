@@ -26,7 +26,7 @@ U_NAMESPACE_BEGIN
 
 /**
  * A unit of currency, such as USD (U.S. dollars) or JPY (Japanese
- * yen).  This class is a thin wrapper over a UChar string that
+ * yen).  This class is a thin wrapper over a UnChar string that
  * subclasses MeasureUnit, for use with Measure and MeasureFormat.
  *
  * @author Alan Liu
@@ -42,7 +42,7 @@ class U_I18N_API CurrencyUnit: public MeasureUnit {
      * then this will be set to a failing value.
      * @stable ICU 3.0
      */
-    CurrencyUnit(const UChar* isoCode, UErrorCode &ec);
+    CurrencyUnit(const UnChar* isoCode, UErrorCode &ec);
 
     /**
      * Copy constructor
@@ -91,16 +91,16 @@ class U_I18N_API CurrencyUnit: public MeasureUnit {
      * Return the ISO currency code of this object.
      * @stable ICU 3.0
      */
-    inline const UChar* getISOCurrency() const;
+    inline const UnChar* getISOCurrency() const;
 
  private:
     /**
      * The ISO 4217 code of this object.
      */
-    UChar isoCode[4];
+    UnChar isoCode[4];
 };
 
-inline const UChar* CurrencyUnit::getISOCurrency() const {
+inline const UnChar* CurrencyUnit::getISOCurrency() const {
     return isoCode;
 }
 

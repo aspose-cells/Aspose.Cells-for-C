@@ -1,8 +1,8 @@
 #pragma once
-#include "System/Object.h"
-#include "System/Int32.h"
-#include "System/String.h"
-#include "System/Collections/CollectionBase.h"
+#include "Aspose.Cells.Systems/Object.h"
+#include "Aspose.Cells.Systems/Int32.h"
+#include "Aspose.Cells.Systems/String.h"
+#include "Aspose.Cells.Systems/Collections/CollectionBase.h"
 
 namespace Aspose {
 	namespace Cells {
@@ -14,7 +14,7 @@ namespace Cells{
 			/// <summary>
 			/// Represents the list of the scenario's input cells. 
 			/// </summary>
-	class ASPOSE_CELLS_API IScenarioInputCellCollection : public Aspose::Cells::System::Collections::CollectionBase
+	class ASPOSE_CELLS_API IScenarioInputCellCollection : public Aspose::Cells::Systems::Collections::CollectionBase
 	{
 		public:
 			/// <summary>
@@ -24,7 +24,7 @@ namespace Cells{
 			/// <param name="index" >The specific index in the list</param>
 			/// <returns>The <see cref="IScenarioInputCell" />
 			///  object</returns>
-			 virtual intrusive_ptr<Aspose::Cells::IScenarioInputCell> 		GetObjectByIndex(Aspose::Cells::System::Int32 index)=0;
+			 virtual intrusive_ptr<Aspose::Cells::IScenarioInputCell> 		GetObjectByIndex(Aspose::Cells::Systems::Int32 index)=0;
 			/// <summary>
 			/// Adds an input cell.
 			/// </summary>
@@ -33,7 +33,7 @@ namespace Cells{
 			/// <param name="value" >The value of input cell.</param>
 			/// <returns/>
 			/// 
-			 virtual Aspose::Cells::System::Int32 Add(Aspose::Cells::System::Int32 row , Aspose::Cells::System::Int32 column , intrusive_ptr<Aspose::Cells::System::String> value)=0;
+			 virtual Aspose::Cells::Systems::Int32 Add(Aspose::Cells::Systems::Int32 row , Aspose::Cells::Systems::Int32 column , intrusive_ptr<Aspose::Cells::Systems::String> value)=0;
 
 	};
 }

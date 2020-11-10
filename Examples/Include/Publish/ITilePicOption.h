@@ -1,6 +1,6 @@
 #pragma once
-#include "System/Object.h"
-#include "System/Double.h"
+#include "Aspose.Cells.Systems/Object.h"
+#include "Aspose.Cells.Systems/Double.h"
 
 namespace Aspose {
 	namespace Cells {
@@ -16,41 +16,41 @@ namespace Drawing{
 			/// <summary>
 			/// Represents tile picture as texture.
 			/// </summary>
-	class ASPOSE_CELLS_API ITilePicOption : public Aspose::Cells::System::Object
+	class ASPOSE_CELLS_API ITilePicOption : public Aspose::Cells::Systems::Object
 	{
 		public:
 			/// <summary>
 			/// Gets the X offset for tiling picture.
 			/// </summary>
-			 virtual Aspose::Cells::System::Double GetOffsetX()=0;
+			 virtual Aspose::Cells::Systems::Double GetOffsetX()=0;
 			/// <summary>
 			/// Sets the X offset for tiling picture.
 			/// </summary>
-			 virtual void SetOffsetX(Aspose::Cells::System::Double value)=0;
+			 virtual void SetOffsetX(Aspose::Cells::Systems::Double value)=0;
 			/// <summary>
 			/// Gets the Y offset for tiling picture.
 			/// </summary>
-			 virtual Aspose::Cells::System::Double GetOffsetY()=0;
+			 virtual Aspose::Cells::Systems::Double GetOffsetY()=0;
 			/// <summary>
 			/// Sets the Y offset for tiling picture.
 			/// </summary>
-			 virtual void SetOffsetY(Aspose::Cells::System::Double value)=0;
+			 virtual void SetOffsetY(Aspose::Cells::Systems::Double value)=0;
 			/// <summary>
 			/// Gets the X scale for tiling picture.
 			/// </summary>
-			 virtual Aspose::Cells::System::Double GetScaleX()=0;
+			 virtual Aspose::Cells::Systems::Double GetScaleX()=0;
 			/// <summary>
 			/// Sets the X scale for tiling picture.
 			/// </summary>
-			 virtual void SetScaleX(Aspose::Cells::System::Double value)=0;
+			 virtual void SetScaleX(Aspose::Cells::Systems::Double value)=0;
 			/// <summary>
 			/// Gets the Y scale for tiling picture.
 			/// </summary>
-			 virtual Aspose::Cells::System::Double GetScaleY()=0;
+			 virtual Aspose::Cells::Systems::Double GetScaleY()=0;
 			/// <summary>
 			/// Sets the Y scale for tiling picture.
 			/// </summary>
-			 virtual void SetScaleY(Aspose::Cells::System::Double value)=0;
+			 virtual void SetScaleY(Aspose::Cells::Systems::Double value)=0;
 			/// <summary>
 			/// Gets the mirror type for tiling.
 			/// </summary>

@@ -1,8 +1,8 @@
 #pragma once
-#include "System/Object.h"
-#include "System/Int32.h"
-#include "System/Drawing/Color.h"
-#include "System/Single.h"
+#include "Aspose.Cells.Systems/Object.h"
+#include "Aspose.Cells.Systems/Int32.h"
+#include "Aspose.Cells.Systems/Drawing/Color.h"
+#include "Aspose.Cells.Systems/Single.h"
 
 namespace Aspose {
 	namespace Cells {
@@ -63,23 +63,23 @@ namespace Charts{
 		    /// 	//Set Pir Explosion
 		    /// 	point->SetExplosion (15);
 			/// 	//Set Border Color
-			/// 	point->GetBorderILine()->SetColor(System::Drawing::Color::GetRed());
+			/// 	point->GetBorderILine()->SetColor(Systems::Drawing::Color::GetRed());
 		    /// }
 		    /// //Saving the Excel file
 			/// workbook->Save(new String("D:\\test\\ChartPointTest.xls"));
 			/// </code>
 			/// </example>
-	class ASPOSE_CELLS_API IChartPoint : public Aspose::Cells::System::Object
+	class ASPOSE_CELLS_API IChartPoint : public Aspose::Cells::Systems::Object
 	{
 		public:
 			/// <summary>
 			/// The distance of an open pie slice from the center of the pie chart is expressed as a percentage of the pie diameter.
 			/// </summary>
-			 virtual Aspose::Cells::System::Int32 GetExplosion()=0;
+			 virtual Aspose::Cells::Systems::Int32 GetExplosion()=0;
 			/// <summary>
 			/// The distance of an open pie slice from the center of the pie chart is expressed as a percentage of the pie diameter.
 			/// </summary>
-			 virtual void SetExplosion(Aspose::Cells::System::Int32 value)=0;
+			 virtual void SetExplosion(Aspose::Cells::Systems::Int32 value)=0;
 			/// <summary>
 			/// True if the chartpoint has a shadow. 
 			/// </summary>
@@ -114,19 +114,19 @@ namespace Charts{
 			/// <summary>
 			/// Represents the marker size in a line chart, scatter chart, or radar chart. 
 			/// </summary>
-			 virtual Aspose::Cells::System::Int32 GetMarkerSize()=0;
+			 virtual Aspose::Cells::Systems::Int32 GetMarkerSize()=0;
 			/// <summary>
 			/// Represents the marker size in a line chart, scatter chart, or radar chart. 
 			/// </summary>
-			 virtual void SetMarkerSize(Aspose::Cells::System::Int32 value)=0;
+			 virtual void SetMarkerSize(Aspose::Cells::Systems::Int32 value)=0;
 			/// <summary>
 			/// Represents the marker foregournd color in a line chart, scatter chart, or radar chart. 
 			/// </summary>
-			 virtual intrusive_ptr<Aspose::Cells::System::Drawing::Color> GetMarkerForegroundColor()=0;
+			 virtual intrusive_ptr<Aspose::Cells::Systems::Drawing::Color> GetMarkerForegroundColor()=0;
 			/// <summary>
 			/// Represents the marker foregournd color in a line chart, scatter chart, or radar chart. 
 			/// </summary>
-			 virtual void SetMarkerForegroundColor(intrusive_ptr<Aspose::Cells::System::Drawing::Color> value)=0;
+			 virtual void SetMarkerForegroundColor(intrusive_ptr<Aspose::Cells::Systems::Drawing::Color> value)=0;
 			/// <summary>
 			/// Gets the marker foreground color set type.
 			/// </summary>
@@ -138,11 +138,11 @@ namespace Charts{
 			/// <summary>
 			/// Represents the marker backgournd color in a line chart, scatter chart, or radar chart. 
 			/// </summary>
-			 virtual intrusive_ptr<Aspose::Cells::System::Drawing::Color> GetMarkerBackgroundColor()=0;
+			 virtual intrusive_ptr<Aspose::Cells::Systems::Drawing::Color> GetMarkerBackgroundColor()=0;
 			/// <summary>
 			/// Represents the marker backgournd color in a line chart, scatter chart, or radar chart. 
 			/// </summary>
-			 virtual void SetMarkerBackgroundColor(intrusive_ptr<Aspose::Cells::System::Drawing::Color> value)=0;
+			 virtual void SetMarkerBackgroundColor(intrusive_ptr<Aspose::Cells::Systems::Drawing::Color> value)=0;
 			/// <summary>
 			/// Gets or sets the marker background color set type.
 			/// </summary>
@@ -158,19 +158,19 @@ namespace Charts{
 			/// <summary>
 			/// Gets or sets the Y value of the chart point.
 			/// </summary>
-			 virtual intrusive_ptr<Aspose::Cells::System::Object> Get_YValue()=0;
+			 virtual intrusive_ptr<Aspose::Cells::Systems::Object> Get_YValue()=0;
 			/// <summary>
 			/// Gets the Y value of the chart point.
 			/// </summary>
-			 virtual void SetYValue(intrusive_ptr<Aspose::Cells::System::Object> value)=0;
+			 virtual void SetYValue(intrusive_ptr<Aspose::Cells::Systems::Object> value)=0;
 			/// <summary>
 			/// Sets the X value of the chart point.
 			/// </summary>
-			 virtual intrusive_ptr<Aspose::Cells::System::Object> GetXValue()=0;
+			 virtual intrusive_ptr<Aspose::Cells::Systems::Object> GetXValue()=0;
 			/// <summary>
 			/// Gets the X value of the chart point.
 			/// </summary>
-			 virtual void SetXValue(intrusive_ptr<Aspose::Cells::System::Object> value)=0;
+			 virtual void SetXValue(intrusive_ptr<Aspose::Cells::Systems::Object> value)=0;
 			/// <summary>
 			/// Gets the <seealso cref="IShapePropertyCollection" />
 			///  object that holds the visual shape properties of the ChartPoint.
@@ -189,126 +189,126 @@ namespace Charts{
 			/// <summary>
 			/// Gets the x coordinate of the upper left corner in units of 1/4000 of chart's width after calls Chart.Calculate() method.
 			/// </summary>
-			 virtual Aspose::Cells::System::Int32 GetShapeX()=0;
+			 virtual Aspose::Cells::Systems::Int32 GetShapeX()=0;
 			/// <summary>
 			/// Gets the y coordinate of the upper left corner in units of 1/4000 of chart's height after calls Chart.Calculate() method.		
 			/// </summary>
-			 virtual Aspose::Cells::System::Int32 GetShapeY()=0;
+			 virtual Aspose::Cells::Systems::Int32 GetShapeY()=0;
 			/// <summary>
 			/// Gets the width in units of 1/4000 of chart's width after calls Chart.Calculate() method.
 			/// </summary>
-			 virtual Aspose::Cells::System::Int32 GetShapeWidth()=0;
+			 virtual Aspose::Cells::Systems::Int32 GetShapeWidth()=0;
 			/// <summary>
 			/// Gets the height in units of 1/4000 of chart's height after calls Chart.Calculate() method.
 			/// </summary>
-			 virtual Aspose::Cells::System::Int32 GetShapeHeight()=0;
+			 virtual Aspose::Cells::Systems::Int32 GetShapeHeight()=0;
 			/// <summary>
 			/// Gets the x coordinate of the upper left corner in units of pixels after calls Chart.Calculate() method.
 			/// </summary>
-			 virtual Aspose::Cells::System::Int32 GetShapeXPx()=0;
+			 virtual Aspose::Cells::Systems::Int32 GetShapeXPx()=0;
 			/// <summary>
 			/// Gets the y coordinate of the upper left corner in units of pixels after calls Chart.Calculate() method.		
 			/// </summary>
-			 virtual Aspose::Cells::System::Int32 GetShapeYPx()=0;
+			 virtual Aspose::Cells::Systems::Int32 GetShapeYPx()=0;
 			/// <summary>
 			/// Gets the width in units of pixels after calls Chart.Calculate() method.
 			/// </summary>
-			 virtual Aspose::Cells::System::Int32 GetShapeWidthPx()=0;
+			 virtual Aspose::Cells::Systems::Int32 GetShapeWidthPx()=0;
 			/// <summary>
 			/// Gets the height in units of pixels after calls Chart.Calculate() method.
 			/// </summary>
-			 virtual Aspose::Cells::System::Int32 GetShapeHeightPx()=0;
+			 virtual Aspose::Cells::Systems::Int32 GetShapeHeightPx()=0;
 			/// <summary>
 			/// Gets the width of border in units of pixels after calls Chart.Calculate() method.
 			/// </summary>
-			 virtual Aspose::Cells::System::Int32 GetBorderWidthPx()=0;
+			 virtual Aspose::Cells::Systems::Int32 GetBorderWidthPx()=0;
 			/// <summary>
 			/// Gets the radius of bubble, pie or doughnut in units of pixels after calls Chart.Calculate() method.
 			/// </summary>
-			 virtual Aspose::Cells::System::Int32 GetRadiusPx()=0;
+			 virtual Aspose::Cells::Systems::Int32 GetRadiusPx()=0;
 			/// <summary>
 			/// Gets the inner radius of doughnut slice in units of pixels after calls Chart.Calculate() method.
 			/// Applies to Doughnut chart.
 			/// </summary>
-			 virtual Aspose::Cells::System::Int32 GetInnerRadiusPx()=0;
+			 virtual Aspose::Cells::Systems::Int32 GetInnerRadiusPx()=0;
 			/// <summary>
 			/// Gets the starting angle for the pie section, measured in degrees clockwise from the x-axis after calls Chart.Calculate() method.
 			/// Applies to Pie chart.
 			/// </summary>
-			 virtual Aspose::Cells::System::Single GetStartAngle()=0;
+			 virtual Aspose::Cells::Systems::Single GetStartAngle()=0;
 			/// <summary>
 			/// Gets the ending angle for the pie section, measured in degrees clockwise from the x-axis after calls Chart.Calculate() method.
 			/// Applies to Pie chart.
 			/// </summary>
-			 virtual Aspose::Cells::System::Single GetEndAngle()=0;
+			 virtual Aspose::Cells::Systems::Single GetEndAngle()=0;
 			/// <summary>
 			/// Gets the x coordinate of starting point for the pie section after calls Chart.Calculate() method.
 			/// Applies to Pie and Doughnut  chart.
 			/// </summary>
-			 virtual Aspose::Cells::System::Single GetArcStartPointXPx()=0;
+			 virtual Aspose::Cells::Systems::Single GetArcStartPointXPx()=0;
 			/// <summary>
 			/// Gets the y coordinate of starting point for the pie section after calls Chart.Calculate() method.
 			/// Applies to Pie and Doughnut  chart.
 			/// </summary>
-			 virtual Aspose::Cells::System::Single GetArcStartPointYPx()=0;
+			 virtual Aspose::Cells::Systems::Single GetArcStartPointYPx()=0;
 			/// <summary>
 			/// Gets the x coordinate of ending point for the pie section after calls Chart.Calculate() method.
 			/// Applies to Pie and Doughnut  chart.
 			/// </summary>
-			 virtual Aspose::Cells::System::Single GetArcEndPointXPx()=0;
+			 virtual Aspose::Cells::Systems::Single GetArcEndPointXPx()=0;
 			/// <summary>
 			/// Gets the y coordinate of ending point for the pie section after calls Chart.Calculate() method.
 			/// Applies to Pie and Doughnut chart.
 			/// </summary>
-			 virtual Aspose::Cells::System::Single GetArcEndPointYPx()=0;
+			 virtual Aspose::Cells::Systems::Single GetArcEndPointYPx()=0;
 			/// <summary>
 			/// Gets the x coordinate of starting point for the pie section after calls Chart.Calculate() method.
 			/// Applies to Doughnut chart.
 			/// </summary>
-			 virtual Aspose::Cells::System::Single GetInnerArcStartPointXPx()=0;
+			 virtual Aspose::Cells::Systems::Single GetInnerArcStartPointXPx()=0;
 			/// <summary>
 			/// Gets the y coordinate of starting point for the pie section after calls Chart.Calculate() method.
 			/// Applies to Doughnut chart.
 			/// </summary>
-			 virtual Aspose::Cells::System::Single GetInnerArcStartPointYPx()=0;
+			 virtual Aspose::Cells::Systems::Single GetInnerArcStartPointYPx()=0;
 			/// <summary>
 			/// Gets the x coordinate of ending point for the pie section after calls Chart.Calculate() method.
 			/// Applies to Doughnut chart.
 			/// </summary>
-			 virtual Aspose::Cells::System::Single GetInnerArcEndPointXPx()=0;
+			 virtual Aspose::Cells::Systems::Single GetInnerArcEndPointXPx()=0;
 			/// <summary>
 			/// Gets the y coordinate of ending point for the pie section after calls Chart.Calculate() method.
 			/// Applies to Doughnut chart.
 			/// </summary>
-			 virtual Aspose::Cells::System::Single GetInnerArcEndPointYPx()=0;
+			 virtual Aspose::Cells::Systems::Single GetInnerArcEndPointYPx()=0;
 			/// <summary>
 			/// Gets the number of top points after calls Chart.Calculate() method.
 			/// </summary>
-			 virtual Aspose::Cells::System::Int32 GetTopPointCount()=0;
+			 virtual Aspose::Cells::Systems::Int32 GetTopPointCount()=0;
 			/// <summary>
 			/// Gets x-coordinate of the top point of shape after calls Chart.Calculate() method.
 			/// Applies 3D charts: Column3D, Bar3D, Cone, Cylinder, Pyramid and Area3D
 			/// </summary>
-			 virtual Aspose::Cells::System::Single GetTopPointXPx(Aspose::Cells::System::Int32 index)=0;
+			 virtual Aspose::Cells::Systems::Single GetTopPointXPx(Aspose::Cells::Systems::Int32 index)=0;
 			/// <summary>
 			/// Gets y-coordinate of the top point of shape after calls Chart.Calculate() method.
 			/// Applies 3D charts: Column3D, Bar3D, Cone, Cylinder, Pyramid and Area3D
 			/// </summary>
-			 virtual Aspose::Cells::System::Single GetTopPointYPx(Aspose::Cells::System::Int32 index)=0;
+			 virtual Aspose::Cells::Systems::Single GetTopPointYPx(Aspose::Cells::Systems::Int32 index)=0;
 			/// <summary>
 			/// Gets the number of bottom points  after calls Chart.Calculate() method.
 			/// </summary>
-			 virtual Aspose::Cells::System::Int32 GetBottomPointCount()=0;
+			 virtual Aspose::Cells::Systems::Int32 GetBottomPointCount()=0;
 			/// <summary>
 			/// Gets x-coordinate of the bottom point of shape after calls Chart.Calculate() method.
 			/// Applies 3D charts: Column3D, Bar3D, Cone, Cylinder, Pyramid
 			/// </summary>
-			 virtual Aspose::Cells::System::Single GetBottomPointXPx(Aspose::Cells::System::Int32 index)=0;
+			 virtual Aspose::Cells::Systems::Single GetBottomPointXPx(Aspose::Cells::Systems::Int32 index)=0;
 			/// <summary>
 			/// Gets y-coordinate of the bottom point of shape  after calls Chart.Calculate() method.
 			/// Applies 3D charts: Column3D, Bar3D, Cone, Cylinder, Pyramid
 			/// </summary>
-			 virtual Aspose::Cells::System::Single GetBottomPointYPx(Aspose::Cells::System::Int32 index)=0;
+			 virtual Aspose::Cells::Systems::Single GetBottomPointYPx(Aspose::Cells::Systems::Int32 index)=0;
 			/// <summary>
 			/// Gets the number of the points on category axis after calls Calculate() method in Chart. Only applies to area chart.
 			/// </summary>
@@ -316,7 +316,7 @@ namespace Charts{
 			/// Area 2D chart return 1
 			/// Area 3D chart return 2.
 			/// </remarks>
-			 virtual Aspose::Cells::System::Int32 GetOnCategoryAxisPointCount()=0;
+			 virtual Aspose::Cells::Systems::Int32 GetOnCategoryAxisPointCount()=0;
 			/// <summary>
 			/// Gets x-coordinate of the point on category axis after calls Calculate() method in Chart. Only applies to Aarea chart.
 			/// </summary>
@@ -324,7 +324,7 @@ namespace Charts{
 			/// Area 2D chart: index is 0.
 			/// Area 3D chart: index is 0 or 1.
 			/// </remarks>
-			 virtual Aspose::Cells::System::Single GetOnCategoryAxisPointXPx(Aspose::Cells::System::Int32 index)=0;
+			 virtual Aspose::Cells::Systems::Single GetOnCategoryAxisPointXPx(Aspose::Cells::Systems::Int32 index)=0;
 			/// <summary>
 			/// Gets y-coordinate of the point on category axis after calls Calculate() method in Chart. Only applies to Area chart.
 			/// </summary>
@@ -332,7 +332,7 @@ namespace Charts{
 			/// Area 2D chart: index is 0.
 			/// Area 3D chart: index is 0 or 1.
 			/// </remarks>
-			 virtual Aspose::Cells::System::Single GetOnCategoryAxisPointYPx(Aspose::Cells::System::Int32 index)=0;
+			 virtual Aspose::Cells::Systems::Single GetOnCategoryAxisPointYPx(Aspose::Cells::Systems::Int32 index)=0;
 
 	};
 }

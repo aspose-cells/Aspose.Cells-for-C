@@ -1,7 +1,7 @@
 #pragma once
-#include "System/Object.h"
-#include "System/String.h"
-#include "System/Int32.h"
+#include "Aspose.Cells.Systems/Object.h"
+#include "Aspose.Cells.Systems/String.h"
+#include "Aspose.Cells.Systems/Int32.h"
 
 namespace Aspose {
 	namespace Cells {
@@ -17,7 +17,7 @@ namespace Drawing{
 			/// <summary>
 			/// Contains properties and methods that apply to WordArt objects.
 			/// </summary>
-	class ASPOSE_CELLS_API ITextEffectFormat : public Aspose::Cells::System::Object
+	class ASPOSE_CELLS_API ITextEffectFormat : public Aspose::Cells::Systems::Object
 	{
 		public:
 			/// <summary>
@@ -28,19 +28,19 @@ namespace Drawing{
 			/// <summary>
 			/// The text in the WordArt.
 			/// </summary>
-			 virtual intrusive_ptr<Aspose::Cells::System::String> GetText()=0;
+			 virtual intrusive_ptr<Aspose::Cells::Systems::String> GetText()=0;
 			/// <summary>
 			/// The text in the WordArt.
 			/// </summary>
-			 virtual void SetText(intrusive_ptr<Aspose::Cells::System::String> value)=0;
+			 virtual void SetText(intrusive_ptr<Aspose::Cells::Systems::String> value)=0;
 			/// <summary>
 			/// The name of the font used in the WordArt.
 			/// </summary>
-			 virtual intrusive_ptr<Aspose::Cells::System::String> GetFontName()=0;
+			 virtual intrusive_ptr<Aspose::Cells::Systems::String> GetFontName()=0;
 			/// <summary>
 			/// The name of the font used in the WordArt.
 			/// </summary>
-			 virtual void SetFontName(intrusive_ptr<Aspose::Cells::System::String> value)=0;
+			 virtual void SetFontName(intrusive_ptr<Aspose::Cells::Systems::String> value)=0;
 			/// <summary>
 			/// Indicates whether font is bold.
 			/// </summary>
@@ -68,11 +68,11 @@ namespace Drawing{
 			/// <summary>
 			/// The size (in points) of the font used in the WordArt.
 			/// </summary>
-			 virtual Aspose::Cells::System::Int32 GetFontSize()=0;
+			 virtual Aspose::Cells::Systems::Int32 GetFontSize()=0;
 			/// <summary>
 			/// The size (in points) of the font used in the WordArt.
 			/// </summary>
-			 virtual void SetFontSize(Aspose::Cells::System::Int32 value)=0;
+			 virtual void SetFontSize(Aspose::Cells::Systems::Int32 value)=0;
 			/// <summary>
 			/// Gets the preset shape type.
 			/// </summary>

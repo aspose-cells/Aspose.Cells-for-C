@@ -213,7 +213,7 @@ U_STABLE const void *U_EXPORT2
 ufmt_getObject(const UFormattable* fmt, UErrorCode *status);
 
 /**
- * Gets the string value of this object as a UChar string. If the type is not a
+ * Gets the string value of this object as a UnChar string. If the type is not a
  * string, status is set to U_INVALID_FORMAT_ERROR and a NULL pointer is returned.
  * This function is not thread safe and may modify the UFormattable if need be to terminate the string.
  * The returned pointer is not valid if any other functions are called on this UFormattable, or if the UFormattable is closed.
@@ -224,7 +224,7 @@ ufmt_getObject(const UFormattable* fmt, UErrorCode *status);
  * @stable ICU 52
  * @see icu::Formattable::getString(UnicodeString&)const
  */
-U_STABLE const UChar* U_EXPORT2
+U_STABLE const UnChar* U_EXPORT2
 ufmt_getUChars(UFormattable* fmt, int32_t *len, UErrorCode *status);
 
 /**

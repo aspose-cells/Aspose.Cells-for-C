@@ -1,7 +1,7 @@
 #pragma once
-#include "System/Object.h"
-#include "System/String.h"
-#include "System/Int32.h"
+#include "Aspose.Cells.Systems/Object.h"
+#include "Aspose.Cells.Systems/String.h"
+#include "Aspose.Cells.Systems/Int32.h"
 
 namespace Aspose {
 	namespace Cells {
@@ -54,7 +54,7 @@ namespace Cells{
 			/// 
 			/// </code>
 			/// </example>
-	class ASPOSE_CELLS_API IFormatCondition : public Aspose::Cells::System::Object
+	class ASPOSE_CELLS_API IFormatCondition : public Aspose::Cells::Systems::Object
 	{
 		public:
 			/// <summary>
@@ -63,42 +63,42 @@ namespace Cells{
 			/// <remarks>
 			/// Please add all areas before setting formula.
 			/// </remarks>
-			 virtual intrusive_ptr<Aspose::Cells::System::String> GetFormula1()=0;
+			 virtual intrusive_ptr<Aspose::Cells::Systems::String> GetFormula1()=0;
 			/// <summary>
 			/// Sets the value or expression associated with conditional formatting.
 			/// </summary>
 			/// <remarks>
 			/// Please add all areas before setting formula.
 			/// </remarks>
-			 virtual void SetFormula1(intrusive_ptr<Aspose::Cells::System::String> value)=0;
+			 virtual void SetFormula1(intrusive_ptr<Aspose::Cells::Systems::String> value)=0;
 			/// <summary>
 			/// Gets the formula of the conditional formatting of the cell.
 			/// </summary>
 			/// <param name="row" >The row index.</param>
 			/// <param name="column" >The column index.</param>
 			/// <returns>The formula.</returns>
-			 virtual intrusive_ptr<Aspose::Cells::System::String> GetFormula1(Aspose::Cells::System::Int32 row , Aspose::Cells::System::Int32 column)=0;
+			 virtual intrusive_ptr<Aspose::Cells::Systems::String> GetFormula1(Aspose::Cells::Systems::Int32 row , Aspose::Cells::Systems::Int32 column)=0;
 			/// <summary>
 			/// Gets the value or expression associated with conditional formatting.
 			/// </summary>
 			/// <remarks>
 			/// Please add all areas before setting formula.
 			/// </remarks>
-			 virtual intrusive_ptr<Aspose::Cells::System::String> GetFormula2()=0;
+			 virtual intrusive_ptr<Aspose::Cells::Systems::String> GetFormula2()=0;
 			/// <summary>
 			/// Sets the value or expression associated with conditional formatting.
 			/// </summary>
 			/// <remarks>
 			/// Please add all areas before setting formula.
 			/// </remarks>
-			 virtual void SetFormula2(intrusive_ptr<Aspose::Cells::System::String> value)=0;
+			 virtual void SetFormula2(intrusive_ptr<Aspose::Cells::Systems::String> value)=0;
 			/// <summary>
 			/// Gets the formula of the conditional formatting of the cell.
 			/// </summary>
 			/// <param name="row" >The row index.</param>
 			/// <param name="column" >The column index.</param>
 			/// <returns>The formula.</returns>
-			 virtual intrusive_ptr<Aspose::Cells::System::String> GetFormula2(Aspose::Cells::System::Int32 row , Aspose::Cells::System::Int32 column)=0;
+			 virtual intrusive_ptr<Aspose::Cells::Systems::String> GetFormula2(Aspose::Cells::Systems::Int32 row , Aspose::Cells::Systems::Int32 column)=0;
 			/// <summary>
 			/// Gets the conditional format operator type.
 			/// </summary>
@@ -126,13 +126,13 @@ namespace Cells{
 			/// format should be evaluated and rendered. Lower numeric values are higher priority than
 			/// higher numeric values, where '1' is the highest priority.
 			/// </summary>
-			 virtual Aspose::Cells::System::Int32 GetPriority()=0;
+			 virtual Aspose::Cells::Systems::Int32 GetPriority()=0;
 			/// <summary>
 			/// The priority of this conditional formatting rule. This value is used to determine which
 			/// format should be evaluated and rendered. Lower numeric values are higher priority than
 			/// higher numeric values, where '1' is the highest priority.
 			/// </summary>
-			 virtual void SetPriority(Aspose::Cells::System::Int32 value)=0;
+			 virtual void SetPriority(Aspose::Cells::Systems::Int32 value)=0;
 			/// <summary>
 			/// Gets style of conditional formatted cell ranges.
 			/// </summary>
@@ -200,13 +200,13 @@ namespace Cells{
 			/// Valid only for type = containsText, notContainsText, beginsWith and endsWith.
 			/// The default value is null.
 			/// </summary>
-			 virtual intrusive_ptr<Aspose::Cells::System::String> GetText()=0;
+			 virtual intrusive_ptr<Aspose::Cells::Systems::String> GetText()=0;
 			/// <summary>
 			/// The text value in a "text contains" conditional formatting rule. 
 			/// Valid only for type = containsText, notContainsText, beginsWith and endsWith.
 			/// The default value is null.
 			/// </summary>
-			 virtual void SetText(intrusive_ptr<Aspose::Cells::System::String> value)=0;
+			 virtual void SetText(intrusive_ptr<Aspose::Cells::Systems::String> value)=0;
 			/// <summary>
 			/// The applicable time period in a "date occurring" conditional formatting rule. 
 			/// Valid only for type = timePeriod.

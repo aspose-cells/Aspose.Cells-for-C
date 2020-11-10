@@ -1,10 +1,10 @@
 #pragma once
-#include "System/Object.h"
-#include "System/Int32.h"
-#include "System/Array1D.h"
-#include "System/Byte.h"
-#include "System/String.h"
-#include "System/Collections/CollectionBase.h"
+#include "Aspose.Cells.Systems/Object.h"
+#include "Aspose.Cells.Systems/Int32.h"
+#include "Aspose.Cells.Systems/Array1D.h"
+#include "Aspose.Cells.Systems/Byte.h"
+#include "Aspose.Cells.Systems/String.h"
+#include "Aspose.Cells.Systems/Collections/CollectionBase.h"
 
 namespace Aspose {
 	namespace Cells {
@@ -19,7 +19,7 @@ namespace Drawing{
 			/// <summary>
 			/// Represents embedded OLE objects.
 			/// </summary>
-	class ASPOSE_CELLS_API IOleObjectCollection : public Aspose::Cells::System::Collections::CollectionBase
+	class ASPOSE_CELLS_API IOleObjectCollection : public Aspose::Cells::Systems::Collections::CollectionBase
 	{
 		public:
 			/// <summary>
@@ -32,7 +32,7 @@ namespace Drawing{
 			/// <param name="imageData" > Image of ole object as byte array.</param>
 			/// <returns><see cref="IOleObject" />
 			///  object index.</returns>
-			 virtual Aspose::Cells::System::Int32 Add(Aspose::Cells::System::Int32 upperLeftRow , Aspose::Cells::System::Int32 upperLeftColumn , Aspose::Cells::System::Int32 height , Aspose::Cells::System::Int32 width , intrusive_ptr<Aspose::Cells::System::Array1D<Aspose::Cells::System::Byte>> imageData)=0;
+			 virtual Aspose::Cells::Systems::Int32 Add(Aspose::Cells::Systems::Int32 upperLeftRow , Aspose::Cells::Systems::Int32 upperLeftColumn , Aspose::Cells::Systems::Int32 height , Aspose::Cells::Systems::Int32 width , intrusive_ptr<Aspose::Cells::Systems::Array1D<Aspose::Cells::Systems::Byte>> imageData)=0;
 			/// <summary>
 			/// Adds an linked OleObject to the collection.
 			/// </summary>
@@ -45,14 +45,14 @@ namespace Drawing{
 			/// 
 			/// <returns><see cref="IOleObject" />
 			///  object index.</returns>
-			 virtual Aspose::Cells::System::Int32 Add(Aspose::Cells::System::Int32 upperLeftRow , Aspose::Cells::System::Int32 upperLeftColumn , Aspose::Cells::System::Int32 height , Aspose::Cells::System::Int32 width , intrusive_ptr<Aspose::Cells::System::Array1D<Aspose::Cells::System::Byte>> imageData , intrusive_ptr<Aspose::Cells::System::String> linkedFile)=0;
+			 virtual Aspose::Cells::Systems::Int32 Add(Aspose::Cells::Systems::Int32 upperLeftRow , Aspose::Cells::Systems::Int32 upperLeftColumn , Aspose::Cells::Systems::Int32 height , Aspose::Cells::Systems::Int32 width , intrusive_ptr<Aspose::Cells::Systems::Array1D<Aspose::Cells::Systems::Byte>> imageData , intrusive_ptr<Aspose::Cells::Systems::String> linkedFile)=0;
 			/// <summary>
 			///  Gets the <see cref="IOleObject" />
 			///  element at the specified index.
 			///  </summary>
 			/// <param name="index" >The zero based index of the element.</param>
 			/// <returns>The element at the specified index.</returns>
-			 virtual intrusive_ptr<Aspose::Cells::Drawing::IOleObject> 		GetObjectByIndex(Aspose::Cells::System::Int32 index)=0;
+			 virtual intrusive_ptr<Aspose::Cells::Drawing::IOleObject> 		GetObjectByIndex(Aspose::Cells::Systems::Int32 index)=0;
 			/// <summary>
 			/// Remove all embedded OLE objects.
 			/// </summary>
@@ -61,7 +61,7 @@ namespace Drawing{
 			///  Removes the element at the specified index.
 			/// </summary>
 			/// <param name="index" >The specified index.</param>
-			 virtual void RemoveAt(Aspose::Cells::System::Int32 index)=0;
+			 virtual void RemoveAt(Aspose::Cells::Systems::Int32 index)=0;
 
 	};
 }

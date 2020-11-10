@@ -79,7 +79,7 @@ typedef enum UCurrencyUsage UCurrencyUsage;
  */
 U_STABLE int32_t U_EXPORT2
 ucurr_forLocale(const char* locale,
-                UChar* buff,
+                UnChar* buff,
                 int32_t buffCapacity,
                 UErrorCode* ec);
 
@@ -123,7 +123,7 @@ typedef const void* UCurrRegistryKey;
  * @stable ICU 2.6
  */
 U_STABLE UCurrRegistryKey U_EXPORT2
-ucurr_register(const UChar* isoCode, 
+ucurr_register(const UnChar* isoCode, 
                    const char* locale,  
                    UErrorCode* status);
 /**
@@ -158,8 +158,8 @@ ucurr_unregister(UCurrRegistryKey key, UErrorCode* status);
  * ChoiceFormat pattern.  Otherwise it is a static string.
  * @stable ICU 2.6
  */
-U_STABLE const UChar* U_EXPORT2
-ucurr_getName(const UChar* currency,
+U_STABLE const UnChar* U_EXPORT2
+ucurr_getName(const UnChar* currency,
               const char* locale,
               UCurrNameStyle nameStyle,
               UBool* isChoiceFormat,
@@ -182,8 +182,8 @@ ucurr_getName(const UChar* currency,
  * returned.  
  * @stable ICU 4.2
  */
-U_STABLE const UChar* U_EXPORT2
-ucurr_getPluralName(const UChar* currency,
+U_STABLE const UnChar* U_EXPORT2
+ucurr_getPluralName(const UnChar* currency,
                     const char* locale,
                     UBool* isChoiceFormat,
                     const char* pluralCount,
@@ -201,7 +201,7 @@ ucurr_getPluralName(const UChar* currency,
  * @stable ICU 3.0
  */
 U_STABLE int32_t U_EXPORT2
-ucurr_getDefaultFractionDigits(const UChar* currency,
+ucurr_getDefaultFractionDigits(const UnChar* currency,
                                UErrorCode* ec);
 
 #ifndef U_HIDE_DRAFT_API
@@ -216,7 +216,7 @@ ucurr_getDefaultFractionDigits(const UChar* currency,
  * @draft ICU 54
  */
 U_DRAFT int32_t U_EXPORT2
-ucurr_getDefaultFractionDigitsForUsage(const UChar* currency, 
+ucurr_getDefaultFractionDigitsForUsage(const UnChar* currency, 
                                        const UCurrencyUsage usage,
                                        UErrorCode* ec);
 #endif  /* U_HIDE_DRAFT_API */
@@ -232,7 +232,7 @@ ucurr_getDefaultFractionDigitsForUsage(const UChar* currency,
  * @stable ICU 3.0
  */
 U_STABLE double U_EXPORT2
-ucurr_getRoundingIncrement(const UChar* currency,
+ucurr_getRoundingIncrement(const UnChar* currency,
                            UErrorCode* ec);
 
 #ifndef U_HIDE_DRAFT_API
@@ -247,7 +247,7 @@ ucurr_getRoundingIncrement(const UChar* currency,
  * @draft ICU 54
  */
 U_DRAFT double U_EXPORT2
-ucurr_getRoundingIncrementForUsage(const UChar* currency,
+ucurr_getRoundingIncrementForUsage(const UnChar* currency,
                                    const UCurrencyUsage usage,
                                    UErrorCode* ec);
 #endif  /* U_HIDE_DRAFT_API */
@@ -334,7 +334,7 @@ ucurr_openISOCurrencies(uint32_t currType, UErrorCode *pErrorCode);
   * @stable ICU 4.8 
   */ 
 U_STABLE UBool U_EXPORT2
-ucurr_isAvailable(const UChar* isoCode, 
+ucurr_isAvailable(const UnChar* isoCode, 
              UDate from, 
              UDate to, 
              UErrorCode* errorCode);
@@ -381,7 +381,7 @@ U_STABLE int32_t U_EXPORT2
 ucurr_forLocaleAndDate(const char* locale, 
                 UDate date, 
                 int32_t index,
-                UChar* buff, 
+                UnChar* buff, 
                 int32_t buffCapacity, 
                 UErrorCode* ec); 
 
@@ -417,7 +417,7 @@ ucurr_getKeywordValuesForLocale(const char* key,
  * @stable ICU 49
  */
 U_STABLE int32_t U_EXPORT2
-ucurr_getNumericCode(const UChar* currency);
+ucurr_getNumericCode(const UnChar* currency);
 
 #endif /* #if !UCONFIG_NO_FORMATTING */
 

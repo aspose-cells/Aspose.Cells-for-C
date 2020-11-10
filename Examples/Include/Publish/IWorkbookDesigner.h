@@ -1,8 +1,8 @@
 #pragma once
-#include "System/Object.h"
-#include "System/String.h"
-#include "System/Array1D.h"
-#include "System/Int32.h"
+#include "Aspose.Cells.Systems/Object.h"
+#include "Aspose.Cells.Systems/String.h"
+#include "Aspose.Cells.Systems/Array1D.h"
+#include "Aspose.Cells.Systems/Int32.h"
 
 namespace Aspose {
 	namespace Cells {
@@ -14,7 +14,7 @@ namespace Cells{
 			/// <summary>
 			/// Encapsulates the object that represents a designer spreadsheet.
 			/// </summary>
-	class ASPOSE_CELLS_API IWorkbookDesigner : public Aspose::Cells::System::Object
+	class ASPOSE_CELLS_API IWorkbookDesigner : public Aspose::Cells::Systems::Object
 	{
 		public:
 			/// <summary>
@@ -36,13 +36,13 @@ namespace Cells{
 			/// </summary>
 			/// <param name="variable" >Variable name created using smark marker.</param>
 			/// <param name="data" >Source data.</param>
-			 virtual void SetDataSource(intrusive_ptr<Aspose::Cells::System::String> variable , intrusive_ptr<Aspose::Cells::System::Object> data)=0;
+			 virtual void SetDataSource(intrusive_ptr<Aspose::Cells::Systems::String> variable , intrusive_ptr<Aspose::Cells::Systems::Object> data)=0;
 			/// <summary>
 			/// Sets data array binding to a variable.
 			/// </summary>
 			/// <param name="variable" >Variable name created using smark marker.</param>
 			/// <param name="dataArray" >Source data array.</param>
-			 virtual void SetDataSource(intrusive_ptr<Aspose::Cells::System::String> variable , intrusive_ptr<Aspose::Cells::System::Array1D<Aspose::Cells::System::Object*>> dataArray)=0;
+			 virtual void SetDataSource(intrusive_ptr<Aspose::Cells::Systems::String> variable , intrusive_ptr<Aspose::Cells::Systems::Array1D<Aspose::Cells::Systems::Object*>> dataArray)=0;
 			/// <summary>
 			/// Indicates if references in other worksheets will be updated.
 			/// </summary>
@@ -74,13 +74,13 @@ namespace Cells{
 			/// <param name="sheetIndex" >Worksheet index.</param>
 			/// <param name="isPreserved" >True if the unrecognized smart marker is preserved.</param>
 			/// <remarks>This method works on worksheet level.</remarks>
-			 virtual void Process(Aspose::Cells::System::Int32 sheetIndex , bool isPreserved)=0;
+			 virtual void Process(Aspose::Cells::Systems::Int32 sheetIndex , bool isPreserved)=0;
 			/// <summary>
 			/// Returns a collection of smart markers in a spreadsheet.
 			/// </summary>
 			/// <returns>A collection of smart markers</returns>
 			/// <remarks>A string array is created on every call. The array is sorted and duplicated values are removed.</remarks>
-			 virtual intrusive_ptr<Aspose::Cells::System::Array1D<Aspose::Cells::System::String*>> GetSmartMarkers()=0;
+			 virtual intrusive_ptr<Aspose::Cells::Systems::Array1D<Aspose::Cells::Systems::String*>> GetSmartMarkers()=0;
 
 	};
 }

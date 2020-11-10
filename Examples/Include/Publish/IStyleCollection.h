@@ -1,8 +1,8 @@
 #pragma once
-#include "System/Object.h"
-#include "System/Double.h"
-#include "System/Int32.h"
-#include "System/String.h"
+#include "Aspose.Cells.Systems/Object.h"
+#include "Aspose.Cells.Systems/Double.h"
+#include "Aspose.Cells.Systems/Int32.h"
+#include "Aspose.Cells.Systems/String.h"
 
 namespace Aspose {
 	namespace Cells {
@@ -37,7 +37,7 @@ namespace Cells{
 			/// and use GetNamedIStyle() in IWorkbook to get named style instead of GetObjectByIndex(StringPtr).</remarks>
 			/// 
 			/// 
-	class ASPOSE_CELLS_API IStyleCollection : public Aspose::Cells::System::Object
+	class ASPOSE_CELLS_API IStyleCollection : public Aspose::Cells::Systems::Object
 	{
 		public:
 			/// <summary>
@@ -51,7 +51,7 @@ namespace Cells{
 			/// <returns/>
 			/// 
 			/// 
-			 virtual intrusive_ptr<Aspose::Cells::IStyle> 		GetThemeIStyle(Aspose::Cells::ThemeColorType themeColorType , Aspose::Cells::System::Double tint)=0;
+			 virtual intrusive_ptr<Aspose::Cells::IStyle> 		GetThemeIStyle(Aspose::Cells::ThemeColorType themeColorType , Aspose::Cells::Systems::Double tint)=0;
 			/// <summary>
 			/// Creates built-in style by given type.
 			/// </summary>
@@ -78,7 +78,7 @@ namespace Cells{
 			/// please use CreateIStyle() of IWorkbook to create and manipulate style for workbook instead.</remarks>
 			/// 
 			/// 
-			 virtual Aspose::Cells::System::Int32 Add()=0;
+			 virtual Aspose::Cells::Systems::Int32 Add()=0;
 			/// <summary>
 			///  Gets the <see cref="IStyle" />
 			///  element at the specified index.
@@ -90,7 +90,7 @@ namespace Cells{
 			/// 
 			/// 
 			/// 
-			 virtual intrusive_ptr<Aspose::Cells::IStyle> 		GetObjectByIndex(Aspose::Cells::System::Int32 index)=0;
+			 virtual intrusive_ptr<Aspose::Cells::IStyle> 		GetObjectByIndex(Aspose::Cells::Systems::Int32 index)=0;
 			/// <summary>
 			///  Gets the <see cref="IStyle" />
 			///  element with the specified name.
@@ -115,13 +115,13 @@ namespace Cells{
 			/// </example>
 			/// 
 			/// 
-			 virtual intrusive_ptr<Aspose::Cells::IStyle> 		GetObjectByIndex(intrusive_ptr<Aspose::Cells::System::String> name)=0;
+			 virtual intrusive_ptr<Aspose::Cells::IStyle> 		GetObjectByIndex(intrusive_ptr<Aspose::Cells::Systems::String> name)=0;
 			/// <summary>
 			/// Gets the count of elements in the collection.
 			/// </summary>
 			/// 
 			/// 
-			 virtual Aspose::Cells::System::Int32 GetCount()=0;
+			 virtual Aspose::Cells::Systems::Int32 GetCount()=0;
 
 	};
 }

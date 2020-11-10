@@ -1,5 +1,5 @@
 #pragma once
-#include "System/Object.h"
+#include "Aspose.Cells.Systems/Object.h"
 
 namespace Aspose {
 	namespace Cells {
@@ -11,7 +11,7 @@ namespace Cells{
 			/// <summary>
 			/// Describes the values of the interpolation points in a gradient scale, dataBar or iconSet.
 			/// </summary>
-	class ASPOSE_CELLS_API IConditionalFormattingValue : public Aspose::Cells::System::Object
+	class ASPOSE_CELLS_API IConditionalFormattingValue : public Aspose::Cells::Systems::Object
 	{
 		public:
 			/// <summary>
@@ -22,7 +22,7 @@ namespace Cells{
 			/// If the value is string  and start with "=", it will be processed as a formula,
 			/// otherwise we will process it as a simple value. 
 			/// </remarks>
-			 virtual intrusive_ptr<Aspose::Cells::System::Object> GetValue()=0;
+			 virtual intrusive_ptr<Aspose::Cells::Systems::Object> GetValue()=0;
 			/// <summary>
 			/// Set the value of this conditional formatting value object.
 			/// It should be used in conjunction with Type. 
@@ -31,7 +31,7 @@ namespace Cells{
 			/// If the value is string  and start with "=", it will be processed as a formula,
 			/// otherwise we will process it as a simple value. 
 			/// </remarks>
-			 virtual void SetValue(intrusive_ptr<Aspose::Cells::System::Object> value)=0;
+			 virtual void SetValue(intrusive_ptr<Aspose::Cells::Systems::Object> value)=0;
 			/// <summary>
 			/// Get the type of this conditional formatting value object.
 			/// Setting the type to FormatConditionValueType.Min or FormatConditionValueType.Max 

@@ -66,9 +66,9 @@ void RetrievingDataFromCells()
 
 	//Variable declarations
 	intrusive_ptr<String> strVal;
-	intrusive_ptr<Aspose::Cells::System::DateTime> dateVal;
-	Aspose::Cells::System::Double dblVal;
-	Aspose::Cells::System::Boolean boolVal;
+	intrusive_ptr<Aspose::Cells::Systems::DateTime> dateVal;
+	Aspose::Cells::Systems::Double dblVal;
+	Aspose::Cells::Systems::Boolean boolVal;
 
 	for (int i = 0; i < cells->GetCount(); i++)
 	{

@@ -1,8 +1,8 @@
 #pragma once
-#include "System/Object.h"
-#include "System/Int32.h"
-#include "System/String.h"
-#include "System/Collections/CollectionBase.h"
+#include "Aspose.Cells.Systems/Object.h"
+#include "Aspose.Cells.Systems/Int32.h"
+#include "Aspose.Cells.Systems/String.h"
+#include "Aspose.Cells.Systems/Collections/CollectionBase.h"
 
 namespace Aspose {
 	namespace Cells {
@@ -18,7 +18,7 @@ namespace Tables{
 			/// Represents a collection of <see cref="IListObject" />
 			///  objects in the worksheet.
 			/// </summary>
-	class ASPOSE_CELLS_API IListObjectCollection : public Aspose::Cells::System::Collections::CollectionBase
+	class ASPOSE_CELLS_API IListObjectCollection : public Aspose::Cells::Systems::Collections::CollectionBase
 	{
 		public:
 			/// <summary>
@@ -26,13 +26,13 @@ namespace Tables{
 			/// </summary>
 			/// <param name="index" >The index.</param>
 			/// <returns>The ListObject</returns>
-			 virtual intrusive_ptr<Aspose::Cells::Tables::IListObject> 		GetObjectByIndex(Aspose::Cells::System::Int32 index)=0;
+			 virtual intrusive_ptr<Aspose::Cells::Tables::IListObject> 		GetObjectByIndex(Aspose::Cells::Systems::Int32 index)=0;
 			/// <summary>
 			/// Gets the ListObject by specified name.
 			/// </summary>
 			/// <param name="tableName" >ListObject name.</param>
 			/// <returns>The ListObject</returns>
-			 virtual intrusive_ptr<Aspose::Cells::Tables::IListObject> 		GetObjectByIndex(intrusive_ptr<Aspose::Cells::System::String> tableName)=0;
+			 virtual intrusive_ptr<Aspose::Cells::Tables::IListObject> 		GetObjectByIndex(intrusive_ptr<Aspose::Cells::Systems::String> tableName)=0;
 			/// <summary>
 			/// Adds a ListObject to the worksheet.
 			/// </summary>
@@ -42,7 +42,7 @@ namespace Tables{
 			/// <param name="endColumn" >The start row of the list range.</param>
 			/// <param name="hasHeaders" >Whether the range has headers.</param>
 			/// <returns>The index of the new ListObject</returns>
-			 virtual Aspose::Cells::System::Int32 Add(Aspose::Cells::System::Int32 startRow , Aspose::Cells::System::Int32 startColumn , Aspose::Cells::System::Int32 endRow , Aspose::Cells::System::Int32 endColumn , bool hasHeaders)=0;
+			 virtual Aspose::Cells::Systems::Int32 Add(Aspose::Cells::Systems::Int32 startRow , Aspose::Cells::Systems::Int32 startColumn , Aspose::Cells::Systems::Int32 endRow , Aspose::Cells::Systems::Int32 endColumn , bool hasHeaders)=0;
 			/// <summary>
 			/// Adds a ListObject to the worksheet.
 			/// </summary>
@@ -50,7 +50,7 @@ namespace Tables{
 			/// <param name="endCell" >The end cell of the list range.</param>
 			/// <param name="hasHeaders" >Whether the range has headers.</param>
 			/// <returns>The index of the new ListObject</returns>
-			 virtual Aspose::Cells::System::Int32 Add(intrusive_ptr<Aspose::Cells::System::String> startCell , intrusive_ptr<Aspose::Cells::System::String> endCell , bool hasHeaders)=0;
+			 virtual Aspose::Cells::Systems::Int32 Add(intrusive_ptr<Aspose::Cells::Systems::String> startCell , intrusive_ptr<Aspose::Cells::Systems::String> endCell , bool hasHeaders)=0;
 			/// <summary>
 			/// Update all column name of the tables.
 			/// </summary>

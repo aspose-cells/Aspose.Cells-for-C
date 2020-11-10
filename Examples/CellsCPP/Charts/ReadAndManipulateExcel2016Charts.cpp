@@ -55,7 +55,7 @@ void ReadAndManipulateExcel2016Charts()
 		}
 
 		// Print chart type
-		Aspose::Cells::System::Console::WriteLine(strChartType);
+		Aspose::Cells::Systems::Console::WriteLine(strChartType);
 
 		// Change the title of the charts as per their types
 		StringPtr strTitle = (StringPtr)(new String("Chart Type is "))->Append(strChartType);

@@ -1,6 +1,6 @@
 #pragma once
-#include "System/Object.h"
-#include "System/String.h"
+#include "Aspose.Cells.Systems/Object.h"
+#include "Aspose.Cells.Systems/String.h"
 
 namespace Aspose{
 namespace Cells{
@@ -23,25 +23,25 @@ namespace Cells{
 			///  </code>
 			/// 
 			///  </example>
-	class ASPOSE_CELLS_API IExternalLink : public Aspose::Cells::System::Object
+	class ASPOSE_CELLS_API IExternalLink : public Aspose::Cells::Systems::Object
 	{
 		public:
 			/// <summary>
 			/// Represents stored data source of the external link.
 			/// </summary>
-			 virtual intrusive_ptr<Aspose::Cells::System::String> GetOriginalDataSource()=0;
+			 virtual intrusive_ptr<Aspose::Cells::Systems::String> GetOriginalDataSource()=0;
 			/// <summary>
 			/// Represents stored data source of the external link.
 			/// </summary>
-			 virtual void SetOriginalDataSource(intrusive_ptr<Aspose::Cells::System::String> value)=0;
+			 virtual void SetOriginalDataSource(intrusive_ptr<Aspose::Cells::Systems::String> value)=0;
 			/// <summary>
 			/// Represents data source of the external link.
 			/// </summary>
-			 virtual intrusive_ptr<Aspose::Cells::System::String> GetDataSource()=0;
+			 virtual intrusive_ptr<Aspose::Cells::Systems::String> GetDataSource()=0;
 			/// <summary>
 			/// Represents data source of the external link.
 			/// </summary>
-			 virtual void SetDataSource(intrusive_ptr<Aspose::Cells::System::String> value)=0;
+			 virtual void SetDataSource(intrusive_ptr<Aspose::Cells::Systems::String> value)=0;
 			/// <summary>
 			/// Adds an external name.
 			/// </summary>
@@ -49,7 +49,7 @@ namespace Cells{
 			/// If the external name belongs to a worksheet, the text should be as Sheet1!Text.
 			/// </param>
 			/// <param name="referTo" >The referTo of the external name. It must be a cell or the range.</param>
-			 virtual void AddExternalName(intrusive_ptr<Aspose::Cells::System::String> text , intrusive_ptr<Aspose::Cells::System::String> referTo)=0;
+			 virtual void AddExternalName(intrusive_ptr<Aspose::Cells::Systems::String> text , intrusive_ptr<Aspose::Cells::Systems::String> referTo)=0;
 			/// <summary>
 			/// Indicates whether this external link is refered by others.
 			/// </summary>

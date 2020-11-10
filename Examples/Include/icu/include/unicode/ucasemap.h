@@ -266,8 +266,8 @@ ucasemap_setBreakIterator(UCaseMap *csm, UBreakIterator *iterToAdopt, UErrorCode
  */
 U_STABLE int32_t U_EXPORT2
 ucasemap_toTitle(UCaseMap *csm,
-                 UChar *dest, int32_t destCapacity,
-                 const UChar *src, int32_t srcLength,
+                 UnChar *dest, int32_t destCapacity,
+                 const UnChar *src, int32_t srcLength,
                  UErrorCode *pErrorCode);
 
 #endif

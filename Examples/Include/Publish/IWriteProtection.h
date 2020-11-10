@@ -1,6 +1,6 @@
 #pragma once
-#include "System/Object.h"
-#include "System/String.h"
+#include "Aspose.Cells.Systems/Object.h"
+#include "Aspose.Cells.Systems/String.h"
 
 namespace Aspose{
 namespace Cells{
@@ -9,7 +9,7 @@ namespace Cells{
 			/// </summary>
 			/// 
 			/// 
-	class ASPOSE_CELLS_API IWriteProtection : public Aspose::Cells::System::Object
+	class ASPOSE_CELLS_API IWriteProtection : public Aspose::Cells::Systems::Object
 	{
 		public:
 			/// <summary>
@@ -38,7 +38,7 @@ namespace Cells{
 			/// </summary>
 			/// 
 			/// 
-			 virtual void SetPassword(intrusive_ptr<Aspose::Cells::System::String> value)=0;
+			 virtual void SetPassword(intrusive_ptr<Aspose::Cells::Systems::String> value)=0;
 			 
 			/// <summary>
 			/// Returns true if the specified password is the same as the write-protection password the file was protected with. 
@@ -49,7 +49,7 @@ namespace Cells{
 			/// <returns/>
 			/// 
 			/// 
-			 virtual bool ValidatePassword(intrusive_ptr<Aspose::Cells::System::String> password)=0;
+			 virtual bool ValidatePassword(intrusive_ptr<Aspose::Cells::Systems::String> password)=0;
 
 	};
 }

@@ -1,7 +1,7 @@
 #pragma once
-#include "System/Object.h"
-#include "System/Int32.h"
-#include "System/String.h"
+#include "Aspose.Cells.Systems/Object.h"
+#include "Aspose.Cells.Systems/Int32.h"
+#include "Aspose.Cells.Systems/String.h"
 
 namespace Aspose {
 	namespace Cells {
@@ -58,7 +58,7 @@ namespace Tables{
 			/// </example>
 			/// 
 			/// 
-	class ASPOSE_CELLS_API IListObject : public Aspose::Cells::System::Object
+	class ASPOSE_CELLS_API IListObject : public Aspose::Cells::Systems::Object
 	{
 		public:
 			/// <summary>
@@ -66,25 +66,25 @@ namespace Tables{
 			/// </summary>
 			/// 
 			/// 
-			 virtual Aspose::Cells::System::Int32 GetStartRow()=0;
+			 virtual Aspose::Cells::Systems::Int32 GetStartRow()=0;
 			/// <summary>
 			/// Gets the start column of the range.
 			/// </summary>
 			/// 
 			/// 
-			 virtual Aspose::Cells::System::Int32 GetStartColumn()=0;
+			 virtual Aspose::Cells::Systems::Int32 GetStartColumn()=0;
 			/// <summary>
 			/// Gets the end  row of the range.
 			/// </summary>
 			/// 
 			/// 
-			 virtual Aspose::Cells::System::Int32 GetEndRow()=0;
+			 virtual Aspose::Cells::Systems::Int32 GetEndRow()=0;
 			/// <summary>
 			/// Gets the end column of the range.
 			/// </summary>
 			/// 
 			/// 
-			 virtual Aspose::Cells::System::Int32 GetEndColumn()=0;
+			 virtual Aspose::Cells::Systems::Int32 GetEndColumn()=0;
 			/// <summary>
 			/// Gets ListColumns of the IListObject.
 			/// </summary>
@@ -104,7 +104,7 @@ namespace Tables{
 			/// <param name="hasHeaders" >Whether the IListObject has has headers.</param>
 			/// 
 			/// 
-			 virtual void Resize(Aspose::Cells::System::Int32 startRow , Aspose::Cells::System::Int32 startColumn , Aspose::Cells::System::Int32 endRow , Aspose::Cells::System::Int32 endColumn , bool hasHeaders)=0;
+			 virtual void Resize(Aspose::Cells::Systems::Int32 startRow , Aspose::Cells::Systems::Int32 startColumn , Aspose::Cells::Systems::Int32 endRow , Aspose::Cells::Systems::Int32 endColumn , bool hasHeaders)=0;
 			/// <summary>
 			/// Put the value to the cell. 
 			/// </summary>
@@ -116,7 +116,7 @@ namespace Tables{
 			/// <param name="value" >The cell value.</param>
 			/// 
 			/// 
-			 virtual void PutCellValue(Aspose::Cells::System::Int32 rowOffset , Aspose::Cells::System::Int32 columnOffset , intrusive_ptr<Aspose::Cells::System::Object> value)=0;
+			 virtual void PutCellValue(Aspose::Cells::Systems::Int32 rowOffset , Aspose::Cells::Systems::Int32 columnOffset , intrusive_ptr<Aspose::Cells::Systems::Object> value)=0;
 			/// <summary>
 			/// Gets and sets whether this IListObject show header row.
 			/// </summary>
@@ -175,25 +175,25 @@ namespace Tables{
 			/// </summary>
 			/// 
 			/// 
-			 virtual intrusive_ptr<Aspose::Cells::System::String> GetDisplayName()=0;
+			 virtual intrusive_ptr<Aspose::Cells::Systems::String> GetDisplayName()=0;
 			/// <summary>
 			/// Gets and sets the display name.
 			/// </summary>
 			/// 
 			/// 
-			 virtual void SetDisplayName(intrusive_ptr<Aspose::Cells::System::String> value)=0;
+			 virtual void SetDisplayName(intrusive_ptr<Aspose::Cells::Systems::String> value)=0;
 			/// <summary>
 			/// Gets and sets the comment of the table.
 			/// </summary>
 			/// 
 			/// 
-			 virtual intrusive_ptr<Aspose::Cells::System::String> GetComment()=0;
+			 virtual intrusive_ptr<Aspose::Cells::Systems::String> GetComment()=0;
 			/// <summary>
 			/// Gets and sets the comment of the table.
 			/// </summary>
 			/// 
 			/// 
-			 virtual void SetComment(intrusive_ptr<Aspose::Cells::System::String> value)=0;
+			 virtual void SetComment(intrusive_ptr<Aspose::Cells::Systems::String> value)=0;
 			/// <summary>
 			/// Indicates whether the first column in the table should have the style applied.
 			/// </summary>
@@ -271,13 +271,13 @@ namespace Tables{
 			/// </summary>
 			/// 
 			/// 
-			 virtual intrusive_ptr<Aspose::Cells::System::String> GetTableStyleName()=0;
+			 virtual intrusive_ptr<Aspose::Cells::Systems::String> GetTableStyleName()=0;
 			/// <summary>
 			/// Gets and sets the table style name.
 			/// </summary>
 			/// 
 			/// 
-			 virtual void SetTableStyleName(intrusive_ptr<Aspose::Cells::System::String> value)=0;
+			 virtual void SetTableStyleName(intrusive_ptr<Aspose::Cells::Systems::String> value)=0;
 
 	};
 }

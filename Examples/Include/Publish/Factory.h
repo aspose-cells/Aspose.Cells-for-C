@@ -1,5 +1,5 @@
 #pragma once
-#include "System/Object.h"
+#include "Aspose.Cells.Systems/Object.h"
 #include "IWorkbook.h"
 #include "IWorksheet.h"
 #include "ILoadOptions.h"
@@ -39,7 +39,7 @@ namespace Aspose {
 			///  If you need new an object in Client-Side code, you can call the following static method to create related object. 	
 			/// </summary>		
 
-		class ASPOSE_CELLS_API Factory :public  Aspose::Cells::System::Object
+		class ASPOSE_CELLS_API Factory :public  Aspose::Cells::Systems::Object
 		{
 		public:
 			/// <summary>
@@ -51,7 +51,7 @@ namespace Aspose {
 			/// <summary>
 			///  Open a Workbook by Stream and ILoadOptions.
 			/// </summary>	
-			static intrusive_ptr<Aspose::Cells::IWorkbook> CreateIWorkbook(intrusive_ptr<Aspose::Cells::System::IO::Stream> stream, intrusive_ptr<Aspose::Cells::ILoadOptions> iloadOpt = NULL);
+			static intrusive_ptr<Aspose::Cells::IWorkbook> CreateIWorkbook(intrusive_ptr<Aspose::Cells::Systems::IO::Stream> stream, intrusive_ptr<Aspose::Cells::ILoadOptions> iloadOpt = NULL);
 			/// <summary>
 			///  Create a Workbook by special FileFormatType. Refer to <see cref="FileFormatType" />
 			/// </summary>				
@@ -83,7 +83,7 @@ namespace Aspose {
 			/// <summary>
 			///  Create a new IThemeColor. Refer to <see cref="IThemeColor" />
 			/// </summary>				
-			static intrusive_ptr<Aspose::Cells::IThemeColor> CreateIThemeColor(Aspose::Cells::ThemeColorType, Aspose::Cells::System::Double);
+			static intrusive_ptr<Aspose::Cells::IThemeColor> CreateIThemeColor(Aspose::Cells::ThemeColorType, Aspose::Cells::Systems::Double);
 			/// <summary>
 			///  Create a new IReplaceOptions. Refer to <see cref="IReplaceOptions" />
 			/// </summary>				
@@ -103,11 +103,11 @@ namespace Aspose {
 			/// <summary>
 			///  Create a new IWorkbookMetadata. Refer to <see cref="IWorkbookMetadata" />
 			/// </summary>			
-			static intrusive_ptr<Aspose::Cells::Metadata::IWorkbookMetadata> CreateIWorkbookMetadata(intrusive_ptr<Aspose::Cells::System::String> fileName, intrusive_ptr<Aspose::Cells::Metadata::IMetadataOptions> options);
+			static intrusive_ptr<Aspose::Cells::Metadata::IWorkbookMetadata> CreateIWorkbookMetadata(intrusive_ptr<Aspose::Cells::Systems::String> fileName, intrusive_ptr<Aspose::Cells::Metadata::IMetadataOptions> options);
 			/// <summary>
 			///  Create a new IWorkbookMetadata. Refer to <see cref="IWorkbookMetadata" />
 			/// </summary>			
-			static intrusive_ptr<Aspose::Cells::Metadata::IWorkbookMetadata> CreateIWorkbookMetadata(intrusive_ptr<Aspose::Cells::System::IO::Stream> stream, intrusive_ptr<Aspose::Cells::Metadata::IMetadataOptions> options);
+			static intrusive_ptr<Aspose::Cells::Metadata::IWorkbookMetadata> CreateIWorkbookMetadata(intrusive_ptr<Aspose::Cells::Systems::IO::Stream> stream, intrusive_ptr<Aspose::Cells::Metadata::IMetadataOptions> options);
 			/// <summary>
 			///  Create a new IXlsSaveOptions. Refer to <see cref="IXlsSaveOptions" />
 			/// </summary>

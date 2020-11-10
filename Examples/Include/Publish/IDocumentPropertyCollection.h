@@ -1,9 +1,9 @@
 #pragma once
-#include "System/Object.h"
-#include "System/Int32.h"
-#include "System/String.h"
-#include "System/Collections/IEnumerator.h"
-#include "System/Collections/IEnumerable.h"
+#include "Aspose.Cells.Systems/Object.h"
+#include "Aspose.Cells.Systems/Int32.h"
+#include "Aspose.Cells.Systems/String.h"
+#include "Aspose.Cells.Systems/Collections/IEnumerator.h"
+#include "Aspose.Cells.Systems/Collections/IEnumerable.h"
 
 namespace Aspose {
 	namespace Cells {
@@ -36,13 +36,13 @@ namespace Properties{
 			/// 
 			/// </code>
 			/// </example>
-	class ASPOSE_CELLS_API IDocumentPropertyCollection : public Aspose::Cells::System::Collections::IEnumerable , public Aspose::Cells::System::Object
+	class ASPOSE_CELLS_API IDocumentPropertyCollection : public Aspose::Cells::Systems::Collections::IEnumerable , public Aspose::Cells::Systems::Object
 	{
 		public:
 			/// <summary>
 			/// Gets number of items in the collection.
 			/// </summary>
-			 virtual Aspose::Cells::System::Int32 GetCount()=0;
+			 virtual Aspose::Cells::Systems::Int32 GetCount()=0;
 			/// <overloads>Returns an <see cref="IDocumentProperty" />
 			///  object.</overloads>
 			/// <summary>
@@ -52,42 +52,42 @@ namespace Properties{
 			/// <remarks><p>Returns null if a property with the specified name is not found.</p>
 			/// </remarks>
 			/// <param name="name" >The case-insensitive name of the property to retrieve.</param>
-			 virtual intrusive_ptr<Aspose::Cells::Properties::IDocumentProperty> 		GetObjectByIndex(intrusive_ptr<Aspose::Cells::System::String> name)=0;
+			 virtual intrusive_ptr<Aspose::Cells::Properties::IDocumentProperty> 		GetObjectByIndex(intrusive_ptr<Aspose::Cells::Systems::String> name)=0;
 			/// <summary>
 			/// Returns an <see cref="IDocumentProperty" />
 			///  object by index.
 			/// </summary>
 			/// <param name="index" >Zero-based index of the <see cref="IDocumentProperty" />
 			///  to retrieve.</param>
-			 virtual intrusive_ptr<Aspose::Cells::Properties::IDocumentProperty> 		GetObjectByIndex(Aspose::Cells::System::Int32 index)=0;
+			 virtual intrusive_ptr<Aspose::Cells::Properties::IDocumentProperty> 		GetObjectByIndex(Aspose::Cells::Systems::Int32 index)=0;
 			/// <summary>
 			/// 
 			/// </summary>
 			/// <returns/>
 			/// 
-			 virtual intrusive_ptr<Aspose::Cells::System::Collections::IEnumerator> GetEnumerator()=0;
+			 virtual intrusive_ptr<Aspose::Cells::Systems::Collections::IEnumerator> GetEnumerator()=0;
 			/// <summary>
 			/// Returns true if a property with the specified name exists in the collection.
 			/// </summary>
 			/// <param name="name" >The case-insensitive name of the property.</param>
 			/// <returns>True if the property exists in the collection; false otherwise.</returns>
-			 virtual bool Contains(intrusive_ptr<Aspose::Cells::System::String> name)=0;
+			 virtual bool Contains(intrusive_ptr<Aspose::Cells::Systems::String> name)=0;
 			/// <summary>
 			/// Gets the index of a property by name.
 			/// </summary>
 			/// <param name="name" >The case-insensitive name of the property.</param>
 			/// <returns>The zero based index. Negative value if not found.</returns>
-			 virtual Aspose::Cells::System::Int32 IndexOf(intrusive_ptr<Aspose::Cells::System::String> name)=0;
+			 virtual Aspose::Cells::Systems::Int32 IndexOf(intrusive_ptr<Aspose::Cells::Systems::String> name)=0;
 			/// <summary>
 			/// Removes a property with the specified name from the collection.
 			/// </summary>
 			/// <param name="name" >The case-insensitive name of the property.</param>
-			 virtual void Remove(intrusive_ptr<Aspose::Cells::System::String> name)=0;
+			 virtual void Remove(intrusive_ptr<Aspose::Cells::Systems::String> name)=0;
 			/// <summary>
 			/// Removes a property at the specified index.
 			/// </summary>
 			/// <param name="index" >The zero based index.</param>
-			 virtual void RemoveAt(Aspose::Cells::System::Int32 index)=0;
+			 virtual void RemoveAt(Aspose::Cells::Systems::Int32 index)=0;
 			/// <summary>
 			/// Removes all properties from the collection.
 			/// </summary>

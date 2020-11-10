@@ -283,33 +283,33 @@ typedef int8_t UBool;
 #   endif
 #endif
 
-/* UChar and UChar32 definitions -------------------------------------------- */
+/* UnChar and UChar32 definitions -------------------------------------------- */
 
-/** Number of bytes in a UChar. @stable ICU 2.0 */
+/** Number of bytes in a UnChar. @stable ICU 2.0 */
 #define U_SIZEOF_UCHAR 2
 
 /**
- * \var UChar
- * Define UChar to be UCHAR_TYPE, if that is #defined (for example, to char16_t),
+ * \var UnChar
+ * Define UnChar to be UCHAR_TYPE, if that is #defined (for example, to char16_t),
  * or wchar_t if that is 16 bits wide; always assumed to be unsigned.
- * If neither is available, then define UChar to be uint16_t.
+ * If neither is available, then define UnChar to be uint16_t.
  *
- * This makes the definition of UChar platform-dependent
+ * This makes the definition of UnChar platform-dependent
  * but allows direct string type compatibility with platforms with
  * 16-bit wchar_t types.
  *
  * @stable ICU 4.4
  */
 #if defined(UCHAR_TYPE)
-    typedef UCHAR_TYPE UChar;
+    typedef UCHAR_TYPE UnChar;
 /* Not #elif U_HAVE_CHAR16_T -- because that is type-incompatible with pre-C++11 callers
-    typedef char16_t UChar;  */
+    typedef char16_t UnChar;  */
 #elif U_SIZEOF_WCHAR_T==2
-    typedef wchar_t UChar;
+    typedef wchar_t UnChar;
 #elif defined(__CHAR16_TYPE__)
-    typedef __CHAR16_TYPE__ UChar;
+    typedef __CHAR16_TYPE__ UnChar;
 #else
-    typedef uint16_t UChar;
+    typedef uint16_t UnChar;
 #endif
 
 /**

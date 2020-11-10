@@ -1,6 +1,6 @@
 #pragma once
-#include "System/Object.h"
-#include "System/Int32.h"
+#include "Aspose.Cells.Systems/Object.h"
+#include "Aspose.Cells.Systems/Int32.h"
 
 namespace Aspose{
 namespace Cells{
@@ -9,7 +9,7 @@ namespace Cells{
 			/// This conditional formatting rule highlights cells whose
 			/// values fall in the top N or bottom N bracket, as specified.
 			/// </summary>
-	class ASPOSE_CELLS_API ITop10 : public Aspose::Cells::System::Object
+	class ASPOSE_CELLS_API ITop10 : public Aspose::Cells::Systems::Object
 	{
 		public:
 			/// <summary>
@@ -38,14 +38,14 @@ namespace Cells{
 			/// Otherwise it must between 0 and 1000.
 			/// Default value is 10.
 			/// </summary>
-			 virtual Aspose::Cells::System::Int32 GetRank()=0;
+			 virtual Aspose::Cells::Systems::Int32 GetRank()=0;
 			/// <summary>
 			/// Set the value of "n" in a "top/bottom n" conditional formatting rule.
 			/// If IsPercent() is true, the value must between 0 and 100.
 			/// Otherwise it must between 0 and 1000.
 			/// Default value is 10.
 			/// </summary>
-			 virtual void SetRank(Aspose::Cells::System::Int32 value)=0;
+			 virtual void SetRank(Aspose::Cells::Systems::Int32 value)=0;
 
 	};
 }

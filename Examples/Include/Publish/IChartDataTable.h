@@ -1,5 +1,5 @@
 #pragma once
-#include "System/Object.h"
+#include "Aspose.Cells.Systems/Object.h"
 
 namespace Aspose {
 	namespace Cells {
@@ -54,14 +54,14 @@ namespace Charts{
 			/// //Getting Chart Table
 			/// intrusive_ptr<IChartDataTable> chartTable = chart->GetIChartDataTable();
 			/// //Setting Chart Table Font Color
-			/// chartTable->GetIFont()->SetColor(System::Drawing::Color::GetRed());
+			/// chartTable->GetIFont()->SetColor(Systems::Drawing::Color::GetRed());
 			/// //Setting Legend Key VisibilityOptions
 			/// chartTable->SetShowLegendKey(false);
 			/// //Saving the Excel file
 			/// workbook->Save(new String("D:\\test\\ChartDataTableTest.xls"));
 			/// </code>
 			/// </example>
-	class ASPOSE_CELLS_API IChartDataTable : public Aspose::Cells::System::Object
+	class ASPOSE_CELLS_API IChartDataTable : public Aspose::Cells::Systems::Object
 	{
 		public:
 			/// <summary>

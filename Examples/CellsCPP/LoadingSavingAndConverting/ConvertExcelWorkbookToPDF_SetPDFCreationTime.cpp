@@ -25,7 +25,7 @@ void ConvertExcelWorkbookToPDF_SetPDFCreationTime()
 	intrusive_ptr<Aspose::Cells::IPdfSaveOptions> pdfSaveOptions = Factory::CreateIPdfSaveOptions();
 
 	// Set the created time for the PDF i.e. 25-May-2017
-	pdfSaveOptions->SetCreatedTime(new Aspose::Cells::System::DateTime(2017, 5, 25));
+	pdfSaveOptions->SetCreatedTime(new Aspose::Cells::Systems::DateTime(2017, 5, 25));
 
 	// Save the Excel Document in PDF format
 	workbook->Save(outputConvertExcelWorkbookToPDF, pdfSaveOptions);

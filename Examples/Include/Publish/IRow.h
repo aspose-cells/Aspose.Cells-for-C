@@ -1,10 +1,10 @@
 #pragma once
-#include "System/Object.h"
-#include "System/Int32.h"
-#include "System/Collections/IEnumerator.h"
-#include "System/Double.h"
-#include "System/Byte.h"
-#include "System/Collections/IEnumerable.h"
+#include "Aspose.Cells.Systems/Object.h"
+#include "Aspose.Cells.Systems/Int32.h"
+#include "Aspose.Cells.Systems/Collections/IEnumerator.h"
+#include "Aspose.Cells.Systems/Double.h"
+#include "Aspose.Cells.Systems/Byte.h"
+#include "Aspose.Cells.Systems/Collections/IEnumerable.h"
 
 namespace Aspose {
 	namespace Cells {
@@ -19,7 +19,7 @@ namespace Cells{
 			/// <summary>
 			/// Represents a single row in a worksheet.
 			/// </summary>
-	class ASPOSE_CELLS_API IRow : public Aspose::Cells::System::Collections::IEnumerable , public Aspose::Cells::System::Object
+	class ASPOSE_CELLS_API IRow : public Aspose::Cells::Systems::Collections::IEnumerable , public Aspose::Cells::Systems::Object
 	{
 		public:
 			/// <summary>
@@ -27,7 +27,7 @@ namespace Cells{
 			/// </summary>
 			/// <param name="index" >The position.</param>
 			/// <returns>The Cell object.</returns>
-			 virtual intrusive_ptr<Aspose::Cells::ICell> 		GetICellByIndex(Aspose::Cells::System::Int32 index)=0;
+			 virtual intrusive_ptr<Aspose::Cells::ICell> 		GetICellByIndex(Aspose::Cells::Systems::Int32 index)=0;
 			/// <summary>
 			/// Indicates whether the row contains any data
 			/// </summary>
@@ -38,27 +38,27 @@ namespace Cells{
 			/// <param name="column" >The column index</param>
 			/// <returns/>
 			/// 
-			 virtual intrusive_ptr<Aspose::Cells::ICell> 		GetObjectByIndex(Aspose::Cells::System::Int32 column)=0;
+			 virtual intrusive_ptr<Aspose::Cells::ICell> 		GetObjectByIndex(Aspose::Cells::Systems::Int32 column)=0;
 			/// <summary>
 			/// Gets the cells enumerator
 			/// </summary>
 			/// <returns>The cells enumerator</returns>
-			  virtual intrusive_ptr<Aspose::Cells::System::Collections::IEnumerator> GetEnumerator()=0;
+			  virtual intrusive_ptr<Aspose::Cells::Systems::Collections::IEnumerator> GetEnumerator()=0;
 			/// <summary>
 			/// Gets the cell or null in the specific index.
 			/// </summary>
 			/// <param name="column" >The column index</param>
 			/// <returns>Returns the cell object if the cell exists.
 			/// Or returns null if the cell object does not exist.</returns>
-			 virtual intrusive_ptr<Aspose::Cells::ICell> 		GetICellOrNull(Aspose::Cells::System::Int32 column)=0;
+			 virtual intrusive_ptr<Aspose::Cells::ICell> 		GetICellOrNull(Aspose::Cells::Systems::Int32 column)=0;
 			/// <summary>
 			/// Gets and sets the row height in unit of Points.
 			/// </summary>
-			  virtual Aspose::Cells::System::Double GetHeight() = 0;
+			  virtual Aspose::Cells::Systems::Double GetHeight() = 0;
 			/// <summary>
 			/// Gets and sets the row height in unit of Points.
 			/// </summary>
-			  virtual void SetHeight(Aspose::Cells::System::Double value) = 0;
+			  virtual void SetHeight(Aspose::Cells::Systems::Double value) = 0;
 			/// <summary>
 			/// Indicates whether the row is hidden.
 			/// </summary>
@@ -70,11 +70,11 @@ namespace Cells{
 			/// <summary>
 			/// Gets the index of this row.
 			/// </summary>
-			  virtual Aspose::Cells::System::Int32 GetIndex() = 0;
+			  virtual Aspose::Cells::Systems::Int32 GetIndex() = 0;
 			/// <summary>
 			/// Gets the group level of the row.
 			/// </summary>
-			  virtual Aspose::Cells::System::Byte GetGroupLevel() = 0;
+			  virtual Aspose::Cells::Systems::Byte GetGroupLevel() = 0;
 			/// <summary>
 			/// Indicates that row height and default font height matches
 			/// </summary>

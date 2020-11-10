@@ -1,6 +1,6 @@
 #pragma once
-#include "System/Object.h"
-#include "System/String.h"
+#include "Aspose.Cells.Systems/Object.h"
+#include "Aspose.Cells.Systems/String.h"
 
 namespace Aspose {
 	namespace Cells {
@@ -14,7 +14,7 @@ namespace Cells{
 			/// </summary>
 			/// 
 			/// 
-	class ASPOSE_CELLS_API ISaveOptions : public Aspose::Cells::System::Object
+	class ASPOSE_CELLS_API ISaveOptions : public Aspose::Cells::Systems::Object
 	{
 		public:
 			/// <summary>
@@ -40,13 +40,13 @@ namespace Cells{
 			/// </summary>
 			/// 
 			/// 
-			 virtual intrusive_ptr<Aspose::Cells::System::String> GetCachedFileFolder()=0;
+			 virtual intrusive_ptr<Aspose::Cells::Systems::String> GetCachedFileFolder()=0;
 			/// <summary>
 			/// The cached file folder is used to store some large data.
 			/// </summary>
 			/// 
 			/// 
-			 virtual void SetCachedFileFolder(intrusive_ptr<Aspose::Cells::System::String> value)=0;
+			 virtual void SetCachedFileFolder(intrusive_ptr<Aspose::Cells::Systems::String> value)=0;
 			/// <summary>
 			/// Indicates whether validate merged cells before saving the file.
 			/// </summary>
@@ -137,14 +137,14 @@ namespace Cells{
 			/// </summary>
 			/// 
 			/// 
-			 virtual intrusive_ptr<Aspose::Cells::System::String> GetPdfExportImagesFolder()=0;
+			 virtual intrusive_ptr<Aspose::Cells::Systems::String> GetPdfExportImagesFolder()=0;
 			/// <summary>
 			/// The physical folder where images will be saved when exporting a workbook to Aspose.Pdf XML format.
 			/// Default is an empty string. 
 			/// </summary>
 			/// 
 			/// 
-			 virtual void SetPdfExportImagesFolder(intrusive_ptr<Aspose::Cells::System::String> value)=0;
+			 virtual void SetPdfExportImagesFolder(intrusive_ptr<Aspose::Cells::Systems::String> value)=0;
 			/// <summary>
 			/// Indicates if http compression is to be used in user's IIS.
 			/// </summary>

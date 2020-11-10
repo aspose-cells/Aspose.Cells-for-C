@@ -1,5 +1,5 @@
 #pragma once
-#include "System/Object.h"
+#include "Aspose.Cells.Systems/Object.h"
 #include "IShape.h"
 
 namespace Aspose{
@@ -35,7 +35,7 @@ namespace Drawing{
 			///  button->GetIFont()->SetBold( true);
 			///  
 			///  //Set the color to blue.
-			///  button->GetIFont()->SetColor(System::Drawing::Color::GetBlue());
+			///  button->GetIFont()->SetColor(Systems::Drawing::Color::GetBlue());
 			///  
 			///  //Set the hyperlink for the button.
 			///  button->AddIHyperlink(new String("http://www.aspose.com/"));

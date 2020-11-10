@@ -1,12 +1,12 @@
 #pragma once
-#include "System/Object.h"
-#include "System/Collections/IEnumerator.h"
-#include "System/Collections/ArrayList.h"
-#include "System/Int32.h"
-#include "System/String.h"
-#include "System/Drawing/Color.h"
-#include "System/Array1D.h"
-#include "System/Double.h"
+#include "Aspose.Cells.Systems/Object.h"
+#include "Aspose.Cells.Systems/Collections/IEnumerator.h"
+#include "Aspose.Cells.Systems/Collections/ArrayList.h"
+#include "Aspose.Cells.Systems/Int32.h"
+#include "Aspose.Cells.Systems/String.h"
+#include "Aspose.Cells.Systems/Drawing/Color.h"
+#include "Aspose.Cells.Systems/Array1D.h"
+#include "Aspose.Cells.Systems/Double.h"
 
 namespace Aspose {
 	namespace Cells {
@@ -27,7 +27,7 @@ namespace Cells{
 			/// </summary>
 			/// 
 			/// 
-	class ASPOSE_CELLS_API IRange : public Aspose::Cells::System::Object
+	class ASPOSE_CELLS_API IRange : public Aspose::Cells::Systems::Object
 	{
 		public:
 			/// <summary>
@@ -37,7 +37,7 @@ namespace Cells{
 			/// <returns>The cells enumerator</returns>
 			/// 
 			/// 
-			 virtual intrusive_ptr<Aspose::Cells::System::Collections::IEnumerator> GetEnumerator()=0;
+			 virtual intrusive_ptr<Aspose::Cells::Systems::Collections::IEnumerator> GetEnumerator()=0;
 			/// <summary>
 			/// Indicates whether the range is intersect.
 			/// </summary>
@@ -72,26 +72,26 @@ namespace Cells{
 			/// </returns>
 			/// 
 			/// 
-			 virtual intrusive_ptr<Aspose::Cells::System::Collections::ArrayList> Union(intrusive_ptr<Aspose::Cells::IRange> range)=0;
+			 virtual intrusive_ptr<Aspose::Cells::Systems::Collections::ArrayList> Union(intrusive_ptr<Aspose::Cells::IRange> range)=0;
 			/// <summary>
 			/// Gets the count of rows in the range.
 			/// </summary>
 			/// 
 			/// 
-			 virtual Aspose::Cells::System::Int32 GetRowCount()=0;
+			 virtual Aspose::Cells::Systems::Int32 GetRowCount()=0;
 			/// <summary>
 			/// Gets the count of columns in the range.
 			/// </summary>
 			/// 
 			/// 
-			 virtual Aspose::Cells::System::Int32 GetColumnCount()=0;
+			 virtual Aspose::Cells::Systems::Int32 GetColumnCount()=0;
 			/// <summary>
 			/// Gets the name of the range.
 			/// </summary>
 			/// 
 			/// 
 			/// 
-			 virtual intrusive_ptr<Aspose::Cells::System::String> GetName()=0;
+			 virtual intrusive_ptr<Aspose::Cells::Systems::String> GetName()=0;
 			/// <summary>
 			/// Sets the name of the range.
 			/// </summary>
@@ -102,25 +102,25 @@ namespace Cells{
 			/// </remarks>
 			/// 
 			/// 
-			 virtual void SetName(intrusive_ptr<Aspose::Cells::System::String> value)=0;
+			 virtual void SetName(intrusive_ptr<Aspose::Cells::Systems::String> value)=0;
 			/// <summary>
 			/// Gets the range's refers to.
 			/// </summary>
 			/// 
 			/// 
-			 virtual intrusive_ptr<Aspose::Cells::System::String> GetRefersTo()=0;
+			 virtual intrusive_ptr<Aspose::Cells::Systems::String> GetRefersTo()=0;
 			/// <summary>
 			/// Gets the index of the first row of the range.
 			/// </summary>
 			/// 
 			/// 
-			 virtual Aspose::Cells::System::Int32 GetFirstRow()=0;
+			 virtual Aspose::Cells::Systems::Int32 GetFirstRow()=0;
 			/// <summary>
 			/// Gets the index of the first column of the range.
 			/// </summary>
 			/// 
 			/// 
-			 virtual Aspose::Cells::System::Int32 GetFirstColumn()=0;
+			 virtual Aspose::Cells::Systems::Int32 GetFirstColumn()=0;
 			/// <summary>
 			///  Combines a range of cells into a single cell. 		
 			///  </summary>
@@ -148,7 +148,7 @@ namespace Cells{
 			/// <param name="setStyle" >True: set the number format to cell's style when converting to other data type</param>
 			/// 
 			/// 
-			 virtual void PutValue(intrusive_ptr<Aspose::Cells::System::String> stringValue , bool isConverted , bool setStyle)=0;
+			 virtual void PutValue(intrusive_ptr<Aspose::Cells::Systems::String> stringValue , bool isConverted , bool setStyle)=0;
 			/// <summary>
 			/// Gets the value of the range.
 			/// </summary>
@@ -161,7 +161,7 @@ namespace Cells{
 			/// </remarks>
 			/// 
 			/// 
-			 virtual intrusive_ptr<Aspose::Cells::System::Object> GetValue()=0;
+			 virtual intrusive_ptr<Aspose::Cells::Systems::Object> GetValue()=0;
 			/// <summary>
 			/// Sets the value of the range.
 			/// </summary>
@@ -174,7 +174,7 @@ namespace Cells{
 			/// </remarks>
 			/// 
 			/// 
-			 virtual void SetValue(intrusive_ptr<Aspose::Cells::System::Object> value)=0;
+			 virtual void SetValue(intrusive_ptr<Aspose::Cells::Systems::Object> value)=0;
 			/// <summary>
 			/// Applies formatting for a whole range.
 			/// </summary>
@@ -206,7 +206,7 @@ namespace Cells{
 			/// <param name="borderColor" >Border color.</param>
 			/// 
 			/// 
-			 virtual void SetOutlineBorders(Aspose::Cells::CellBorderType borderStyle , intrusive_ptr<Aspose::Cells::System::Drawing::Color> borderColor)=0;
+			 virtual void SetOutlineBorders(Aspose::Cells::CellBorderType borderStyle , intrusive_ptr<Aspose::Cells::Systems::Drawing::Color> borderColor)=0;
 			/// <summary>
 			/// Sets out line borders around a range of cells.
 			/// </summary>
@@ -221,7 +221,7 @@ namespace Cells{
 			/// </remarks>
 			/// 
 			/// 
-			 virtual void SetOutlineBorders(intrusive_ptr<Aspose::Cells::System::Array1D<Aspose::Cells::CellBorderType>> borderStyles , intrusive_ptr<Aspose::Cells::System::Array1D<Aspose::Cells::System::Drawing::Color*>> borderColors)=0;
+			 virtual void SetOutlineBorders(intrusive_ptr<Aspose::Cells::Systems::Array1D<Aspose::Cells::CellBorderType>> borderStyles , intrusive_ptr<Aspose::Cells::Systems::Array1D<Aspose::Cells::Systems::Drawing::Color*>> borderColors)=0;
 			/// <summary>
 			/// Sets outline border around a range of cells.
 			/// </summary>
@@ -233,31 +233,31 @@ namespace Cells{
 			/// <param name="borderColor" >Border color.</param>
 			/// 
 			/// 
-			 virtual void SetOutlineBorder(Aspose::Cells::BorderType borderEdge , Aspose::Cells::CellBorderType borderStyle , intrusive_ptr<Aspose::Cells::System::Drawing::Color> borderColor)=0;
+			 virtual void SetOutlineBorder(Aspose::Cells::BorderType borderEdge , Aspose::Cells::CellBorderType borderStyle , intrusive_ptr<Aspose::Cells::Systems::Drawing::Color> borderColor)=0;
 			/// <summary>
 			///  Sets or gets the column width of this range
 			/// </summary>
 			/// 
 			/// 
-			 virtual Aspose::Cells::System::Double GetColumnWidth()=0;
+			 virtual Aspose::Cells::Systems::Double GetColumnWidth()=0;
 			/// <summary>
 			///  Sets or gets the column width of this range
 			/// </summary>
 			/// 
 			/// 
-			 virtual void SetColumnWidth(Aspose::Cells::System::Double value)=0;
+			 virtual void SetColumnWidth(Aspose::Cells::Systems::Double value)=0;
 			/// <summary>
 			/// Sets or gets the height of rows in this range
 			/// </summary>
 			/// 
 			/// 
-			 virtual Aspose::Cells::System::Double GetRowHeight()=0;
+			 virtual Aspose::Cells::Systems::Double GetRowHeight()=0;
 			/// <summary>
 			/// Sets or gets the height of rows in this range
 			/// </summary>
 			/// 
 			/// 
-			 virtual void SetRowHeight(Aspose::Cells::System::Double value)=0;
+			 virtual void SetRowHeight(Aspose::Cells::Systems::Double value)=0;
 			/// <summary>
 			/// Move the current range to the destination range.
 			/// </summary>
@@ -267,7 +267,7 @@ namespace Cells{
 			/// <param name="destColumn" >The start column of the destination range.</param>
 			/// 
 			/// 
-			 virtual void MoveTo(Aspose::Cells::System::Int32 destRow , Aspose::Cells::System::Int32 destColumn)=0;
+			 virtual void MoveTo(Aspose::Cells::Systems::Int32 destRow , Aspose::Cells::Systems::Int32 destColumn)=0;
 			/// <summary>
 			/// Copies cell data (including formulas) from a source range.
 			/// </summary>
@@ -323,7 +323,7 @@ namespace Cells{
 			///  object.</returns>
 			/// 
 			/// 
-			 virtual intrusive_ptr<Aspose::Cells::ICell> 		GetObjectByIndex(Aspose::Cells::System::Int32 rowIndex , Aspose::Cells::System::Int32 columnIndex)=0;
+			 virtual intrusive_ptr<Aspose::Cells::ICell> 		GetObjectByIndex(Aspose::Cells::Systems::Int32 rowIndex , Aspose::Cells::Systems::Int32 columnIndex)=0;
 			/// <summary>
 			/// Gets <see cref="ICell" />
 			///  object or null in this range.
@@ -337,7 +337,7 @@ namespace Cells{
 			///  object.</returns>
 			/// 
 			/// 
-			 virtual intrusive_ptr<Aspose::Cells::ICell> 		GetICellOrNull(Aspose::Cells::System::Int32 rowIndex , Aspose::Cells::System::Int32 columnIndex)=0;
+			 virtual intrusive_ptr<Aspose::Cells::ICell> 		GetICellOrNull(Aspose::Cells::Systems::Int32 rowIndex , Aspose::Cells::Systems::Int32 columnIndex)=0;
 			/// <summary>
 			/// Gets the <see cref="IWorksheet" />
 			/// object which contains this range.

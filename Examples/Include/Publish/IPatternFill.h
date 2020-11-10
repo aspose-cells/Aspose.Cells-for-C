@@ -1,7 +1,7 @@
 #pragma once
-#include "System/Object.h"
-#include "System/Drawing/Color.h"
-#include "System/Double.h"
+#include "Aspose.Cells.Systems/Object.h"
+#include "Aspose.Cells.Systems/Drawing/Color.h"
+#include "Aspose.Cells.Systems/Double.h"
 #include "IFill.h"
 
 namespace Aspose {
@@ -38,13 +38,13 @@ namespace Drawing{
 			///  of the <see cref="Area" />
 			/// .
 			/// </summary>
-			 virtual intrusive_ptr<Aspose::Cells::System::Drawing::Color> GetBackgroundColor()=0;
+			 virtual intrusive_ptr<Aspose::Cells::Systems::Drawing::Color> GetBackgroundColor()=0;
 			/// <summary>
 			/// Sets the background <see cref="Color" />
 			///  of the <see cref="Area" />
 			/// .
 			/// </summary>
-			 virtual void SetBackgroundColor(intrusive_ptr<Aspose::Cells::System::Drawing::Color> value)=0;
+			 virtual void SetBackgroundColor(intrusive_ptr<Aspose::Cells::Systems::Drawing::Color> value)=0;
 			/// <summary>
 			/// Gets the foreground <see cref="ICellsColor" />
 			///  oject.
@@ -59,12 +59,12 @@ namespace Drawing{
 			/// Gets the foreground <see cref="System.Drawing.Color" />
 			/// .
 			/// </summary>
-			 virtual intrusive_ptr<Aspose::Cells::System::Drawing::Color> GetForegroundColor()=0;
+			 virtual intrusive_ptr<Aspose::Cells::Systems::Drawing::Color> GetForegroundColor()=0;
 			/// <summary>
 			/// Sets the foreground <see cref="System.Drawing.Color" />
 			/// .
 			/// </summary>
-			 virtual void SetForegroundColor(intrusive_ptr<Aspose::Cells::System::Drawing::Color> value)=0;
+			 virtual void SetForegroundColor(intrusive_ptr<Aspose::Cells::Systems::Drawing::Color> value)=0;
 			/// <summary>
 			/// Gets the foreground <see cref="ICellsColor" />
 			///  oject.
@@ -78,19 +78,19 @@ namespace Drawing{
 			/// <summary>
 			/// Gets the transparency of foreground color.
 			/// </summary>
-			 virtual Aspose::Cells::System::Double GetForeTransparency()=0;
+			 virtual Aspose::Cells::Systems::Double GetForeTransparency()=0;
 			/// <summary>
 			/// Sets the transparency of foreground color.
 			/// </summary>
-			 virtual void SetForeTransparency(Aspose::Cells::System::Double value)=0;
+			 virtual void SetForeTransparency(Aspose::Cells::Systems::Double value)=0;
 			/// <summary>
 			/// Gets the transparency of background color.
 			/// </summary>
-			 virtual Aspose::Cells::System::Double GetBackTransparency()=0;
+			 virtual Aspose::Cells::Systems::Double GetBackTransparency()=0;
 			/// <summary>
 			/// Sets the transparency of background color.
 			/// </summary>
-			 virtual void SetBackTransparency(Aspose::Cells::System::Double value)=0;
+			 virtual void SetBackTransparency(Aspose::Cells::Systems::Double value)=0;
 
 	};
 }

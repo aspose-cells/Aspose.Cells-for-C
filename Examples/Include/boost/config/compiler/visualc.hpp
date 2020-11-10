@@ -286,7 +286,7 @@
 #  define BOOST_COMPILER "Microsoft Visual C++ version " BOOST_STRINGIZE(BOOST_COMPILER_VERSION)
 #endif
 
-//
+/* removed for VS2017 warnning zhuxinya@20190123
 // last known and checked version is 19.00.23026 (VC++ 2015 RTM):
 #if (_MSC_VER > 1900)
 #  if defined(BOOST_ASSERT_CONFIG)
@@ -295,3 +295,4 @@
 #     pragma message("Unknown compiler version - please run the configure tests and report the results")
 #  endif
 #endif
+*/

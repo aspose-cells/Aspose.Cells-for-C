@@ -5,11 +5,11 @@ class CustomFunction : public ICustomFunction
 {
 public:
 	//Evalaute and return the values of your custom functions
-	intrusive_ptr<Aspose::Cells::System::Object>
+	intrusive_ptr<Aspose::Cells::Systems::Object>
 		CalculateCustomFunction(
-			intrusive_ptr<Aspose::Cells::System::String> functionName,
-			intrusive_ptr<Aspose::Cells::System::Collections::ArrayList> paramsList,
-			intrusive_ptr<Aspose::Cells::System::Collections::ArrayList> contextObjects)
+			intrusive_ptr<Aspose::Cells::Systems::String> functionName,
+			intrusive_ptr<Aspose::Cells::Systems::Collections::ArrayList> paramsList,
+			intrusive_ptr<Aspose::Cells::Systems::Collections::ArrayList> contextObjects)
 	{
 		if (functionName->Equals(new String("MySampleFunc")))
 		{

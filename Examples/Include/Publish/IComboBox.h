@@ -1,7 +1,7 @@
 #pragma once
-#include "System/Object.h"
-#include "System/Int32.h"
-#include "System/String.h"
+#include "Aspose.Cells.Systems/Object.h"
+#include "Aspose.Cells.Systems/Int32.h"
+#include "Aspose.Cells.Systems/String.h"
 #include "IShape.h"
 
 namespace Aspose {
@@ -23,17 +23,17 @@ namespace Drawing{
 			/// Zero-based.
 			/// </summary>
 			/// <remarks>-1 presents no item is selected.</remarks>
-			 virtual Aspose::Cells::System::Int32 GetSelectedIndex()=0;
+			 virtual Aspose::Cells::Systems::Int32 GetSelectedIndex()=0;
 			/// <summary>
 			/// Sets the index number of the currently selected item in a list box or combo box.
 			/// Zero-based.
 			/// </summary>
 			/// <remarks>-1 presents no item is selected.</remarks>
-			 virtual void SetSelectedIndex(Aspose::Cells::System::Int32 value)=0;
+			 virtual void SetSelectedIndex(Aspose::Cells::Systems::Int32 value)=0;
 			/// <summary>
 			/// Gets the selected value of the combox box.
 			/// </summary>
-			 virtual intrusive_ptr<Aspose::Cells::System::String> GetSelectedValue()=0;
+			 virtual intrusive_ptr<Aspose::Cells::Systems::String> GetSelectedValue()=0;
 			/// <summary>
 			/// Gets the selected cell in the input range of the combo box.
 			/// </summary>
@@ -49,11 +49,11 @@ namespace Drawing{
 			/// <summary>
 			/// Gets the number of list lines displayed in the drop-down portion of a combo box. 
 			/// </summary>
-			 virtual Aspose::Cells::System::Int32 GetDropDownLines()=0;
+			 virtual Aspose::Cells::Systems::Int32 GetDropDownLines()=0;
 			/// <summary>
 			/// Sets the number of list lines displayed in the drop-down portion of a combo box. 
 			/// </summary>
-			 virtual void SetDropDownLines(Aspose::Cells::System::Int32 value)=0;
+			 virtual void SetDropDownLines(Aspose::Cells::Systems::Int32 value)=0;
 
 	};
 }

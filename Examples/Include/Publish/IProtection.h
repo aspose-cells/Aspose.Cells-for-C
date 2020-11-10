@@ -1,7 +1,7 @@
 #pragma once
-#include "System/Object.h"
-#include "System/String.h"
-#include "System/Int32.h"
+#include "Aspose.Cells.Systems/Object.h"
+#include "Aspose.Cells.Systems/String.h"
+#include "Aspose.Cells.Systems/Int32.h"
 
 namespace Aspose {
 	namespace Cells {
@@ -27,7 +27,7 @@ namespace Cells{
 			/// 
 			/// </code>
 			/// </example>
-	class ASPOSE_CELLS_API IProtection : public Aspose::Cells::System::Object
+	class ASPOSE_CELLS_API IProtection : public Aspose::Cells::Systems::Object
 	{
 		public:
 			/// <summary>
@@ -394,18 +394,18 @@ namespace Cells{
 			/// <remarks>
 			/// If password is set to null or blank string, you can unprotect the worksheet or workbook without using a password. Otherwise, you must specify the password to unprotect the worksheet or workbook.
 			/// </remarks>
-			 virtual intrusive_ptr<Aspose::Cells::System::String> GetPassword()=0;
+			 virtual intrusive_ptr<Aspose::Cells::Systems::String> GetPassword()=0;
 			/// <summary>
 			/// Represents the password to protect the worksheet.
 			/// </summary>
 			/// <remarks>
 			/// If password is set to null or blank string, you can unprotect the worksheet or workbook without using a password. Otherwise, you must specify the password to unprotect the worksheet or workbook.
 			/// </remarks>
-			 virtual void SetPassword(intrusive_ptr<Aspose::Cells::System::String> value)=0;
+			 virtual void SetPassword(intrusive_ptr<Aspose::Cells::Systems::String> value)=0;
 			/// <summary>
 			/// Gets the hash of current password.
 			/// </summary>
-			 virtual Aspose::Cells::System::Int32 GetPasswordHash()=0;
+			 virtual Aspose::Cells::Systems::Int32 GetPasswordHash()=0;
 			/// <summary>
 			/// Indicates whether the worksheets is protected with password.
 			/// </summary>
@@ -416,7 +416,7 @@ namespace Cells{
 			/// <param name="password" >The password.</param>
 			/// <returns/>
 			/// 
-			 virtual bool VerifyPassword(intrusive_ptr<Aspose::Cells::System::String> password)=0;
+			 virtual bool VerifyPassword(intrusive_ptr<Aspose::Cells::Systems::String> password)=0;
 			/// <summary>
 			/// Represents if the user is allowed to select locked cells on a protected worksheet.
 			/// </summary>

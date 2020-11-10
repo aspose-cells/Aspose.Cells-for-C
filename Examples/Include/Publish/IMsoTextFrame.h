@@ -1,6 +1,6 @@
 #pragma once
-#include "System/Object.h"
-#include "System/Double.h"
+#include "Aspose.Cells.Systems/Object.h"
+#include "Aspose.Cells.Systems/Double.h"
 
 namespace Aspose{
 namespace Cells{
@@ -8,7 +8,7 @@ namespace Drawing{
 			/// <summary>
 			/// Represents the text frame in a Shape object.
 			/// </summary>
-	class ASPOSE_CELLS_API IMsoTextFrame : public Aspose::Cells::System::Object
+	class ASPOSE_CELLS_API IMsoTextFrame : public Aspose::Cells::Systems::Object
 	{
 		public:
 			/// <summary>
@@ -30,35 +30,35 @@ namespace Drawing{
 			/// <summary>
 			/// Returnt the left margin in unit of Points
 			/// </summary>
-			 virtual Aspose::Cells::System::Double GetLeftMarginPt()=0;
+			 virtual Aspose::Cells::Systems::Double GetLeftMarginPt()=0;
 			/// <summary>
 			/// Returnt the left margin in unit of Points
 			/// </summary>
-			 virtual void SetLeftMarginPt(Aspose::Cells::System::Double value)=0;
+			 virtual void SetLeftMarginPt(Aspose::Cells::Systems::Double value)=0;
 			/// <summary>
 			/// Returnt the right margin in unit of Points
 			/// </summary>
-			 virtual Aspose::Cells::System::Double GetRightMarginPt()=0;
+			 virtual Aspose::Cells::Systems::Double GetRightMarginPt()=0;
 			/// <summary>
 			/// Returnt the right margin in unit of Points
 			/// </summary>
-			 virtual void SetRightMarginPt(Aspose::Cells::System::Double value)=0;
+			 virtual void SetRightMarginPt(Aspose::Cells::Systems::Double value)=0;
 			/// <summary>
 			/// Returns the top margin in unit of Points
 			/// </summary>
-			 virtual Aspose::Cells::System::Double GetTopMarginPt()=0;
+			 virtual Aspose::Cells::Systems::Double GetTopMarginPt()=0;
 			/// <summary>
 			/// Returns the top margin in unit of Points
 			/// </summary>
-			 virtual void SetTopMarginPt(Aspose::Cells::System::Double value)=0;
+			 virtual void SetTopMarginPt(Aspose::Cells::Systems::Double value)=0;
 			/// <summary>
 			/// Returnt the bottom margin in unit of Points
 			/// </summary>
-			 virtual Aspose::Cells::System::Double GetBottomMarginPt()=0;
+			 virtual Aspose::Cells::Systems::Double GetBottomMarginPt()=0;
 			/// <summary>
 			/// Returnt the bottom margin in unit of Points
 			/// </summary>
-			 virtual void SetBottomMarginPt(Aspose::Cells::System::Double value)=0;
+			 virtual void SetBottomMarginPt(Aspose::Cells::Systems::Double value)=0;
 
 	};
 }

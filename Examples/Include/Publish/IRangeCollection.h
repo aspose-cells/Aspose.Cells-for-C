@@ -1,7 +1,7 @@
 #pragma once
-#include "System/Object.h"
-#include "System/Int32.h"
-#include "System/Collections/CollectionBase.h"
+#include "Aspose.Cells.Systems/Object.h"
+#include "Aspose.Cells.Systems/Int32.h"
+#include "Aspose.Cells.Systems/Collections/CollectionBase.h"
 
 namespace Aspose {
 	namespace Cells {
@@ -16,7 +16,7 @@ namespace Cells{
 			/// </summary>
 			/// 
 			/// 
-	class ASPOSE_CELLS_API IRangeCollection : public Aspose::Cells::System::Collections::CollectionBase
+	class ASPOSE_CELLS_API IRangeCollection : public Aspose::Cells::Systems::Collections::CollectionBase
 	{
 		public:
 			/// <summary>
@@ -29,7 +29,7 @@ namespace Cells{
 			/// <returns>The element at the specified index.</returns>
 			/// 
 			/// 
-			 virtual intrusive_ptr<Aspose::Cells::IRange> 		GetObjectByIndex(Aspose::Cells::System::Int32 index)=0;
+			 virtual intrusive_ptr<Aspose::Cells::IRange> 		GetObjectByIndex(Aspose::Cells::Systems::Int32 index)=0;
 			/// <summary>
 			/// Adds an <see cref="IRange" />
 			///  item to the collection.
@@ -40,7 +40,7 @@ namespace Cells{
 			/// <returns/>
 			/// 
 			/// 
-			 virtual Aspose::Cells::System::Int32 Add(intrusive_ptr<Aspose::Cells::IRange> range)=0;
+			 virtual Aspose::Cells::Systems::Int32 Add(intrusive_ptr<Aspose::Cells::IRange> range)=0;
 
 	};
 }

@@ -1,8 +1,8 @@
 #pragma once
-#include "System/Object.h"
-#include "System/Int32.h"
-#include "System/String.h"
-#include "System/Collections/CollectionBase.h"
+#include "Aspose.Cells.Systems/Object.h"
+#include "Aspose.Cells.Systems/Int32.h"
+#include "Aspose.Cells.Systems/String.h"
+#include "Aspose.Cells.Systems/Collections/CollectionBase.h"
 
 namespace Aspose {
 	namespace Cells {
@@ -23,7 +23,7 @@ namespace Vba{
 			/// <summary>
 			/// Represents the list of <see cref="IVbaModule" />
 			/// </summary>
-	class ASPOSE_CELLS_API IVbaModuleCollection : public Aspose::Cells::System::Collections::CollectionBase
+	class ASPOSE_CELLS_API IVbaModuleCollection : public Aspose::Cells::Systems::Collections::CollectionBase
 	{
 		public:
 			/// <summary>
@@ -32,7 +32,7 @@ namespace Vba{
 			/// <param name="sheet" >The worksheet</param>
 			/// <returns/>
 			/// 
-			 virtual Aspose::Cells::System::Int32 		AddIWorksheet(intrusive_ptr<Aspose::Cells::IWorksheet> sheet)=0;
+			 virtual Aspose::Cells::Systems::Int32 		AddIWorksheet(intrusive_ptr<Aspose::Cells::IWorksheet> sheet)=0;
 			/// <summary>
 			/// Adds module.
 			/// </summary>
@@ -40,7 +40,7 @@ namespace Vba{
 			/// <param name="name" >The name of module.</param>
 			/// <returns/>
 			/// 
-			 virtual Aspose::Cells::System::Int32 Add(Aspose::Cells::Vba::VbaModuleType type , intrusive_ptr<Aspose::Cells::System::String> name)=0;
+			 virtual Aspose::Cells::Systems::Int32 Add(Aspose::Cells::Vba::VbaModuleType type , intrusive_ptr<Aspose::Cells::Systems::String> name)=0;
 			/// <summary>
 			/// Gets <see cref="IVbaModule" />
 			///  in the list by the index.
@@ -48,7 +48,7 @@ namespace Vba{
 			/// <param name="index" >The index.</param>
 			/// <returns/>
 			/// 
-			 virtual intrusive_ptr<Aspose::Cells::Vba::IVbaModule> 		GetObjectByIndex(Aspose::Cells::System::Int32 index)=0;
+			 virtual intrusive_ptr<Aspose::Cells::Vba::IVbaModule> 		GetObjectByIndex(Aspose::Cells::Systems::Int32 index)=0;
 			/// <summary>
 			/// Removes module for a worksheet.
 			/// </summary>
@@ -61,7 +61,7 @@ namespace Vba{
 			/// </summary>
 			/// <param name="name" />
 			/// 
-			 virtual void Remove(intrusive_ptr<Aspose::Cells::System::String> name)=0;
+			 virtual void Remove(intrusive_ptr<Aspose::Cells::Systems::String> name)=0;
 			/// <summary>
 			/// Gets <see cref="IVbaModule" />
 			///  in the list by the name.
@@ -69,7 +69,7 @@ namespace Vba{
 			/// <param name="name" >The name of module.</param>
 			/// <returns/>
 			/// 
-			 virtual intrusive_ptr<Aspose::Cells::Vba::IVbaModule> 		GetObjectByIndex(intrusive_ptr<Aspose::Cells::System::String> name)=0;
+			 virtual intrusive_ptr<Aspose::Cells::Vba::IVbaModule> 		GetObjectByIndex(intrusive_ptr<Aspose::Cells::Systems::String> name)=0;
 
 	};
 }

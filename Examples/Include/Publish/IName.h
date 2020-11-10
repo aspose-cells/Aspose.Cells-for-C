@@ -1,8 +1,8 @@
 #pragma once
-#include "System/Object.h"
-#include "System/String.h"
-#include "System/Int32.h"
-#include "System/Array1D.h"
+#include "Aspose.Cells.Systems/Object.h"
+#include "Aspose.Cells.Systems/String.h"
+#include "Aspose.Cells.Systems/Int32.h"
+#include "Aspose.Cells.Systems/Array1D.h"
 
 namespace Aspose {
 	namespace Cells {
@@ -33,49 +33,49 @@ namespace Cells{
 			///  </code>
 			/// 
 			///  </example>
-	class ASPOSE_CELLS_API IName : public Aspose::Cells::System::Object
+	class ASPOSE_CELLS_API IName : public Aspose::Cells::Systems::Object
 	{
 		public:
 			/// <summary>
 			/// Gets the comment of the name.
 			/// Only applies for Excel 2007.
 			/// </summary>
-			 virtual intrusive_ptr<Aspose::Cells::System::String> GetComment()=0;
+			 virtual intrusive_ptr<Aspose::Cells::Systems::String> GetComment()=0;
 			/// <summary>
 			/// Sets the comment of the name.
 			/// Only applies for Excel 2007.
 			/// </summary>
-			 virtual void SetComment(intrusive_ptr<Aspose::Cells::System::String> value)=0;
+			 virtual void SetComment(intrusive_ptr<Aspose::Cells::Systems::String> value)=0;
 			/// <summary>
 			/// Gets the name text of the object.
 			/// </summary>
-			 virtual intrusive_ptr<Aspose::Cells::System::String> GetText()=0;
+			 virtual intrusive_ptr<Aspose::Cells::Systems::String> GetText()=0;
 			/// <summary>
 			/// Gets the name text of the object.
 			/// </summary>
-			 virtual void SetText(intrusive_ptr<Aspose::Cells::System::String> value)=0;
+			 virtual void SetText(intrusive_ptr<Aspose::Cells::Systems::String> value)=0;
 			/// <summary>
 			/// Gets the name full text of the object with the scope setting.
 			/// </summary>
-			 virtual intrusive_ptr<Aspose::Cells::System::String> GetFullText()=0;
+			 virtual intrusive_ptr<Aspose::Cells::Systems::String> GetFullText()=0;
 			/// <summary>
 			/// Returns or sets the formula that the name is defined to refer to, beginning with an equal sign.
 			/// </summary>
-			 virtual intrusive_ptr<Aspose::Cells::System::String> GetRefersTo()=0;
+			 virtual intrusive_ptr<Aspose::Cells::Systems::String> GetRefersTo()=0;
 			/// <summary>
 			/// Returns or sets the formula that the name is defined to refer to, beginning with an equal sign.
 			/// </summary>
-			 virtual void SetRefersTo(intrusive_ptr<Aspose::Cells::System::String> value)=0;
+			 virtual void SetRefersTo(intrusive_ptr<Aspose::Cells::Systems::String> value)=0;
 			/// <summary>
 			///  Gets a R1C1 reference of the <see cref="IName" />
 			/// .
 			/// </summary>
-			 virtual intrusive_ptr<Aspose::Cells::System::String> GetR1C1RefersTo()=0;
+			 virtual intrusive_ptr<Aspose::Cells::Systems::String> GetR1C1RefersTo()=0;
 			/// <summary>
 			///  Sets a R1C1 reference of the <see cref="IName" />
 			/// .
 			/// </summary>
-			 virtual void SetR1C1RefersTo(intrusive_ptr<Aspose::Cells::System::String> value)=0;
+			 virtual void SetR1C1RefersTo(intrusive_ptr<Aspose::Cells::Systems::String> value)=0;
 			/// <summary>
 			/// Indicates whether this name is referred by other formulas.
 			/// </summary>
@@ -92,23 +92,23 @@ namespace Cells{
 			/// Indicates this name belongs to Workbook or Worksheet.
 			/// 0 = Global name, otherwise index to sheet (one-based)
 			/// </summary>
-			 virtual Aspose::Cells::System::Int32 GetSheetIndex()=0;
+			 virtual Aspose::Cells::Systems::Int32 GetSheetIndex()=0;
 			/// <summary>
 			/// Indicates this name belongs to Workbook or Worksheet.
 			/// 0 = Global name, otherwise index to sheet (one-based)
 			/// </summary>
-			 virtual void SetSheetIndex(Aspose::Cells::System::Int32 value)=0;
+			 virtual void SetSheetIndex(Aspose::Cells::Systems::Int32 value)=0;
 			/// <summary>
 			/// Returns a string represents the current Range object.
 			/// </summary>
 			/// <returns/>
 			/// 
-			  virtual intrusive_ptr<Aspose::Cells::System::String> ToString()=0;
+			  virtual intrusive_ptr<Aspose::Cells::Systems::String> ToString()=0;
 			/// <summary>
 			/// Gets all ranges which referred by this name.
 			/// </summary>
 			/// <returns>All ranges.</returns>
-			 virtual intrusive_ptr<Aspose::Cells::System::Array1D<Aspose::Cells::IRange*>> 		GetIRanges()=0;
+			 virtual intrusive_ptr<Aspose::Cells::Systems::Array1D<Aspose::Cells::IRange*>> 		GetIRanges()=0;
 			/// <summary>
 			/// Gets the range if this name refers to a range.
 			/// </summary>
@@ -122,7 +122,7 @@ namespace Cells{
 			/// <param name="row" >The according row index.</param>
 			/// <param name="column" >The according column index</param>
 			/// <returns>The range.</returns>
-			 virtual intrusive_ptr<Aspose::Cells::IRange> 		GetIRange(Aspose::Cells::System::Int32 sheetIndex , Aspose::Cells::System::Int32 row , Aspose::Cells::System::Int32 column)=0;
+			 virtual intrusive_ptr<Aspose::Cells::IRange> 		GetIRange(Aspose::Cells::Systems::Int32 sheetIndex , Aspose::Cells::Systems::Int32 row , Aspose::Cells::Systems::Int32 column)=0;
 
 	};
 }

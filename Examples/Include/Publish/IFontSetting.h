@@ -1,6 +1,6 @@
 #pragma once
-#include "System/Object.h"
-#include "System/Int32.h"
+#include "Aspose.Cells.Systems/Object.h"
+#include "Aspose.Cells.Systems/Int32.h"
 
 namespace Aspose {
 	namespace Cells {
@@ -57,7 +57,7 @@ namespace Cells{
 			///  </code>
 			/// 
 			///  </example>
-	class ASPOSE_CELLS_API IFontSetting : public Aspose::Cells::System::Object
+	class ASPOSE_CELLS_API IFontSetting : public Aspose::Cells::Systems::Object
 	{
 		public:
 			/// <summary>
@@ -67,11 +67,11 @@ namespace Cells{
 			/// <summary>
 			/// Gets the start index of the characters.
 			/// </summary>
-			 virtual Aspose::Cells::System::Int32 GetStartIndex()=0;
+			 virtual Aspose::Cells::Systems::Int32 GetStartIndex()=0;
 			/// <summary>
 			/// Gets the length of the characters.
 			/// </summary>
-			 virtual Aspose::Cells::System::Int32 GetLength()=0;
+			 virtual Aspose::Cells::Systems::Int32 GetLength()=0;
 			/// <summary>
 			/// Returns the font of this object.
 			/// </summary>

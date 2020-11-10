@@ -1,6 +1,6 @@
 #pragma once
-#include "System/Object.h"
-#include "System/Double.h"
+#include "Aspose.Cells.Systems/Object.h"
+#include "Aspose.Cells.Systems/Double.h"
 
 namespace Aspose {
 	namespace Cells {
@@ -16,7 +16,7 @@ namespace Drawing{
 			/// <summary>
 			/// This class specifies the visual shape properties for a chart element or shape.
 			/// </summary>
-	class ASPOSE_CELLS_API IShapePropertyCollection : public Aspose::Cells::System::Object
+	class ASPOSE_CELLS_API IShapePropertyCollection : public Aspose::Cells::Systems::Object
 	{
 		public:
 			/// <summary>
@@ -47,11 +47,11 @@ namespace Drawing{
 			/// <summary>
 			/// Gets the radius of blur to apply to the edges, in unit of points.
 			/// </summary>
-			 virtual Aspose::Cells::System::Double GetSoftEdgeRadius()=0;
+			 virtual Aspose::Cells::Systems::Double GetSoftEdgeRadius()=0;
 			/// <summary>
 			/// Sets the radius of blur to apply to the edges, in unit of points.
 			/// </summary>
-			 virtual void SetSoftEdgeRadius(Aspose::Cells::System::Double value)=0;
+			 virtual void SetSoftEdgeRadius(Aspose::Cells::Systems::Double value)=0;
 			/// <summary>
 			/// Represents a <seealso cref="IShadowEffect" />
 			///  object that specifies shadow effect for the chart element or shape.

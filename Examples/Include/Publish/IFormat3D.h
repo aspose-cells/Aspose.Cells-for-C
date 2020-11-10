@@ -1,6 +1,6 @@
 #pragma once
-#include "System/Object.h"
-#include "System/Double.h"
+#include "Aspose.Cells.Systems/Object.h"
+#include "Aspose.Cells.Systems/Double.h"
 
 namespace Aspose {
 	namespace Cells {
@@ -17,7 +17,7 @@ namespace Drawing{
 			/// <summary>
 			/// This class specifies the 3D shape properties for a chart element or shape.
 			/// </summary>
-	class ASPOSE_CELLS_API IFormat3D : public Aspose::Cells::System::Object
+	class ASPOSE_CELLS_API IFormat3D : public Aspose::Cells::Systems::Object
 	{
 		public:
 			/// <summary>
@@ -54,11 +54,11 @@ namespace Drawing{
 			/// <summary>
 			/// Gets the lighting angle. Range from 0 to 359.9 degrees.
 			/// </summary>
-			 virtual Aspose::Cells::System::Double GetLightingAngle()=0;
+			 virtual Aspose::Cells::Systems::Double GetLightingAngle()=0;
 			/// <summary>
 			/// Sets the lighting angle. Range from 0 to 359.9 degrees.
 			/// </summary>
-			 virtual void SetLightingAngle(Aspose::Cells::System::Double value)=0;
+			 virtual void SetLightingAngle(Aspose::Cells::Systems::Double value)=0;
 
 	};
 }

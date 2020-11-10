@@ -1,7 +1,7 @@
 #pragma once
-#include "System/Object.h"
-#include "System/Drawing/Color.h"
-#include "System/Double.h"
+#include "Aspose.Cells.Systems/Object.h"
+#include "Aspose.Cells.Systems/Drawing/Color.h"
+#include "Aspose.Cells.Systems/Double.h"
 
 namespace Aspose {
 	namespace Cells {
@@ -32,7 +32,7 @@ namespace Drawing{
 			/// <summary>
 			/// Encapsulates the object that represents the line format.
 			/// </summary>
-	class ASPOSE_CELLS_API ILine : public Aspose::Cells::System::Object
+	class ASPOSE_CELLS_API ILine : public Aspose::Cells::Systems::Object
 	{
 		public:
 			/// <summary>
@@ -119,20 +119,20 @@ namespace Drawing{
 			/// Represents the <see cref="System.Drawing.Color" />
 			///  of the line.
 			/// </summary>
-			 virtual intrusive_ptr<Aspose::Cells::System::Drawing::Color> GetColor()=0;
+			 virtual intrusive_ptr<Aspose::Cells::Systems::Drawing::Color> GetColor()=0;
 			/// <summary>
 			/// Represents the <see cref="System.Drawing.Color" />
 			///  of the line.
 			/// </summary>
-			 virtual void SetColor(intrusive_ptr<Aspose::Cells::System::Drawing::Color> value)=0;
+			 virtual void SetColor(intrusive_ptr<Aspose::Cells::Systems::Drawing::Color> value)=0;
 			/// <summary>
 			/// Returns or sets the degree of transparency of the line as a value from 0.0 (opaque) through 1.0 (clear).
 			/// </summary>
-			 virtual Aspose::Cells::System::Double GetTransparency()=0;
+			 virtual Aspose::Cells::Systems::Double GetTransparency()=0;
 			/// <summary>
 			/// Returns or sets the degree of transparency of the line as a value from 0.0 (opaque) through 1.0 (clear).
 			/// </summary>
-			 virtual void SetTransparency(Aspose::Cells::System::Double value)=0;
+			 virtual void SetTransparency(Aspose::Cells::Systems::Double value)=0;
 			/// <summary>
 			/// Represents the style of the line.
 			/// </summary>
@@ -154,19 +154,19 @@ namespace Drawing{
 			/// <summary>
 			/// Gets the weight of the line in unit of points.
 			/// </summary>
-			 virtual Aspose::Cells::System::Double GetWeightPt()=0;
+			 virtual Aspose::Cells::Systems::Double GetWeightPt()=0;
 			/// <summary>
 			/// Sets the weight of the line in unit of points.
 			/// </summary>
-			 virtual void SetWeightPt(Aspose::Cells::System::Double value)=0;
+			 virtual void SetWeightPt(Aspose::Cells::Systems::Double value)=0;
 			/// <summary>
 			/// Gets the weight of the line in uni of pixels.
 			/// </summary>
-			 virtual Aspose::Cells::System::Double GetWeightPx()=0;
+			 virtual Aspose::Cells::Systems::Double GetWeightPx()=0;
 			/// <summary>
 			/// Sets the weight of the line in uni of pixels.
 			/// </summary>
-			 virtual void SetWeightPx(Aspose::Cells::System::Double value)=0;
+			 virtual void SetWeightPx(Aspose::Cells::Systems::Double value)=0;
 			/// <summary>
 			/// Gets format type.
 			/// </summary>

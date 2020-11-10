@@ -1,8 +1,8 @@
 #pragma once
-#include "System/Object.h"
-#include "System/String.h"
-#include "System/Collections/ArrayList.h"
-#include "System/Int32.h"
+#include "Aspose.Cells.Systems/Object.h"
+#include "Aspose.Cells.Systems/String.h"
+#include "Aspose.Cells.Systems/Collections/ArrayList.h"
+#include "Aspose.Cells.Systems/Int32.h"
 
 namespace Aspose {
 	namespace Cells {
@@ -39,7 +39,7 @@ namespace Cells{
 			///  </code>
 			/// 
 			///  </example>
-	class ASPOSE_CELLS_API IValidation : public Aspose::Cells::System::Object
+	class ASPOSE_CELLS_API IValidation : public Aspose::Cells::Systems::Object
 	{
 		public:
 			/// <summary>
@@ -69,35 +69,35 @@ namespace Cells{
 			/// <summary>
 			/// Represents the data validation input message.
 			/// </summary>
-			 virtual intrusive_ptr<Aspose::Cells::System::String> GetInputMessage()=0;
+			 virtual intrusive_ptr<Aspose::Cells::Systems::String> GetInputMessage()=0;
 			/// <summary>
 			/// Represents the data validation input message.
 			/// </summary>
-			 virtual void SetInputMessage(intrusive_ptr<Aspose::Cells::System::String> value)=0;
+			 virtual void SetInputMessage(intrusive_ptr<Aspose::Cells::Systems::String> value)=0;
 			/// <summary>
 			/// Represents the title of the data-validation input dialog box.
 			/// </summary>
-			 virtual intrusive_ptr<Aspose::Cells::System::String> GetInputTitle()=0;
+			 virtual intrusive_ptr<Aspose::Cells::Systems::String> GetInputTitle()=0;
 			/// <summary>
 			/// Represents the title of the data-validation input dialog box.
 			/// </summary>
-			 virtual void SetInputTitle(intrusive_ptr<Aspose::Cells::System::String> value)=0;
+			 virtual void SetInputTitle(intrusive_ptr<Aspose::Cells::Systems::String> value)=0;
 			/// <summary>
 			/// Represents the data validation error message.
 			/// </summary>
-			 virtual intrusive_ptr<Aspose::Cells::System::String> GetErrorMessage()=0;
+			 virtual intrusive_ptr<Aspose::Cells::Systems::String> GetErrorMessage()=0;
 			/// <summary>
 			/// Represents the data validation error message.
 			/// </summary>
-			 virtual void SetErrorMessage(intrusive_ptr<Aspose::Cells::System::String> value)=0;
+			 virtual void SetErrorMessage(intrusive_ptr<Aspose::Cells::Systems::String> value)=0;
 			/// <summary>
 			/// Represents the title of the data-validation error dialog box. 
 			/// </summary>
-			 virtual intrusive_ptr<Aspose::Cells::System::String> GetErrorTitle()=0;
+			 virtual intrusive_ptr<Aspose::Cells::Systems::String> GetErrorTitle()=0;
 			/// <summary>
 			/// Represents the title of the data-validation error dialog box. 
 			/// </summary>
-			 virtual void SetErrorTitle(intrusive_ptr<Aspose::Cells::System::String> value)=0;
+			 virtual void SetErrorTitle(intrusive_ptr<Aspose::Cells::Systems::String> value)=0;
 			/// <summary>
 			/// Indicates whether the data validation input message will be displayed whenever the user selects a cell in the data validation range.
 			/// </summary>
@@ -125,35 +125,35 @@ namespace Cells{
 			/// <summary>
 			/// Represents the value or expression associated with the data validation.
 			/// </summary>
-			 virtual intrusive_ptr<Aspose::Cells::System::String> GetFormula1()=0;
+			 virtual intrusive_ptr<Aspose::Cells::Systems::String> GetFormula1()=0;
 			/// <summary>
 			/// Represents the value or expression associated with the data validation.
 			/// </summary>
-			 virtual void SetFormula1(intrusive_ptr<Aspose::Cells::System::String> value)=0;
+			 virtual void SetFormula1(intrusive_ptr<Aspose::Cells::Systems::String> value)=0;
 			/// <summary>
 			/// Represents the first value associated with the data validation.
 			/// </summary>
-			 virtual intrusive_ptr<Aspose::Cells::System::Object> GetValue1()=0;
+			 virtual intrusive_ptr<Aspose::Cells::Systems::Object> GetValue1()=0;
 			/// <summary>
 			/// Represents the first value associated with the data validation.
 			/// </summary>
-			 virtual void SetValue1(intrusive_ptr<Aspose::Cells::System::Object> value)=0;
+			 virtual void SetValue1(intrusive_ptr<Aspose::Cells::Systems::Object> value)=0;
 			/// <summary>
 			/// Represents the first value associated with the data validation.
 			/// </summary>
-			 virtual intrusive_ptr<Aspose::Cells::System::Object> GetValue2()=0;
+			 virtual intrusive_ptr<Aspose::Cells::Systems::Object> GetValue2()=0;
 			/// <summary>
 			/// Represents the first value associated with the data validation.
 			/// </summary>
-			 virtual void SetValue2(intrusive_ptr<Aspose::Cells::System::Object> value)=0;
+			 virtual void SetValue2(intrusive_ptr<Aspose::Cells::Systems::Object> value)=0;
 			/// <summary>
 			/// Represents the value or expression associated with the second part of the data validation. 
 			/// </summary>
-			 virtual intrusive_ptr<Aspose::Cells::System::String> GetFormula2()=0;
+			 virtual intrusive_ptr<Aspose::Cells::Systems::String> GetFormula2()=0;
 			/// <summary>
 			/// Represents the value or expression associated with the second part of the data validation. 
 			/// </summary>
-			 virtual void SetFormula2(intrusive_ptr<Aspose::Cells::System::String> value)=0;
+			 virtual void SetFormula2(intrusive_ptr<Aspose::Cells::Systems::String> value)=0;
 			/// <summary>
 			/// Indicates whether data validation displays a drop-down list that contains acceptable values.
 			/// </summary>
@@ -169,7 +169,7 @@ namespace Cells{
 			/// <remarks>
 			/// The old validations on the area will not be removed if directly adding are to this list.
 			/// </remarks>
-			 virtual intrusive_ptr<Aspose::Cells::System::Collections::ArrayList> GetAreaList()=0;
+			 virtual intrusive_ptr<Aspose::Cells::Systems::Collections::ArrayList> GetAreaList()=0;
 			/// <summary>
 			/// Applies the validation to the area.
 			/// </summary>
@@ -188,7 +188,7 @@ namespace Cells{
 			/// </summary>
 			/// <param name="row" >The row index.</param>
 			/// <param name="column" > The column index.</param>
-			 virtual void RemoveACell(Aspose::Cells::System::Int32 row , Aspose::Cells::System::Int32 column)=0;
+			 virtual void RemoveACell(Aspose::Cells::Systems::Int32 row , Aspose::Cells::Systems::Int32 column)=0;
 
 	};
 }

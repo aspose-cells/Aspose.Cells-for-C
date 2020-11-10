@@ -1,12 +1,12 @@
 #pragma once
-#include "System/Object.h"
+#include "Aspose.Cells.Systems/Object.h"
 
 namespace Aspose{
 namespace Cells{
 			/// <summary>
 			///  The load data options.
 			/// </summary>
-	class ASPOSE_CELLS_API ILoadDataOption : public Aspose::Cells::System::Object
+	class ASPOSE_CELLS_API ILoadDataOption : public Aspose::Cells::Systems::Object
 	{
 		public:
 			/// <summary>

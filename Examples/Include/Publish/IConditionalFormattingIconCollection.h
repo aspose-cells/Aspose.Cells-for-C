@@ -1,7 +1,7 @@
 #pragma once
-#include "System/Object.h"
-#include "System/Int32.h"
-#include "System/Collections/CollectionBase.h"
+#include "Aspose.Cells.Systems/Object.h"
+#include "Aspose.Cells.Systems/Int32.h"
+#include "Aspose.Cells.Systems/Collections/CollectionBase.h"
 
 namespace Aspose {
 	namespace Cells {
@@ -62,7 +62,7 @@ namespace Cells{
 			///  </code>
 			/// 
 			///  </example>
-	class ASPOSE_CELLS_API IConditionalFormattingIconCollection : public Aspose::Cells::System::Collections::CollectionBase
+	class ASPOSE_CELLS_API IConditionalFormattingIconCollection : public Aspose::Cells::Systems::Collections::CollectionBase
 	{
 		public:
 			/// <summary>
@@ -70,7 +70,7 @@ namespace Cells{
 			/// </summary>
 			/// <param name="index" >The zero based index of the element.</param>
 			/// <returns>The element at the specified index.</returns>
-			 virtual intrusive_ptr<Aspose::Cells::IConditionalFormattingIcon> 		GetObjectByIndex(Aspose::Cells::System::Int32 index)=0;
+			 virtual intrusive_ptr<Aspose::Cells::IConditionalFormattingIcon> 		GetObjectByIndex(Aspose::Cells::Systems::Int32 index)=0;
 			/// <summary>
 			/// Adds <see cref="IConditionalFormattingIcon" />
 			///  object.
@@ -78,13 +78,13 @@ namespace Cells{
 			/// <param name="type" >The value type.</param>
 			/// <param name="index" >The Index.</param>
 			/// <returns>Returns the index of new object in the list.</returns>
-			 virtual Aspose::Cells::System::Int32 Add(Aspose::Cells::IconSetType type , Aspose::Cells::System::Int32 index)=0;
+			 virtual Aspose::Cells::Systems::Int32 Add(Aspose::Cells::IconSetType type , Aspose::Cells::Systems::Int32 index)=0;
 			/// <summary>
 			/// Adds <see cref="IConditionalFormattingIcon" />
 			///  object.
 			/// </summary>
 			/// <param name="cficon" >Returns the index of new object in the list.</param>
-			 virtual Aspose::Cells::System::Int32 Add(intrusive_ptr<Aspose::Cells::IConditionalFormattingIcon> cficon)=0;
+			 virtual Aspose::Cells::Systems::Int32 Add(intrusive_ptr<Aspose::Cells::IConditionalFormattingIcon> cficon)=0;
 
 	};
 }

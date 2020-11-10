@@ -1,8 +1,8 @@
 #pragma once
-#include "System/Object.h"
-#include "System/Int32.h"
-#include "System/Double.h"
-#include "System/Byte.h"
+#include "Aspose.Cells.Systems/Object.h"
+#include "Aspose.Cells.Systems/Int32.h"
+#include "Aspose.Cells.Systems/Double.h"
+#include "Aspose.Cells.Systems/Byte.h"
 
 namespace Aspose {
 	namespace Cells {
@@ -88,25 +88,25 @@ namespace Cells{
 			/// workbook.Save("D:\book1.xls")
 			/// </code>
 			/// </example>
-	class ASPOSE_CELLS_API IColumn : public Aspose::Cells::System::Object
+	class ASPOSE_CELLS_API IColumn : public Aspose::Cells::Systems::Object
 	{
 		public:
 			/// <summary>
 			/// Gets the index of this column.
 			/// </summary>
-			  virtual Aspose::Cells::System::Int32 GetIndex() = 0;
+			  virtual Aspose::Cells::Systems::Int32 GetIndex() = 0;
 			/// <summary>
 			/// Gets the column width in unit of characters.
 			/// </summary>
-			  virtual Aspose::Cells::System::Double GetWidth() = 0;
+			  virtual Aspose::Cells::Systems::Double GetWidth() = 0;
 			/// <summary>
 			/// Sets the column width in unit of characters.
 			/// </summary>
-			  virtual void SetWidth(Aspose::Cells::System::Double value) = 0;
+			  virtual void SetWidth(Aspose::Cells::Systems::Double value) = 0;
 			/// <summary>
 			/// Gets the group level of the column.
 			/// </summary>
-			  virtual Aspose::Cells::System::Byte GetGroupLevel() = 0;
+			  virtual Aspose::Cells::Systems::Byte GetGroupLevel() = 0;
 			/// <summary>
 			/// Indicates whether the column is hidden.
 			/// </summary>

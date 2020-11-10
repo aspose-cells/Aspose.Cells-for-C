@@ -1,7 +1,7 @@
 #pragma once
-#include "System/Object.h"
-#include "System/Int32.h"
-#include "System/Collections/CollectionBase.h"
+#include "Aspose.Cells.Systems/Object.h"
+#include "Aspose.Cells.Systems/Int32.h"
+#include "Aspose.Cells.Systems/Collections/CollectionBase.h"
 
 namespace Aspose {
 	namespace Cells {
@@ -16,7 +16,7 @@ namespace Pivot{
 			/// <summary>
 			/// Represents PivotTable Format Conditions.
 			/// </summary>
-	class ASPOSE_CELLS_API IPivotFormatConditionCollection : public Aspose::Cells::System::Collections::CollectionBase
+	class ASPOSE_CELLS_API IPivotFormatConditionCollection : public Aspose::Cells::Systems::Collections::CollectionBase
 	{
 		public:
 			/// <summary>
@@ -24,12 +24,12 @@ namespace Pivot{
 			/// </summary>
 			/// <returns>pivot FormatCondition object index.</returns>
 			/// <remarks>not supported</remarks>
-			 virtual Aspose::Cells::System::Int32 Add()=0;
+			 virtual Aspose::Cells::Systems::Int32 Add()=0;
 			/// <summary>
 			/// Gets the pivot FormatCondition object at the specific index.
 			/// </summary>
 			/// <returns>pivot FormatCondition object.</returns>
-			 virtual intrusive_ptr<Aspose::Cells::Pivot::IPivotFormatCondition> 		GetObjectByIndex(Aspose::Cells::System::Int32 index)=0;
+			 virtual intrusive_ptr<Aspose::Cells::Pivot::IPivotFormatCondition> 		GetObjectByIndex(Aspose::Cells::Systems::Int32 index)=0;
 
 	};
 }

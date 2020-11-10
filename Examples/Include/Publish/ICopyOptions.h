@@ -1,12 +1,12 @@
 #pragma once
-#include "System/Object.h"
+#include "Aspose.Cells.Systems/Object.h"
 
 namespace Aspose{
 namespace Cells{
 			/// <summary>
 			/// Represents the copy options.
 			/// </summary>
-	class ASPOSE_CELLS_API ICopyOptions : public Aspose::Cells::System::Object
+	class ASPOSE_CELLS_API ICopyOptions : public Aspose::Cells::Systems::Object
 	{
 		public:
 			/// <summary>

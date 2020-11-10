@@ -186,7 +186,7 @@ ures_openDirect(const char* packageName,
                 UErrorCode* status);
 
 /**
- * Same as ures_open() but takes a const UChar *path.
+ * Same as ures_open() but takes a const UnChar *path.
  * This path will be converted to char * using the default converter,
  * then ures_open() is called.
  *
@@ -204,7 +204,7 @@ ures_openDirect(const char* packageName,
  * @stable ICU 2.0
  */
 U_STABLE UResourceBundle* U_EXPORT2 
-ures_openU(const UChar* packageName, 
+ures_openU(const UnChar* packageName, 
            const char* locale, 
            UErrorCode* status);
 
@@ -359,14 +359,14 @@ ures_openFillIn(UResourceBundle *r,
  *                Always check the value of status. Don't count on returning NULL.
  *                could be a non-failing error 
  *                e.g.: <TT>U_USING_FALLBACK_WARNING</TT>,<TT>U_USING_DEFAULT_WARNING </TT>
- * @return a pointer to a zero-terminated UChar array which lives in a memory mapped/DLL file.
+ * @return a pointer to a zero-terminated UnChar array which lives in a memory mapped/DLL file.
  * @see ures_getBinary
  * @see ures_getIntVector
  * @see ures_getInt
  * @see ures_getUInt
  * @stable ICU 2.0
  */
-U_STABLE const UChar* U_EXPORT2 
+U_STABLE const UnChar* U_EXPORT2 
 ures_getString(const UResourceBundle* resourceBundle, 
                int32_t* len, 
                UErrorCode* status);
@@ -592,10 +592,10 @@ ures_getNextResource(UResourceBundle *resourceBundle,
  * @param key               fill in for key associated with this string. NULL if no key
  * @param status            fills in the outgoing error code. If an error occured, we may return NULL, but don't
  *                          count on it. Check status instead!
- * @return a pointer to a zero-terminated UChar array which lives in a memory mapped/DLL file.
+ * @return a pointer to a zero-terminated UnChar array which lives in a memory mapped/DLL file.
  * @stable ICU 2.0
  */
-U_STABLE const UChar* U_EXPORT2 
+U_STABLE const UnChar* U_EXPORT2 
 ures_getNextString(UResourceBundle *resourceBundle, 
                    int32_t* len, 
                    const char ** key, 
@@ -627,10 +627,10 @@ ures_getByIndex(const UResourceBundle *resourceBundle,
  * @param len               fill in length of the string
  * @param status            fills in the outgoing error code. If an error occured, we may return NULL, but don't
  *                          count on it. Check status instead!
- * @return                  a pointer to a zero-terminated UChar array which lives in a memory mapped/DLL file.
+ * @return                  a pointer to a zero-terminated UnChar array which lives in a memory mapped/DLL file.
  * @stable ICU 2.0
  */
-U_STABLE const UChar* U_EXPORT2 
+U_STABLE const UnChar* U_EXPORT2 
 ures_getStringByIndex(const UResourceBundle *resourceBundle, 
                       int32_t indexS, 
                       int32_t* len, 
@@ -718,10 +718,10 @@ ures_getByKey(const UResourceBundle *resourceBundle,
  * @param len               fill in length of the string
  * @param status            fills in the outgoing error code. If an error occured, we may return NULL, but don't
  *                          count on it. Check status instead!
- * @return                  a pointer to a zero-terminated UChar array which lives in a memory mapped/DLL file.
+ * @return                  a pointer to a zero-terminated UnChar array which lives in a memory mapped/DLL file.
  * @stable ICU 2.0
  */
-U_STABLE const UChar* U_EXPORT2 
+U_STABLE const UnChar* U_EXPORT2 
 ures_getStringByKey(const UResourceBundle *resB, 
                     const char* key, 
                     int32_t* len, 
@@ -804,7 +804,7 @@ ures_getUnicodeString(const UResourceBundle *resB,
                       UErrorCode* status) 
 {
     int32_t len = 0;
-    const UChar *r = ures_getString(resB, &len, status);
+    const UnChar *r = ures_getString(resB, &len, status);
     return UnicodeString(TRUE, r, len);
 }
 
@@ -824,7 +824,7 @@ ures_getNextUnicodeString(UResourceBundle *resB,
                           UErrorCode* status) 
 {
     int32_t len = 0;
-    const UChar* r = ures_getNextString(resB, &len, key, status);
+    const UnChar* r = ures_getNextString(resB, &len, key, status);
     return UnicodeString(TRUE, r, len);
 }
 
@@ -843,7 +843,7 @@ ures_getUnicodeStringByIndex(const UResourceBundle *resB,
                              UErrorCode* status) 
 {
     int32_t len = 0;
-    const UChar* r = ures_getStringByIndex(resB, indexS, &len, status);
+    const UnChar* r = ures_getStringByIndex(resB, indexS, &len, status);
     return UnicodeString(TRUE, r, len);
 }
 
@@ -863,7 +863,7 @@ ures_getUnicodeStringByKey(const UResourceBundle *resB,
                            UErrorCode* status) 
 {
     int32_t len = 0;
-    const UChar* r = ures_getStringByKey(resB, key, &len, status);
+    const UnChar* r = ures_getStringByKey(resB, key, &len, status);
     return UnicodeString(TRUE, r, len);
 }
 

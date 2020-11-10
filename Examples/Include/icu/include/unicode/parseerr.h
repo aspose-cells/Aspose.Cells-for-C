@@ -78,14 +78,14 @@ typedef struct UParseError {
      * string if not supported by parser.
      * @stable ICU 2.0   
      */
-    UChar          preContext[U_PARSE_CONTEXT_LEN];
+    UnChar          preContext[U_PARSE_CONTEXT_LEN];
 
     /**
      * The error itself and/or textual context after the error.
      * Null-terminated.  The empty string if not supported by parser.
      * @stable ICU 2.0   
      */
-    UChar          postContext[U_PARSE_CONTEXT_LEN];
+    UnChar          postContext[U_PARSE_CONTEXT_LEN];
 
 } UParseError;
 

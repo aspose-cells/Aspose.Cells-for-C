@@ -1,9 +1,9 @@
 #pragma once
-#include "System/Object.h"
-#include "System/String.h"
-#include "System/Int32.h"
-#include "System/DateTime.h"
-#include "System/Double.h"
+#include "Aspose.Cells.Systems/Object.h"
+#include "Aspose.Cells.Systems/String.h"
+#include "Aspose.Cells.Systems/Int32.h"
+#include "Aspose.Cells.Systems/DateTime.h"
+#include "Aspose.Cells.Systems/Double.h"
 #include "IDocumentPropertyCollection.h"
 
 namespace Aspose {
@@ -49,259 +49,259 @@ namespace Properties{
 			/// is not recognized as a built-in name, a null is returned.</p>
 			/// </remarks>
 			/// <param name="name" >The case-insensitive name of the property to retrieve.</param>
-			 virtual intrusive_ptr<Aspose::Cells::Properties::IDocumentProperty> 		GetObjectByIndex(intrusive_ptr<Aspose::Cells::System::String> name)=0;
+			 virtual intrusive_ptr<Aspose::Cells::Properties::IDocumentProperty> 		GetObjectByIndex(intrusive_ptr<Aspose::Cells::Systems::String> name)=0;
 			/// <summary>
 			/// Gets the name of the document's author.
 			/// </summary>
-			 virtual intrusive_ptr<Aspose::Cells::System::String> GetAuthor()=0;
+			 virtual intrusive_ptr<Aspose::Cells::Systems::String> GetAuthor()=0;
 			/// <summary>
 			/// Sets the name of the document's author.
 			/// </summary>
-			 virtual void SetAuthor(intrusive_ptr<Aspose::Cells::System::String> value)=0;
+			 virtual void SetAuthor(intrusive_ptr<Aspose::Cells::Systems::String> value)=0;
 			/// <summary>
 			/// Represents an estimate of the number of bytes in the document.
 			/// </summary>
-			 virtual Aspose::Cells::System::Int32 GetBytes()=0;
+			 virtual Aspose::Cells::Systems::Int32 GetBytes()=0;
 			/// <summary>
 			/// Represents an estimate of the number of bytes in the document.
 			/// </summary>
-			 virtual void SetBytes(Aspose::Cells::System::Int32 value)=0;
+			 virtual void SetBytes(Aspose::Cells::Systems::Int32 value)=0;
 			/// <summary>
 			/// Represents an estimate of the number of characters in the document.
 			/// </summary>
-			 virtual Aspose::Cells::System::Int32 GetCharacters()=0;
+			 virtual Aspose::Cells::Systems::Int32 GetCharacters()=0;
 			/// <summary>
 			/// Represents an estimate of the number of characters in the document.
 			/// </summary>
-			 virtual void SetCharacters(Aspose::Cells::System::Int32 value)=0;
+			 virtual void SetCharacters(Aspose::Cells::Systems::Int32 value)=0;
 			/// <summary>
 			/// Represents an estimate of the number of characters (including spaces) in the document.
 			/// </summary>
-			 virtual Aspose::Cells::System::Int32 GetCharactersWithSpaces()=0;
+			 virtual Aspose::Cells::Systems::Int32 GetCharactersWithSpaces()=0;
 			/// <summary>
 			/// Represents an estimate of the number of characters (including spaces) in the document.
 			/// </summary>
-			 virtual void SetCharactersWithSpaces(Aspose::Cells::System::Int32 value)=0;
+			 virtual void SetCharactersWithSpaces(Aspose::Cells::Systems::Int32 value)=0;
 			/// <summary>
 			/// Gets or sets the document comments.
 			/// </summary>
-			 virtual intrusive_ptr<Aspose::Cells::System::String> GetComments()=0;
+			 virtual intrusive_ptr<Aspose::Cells::Systems::String> GetComments()=0;
 			/// <summary>
 			/// Gets the document comments.
 			/// </summary>
-			 virtual void SetComments(intrusive_ptr<Aspose::Cells::System::String> value)=0;
+			 virtual void SetComments(intrusive_ptr<Aspose::Cells::Systems::String> value)=0;
 			/// <summary>
 			/// Sets the category of the document.
 			/// </summary>
-			 virtual intrusive_ptr<Aspose::Cells::System::String> GetCategory()=0;
+			 virtual intrusive_ptr<Aspose::Cells::Systems::String> GetCategory()=0;
 			/// <summary>
 			/// Gets or sets the category of the document.
 			/// </summary>
-			 virtual void SetCategory(intrusive_ptr<Aspose::Cells::System::String> value)=0;
+			 virtual void SetCategory(intrusive_ptr<Aspose::Cells::Systems::String> value)=0;
 			/// <summary>
 			/// Gets the content type of the document.
 			/// </summary>
-			 virtual intrusive_ptr<Aspose::Cells::System::String> GetContentType()=0;
+			 virtual intrusive_ptr<Aspose::Cells::Systems::String> GetContentType()=0;
 			/// <summary>
 			/// Sets the content type of the document.
 			/// </summary>
-			 virtual void SetContentType(intrusive_ptr<Aspose::Cells::System::String> value)=0;
+			 virtual void SetContentType(intrusive_ptr<Aspose::Cells::Systems::String> value)=0;
 			/// <summary>
 			/// Gets or sets the content status of the document.
 			/// </summary>
-			 virtual intrusive_ptr<Aspose::Cells::System::String> GetContentStatus()=0;
+			 virtual intrusive_ptr<Aspose::Cells::Systems::String> GetContentStatus()=0;
 			/// <summary>
 			/// Gets the content status of the document.
 			/// </summary>
-			 virtual void SetContentStatus(intrusive_ptr<Aspose::Cells::System::String> value)=0;
+			 virtual void SetContentStatus(intrusive_ptr<Aspose::Cells::Systems::String> value)=0;
 			/// <summary>
 			/// Sets the company property.
 			/// </summary>
-			 virtual intrusive_ptr<Aspose::Cells::System::String> GetCompany()=0;
+			 virtual intrusive_ptr<Aspose::Cells::Systems::String> GetCompany()=0;
 			/// <summary>
 			/// Gets or sets the company property.
 			/// </summary>
-			 virtual void SetCompany(intrusive_ptr<Aspose::Cells::System::String> value)=0;
+			 virtual void SetCompany(intrusive_ptr<Aspose::Cells::Systems::String> value)=0;
 			/// <summary>
 			/// Gets the hyperlinkbase property.
 			/// </summary>
-			 virtual intrusive_ptr<Aspose::Cells::System::String> GetHyperlinkBase()=0;
+			 virtual intrusive_ptr<Aspose::Cells::Systems::String> GetHyperlinkBase()=0;
 			/// <summary>
 			/// Sets the hyperlinkbase property.
 			/// </summary>
-			 virtual void SetHyperlinkBase(intrusive_ptr<Aspose::Cells::System::String> value)=0;
+			 virtual void SetHyperlinkBase(intrusive_ptr<Aspose::Cells::Systems::String> value)=0;
 			/// <summary>
 			/// Gets date of the document creation in UTC.
 			/// </summary>
 			/// <remarks><p>Aspose.Cells does not update this property when you modify the document.</p>
 			/// </remarks>
-			 virtual intrusive_ptr<Aspose::Cells::System::DateTime> GetCreatedTime()=0;
+			 virtual intrusive_ptr<Aspose::Cells::Systems::DateTime> GetCreatedTime()=0;
 			/// <summary>
 			/// Sets date of the document creation in UTC.
 			/// </summary>
 			/// <remarks><p>Aspose.Cells does not update this property when you modify the document.</p>
 			/// </remarks>
-			 virtual void SetCreatedTime(intrusive_ptr<Aspose::Cells::System::DateTime> value)=0;
+			 virtual void SetCreatedTime(intrusive_ptr<Aspose::Cells::Systems::DateTime> value)=0;
 			/// <summary>
 			/// Gets the document keywords.
 			/// </summary>
-			 virtual intrusive_ptr<Aspose::Cells::System::String> GetKeywords()=0;
+			 virtual intrusive_ptr<Aspose::Cells::Systems::String> GetKeywords()=0;
 			/// <summary>
 			/// Sets the document keywords.
 			/// </summary>
-			 virtual void SetKeywords(intrusive_ptr<Aspose::Cells::System::String> value)=0;
+			 virtual void SetKeywords(intrusive_ptr<Aspose::Cells::Systems::String> value)=0;
 			/// <summary>
 			/// Gets the date when the document was last printed in UTC.
 			/// </summary>
 			/// <remarks><p>If the document was never printed, this property will return DateTime.MinValue.</p>
 			/// <p>Aspose.Cells does not update this property when you modify the document.</p>
 			/// </remarks>
-			 virtual intrusive_ptr<Aspose::Cells::System::DateTime> GetLastPrinted()=0;
+			 virtual intrusive_ptr<Aspose::Cells::Systems::DateTime> GetLastPrinted()=0;
 			/// <summary>
 			/// Sets the date when the document was last printed in UTC.
 			/// </summary>
 			/// <remarks><p>If the document was never printed, this property will return DateTime.MinValue.</p>
 			/// <p>Aspose.Cells does not update this property when you modify the document.</p>
 			/// </remarks>
-			 virtual void SetLastPrinted(intrusive_ptr<Aspose::Cells::System::DateTime> value)=0;
+			 virtual void SetLastPrinted(intrusive_ptr<Aspose::Cells::Systems::DateTime> value)=0;
 			/// <summary>
 			/// Gets the name of the last author.
 			/// </summary>
 			/// <remarks><p>Aspose.Cells does not update this property when you modify the document.</p>
 			/// </remarks>
-			 virtual intrusive_ptr<Aspose::Cells::System::String> GetLastSavedBy()=0;
+			 virtual intrusive_ptr<Aspose::Cells::Systems::String> GetLastSavedBy()=0;
 			/// <summary>
 			/// Sets the name of the last author.
 			/// </summary>
 			/// <remarks><p>Aspose.Cells does not update this property when you modify the document.</p>
 			/// </remarks>
-			 virtual void SetLastSavedBy(intrusive_ptr<Aspose::Cells::System::String> value)=0;
+			 virtual void SetLastSavedBy(intrusive_ptr<Aspose::Cells::Systems::String> value)=0;
 			/// <summary>
 			/// Gets the time of the last save in UTC.
 			/// </summary>
 			/// <remarks><p>Aspose.Cells does not update this property when you modify the document.</p>
 			/// </remarks>
-			 virtual intrusive_ptr<Aspose::Cells::System::DateTime> GetLastSavedTime()=0;
+			 virtual intrusive_ptr<Aspose::Cells::Systems::DateTime> GetLastSavedTime()=0;
 			/// <summary>
 			/// Sets the time of the last save in UTC.
 			/// </summary>
 			/// <remarks><p>Aspose.Cells does not update this property when you modify the document.</p>
 			/// </remarks>
-			 virtual void SetLastSavedTime(intrusive_ptr<Aspose::Cells::System::DateTime> value)=0;
+			 virtual void SetLastSavedTime(intrusive_ptr<Aspose::Cells::Systems::DateTime> value)=0;
 			/// <summary>
 			/// Represents an estimate of the number of lines in the document.
 			/// </summary>
 			/// <remarks><p>Aspose.Cells does not update this property when you modify the document.</p>
 			/// </remarks>
-			 virtual Aspose::Cells::System::Int32 GetLines()=0;
+			 virtual Aspose::Cells::Systems::Int32 GetLines()=0;
 			/// <summary>
 			/// Represents an estimate of the number of lines in the document.
 			/// </summary>
 			/// <remarks><p>Aspose.Cells does not update this property when you modify the document.</p>
 			/// </remarks>
-			 virtual void SetLines(Aspose::Cells::System::Int32 value)=0;
+			 virtual void SetLines(Aspose::Cells::Systems::Int32 value)=0;
 			/// <summary>
 			/// Gets the manager property.
 			/// </summary>
-			 virtual intrusive_ptr<Aspose::Cells::System::String> GetManager()=0;
+			 virtual intrusive_ptr<Aspose::Cells::Systems::String> GetManager()=0;
 			/// <summary>
 			/// Sets the manager property.
 			/// </summary>
-			 virtual void SetManager(intrusive_ptr<Aspose::Cells::System::String> value)=0;
+			 virtual void SetManager(intrusive_ptr<Aspose::Cells::Systems::String> value)=0;
 			/// <summary>
 			/// Gets the name of the application.
 			/// </summary>
-			 virtual intrusive_ptr<Aspose::Cells::System::String> GetNameOfApplication()=0;
+			 virtual intrusive_ptr<Aspose::Cells::Systems::String> GetNameOfApplication()=0;
 			/// <summary>
 			/// Sets the name of the application.
 			/// </summary>
-			 virtual void SetNameOfApplication(intrusive_ptr<Aspose::Cells::System::String> value)=0;
+			 virtual void SetNameOfApplication(intrusive_ptr<Aspose::Cells::Systems::String> value)=0;
 			/// <summary>
 			/// Represents an estimate of the number of pages in the document.
 			/// </summary>
-			 virtual Aspose::Cells::System::Int32 GetPages()=0;
+			 virtual Aspose::Cells::Systems::Int32 GetPages()=0;
 			/// <summary>
 			/// Represents an estimate of the number of pages in the document.
 			/// </summary>
-			 virtual void SetPages(Aspose::Cells::System::Int32 value)=0;
+			 virtual void SetPages(Aspose::Cells::Systems::Int32 value)=0;
 			/// <summary>
 			/// Represents an estimate of the number of paragraphs in the document.
 			/// </summary>
-			 virtual Aspose::Cells::System::Int32 GetParagraphs()=0;
+			 virtual Aspose::Cells::Systems::Int32 GetParagraphs()=0;
 			/// <summary>
 			/// Represents an estimate of the number of paragraphs in the document.
 			/// </summary>
-			 virtual void SetParagraphs(Aspose::Cells::System::Int32 value)=0;
+			 virtual void SetParagraphs(Aspose::Cells::Systems::Int32 value)=0;
 			/// <summary>
 			/// Gets the document revision number. 
 			/// </summary>
 			/// <remarks><p>Aspose.Cells does not update this property when you modify the document.</p>
 			/// </remarks>
-			 virtual Aspose::Cells::System::Int32 GetRevisionNumber()=0;
+			 virtual Aspose::Cells::Systems::Int32 GetRevisionNumber()=0;
 			/// <summary>
 			/// Sets the document revision number. 
 			/// </summary>
 			/// <remarks><p>Aspose.Cells does not update this property when you modify the document.</p>
 			/// </remarks>
-			 virtual void SetRevisionNumber(Aspose::Cells::System::Int32 value)=0;
+			 virtual void SetRevisionNumber(Aspose::Cells::Systems::Int32 value)=0;
 			/// <summary>
 			/// Gets the document revision number. 
 			/// </summary>
 			/// <remarks><p>Aspose.Cells does not update this property when you modify the document.</p>
 			/// </remarks>
-			 virtual intrusive_ptr<Aspose::Cells::System::String> GetRevision()=0;
+			 virtual intrusive_ptr<Aspose::Cells::Systems::String> GetRevision()=0;
 			/// <summary>
 			/// Sets the document revision number. 
 			/// </summary>
 			/// <remarks><p>Aspose.Cells does not update this property when you modify the document.</p>
 			/// </remarks>
-			 virtual void SetRevision(intrusive_ptr<Aspose::Cells::System::String> value)=0;
+			 virtual void SetRevision(intrusive_ptr<Aspose::Cells::Systems::String> value)=0;
 			/// <summary>
 			/// Gets the subject of the document.
 			/// </summary>
-			 virtual intrusive_ptr<Aspose::Cells::System::String> GetSubject()=0;
+			 virtual intrusive_ptr<Aspose::Cells::Systems::String> GetSubject()=0;
 			/// <summary>
 			/// Sets the subject of the document.
 			/// </summary>
-			 virtual void SetSubject(intrusive_ptr<Aspose::Cells::System::String> value)=0;
+			 virtual void SetSubject(intrusive_ptr<Aspose::Cells::Systems::String> value)=0;
 			/// <summary>
 			/// Gets the informational name of the document template.
 			/// </summary>
-			 virtual intrusive_ptr<Aspose::Cells::System::String> GetTemplate()=0;
+			 virtual intrusive_ptr<Aspose::Cells::Systems::String> GetTemplate()=0;
 			/// <summary>
 			/// Sets the informational name of the document template.
 			/// </summary>
-			 virtual void SetTemplate(intrusive_ptr<Aspose::Cells::System::String> value)=0;
+			 virtual void SetTemplate(intrusive_ptr<Aspose::Cells::Systems::String> value)=0;
 			/// <summary>
 			/// Gets the title of the document.
 			/// </summary>
-			 virtual intrusive_ptr<Aspose::Cells::System::String> GetTitle()=0;
+			 virtual intrusive_ptr<Aspose::Cells::Systems::String> GetTitle()=0;
 			/// <summary>
 			/// Sets the title of the document.
 			/// </summary>
-			 virtual void SetTitle(intrusive_ptr<Aspose::Cells::System::String> value)=0;
+			 virtual void SetTitle(intrusive_ptr<Aspose::Cells::Systems::String> value)=0;
 			/// <summary>
 			/// Gets the total editing time in minutes.
 			/// </summary>
-			 virtual Aspose::Cells::System::Double GetTotalEditingTime()=0;
+			 virtual Aspose::Cells::Systems::Double GetTotalEditingTime()=0;
 			/// <summary>
 			/// Sets the total editing time in minutes.
 			/// </summary>
-			 virtual void SetTotalEditingTime(Aspose::Cells::System::Double value)=0;
+			 virtual void SetTotalEditingTime(Aspose::Cells::Systems::Double value)=0;
 			/// <summary>
 			/// Represents the version number of the application that created the document.
 			/// </summary>
 			/// <remarks>
 			/// It's format is "00.0000",for example : 12.0000
 			/// </remarks>
-			 virtual intrusive_ptr<Aspose::Cells::System::String> GetVersion()=0;
+			 virtual intrusive_ptr<Aspose::Cells::Systems::String> GetVersion()=0;
 			/// <summary>
 			/// Represents the version number of the application that created the document.
 			/// </summary>
 			/// <remarks>
 			/// It's format is "00.0000",for example : 12.0000
 			/// </remarks>
-			 virtual void SetVersion(intrusive_ptr<Aspose::Cells::System::String> value)=0;
+			 virtual void SetVersion(intrusive_ptr<Aspose::Cells::Systems::String> value)=0;
 			/// <summary>
 			/// Indicates the display mode of the document thumbnail.
 			/// </summary>
@@ -321,11 +321,11 @@ namespace Properties{
 			/// <summary>
 			/// Represents an estimate of the number of words in the document.
 			/// </summary>
-			 virtual Aspose::Cells::System::Int32 GetWords()=0;
+			 virtual Aspose::Cells::Systems::Int32 GetWords()=0;
 			/// <summary>
 			/// Represents an estimate of the number of words in the document.
 			/// </summary>
-			 virtual void SetWords(Aspose::Cells::System::Int32 value)=0;
+			 virtual void SetWords(Aspose::Cells::Systems::Int32 value)=0;
 public:
 
 			static  bool 		AutoInit_Static_BuiltInDocumentPropertyCollection();

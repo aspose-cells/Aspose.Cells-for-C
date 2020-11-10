@@ -25,15 +25,15 @@ namespace Cells {
 			/// <summary>
 			/// Represents Office Open XML spreadsheetML workbook or template, with or without macros. 
 			/// </summary>
-			/// 
-			/// 
 			LoadFormat_Xlsx = 6 ,
 			/// <summary>
-			/// Represents a tab delimited text file.
+			/// Represents a TSV(tab-separated values file) file.
 			/// </summary>
-			/// 
-			/// 
-			LoadFormat_TabDelimited = 11 ,
+			LoadFormat_TSV = 11,
+			/// <summary>
+			/// Represents a tab delimited text file, same with <see cref="LoadFormat_TSV"/>.
+			/// </summary>
+			LoadFormat_TabDelimited = LoadFormat_TSV,
 			/// <summary>
 			/// Represents an html file.
 			/// </summary>

@@ -1,6 +1,6 @@
 #pragma once
-#include "System/Object.h"
-#include "System/Drawing/Color.h"
+#include "Aspose.Cells.Systems/Object.h"
+#include "Aspose.Cells.Systems/Drawing/Color.h"
 
 namespace Aspose {
 	namespace Cells {
@@ -70,7 +70,7 @@ namespace Cells{
 			///  </code>
 			/// 
 			///  </example>
-	class ASPOSE_CELLS_API IBorderCollection : public Aspose::Cells::System::Object
+	class ASPOSE_CELLS_API IBorderCollection : public Aspose::Cells::Systems::Object
 	{
 		public:
 			/// <summary>
@@ -86,7 +86,7 @@ namespace Cells{
 			/// </summary>
 			/// <param name="color" >Borders' <see cref="System.Drawing.Color" />
 			/// .</param>
-			 virtual void SetColor(intrusive_ptr<Aspose::Cells::System::Drawing::Color> color)=0;
+			 virtual void SetColor(intrusive_ptr<Aspose::Cells::Systems::Drawing::Color> color)=0;
 			/// <summary>
 			/// Sets the style of all borders of the collection.
 			/// </summary>
@@ -96,12 +96,12 @@ namespace Cells{
 			/// Gets the <see cref="System.Drawing.Color" />
 			///  of Diagonal lines.
 			/// </summary>
-			 virtual intrusive_ptr<Aspose::Cells::System::Drawing::Color> GetDiagonalColor()=0;
+			 virtual intrusive_ptr<Aspose::Cells::Systems::Drawing::Color> GetDiagonalColor()=0;
 			/// <summary>
 			/// Sets the <see cref="System.Drawing.Color" />
 			///  of Diagonal lines.
 			/// </summary>
-			 virtual void SetDiagonalColor(intrusive_ptr<Aspose::Cells::System::Drawing::Color> value)=0;
+			 virtual void SetDiagonalColor(intrusive_ptr<Aspose::Cells::Systems::Drawing::Color> value)=0;
 			/// <summary>
 			/// Gets the style of Diagonal lines.
 			/// </summary>

@@ -1,13 +1,13 @@
 #pragma once
-#include "System/Object.h"
-#include "System/Drawing/Printing/PrintPageEventHandler.h"
-#include "System/Drawing/Printing/QueryPageSettingsEventHandler.h"
-#include "System/Int32.h"
-#include "System/Drawing/Imaging/ImageFormat.h"
-#include "System/String.h"
-#include "System/Drawing/Text/TextRenderingHint.h"
-#include "System/Drawing/Drawing2D/SmoothingMode.h"
-#include "System/Drawing/Imaging/PixelFormat.h"
+#include "Aspose.Cells.Systems/Object.h"
+#include "Aspose.Cells.Systems/Drawing/Printing/PrintPageEventHandler.h"
+#include "Aspose.Cells.Systems/Drawing/Printing/QueryPageSettingsEventHandler.h"
+#include "Aspose.Cells.Systems/Int32.h"
+#include "Aspose.Cells.Systems/Drawing/Imaging/ImageFormat.h"
+#include "Aspose.Cells.Systems/String.h"
+#include "Aspose.Cells.Systems/Drawing/Text/TextRenderingHint.h"
+#include "Aspose.Cells.Systems/Drawing/Drawing2D/SmoothingMode.h"
+#include "Aspose.Cells.Systems/Drawing/Imaging/PixelFormat.h"
 
 namespace Aspose {
 	namespace Cells {
@@ -28,7 +28,7 @@ namespace Rendering{
 			/// <summary>
 			/// Allows to specify options when rendering worksheet to images, printing worksheet or rendering chart to image.
 			/// </summary>
-	class ASPOSE_CELLS_API IImageOrPrintOptions : public Aspose::Cells::System::Object
+	class ASPOSE_CELLS_API IImageOrPrintOptions : public Aspose::Cells::Systems::Object
 	{
 		public:
 			/// <summary>
@@ -44,19 +44,19 @@ namespace Rendering{
 			/// <summary>
 			/// Client can special output to printer when print each page using this EventHandler
 			/// </summary>
-			 virtual intrusive_ptr<Aspose::Cells::System::Drawing::Printing::PrintPageEventHandler> GetCustomPrintPageEventHandler()=0;
+			 virtual intrusive_ptr<Aspose::Cells::Systems::Drawing::Printing::PrintPageEventHandler> GetCustomPrintPageEventHandler()=0;
 			/// <summary>
 			/// Client can special output to printer when print each page using this EventHandler
 			/// </summary>
-			 virtual void SetCustomPrintPageEventHandler(intrusive_ptr<Aspose::Cells::System::Drawing::Printing::PrintPageEventHandler> value)=0;
+			 virtual void SetCustomPrintPageEventHandler(intrusive_ptr<Aspose::Cells::Systems::Drawing::Printing::PrintPageEventHandler> value)=0;
 			/// <summary>
 			/// Client can control page setting of printer when print each page using this EventHandler
 			/// </summary>
-			 virtual intrusive_ptr<Aspose::Cells::System::Drawing::Printing::QueryPageSettingsEventHandler> GetCustomQueryPageSettingsEventHandler()=0;
+			 virtual intrusive_ptr<Aspose::Cells::Systems::Drawing::Printing::QueryPageSettingsEventHandler> GetCustomQueryPageSettingsEventHandler()=0;
 			/// <summary>
 			/// Client can control page setting of printer when print each page using this EventHandler
 			/// </summary>
-			 virtual void SetCustomQueryPageSettingsEventHandler(intrusive_ptr<Aspose::Cells::System::Drawing::Printing::QueryPageSettingsEventHandler> value)=0;
+			 virtual void SetCustomQueryPageSettingsEventHandler(intrusive_ptr<Aspose::Cells::Systems::Drawing::Printing::QueryPageSettingsEventHandler> value)=0;
 			/// <summary>
 			/// If PrintWithStatusDialog = true , there will be a dialog that shows current print status.
 			/// else no such dialog will show.
@@ -74,7 +74,7 @@ namespace Rendering{
 			/// <remarks>
 			/// The default value is 96.
 			/// </remarks>
-			 virtual Aspose::Cells::System::Int32 GetHorizontalResolution()=0;
+			 virtual Aspose::Cells::Systems::Int32 GetHorizontalResolution()=0;
 			/// <summary>
 			/// Sets the horizontal resolution for generated images, in dots per inch.
 			/// Applies generating image method except Emf format images.
@@ -82,7 +82,7 @@ namespace Rendering{
 			/// <remarks>
 			/// The default value is 96.
 			/// </remarks>
-			 virtual void SetHorizontalResolution(Aspose::Cells::System::Int32 value)=0;
+			 virtual void SetHorizontalResolution(Aspose::Cells::Systems::Int32 value)=0;
 			/// <summary>
 			/// Gets the vertical  resolution for generated images, in dots per inch.
 			/// Applies generating image method except Emf format image.
@@ -90,7 +90,7 @@ namespace Rendering{
 			/// <remarks>
 			/// The default value is 96.
 			/// </remarks>
-			 virtual Aspose::Cells::System::Int32 GetVerticalResolution()=0;
+			 virtual Aspose::Cells::Systems::Int32 GetVerticalResolution()=0;
 			/// <summary>
 			/// Sets the vertical  resolution for generated images, in dots per inch.
 			/// Applies generating image method except Emf format image.
@@ -98,7 +98,7 @@ namespace Rendering{
 			/// <remarks>
 			/// The default value is 96.
 			/// </remarks>
-			 virtual void SetVerticalResolution(Aspose::Cells::System::Int32 value)=0;
+			 virtual void SetVerticalResolution(Aspose::Cells::Systems::Int32 value)=0;
 			/// <summary>
 			/// Gets the type of compression to apply only when saving pages to the <c>Tiff</c>
 			///  format. 
@@ -135,7 +135,7 @@ namespace Rendering{
 			/// The value must be between 0 and 100.
 			/// The default value is 100.
 			/// </remarks>
-			 virtual Aspose::Cells::System::Int32 GetQuality()=0;
+			 virtual Aspose::Cells::Systems::Int32 GetQuality()=0;
 			/// <summary>
 			/// Sets a value determining the quality of the generated  images
 			/// to apply only when saving pages to the <c>Jpeg</c>
@@ -146,7 +146,7 @@ namespace Rendering{
 			/// The value must be between 0 and 100.
 			/// The default value is 100.
 			/// </remarks>
-			 virtual void SetQuality(Aspose::Cells::System::Int32 value)=0;
+			 virtual void SetQuality(Aspose::Cells::Systems::Int32 value)=0;
 			/// <summary>
 			/// Gets the format of the generated images.
 			/// Don't apply the method that returns a <c>Bitmap</c>
@@ -157,7 +157,7 @@ namespace Rendering{
 			/// Don't apply the method that returns a <c>Bitmap</c>
 			///  object.
 			/// </remarks>
-			 virtual intrusive_ptr<Aspose::Cells::System::Drawing::Imaging::ImageFormat> GetImageFormat()=0;
+			 virtual intrusive_ptr<Aspose::Cells::Systems::Drawing::Imaging::ImageFormat> GetImageFormat()=0;
 			/// <summary>
 			/// Sets the format of the generated images.
 			/// Don't apply the method that returns a <c>Bitmap</c>
@@ -168,7 +168,7 @@ namespace Rendering{
 			/// Don't apply the method that returns a <c>Bitmap</c>
 			///  object.
 			/// </remarks>
-			 virtual void SetImageFormat(intrusive_ptr<Aspose::Cells::System::Drawing::Imaging::ImageFormat> value)=0;
+			 virtual void SetImageFormat(intrusive_ptr<Aspose::Cells::Systems::Drawing::Imaging::ImageFormat> value)=0;
 			/// <summary>
 			/// Indicates whether the width and height of the cells is automatically fitted by cell value. 
 			/// The default value is false.
@@ -216,21 +216,21 @@ namespace Rendering{
 			/// <summary>
 			/// Indicate the chart imagetype when converting.
 			/// </summary>
-			 virtual intrusive_ptr<Aspose::Cells::System::Drawing::Imaging::ImageFormat> GetChartImageType()=0;
+			 virtual intrusive_ptr<Aspose::Cells::Systems::Drawing::Imaging::ImageFormat> GetChartImageType()=0;
 			/// <summary>
 			/// Indicate the chart imagetype when converting.
 			/// </summary>
-			 virtual void SetChartImageType(intrusive_ptr<Aspose::Cells::System::Drawing::Imaging::ImageFormat> value)=0;
+			 virtual void SetChartImageType(intrusive_ptr<Aspose::Cells::Systems::Drawing::Imaging::ImageFormat> value)=0;
 			/// <summary>
 			/// Indicate the filename of embeded image in svg. 
 			/// This should be full path with directory like "c:\\xpsEmbeded"
 			/// </summary>
-			 virtual intrusive_ptr<Aspose::Cells::System::String> GetEmbededImageNameInSvg()=0;
+			 virtual intrusive_ptr<Aspose::Cells::Systems::String> GetEmbededImageNameInSvg()=0;
 			/// <summary>
 			/// Indicate the filename of embeded image in svg. 
 			/// This should be full path with directory like "c:\\xpsEmbeded"
 			/// </summary>
-			 virtual void SetEmbededImageNameInSvg(intrusive_ptr<Aspose::Cells::System::String> value)=0;
+			 virtual void SetEmbededImageNameInSvg(intrusive_ptr<Aspose::Cells::Systems::String> value)=0;
 			/// <summary>
 			/// if this property is true, the generated svg will fit to view port.
 			/// </summary>
@@ -251,22 +251,22 @@ namespace Rendering{
 			/// Specifies the quality of text rendering.
 			/// The defaul value is TextRenderingHint.SystemDefault
 			/// </summary>
-			 virtual Aspose::Cells::System::Drawing::Text::TextRenderingHint GetTextRenderingHint()=0;
+			 virtual Aspose::Cells::Systems::Drawing::Text::TextRenderingHint GetTextRenderingHint()=0;
 			/// <summary>
 			/// Specifies the quality of text rendering.
 			/// The defaul value is TextRenderingHint.SystemDefault
 			/// </summary>
-			 virtual void SetTextRenderingHint(Aspose::Cells::System::Drawing::Text::TextRenderingHint value)=0;
+			 virtual void SetTextRenderingHint(Aspose::Cells::Systems::Drawing::Text::TextRenderingHint value)=0;
 			/// <summary>
 			/// Specifies whether smoothing (antialiasing) is applied to lines and curves and the edges of filled areas.
 			/// The defaul value is SmoothingMode.None
 			/// </summary>
-			 virtual Aspose::Cells::System::Drawing::Drawing2D::SmoothingMode GetSmoothingMode()=0;
+			 virtual Aspose::Cells::Systems::Drawing::Drawing2D::SmoothingMode GetSmoothingMode()=0;
 			/// <summary>
 			/// Specifies whether smoothing (antialiasing) is applied to lines and curves and the edges of filled areas.
 			/// The defaul value is SmoothingMode.None
 			/// </summary>
-			 virtual void SetSmoothingMode(Aspose::Cells::System::Drawing::Drawing2D::SmoothingMode value)=0;
+			 virtual void SetSmoothingMode(Aspose::Cells::Systems::Drawing::Drawing2D::SmoothingMode value)=0;
 			/// <summary>
 			/// Indicates if the background of generated image should be transparent.
 			/// </summary>
@@ -287,34 +287,34 @@ namespace Rendering{
 			/// <remarks>
 			/// The default value is PixelFormat.Format32bppArgb.
 			/// </remarks>
-			 virtual Aspose::Cells::System::Drawing::Imaging::PixelFormat GetPixelFormat()=0;
+			 virtual Aspose::Cells::Systems::Drawing::Imaging::PixelFormat GetPixelFormat()=0;
 			/// <summary>
 			/// Sets the pixel format for the generated images.
 			/// </summary>
 			/// <remarks>
 			/// The default value is PixelFormat.Format32bppArgb.
 			/// </remarks>
-			 virtual void SetPixelFormat(Aspose::Cells::System::Drawing::Imaging::PixelFormat value)=0;
+			 virtual void SetPixelFormat(Aspose::Cells::Systems::Drawing::Imaging::PixelFormat value)=0;
 			/// <summary>
 			/// Sets desired width and height of image.
 			/// </summary>
 			/// <param name="desiredWidth" >desired width in pixels</param>
 			/// <param name="desiredHeight" >desired height in pixels</param>
-			 virtual void SetDesiredSize(Aspose::Cells::System::Int32 desiredWidth , Aspose::Cells::System::Int32 desiredHeight)=0;
+			 virtual void SetDesiredSize(Aspose::Cells::Systems::Int32 desiredWidth , Aspose::Cells::Systems::Int32 desiredHeight)=0;
 			/// <summary>
 			/// When characters in the Excel are unicode and not be set with correct font in cell style,
 			/// They may appear as block in pdf,image.
 			/// Set the DefaultFont such as MingLiu or MS Gothic to show these characters.
 			/// If this property is not set, Aspose.Cells will use system default font to show these unicode characters.
 			/// </summary>
-			 virtual intrusive_ptr<Aspose::Cells::System::String> GetDefaultFont()=0;
+			 virtual intrusive_ptr<Aspose::Cells::Systems::String> GetDefaultFont()=0;
 			/// <summary>
 			/// When characters in the Excel are unicode and not be set with correct font in cell style,
 			/// They may appear as block in pdf,image.
 			/// Set the DefaultFont such as MingLiu or MS Gothic to show these characters.
 			/// If this property is not set, Aspose.Cells will use system default font to show these unicode characters.
 			/// </summary>
-			 virtual void SetDefaultFont(intrusive_ptr<Aspose::Cells::System::String> value)=0;
+			 virtual void SetDefaultFont(intrusive_ptr<Aspose::Cells::Systems::String> value)=0;
 
 	};
 }

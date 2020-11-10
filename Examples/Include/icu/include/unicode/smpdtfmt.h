@@ -1163,7 +1163,7 @@ public:
      * @param field The UDateFormatField to get
      * @draft ICU 54
      */
-    const NumberFormat * getNumberFormatForField(UChar field) const;
+    const NumberFormat * getNumberFormatForField(UnChar field) const;
 #endif  /* U_HIDE_DRAFT_API */
 
 #ifndef U_HIDE_INTERNAL_API
@@ -1256,7 +1256,7 @@ private:
      *                  succeeds.
      */
     void subFormat(UnicodeString &appendTo,
-                   UChar ch,
+                   UnChar ch,
                    int32_t count,
                    UDisplayContext capitalizationContext,
                    int32_t fieldNum,
@@ -1288,7 +1288,7 @@ private:
      * Return true if the given format character, occuring count
      * times, represents a numeric field.
      */
-    static UBool isNumeric(UChar formatChar, int32_t count);
+    static UBool isNumeric(UnChar formatChar, int32_t count);
 
     /**
      * Returns TRUE if the patternOffset is at the start of a numeric field.
@@ -1399,7 +1399,7 @@ private:
      * @return the new start position if matching succeeded; a negative number
      * indicating matching failure, otherwise.
      */
-    int32_t subParse(const UnicodeString& text, int32_t& start, UChar ch, int32_t count,
+    int32_t subParse(const UnicodeString& text, int32_t& start, UnChar ch, int32_t count,
                      UBool obeyCount, UBool allowNegative, UBool ambiguousYear[], int32_t& saveHebrewMonth, Calendar& cal,
                      int32_t patLoc, MessageFormat * numericLeapMonthFormatter, UTimeZoneFormatTimeType *tzTimeType, SimpleDateFormatMutableNFs &mutableNFs) const;
 
@@ -1509,12 +1509,12 @@ private:
     /**
      * Map calendar field letter into calendar field level.
      */
-    static int32_t getLevelFromChar(UChar ch);
+    static int32_t getLevelFromChar(UnChar ch);
 
     /**
      * Tell if a character can be used to define a field in a format string.
      */
-    static UBool isSyntaxChar(UChar ch);
+    static UBool isSyntaxChar(UnChar ch);
 
     /**
      * The formatting pattern for this formatter.

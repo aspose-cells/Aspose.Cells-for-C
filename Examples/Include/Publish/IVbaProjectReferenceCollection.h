@@ -1,8 +1,8 @@
 #pragma once
-#include "System/Object.h"
-#include "System/Int32.h"
-#include "System/String.h"
-#include "System/Collections/CollectionBase.h"
+#include "Aspose.Cells.Systems/Object.h"
+#include "Aspose.Cells.Systems/Int32.h"
+#include "Aspose.Cells.Systems/String.h"
+#include "Aspose.Cells.Systems/Collections/CollectionBase.h"
 
 namespace Aspose{
 namespace Cells{
@@ -10,7 +10,7 @@ namespace Vba{
 			/// <summary>
 			/// Represents all referneces of VBA project.
 			/// </summary>
-	class ASPOSE_CELLS_API IVbaProjectReferenceCollection : public Aspose::Cells::System::Collections::CollectionBase
+	class ASPOSE_CELLS_API IVbaProjectReferenceCollection : public Aspose::Cells::Systems::Collections::CollectionBase
 	{
 		public:
 			/// <summary>
@@ -20,7 +20,7 @@ namespace Vba{
 			/// <param name="libid" >The identifier of an Automation type library.</param>
 			/// <returns/>
 			/// 
-			 virtual Aspose::Cells::System::Int32 AddRegisteredReference(intrusive_ptr<Aspose::Cells::System::String> name , intrusive_ptr<Aspose::Cells::System::String> libid)=0;
+			 virtual Aspose::Cells::Systems::Int32 AddRegisteredReference(intrusive_ptr<Aspose::Cells::Systems::String> name , intrusive_ptr<Aspose::Cells::Systems::String> libid)=0;
 			/// <summary>
 			///  Add a reference to a twiddled type library and its extended type library.
 			/// </summary>
@@ -30,7 +30,7 @@ namespace Vba{
 			/// <param name="extendedLibid" >The identifier of an extended type library</param>
 			/// <returns/>
 			/// 
-			 virtual Aspose::Cells::System::Int32 AddControlRefrernce(intrusive_ptr<Aspose::Cells::System::String> name , intrusive_ptr<Aspose::Cells::System::String> libid , intrusive_ptr<Aspose::Cells::System::String> twiddledlibid , intrusive_ptr<Aspose::Cells::System::String> extendedLibid)=0;
+			 virtual Aspose::Cells::Systems::Int32 AddControlRefrernce(intrusive_ptr<Aspose::Cells::Systems::String> name , intrusive_ptr<Aspose::Cells::Systems::String> libid , intrusive_ptr<Aspose::Cells::Systems::String> twiddledlibid , intrusive_ptr<Aspose::Cells::Systems::String> extendedLibid)=0;
 			/// <summary>
 			/// Add a reference to an external VBA project. 
 			/// </summary>
@@ -39,7 +39,7 @@ namespace Vba{
 			/// <param name="relativeLibid" >The referenced VBA project’s identifier with an relative path.</param>
 			/// <returns/>
 			/// 
-			 virtual Aspose::Cells::System::Int32 AddProjectRefrernce(intrusive_ptr<Aspose::Cells::System::String> name , intrusive_ptr<Aspose::Cells::System::String> absoluteLibid , intrusive_ptr<Aspose::Cells::System::String> relativeLibid)=0;
+			 virtual Aspose::Cells::Systems::Int32 AddProjectRefrernce(intrusive_ptr<Aspose::Cells::Systems::String> name , intrusive_ptr<Aspose::Cells::Systems::String> absoluteLibid , intrusive_ptr<Aspose::Cells::Systems::String> relativeLibid)=0;
 
 	};
 }

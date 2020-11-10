@@ -1,6 +1,6 @@
 #pragma once
-#include "System/Object.h"
-#include "System/String.h"
+#include "Aspose.Cells.Systems/Object.h"
+#include "Aspose.Cells.Systems/String.h"
 
 namespace Aspose {
 	namespace Cells {
@@ -13,7 +13,7 @@ namespace Cells{
 			/// <summary>
 			/// Represents the command of header/footer
 			/// </summary>
-	class ASPOSE_CELLS_API IHeaderFooterCommand : public Aspose::Cells::System::Object
+	class ASPOSE_CELLS_API IHeaderFooterCommand : public Aspose::Cells::Systems::Object
 	{
 		public:
 			/// <summary>
@@ -33,7 +33,7 @@ namespace Cells{
 			/// <remarks>
 			/// Only valid for HeaderFooterCommandType.Text.
 			/// </remarks>
-			 virtual intrusive_ptr<Aspose::Cells::System::String> GetText()=0;
+			 virtual intrusive_ptr<Aspose::Cells::Systems::String> GetText()=0;
 
 	};
 }

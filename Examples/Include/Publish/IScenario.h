@@ -1,6 +1,6 @@
 #pragma once
-#include "System/Object.h"
-#include "System/String.h"
+#include "Aspose.Cells.Systems/Object.h"
+#include "Aspose.Cells.Systems/String.h"
 
 namespace Aspose {
 	namespace Cells {
@@ -12,29 +12,29 @@ namespace Cells{
 			/// <summary>
 			/// Represents an individual scenario.
 			/// </summary>
-	class ASPOSE_CELLS_API IScenario : public Aspose::Cells::System::Object
+	class ASPOSE_CELLS_API IScenario : public Aspose::Cells::Systems::Object
 	{
 		public:
 			/// <summary>
 			/// Gets the comment of scenario.
 			/// </summary>
-			 virtual intrusive_ptr<Aspose::Cells::System::String> GetComment()=0;
+			 virtual intrusive_ptr<Aspose::Cells::Systems::String> GetComment()=0;
 			/// <summary>
 			/// Sets the comment of scenario.
 			/// </summary>
-			 virtual void SetComment(intrusive_ptr<Aspose::Cells::System::String> value)=0;
+			 virtual void SetComment(intrusive_ptr<Aspose::Cells::Systems::String> value)=0;
 			/// <summary>
 			/// Gets the name of scenario.
 			/// </summary>
-			 virtual intrusive_ptr<Aspose::Cells::System::String> GetName()=0;
+			 virtual intrusive_ptr<Aspose::Cells::Systems::String> GetName()=0;
 			/// <summary>
 			/// Sets the name of scenario.
 			/// </summary>
-			 virtual void SetName(intrusive_ptr<Aspose::Cells::System::String> value)=0;
+			 virtual void SetName(intrusive_ptr<Aspose::Cells::Systems::String> value)=0;
 			/// <summary>
 			/// Gets name of user who last changed the scenario.
 			/// </summary>
-			 virtual intrusive_ptr<Aspose::Cells::System::String> GetUser()=0;
+			 virtual intrusive_ptr<Aspose::Cells::Systems::String> GetUser()=0;
 			/// <summary>
 			/// Indicates whether scenario is hidden.
 			/// </summary>

@@ -1,13 +1,13 @@
 #pragma once
-#include "System/Object.h"
-#include "System/String.h"
-#include "System/IO/Stream.h"
-#include "System/IO/MemoryStream.h"
-#include "System/Int32.h"
-#include "System/Double.h"
-#include "System/Array1D.h"
-#include "System/Drawing/Color.h"
-#include "System/IDisposable.h"
+#include "Aspose.Cells.Systems/Object.h"
+#include "Aspose.Cells.Systems/String.h"
+#include "Aspose.Cells.Systems/IO/Stream.h"
+#include "Aspose.Cells.Systems/IO/MemoryStream.h"
+#include "Aspose.Cells.Systems/Int32.h"
+#include "Aspose.Cells.Systems/Double.h"
+#include "Aspose.Cells.Systems/Array1D.h"
+#include "Aspose.Cells.Systems/Drawing/Color.h"
+#include "Aspose.Cells.Systems/IDisposable.h"
 
 namespace Aspose {
 	namespace Cells {
@@ -91,7 +91,7 @@ namespace Cells{
 			///  </example>
 			/// 
 			/// 
-	class ASPOSE_CELLS_API IWorkbook : public Aspose::Cells::System::IDisposable , public Aspose::Cells::System::Object
+	class ASPOSE_CELLS_API IWorkbook : public Aspose::Cells::Systems::IDisposable , public Aspose::Cells::Systems::Object
 	{
 		public:
 			/// <summary>
@@ -122,7 +122,7 @@ namespace Cells{
 			/// It's mainly for calling from COM clients.</remarks>
 			/// 
 			/// 
-			 virtual intrusive_ptr<Aspose::Cells::System::IO::MemoryStream> SaveToStream()=0;
+			 virtual intrusive_ptr<Aspose::Cells::Systems::IO::MemoryStream> SaveToStream()=0;
 			/// <summary>
 			/// Creates and saves the specified file to the disk.
 			/// </summary>
@@ -134,7 +134,7 @@ namespace Cells{
 			/// After calling Save method, data in Workbook instance will be reset.</remarks>
 			/// 
 			/// 
-			 virtual void Save(intrusive_ptr<Aspose::Cells::System::String> fileName)=0;
+			 virtual void Save(intrusive_ptr<Aspose::Cells::Systems::String> fileName)=0;
 			/// <summary>
 			/// Saves the workbook to the disk.
 			/// </summary>
@@ -144,7 +144,7 @@ namespace Cells{
 			/// <param name="saveFormat" >The save format type.</param>
 			/// 
 			/// 
-			 virtual void Save(intrusive_ptr<Aspose::Cells::System::String> fileName , Aspose::Cells::SaveFormat saveFormat)=0;
+			 virtual void Save(intrusive_ptr<Aspose::Cells::Systems::String> fileName , Aspose::Cells::SaveFormat saveFormat)=0;
 			/// <summary>
 			/// Saves the workbook to the disk.
 			/// </summary>
@@ -154,7 +154,7 @@ namespace Cells{
 			/// <param name="saveOptions" >The save options.</param>
 			/// 
 			/// 
-			 virtual void Save(intrusive_ptr<Aspose::Cells::System::String> fileName , intrusive_ptr<Aspose::Cells::ISaveOptions> saveOptions)=0;
+			 virtual void Save(intrusive_ptr<Aspose::Cells::Systems::String> fileName , intrusive_ptr<Aspose::Cells::ISaveOptions> saveOptions)=0;
 			/// <summary>
 			/// Saves the workbook to the stream.
 			/// </summary>
@@ -164,7 +164,7 @@ namespace Cells{
 			/// <param name="saveFormat" >The save file format type.</param>
 			/// 
 			/// 
-			 virtual void Save(intrusive_ptr<Aspose::Cells::System::IO::Stream> stream , Aspose::Cells::SaveFormat saveFormat)=0;
+			 virtual void Save(intrusive_ptr<Aspose::Cells::Systems::IO::Stream> stream , Aspose::Cells::SaveFormat saveFormat)=0;
 			/// <summary>
 			/// Saves the workbook to the stream.
 			/// </summary>
@@ -174,7 +174,7 @@ namespace Cells{
 			/// <param name="saveOptions" >The save options.</param>
 			/// 
 			/// 
-			 virtual void Save(intrusive_ptr<Aspose::Cells::System::IO::Stream> stream , intrusive_ptr<Aspose::Cells::ISaveOptions> saveOptions)=0;
+			 virtual void Save(intrusive_ptr<Aspose::Cells::Systems::IO::Stream> stream , intrusive_ptr<Aspose::Cells::ISaveOptions> saveOptions)=0;
 			/// <summary>
 			/// Gets the <see cref="WorksheetCollection" />
 			///  collection in the spreadsheet.
@@ -252,7 +252,7 @@ namespace Cells{
 			/// <param name="newValue" >String value to replace</param>
 			/// 
 			/// 
-			 virtual Aspose::Cells::System::Int32 Replace(intrusive_ptr<Aspose::Cells::System::String> placeHolder , intrusive_ptr<Aspose::Cells::System::String> newValue)=0;
+			 virtual Aspose::Cells::Systems::Int32 Replace(intrusive_ptr<Aspose::Cells::Systems::String> placeHolder , intrusive_ptr<Aspose::Cells::Systems::String> newValue)=0;
 			/// <summary>
 			///  Replaces a cell's value with a new integer.
 			/// </summary>
@@ -275,7 +275,7 @@ namespace Cells{
 			/// <param name="newValue" >Integer value to replace</param>
 			/// 
 			/// 
-			 virtual Aspose::Cells::System::Int32 Replace(intrusive_ptr<Aspose::Cells::System::String> placeHolder , Aspose::Cells::System::Int32 newValue)=0;
+			 virtual Aspose::Cells::Systems::Int32 Replace(intrusive_ptr<Aspose::Cells::Systems::String> placeHolder , Aspose::Cells::Systems::Int32 newValue)=0;
 			/// <summary>
 			///  Replaces a cell's value with a new double.
 			/// </summary>
@@ -299,7 +299,7 @@ namespace Cells{
 			/// <param name="newValue" >Double value to replace</param>
 			/// 
 			/// 
-			 virtual Aspose::Cells::System::Int32 Replace(intrusive_ptr<Aspose::Cells::System::String> placeHolder , Aspose::Cells::System::Double newValue)=0;
+			 virtual Aspose::Cells::Systems::Int32 Replace(intrusive_ptr<Aspose::Cells::Systems::String> placeHolder , Aspose::Cells::Systems::Double newValue)=0;
 			/// <summary>
 			///  Replaces a cell's value with a new string array.
 			/// </summary>
@@ -326,7 +326,7 @@ namespace Cells{
 			/// <param name="isVertical" >True - Vertical, False - Horizontal</param>
 			/// 
 			/// 
-			 virtual Aspose::Cells::System::Int32 Replace(intrusive_ptr<Aspose::Cells::System::String> placeHolder , intrusive_ptr<Aspose::Cells::System::Array1D<Aspose::Cells::System::String*>> newValues , bool isVertical)=0;
+			 virtual Aspose::Cells::Systems::Int32 Replace(intrusive_ptr<Aspose::Cells::Systems::String> placeHolder , intrusive_ptr<Aspose::Cells::Systems::Array1D<Aspose::Cells::Systems::String*>> newValues , bool isVertical)=0;
 			/// <summary>
 			///  Replaces cells' values with an integer array.
 			/// </summary>
@@ -353,7 +353,7 @@ namespace Cells{
 			/// <param name="isVertical" >True - Vertical, False - Horizontal</param>
 			/// 
 			/// 
-			 virtual Aspose::Cells::System::Int32 Replace(intrusive_ptr<Aspose::Cells::System::String> placeHolder , intrusive_ptr<Aspose::Cells::System::Array1D<Aspose::Cells::System::Int32>> newValues , bool isVertical)=0;
+			 virtual Aspose::Cells::Systems::Int32 Replace(intrusive_ptr<Aspose::Cells::Systems::String> placeHolder , intrusive_ptr<Aspose::Cells::Systems::Array1D<Aspose::Cells::Systems::Int32>> newValues , bool isVertical)=0;
 			/// <summary>
 			///  Replaces cells' values with a double array.
 			/// </summary>
@@ -382,7 +382,7 @@ namespace Cells{
 			/// <param name="isVertical" >True - Vertical, False - Horizontal</param>
 			/// 
 			/// 
-			 virtual Aspose::Cells::System::Int32 Replace(intrusive_ptr<Aspose::Cells::System::String> placeHolder , intrusive_ptr<Aspose::Cells::System::Array1D<Aspose::Cells::System::Double>> newValues , bool isVertical)=0;
+			 virtual Aspose::Cells::Systems::Int32 Replace(intrusive_ptr<Aspose::Cells::Systems::String> placeHolder , intrusive_ptr<Aspose::Cells::Systems::Array1D<Aspose::Cells::Systems::Double>> newValues , bool isVertical)=0;
 			/// <summary>
 			/// Replaces cells' values with new data.
 			/// </summary>
@@ -392,7 +392,7 @@ namespace Cells{
 			/// <param name="newValue" >New value. Can be string, integer, double or DateTime value.</param>
 			/// 
 			/// 
-			 virtual Aspose::Cells::System::Int32 Replace(bool boolValue , intrusive_ptr<Aspose::Cells::System::Object> newValue)=0;
+			 virtual Aspose::Cells::Systems::Int32 Replace(bool boolValue , intrusive_ptr<Aspose::Cells::Systems::Object> newValue)=0;
 			/// <summary>
 			/// Replaces cells' values with new data.
 			/// </summary>
@@ -402,14 +402,14 @@ namespace Cells{
 			/// <param name="newValue" >New value. Can be string, integer, double or DateTime value.</param>
 			/// 
 			/// 
-			 virtual Aspose::Cells::System::Int32 Replace(Aspose::Cells::System::Int32 intValue , intrusive_ptr<Aspose::Cells::System::Object> newValue)=0;
+			 virtual Aspose::Cells::Systems::Int32 Replace(Aspose::Cells::Systems::Int32 intValue , intrusive_ptr<Aspose::Cells::Systems::Object> newValue)=0;
 			/// <summary>
 			///  Replaces a cell's value with a new string.
 			/// </summary>
 			/// <param name="placeHolder" >Cell placeholder</param>
 			/// <param name="newValue" >String value to replace</param>
 			/// <param name="options" > The replace options</param>
-			 virtual Aspose::Cells::System::Int32 Replace(intrusive_ptr<Aspose::Cells::System::String> placeHolder , intrusive_ptr<Aspose::Cells::System::String> newValue , intrusive_ptr<Aspose::Cells::IReplaceOptions> options)=0;
+			 virtual Aspose::Cells::Systems::Int32 Replace(intrusive_ptr<Aspose::Cells::Systems::String> placeHolder , intrusive_ptr<Aspose::Cells::Systems::String> newValue , intrusive_ptr<Aspose::Cells::IReplaceOptions> options)=0;
 			/// <summary>
 			/// Copies data from a source Workbook object.
 			/// </summary>
@@ -436,7 +436,7 @@ namespace Cells{
 			/// <remarks>The palette has 56 entries, each represented by an RGB value.</remarks>
 			/// 
 			/// 
-			 virtual intrusive_ptr<Aspose::Cells::System::Array1D<Aspose::Cells::System::Drawing::Color*>> GetColors()=0;
+			 virtual intrusive_ptr<Aspose::Cells::Systems::Array1D<Aspose::Cells::Systems::Drawing::Color*>> GetColors()=0;
 			/// <summary>
 			/// Gets the style in the style pool.
 			/// All styles in the workbook will be gathered into a pool.
@@ -454,17 +454,17 @@ namespace Cells{
 			/// </remarks>
 			/// 
 			/// 
-			 virtual intrusive_ptr<Aspose::Cells::IStyle> 		GetIStyleInPool(Aspose::Cells::System::Int32 index)=0;
+			 virtual intrusive_ptr<Aspose::Cells::IStyle> 		GetIStyleInPool(Aspose::Cells::Systems::Int32 index)=0;
 			/// <summary>
 			/// Gets number of the styles in the style pool.
 			/// </summary>
 			/// 
 			/// 
-			 virtual Aspose::Cells::System::Int32 GetCountOfStylesInPool()=0;
+			 virtual Aspose::Cells::Systems::Int32 GetCountOfStylesInPool()=0;
 			/// <summary>
 			/// Gets number of the styles in the style pool.
 			/// </summary>
-			 virtual intrusive_ptr<Aspose::Cells::System::Array1D<Aspose::Cells::IFont*>> 		GetIFonts()=0;
+			 virtual intrusive_ptr<Aspose::Cells::Systems::Array1D<Aspose::Cells::IFont*>> 		GetIFonts()=0;
 			/// <summary>
 			/// Gets the named style in the style pool.
 			/// </summary>
@@ -474,7 +474,7 @@ namespace Cells{
 			/// <returns>named style, maybe null.</returns>
 			/// 
 			/// 
-			 virtual intrusive_ptr<Aspose::Cells::IStyle> 		GetNamedIStyle(intrusive_ptr<Aspose::Cells::System::String> name)=0;
+			 virtual intrusive_ptr<Aspose::Cells::IStyle> 		GetNamedIStyle(intrusive_ptr<Aspose::Cells::Systems::String> name)=0;
 			/// <summary>
 			///  Changes the palette for the spreadsheet in the specified index.
 			///  </summary>
@@ -485,7 +485,7 @@ namespace Cells{
 			/// 
 			/// 
 			/// 
-			 virtual void ChangePalette(intrusive_ptr<Aspose::Cells::System::Drawing::Color> color , Aspose::Cells::System::Int32 index)=0;
+			 virtual void ChangePalette(intrusive_ptr<Aspose::Cells::Systems::Drawing::Color> color , Aspose::Cells::Systems::Int32 index)=0;
 			/// <summary>
 			/// Checks if a color is in the palette for the spreadsheet.
 			/// </summary>
@@ -495,7 +495,7 @@ namespace Cells{
 			/// <returns>Returns true if this color is in the palette. Otherwise, returns false</returns>
 			/// 
 			/// 
-			 virtual bool IsColorInPalette(intrusive_ptr<Aspose::Cells::System::Drawing::Color> color)=0;
+			 virtual bool IsColorInPalette(intrusive_ptr<Aspose::Cells::Systems::Drawing::Color> color)=0;
 			/// <summary>
 			///  Calculates the result of formulas
 			///  </summary>
@@ -583,7 +583,7 @@ namespace Cells{
 			/// please use GetFormula() of ICell method.</remarks>
 			/// 
 			/// 
-			 virtual bool ValidateFormula(intrusive_ptr<Aspose::Cells::System::String> formula)=0;
+			 virtual bool ValidateFormula(intrusive_ptr<Aspose::Cells::Systems::String> formula)=0;
 			/// <summary>
 			/// Find best matching Color in current palette.
 			/// </summary>
@@ -593,7 +593,7 @@ namespace Cells{
 			/// <returns>Best matching color.</returns>
 			/// 
 			/// 
-			 virtual intrusive_ptr<Aspose::Cells::System::Drawing::Color> GetMatchingColor(intrusive_ptr<Aspose::Cells::System::Drawing::Color> rawColor)=0;
+			 virtual intrusive_ptr<Aspose::Cells::Systems::Drawing::Color> GetMatchingColor(intrusive_ptr<Aspose::Cells::Systems::Drawing::Color> rawColor)=0;
 			/// <summary>
 			/// Indicates if this spreadsheet is digitally signed.
 			/// </summary>
@@ -605,18 +605,18 @@ namespace Cells{
 			/// </summary>
 			/// <param name="encryptionType" >The encryption type.</param>
 			/// <param name="keyLength" >The key length.</param>
-			 virtual void SetEncryptionOptions(Aspose::Cells::EncryptionType encryptionType , Aspose::Cells::System::Int32 keyLength)=0;
+			 virtual void SetEncryptionOptions(Aspose::Cells::EncryptionType encryptionType , Aspose::Cells::Systems::Int32 keyLength)=0;
 			/// <summary>
 			/// Protects a workbook.
 			/// </summary>
 			/// <param name="protectionType" >Protection type.</param>
 			/// <param name="password" >Password to protect the workbook.</param>
-			 virtual void Protect(Aspose::Cells::ProtectionType protectionType , intrusive_ptr<Aspose::Cells::System::String> password)=0;
+			 virtual void Protect(Aspose::Cells::ProtectionType protectionType , intrusive_ptr<Aspose::Cells::Systems::String> password)=0;
 			/// <summary>
 			/// Unprotects a workbook.
 			/// </summary>
 			/// <param name="password" >Password to unprotect the workbook.</param>
-			 virtual void Unprotect(intrusive_ptr<Aspose::Cells::System::String> password)=0;
+			 virtual void Unprotect(intrusive_ptr<Aspose::Cells::Systems::String> password)=0;
 			/// <summary>
 			/// Removes VBA/macro from this spreadsheet.
 			/// </summary>
@@ -653,7 +653,7 @@ namespace Cells{
 			/// </remarks>
 			/// <seealso cref="IUpdateLinkedDataSource" />
 			/// 
-			 virtual intrusive_ptr<Aspose::Cells::System::String> GetFileName()=0;
+			 virtual intrusive_ptr<Aspose::Cells::Systems::String> GetFileName()=0;
 			/// <summary>
 			/// Sets current file name of this workbook.
 			/// </summary>
@@ -665,7 +665,7 @@ namespace Cells{
 			/// </remarks>
 			/// <seealso cref="IUpdateLinkedDataSource" />
 			/// 
-			 virtual void SetFileName(intrusive_ptr<Aspose::Cells::System::String> value)=0;
+			 virtual void SetFileName(intrusive_ptr<Aspose::Cells::Systems::String> value)=0;
 			/// <summary>
 			/// Gets a DataSorter object to sort data.
 			/// </summary>
@@ -679,24 +679,24 @@ namespace Cells{
 			/// </summary>
 			/// <param name="type" >The theme color type.</param>
 			/// <returns>The theme color.</returns>
-			 virtual intrusive_ptr<Aspose::Cells::System::Drawing::Color> GetThemeColor(Aspose::Cells::ThemeColorType type)=0;
+			 virtual intrusive_ptr<Aspose::Cells::Systems::Drawing::Color> GetThemeColor(Aspose::Cells::ThemeColorType type)=0;
 			/// <summary>
 			/// Sets the theme color
 			/// </summary>
 			/// <param name="type" >The theme color type.</param>
 			/// <param name="color" >the theme color</param>
-			 virtual void SetThemeColor(Aspose::Cells::ThemeColorType type , intrusive_ptr<Aspose::Cells::System::Drawing::Color> color)=0;
+			 virtual void SetThemeColor(Aspose::Cells::ThemeColorType type , intrusive_ptr<Aspose::Cells::Systems::Drawing::Color> color)=0;
 			/// <summary>
 			/// Gets the theme name. 
 			/// </summary>
-			 virtual intrusive_ptr<Aspose::Cells::System::String> GetTheme()=0;
+			 virtual intrusive_ptr<Aspose::Cells::Systems::String> GetTheme()=0;
 			/// <summary>
 			/// Customs the theme.
 			/// </summary>
 			/// <param name="themeName" >The theme name</param>
 			/// <param name="colors" >The theme colors</param>
 
-			 virtual void CustomTheme(intrusive_ptr<Aspose::Cells::System::String> themeName , intrusive_ptr<Aspose::Cells::System::Array1D<Aspose::Cells::System::Drawing::Color*>> colors)=0;
+			 virtual void CustomTheme(intrusive_ptr<Aspose::Cells::Systems::String> themeName , intrusive_ptr<Aspose::Cells::Systems::Array1D<Aspose::Cells::Systems::Drawing::Color*>> colors)=0;
 			/// <summary>
 			/// Copies the theme from another workbook.
 			/// </summary>
@@ -727,7 +727,7 @@ namespace Cells{
 			/// </remarks>
 			/// 
 			/// 
-			 virtual void UpdateLinkedDataSource(intrusive_ptr<Aspose::Cells::System::Array1D<Aspose::Cells::IWorkbook*>> exteralWorkbooks)=0;
+			 virtual void UpdateLinkedDataSource(intrusive_ptr<Aspose::Cells::Systems::Array1D<Aspose::Cells::IWorkbook*>> exteralWorkbooks)=0;
 			/// <summary>
 			/// Returns an IDocumentProperty collection that represents all the built-in document properties of the spreadsheet. 
 			/// </summary>
@@ -806,27 +806,27 @@ namespace Cells{
 			/// </summary>
 			/// 
 			/// 
-			 virtual intrusive_ptr<Aspose::Cells::System::String> GetRibbonXml()=0;
+			 virtual intrusive_ptr<Aspose::Cells::Systems::String> GetRibbonXml()=0;
 			/// <summary>
 			/// Gets and sets the XML file that defines the Ribbon UI.
 			/// </summary>
 			/// 
 			/// 
-			 virtual void SetRibbonXml(intrusive_ptr<Aspose::Cells::System::String> value)=0;
+			 virtual void SetRibbonXml(intrusive_ptr<Aspose::Cells::Systems::String> value)=0;
 			/// <summary>
 			/// Gets the Absolute path of the file.
 			/// </summary>
 			/// <remarks>
 			/// Only used for external links.
 			/// </remarks>
-			 virtual intrusive_ptr<Aspose::Cells::System::String> GetAbsolutePath()=0;
+			 virtual intrusive_ptr<Aspose::Cells::Systems::String> GetAbsolutePath()=0;
 			/// <summary>
 			/// Sets the Absolute path of the file.
 			/// </summary>
 			/// <remarks>
 			/// Only used for external links.
 			/// </remarks>
-			 virtual void SetAbsolutePath(intrusive_ptr<Aspose::Cells::System::String> value)=0;
+			 virtual void SetAbsolutePath(intrusive_ptr<Aspose::Cells::Systems::String> value)=0;
 			/// <summary>
 			/// Imports an xml file into the workbook.
 			/// </summary>
@@ -834,13 +834,13 @@ namespace Cells{
 			/// <param name="sheetName" >the destination sheet name .</param>
 			/// <param name="row" >the destination row of the xml.</param>
 			/// <param name="col" >the destination column of the xml.</param>
-			 virtual void ImportXml(intrusive_ptr<Aspose::Cells::System::String> url , intrusive_ptr<Aspose::Cells::System::String> sheetName , Aspose::Cells::System::Int32 row , Aspose::Cells::System::Int32 col)=0;
+			 virtual void ImportXml(intrusive_ptr<Aspose::Cells::Systems::String> url , intrusive_ptr<Aspose::Cells::Systems::String> sheetName , Aspose::Cells::Systems::Int32 row , Aspose::Cells::Systems::Int32 col)=0;
 			/// <summary>
 			/// Export XML data.
 			/// </summary>
 			/// <param name="mapName" >name of the XML map that need to be exported</param>
 			/// <param name="path" >the export path</param>
-			 virtual void ExportXml(intrusive_ptr<Aspose::Cells::System::String> mapName , intrusive_ptr<Aspose::Cells::System::String> path)=0;
+			 virtual void ExportXml(intrusive_ptr<Aspose::Cells::Systems::String> mapName , intrusive_ptr<Aspose::Cells::Systems::String> path)=0;
 			/// <summary>
 			/// Sets digital signature to an OOXML spreadsheet file (Excel2007 and later).
 			/// </summary>

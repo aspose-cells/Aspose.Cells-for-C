@@ -26,17 +26,17 @@ void FormatCellOrRangeOfCells()
 
 	//Fille the cell color to Yellow
 	st->SetPattern(BackgroundType_Solid);
-	st->SetForegroundColor(System::Drawing::Color::GetYellow());
+	st->SetForegroundColor(Systems::Drawing::Color::GetYellow());
 
 	//Set the text to wrapp
 	st->SetTextWrapped(true);
 
 	//Set the left and right border to Red
-	st->SetBorder(BorderType_LeftBorder, CellBorderType_Thick, System::Drawing::Color::GetRed());
-	st->SetBorder(BorderType_RightBorder, CellBorderType_Thick, System::Drawing::Color::GetRed());
+	st->SetBorder(BorderType_LeftBorder, CellBorderType_Thick, Systems::Drawing::Color::GetRed());
+	st->SetBorder(BorderType_RightBorder, CellBorderType_Thick, Systems::Drawing::Color::GetRed());
 
 	//Set font color, font size, strike, bold, italic
-	st->GetIFont()->SetColor(System::Drawing::Color::GetBlue());
+	st->GetIFont()->SetColor(Systems::Drawing::Color::GetBlue());
 	st->GetIFont()->SetSize(16);
 	st->GetIFont()->SetStrikeType(TextStrikeType_Single);
 	st->GetIFont()->SetBold(true);

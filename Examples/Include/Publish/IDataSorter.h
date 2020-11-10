@@ -1,7 +1,7 @@
 #pragma once
-#include "System/Object.h"
-#include "System/Int32.h"
-#include "System/String.h"
+#include "Aspose.Cells.Systems/Object.h"
+#include "Aspose.Cells.Systems/Int32.h"
+#include "Aspose.Cells.Systems/String.h"
 
 namespace Aspose {
 	namespace Cells {
@@ -47,7 +47,7 @@ namespace Cells{
 			///
 			/// </code>
 			/// </example>
-	class ASPOSE_CELLS_API IDataSorter : public Aspose::Cells::System::Object
+	class ASPOSE_CELLS_API IDataSorter : public Aspose::Cells::Systems::Object
 	{
 		public:
 			/// <summary>
@@ -67,22 +67,22 @@ namespace Cells{
 			/// </summary>
 			/// <param name="key" >The sorted column index.</param>
 			/// <param name="order" >The sort order</param>
-			 virtual void AddKey(Aspose::Cells::System::Int32 key , Aspose::Cells::SortOrder order)=0;
+			 virtual void AddKey(Aspose::Cells::Systems::Int32 key , Aspose::Cells::SortOrder order)=0;
 			/// <summary>
 			/// Adds sorted column index and sort order with custom sort list.
 			/// </summary>
 			/// <param name="key" >The sorted column index.</param>
 			/// <param name="order" >The sort order.</param>
 			/// <param name="customList" >The custom sort list.</param>
-			 virtual void AddKey(Aspose::Cells::System::Int32 key , Aspose::Cells::SortOrder order , intrusive_ptr<Aspose::Cells::System::String> customList)=0;
+			 virtual void AddKey(Aspose::Cells::Systems::Int32 key , Aspose::Cells::SortOrder order , intrusive_ptr<Aspose::Cells::Systems::String> customList)=0;
 			/// <summary>
 			/// Represents first sorted column index.
 			/// </summary>
-			 virtual Aspose::Cells::System::Int32 GetKey1()=0;
+			 virtual Aspose::Cells::Systems::Int32 GetKey1()=0;
 			/// <summary>
 			/// Represents first sorted column index.
 			/// </summary>
-			 virtual void SetKey1(Aspose::Cells::System::Int32 value)=0;
+			 virtual void SetKey1(Aspose::Cells::Systems::Int32 value)=0;
 			/// <summary>
 			/// Represents sort order of the first key.
 			/// </summary>
@@ -94,11 +94,11 @@ namespace Cells{
 			/// <summary>
 			/// Represents second sorted column index.
 			/// </summary>
-			 virtual Aspose::Cells::System::Int32 GetKey2()=0;
+			 virtual Aspose::Cells::Systems::Int32 GetKey2()=0;
 			/// <summary>
 			/// Represents second sorted column index.
 			/// </summary>
-			 virtual void SetKey2(Aspose::Cells::System::Int32 value)=0;
+			 virtual void SetKey2(Aspose::Cells::Systems::Int32 value)=0;
 			/// <summary>
 			/// Represents sort order of the second key.
 			/// </summary>
@@ -110,11 +110,11 @@ namespace Cells{
 			/// <summary>
 			/// Represents third sorted column index.
 			/// </summary>
-			 virtual Aspose::Cells::System::Int32 GetKey3()=0;
+			 virtual Aspose::Cells::Systems::Int32 GetKey3()=0;
 			/// <summary>
 			/// Represents third sorted column index.
 			/// </summary>
-			 virtual void SetKey3(Aspose::Cells::System::Int32 value)=0;
+			 virtual void SetKey3(Aspose::Cells::Systems::Int32 value)=0;
 			/// <summary>
 			/// Represents sort order of the third key.
 			/// </summary>
@@ -151,7 +151,7 @@ namespace Cells{
 			/// <param name="startColumn" >The start column of the area.</param>
 			/// <param name="endRow" >The end row of the area.</param>
 			/// <param name="endColumn" >The end column of the area.</param>
-			 virtual void 		Sort(intrusive_ptr<Aspose::Cells::ICells> cells , Aspose::Cells::System::Int32 startRow , Aspose::Cells::System::Int32 startColumn , Aspose::Cells::System::Int32 endRow , Aspose::Cells::System::Int32 endColumn)=0;
+			 virtual void 		Sort(intrusive_ptr<Aspose::Cells::ICells> cells , Aspose::Cells::Systems::Int32 startRow , Aspose::Cells::Systems::Int32 startColumn , Aspose::Cells::Systems::Int32 endRow , Aspose::Cells::Systems::Int32 endColumn)=0;
 			/// <summary>
 			/// Sort the datas of the area.
 			/// </summary>

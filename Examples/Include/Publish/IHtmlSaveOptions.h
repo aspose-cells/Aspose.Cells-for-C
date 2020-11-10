@@ -1,7 +1,7 @@
 #pragma once
-#include "System/Object.h"
-#include "System/String.h"
-#include "System/Text/Encoding.h"
+#include "Aspose.Cells.Systems/Object.h"
+#include "Aspose.Cells.Systems/String.h"
+#include "Aspose.Cells.Systems/Text/Encoding.h"
 #include "ISaveOptions.h"
 
 namespace Aspose {
@@ -33,44 +33,44 @@ namespace Cells{
 			/// The title of the html page.
 			/// Only for saving to html stream.
 			/// </summary>
-			 virtual intrusive_ptr<Aspose::Cells::System::String> GetPageTitle()=0;
+			 virtual intrusive_ptr<Aspose::Cells::Systems::String> GetPageTitle()=0;
 			/// <summary>
 			/// The title of the html page.
 			/// Only for saving to html stream.
 			/// </summary>
-			 virtual void SetPageTitle(intrusive_ptr<Aspose::Cells::System::String> value)=0;
+			 virtual void SetPageTitle(intrusive_ptr<Aspose::Cells::Systems::String> value)=0;
 			/// <summary>
 			/// The directory that the attached files will be saved to.
 			/// Only for saving to html stream.
 			/// </summary>
-			 virtual intrusive_ptr<Aspose::Cells::System::String> GetAttachedFilesDirectory()=0;
+			 virtual intrusive_ptr<Aspose::Cells::Systems::String> GetAttachedFilesDirectory()=0;
 			/// <summary>
 			/// The directory that the attached files will be saved to.
 			/// Only for saving to html stream.
 			/// </summary>
-			 virtual void SetAttachedFilesDirectory(intrusive_ptr<Aspose::Cells::System::String> value)=0;
+			 virtual void SetAttachedFilesDirectory(intrusive_ptr<Aspose::Cells::Systems::String> value)=0;
 			/// <summary>
 			/// Specify the Url prefix of attached files such as image in the html file.
 			/// Only for saving to html stream.
 			/// </summary>
-			 virtual intrusive_ptr<Aspose::Cells::System::String> GetAttachedFilesUrlPrefix()=0;
+			 virtual intrusive_ptr<Aspose::Cells::Systems::String> GetAttachedFilesUrlPrefix()=0;
 			/// <summary>
 			/// Specify the Url prefix of attached files such as image in the html file.
 			/// Only for saving to html stream.
 			/// </summary>
-			 virtual void SetAttachedFilesUrlPrefix(intrusive_ptr<Aspose::Cells::System::String> value)=0;
+			 virtual void SetAttachedFilesUrlPrefix(intrusive_ptr<Aspose::Cells::Systems::String> value)=0;
 			/// <summary>
 			/// Specify the default font name for exporting html, the default font will be used  when the font of style is not existing,
 			/// If this property is null, Aspose.Cells will use universal font which have the same family with the original font,
 			/// the default value is null.
 			/// </summary>
-			 virtual intrusive_ptr<Aspose::Cells::System::String> GetDefaultFontName()=0;
+			 virtual intrusive_ptr<Aspose::Cells::Systems::String> GetDefaultFontName()=0;
 			/// <summary>
 			/// Specify the default font name for exporting html, the default font will be used  when the font of style is not existing,
 			/// If this property is null, Aspose.Cells will use universal font which have the same family with the original font,
 			/// the default value is null.
 			/// </summary>
-			 virtual void SetDefaultFontName(intrusive_ptr<Aspose::Cells::System::String> value)=0;
+			 virtual void SetDefaultFontName(intrusive_ptr<Aspose::Cells::Systems::String> value)=0;
 			/// <summary>
 			/// Indicates if export image files to temp directory.
 			/// Only for saving to html stream.
@@ -154,11 +154,11 @@ namespace Cells{
 			/// <summary>
 			/// If not set,use Encoding.UTF8 as default enconding type.
 			/// </summary>
-			 virtual intrusive_ptr<Aspose::Cells::System::Text::Encoding> GetEncoding()=0;
+			 virtual intrusive_ptr<Aspose::Cells::Systems::Text::Encoding> GetEncoding()=0;
 			/// <summary>
 			/// If not set,use Encoding.UTF8 as default enconding type.
 			/// </summary>
-			 virtual void SetEncoding(intrusive_ptr<Aspose::Cells::System::Text::Encoding> value)=0;
+			 virtual void SetEncoding(intrusive_ptr<Aspose::Cells::Systems::Text::Encoding> value)=0;
 			/// <summary>
 			/// Get the ImageOrPrintOptions object before exporting
 			/// </summary>
@@ -184,11 +184,11 @@ namespace Cells{
 			/// <summary>
 			/// Gets and sets the prefix of the css name,the default value is "".
 			/// </summary>
-			 virtual intrusive_ptr<Aspose::Cells::System::String> GetCellCssPrefix()=0;
+			 virtual intrusive_ptr<Aspose::Cells::Systems::String> GetCellCssPrefix()=0;
 			/// <summary>
 			/// Gets and sets the prefix of the css name,the default value is "".
 			/// </summary>
-			 virtual void SetCellCssPrefix(intrusive_ptr<Aspose::Cells::System::String> value)=0;
+			 virtual void SetCellCssPrefix(intrusive_ptr<Aspose::Cells::Systems::String> value)=0;
 			/// <summary>
 			/// Indicating whether using full path link in sheet00x.htm,filelist.xml and tabstrip.htm.
 			/// The default value is false.

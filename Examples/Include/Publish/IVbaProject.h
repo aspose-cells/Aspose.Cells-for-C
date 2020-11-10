@@ -1,8 +1,8 @@
 #pragma once
-#include "System/Object.h"
-#include "System/Array1D.h"
-#include "System/Byte.h"
-#include "System/String.h"
+#include "Aspose.Cells.Systems/Object.h"
+#include "Aspose.Cells.Systems/Array1D.h"
+#include "Aspose.Cells.Systems/Byte.h"
+#include "Aspose.Cells.Systems/String.h"
 
 namespace Aspose {
 	namespace Cells {
@@ -25,7 +25,7 @@ namespace Vba{
 			/// <summary>
 			/// Represents the VBA project.
 			/// </summary>
-	class ASPOSE_CELLS_API IVbaProject : public Aspose::Cells::System::Object
+	class ASPOSE_CELLS_API IVbaProject : public Aspose::Cells::Systems::Object
 	{
 		public:
 			/// <summary>
@@ -40,15 +40,15 @@ namespace Vba{
 			/// <summary>
 			/// Gets certificate raw data if this VBA project is signed.
 			/// </summary>
-			 virtual intrusive_ptr<Aspose::Cells::System::Array1D<Aspose::Cells::System::Byte>> GetCertRawData()=0;
+			 virtual intrusive_ptr<Aspose::Cells::Systems::Array1D<Aspose::Cells::Systems::Byte>> GetCertRawData()=0;
 			/// <summary>
 			/// Gets the name of the VBA project.
 			/// </summary>
-			 virtual intrusive_ptr<Aspose::Cells::System::String> GetName()=0;
+			 virtual intrusive_ptr<Aspose::Cells::Systems::String> GetName()=0;
 			/// <summary>
 			/// Sets the name of the VBA project.
 			/// </summary>
-			 virtual void SetName(intrusive_ptr<Aspose::Cells::System::String> value)=0;
+			 virtual void SetName(intrusive_ptr<Aspose::Cells::Systems::String> value)=0;
 			/// <summary>
 			/// Indicates whether VBAcode is signed or not. 
 			/// </summary>

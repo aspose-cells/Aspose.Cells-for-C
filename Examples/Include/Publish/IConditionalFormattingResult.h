@@ -1,6 +1,6 @@
 #pragma once
-#include "System/Object.h"
-#include "System/Drawing/Color.h"
+#include "Aspose.Cells.Systems/Object.h"
+#include "Aspose.Cells.Systems/Drawing/Color.h"
 
 namespace Aspose {
 	namespace Cells {
@@ -15,7 +15,7 @@ namespace Cells{
 			/// <summary>
 			/// Represents the result of conditional formatting which applies to a cell.
 			/// </summary>
-	class ASPOSE_CELLS_API IConditionalFormattingResult : public Aspose::Cells::System::Object
+	class ASPOSE_CELLS_API IConditionalFormattingResult : public Aspose::Cells::Systems::Object
 	{
 		public:
 			/// <summary>
@@ -37,7 +37,7 @@ namespace Cells{
 			/// <summary>
 			/// Gets the display color of color scale.
 			/// </summary>
-			 virtual intrusive_ptr<Aspose::Cells::System::Drawing::Color> GetColorScaleResult()=0;
+			 virtual intrusive_ptr<Aspose::Cells::Systems::Drawing::Color> GetColorScaleResult()=0;
 
 	};
 }

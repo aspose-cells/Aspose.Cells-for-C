@@ -1,9 +1,9 @@
 #pragma once
-#include "System/Object.h"
-#include "System/String.h"
-#include "System/Drawing/Imaging/ImageFormat.h"
-#include "System/Int32.h"
-#include "System/DateTime.h"
+#include "Aspose.Cells.Systems/Object.h"
+#include "Aspose.Cells.Systems/String.h"
+#include "Aspose.Cells.Systems/Drawing/Imaging/ImageFormat.h"
+#include "Aspose.Cells.Systems/Int32.h"
+#include "Aspose.Cells.Systems/DateTime.h"
 #include "ISaveOptions.h"
 
 namespace Aspose {
@@ -19,6 +19,7 @@ namespace Aspose {
 			enum PdfCompliance;
 			enum PdfCompressionCore;
 			enum PdfOptimizationType;
+			class IPageSavingCallback;
 		}
 	}
 }
@@ -78,14 +79,14 @@ namespace Cells{
 			/// Set the DefaultFont such as MingLiu or MS Gothic to show these characters.
 			/// If this property is not set, Aspose.Cells will use system default font to show these unicode characters.
 			/// </summary>
-			 virtual intrusive_ptr<Aspose::Cells::System::String> GetDefaultFont()=0;
+			 virtual intrusive_ptr<Aspose::Cells::Systems::String> GetDefaultFont()=0;
 			/// <summary>
 			/// When characters in the Excel are unicode and not be set with correct font in cell style,
 			/// They may appear as block in pdf,image.
 			/// Set the DefaultFont such as MingLiu or MS Gothic to show these characters.
 			/// If this property is not set, Aspose.Cells will use system default font to show these unicode characters.
 			/// </summary>
-			 virtual void SetDefaultFont(intrusive_ptr<Aspose::Cells::System::String> value)=0;
+			 virtual void SetDefaultFont(intrusive_ptr<Aspose::Cells::Systems::String> value)=0;
 			/// <summary>
 			/// If OnePagePerSheet is true , all content of one sheet will output to only one page in result. 
 			/// The paper size of pagesetup will be invalid, and the other settings of pagesetup 
@@ -113,11 +114,11 @@ namespace Cells{
 			/// <summary>
 			/// Represents the image type when converting the chart and shape .
 			/// </summary>
-			 virtual intrusive_ptr<Aspose::Cells::System::Drawing::Imaging::ImageFormat> GetImageType()=0;
+			 virtual intrusive_ptr<Aspose::Cells::Systems::Drawing::Imaging::ImageFormat> GetImageType()=0;
 			/// <summary>
 			/// Represents the image type when converting the chart and shape .
 			/// </summary>
-			 virtual void SetImageType(intrusive_ptr<Aspose::Cells::System::Drawing::Imaging::ImageFormat> value)=0;
+			 virtual void SetImageType(intrusive_ptr<Aspose::Cells::Systems::Drawing::Imaging::ImageFormat> value)=0;
 			/// <summary>
 			/// Indicates whether calculate formulas before saving pdf file.
 			/// </summary>
@@ -171,49 +172,49 @@ namespace Cells{
 			/// </summary>
 			/// <param name="desiredPPI" >Desired pixels per inch. 220 high quality. 150 screen quality. 96 email quality.</param>
 			/// <param name="jpegQuality" >0 - 100% JPEG quality.</param>
-			 virtual void SetImageResample(Aspose::Cells::System::Int32 desiredPPI , Aspose::Cells::System::Int32 jpegQuality)=0;
+			 virtual void SetImageResample(Aspose::Cells::Systems::Int32 desiredPPI , Aspose::Cells::Systems::Int32 jpegQuality)=0;
 			/// <summary>
 			///  Gets the 0-based index of the first page to save.
 			/// </summary>
 			/// <remarks>
 			/// Default is 0.
 			/// </remarks>
-			 virtual Aspose::Cells::System::Int32 GetPageIndex()=0;
+			 virtual Aspose::Cells::Systems::Int32 GetPageIndex()=0;
 			/// <summary>
 			///  Sets the 0-based index of the first page to save.
 			/// </summary>
 			/// <remarks>
 			/// Default is 0.
 			/// </remarks>
-			 virtual void SetPageIndex(Aspose::Cells::System::Int32 value)=0;
+			 virtual void SetPageIndex(Aspose::Cells::Systems::Int32 value)=0;
 			/// <summary>
 			///  Gets the number of pages to save.
 			/// </summary>
 			/// <remarks>
 			///  Default is System.Int32.MaxValue which means all pages will be rendered..
 			///  </remarks>
-			 virtual Aspose::Cells::System::Int32 GetPageCount()=0;
+			 virtual Aspose::Cells::Systems::Int32 GetPageCount()=0;
 			/// <summary>
 			///  Sets the number of pages to save.
 			/// </summary>
 			/// <remarks>
 			///  Default is System.Int32.MaxValue which means all pages will be rendered..
 			///  </remarks>
-			 virtual void SetPageCount(Aspose::Cells::System::Int32 value)=0;
+			 virtual void SetPageCount(Aspose::Cells::Systems::Int32 value)=0;
 			/// <summary>
 			///  Gets the time of generating the pdf document.
 			/// </summary>
 			/// <remarks>
 			///  if it is not be set, it will be the time of generating the pdf.
 			///  </remarks>
-			 virtual intrusive_ptr<Aspose::Cells::System::DateTime> GetCreatedTime()=0;
+			 virtual intrusive_ptr<Aspose::Cells::Systems::DateTime> GetCreatedTime()=0;
 			/// <summary>
 			///  Sets the time of generating the pdf document.
 			/// </summary>
 			/// <remarks>
 			///  if it is not be set, it will be the time of generating the pdf.
 			///  </remarks>
-			 virtual void SetCreatedTime(intrusive_ptr<Aspose::Cells::System::DateTime> value)=0;
+			 virtual void SetCreatedTime(intrusive_ptr<Aspose::Cells::Systems::DateTime> value)=0;
 			/// <summary>
 			/// Gets pdf optimization type.
 			/// </summary>
@@ -236,6 +237,14 @@ namespace Cells{
 			/// Default is false. We will try default font of Workbook and PdfSaveOption/system for cell font first.
 			/// </remarks>
 			 virtual void SetFontSubstitutionCharGranularity(bool value)=0;
+			/// <summary>
+			/// Control/Indicate progress of page saving process.
+			/// </summary>
+			 virtual intrusive_ptr<Aspose::Cells::Rendering::IPageSavingCallback> 		GetIPageSavingCallback()=0;
+			/// <summary>
+			/// Control/Indicate progress of page saving process.
+			/// </summary>
+			 virtual void SetIPageSavingCallback(intrusive_ptr<Aspose::Cells::Rendering::IPageSavingCallback> value)=0;
 
 	};
 }

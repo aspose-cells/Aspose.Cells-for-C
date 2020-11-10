@@ -1,7 +1,7 @@
 #pragma once
-#include "System/Object.h"
-#include "System/IO/Stream.h"
-#include "System/String.h"
+#include "Aspose.Cells.Systems/Object.h"
+#include "Aspose.Cells.Systems/IO/Stream.h"
+#include "Aspose.Cells.Systems/String.h"
 
 namespace Aspose {
 	namespace Cells {
@@ -15,7 +15,7 @@ namespace Cells{
 			/// <summary>
 			/// Provides utility methods for working with file formats, such as detecting file format or converting file extensions to/from file format enums.
 			/// </summary>
-	class ASPOSE_CELLS_API IFileFormatUtil : public Aspose::Cells::System::Object
+	class ASPOSE_CELLS_API IFileFormatUtil : public Aspose::Cells::Systems::Object
 	{
 		public:
 public:
@@ -26,14 +26,14 @@ public:
 			/// 
 			/// <returns>A <see cref="IFileFormatInfo" />
 			///  object that contains the detected information.</returns>
-			static  intrusive_ptr<Aspose::Cells::IFileFormatInfo> 		DetectFileFormat(intrusive_ptr<Aspose::Cells::System::IO::Stream> stream);
+			static  intrusive_ptr<Aspose::Cells::IFileFormatInfo> 		DetectFileFormat(intrusive_ptr<Aspose::Cells::Systems::IO::Stream> stream);
 			/// <summary>
 			/// Detects and returns the information about a format of excel stored in a file. 
 			/// </summary>
 			/// <param name="filePath" >The file path.</param>
 			/// <returns>A <see cref="FileFormatInfo" />
 			///  object that contains the detected information.</returns>
-			static  intrusive_ptr<Aspose::Cells::IFileFormatInfo> 		DetectFileFormat(intrusive_ptr<Aspose::Cells::System::String> filePath);
+			static  intrusive_ptr<Aspose::Cells::IFileFormatInfo> 		DetectFileFormat(intrusive_ptr<Aspose::Cells::Systems::String> filePath);
 			/// <summary>
 			/// Converts a file name extension into a SaveFormat value.
 			/// </summary>
@@ -42,7 +42,7 @@ public:
 			/// 
 			/// <remarks>If the extension cannot be recognized, returns <see cref="SaveFormat.Unknown" />
 			/// .</remarks>
-			static  Aspose::Cells::SaveFormat 		ExtensionToSaveFormat(intrusive_ptr<Aspose::Cells::System::String> extension);
+			static  Aspose::Cells::SaveFormat 		ExtensionToSaveFormat(intrusive_ptr<Aspose::Cells::Systems::String> extension);
 			/// <summary>
 			/// Returns true if the extension is .xlt, .xltX, .xltm,.ots.
 			/// </summary>
@@ -50,14 +50,14 @@ public:
 			/// 
 			/// <returns/>
 			/// 
-			static  bool 		IsTemplateFormat(intrusive_ptr<Aspose::Cells::System::String> extension);
+			static  bool 		IsTemplateFormat(intrusive_ptr<Aspose::Cells::Systems::String> extension);
 			/// <summary>
 			/// Converts a load format enumerated value into a file extension.
 			/// </summary>
 			/// <param name="loadFormat" >The loaded file format.</param>
 			/// <returns> The returned extension is a lower-case string with a leading dot.</returns>
 			/// <remarks>If can not convert, returns null.</remarks>
-			static  intrusive_ptr<Aspose::Cells::System::String> 		LoadFormatToExtension(Aspose::Cells::LoadFormat loadFormat);
+			static  intrusive_ptr<Aspose::Cells::Systems::String> 		LoadFormatToExtension(Aspose::Cells::LoadFormat loadFormat);
 			/// <summary>
 			/// Converts a LoadFormat value to a SaveFormat value if possible. 
 			/// </summary>
@@ -69,7 +69,7 @@ public:
 			/// </summary>
 			/// <param name="format" >The save format.</param>
 			/// <returns>The returned extension is a lower-case string with a leading dot. </returns>
-			static  intrusive_ptr<Aspose::Cells::System::String> 		SaveFormatToExtension(Aspose::Cells::SaveFormat format);
+			static  intrusive_ptr<Aspose::Cells::Systems::String> 		SaveFormatToExtension(Aspose::Cells::SaveFormat format);
 			/// <summary>
 			/// Converts a SaveFormat value to a LoadFormat value if possible. 
 			/// </summary>

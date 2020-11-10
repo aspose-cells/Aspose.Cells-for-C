@@ -1,8 +1,8 @@
 #pragma once
-#include "System/Object.h"
-#include "System/Int32.h"
-#include "System/String.h"
-#include "System/Collections/CollectionBase.h"
+#include "Aspose.Cells.Systems/Object.h"
+#include "Aspose.Cells.Systems/Int32.h"
+#include "Aspose.Cells.Systems/String.h"
+#include "Aspose.Cells.Systems/Collections/CollectionBase.h"
 
 namespace Aspose {
 	namespace Cells {
@@ -15,7 +15,7 @@ namespace Cells{
 			/// Encapsulates a collection of <see cref="IVerticalPageBreak" />
 			///  objects.
 			/// </summary>
-	class ASPOSE_CELLS_API IVerticalPageBreakCollection : public Aspose::Cells::System::Collections::CollectionBase
+	class ASPOSE_CELLS_API IVerticalPageBreakCollection : public Aspose::Cells::Systems::Collections::CollectionBase
 	{
 		public:
 			/// <summary>
@@ -24,14 +24,14 @@ namespace Cells{
 			///  </summary>
 			/// <param name="index" >The zero based index of the element.</param>
 			/// <returns>The element at the specified index.</returns>
-			 virtual intrusive_ptr<Aspose::Cells::IVerticalPageBreak> 		GetObjectByIndex(Aspose::Cells::System::Int32 index)=0;
+			 virtual intrusive_ptr<Aspose::Cells::IVerticalPageBreak> 		GetObjectByIndex(Aspose::Cells::Systems::Int32 index)=0;
 			/// <summary>
 			/// Gets the <see cref="IVerticalPageBreak" />
 			///  element with the specified cell name.
 			/// </summary>
 			/// <param name="cellName" >Cell name.</param>
 			/// <returns>The element with the specified cell name.</returns>
-			 virtual intrusive_ptr<Aspose::Cells::IVerticalPageBreak> 		GetObjectByIndex(intrusive_ptr<Aspose::Cells::System::String> cellName)=0;
+			 virtual intrusive_ptr<Aspose::Cells::IVerticalPageBreak> 		GetObjectByIndex(intrusive_ptr<Aspose::Cells::Systems::String> cellName)=0;
 			/// <summary>
 			/// Adds a vertical page break to the collection.
 			/// </summary>
@@ -41,7 +41,7 @@ namespace Cells{
 			/// <returns><see cref="IVerticalPageBreak" />
 			///  object index.</returns>
 			/// <remarks>This method is used to add an IVerticalPageBreak object within a print area.</remarks>
-			 virtual Aspose::Cells::System::Int32 Add(Aspose::Cells::System::Int32 startRow , Aspose::Cells::System::Int32 endRow , Aspose::Cells::System::Int32 column)=0;
+			 virtual Aspose::Cells::Systems::Int32 Add(Aspose::Cells::Systems::Int32 startRow , Aspose::Cells::Systems::Int32 endRow , Aspose::Cells::Systems::Int32 column)=0;
 			/// <summary>
 			/// Adds a vertical page break to the collection.
 			/// </summary>
@@ -50,7 +50,7 @@ namespace Cells{
 			///  object index.</returns>
 			/// <remarks>Page break is added in the top left of the cell.
 			/// Please set a horizontal page break and a vertical page break concurrently.</remarks>
-			 virtual Aspose::Cells::System::Int32 Add(Aspose::Cells::System::Int32 column)=0;
+			 virtual Aspose::Cells::Systems::Int32 Add(Aspose::Cells::Systems::Int32 column)=0;
 			/// <summary>
 			/// Adds a vertical page break to the collection.
 			/// </summary>
@@ -60,7 +60,7 @@ namespace Cells{
 			///  object index.</returns>
 			/// <remarks>Page break is added in the top left of the cell.
 			/// Please set a horizontal page break and a vertical page break concurrently.</remarks>
-			 virtual Aspose::Cells::System::Int32 Add(Aspose::Cells::System::Int32 row , Aspose::Cells::System::Int32 column)=0;
+			 virtual Aspose::Cells::Systems::Int32 Add(Aspose::Cells::Systems::Int32 row , Aspose::Cells::Systems::Int32 column)=0;
 			/// <summary>
 			/// Adds a vertical page break to the collection.
 			/// </summary>
@@ -69,12 +69,12 @@ namespace Cells{
 			///  object index.</returns>
 			/// <remarks>Page break is added in the top left of the cell.
 			/// Please set a horizontal page break and a vertical page break concurrently.</remarks>
-			 virtual Aspose::Cells::System::Int32 Add(intrusive_ptr<Aspose::Cells::System::String> cellName)=0;
+			 virtual Aspose::Cells::Systems::Int32 Add(intrusive_ptr<Aspose::Cells::Systems::String> cellName)=0;
 			/// <summary>
 			/// Removes the IVerticalPageBreak element at a specified name.
 			/// </summary>
 			/// <param name="index" >Element index, zero based.</param>
-			 virtual void RemoveAt(Aspose::Cells::System::Int32 index)=0;
+			 virtual void RemoveAt(Aspose::Cells::Systems::Int32 index)=0;
 
 	};
 }

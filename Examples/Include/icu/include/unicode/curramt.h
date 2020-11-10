@@ -44,7 +44,7 @@ class U_I18N_API CurrencyAmount: public Measure {
      * is invalid, then this will be set to a failing value.
      * @stable ICU 3.0
      */
-    CurrencyAmount(const Formattable& amount, const UChar* isoCode,
+    CurrencyAmount(const Formattable& amount, const UnChar* isoCode,
                    UErrorCode &ec);
 
     /**
@@ -57,7 +57,7 @@ class U_I18N_API CurrencyAmount: public Measure {
      * then this will be set to a failing value.
      * @stable ICU 3.0
      */
-    CurrencyAmount(double amount, const UChar* isoCode,
+    CurrencyAmount(double amount, const UnChar* isoCode,
                    UErrorCode &ec);
 
     /**
@@ -113,14 +113,14 @@ class U_I18N_API CurrencyAmount: public Measure {
      * Return the ISO currency code of this object.
      * @stable ICU 3.0
      */
-    inline const UChar* getISOCurrency() const;
+    inline const UnChar* getISOCurrency() const;
 };
 
 inline const CurrencyUnit& CurrencyAmount::getCurrency() const {
     return (const CurrencyUnit&) getUnit();
 }
 
-inline const UChar* CurrencyAmount::getISOCurrency() const {
+inline const UnChar* CurrencyAmount::getISOCurrency() const {
     return getCurrency().getISOCurrency();
 }
 

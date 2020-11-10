@@ -1,6 +1,6 @@
 #pragma once
-#include "System/Object.h"
-#include "System/Double.h"
+#include "Aspose.Cells.Systems/Object.h"
+#include "Aspose.Cells.Systems/Double.h"
 
 namespace Aspose {
 	namespace Cells {
@@ -30,7 +30,7 @@ namespace Cells{
 			/// workbook->Save(new String("D:\\book1.xlsx"));
 			/// </code>
 			/// </example>
-	class ASPOSE_CELLS_API IThemeColor : public Aspose::Cells::System::Object
+	class ASPOSE_CELLS_API IThemeColor : public Aspose::Cells::Systems::Object
 	{
 		public:
 			/// <summary>
@@ -48,7 +48,7 @@ namespace Cells{
 			/// The tint value is stored as a double from -1.0 .. 1.0, where -1.0 means 100% darken 
 			/// and 1.0 means 100% lighten. Also, 0.0 means no change.
 			/// </remarks>
-			 virtual Aspose::Cells::System::Double GetTint()=0;
+			 virtual Aspose::Cells::Systems::Double GetTint()=0;
 			/// <summary>
 			/// Sets the tint value.
 			/// </summary>
@@ -56,7 +56,7 @@ namespace Cells{
 			/// The tint value is stored as a double from -1.0 .. 1.0, where -1.0 means 100% darken 
 			/// and 1.0 means 100% lighten. Also, 0.0 means no change.
 			/// </remarks>
-			 virtual void SetTint(Aspose::Cells::System::Double value)=0;
+			 virtual void SetTint(Aspose::Cells::Systems::Double value)=0;
 
 	};
 }

@@ -1,7 +1,7 @@
 #pragma once
-#include "System/Object.h"
-#include "System/Int32.h"
-#include "System/String.h"
+#include "Aspose.Cells.Systems/Object.h"
+#include "Aspose.Cells.Systems/Int32.h"
+#include "Aspose.Cells.Systems/String.h"
 
 namespace Aspose {
 	namespace Cells {
@@ -42,7 +42,7 @@ namespace Cells{
 			/// 
 			/// </code>
 			/// </example>
-	class ASPOSE_CELLS_API IAutoFilter : public Aspose::Cells::System::Object
+	class ASPOSE_CELLS_API IAutoFilter : public Aspose::Cells::Systems::Object
 	{
 		public:
 			/// <summary>
@@ -55,15 +55,15 @@ namespace Cells{
 			/// <param name="row" >Row index.</param>
 			/// <param name="startColumn" >Start column index.</param>
 			/// <param name="endColumn" >End column Index.</param>
-			 virtual void SetRange(Aspose::Cells::System::Int32 row , Aspose::Cells::System::Int32 startColumn , Aspose::Cells::System::Int32 endColumn)=0;
+			 virtual void SetRange(Aspose::Cells::Systems::Int32 row , Aspose::Cells::Systems::Int32 startColumn , Aspose::Cells::Systems::Int32 endColumn)=0;
 			/// <summary>
 			/// Represents the range to which the specified AutoFilter applies.
 			/// </summary>
-			 virtual intrusive_ptr<Aspose::Cells::System::String> GetRange()=0;
+			 virtual intrusive_ptr<Aspose::Cells::Systems::String> GetRange()=0;
 			/// <summary>
 			/// Represents the range to which the specified AutoFilter applies.
 			/// </summary>
-			 virtual void SetRange(intrusive_ptr<Aspose::Cells::System::String> value)=0;
+			 virtual void SetRange(intrusive_ptr<Aspose::Cells::Systems::String> value)=0;
 			/// <summary>
 			/// Adds a filter for a filter column.
 			/// </summary>
@@ -76,7 +76,7 @@ namespace Cells{
 			/// <remarks>
 			/// MS Excel 2007 supports multiple selection in a filter column.
 			/// </remarks>
-			 virtual void AddFilter(Aspose::Cells::System::Int32 fieldIndex , intrusive_ptr<Aspose::Cells::System::String> criteria)=0;
+			 virtual void AddFilter(Aspose::Cells::Systems::Int32 fieldIndex , intrusive_ptr<Aspose::Cells::Systems::String> criteria)=0;
 			/// <summary>
 			/// Adds a date filter.
 			/// </summary>
@@ -95,7 +95,7 @@ namespace Cells{
 			/// If DateTimeGroupingType is Year, only the param year effects.
 			/// If DateTiemGroupingType is Month, only the param year and month effect.
 			/// </remarks>
-			 virtual void AddDateFilter(Aspose::Cells::System::Int32 fieldIndex , Aspose::Cells::DateTimeGroupingType dateTimeGroupingType , Aspose::Cells::System::Int32 year , Aspose::Cells::System::Int32 month , Aspose::Cells::System::Int32 day , Aspose::Cells::System::Int32 hour , Aspose::Cells::System::Int32 minute , Aspose::Cells::System::Int32 second)=0;
+			 virtual void AddDateFilter(Aspose::Cells::Systems::Int32 fieldIndex , Aspose::Cells::DateTimeGroupingType dateTimeGroupingType , Aspose::Cells::Systems::Int32 year , Aspose::Cells::Systems::Int32 month , Aspose::Cells::Systems::Int32 day , Aspose::Cells::Systems::Int32 hour , Aspose::Cells::Systems::Int32 minute , Aspose::Cells::Systems::Int32 second)=0;
 			/// <summary>
 			/// Removes a date filter.
 			/// </summary>
@@ -114,7 +114,7 @@ namespace Cells{
 			/// If DateTimeGroupingType is Year, only the param year effects.
 			/// If DateTiemGroupingType is Month, only the param year and month effect.
 			/// </remarks>
-			 virtual void RemoveDateFilter(Aspose::Cells::System::Int32 fieldIndex , Aspose::Cells::DateTimeGroupingType dateTimeGroupingType , Aspose::Cells::System::Int32 year , Aspose::Cells::System::Int32 month , Aspose::Cells::System::Int32 day , Aspose::Cells::System::Int32 hour , Aspose::Cells::System::Int32 minute , Aspose::Cells::System::Int32 second)=0;
+			 virtual void RemoveDateFilter(Aspose::Cells::Systems::Int32 fieldIndex , Aspose::Cells::DateTimeGroupingType dateTimeGroupingType , Aspose::Cells::Systems::Int32 year , Aspose::Cells::Systems::Int32 month , Aspose::Cells::Systems::Int32 day , Aspose::Cells::Systems::Int32 hour , Aspose::Cells::Systems::Int32 minute , Aspose::Cells::Systems::Int32 second)=0;
 			/// <summary>
 			/// Removes a filter for a filter column.
 			/// </summary>
@@ -124,7 +124,7 @@ namespace Cells{
 			/// <param name="criteria" >The specified criteria (a string; for example, "101"). 
 			/// It only can be null or be one of the cells' value in this column.
 			/// </param>
-			 virtual void RemoveFilter(Aspose::Cells::System::Int32 fieldIndex , intrusive_ptr<Aspose::Cells::System::String> criteria)=0;
+			 virtual void RemoveFilter(Aspose::Cells::Systems::Int32 fieldIndex , intrusive_ptr<Aspose::Cells::Systems::String> criteria)=0;
 			/// <summary>
 			/// Filters a list with specified criteria.
 			/// </summary>
@@ -135,7 +135,7 @@ namespace Cells{
 			/// <remarks>
 			/// Aspose.Cells will remove all other filter setting on this field as Ms Excel 97-2003.
 			/// </remarks>
-			 virtual void Filter(Aspose::Cells::System::Int32 fieldIndex , intrusive_ptr<Aspose::Cells::System::String> criteria)=0;
+			 virtual void Filter(Aspose::Cells::Systems::Int32 fieldIndex , intrusive_ptr<Aspose::Cells::Systems::String> criteria)=0;
 			/// <summary>
 			/// Filter the top 10 item in the list
 			/// </summary>
@@ -144,7 +144,7 @@ namespace Cells{
 			/// <param name="isTop" >Indicates whether filter from top or bottom</param>
 			/// <param name="isPercent" >Indicates whether the items is percent or count </param>
 			/// <param name="itemCount" >The item count</param>
-			 virtual void FilterTop10(Aspose::Cells::System::Int32 fieldIndex , bool isTop , bool isPercent , Aspose::Cells::System::Int32 itemCount)=0;
+			 virtual void FilterTop10(Aspose::Cells::Systems::Int32 fieldIndex , bool isTop , bool isPercent , Aspose::Cells::Systems::Int32 itemCount)=0;
 			/// <summary>
 			/// Adds a dynamic filter.
 			/// </summary>
@@ -153,7 +153,7 @@ namespace Cells{
 			/// <param name="dynamicFilterType" >
 			/// Dynamic filter type.
 			/// </param>
-			 virtual void DynamicFilter(Aspose::Cells::System::Int32 fieldIndex , Aspose::Cells::DynamicFilterType dynamicFilterType)=0;
+			 virtual void DynamicFilter(Aspose::Cells::Systems::Int32 fieldIndex , Aspose::Cells::DynamicFilterType dynamicFilterType)=0;
 			/// <summary>
 			/// Adds a font color filter.
 			/// </summary>
@@ -162,7 +162,7 @@ namespace Cells{
 			/// <param name="color" >The <see cref="ICellsColor" />
 			///  object.
 			/// </param>
-			 virtual void 		AddFontColorFilter(Aspose::Cells::System::Int32 fieldIndex , intrusive_ptr<Aspose::Cells::ICellsColor> color)=0;
+			 virtual void 		AddFontColorFilter(Aspose::Cells::Systems::Int32 fieldIndex , intrusive_ptr<Aspose::Cells::ICellsColor> color)=0;
 			/// <summary>
 			/// Adds a fill color filter.
 			/// </summary>
@@ -171,7 +171,7 @@ namespace Cells{
 			/// <param name="pattern" >The background pattern type.</param>
 			/// <param name="foregroundColor" >The foreground color.</param>
 			/// <param name="backgroundColor" >The background color.</param>
-			 virtual void 		AddFillColorFilter(Aspose::Cells::System::Int32 fieldIndex , Aspose::Cells::BackgroundType pattern , intrusive_ptr<Aspose::Cells::ICellsColor> foregroundColor , intrusive_ptr<Aspose::Cells::ICellsColor> backgroundColor)=0;
+			 virtual void 		AddFillColorFilter(Aspose::Cells::Systems::Int32 fieldIndex , Aspose::Cells::BackgroundType pattern , intrusive_ptr<Aspose::Cells::ICellsColor> foregroundColor , intrusive_ptr<Aspose::Cells::ICellsColor> backgroundColor)=0;
 			/// <summary>
 			/// Adds an icon filter.
 			/// </summary>
@@ -183,19 +183,19 @@ namespace Cells{
 			/// Only supports to add the icon filter.
 			/// Not supports checking which row is visible if the filter is icon filter.
 			/// </remarks>
-			 virtual void AddIconFilter(Aspose::Cells::System::Int32 fieldIndex , Aspose::Cells::IconSetType iconSetType , Aspose::Cells::System::Int32 iconId)=0;
+			 virtual void AddIconFilter(Aspose::Cells::Systems::Int32 fieldIndex , Aspose::Cells::IconSetType iconSetType , Aspose::Cells::Systems::Int32 iconId)=0;
 			/// <summary>
 			/// Match all blank cell in the list.
 			/// </summary>
 			/// <param name="fieldIndex" >The integer offset of the field on which you want to base the filter 
 			/// (from the left of the list; the leftmost field is field 0).</param>
-			 virtual void MatchBlanks(Aspose::Cells::System::Int32 fieldIndex)=0;
+			 virtual void MatchBlanks(Aspose::Cells::Systems::Int32 fieldIndex)=0;
 			/// <summary>
 			/// Match all not blank cell in the list.
 			/// </summary>
 			/// <param name="fieldIndex" >The integer offset of the field on which you want to base the filter 
 			/// (from the left of the list; the leftmost field is field 0).</param>
-			 virtual void MatchNonBlanks(Aspose::Cells::System::Int32 fieldIndex)=0;
+			 virtual void MatchNonBlanks(Aspose::Cells::Systems::Int32 fieldIndex)=0;
 			/// <summary>
 			/// Filters a list with a custom criteria.
 			/// </summary>
@@ -203,7 +203,7 @@ namespace Cells{
 			/// (from the left of the list; the leftmost field is field 0).</param>
 			/// <param name="operatorType1" >The filter operator type</param>
 			/// <param name="criteria1" >The custom criteria</param>
-			 virtual void Custom(Aspose::Cells::System::Int32 fieldIndex , Aspose::Cells::FilterOperatorType operatorType1 , intrusive_ptr<Aspose::Cells::System::Object> criteria1)=0;
+			 virtual void Custom(Aspose::Cells::Systems::Int32 fieldIndex , Aspose::Cells::FilterOperatorType operatorType1 , intrusive_ptr<Aspose::Cells::Systems::Object> criteria1)=0;
 			/// <summary>
 			/// Filters a list with custom criterias.
 			/// </summary>
@@ -215,7 +215,7 @@ namespace Cells{
 			/// 
 			/// <param name="operatorType2" >The filter operator type</param>
 			/// <param name="criteria2" >The custom criteria</param>
-			 virtual void Custom(Aspose::Cells::System::Int32 fieldIndex , Aspose::Cells::FilterOperatorType operatorType1 , intrusive_ptr<Aspose::Cells::System::Object> criteria1 , bool isAnd , Aspose::Cells::FilterOperatorType operatorType2 , intrusive_ptr<Aspose::Cells::System::Object> criteria2)=0;
+			 virtual void Custom(Aspose::Cells::Systems::Int32 fieldIndex , Aspose::Cells::FilterOperatorType operatorType1 , intrusive_ptr<Aspose::Cells::Systems::Object> criteria1 , bool isAnd , Aspose::Cells::FilterOperatorType operatorType2 , intrusive_ptr<Aspose::Cells::Systems::Object> criteria2)=0;
 			/// <summary>
 			/// Unhide all rows.
 			/// </summary>
@@ -224,7 +224,7 @@ namespace Cells{
 			/// Remove the specific filter.
 			/// </summary>
 			/// <param name="fieldIndex" >The specific filter index</param>
-			 virtual void RemoveFilter(Aspose::Cells::System::Int32 fieldIndex)=0;
+			 virtual void RemoveFilter(Aspose::Cells::Systems::Int32 fieldIndex)=0;
 			/// <summary>
 			/// Refresh auto filters to hide or unhide the rows. 
 			/// </summary>

@@ -1,12 +1,12 @@
 #pragma once
-#include "System/Object.h"
+#include "Aspose.Cells.Systems/Object.h"
 
 namespace Aspose{
 namespace Cells{
 			/// <summary>
 			/// Represents an outline on a worksheet.
 			/// </summary>
-	class ASPOSE_CELLS_API IOutline : public Aspose::Cells::System::Object
+	class ASPOSE_CELLS_API IOutline : public Aspose::Cells::Systems::Object
 	{
 		public:
 			/// <summary>

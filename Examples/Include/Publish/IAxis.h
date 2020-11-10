@@ -1,7 +1,7 @@
 #pragma once
-#include "System/Object.h"
-#include "System/Double.h"
-#include "System/Int32.h"
+#include "Aspose.Cells.Systems/Object.h"
+#include "Aspose.Cells.Systems/Double.h"
+#include "Aspose.Cells.Systems/Int32.h"
 
 namespace Aspose {
 	namespace Cells {
@@ -74,7 +74,7 @@ namespace Charts{
 			/// workbook->Save(new String("D:\\test\\AxisTest.xls"));
 					/// </code>
 			/// </example>
-	class ASPOSE_CELLS_API IAxis : public Aspose::Cells::System::Object
+	class ASPOSE_CELLS_API IAxis : public Aspose::Cells::Systems::Object
 	{
 		public:
 			/// <summary>
@@ -95,14 +95,14 @@ namespace Charts{
 			/// <remarks>
 			/// The minValue type only can be double or DateTime
 			/// </remarks>
-			 virtual intrusive_ptr<Aspose::Cells::System::Object> GetMinValue()=0;
+			 virtual intrusive_ptr<Aspose::Cells::Systems::Object> GetMinValue()=0;
 			/// <summary>
 			/// Represents the minimum value on the value axis.
 			/// </summary>
 			/// <remarks>
 			/// The minValue type only can be double or DateTime
 			/// </remarks>
-			 virtual void SetMinValue(intrusive_ptr<Aspose::Cells::System::Object> value)=0;
+			 virtual void SetMinValue(intrusive_ptr<Aspose::Cells::Systems::Object> value)=0;
 			/// <summary>
 			/// Indicates whether the max value is automatically assigned.
 			/// </summary>
@@ -117,14 +117,14 @@ namespace Charts{
 			/// <remarks>
 			/// The maxValue type only can be double or DateTime
 			/// </remarks>
-			 virtual intrusive_ptr<Aspose::Cells::System::Object> GetMaxValue()=0;
+			 virtual intrusive_ptr<Aspose::Cells::Systems::Object> GetMaxValue()=0;
 			/// <summary>
 			/// Represents the maximum value on the value axis.
 			/// </summary>
 			/// <remarks>
 			/// The maxValue type only can be double or DateTime
 			/// </remarks>
-			 virtual void SetMaxValue(intrusive_ptr<Aspose::Cells::System::Object> value)=0;
+			 virtual void SetMaxValue(intrusive_ptr<Aspose::Cells::Systems::Object> value)=0;
 			/// <summary>
 			/// Indicates whether the major unit of the axis is automatically assigned.
 			/// </summary>
@@ -137,12 +137,12 @@ namespace Charts{
 			/// Represents the major units for the axis.
 			/// </summary>
 			/// <remarks> The major units must be greater than zero.</remarks>
-			 virtual Aspose::Cells::System::Double GetMajorUnit()=0;
+			 virtual Aspose::Cells::Systems::Double GetMajorUnit()=0;
 			/// <summary>
 			/// Represents the major units for the axis.
 			/// </summary>
 			/// <remarks> The major units must be greater than zero.</remarks>
-			 virtual void SetMajorUnit(Aspose::Cells::System::Double value)=0;
+			 virtual void SetMajorUnit(Aspose::Cells::Systems::Double value)=0;
 			/// <summary>
 			/// Indicates whether the minor unit of the axis is automatically assigned.
 			/// </summary>
@@ -155,12 +155,12 @@ namespace Charts{
 			/// Represents the minor units for the axis.
 			/// </summary>
 			/// <remarks> The minor units must be greater than zero.</remarks>
-			 virtual Aspose::Cells::System::Double GetMinorUnit()=0;
+			 virtual Aspose::Cells::Systems::Double GetMinorUnit()=0;
 			/// <summary>
 			/// Represents the minor units for the axis.
 			/// </summary>
 			/// <remarks> The minor units must be greater than zero.</remarks>
-			 virtual void SetMinorUnit(Aspose::Cells::System::Double value)=0;
+			 virtual void SetMinorUnit(Aspose::Cells::Systems::Double value)=0;
 			/// <summary>
 			/// Gets the appearance of an Axis.
 			/// </summary>
@@ -194,13 +194,13 @@ namespace Charts{
 			/// </summary>
 			/// <remarks>The number should be a integer when it applies to category axis.
 			/// And the value must be between 1 and 31999.</remarks>
-			 virtual Aspose::Cells::System::Double GetCrossAt()=0;
+			 virtual Aspose::Cells::Systems::Double GetCrossAt()=0;
 			/// <summary>
 			/// Represents the point on the value axis where the category axis crosses it.
 			/// </summary>
 			/// <remarks>The number should be a integer when it applies to category axis.
 			/// And the value must be between 1 and 31999.</remarks>
-			 virtual void SetCrossAt(Aspose::Cells::System::Double value)=0;
+			 virtual void SetCrossAt(Aspose::Cells::Systems::Double value)=0;
 			/// <summary>
 			/// Represents the <see cref="CrossType" />
 			///  on the specified axis where the other axis crosses. 
@@ -228,11 +228,11 @@ namespace Charts{
 			/// <summary>
 			/// Represents the logarithmic base. Default value is 10.Only applies for Excel2007.
 			/// </summary>
-			 virtual Aspose::Cells::System::Double GetLogBase()=0;
+			 virtual Aspose::Cells::Systems::Double GetLogBase()=0;
 			/// <summary>
 			/// Represents the logarithmic base. Default value is 10.Only applies for Excel2007.
 			/// </summary>
-			 virtual void SetLogBase(Aspose::Cells::System::Double value)=0;
+			 virtual void SetLogBase(Aspose::Cells::Systems::Double value)=0;
 			/// <summary>
 			/// Represents if the value axis scale type is logarithmic or not.
 			/// </summary>
@@ -270,22 +270,22 @@ namespace Charts{
 			/// Represents the number of categories or series between tick-mark labels. Applies only to category and series axes.
 			/// </summary>
 			/// <remarks>The number must be between 1 and 31999.</remarks>
-			 virtual Aspose::Cells::System::Int32 GetTickLabelSpacing()=0;
+			 virtual Aspose::Cells::Systems::Int32 GetTickLabelSpacing()=0;
 			/// <summary>
 			/// Represents the number of categories or series between tick-mark labels. Applies only to category and series axes.
 			/// </summary>
 			/// <remarks>The number must be between 1 and 31999.</remarks>
-			 virtual void SetTickLabelSpacing(Aspose::Cells::System::Int32 value)=0;
+			 virtual void SetTickLabelSpacing(Aspose::Cells::Systems::Int32 value)=0;
 			/// <summary>
 			/// Returns or sets the number of categories or series between tick marks. Applies only to category and series axes. 
 			/// </summary>
 			/// <remarks>The number must be between 1 and 31999.</remarks>
-			 virtual Aspose::Cells::System::Int32 GetTickMarkSpacing()=0;
+			 virtual Aspose::Cells::Systems::Int32 GetTickMarkSpacing()=0;
 			/// <summary>
 			/// Returns or sets the number of categories or series between tick marks. Applies only to category and series axes. 
 			/// </summary>
 			/// <remarks>The number must be between 1 and 31999.</remarks>
-			 virtual void SetTickMarkSpacing(Aspose::Cells::System::Int32 value)=0;
+			 virtual void SetTickMarkSpacing(Aspose::Cells::Systems::Int32 value)=0;
 			/// <summary>
 			/// Represents the unit label for the specified axis. 
 			/// </summary>
@@ -297,11 +297,11 @@ namespace Charts{
 			/// <summary>
 			/// Specifies a custom value for the display unit.
 			/// </summary>
-			 virtual Aspose::Cells::System::Int32 GetCustUnit()=0;
+			 virtual Aspose::Cells::Systems::Int32 GetCustUnit()=0;
 			/// <summary>
 			/// Specifies a custom value for the display unit.
 			/// </summary>
-			 virtual void SetCustUnit(Aspose::Cells::System::Int32 value)=0;
+			 virtual void SetCustUnit(Aspose::Cells::Systems::Int32 value)=0;
 			/// <summary>
 			/// Represents a unit label on an axis in the specified chart. 
 			/// Unit labels are useful for charting large values for example, in the millions or billions. 

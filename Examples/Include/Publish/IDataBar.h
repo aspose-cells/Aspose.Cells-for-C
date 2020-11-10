@@ -1,9 +1,9 @@
 #pragma once
-#include "System/Object.h"
-#include "System/Drawing/Color.h"
-#include "System/Int32.h"
-#include "System/Array1D.h"
-#include "System/Byte.h"
+#include "Aspose.Cells.Systems/Object.h"
+#include "Aspose.Cells.Systems/Drawing/Color.h"
+#include "Aspose.Cells.Systems/Int32.h"
+#include "Aspose.Cells.Systems/Array1D.h"
+#include "Aspose.Cells.Systems/Byte.h"
 
 namespace Aspose {
 	namespace Cells {
@@ -81,17 +81,17 @@ namespace Cells{
 			/// 
 			/// </code>
 			/// </example>
-	class ASPOSE_CELLS_API IDataBar : public Aspose::Cells::System::Object
+	class ASPOSE_CELLS_API IDataBar : public Aspose::Cells::Systems::Object
 	{
 		public:
 			/// <summary>
 			/// Gets the color of the axis for cells with conditional formatting as data bars.
 			/// </summary>
-			 virtual intrusive_ptr<Aspose::Cells::System::Drawing::Color> GetAxisColor()=0;
+			 virtual intrusive_ptr<Aspose::Cells::Systems::Drawing::Color> GetAxisColor()=0;
 			/// <summary>
 			/// Sets the color of the axis for cells with conditional formatting as data bars.
 			/// </summary>
-			 virtual void SetAxisColor(intrusive_ptr<Aspose::Cells::System::Drawing::Color> value)=0;
+			 virtual void SetAxisColor(intrusive_ptr<Aspose::Cells::Systems::Drawing::Color> value)=0;
 			/// <summary>
 			/// Gets the position of the axis of the data bars specified by a conditional formatting rule.
 			/// </summary>
@@ -135,27 +135,27 @@ namespace Cells{
 			/// <summary>
 			/// Get this DataBar's Color.
 			/// </summary>
-			 virtual intrusive_ptr<Aspose::Cells::System::Drawing::Color> GetColor()=0;
+			 virtual intrusive_ptr<Aspose::Cells::Systems::Drawing::Color> GetColor()=0;
 			/// <summary>
 			/// Set this DataBar's Color.
 			/// </summary>
-			 virtual void SetColor(intrusive_ptr<Aspose::Cells::System::Drawing::Color> value)=0;
+			 virtual void SetColor(intrusive_ptr<Aspose::Cells::Systems::Drawing::Color> value)=0;
 			/// <summary>
 			/// Represents the min length of data bar . 
 			/// </summary>
-			 virtual Aspose::Cells::System::Int32 GetMinLength()=0;
+			 virtual Aspose::Cells::Systems::Int32 GetMinLength()=0;
 			/// <summary>
 			/// Represents the min length of data bar . 
 			/// </summary>
-			 virtual void SetMinLength(Aspose::Cells::System::Int32 value)=0;
+			 virtual void SetMinLength(Aspose::Cells::Systems::Int32 value)=0;
 			/// <summary>
 			/// Represents the max length of data bar . 
 			/// </summary>
-			 virtual Aspose::Cells::System::Int32 GetMaxLength()=0;
+			 virtual Aspose::Cells::Systems::Int32 GetMaxLength()=0;
 			/// <summary>
 			/// Represents the max length of data bar . 
 			/// </summary>
-			 virtual void SetMaxLength(Aspose::Cells::System::Int32 value)=0;
+			 virtual void SetMaxLength(Aspose::Cells::Systems::Int32 value)=0;
 			/// <summary>
 			/// Get the flag indicating whether to show the values of the cells on which this data bar is applied.
 			/// Default value is true.
@@ -173,7 +173,7 @@ namespace Cells{
 			/// <param name="imgOpts" >ImageOrPrintOptions contains some property of output image</param>
 			/// <returns/>
 			/// 
-			 virtual intrusive_ptr<Aspose::Cells::System::Array1D<Aspose::Cells::System::Byte>> 		ToImage(intrusive_ptr<Aspose::Cells::ICell> cell , intrusive_ptr<Aspose::Cells::Rendering::IImageOrPrintOptions> imgOpts)=0;
+			 virtual intrusive_ptr<Aspose::Cells::Systems::Array1D<Aspose::Cells::Systems::Byte>> 		ToImage(intrusive_ptr<Aspose::Cells::ICell> cell , intrusive_ptr<Aspose::Cells::Rendering::IImageOrPrintOptions> imgOpts)=0;
 
 	};
 }
