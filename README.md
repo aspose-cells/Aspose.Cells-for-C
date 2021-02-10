@@ -1,3 +1,4 @@
+![Nuget](https://img.shields.io/nuget/v/Aspose.cells.Cpp) ![Nuget](https://img.shields.io/nuget/dt/Aspose.cells.Cpp)
 # C++ Library for Excel File Formats
 
 [Aspose.Cells for C++](https://products.aspose.com/cells/cpp) is a native C++ library to create, manipulate, process and convert Microsoft Excel® files without needing Microsoft Office® or Automation. The Excel C++ API supports Excel 97-2003 (XLS), Excel 2007-2013/2016 (XLSX, XLSM, XLSB), OpenOffice XML and other formats such as CSV, TSV and more.
