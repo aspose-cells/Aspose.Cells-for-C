@@ -6,3 +6,4 @@ Debug
 Release
 *.db
 *.opendb
+*.lic
