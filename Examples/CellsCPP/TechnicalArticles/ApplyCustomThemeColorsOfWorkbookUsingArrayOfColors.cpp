@@ -3,48 +3,53 @@
 //Apply Custom Theme Colors of the Workbook using Array of Colors 
 void ApplyCustomThemeColorsOfWorkbookUsingArrayOfColors()
 {
+	
 	//Output directory path
-	StringPtr outPath = new String("..\\Data\\Output\\");
+	U16String outPath ="..\\Data\\Output\\";
 	
 	//Path of output excel file
-	StringPtr outputApplyCustomThemeColorsOfWorkbookUsingArrayOfColors = outPath->StringAppend(new String("outputApplyCustomThemeColorsOfWorkbookUsingArrayOfColors.xlsx"));
+	U16String outputApplyCustomThemeColorsOfWorkbookUsingArrayOfColors = outPath + "outputApplyCustomThemeColorsOfWorkbookUsingArrayOfColors.xlsx";
 
 	//Create a workbook
-	intrusive_ptr<IWorkbook> wb = Factory::CreateIWorkbook();
+	Workbook wb;
 
 	//Create array of custom theme colors
-	intrusive_ptr<Array1D<Systems::Drawing::Color*>> clrs = new Array1D<Systems::Drawing::Color*>(12);
+	Vector<Color> clrs(12);
 	//Background1
-	clrs->SetValue(Systems::Drawing::Color::GetRed(), 0);
+	clrs[0] = Color{0xff, 0xff, 0, 0};
 	//Text1
-	clrs->SetValue(Systems::Drawing::Color::GetRed(), 1);
+	clrs[1] = Color{ 0xff, 0xff, 0, 0 };
 	//Background2
-	clrs->SetValue(Systems::Drawing::Color::GetRed(), 2);
+	clrs[2] = Color{ 0xff, 0xff, 0, 0 };
 	//Text2
-	clrs->SetValue(Systems::Drawing::Color::GetRed(), 3);
+	clrs[3] = Color{ 0xff, 0xff, 0, 0 };
 	//Accent1
-	clrs->SetValue(Systems::Drawing::Color::GetRed(), 4);
+	clrs[4] = Color{ 0xff, 0xff, 0, 0 };
+
 	//Accent2
-	clrs->SetValue(Systems::Drawing::Color::GetGreen(), 5);
+	clrs[5] = Color{ 0xff, 0, 0xff, 0 };
 	//Accent3
-	clrs->SetValue(Systems::Drawing::Color::GetGreen(), 6);
+	clrs[6] = Color{ 0xff, 0, 0xff, 0 };
 	//Accent4
-	clrs->SetValue(Systems::Drawing::Color::GetGreen(), 7);
+	clrs[7] = Color{ 0xff, 0, 0xff, 0 };
 	//Accent5
-	clrs->SetValue(Systems::Drawing::Color::GetGreen(), 8);
+	clrs[8] = Color{ 0xff, 0, 0xff, 0 };
+
 	//Accent6
-	clrs->SetValue(Systems::Drawing::Color::GetBlue(), 9);
+	clrs[9] = Color{ 0xff, 0, 0, 0xff };
 	//Hyperlink
-	clrs->SetValue(Systems::Drawing::Color::GetBlue(), 10);
+	clrs[10] = Color{ 0xff, 0, 0, 0xff };
 	//Followed Hyperlink
-	clrs->SetValue(Systems::Drawing::Color::GetBlue(), 11);
+	clrs[11] = Color{ 0xff, 0, 0, 0xff };
 
 	//Apply custom theme colors on workbook
-	wb->CustomTheme(new String("AnyTheme"), clrs);
+	wb.CustomTheme("AnyTheme", clrs);
 
 	//Save the workbook
-	wb->Save(outputApplyCustomThemeColorsOfWorkbookUsingArrayOfColors);
+	wb.Save(outputApplyCustomThemeColorsOfWorkbookUsingArrayOfColors);
 
 	//Show successfull execution message on console
 	ShowMessageOnConsole("ApplyCustomThemeColorsOfWorkbookUsingArrayOfColors executed successfully.\r\n\r\n");
+
+	
 }

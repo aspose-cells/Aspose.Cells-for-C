@@ -1,0 +1,32 @@
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup Condition="'$(Force-Enable-aspose-cells)' == '' And ((!$(PlatformToolset.Contains('v14'))) Or '$(Platform)' != 'x64' Or '$(ApplicationType)' != '')">
+    <Disable-aspose-cells>true</Disable-aspose-cells>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Force-Disable-aspose-cells)' != ''">
+    <Disable-aspose-cells>true</Disable-aspose-cells>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Disable-aspose-cells)' == ''">
+    <ClCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Disable-aspose-cells)' == ''">
+    <Link>
+      <AdditionalDependencies Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(MSBuildThisFileDirectory)lib\win_x86_64\Aspose.Cells.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(MSBuildThisFileDirectory)lib\win_x86_64\Aspose.Cells.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(MSBuildThisFileDirectory)include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64' And '$(Disable-aspose-cells)' == ''">
+    <ReferenceCopyLocalPaths Include="$(MSBuildThisFileDirectory)lib\win_x86_64\Aspose.Cells.dll" />
+  </ItemGroup>
+  <ItemGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64' And '$(Disable-aspose-cells)' == ''">
+    <ReferenceCopyLocalPaths Include="$(MSBuildThisFileDirectory)lib\win_x86_64\Aspose.Cells.dll" />
+  </ItemGroup>
+  <Target Name="PlatformCheck" BeforeTargets="PrepareForBuild">
+    <Error Condition="!$(PlatformToolset.Contains('v14'))" Text="Aspose.Cells for C++ Library error: Only 'v14x' toolset is supported." />
+    <Error Condition="'$(Platform)' != 'x64'" Text="Aspose.Cells for C++ Library error: Only 'x64' platform is supported, but the current platform is '$(Platform)'." />
+  </Target>
+</Project>

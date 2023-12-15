@@ -46,47 +46,61 @@ Are you ready to give Aspose.Cells for C++ a try? Simply execute `Install-Packag
 ### Convert XLS to XLSX, XLSB & CSV
 
 ```c++
+Aspose::Cells::Startup();
+
+//Output directory path
+U16String dir = "..\\Data\\Output\\";
+
 // load the file to be converted
-intrusive_ptr<IWorkbook> book = Factory::CreateIWorkbook(dir->StringAppend(new String("template.xls")));
+Workbook book(u"template.xls");
 // save in different formats
-book->Save(dir->StringAppend(new String("output.xlsx")), SaveFormat_Xlsx);
-book->Save(dir->StringAppend(new String("output.xlsb")), SaveFormat_Xlsb);
-book->Save(dir->StringAppend(new String("output.csv")), SaveFormat_CSV);
+book.Save(dir + "output.xlsx", SaveFormat::Xlsx);
+book.Save(dir + "output.xlsb", SaveFormat::Xlsb);
+book.Save(dir + "output.csv", SaveFormat::CSV);
+
+Aspose::Cells::Cleanup();
+
 ```
 
 ### Create a Custom Excel Chart
 
 ```c++
+
+Aspose::Cells::Startup();
+
 // create a new workbook
-intrusive_ptr<IWorkbook> workbook = Factory::CreateIWorkbook();
+Workbook workbook;
 
 // get first worksheet which is created by default
-intrusive_ptr<IWorksheet> worksheet = workbook->GetIWorksheets()->GetObjectByIndex(0);
+Worksheet worksheet = workbook.GetWorksheets().Get(0);
 
 // add sample data
-worksheet->GetICells()->GetObjectByIndex(new String("A1"))->PutValue(50);
-worksheet->GetICells()->GetObjectByIndex(new String("A2"))->PutValue(100);
-worksheet->GetICells()->GetObjectByIndex(new String("A3"))->PutValue(150);
-worksheet->GetICells()->GetObjectByIndex(new String("A4"))->PutValue(110);
-worksheet->GetICells()->GetObjectByIndex(new String("B1"))->PutValue(260);
-worksheet->GetICells()->GetObjectByIndex(new String("B2"))->PutValue(12);
-worksheet->GetICells()->GetObjectByIndex(new String("B3"))->PutValue(50);
-worksheet->GetICells()->GetObjectByIndex(new String("B4"))->PutValue(100);
+worksheet.GetCells().Get("A1").PutValue(50);
+worksheet.GetCells().Get("A2").PutValue(100);
+worksheet.GetCells().Get("A3").PutValue(150);
+worksheet.GetCells().Get("A4").PutValue(110);
+worksheet.GetCells().Get("B1").PutValue(260);
+worksheet.GetCells().Get("B2").PutValue(12);
+worksheet.GetCells().Get("B3").PutValue(50);
+worksheet.GetCells().Get("B4").PutValue(100);
 
 // add a chart to the worksheet
-int chartIndex = worksheet->GetICharts()->Add(Aspose::Cells::Charts::ChartType::ChartType_Column, 5, 0, 20, 8);
+int chartIndex = worksheet.GetCharts().Add(Aspose::Cells::Charts::ChartType::Column, 5, 0, 20, 8);
 
 // access the instance of the newly added chart
-intrusive_ptr<Aspose::Cells::Charts::IChart> chart = worksheet->GetICharts()->GetObjectByIndex(chartIndex);
+Chart chart = worksheet.GetCharts().Get(chartIndex);
 
 // add SeriesCollection (chart data source) to the chart ranging from A1 to B4
-chart->GetNISeries()->Add(new String("A1:B4"), true);
+chart.GetNSeries().Add("A1:B4", true);
 
 // set the chart type of 2nd NSeries to display as line chart
-chart->GetNISeries()->GetObjectByIndex(1)->SetType(Aspose::Cells::Charts::ChartType::ChartType_Line);
+chart.GetNSeries().Get(1).SetType(Aspose::Cells::Charts::ChartType::Line);
 
 // save the Excel file
-workbook->Save(new String("output.xlsx")));
+workbook.Save("output.xlsx");
+
+Aspose::Cells::Cleanup();
+
 ```
 
 [Home](https://www.aspose.com/) | [Product Page](https://products.aspose.com/cells/cpp) | [Docs](https://docs.aspose.com/cells/cpp/) | [Demos](https://products.aspose.app/cells/family) | [API Reference](https://apireference.aspose.com/cells/cpp) | [Examples](https://github.com/aspose-cells/Aspose.Cells-for-C) | [Blog](https://blog.aspose.com/category/cells/) | [Search](https://search.aspose.com/) | [Free Support](https://forum.aspose.com/c/cells) |  [Temporary License](https://purchase.aspose.com/temporary-license)

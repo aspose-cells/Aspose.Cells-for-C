@@ -4,58 +4,60 @@
 void CreatingAndCustomizingCharts_BubbleChart()
 {
 	// Output directory path
-	StringPtr outDir = new String("..\\Data\\02_OutputDirectory\\");
+	U16String outDir("..\\Data\\02_OutputDirectory\\");
 
 	// Path of output excel file
-	StringPtr outputChartTypeBubble = outDir->StringAppend(new String("outputChartTypeBubble.xlsx"));
+	U16String outputChartTypeBubble = outDir + u"outputChartTypeBubble.xlsx";
 
 	// Create a new workbook
-	intrusive_ptr<IWorkbook> workbook = Factory::CreateIWorkbook();
+	Workbook workbook;
 
 	// Get first worksheet which is created by default
-	intrusive_ptr<IWorksheet> worksheet = workbook->GetIWorksheets()->GetObjectByIndex(0);
+	Worksheet worksheet = workbook.GetWorksheets().Get(0);
 
 	// Fill in data for chart's series
 	// Y Values
-	worksheet->GetICells()->GetObjectByIndex(0, 0)->PutValue((StringPtr)new String("Y Values"));
-	worksheet->GetICells()->GetObjectByIndex(0, 1)->PutValue(2);
-	worksheet->GetICells()->GetObjectByIndex(0, 2)->PutValue(4);
-	worksheet->GetICells()->GetObjectByIndex(0, 3)->PutValue(6);
+	worksheet.GetCells().Get("A1").PutValue(u"Y Values");
+	worksheet.GetCells().Get("B1").PutValue(2);
+	worksheet.GetCells().Get("C1").PutValue(4);
+	worksheet.GetCells().Get("D1").PutValue(6);
+
 	// Bubble Size
-	worksheet->GetICells()->GetObjectByIndex(1, 0)->PutValue((StringPtr)new String("Bubble Size"));
-	worksheet->GetICells()->GetObjectByIndex(1, 1)->PutValue(2);
-	worksheet->GetICells()->GetObjectByIndex(1, 2)->PutValue(3);
-	worksheet->GetICells()->GetObjectByIndex(1, 3)->PutValue(1);
+	worksheet.GetCells().Get("A2").PutValue(u"Bubble Size");
+	worksheet.GetCells().Get("B2").PutValue(2);
+	worksheet.GetCells().Get("C2").PutValue(3);
+	worksheet.GetCells().Get("D2").PutValue(1);
 	// X Values
-	worksheet->GetICells()->GetObjectByIndex(2, 0)->PutValue((StringPtr)new String("X Values"));
-	worksheet->GetICells()->GetObjectByIndex(2, 1)->PutValue(1);
-	worksheet->GetICells()->GetObjectByIndex(2, 2)->PutValue(2);
-	worksheet->GetICells()->GetObjectByIndex(2, 3)->PutValue(3);
+	worksheet.GetCells().Get("A3").PutValue(u"X Values");
+	worksheet.GetCells().Get("B3").PutValue(1);
+	worksheet.GetCells().Get("C3").PutValue(2);
+	worksheet.GetCells().Get("D3").PutValue(3);
 
 	// Set first column width
-	worksheet->GetICells()->SetColumnWidth(0, 12);
+	worksheet.GetCells().SetColumnWidth(0, 12);
 
 	// Adding a chart to the worksheet
-	int chartIndex = worksheet->GetICharts()->Add(Aspose::Cells::Charts::ChartType::ChartType_Bubble, 5, 0, 20, 8);
+	int chartIndex = worksheet.GetCharts().Add(ChartType::Bubble, 5, 0, 20, 8);
 
 	// Accessing the instance of the newly added chart
-	intrusive_ptr<Aspose::Cells::Charts::IChart> chart = worksheet->GetICharts()->GetObjectByIndex(chartIndex);
+	Chart chart = worksheet.GetCharts().Get(chartIndex);
 
 	// Adding SeriesCollection (chart data source) to the chart ranging from B1 to D1
-	chart->GetNISeries()->Add(new String("B1:D1"), true);
+	chart.GetNSeries().Add(u"B1:D1", true);
 
 	// Set bubble sizes
-	chart->GetNISeries()->GetObjectByIndex(0)->SetBubbleSizes(new String("B2:D2"));
+	chart.GetNSeries().Get(0).SetBubbleSizes(u"B2:D2");
 
 	// Set X axis values
-	chart->GetNISeries()->GetObjectByIndex(0)->SetXValues(new String("B3:D3"));
+	chart.GetNSeries().Get(0).SetXValues(u"B3:D3");
 
 	// Set Y axis values
-	chart->GetNISeries()->GetObjectByIndex(0)->SetValues(new String("B1:D1"));
+	chart.GetNSeries().Get(0).SetValues(u"B1:D1");
 
 	// Saving the Excel file
-	workbook->Save(outputChartTypeBubble);
+	workbook.Save(outputChartTypeBubble);
 
 	//Show successfull execution message on console
 	ShowMessageOnConsole("CreatingAndCustomizingCharts_BubbleChart executed successfully.");
+
 }

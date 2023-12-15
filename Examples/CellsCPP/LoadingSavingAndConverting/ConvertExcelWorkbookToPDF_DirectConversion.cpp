@@ -3,24 +3,28 @@
 //Convert Excel Workbook To PDF - Direct Conversion
 void ConvertExcelWorkbookToPDF_DirectConversion()
 {
+	
+
 	// Source directory path.
-	StringPtr srcDir = new String("..\\Data\\01_SourceDirectory\\");
+	U16String srcDir(u"..\\Data\\01_SourceDirectory\\");
 
 	// Output directory path.
-	StringPtr outDir = new String("..\\Data\\02_OutputDirectory\\");
+	U16String outDir(u"..\\Data\\02_OutputDirectory\\");
 
 	// Path of input Excel file
-	StringPtr sampleConvertExcelWorkbookToPDF = srcDir->StringAppend(new String("sampleConvertExcelWorkbookToPDF.xlsx"));
+	U16String sampleConvertExcelWorkbookToPDF = srcDir + u"sampleConvertExcelWorkbookToPDF.xlsx";
 
 	// Path of output Pdf file
-	StringPtr outputConvertExcelWorkbookToPDF = outDir->StringAppend(new String("outputConvertExcelWorkbookToPDF_DirectConversion.pdf"));
+	U16String outputConvertExcelWorkbookToPDF = outDir + u"outputConvertExcelWorkbookToPDF_DirectConversion.pdf";
 
 	// Load the sample Excel file.
-	intrusive_ptr<Aspose::Cells::IWorkbook> workbook = Factory::CreateIWorkbook(sampleConvertExcelWorkbookToPDF);
+	Workbook workbook(sampleConvertExcelWorkbookToPDF);
 
 	// Save the Excel Document in PDF format
-	workbook->Save(outputConvertExcelWorkbookToPDF, SaveFormat_Pdf);
+	workbook.Save(outputConvertExcelWorkbookToPDF, SaveFormat::Pdf);
 
 	//Show successfull execution message on console
 	ShowMessageOnConsole("ConvertExcelWorkbookToPDF_DirectConversion executed successfully.");
+
+	
 }

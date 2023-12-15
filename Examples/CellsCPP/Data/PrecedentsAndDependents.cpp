@@ -3,94 +3,101 @@
 //Tracing Precedents
 void TracingPrecedents()
 {
+	
+
 	//Source directory path
-	StringPtr dirPath = new String("..\\Data\\Data\\");
+	U16String dirPath = "..\\Data\\Data\\";
 
 	//Path of input excel file
-	StringPtr samplePrecedentsAndDependents = dirPath->StringAppend(new String("samplePrecedentsAndDependents.xlsx"));
+	U16String samplePrecedentsAndDependents = dirPath + "samplePrecedentsAndDependents.xlsx";
 
 	//Load source Excel file
-	intrusive_ptr<IWorkbook>  workbook = Factory::CreateIWorkbook(samplePrecedentsAndDependents);
+	Workbook  workbook(samplePrecedentsAndDependents);
 
 	//Calculate workbook formula
-	workbook->CalculateFormula();
+	workbook.CalculateFormula();
 	
 	//Access first worksheet
-	intrusive_ptr<IWorksheet> worksheet = workbook->GetIWorksheets()->GetObjectByIndex(0);
+	Worksheet worksheet = workbook.GetWorksheets().Get(0);
 
 	//Access cell F6
-	intrusive_ptr<ICell> cell = worksheet->GetICells()->GetObjectByIndex(new String("F6"));
+	Cell cell = worksheet.GetCells().Get("F6");
 
 	//Get precedents of the cells and print them on console
-	Console::Write(new String("Printing Precedents of Cell: "));
-	Console::Write(cell->GetName());
-	Console::WriteLine(new String(""));
-	Console::WriteLine(new String("-------------------------------"));
+	std::cout << "Printing Precedents of Cell: ";
+	std::cout << cell.GetName().ToUtf8() << std::endl;
+	std::cout << "" << std::endl;
+	std::cout << "-------------------------------" << std::endl;
 
-	intrusive_ptr<IReferredAreaCollection> refac = cell->GetIPrecedents();
+	ReferredAreaCollection refac = cell.GetPrecedents();
 	
-	int count = refac->GetCount();
+	int count = refac.GetCount();
 
 	for (int i = 0; i < count; i++)
 	{
-		intrusive_ptr<IReferredArea> refa = refac->GetObjectByIndex(i);
+		ReferredArea refa = refac.Get(i);
 
-		int row = refa->GetStartRow();
-		int col = refa->GetStartColumn();
+		int row = refa.GetStartRow();
+		int col = refa.GetStartColumn();
 
-		cell = worksheet->GetICells()->GetICell(row,col);
-		
-		Console::WriteLine(cell->GetName());
+		cell = worksheet.GetCells().Get(row, col);
+		std::cout << cell.GetName().ToUtf8() << std::endl;
 	}
 
-	Console::WriteLine(new String(""));
+	std::cout << std::endl;
 
 	//Show successfull execution message on console
 	ShowMessageOnConsole("TracingPrecedents executed successfully.\r\n\r\n");
+
+	
 }
 
 //Tracing Dependents
 void TracingDependents()
 {
+	
+
 	//Source directory path
-	StringPtr dirPath = new String("..\\Data\\Data\\");
+	U16String dirPath = "..\\Data\\Data\\";
 
 	//Path of input excel file
-	StringPtr samplePrecedentsAndDependents = dirPath->StringAppend(new String("samplePrecedentsAndDependents.xlsx"));
+	U16String samplePrecedentsAndDependents = dirPath + "samplePrecedentsAndDependents.xlsx";
 
 	//Load source Excel file
-	intrusive_ptr<IWorkbook>  workbook = Factory::CreateIWorkbook(samplePrecedentsAndDependents);
+	Workbook  workbook(samplePrecedentsAndDependents);
 
 	//Calculate workbook formula
-	workbook->CalculateFormula();
+	workbook.CalculateFormula();
 
 	//Access first worksheet
-	intrusive_ptr<IWorksheet> worksheet = workbook->GetIWorksheets()->GetObjectByIndex(0);
+	Worksheet worksheet = workbook.GetWorksheets().Get(0);
 
 	//Access cell F6
-	intrusive_ptr<ICell> cell = worksheet->GetICells()->GetObjectByIndex(new String("F6"));
+	Cell cell = worksheet.GetCells().Get("F6");
 
 	//Get dependents of the cells and print them on console
-	Console::Write(new String("Printing Dependents of Cell: "));
-	Console::Write(cell->GetName());
-	Console::WriteLine(new String(""));
-	Console::WriteLine(new String("-------------------------------"));
+	std::cout << "Printing Dependents of Cell: ";
+	std::cout << cell.GetName().ToUtf8() << std::endl;
+	std::cout << "" << std::endl;
+	std::cout << "-------------------------------" << std::endl;
 
 	//Parameter false means we do not want to search other sheets
-	intrusive_ptr<Aspose::Cells::Systems::Array1D<ICell*>> depCells = cell->GetDependentICells(false);
+	Vector<Cell> depCells = cell.GetDependents(false);
 
 	//Get the length of the array
-	int len = depCells->Length();
+	int len = depCells.GetLength();
 
 	//Print the names of all the cells inside the array
 	for (int i = 0; i < len; i++)
 	{
-		intrusive_ptr<ICell> dCell = depCells->At(i);
-		Console::WriteLine(dCell->GetName());
+		Cell dCell = depCells[i];
+		std::cout << dCell.GetName().ToUtf8() << std::endl;
 	}
 
-	Console::WriteLine(new String(""));
+	std::cout << "" << std::endl;
 
 	//Show successfull execution message on console
 	ShowMessageOnConsole("TracingDependents executed successfully.\r\n\r\n");
+
+	
 }

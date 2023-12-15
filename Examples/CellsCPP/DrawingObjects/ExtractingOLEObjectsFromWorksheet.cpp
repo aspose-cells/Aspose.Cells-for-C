@@ -3,61 +3,61 @@
 //Extracting OLE Objects From Worksheet
 void ExtractingOLEObjectsFromWorksheet()
 {
+	
+
 	// Source directory path.
-	StringPtr srcDir = new String("..\\Data\\01_SourceDirectory\\");
+	U16String srcDir = "..\\Data\\01_SourceDirectory\\";
 
 	// Output directory path.
-	StringPtr outDir = new String("..\\Data\\02_OutputDirectory\\");
+	U16String outDir ="..\\Data\\02_OutputDirectory\\";
 
 	//Path of input excel file
-	StringPtr sampleExtractingOLEObjectsFromWorksheet = srcDir->StringAppend(new String("sampleExtractingOLEObjectsFromWorksheet.xlsx"));
+	U16String sampleExtractingOLEObjectsFromWorksheet = srcDir + "sampleExtractingOLEObjectsFromWorksheet.xlsx";
 
 	// Load sample Excel file containing OLE objects.
-	intrusive_ptr<IWorkbook> workbook = Factory::CreateIWorkbook(sampleExtractingOLEObjectsFromWorksheet);
+	Workbook workbook(sampleExtractingOLEObjectsFromWorksheet);
 
 	// Get the first worksheet.
-	intrusive_ptr<IWorksheet> worksheet = workbook->GetIWorksheets()->GetObjectByIndex(0);
-
-	//Create File object.
-	intrusive_ptr<Aspose::Cells::Systems::IO::File> ioFile = new Aspose::Cells::Systems::IO::File();
+	Worksheet worksheet = workbook.GetWorksheets().Get(0);
 
 	// Access the count of Ole objects.
-	Aspose::Cells::Systems::Int32 oleCount = worksheet->GetIOleObjects()->GetCount();
+	int oleCount = worksheet.GetOleObjects().GetCount();
 
 	// Iterate all the Ole objects and save to disk with correct file format extension.
 	for (int i = 0; i < oleCount; i++)
 	{
 		// Access Ole object.
-		intrusive_ptr<Aspose::Cells::Drawing::IOleObject> oleObj = worksheet->GetIOleObjects()->GetObjectByIndex(i);
+		OleObject oleObj = worksheet.GetOleObjects().Get(i);
 
 		// Access the Ole ProgID.
-		intrusive_ptr<Aspose::Cells::Systems::String> strProgId = oleObj->GetProgID();
+		U16String strProgId = oleObj.GetProgID();
 
 		// Find the correct file extension.
-		intrusive_ptr<Aspose::Cells::Systems::String> fileExt = NULL;
+		U16String fileExt;
 
-		if (strProgId->Equals(new String("Document")) == true)
+		if (strProgId == "Document")
 		{
-			fileExt = new Aspose::Cells::Systems::String(".docx");
+			fileExt = ".docx";
 		}
-		else if (strProgId->Equals(new String("Presentation")) == true)
+		else if (strProgId == "Presentation")
 		{
-			fileExt = new Aspose::Cells::Systems::String(".pptx");
+			fileExt = ".pptx";
 		}
-		else if (strProgId->Equals(new String("Acrobat Document")) == true)
+		else if (strProgId == "Acrobat Document")
 		{
-			fileExt = new Aspose::Cells::Systems::String(".pdf");
+			fileExt = ".pdf";
 		}
 
 		// Find the correct file name with file extension.
-		intrusive_ptr<Aspose::Cells::Systems::String> fileName = outDir->StringAppend(new String("outputExtractOleObject"))->StringAppend(fileExt);
+		U16String fileName = outDir + "outputExtractOleObject" + fileExt;
 
-		// Write the Ole object data with correct file name.
-		intrusive_ptr<Aspose::Cells::Systems::IO::FileStream> fout = new Aspose::Cells::Systems::IO::FileStream(fileName, FileMode::FileMode_OpenOrCreate, FileAccess::FileAccess_Write);
-		fout->Write(oleObj->GetObjectData(), 0, oleObj->GetObjectData()->GetLength());
-		fout->Close();
+		SaveDataToFile(oleObj.GetObjectData(), fileName);
 	}//for
 
 	//Show successfull execution message on console
 	ShowMessageOnConsole("ExtractingOLEObjectsFromWorksheet executed successfully.");
+
+	
 }
+
+

@@ -3,37 +3,42 @@
 //Opening Excel File using its Path
 void OpeningExcelFileUsingPath()
 {
+	
 	//Source directory path
-	StringPtr dirPath = new String("..\\Data\\LoadingSavingAndConverting\\");
+	U16String dirPath = "..\\Data\\LoadingSavingAndConverting\\";
 
 	//Create Workbook object from an Excel file path
-	intrusive_ptr<IWorkbook>  workbook = Factory::CreateIWorkbook(dirPath->StringAppend(new String("sampleExcelFile.xlsx")));
+	Workbook  workbook(dirPath + "sampleExcelFile.xlsx");
 
 	//Show following message on console
 	ShowMessageOnConsole("Workbook opened successfully using file path.");
 
 	//Show successfull execution message on console
 	ShowMessageOnConsole("OpeningExcelFileUsingPath executed successfully.\r\n\r\n");
+
+	
 }
 
 //Opening Excel File using Stream
 void OpeningExcelFileUsingStream()
 {
+	
+	
 	//Source directory path
-	StringPtr dirPath = new String("..\\Data\\LoadingSavingAndConverting\\");
+	U16String dirPath(u"..\\Data\\LoadingSavingAndConverting\\");
 
-	//Create a Stream object
-	intrusive_ptr<FileStream>  fstream = new FileStream(dirPath->StringAppend(new String("sampleExcelFile.xlsx")), FileMode_Open);
+	//You need to write your own code to read the contents of the sampleExcelFile.xlsx file into this variable.
+	Vector<uint8_t> FileStream = GetDataFromFile(dirPath + "sampleExcelFile.xlsx"); 
 
 	//Create Workbook object from a Stream object
-	intrusive_ptr<IWorkbook>  workbook = Factory::CreateIWorkbook(fstream);
+	Workbook  workbook(FileStream);
 
 	//Show following message on console
 	ShowMessageOnConsole("Workbook opened successfully using stream.");
 
-	//Close the Stream object
-	fstream->Close();
-
 	//Show successfull execution message on console
 	ShowMessageOnConsole("OpeningExcelFileUsingStream executed successfully.\r\n\r\n");
+
+	
 }
+

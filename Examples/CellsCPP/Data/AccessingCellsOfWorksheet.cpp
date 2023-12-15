@@ -4,85 +4,89 @@
 void AccessingCellsUsingCellName()
 {
 	//Source directory path
-	StringPtr dirPath = new String("..\\Data\\Data\\");
+	U16String dirPath = "..\\Data\\Data\\";
 
 	//Path of input excel file
-	StringPtr sampleData = dirPath->StringAppend(new String("sampleData.xlsx"));
+	U16String sampleData = dirPath + "sampleData.xlsx";
 
 	//Read input excel file
-	intrusive_ptr<IWorkbook> workbook = Factory::CreateIWorkbook(sampleData);
+	Workbook workbook(sampleData);
 
 	//Accessing the first worksheet in the Excel file
-	intrusive_ptr<IWorksheet> worksheet = workbook->GetIWorksheets()->GetObjectByIndex(0);
+	Worksheet worksheet = workbook.GetWorksheets().Get(0);
 
 	//Get cells from sheet
-	intrusive_ptr<ICells> cells = worksheet->GetICells();
+	Cells cells = worksheet.GetCells();
 
 	//Accessing a cell using its name
-	intrusive_ptr<ICell> cell = cells->GetObjectByIndex(new String("B3"));
+	Cell cell = cells.Get("B3");
 
 	//Write string value of the cell on console
-	Console::Write(new String("Value of cell B3: "));
-	Console::WriteLine(cell->GetStringValue());
+	std::cout << "Value of cell B3: ";
+	std::cout << cell.GetStringValue().ToUtf8() << std::endl;
 
 	//Show successfull execution message on console
 	ShowMessageOnConsole("AccessingCellsUsingCellName executed successfully.\r\n\r\n");
+	
 }
 
 //Accessing Cells Using Row & Column Index of the Cell
 void AccessingCellsUsingRowAndColumnIndexOfTheCell()
 {
 	//Source directory path
-	StringPtr dirPath = new String("..\\Data\\Data\\");
+	U16String dirPath = "..\\Data\\Data\\";
 
 	//Path of input excel file
-	StringPtr sampleData = dirPath->StringAppend(new String("sampleData.xlsx"));
+	U16String sampleData = dirPath + "sampleData.xlsx";
 
 	//Read input excel file
-	intrusive_ptr<IWorkbook> workbook = Factory::CreateIWorkbook(sampleData);
+	Workbook workbook(sampleData);
 
 	//Accessing the first worksheet in the Excel file
-	intrusive_ptr<IWorksheet> worksheet = workbook->GetIWorksheets()->GetObjectByIndex(0);
+	Worksheet worksheet = workbook.GetWorksheets().Get(0);
 
 	//Get cells from sheet
-	intrusive_ptr<ICells> cells = worksheet->GetICells();
+	Cells cells = worksheet.GetCells();
 
 	// Accessing a cell using its row and column index
-	intrusive_ptr<ICell> cell = cells->GetObjectByIndex(2, 1);
+	Cell cell = cells.GetCell(2, 1);
 
 	//Write string value of the cell on console
-	Console::Write(new String("Value of cell B3: "));
-	Console::WriteLine(cell->GetStringValue());
+	std::cout << "Value of cell B3: ";
+	std::cout << cell.GetStringValue().ToUtf8() << std::endl;
 
 	//Show successfull execution message on console
 	ShowMessageOnConsole("AccessingCellsUsingRowAndColumnIndexOfTheCell executed successfully.\r\n\r\n");
+	
 }
 
 //Accessing Maximum Display Range of Worksheet
 void AccessingMaximumDisplayRangeOfWorksheet()
 {
+
 	//Source directory path
-	StringPtr dirPath = new String("..\\Data\\Data\\");
+	U16String dirPath = "..\\Data\\Data\\";
 
 	//Path of input excel file
-	StringPtr sampleData = dirPath->StringAppend(new String("sampleData.xlsx"));
+	U16String sampleData = dirPath + "sampleData.xlsx";
 
 	//Read input excel file
-	intrusive_ptr<IWorkbook> workbook = Factory::CreateIWorkbook(sampleData);
+	Workbook workbook(sampleData);
 
 	//Accessing the first worksheet in the Excel file
-	intrusive_ptr<IWorksheet> worksheet = workbook->GetIWorksheets()->GetObjectByIndex(0);
+	Worksheet worksheet = workbook.GetWorksheets().Get(0);
 
 	//Get cells from sheet
-	intrusive_ptr<ICells> cells = worksheet->GetICells();
+	Cells cells = worksheet.GetCells();
 
 	//Access the Maximum Display Range
-	intrusive_ptr<IRange> range = cells->GetMaxDisplayIRange();
+	Range range = cells.GetMaxDisplayRange();
 
 	//Print string value of the cell on console
-	Console::Write(new String("Maximum Display Range of Worksheet: "));
-	Console::WriteLine(range->GetRefersTo());
+	std::cout << "Maximum Display Range of Worksheet: ";
+	std::cout << range.GetRefersTo().ToUtf8() << std::endl;
 
 	//Show successfull execution message on console
 	ShowMessageOnConsole("AccessingMaximumDisplayRangeOfWorksheet executed successfully.\r\n\r\n");
+	
 }

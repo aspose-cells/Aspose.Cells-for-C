@@ -3,154 +3,164 @@
 //Insert a Row
 void InsertRow()
 {
+	
 	//Source directory path
-	StringPtr dirPath = new String("..\\Data\\RowsAndColumns\\");
+	U16String dirPath = "..\\Data\\RowsAndColumns\\";
 
 	//Output directory path
-	StringPtr outPath = new String("..\\Data\\Output\\");
+	U16String outPath = "..\\Data\\Output\\";
 
 	//Path of input excel file
-	StringPtr sampleInsertingDeletingRowsAndColumns = dirPath->StringAppend(new String("sampleInsertingDeletingRowsAndColumns.xlsx"));
+	U16String sampleInsertingDeletingRowsAndColumns = dirPath + "sampleInsertingDeletingRowsAndColumns.xlsx";
 
 	//Path of output excel file
-	StringPtr outputInsertingDeletingRowsAndColumns = outPath->StringAppend(new String("outputInsertingDeletingRowsAndColumns.xlsx"));
+	U16String outputInsertingDeletingRowsAndColumns = outPath + "outputInsertingDeletingRowsAndColumns.xlsx";
 
 	//Read input excel file
-	intrusive_ptr<IWorkbook> workbook = Factory::CreateIWorkbook(sampleInsertingDeletingRowsAndColumns);
+	Workbook workbook(sampleInsertingDeletingRowsAndColumns);
 
 	//Accessing the first worksheet in the Excel file
-	intrusive_ptr<IWorksheet> worksheet = workbook->GetIWorksheets()->GetObjectByIndex(0);
+	Worksheet worksheet = workbook.GetWorksheets().Get(0);
 
 	//Inserting a row into the worksheet at 3rd position
-	worksheet->GetICells()->InsertRow(2);
+	worksheet.GetCells().InsertRow(2);
 
 	//Save the Excel file.
-	workbook->Save(outputInsertingDeletingRowsAndColumns);
+	workbook.Save(outputInsertingDeletingRowsAndColumns);
 
 	//Show successfull execution message on console
 	ShowMessageOnConsole("InsertRow executed successfully.\r\n\r\n");
+	
 }
 
 //Inserting Multiple Rows
 void InsertingMultipleRows()
 {
+	
 	//Source directory path
-	StringPtr dirPath = new String("..\\Data\\RowsAndColumns\\");
+	U16String dirPath = "..\\Data\\RowsAndColumns\\";
 
 	//Output directory path
-	StringPtr outPath = new String("..\\Data\\Output\\");
+	U16String outPath = "..\\Data\\Output\\";
 
 	//Path of input excel file
-	StringPtr sampleInsertingDeletingRowsAndColumns = dirPath->StringAppend(new String("sampleInsertingDeletingRowsAndColumns.xlsx"));
+	U16String sampleInsertingDeletingRowsAndColumns = dirPath + "sampleInsertingDeletingRowsAndColumns.xlsx";
 
 	//Path of output excel file
-	StringPtr outputInsertingDeletingRowsAndColumns = outPath->StringAppend(new String("outputInsertingDeletingRowsAndColumns.xlsx"));
+	U16String outputInsertingDeletingRowsAndColumns = outPath + "outputInsertingDeletingRowsAndColumns.xlsx";
 
 	//Read input excel file
-	intrusive_ptr<IWorkbook> workbook = Factory::CreateIWorkbook(sampleInsertingDeletingRowsAndColumns);
+	Workbook workbook(sampleInsertingDeletingRowsAndColumns);
 
 	//Accessing the first worksheet in the Excel file
-	intrusive_ptr<IWorksheet> worksheet = workbook->GetIWorksheets()->GetObjectByIndex(0);
+	Worksheet worksheet = workbook.GetWorksheets().Get(0);
 
 	//Inserting 10 rows into the worksheet starting from 3rd row
-	worksheet->GetICells()->InsertRows(2, 10);
+	worksheet.GetCells().InsertRows(2, 10);
 
 	//Save the Excel file.
-	workbook->Save(outputInsertingDeletingRowsAndColumns);
+	workbook.Save(outputInsertingDeletingRowsAndColumns);
 
 	//Show successfull execution message on console
 	ShowMessageOnConsole("InsertingMultipleRows executed successfully.\r\n\r\n");
+	
 }
 
 //Deleting Multiple Rows
 void DeletingMultipleRows()
 {
+	
 	//Source directory path
-	StringPtr dirPath = new String("..\\Data\\RowsAndColumns\\");
+	U16String dirPath = "..\\Data\\RowsAndColumns\\";
 
 	//Output directory path
-	StringPtr outPath = new String("..\\Data\\Output\\");
+	U16String outPath = "..\\Data\\Output\\";
 
 	//Path of input excel file
-	StringPtr sampleInsertingDeletingRowsAndColumns = dirPath->StringAppend(new String("sampleInsertingDeletingRowsAndColumns.xlsx"));
+	U16String sampleInsertingDeletingRowsAndColumns = dirPath + "sampleInsertingDeletingRowsAndColumns.xlsx";
 
 	//Path of output excel file
-	StringPtr outputInsertingDeletingRowsAndColumns = outPath->StringAppend(new String("outputInsertingDeletingRowsAndColumns.xlsx"));
+	U16String outputInsertingDeletingRowsAndColumns = outPath + "outputInsertingDeletingRowsAndColumns.xlsx";
 
 	//Read input excel file
-	intrusive_ptr<IWorkbook> workbook = Factory::CreateIWorkbook(sampleInsertingDeletingRowsAndColumns);
+	Workbook workbook(sampleInsertingDeletingRowsAndColumns);
 
 	//Accessing the first worksheet in the Excel file
-	intrusive_ptr<IWorksheet> worksheet = workbook->GetIWorksheets()->GetObjectByIndex(0);
+	Worksheet worksheet = workbook.GetWorksheets().Get(0);
 
 	//Deleting 10 rows from the worksheet starting from 3rd row
-	worksheet->GetICells()->DeleteRows(2, 10);
+	worksheet.GetCells().DeleteRows(2, 10);
 
 	//Save the Excel file.
-	workbook->Save(outputInsertingDeletingRowsAndColumns);
+	workbook.Save(outputInsertingDeletingRowsAndColumns);
 
 	//Show successfull execution message on console
 	ShowMessageOnConsole("DeletingMultipleRows executed successfully.\r\n\r\n");
+	
 }
 
 //Insert a Column
 void InsertColumn()
 {
+	
 	//Source directory path
-	StringPtr dirPath = new String("..\\Data\\RowsAndColumns\\");
+	U16String dirPath = "..\\Data\\RowsAndColumns\\";
 
 	//Output directory path
-	StringPtr outPath = new String("..\\Data\\Output\\");
+	U16String outPath = "..\\Data\\Output\\";
 
 	//Path of input excel file
-	StringPtr sampleInsertingDeletingRowsAndColumns = dirPath->StringAppend(new String("sampleInsertingDeletingRowsAndColumns.xlsx"));
+	U16String sampleInsertingDeletingRowsAndColumns = dirPath + "sampleInsertingDeletingRowsAndColumns.xlsx";
 
 	//Path of output excel file
-	StringPtr outputInsertingDeletingRowsAndColumns = outPath->StringAppend(new String("outputInsertingDeletingRowsAndColumns.xlsx"));
+	U16String outputInsertingDeletingRowsAndColumns = outPath + "outputInsertingDeletingRowsAndColumns.xlsx";
 
 	//Read input excel file
-	intrusive_ptr<IWorkbook> workbook = Factory::CreateIWorkbook(sampleInsertingDeletingRowsAndColumns);
+	Workbook workbook(sampleInsertingDeletingRowsAndColumns);
 
 	//Accessing the first worksheet in the Excel file
-	intrusive_ptr<IWorksheet> worksheet = workbook->GetIWorksheets()->GetObjectByIndex(0);
+	Worksheet worksheet = workbook.GetWorksheets().Get(0);
 
 	//Inserting a column into the worksheet at 2nd position
-	worksheet->GetICells()->InsertColumn(1);
+	worksheet.GetCells().InsertColumn(1);
 
 	//Save the Excel file.
-	workbook->Save(outputInsertingDeletingRowsAndColumns);
+	workbook.Save(outputInsertingDeletingRowsAndColumns);
 
 	//Show successfull execution message on console
 	ShowMessageOnConsole("InsertColumn executed successfully.\r\n\r\n");
+	
 }
 
 //Delete a Column
 void DeleteColumn()
 {
+	
 	//Source directory path
-	StringPtr dirPath = new String("..\\Data\\RowsAndColumns\\");
+	U16String dirPath = "..\\Data\\RowsAndColumns\\";
 
 	//Output directory path
-	StringPtr outPath = new String("..\\Data\\Output\\");
+	U16String outPath = "..\\Data\\Output\\";
 
 	//Path of input excel file
-	StringPtr sampleDeleteColumn = dirPath->StringAppend(new String("sampleInsertingDeletingRowsAndColumns.xlsx"));
+	U16String sampleDeleteColumn = dirPath + "sampleInsertingDeletingRowsAndColumns.xlsx";
 
 	//Path of output excel file
-	StringPtr outputDeleteColumn = outPath->StringAppend(new String("outputInsertingDeletingRowsAndColumns.xlsx"));
+	U16String outputDeleteColumn = outPath + "outputInsertingDeletingRowsAndColumns.xlsx";
 
 	//Read input excel file
-	intrusive_ptr<IWorkbook> workbook = Factory::CreateIWorkbook(sampleDeleteColumn);
+	Workbook workbook(sampleDeleteColumn);
 
 	//Accessing the first worksheet in the Excel file
-	intrusive_ptr<IWorksheet> worksheet = workbook->GetIWorksheets()->GetObjectByIndex(0);
+	Worksheet worksheet = workbook.GetWorksheets().Get(0);
 
 	//Deleting a column from the worksheet at 2nd position
-	worksheet->GetICells()->DeleteColumn(4);
+	worksheet.GetCells().DeleteColumn(4);
 
 	//Save the Excel file.
-	workbook->Save(outputDeleteColumn);
+	workbook.Save(outputDeleteColumn);
 
 	//Show successfull execution message on console
 	ShowMessageOnConsole("DeleteColumn executed successfully.\r\n\r\n");
+	
 }

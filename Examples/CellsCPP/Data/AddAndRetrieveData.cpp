@@ -4,101 +4,102 @@
 void AddingDataToCells()
 {
 	//Source directory path
-	StringPtr dirPath = new String("..\\Data\\Data\\");
+	U16String dirPath = "..\\Data\\Data\\";
 
 	//Output directory path
-	StringPtr outPath = new String("..\\Data\\Output\\");
+	U16String outPath = "..\\Data\\Output\\";
 
 	//Path of input excel file
-	StringPtr sampleData = dirPath->StringAppend(new String("sampleData.xlsx"));
+	U16String sampleData = dirPath + "sampleData.xlsx";
 
 	//Path of output excel file
-	StringPtr outputData = outPath->StringAppend(new String("outputData.xlsx"));
+	U16String outputData = outPath + "outputData.xlsx";
 
 	//Read input excel file
-	intrusive_ptr<IWorkbook> workbook = Factory::CreateIWorkbook(sampleData);
+	Workbook workbook(sampleData);
 
 	//Accessing the second worksheet in the Excel file
-	intrusive_ptr<IWorksheet> worksheet = workbook->GetIWorksheets()->GetObjectByIndex(1);
+	Worksheet worksheet = workbook.GetWorksheets().Get(1);
 
 	//Adding a string value to the cell
-	worksheet->GetICells()->GetObjectByIndex(new String("A1"))->PutValue("Hello World");
+	worksheet.GetCells().Get("A1").PutValue("Hello World");
 
 	//Adding a double value to the cell
-	worksheet->GetICells()->GetObjectByIndex(new String("A2"))->PutValue(20.5);
+	worksheet.GetCells().Get("A2").PutValue(20.5);
 
 	//Adding an integer value to the cell
-	worksheet->GetICells()->GetObjectByIndex(new String("A3"))->PutValue(15);
+	worksheet.GetCells().Get("A3").PutValue(15);
 
 	//Adding a boolean value to the cell
-	worksheet->GetICells()->GetObjectByIndex(new String("A4"))->PutValue(true);
+	worksheet.GetCells().Get("A4").PutValue(true);
 
 	//Setting the display format of the date
-	intrusive_ptr<ICell> cell = worksheet->GetICells()->GetObjectByIndex(new String("A5"));
-	intrusive_ptr<IStyle> style = cell->GetIStyle();
-	style->SetNumber(15);
-	cell->SetIStyle(style);
+	Cell cell = worksheet.GetCells().Get("A5");
+	Style style = cell.GetStyle();
+	style.SetNumber(15);
+	cell.SetStyle(style);
 
 	//Save the workbook
-	workbook->Save(outputData);
+	workbook.Save(outputData);
 
 	//Show successfull execution message on console
 	ShowMessageOnConsole("AddingDataToCells executed successfully.\r\n\r\n");
+
 }
 
 //Retrieving Data from Cells
 void RetrievingDataFromCells()
 {
 	//Source directory path
-	StringPtr dirPath = new String("..\\Data\\Data\\");
+	U16String dirPath = "..\\Data\\Data\\";
 
 	//Path of input excel file
-	StringPtr sampleData = dirPath->StringAppend(new String("sampleData.xlsx"));
+	U16String sampleData = dirPath + "sampleData.xlsx";
 
 	//Read input excel file
-	intrusive_ptr<IWorkbook> workbook = Factory::CreateIWorkbook(sampleData);
+	Workbook workbook(sampleData);
 
 	//Accessing the third worksheet in the Excel file
-	intrusive_ptr<IWorksheet> worksheet = workbook->GetIWorksheets()->GetObjectByIndex(2);
+	Worksheet worksheet = workbook.GetWorksheets().Get(2);
 
 	//Get cells from sheet
-	intrusive_ptr<ICells> cells = worksheet->GetICells();
+	Cells cells = worksheet.GetCells();
 
 	//Variable declarations
-	intrusive_ptr<String> strVal;
-	intrusive_ptr<Aspose::Cells::Systems::DateTime> dateVal;
-	Aspose::Cells::Systems::Double dblVal;
-	Aspose::Cells::Systems::Boolean boolVal;
+	U16String strVal;
+	Date dateVal;
+	double dblVal;
+	bool boolVal;
 
-	for (int i = 0; i < cells->GetCount(); i++)
+	Enumerator<Cell> enCell = cells.GetEnumerator();
+	while (enCell.MoveNext())
 	{
-		intrusive_ptr<ICell> cell = cells->GetObjectByIndex(i);
-
-		switch (cell->GetType())
+		Cell cell = enCell.GetCurrent();
+		switch (cell.GetType())
 		{
 			//Evaluating the data type of the cell data for string value
-		case CellValueType_IsString:
-			Console::WriteLine(new String("Cell Value Type Is String."));
-			strVal = cell->GetStringValue();
+		case CellValueType::IsString:
+			std::cout << "Cell Value Type Is String." << std::endl;
+			strVal = cell.GetStringValue();
 			break;
 			//Evaluating the data type of the cell data for double value
-		case CellValueType_IsNumeric:
-			Console::WriteLine(new String("Cell Value Type Is Numeric."));
-			dblVal = cell->GetDoubleValue();
+		case CellValueType::IsNumeric:
+			std::cout << "Cell Value Type Is Numeric." << std::endl;
+			dblVal = cell.GetDoubleValue();
 			break;
 			//Evaluating the data type of the cell data for boolean value
-		case CellValueType_IsBool:
-			Console::WriteLine(new String("Cell Value Type Is Bool."));
-			boolVal = cell->GetBoolValue();
+		case CellValueType::IsBool:
+			std::cout << "Cell Value Type Is Bool." << std::endl;
+			boolVal = cell.GetBoolValue();
 			break;
 			//Evaluating the data type of the cell data for date/time value
-		case CellValueType_IsDateTime:
-			Console::WriteLine(new String("Cell Value Type Is DateTime."));
-			dateVal = cell->GetDateTimeValue();
+		case CellValueType::IsDateTime:
+			std::cout << "Cell Value Type Is DateTime." << std::endl;
+			dateVal = cell.GetDateTimeValue();
 			break;
 			//Evaluating the unknown data type of the cell data
-		case CellValueType_IsUnknown:
-			cell->GetStringValue();
+		case CellValueType::IsUnknown:
+			cell.GetStringValue();
 			break;
 		default:
 			break;
@@ -107,4 +108,5 @@ void RetrievingDataFromCells()
 
 	//Show successfull execution message on console
 	ShowMessageOnConsole("RetrievingDataFromCells executed successfully.\r\n\r\n");
+
 }

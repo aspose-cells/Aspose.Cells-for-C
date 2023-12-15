@@ -1,8 +1,25 @@
+#include <iostream>
+#include <fstream>
+#include <vector>
+#include <stack>
+#include <io.h>
+
+#include <Windows.h>
 #include "Aspose.Cells.h"
+#include <algorithm>
+#include <chrono>
+
+using namespace Aspose::Cells;
 using namespace std;
 
+Vector<uint8_t> GetDataFromFile(const U16String& file);
+
+void SaveDataToFile(const Vector<uint8_t>& data, const U16String& file);
+
+void SaveDataToFile(const Vector<uint8_t>& data, const char16_t* file);
+
 //Utility method to show message on console like printf
-void ShowMessageOnConsole(char* msg);
+void ShowMessageOnConsole(const char* msg);
 
 //Developer Guide > Loading, Saving and Converting
 //Opening Files
@@ -120,14 +137,8 @@ void  ManipulateNamedRangeInWorkbook();
 //Calculate Workbook Formulas
 void  CalculateWorkbookFormulas();
 
-//Using ICustomFunction Feature
-void  UsingICustomFunctionFeature();
-
 //Adding Formulas & Calculating Results
 void  AddingFormulasAndCalculatingResults();
-
-//Direct Calculation of Formula
-void DirectCalculationOfFormula();
 
 //Calculating Formulas Once Only
 void CalculatingFormulasOnceOnly();
@@ -225,5 +236,3 @@ void ConvertingWorksheetToImage_PNG();
 //Converting Worksheet To Image - SVG
 void ConvertingWorksheetToImage_SVG();
 
-//Converting Worksheet To Image - TIFF
-void ConvertingWorksheetToImage_TIFF();

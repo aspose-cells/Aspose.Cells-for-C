@@ -4,67 +4,68 @@
 void ReadAndManipulateExcel2016Charts()
 {
 	//Source directory path
-	StringPtr srcDir = new String("..\\Data\\01_SourceDirectory\\");
+	U16String srcDir = "..\\Data\\01_SourceDirectory\\";
 
 	//Output directory path
-	StringPtr outDir = new String("..\\Data\\02_OutputDirectory\\");
+	U16String outDir = "..\\Data\\02_OutputDirectory\\";
 
 	//Path of input excel file
-	StringPtr sampleReadAndManipulateExcel2016Charts = srcDir->StringAppend(new String("sampleReadAndManipulateExcel2016Charts.xlsx"));
+	U16String sampleReadAndManipulateExcel2016Charts = srcDir + "sampleReadAndManipulateExcel2016Charts.xlsx";
 
 	//Path of output excel file
-	StringPtr outputReadAndManipulateExcel2016Charts = outDir->StringAppend(new String("outputReadAndManipulateExcel2016Charts.xlsx"));
+	U16String outputReadAndManipulateExcel2016Charts = outDir + "outputReadAndManipulateExcel2016Charts.xlsx";
 
 	// Load sample Excel file containing Excel 2016 charts
-	intrusive_ptr<IWorkbook> workbook = Factory::CreateIWorkbook(sampleReadAndManipulateExcel2016Charts);
+	Workbook workbook(sampleReadAndManipulateExcel2016Charts);
 
 	// Access the first worksheet which contains the charts
-	intrusive_ptr<IWorksheet> worksheet = workbook->GetIWorksheets()->GetObjectByIndex(0);
+	Worksheet worksheet = workbook.GetWorksheets().Get(0);
 
 	// Access all charts one by one and read their types
-	for (int i = 0; i < worksheet->GetICharts()->GetCount(); i++)
+	for (int i = 0; i < worksheet.GetCharts().GetCount(); i++)
 	{
 		// Access the chart
-		intrusive_ptr<IChart> ch = worksheet->GetICharts()->GetObjectByIndex(i);
+		Chart ch = worksheet.GetCharts().Get(i);
 
 		//Get the chart type
-		ChartType chartType = ch->GetType();
+		ChartType chartType = ch.GetType();
 
 		//Convert chart type enum to string
-		StringPtr strChartType = NULL;
+		U16String strChartType;
 
 		switch (chartType)
 		{
-		case Aspose::Cells::Charts::ChartType_BoxWhisker:
-			strChartType = new String("BoxWhisker");
+		case Aspose::Cells::Charts::ChartType::BoxWhisker:
+			strChartType = "BoxWhisker";
 			break;
-		case Aspose::Cells::Charts::ChartType_Histogram:
-			strChartType = new String("Histogram");
+		case Aspose::Cells::Charts::ChartType::Histogram:
+			strChartType = "Histogram";
 			break;
-		case Aspose::Cells::Charts::ChartType_Sunburst:
-			strChartType = new String("Sunburst");
+		case Aspose::Cells::Charts::ChartType::Sunburst:
+			strChartType ="Sunburst";
 			break;
-		case Aspose::Cells::Charts::ChartType_Treemap:
-			strChartType = new String("Treemap");
+		case Aspose::Cells::Charts::ChartType::Treemap:
+			strChartType = "Treemap";
 			break;
-		case Aspose::Cells::Charts::ChartType_Waterfall:
-			strChartType = new String("Waterfall");
+		case Aspose::Cells::Charts::ChartType::Waterfall:
+			strChartType = "Waterfall";
 			break;
 		default:
 			break;
 		}
 
 		// Print chart type
-		Aspose::Cells::Systems::Console::WriteLine(strChartType);
+		std::cout << strChartType.ToUtf8() << std::endl;
 
 		// Change the title of the charts as per their types
-		StringPtr strTitle = (StringPtr)(new String("Chart Type is "))->Append(strChartType);
-		ch->GetITitle()->SetText(strTitle);
+		U16String strTitle = "Chart Type is " + strChartType;
+		ch.GetTitle().SetText(strTitle);
 	}
 
 	// Save the workbook
-	workbook->Save(outputReadAndManipulateExcel2016Charts);
+	workbook.Save(outputReadAndManipulateExcel2016Charts);
 
 	//Show successfull execution message on console
 	ShowMessageOnConsole("ReadAndManipulateExcel2016Charts executed successfully.");
+
 }

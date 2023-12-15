@@ -1,0 +1,3 @@
+﻿  main.cpp
+E:\CPPWorkspace\Examples\CellsCPP\main.cpp(41,30): warning C4244: 'argument': conversion from 'std::streamoff' to 'int32_t', possible loss of data
+  CellsCPP.vcxproj -> E:\CPPWorkspace\Examples\x64\Debug\CellsCPP.exe

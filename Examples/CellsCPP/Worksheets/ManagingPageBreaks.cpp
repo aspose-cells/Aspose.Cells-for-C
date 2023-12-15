@@ -3,21 +3,25 @@
 //Adding Page Breaks
 void AddingPageBreaks()
 {
+	
+
 	//Output directory path
-	StringPtr outDir = new String("..\\Data\\02_OutputDirectory\\");
+	U16String outDir = "..\\Data\\02_OutputDirectory\\";
 
 	//Path of output excel file
-	StringPtr outputPageBreaks = outDir->StringAppend(new String("outputManagingPageBreaks.xlsx"));
+	U16String outputPageBreaks = outDir + "outputManagingPageBreaks.xlsx";
 
 	//Instantiating a Workbook object
-	intrusive_ptr<IWorkbook> workbook = Factory::CreateIWorkbook();
+	Workbook workbook;
 
 	//Add a page break at cell J20
-	workbook->GetIWorksheets()->GetObjectByIndex(0)->AddPageBreaks(new String("J20"));
+	workbook.GetWorksheets().Get(0).AddPageBreaks("J20");
 
 	//Save the Excel file.
-	workbook->Save(outputPageBreaks);
+	workbook.Save(outputPageBreaks);
 
 	//Show successfull execution message on console
 	ShowMessageOnConsole("AddingPageBreaks executed successfully.\r\n\r\n");
+
+	
 }

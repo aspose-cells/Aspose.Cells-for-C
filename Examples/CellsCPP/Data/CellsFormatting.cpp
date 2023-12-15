@@ -3,59 +3,63 @@
 //Format Cell or Range of Cells
 void FormatCellOrRangeOfCells()
 {
+	
+
 	//Output directory path
-	StringPtr outPath = new String("..\\Data\\Output\\");
+	U16String outPath = "..\\Data\\Output\\";
 
 	//Path of output excel file
-	StringPtr outputFormatCellOrRangeOfCells = outPath->StringAppend(new String("outputFormatCellOrRangeOfCells.xlsx"));
+	U16String outputFormatCellOrRangeOfCells = outPath + "outputFormatCellOrRangeOfCells.xlsx";
 
 	//Create a new workbook
-	intrusive_ptr<IWorkbook> wb = Factory::CreateIWorkbook();
+	Workbook wb;
 
 	//Get first worksheet which is created by default
-	intrusive_ptr<IWorksheet> ws = wb->GetIWorksheets()->GetObjectByIndex(0);
+	Worksheet ws = wb.GetWorksheets().Get(0);
 
 	//Access cell C4 by cell name
-	intrusive_ptr<ICell> cell = ws->GetICells()->GetObjectByIndex(new String("C4"));
+	Cell cell = ws.GetCells().Get("C4");
 
 	//Add some text in cell
-	cell->PutValue((StringPtr)new String("This is sample data."));
+	cell.PutValue("This is sample data.");
 
 	//Access the cell style
-	intrusive_ptr<IStyle> st = cell->GetIStyle();
+	Style st = cell.GetStyle();
 
 	//Fille the cell color to Yellow
-	st->SetPattern(BackgroundType_Solid);
-	st->SetForegroundColor(Systems::Drawing::Color::GetYellow());
+	st.SetPattern(BackgroundType::Solid);
+	st.SetForegroundColor(Color{0xff, 0xff, 0xff, 0});
 
 	//Set the text to wrapp
-	st->SetTextWrapped(true);
+	st.SetIsTextWrapped(true);
 
 	//Set the left and right border to Red
-	st->SetBorder(BorderType_LeftBorder, CellBorderType_Thick, Systems::Drawing::Color::GetRed());
-	st->SetBorder(BorderType_RightBorder, CellBorderType_Thick, Systems::Drawing::Color::GetRed());
+	st.SetBorder(BorderType::LeftBorder, CellBorderType::Thick, Color{0xff, 0xff, 0, 0});
+	st.SetBorder(BorderType::RightBorder, CellBorderType::Thick, Color{0xff, 0xff, 0, 0});
 
 	//Set font color, font size, strike, bold, italic
-	st->GetIFont()->SetColor(Systems::Drawing::Color::GetBlue());
-	st->GetIFont()->SetSize(16);
-	st->GetIFont()->SetStrikeType(TextStrikeType_Single);
-	st->GetIFont()->SetBold(true);
-	st->GetIFont()->SetItalic(true);
+	st.GetFont().SetColor(Color{0xff, 0, 0, 0xff});
+	st.GetFont().SetSize(16);
+	st.GetFont().SetStrikeType(TextStrikeType::Single);
+	st.GetFont().SetIsBold(true);
+	st.GetFont().SetIsItalic(true);
 
 	//Set text horizontal and vertical alignment to center
-	st->SetHorizontalAlignment(TextAlignmentType_Center);
-	st->SetVerticalAlignment(TextAlignmentType_Center);
+	st.SetHorizontalAlignment(TextAlignmentType::Center);
+	st.SetVerticalAlignment(TextAlignmentType::Center);
 
 	//Set the cell style
-	cell->SetIStyle(st);
+	cell.SetStyle(st);
 
 	//Set the cell column width and row height
-	ws->GetICells()->SetColumnWidth(cell->GetColumn(), 20);
-	ws->GetICells()->SetRowHeight(cell->GetRow(), 70);
+	ws.GetCells().SetColumnWidth(cell.GetColumn(), 20);
+	ws.GetCells().SetRowHeight(cell.GetRow(), 70);
 
 	//Save the output excel file
-	wb->Save(outputFormatCellOrRangeOfCells);
+	wb.Save(outputFormatCellOrRangeOfCells);
 
 	//Show successfull execution message on console
 	ShowMessageOnConsole("FormatCellOrRangeOfCells executed successfully.\r\n\r\n");
+
+	
 }

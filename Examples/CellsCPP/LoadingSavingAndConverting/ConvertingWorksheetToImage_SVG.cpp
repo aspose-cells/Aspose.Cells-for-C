@@ -3,57 +3,63 @@
 //Converting Worksheet To Image - SVG
 void ConvertingWorksheetToImage_SVG()
 {
+	
+
+	// For complete examples and data files, please go to https://github.com/aspose-cells/Aspose.Cells-for-C
+
 	// Source directory path.
-	StringPtr srcDir = new String("..\\Data\\01_SourceDirectory\\");
+	U16String srcDir(u"..\\Data\\01_SourceDirectory\\");
 
 	// Output directory path.
-	StringPtr outDir = new String("..\\Data\\02_OutputDirectory\\");
+	U16String outDir(u"..\\Data\\02_OutputDirectory\\");
 
 	// Path of input Excel file.
-	StringPtr sampleConvertingWorksheetToDifferentImageFormats = srcDir->StringAppend(new String("sampleConvertingWorksheetToDifferentImageFormats.xlsx"));
+	U16String sampleConvertingWorksheetToDifferentImageFormats = srcDir + u"sampleConvertingWorksheetToDifferentImageFormats.xlsx";
 
 	// Create an empty workbook.
-	intrusive_ptr<Aspose::Cells::IWorkbook> workbook = Factory::CreateIWorkbook(sampleConvertingWorksheetToDifferentImageFormats);
+	Workbook workbook(sampleConvertingWorksheetToDifferentImageFormats);
 
 	// Access first worksheet.
-	intrusive_ptr<Aspose::Cells::IWorksheet> worksheet = workbook->GetIWorksheets()->GetObjectByIndex(0);
+	Worksheet worksheet = workbook.GetWorksheets().Get(0);
 
 	// Create image or print options object.
-	intrusive_ptr<Aspose::Cells::Rendering::IImageOrPrintOptions> imgOptions = Factory::CreateIImageOrPrintOptions();
+	ImageOrPrintOptions imgOptions;
+
+	// Specify the image format.
+	imgOptions.SetImageType(ImageType::Svg);
 
 	// Specify horizontal and vertical resolution
-	imgOptions->SetHorizontalResolution(200);
-	imgOptions->SetVerticalResolution(200);
-
-	// Specify the save format.
-	imgOptions->SetSaveFormat(Aspose::Cells::SaveFormat::SaveFormat_SVG);
+	imgOptions.SetHorizontalResolution(200);
+	imgOptions.SetVerticalResolution(200);
 
 	// Render the sheet with respect to specified image or print options.
-	intrusive_ptr<Aspose::Cells::Rendering::ISheetRender> sr = Factory::CreateISheetRender(worksheet, imgOptions);
+	SheetRender sr(worksheet, imgOptions);
 
 	// Get page count.
-	Aspose::Cells::Systems::Int32 pageCount = sr->GetPageCount();
+	int pageCount = sr.GetPageCount();
 
 	// Create string builder object for string concatenations.
-	intrusive_ptr<Aspose::Cells::Systems::Text::StringBuilder> sb = new Aspose::Cells::Systems::Text::StringBuilder();
+	std::string sb;
 
 	// Render each page to png image one by one.
 	for (int i = 0; i < pageCount; i++)
 	{
 		// Clear string builder and create output image path with string concatenations.
-		sb->Clear();
-		sb->Append(outDir);
-		sb->Append((StringPtr)new String("outputConvertingWorksheetToImageSVG_"));
-		sb->Append(i);
-		sb->Append((StringPtr)new String(".svg"));
+		sb = "";
+		sb += outDir.ToUtf8();
+		sb += "outputConvertingWorksheetToImageSVG_";
+		sb += std::to_string(i);
+		sb += ".svg";
 
 		// Get the output image path.
-		StringPtr outputSVG = sb->ToString();
+		U16String outputSvg(sb.c_str());
 
-		// Convert worksheet to tiff image.
-		sr->ToImage(i, outputSVG);
+		// Convert worksheet to svg image.
+		sr.ToImage(i, outputSvg);
 	}
 
 	//Show successfull execution message on console
 	ShowMessageOnConsole("ConvertingWorksheetToImage_SVG executed successfully.");
+
+	
 }

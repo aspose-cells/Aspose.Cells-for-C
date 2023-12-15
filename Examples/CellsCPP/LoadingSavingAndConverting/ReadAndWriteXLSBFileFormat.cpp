@@ -3,44 +3,48 @@
 //Read and Write XLSB File Format 
 void ReadAndWriteXLSBFileFormat()
 {
+	
+
 	//Source directory path
-	StringPtr dirPath = new String("..\\Data\\LoadingSavingAndConverting\\");
+	U16String dirPath(u"..\\Data\\LoadingSavingAndConverting\\");
 
 	//Output directory path
-	StringPtr outPath = new String("..\\Data\\Output\\");
+	U16String outPath(u"..\\Data\\Output\\");
 
 	//Path of input excel file
-	StringPtr srcReadWriteXLSB = dirPath->StringAppend(new String("srcReadWriteXLSB.xlsb"));
+	U16String srcReadWriteXLSB = dirPath + u"srcReadWriteXLSB.xlsb";
 
 	//Path of output excel file
-	StringPtr outReadWriteXLSB = outPath->StringAppend(new String("outReadWriteXLSB.xlsb"));
+	U16String outReadWriteXLSB = outPath + u"outReadWriteXLSB.xlsb";
 
 	//Read source xlsb file
-	intrusive_ptr<IWorkbook> wb = Factory::CreateIWorkbook(srcReadWriteXLSB);
+	Workbook wb(srcReadWriteXLSB);
 
 	//Access first worksheet
-	intrusive_ptr<IWorksheet> ws = wb->GetIWorksheets()->GetObjectByIndex(0);
+	Worksheet ws = wb.GetWorksheets().Get(0);
 
 	//Access cell A1
-	intrusive_ptr<ICell> cell = ws->GetICells()->GetObjectByIndex(new String("A1"));
+	Cell cell = ws.GetCells().Get(u"A1");
 
 	//Get the string value of cell A1
-	StringPtr strVal = cell->GetStringValue();
+	U16String strVal = cell.GetStringValue();
 
 	//Print the string value of cell A1
-	StringPtr cellValue = new String("Cell Value: ");
-	Console::WriteLine(cellValue->StringAppend(strVal));
+	U16String cellValue(u"Cell Value: ");
+	std::cout << cellValue.ToUtf8() << strVal.ToUtf8() << std::endl;
 
 	//Access cell C4
-	cell = ws->GetICells()->GetObjectByIndex(new String("C4"));
+	cell = ws.GetCells().Get(u"C4");
 
 	//Put the string value of cell A1 into C4
-	intrusive_ptr<String> strValPtr = new String(strVal);
-	cell->PutValue(strValPtr);
+	U16String strValPtr(strVal);
+	cell.PutValue(strValPtr);
 
 	//Save the workbook in XLSB format
-	wb->Save(outReadWriteXLSB, SaveFormat_Xlsb);
+	wb.Save(outReadWriteXLSB, SaveFormat::Xlsb);	
 
 	//Show successfull execution message on console
 	ShowMessageOnConsole("ReadAndWriteXLSBFileFormat executed successfully.\r\n\r\n");
+
+	
 }

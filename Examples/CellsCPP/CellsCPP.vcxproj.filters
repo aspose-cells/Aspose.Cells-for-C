@@ -1,195 +1,165 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="Header Files">
-      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
-      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
-    </Filter>
     <Filter Include="Source Files">
       <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
-      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
     </Filter>
     <Filter Include="Resource Files">
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
-    </Filter>
-    <Filter Include="Source Files\Charts">
-      <UniqueIdentifier>{8c52fd1a-b909-4c04-82ff-594b4f98a6b0}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\LoadingSavingAndConverting">
-      <UniqueIdentifier>{48a2a76e-dfeb-4b8c-afa8-38bc013d0b64}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\RowsAndColumns">
-      <UniqueIdentifier>{a01de0a2-1803-4b2f-9c97-374883c89d06}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\Data">
-      <UniqueIdentifier>{f4404018-69c6-483c-b664-a763aa6c3be5}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\Formulas">
-      <UniqueIdentifier>{e41e25ef-016d-4787-8acc-b66215a7b1db}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\PivotTables">
-      <UniqueIdentifier>{f5babae5-13d2-4a2c-a329-2a110f77eda9}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\Worksheets">
-      <UniqueIdentifier>{5cfd7eb2-fb01-4009-8cb9-d4710011081a}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\TechnicalArticles">
-      <UniqueIdentifier>{f635cd50-88fc-4af6-9f7c-e01d5dbd7a87}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\DrawingObjects">
-      <UniqueIdentifier>{3fa5b3af-3c69-40a9-bf0f-c7f173eff81e}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Charts\ReadAndManipulateExcel2016Charts.cpp">
-      <Filter>Source Files\Charts</Filter>
-    </ClCompile>
-    <ClCompile Include="Charts\CreatingAndCustomizingCharts_PyramidChart.cpp">
-      <Filter>Source Files\Charts</Filter>
-    </ClCompile>
-    <ClCompile Include="LoadingSavingAndConverting\OpeningFiles.cpp">
-      <Filter>Source Files\LoadingSavingAndConverting</Filter>
-    </ClCompile>
-    <ClCompile Include="LoadingSavingAndConverting\SavingFiles.cpp">
-      <Filter>Source Files\LoadingSavingAndConverting</Filter>
-    </ClCompile>
-    <ClCompile Include="LoadingSavingAndConverting\ManagingDocumentProperties.cpp">
-      <Filter>Source Files\LoadingSavingAndConverting</Filter>
-    </ClCompile>
-    <ClCompile Include="LoadingSavingAndConverting\ReadAndWriteCSVFileFormat.cpp">
-      <Filter>Source Files\LoadingSavingAndConverting</Filter>
-    </ClCompile>
-    <ClCompile Include="LoadingSavingAndConverting\ReadAndWriteTabDelimitedFileFormat.cpp">
-      <Filter>Source Files\LoadingSavingAndConverting</Filter>
-    </ClCompile>
-    <ClCompile Include="LoadingSavingAndConverting\ReadAndWriteXLSBFileFormat.cpp">
-      <Filter>Source Files\LoadingSavingAndConverting</Filter>
-    </ClCompile>
-    <ClCompile Include="LoadingSavingAndConverting\ReadAndWriteXLSMFileFormat.cpp">
-      <Filter>Source Files\LoadingSavingAndConverting</Filter>
-    </ClCompile>
-    <ClCompile Include="RowsAndColumns\AdjustingRowHeightandColumnWidth.cpp">
-      <Filter>Source Files\RowsAndColumns</Filter>
-    </ClCompile>
-    <ClCompile Include="RowsAndColumns\CopyingRowsAndColumns.cpp">
-      <Filter>Source Files\RowsAndColumns</Filter>
-    </ClCompile>
-    <ClCompile Include="RowsAndColumns\GroupingUngroupingRowsAndColumns.cpp">
-      <Filter>Source Files\RowsAndColumns</Filter>
-    </ClCompile>
-    <ClCompile Include="RowsAndColumns\InsertingDeletingRowsAndColumns.cpp">
-      <Filter>Source Files\RowsAndColumns</Filter>
-    </ClCompile>
-    <ClCompile Include="Data\AccessingCellsOfWorksheet.cpp">
-      <Filter>Source Files\Data</Filter>
-    </ClCompile>
-    <ClCompile Include="Data\AddAndRetrieveData.cpp">
-      <Filter>Source Files\Data</Filter>
-    </ClCompile>
-    <ClCompile Include="Data\AddHyperlinksToTheCells.cpp">
-      <Filter>Source Files\Data</Filter>
-    </ClCompile>
-    <ClCompile Include="Data\ApplyConditionalFormattingInWorksheet.cpp">
-      <Filter>Source Files\Data</Filter>
-    </ClCompile>
-    <ClCompile Include="Data\CellsFormatting.cpp">
-      <Filter>Source Files\Data</Filter>
-    </ClCompile>
-    <ClCompile Include="Data\CreateNamedRangeInWorkbook.cpp">
-      <Filter>Source Files\Data</Filter>
-    </ClCompile>
-    <ClCompile Include="Data\CreatingSubtotals.cpp">
-      <Filter>Source Files\Data</Filter>
-    </ClCompile>
-    <ClCompile Include="Data\FindOrSearchData.cpp">
-      <Filter>Source Files\Data</Filter>
-    </ClCompile>
-    <ClCompile Include="Data\ManipulateNamedRangeInWorkbook.cpp">
-      <Filter>Source Files\Data</Filter>
-    </ClCompile>
-    <ClCompile Include="Data\PrecedentsAndDependents.cpp">
-      <Filter>Source Files\Data</Filter>
-    </ClCompile>
-    <ClCompile Include="Formulas\CalculateWorkbookFormulas.cpp">
-      <Filter>Source Files\Formulas</Filter>
-    </ClCompile>
-    <ClCompile Include="Formulas\UsingICustomFunctionFeature.cpp">
-      <Filter>Source Files\Formulas</Filter>
-    </ClCompile>
-    <ClCompile Include="Formulas\WaysToCalculateFormulas.cpp">
-      <Filter>Source Files\Formulas</Filter>
-    </ClCompile>
-    <ClCompile Include="PivotTables\CreatePivotTable.cpp">
-      <Filter>Source Files\PivotTables</Filter>
-    </ClCompile>
-    <ClCompile Include="PivotTables\ManipulatePivotTable.cpp">
-      <Filter>Source Files\PivotTables</Filter>
-    </ClCompile>
-    <ClCompile Include="Worksheets\CopyingAndMovingWorksheets.cpp">
-      <Filter>Source Files\Worksheets</Filter>
-    </ClCompile>
-    <ClCompile Include="Worksheets\ManageWorksheets.cpp">
-      <Filter>Source Files\Worksheets</Filter>
-    </ClCompile>
-    <ClCompile Include="Worksheets\ManagingPageBreaks.cpp">
-      <Filter>Source Files\Worksheets</Filter>
-    </ClCompile>
-    <ClCompile Include="Worksheets\WorksheetViews.cpp">
-      <Filter>Source Files\Worksheets</Filter>
-    </ClCompile>
-    <ClCompile Include="TechnicalArticles\ApplyCustomThemeColorsOfWorkbookUsingArrayOfColors.cpp">
-      <Filter>Source Files\TechnicalArticles</Filter>
-    </ClCompile>
-    <ClCompile Include="TechnicalArticles\CopyThemeFromOneWorkbookToAnother.cpp">
-      <Filter>Source Files\TechnicalArticles</Filter>
-    </ClCompile>
-    <ClCompile Include="TechnicalArticles\CreateAndManipulateExcelTable.cpp">
-      <Filter>Source Files\TechnicalArticles</Filter>
-    </ClCompile>
-    <ClCompile Include="TechnicalArticles\GroupRowsAndColumnsOfWorksheet.cpp">
-      <Filter>Source Files\TechnicalArticles</Filter>
-    </ClCompile>
-    <ClCompile Include="Charts\CreatingAndCustomizingCharts_LineChart.cpp">
-      <Filter>Source Files\Charts</Filter>
-    </ClCompile>
-    <ClCompile Include="Charts\CreatingAndCustomizingCharts_BubbleChart.cpp">
-      <Filter>Source Files\Charts</Filter>
-    </ClCompile>
-    <ClCompile Include="Charts\CreatingAndCustomizingCharts_CustomChart.cpp">
-      <Filter>Source Files\Charts</Filter>
-    </ClCompile>
     <ClCompile Include="DrawingObjects\ExtractingOLEObjectsFromWorksheet.cpp">
-      <Filter>Source Files\DrawingObjects</Filter>
+      <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="DrawingObjects\InsertingOLEObjectsIntoWorksheet.cpp">
-      <Filter>Source Files\DrawingObjects</Filter>
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Charts\CreatingAndCustomizingCharts_BubbleChart.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Charts\CreatingAndCustomizingCharts_CustomChart.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Charts\CreatingAndCustomizingCharts_LineChart.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Charts\CreatingAndCustomizingCharts_PyramidChart.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Charts\ReadAndManipulateExcel2016Charts.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Data\AccessingCellsOfWorksheet.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Data\AddAndRetrieveData.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Data\AddHyperlinksToTheCells.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Data\ApplyConditionalFormattingInWorksheet.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Data\CellsFormatting.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Data\CreateNamedRangeInWorkbook.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Data\CreatingSubtotals.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Data\FindOrSearchData.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Data\ManipulateNamedRangeInWorkbook.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Data\PrecedentsAndDependents.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Formulas\CalculateWorkbookFormulas.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Formulas\WaysToCalculateFormulas.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="LoadingSavingAndConverting\ConvertExcelWorkbookToPDF_A_CompliedFiles.cpp">
-      <Filter>Source Files\LoadingSavingAndConverting</Filter>
+      <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="LoadingSavingAndConverting\ConvertExcelWorkbookToPDF_DirectConversion.cpp">
-      <Filter>Source Files\LoadingSavingAndConverting</Filter>
+      <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="LoadingSavingAndConverting\ConvertExcelWorkbookToPDF_SetPDFCreationTime.cpp">
-      <Filter>Source Files\LoadingSavingAndConverting</Filter>
-    </ClCompile>
-    <ClCompile Include="LoadingSavingAndConverting\ConvertingWorksheetToImage_TIFF.cpp">
-      <Filter>Source Files\LoadingSavingAndConverting</Filter>
+      <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="LoadingSavingAndConverting\ConvertingWorksheetToImage_PNG.cpp">
-      <Filter>Source Files\LoadingSavingAndConverting</Filter>
+      <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="LoadingSavingAndConverting\ConvertingWorksheetToImage_SVG.cpp">
-      <Filter>Source Files\LoadingSavingAndConverting</Filter>
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="LoadingSavingAndConverting\ManagingDocumentProperties.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="LoadingSavingAndConverting\OpeningFiles.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="LoadingSavingAndConverting\ReadAndWriteCSVFileFormat.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="LoadingSavingAndConverting\ReadAndWriteTabDelimitedFileFormat.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="LoadingSavingAndConverting\ReadAndWriteXLSBFileFormat.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="LoadingSavingAndConverting\ReadAndWriteXLSMFileFormat.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="LoadingSavingAndConverting\SavingFiles.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="PivotTables\CreatePivotTable.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="PivotTables\ManipulatePivotTable.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="RowsAndColumns\AdjustingRowHeightandColumnWidth.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="RowsAndColumns\CopyingRowsAndColumns.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="RowsAndColumns\GroupingUngroupingRowsAndColumns.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="RowsAndColumns\InsertingDeletingRowsAndColumns.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="TechnicalArticles\ApplyCustomThemeColorsOfWorkbookUsingArrayOfColors.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="TechnicalArticles\CopyThemeFromOneWorkbookToAnother.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="TechnicalArticles\CreateAndManipulateExcelTable.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="TechnicalArticles\GroupRowsAndColumnsOfWorksheet.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Worksheets\CopyingAndMovingWorksheets.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Worksheets\ManageWorksheets.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Worksheets\ManagingPageBreaks.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Worksheets\WorksheetViews.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CellsExamples.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
 </Project>

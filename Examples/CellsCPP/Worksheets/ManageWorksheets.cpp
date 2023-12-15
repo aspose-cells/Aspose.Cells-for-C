@@ -3,87 +3,94 @@
 //Adding Worksheets to a New Excel File
 void AddingWorksheetsToNewExcelFile()
 {
+	
 	//Output directory path
-	StringPtr outDir = new String("..\\Data\\02_OutputDirectory\\");
+	U16String outDir = "..\\Data\\02_OutputDirectory\\";
 
 	//Path of output excel file
-	StringPtr outputManageWorksheets = outDir->StringAppend(new String("outputManageWorksheets.xlsx"));
+	U16String outputManageWorksheets = outDir + "outputManageWorksheets.xlsx";
 
 	//Create workbook
-	intrusive_ptr<IWorkbook>  workbook = Factory::CreateIWorkbook();
+	Workbook  workbook;
 
 	// Adding a new worksheet to the Workbook object
-	int i = workbook->GetIWorksheets()->Add();
+	int i = workbook.GetWorksheets().Add();
 
 	// Obtaining the reference of the newly added worksheet by passing its sheet index
-	intrusive_ptr<IWorksheet> worksheet = workbook->GetIWorksheets()->GetObjectByIndex(i);
+	Worksheet worksheet = workbook.GetWorksheets().Get(i);
 
 	// Setting the name of the newly added worksheet
-	worksheet->SetName(new String("My Worksheet"));
+	worksheet.SetName("My Worksheet");
 
 	// Save the Excel file.
-	workbook->Save(outputManageWorksheets);
+	workbook.Save(outputManageWorksheets);
 	
-	StringPtr msg = new String("New worksheet added successfully with in a workbook!");
-	Console::WriteLine(msg);
+	std::cout << "New worksheet added successfully with in a workbook!" << std::endl;
 
 	//Show successfull execution message on console
 	ShowMessageOnConsole("AddingWorksheetsToNewExcelFile executed successfully.\r\n\r\n");
+
+	
 }
 
 //Accessing Worksheets using Sheet Index
 void AccessingWorksheetsUsingSheetIndex()
 {
+	
 	//Source directory path
-	StringPtr srcDir = new String("..\\Data\\01_SourceDirectory\\");
+	U16String srcDir = "..\\Data\\01_SourceDirectory\\";
 
 	//Path of input excel file
-	StringPtr sampleManageWorksheets = srcDir->StringAppend(new String("sampleManageWorksheets.xlsx"));
+	U16String sampleManageWorksheets = srcDir + "sampleManageWorksheets.xlsx";
 
 	//Load the sample Excel file
-	intrusive_ptr<IWorkbook> workbook = Factory::CreateIWorkbook(sampleManageWorksheets);
+	Workbook workbook(sampleManageWorksheets);
 
 	//Accessing a worksheet using its index
-	intrusive_ptr<IWorksheet> worksheet = workbook->GetIWorksheets()->GetObjectByIndex(0);
+	Worksheet worksheet = workbook.GetWorksheets().Get(0);
 
 	//Access the cell by its name.
-	intrusive_ptr<ICell> cell = worksheet->GetICells()->GetObjectByIndex(new String("F7"));
+	Cell cell = worksheet.GetCells().Get("F7");
 
 	//Print the value of cell F7
-	StringPtr val = cell->GetStringValue();
+	U16String val = cell.GetStringValue();
 
 	//Print the value on console.
-	Console::Write(new String("Value of cell F7: "));
-	Console::WriteLine(val);
+	std::cout << "Value of cell F7: " << val.ToUtf8() << std::endl;
 
 	//Show successfull execution message on console
 	ShowMessageOnConsole("AccessingWorksheetsUsingSheetIndex executed successfully.\r\n\r\n");
+
+	
 }
 
 //Removing Worksheets using Sheet Index
 void RemovingWorksheetsUsingSheetIndex()
 {
+	
 	//Source directory path
-	StringPtr srcDir = new String("..\\Data\\01_SourceDirectory\\");
+	U16String srcDir = "..\\Data\\01_SourceDirectory\\";
 
 	//Output directory path
-	StringPtr outDir = new String("..\\Data\\02_OutputDirectory\\");
+	U16String outDir = "..\\Data\\02_OutputDirectory\\";
 
 	//Path of input excel file
-	StringPtr sampleManageWorksheets = srcDir->StringAppend(new String("sampleManageWorksheets.xlsx"));
+	U16String sampleManageWorksheets = srcDir + "sampleManageWorksheets.xlsx";
 
 	//Path of output excel file
-	StringPtr outputManageWorksheets = outDir->StringAppend(new String("outputManageWorksheets.xlsx"));
+	U16String outputManageWorksheets = outDir + "outputManageWorksheets.xlsx";
 	
 	//Load the sample Excel file
-	intrusive_ptr<IWorkbook> workbook = Factory::CreateIWorkbook(sampleManageWorksheets);
+	Workbook workbook(sampleManageWorksheets);
 
 	//Removing a worksheet using its sheet index
-	workbook->GetIWorksheets()->RemoveAt(0);
+	workbook.GetWorksheets().RemoveAt(0);
 
 	//Save the Excel file.
-	workbook->Save(outputManageWorksheets);
+	workbook.Save(outputManageWorksheets);
 
 	//Show successfull execution message on console
 	ShowMessageOnConsole("RemovingWorksheetsUsingSheetIndex executed successfully.\r\n\r\n");
+
+	
 }
