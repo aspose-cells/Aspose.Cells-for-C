@@ -1,7 +1,11 @@
 ![Nuget](https://img.shields.io/nuget/v/Aspose.cells.Cpp) ![Nuget](https://img.shields.io/nuget/dt/Aspose.cells.Cpp)
 # C++ Library for Excel File Formats
 
-[Aspose.Cells for C++](https://products.aspose.com/cells/cpp) is a native C++ library to create, manipulate, process and convert Microsoft Excel® files without needing Microsoft Office® or Automation. The Excel C++ API supports Excel 97-2003 (XLS), Excel 2007-2013/2016 (XLSX, XLSM, XLSB), OpenOffice XML and other formats such as CSV, TSV and more.
+[Aspose.Cells for C++](https://products.aspose.com/cells/cpp) is a cross-platform native assembly that can be deployed simply by copying it. You can use it to develop 32-bit (Windows® x86) & 64-bit applications in any development environment that supports C++, such as, Microsoft Visual Studio.  You don't have to worry about other services or modules. It supports Excel 97-2003 (XLS), Excel 2007-2013/2016/365 (XLSX, XLSM, XLSB), OpenOffice XML,  LibreOffice (ODS), and other formats such as CSV, TSV, and more.
+
+Aspose.Cells for C++ Library allows you to work with the built-in as well as the custom document properties in Microsoft Excel. Supports high-quality conversion of Excel Workbooks to PDF/A compliant files. Work with formulas, pivot tables, worksheets, tables, ranges, charts, OLE objects and much more.
+
+Aspose.Cells for C++ Library  allows the developers to work with spreadsheet rows, columns, data, formulas, pivot tables, worksheets, tables, charts, and drawing objects from their own C++ applications.
 
 <p align="center">
   <a title="Download ZIP" href="https://github.com/aspose-cells/Aspose.Cells-for-c/archive/master.zip">
@@ -37,7 +41,7 @@ Directory | Description
 
 **Microsoft Excel:** XLSM, XLTX, XLTM, XLAM\
 **Fixed Layout:** PDF, XPS\
-**Images:** JPEG, PNG, BMP, TIFF, GIF, EMF, SVG
+**Images:** JPEG, PNG, BMP, GIF, EMF, SVG
 
 ## Get Started with Aspose.Cells for C++
 
