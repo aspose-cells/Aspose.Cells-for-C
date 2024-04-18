@@ -41,7 +41,7 @@ void ReadAndWriteCSVFileFormat()
 	cell.PutValue(strValPtr);
 
 	//Save the workbook in csv format
-	wb.Save(outReadWriteCSV, SaveFormat::CSV);	
+	wb.Save(outReadWriteCSV, SaveFormat::Csv);	
 
 	//Show successfull execution message on console
 	ShowMessageOnConsole("ReadAndWriteCSVFileFormat executed successfully.\r\n\r\n");

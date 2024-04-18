@@ -49,7 +49,7 @@ void AccessingCellsUsingRowAndColumnIndexOfTheCell()
 	Cells cells = worksheet.GetCells();
 
 	// Accessing a cell using its row and column index
-	Cell cell = cells.GetCell(2, 1);
+	Cell cell = cells.Get(2, 1);
 
 	//Write string value of the cell on console
 	std::cout << "Value of cell B3: ";
